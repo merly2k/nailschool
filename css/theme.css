@@ -1,0 +1,21 @@
+header{float: left; width:100%}
+.navbar-toggle{background: #fff;}
+.navbar-toggle .icon-bar{background:#0A2E61; }
+.navbar-brand{display: none;}
+
+.top-head{background: #141517; width: 100%; float: left; height: 100px;}
+.top-head h1 {color: #fff; font-size: 36px; font-weight: 600; margin: 18px 0 0;}
+.top-head small{float: left; width: 100%; font-size: 14px; color: #c0c0c0; margin-top: 5px; margin-left: 5px;}
+.top-head .admin-bar {text-align: right; margin-top: 22px;}
+.top-head .admin-bar a {color: #fff; line-height: 49px; position: relative; padding:0 7px;}
+.top-head .admin-bar a:hover{color: #ff0000}
+.top-head .admin-bar a i{margin-right: 6px;}
+.top-head .admin-bar .ping {background: #ff0000; border: 3px solid #141517; border-radius: 50%; height: 14px; position: absolute; right: 3px;    top: 13px; width: 14px; z-index: 1;}
+.top-head .admin-bar img {float: right; height: 50px; width: 50px; margin-left: 18px;}
+.top-nav{background: #fff; padding: 0; border-bottom: 1px solid #dbdbdb}
+.top-nav .nav-link {padding-bottom: 0.7rem; padding-top: 0.7rem;}
+.top-nav .navbar-nav .nav-item + .nav-item{margin-left:0}
+.top-nav li a{color: #141517; text-transform: uppercase; font-size: 14px; font-weight: 700; padding: 0 10px; border-bottom: 2px solid #fff}
+.top-nav li a:hover, .top-nav li a:focus, .top-nav li.active a{color: #141517; border-bottom: 2px solid #FD3A13 }
+.top-nav .form-control{border-color: #fff}
+.thumb-image{width: 300px;}

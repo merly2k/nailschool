@@ -1,0 +1,22 @@
+{
+    "name": "vendor/curses",
+    "description": "Description of project curses.",
+    "authors": [
+        {
+            "name": "merly",
+            "email": "your@email.here"
+        }
+    ],
+    "require": {
+        "nette/http": "dev-master",
+        "swiftmailer/swiftmailer": "dev-master",
+        "fullcalendar/fullcalendar": "v4.0.0-alpha.4",
+        "datatables/datatables": "dev-master",
+        "twbs/bootstrap": "dev-master",
+        "fortawesome/font-awesome": "dev-master",
+        "eternicode/bootstrap-datepicker": "dev-master",
+        "nesbot/carbon": "dev-master",
+        "league/oauth2-client": "dev-master",
+        "meyfa/php-svg": "dev-master"
+    }
+}

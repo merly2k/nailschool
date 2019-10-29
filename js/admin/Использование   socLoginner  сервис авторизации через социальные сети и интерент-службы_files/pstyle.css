@@ -1,0 +1,80 @@
+/* ########################## 1 ВАРИАНТ */
+
+    .pstyle_1
+    {
+        padding-left: 1px; 
+        margin: 10px 20px; 
+        border-left: #333333 3px solid; 
+        font-family: Georgia, serif;       
+    }
+    
+    .pstyle_1 p
+    {
+        margin: 0 5px 0 5px; /* Отступ сверху */
+        font-size: 16px;
+        border-left: #666 1px solid; 
+        color: #333; 
+        padding: 15px; 
+           
+    }
+
+/* ########################## 2 ВАРИАНТ */
+
+    .pstyle_2
+    {
+        border-right: #000 0px solid; 
+        border-top: #000 3px solid; 
+        border-left: #000 0px solid; 
+        border-bottom: #000 3px solid;  
+        margin: 10px 20px;
+        padding: 0.25em 34px;
+        font-family: Georgia, "Times New Roman", Times, serif;
+        font-size: 20px;
+        font-weight: 500;
+        position: relative;
+    }
+
+/* ########################## 3 ВАРИАНТ */
+
+    .pstyle_3 
+    {
+        font-family: Georgia, serif;
+        font-size: 18px;
+        font-style: italic;
+        margin: 0.25em 17px;
+        padding: 0.25em 23px 0.25em 46px;
+        line-height: 1.45;
+        position: relative;
+        color: #383838;
+    }
+
+    .pstyle_3:before 
+    {
+        display: block;
+        content: "\201C";
+        font-size: 80px;
+        position: absolute;
+        left: 0px;
+        top: -10px;
+        color: #7a7a7a;
+    }
+    
+/* ########################## 4 ВАРИАНТ */
+
+    .pstyle_4
+    {
+        padding-left: 2em; 
+        margin: 10px 20px; 
+        border-left: #1571af 10px solid; 
+        //font-family: Georgia, serif;       
+    }
+    
+    .pstyle_4 p
+    {
+        //margin: 0 5px 0 5px; /* Отступ сверху */
+        font-size: 20px;
+        //border-left: #666 1px solid; 
+        color: #1571af; 
+        //padding: 15px; 
+           
+    }    

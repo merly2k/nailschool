@@ -1,0 +1,225 @@
+.preloader4 
+{
+   width: 30px;
+   height: 30px;
+   display: inline-block;
+   padding: 0;
+   border-radius: 100%;
+   border: 1px solid;
+   border-top-color: rgba(255, 255, 255, 0.65);
+   border-bottom-color: rgba(255, 255, 255, 0.15);
+   border-left-color: rgba(255, 255, 255, 0.65);
+   border-right-color: rgba(255, 255, 255, 0.15);
+   -webkit-animation: preloader4 0.8s linear infinite;
+   animation: preloader4 0.8s linear infinite;
+}
+
+@keyframes preloader4 
+{
+   from {transform: rotate(0deg);}
+   to {transform: rotate(360deg);}
+}
+
+@-webkit-keyframes preloader4 
+{
+   from {-webkit-transform: rotate(0deg);}
+   to {-webkit-transform: rotate(360deg);}
+}
+
+.download_frame
+{
+font-family: Verdana;
+font-size: 8pt;
+color: red;
+padding: 0;
+margin: 0;
+width: 100%;
+height: 100%;
+background-color: #e7e7e7;
+}
+
+.modal_win_panel
+{
+font-family: tahoma; 
+color: #737574; 
+font-size: 9pt; 
+width: 356px; 
+display: inline-block; 
+overflow: hidden;
+overflow-y: auto;
+height: 500px;
+vertical-align: top; 
+padding: 10px 20px 10px 20px; 
+}
+
+.modal_win_panel_auto
+{
+font-family: tahoma; 
+color: #737574; 
+font-size: 9pt; 
+display: block; 
+overflow: hidden;
+vertical-align: top; 
+width: 100%;
+}
+
+.modal_win_caption
+{
+text-transform: uppercase;
+display: block;
+letter-spacing: 1px;
+margin: 10px 5px 5px 20px;
+position: absolute;
+}
+
+.modal_win_field_oform
+{
+background-color: #f3f3f3; 
+border: #cccccc 1px solid; 
+padding: 5px;
+margin: 30px 20px 20px 20px;
+color: #000000 !important;
+}
+
+.modal_win_button
+{
+background: -webkit-linear-gradient(top, #eaeaea, #d5d5d5);
+background: -moz-linear-gradient(top,  #eaeaea,  #d5d5d5);  
+background: -o-linear-gradient(top,  #eaeaea,  #d5d5d5); 
+background: -ms-linear-gradient(top,  #eaeaea,  #d5d5d5); /* IE10+ */ 
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eaeaea', endColorstr='#d5d5d5');
+border: #cccccc 1px solid;
+padding: 5px;
+font-family: tahoma;
+font-size: 7pt;
+text-transform: uppercase;
+letter-spacing: 2px;
+width: 132px;   
+}
+
+.modal_win_field_long
+{
+display: table-cell;
+text-align: center;
+vertical-align: middle;
+color: #000000;
+border: #cccccc 1px solid;
+padding: 3px;
+font-size: 8pt; 
+letter-spacing: 1px;
+box-sizing: border-box;
+}
+
+.modal_win_field_small
+{
+display: table-cell;
+text-align: center;
+vertical-align: middle;
+color: #000000;
+border-top: #cccccc 1px solid;
+border-right: #cccccc 1px solid;
+border-bottom: #cccccc 1px solid;
+padding: 3px;
+font-size: 8pt;
+letter-spacing: 1px;
+}
+
+.modal_win_cross
+{
+display: table-cell;
+text-align: center;
+vertical-align: middle;
+padding-left: 4px;
+color: #a71010;
+cursor: pointer;
+}
+
+.modal_win_select
+{
+margin: 3px 0 5px 0;
+color: #000000; 
+width: 324px;
+height: 25px;
+border: #cccccc 1px solid;
+vertical-align: middle;
+padding: 2px;
+}
+
+.modal_win_select_auto
+{
+margin-top: 3px;
+color: #000000;
+height: 25px;
+border: #cccccc 1px solid;
+vertical-align: middle;
+padding: 2px;
+}
+
+.modal_win_input_act
+{
+margin: 3px 0 5px 0;
+color: #000000;
+width: 100%;
+height: 30px;
+border: #cccccc 1px solid;
+vertical-align: middle;
+padding: 5px;
+font-family: tahoma; 
+font-size: 9pt; 
+box-sizing: border-box;
+}
+
+.modal_win_input
+{
+margin: 3px 0 5px 0;
+color: #000000; 
+height: 18px;
+border: #cccccc 1px solid;
+vertical-align: middle;
+padding: 2px;
+width: 100%;
+font-family: tahoma; 
+font-size: 9pt; 
+box-sizing: border-box;
+}
+
+.modal_win_textarea
+{
+margin: 3px 0 5px 0;
+color: #000000 !important; 
+width: 100%;
+border: #cccccc 1px solid;
+height: 80px;
+padding: 2px;
+font-family: tahoma; 
+font-size: 9pt; 
+background-color: #ffffff;
+box-sizing: border-box;
+}
+
+.modal_win_input_pass
+{
+margin: 3px 0 5px 0;
+color: #000000;
+width: 100%;
+height: 30px;
+background-color: #cccccc;
+border: #cccccc 1px solid;
+vertical-align: middle;
+padding: 5px;
+font-family: tahoma; 
+font-size: 9pt; 
+box-sizing: border-box;
+}
+
+.close
+{
+cursor: pointer;
+position: absolute; 
+right: -30px; top: 0;
+width: 19px;
+height: 19px;
+background-image: url('/img/close.png');
+background-position: top left;
+background-repeat: no-repeat;
+}

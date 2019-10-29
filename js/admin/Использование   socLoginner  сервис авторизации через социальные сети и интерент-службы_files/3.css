@@ -1,0 +1,167 @@
+/* ####### Paging ####### */
+
+.paging_bar
+{
+    clear: both;    
+}
+
+.paging_bar a
+{
+    text-decoration: none;
+    margin-right: 5px;
+    padding: 3px;    
+}
+
+.paging_bar span
+{
+    padding: 3px;
+    border: #cccccc 1px solid;    
+}
+
+.paging_bar_nav
+{
+    text-decoration: none;
+}
+
+/* ####### Shop ####### */
+
+/* Корзина */
+.cart_table
+{
+    display: table; 
+    width: 100%; 
+    text-align: center; 
+    vertical-align: middle;    
+    border-collapse: collapse; 
+}
+
+.cart_row
+{
+    display: table-row;     
+}
+
+.cart_cell
+{
+    display: table-cell; 
+    background: #ffffff; 
+    padding: 5px; 
+    border-bottom: #cccccc 1px solid; 
+    border-left: #cccccc 1px solid; 
+    border-right: #cccccc 1px solid;    
+}
+
+.cart_cell_caption
+{
+    background-color: #e3e3e3;
+    display: table-cell;  
+    border: #cccccc 1px solid; 
+}
+
+/* Сравнение */
+.compare_table
+{
+    display: table; 
+    width: 100%; 
+    text-align: center; 
+    vertical-align: middle;    
+    border-collapse: collapse; 
+}
+
+.compare_row
+{
+    display: table-row;     
+}
+
+.compare_cell
+{
+    display: table-cell; 
+    background: #ffffff; 
+    padding: 5px; 
+    border-bottom: #cccccc 1px solid; 
+    border-left: #cccccc 1px solid; 
+    border-right: #cccccc 1px solid;    
+}
+
+.compare_cell_caption
+{
+    background-color: #e3e3e3;
+    display: table-cell;  
+    border: #cccccc 1px solid; 
+}
+
+/* История */
+.order_items
+{
+    text-decoration: underline;
+    cursor: pointer;       
+}
+
+.history_table
+{
+    display: table; 
+    width: 100%; 
+    text-align: center; 
+    vertical-align: middle;    
+    border-collapse: collapse;
+}
+
+.history_row
+{
+    display: table-row;    
+}
+
+.history_cell_caption
+{
+    background-color: #e3e3e3;
+    display: table-cell;  
+    border: #cccccc 1px solid; 
+}
+
+.history_cell
+{
+    display: table-cell; 
+    background: #ffffff; 
+    padding: 5px; 
+    border-bottom: #cccccc 1px solid; 
+    border-left: #cccccc 1px solid; 
+    border-right: #cccccc 1px solid;    
+}
+
+.history_total
+{
+    letter-spacing: 1px; 
+    font-size: 8pt; 
+    padding: 5px 0 20px 0;    
+}
+
+/* ####### Auth via socnetworks ####### */
+
+.soc_fb
+{
+    display: inline-block;
+    cursor: pointer;
+    height: 22px;
+    width: 22px;
+    background: red url('/img/soc.jpg') 0 0 no-repeat;    
+    border: #ebebeb 1px solid;
+}
+
+.soc_ok
+{
+    display: inline-block;
+    cursor: pointer;
+    height: 22px;
+    width: 22px;
+    background: url('/img/soc.jpg') -22px 0 no-repeat;    
+    border: #ebebeb 1px solid;
+}
+
+.soc_vk
+{
+    display: inline-block;
+    cursor: pointer;
+    height: 22px;
+    width: 22px;
+    background: url('/img/soc.jpg') -44px 0 no-repeat;    
+    border: #ebebeb 1px solid;
+}

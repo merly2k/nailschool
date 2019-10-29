@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://kit.fontawesome.com/e66f078689.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?=WWW_CSS_PATH ?>theme.css" type="text/css">
+    <link rel="stylesheet" href="<?=WWW_CSS_PATH;?>trumbowyg.css">
+    <link rel="stylesheet" href="<?=WWW_CSS_PATH;?>summernote-bs4.css">
+    <link rel="stylesheet" href="<?=WWW_CSS_PATH;?>datatables/dataTables.bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+<!------ Include the above in your HEAD tag ---------->
+<style> 
+    body{background:#f9f9f9;}
+    #wrapper{padding:90px 15px;}
+    .navbar-expand-lg .navbar-nav.side-nav{flex-direction: column;}
+    .card{margin-bottom: 15px; border-radius:0; box-shadow: 0 3px 5px rgba(0,0,0,.1); }
+    .header-top{box-shadow: 0 3px 5px rgba(0,0,0,.1)}
+    .modal-dialog {
+    max-width: 800px;
+    margin: 1.75rem auto;
+}
+    @media(min-width:992px) {
+        #wrapper{margin-left: 200px;padding: 90px 15px 15px;}
+        .navbar-nav.side-nav{background: #585f66;box-shadow: 2px 1px 2px rgba(0,0,0,.1);position:fixed;top:56px;flex-direction: column!important;left:0;width:200px;overflow-y:auto;bottom:0;overflow-x:hidden;padding-bottom:40px}
+    }
+</style>
+</head>
+<body>
+<div id="wrapper">
+    <nav class="navbar header-top fixed-top navbar-expand-lg  navbar-dark bg-dark">
+        <a class="navbar-brand" href="<?=WWW_ADMIN_PATH?>">control panel</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav side-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>curses">Курсы</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>packets">Пакеты курсов
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>seminars">Семинары
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>stblocck">Статические блоки
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>video">Видео
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="nav-link dropdown-toggle collapsed">настройки</a>
+                    <ul class="list-unstyled collapse" id="homeSubmenu" style="">
+                        <li>
+                    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>settings/translation">перевод</a>
+                        </li>
+                        <li>
+                    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>users">пользователи</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>settings/misto">города</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>settings/seo">seo</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo WWW_BASE_PATH?>" target="blanc">сайт (в новом окне)</a>
+                </li>
+                
+            </ul>
+            <ul class="navbar-nav ml-md-auto d-md-flex">
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo WWW_BASE_PATH?>admin/users">Users</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo WWW_BASE_PATH?>auth/logout">Logout</a>
+                </li>
+                
+            </ul>
+        </div>
+    </nav>
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <h3><?=$mod_name;?></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+        <?php 
+        if(isset($_COOKIE['message'])):
+        echo $_COOKIE['message'];
+          endif;
+        ;?>
+            <div class="card">
+                <div class="card-body">
+                    <?php echo $context;?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="imomodal" class="modal fade" role="dialog" aria-label="Add Image"></div>
+<div id="imageBrouser" class="modal" aria-hidden="false" tabindex="-1" role="dialog" aria-label="Add Image"></div>
+  
+  
+  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="<?=WWW_JS_PATH;?>summernote-bs4.js"></script>
+        <script src="<?=WWW_JS_PATH;?>summernote-ru-RU.js"></script>
+        <script src="<?=WWW_JS_PATH;?>uploadcare.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
+         <script src="<?=WWW_JS_PATH;?>admin/main.js"></script>
+        <script type="text/javascript">
+	    
+            $(function() {
+
+            $('.editor').summernote({
+			height: 200,
+			callbacks: {
+				onImageUpload: function(files)
+				{
+					var $editor = $(this);
+					var data = new FormData();
+					data.append('file', files[0]);
+					$.ajax({
+						url: "<?=WWW_ADMIN_PATH?>fs/editorupload",
+						method: 'POST',
+						data: data,
+						processData: false,
+						contentType: false,
+						success: function(response) {
+							$editor.summernote('insertImage', response);
+						}
+					});
+				},
+				onImageUploadError: null
+			},
+		});
+		$('#submitBtn').click(function() {
+			var summernoteContent = $('.summernote').summernote('code');
+			$('#result').val(summernoteContent);
+		});
+	});
+        </script>
+<script src="<?=WWW_JS_PATH;?>admin/datatables.js"></script>
+
+<script>
+    //referer
+    Cookies.set('referer', window.location.pathname);
+  //$('.DataTable').DataTable();
+  $(document).ready(function() {
+    $('select.selectpicker').selectpicker();
+    $('.DataTable').DataTable();
+} );
+$("input[type='file']").on('change', function () {
+
+     //Get count of selected files
+     var countFiles = $(this)[0].files.length;
+
+     var imgPath = $(this)[0].value;
+     var extn = imgPath.substring(imgPath.lastIndexOf('.') + 1).toLowerCase();
+     var image_holder = $("#image-holder");
+     image_holder.empty();
+
+     if (extn == "gif" || extn == "png" || extn == "jpg" || extn == "jpeg") {
+         if (typeof (FileReader) != "undefined") {
+
+             //loop for each file selected for uploaded.
+             for (var i = 0; i < countFiles; i++) {
+
+                 var reader = new FileReader();
+                 reader.onload = function (e) {
+                     $("<img />", {
+                         "src": e.target.result,
+                             "class": "thumb-image"
+                     }).appendTo(image_holder);
+                 }
+
+                 image_holder.show();
+                 reader.readAsDataURL($(this)[0].files[i]);
+             }
+
+         } else {
+             alert("This browser does not support FileReader.");
+         }
+     } else {
+         alert("Pls select only images");
+     }
+ });
+</script>
+</body>
+</html>

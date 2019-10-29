@@ -1,0 +1,1 @@
+CREATE DATABASE `courses` /*!40100 COLLATE 'utf8_unicode_ci' */;
