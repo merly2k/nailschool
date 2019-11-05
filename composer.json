@@ -17,6 +17,7 @@
         "eternicode/bootstrap-datepicker": "dev-master",
         "nesbot/carbon": "dev-master",
         "league/oauth2-client": "dev-master",
-        "meyfa/php-svg": "dev-master"
+        "meyfa/php-svg": "dev-master",
+        "ipinfo/ipinfo": "dev-master"
     }
 }

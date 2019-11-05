@@ -2,6 +2,13 @@
 session_start();
 $_SESSION['start']= time();
 $_SESSION['lifetime']= ini_get("session.gc_maxlifetime");
+if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+    $ip = $_SERVER['HTTP_CLIENT_IP'];
+} elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+    $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+} else {
+    $ip = $_SERVER['REMOTE_ADDR'];
+}
 
 $p=dirname(__FILE__);
 $template='tool'; //default template name
@@ -44,7 +51,11 @@ function autoload($class_name) {
     }
     return false;
 }
-
+use ipinfo\ipinfo\IPinfo;
+$ato='4c1c651e83ba7a';
+$infos=new IPinfo($ato);
+$_SESSION['userstat']=$infos->getDetails($ip);
+//echo $infos->getDetails($ip);
 $app = new app();
 $app->set('protocol', $protocol);
     foreach($_SESSION as $name=>$value){
@@ -76,4 +87,16 @@ if (PRODUCT == 'dev') {
 //$mempik= memory_get_peak_usage(true)/10485764;
 //echo "максимально используемая память".round($mempik, 3)."Mb";
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
