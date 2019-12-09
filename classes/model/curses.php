@@ -56,13 +56,13 @@ class curses extends \db {
 		. "`link`, `name_ua`, `name_ru`, "
 		. " `image`, `anonce_ru`, `anonce_ua`, `decription_ru`,"
 		. " `fulltext_ru`, `decription_ua`, `fulltext_ua`, `display`,"
-		. " `miso`, `start`, `finish`, `coast`, `action`, `ac_coast`"
+		. " `miso`, `start`, `finish`, `coast`, `action`, `ac_coast`,`basecolor` "
 		. ")"
 		. " VALUES ("
 		. "'$link', '$name_ua', '$name_ru', "
 		. " '$image', '$anonce_ru', '$anonce_ua', '$decription_ru',"
 		. " '$fulltext_ru', '$decription_ua', '$fulltext_ua', '$display',"
-		. " '$miso', '$start', '$finish', '$coast', '$action', '$ac_coast'"
+		. " '$miso', '$start', '$finish', '$coast', '$action', '$ac_coast','$basecolor'"
 		. ");");
 	return $this->lastState;
     }
@@ -82,6 +82,7 @@ class curses extends \db {
 
 
 }
+
 
 
 

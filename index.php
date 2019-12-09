@@ -51,11 +51,17 @@ function autoload($class_name) {
     }
     return false;
 }
-use ipinfo\ipinfo\IPinfo;
+if(!isset($_SESSION['userinfo'])){
 $ato='4c1c651e83ba7a';
-$infos=new IPinfo($ato);
-$_SESSION['userstat']=$infos->getDetails($ip);
-//echo $infos->getDetails($ip);
+$infos="https://ipinfo.io/$ip?token=$ato";
+$_SESSION['userinfo']=file_get_contents($infos);
+}else{
+    $stat= new db();
+    $q="INSERT INTO `vizitor` (`info`,`vizit` ,`vdate`) VALUES ('".$_SESSION['userinfo']."',1 , current_timestamp())
+		    ON DUPLICATE KEY UPDATE `vizit`=`vizit`+1, `vdate`=current_timestamp();";
+    $stat->query($q);
+    //echo $q.' '.$stat->lastState;
+}
 $app = new app();
 $app->set('protocol', $protocol);
     foreach($_SESSION as $name=>$value){
@@ -87,6 +93,26 @@ if (PRODUCT == 'dev') {
 //$mempik= memory_get_peak_usage(true)/10485764;
 //echo "максимально используемая память".round($mempik, 3)."Mb";
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

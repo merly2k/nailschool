@@ -43,6 +43,15 @@ $misto='<a id="choseCity" class="dropdown-toggle chose-city__current">'
 		//print_r($curs);
 		$name='name_'.$lang;
 		$anonce='anonce_'.$lang;
+		if ($lang=='ua')
+		{
+		$ddey=numberof($curs->finish, ' д', array('ень', 'ні', 'нів'))    ;
+		}
+		else
+		{
+		$ddey=numberof($curs->finish, ' д', array('ень', 'ня', 'ней'))    ;
+		}
+		if($curs->ac_coast>0){$price=$curs->ac_coast;}else{$price=$curs->coast;}
     $item.='<a class="course__item" href="'.WWW_BASE_PATH.'curses/curse/'.$curMistoLink.'/'.$curs->link.'">
                     <div>
 			<h2 class="course__headline"><strong>'.$curs->$name.'</strong></h2>
@@ -50,9 +59,9 @@ $misto='<a id="choseCity" class="dropdown-toggle chose-city__current">'
                     </div>
                     <div class="course__price">
 							<div class="course__price__price">
-								<strong>'.$curs->coast.'</strong> грн <div class="pod"></div></div>
+								<strong>'.$price.'</strong> грн <div class="pod"></div></div>
                         <span class="course__price__day">
-								<strong>'.$curs->finish.'</strong> дней</span>
+								<strong>'.$curs->finish.'</strong>'.$ddey.'</span>
                     </div>
                 </a>';
 }
@@ -84,6 +93,11 @@ foreach ($packs->getPackets($link) as $k){
 	    $kcount++;
 	}
     }
+    $econ=($lang=='ua')? 'ЕКОНОМІЯ' : 'ЭКОНОМИЯ';
+    $vcon=($lang=='ua')? 'Вартість з урахуванням знижки' : 'Стоимость пакета с учетом скидки';
+    $dcon=($lang=='ua')? 'Вартість всіх пакетів окремо' : 'Стоимость всех пакетов по отдельности';
+    
+    
 $filename=WWW_BASE_PATH."svggen/$kcount/$k->dayz/$lang";
 $svgimg=file_get_contents($filename);
 $packets.='<div class="container">
@@ -97,7 +111,7 @@ $packets.='<div class="container">
                     </ul>
                     <p class="alone-price">
                     <span>
-						Стоимость всех пакетов по отдельности:</span>
+						'.$dcon.':</span>
                         <span>
                         <strong class="alone-price_delete">'.$totalcoast.'</strong>грн
                     </span>
@@ -105,11 +119,11 @@ $packets.='<div class="container">
                 </div>
                 <div class="package-price">
                     <p class="package-price__title">
-                        Стоимость пакета с учетом скидки: </p>
+                        '.$vcon.': </p>
                     <div class="package-price__price"><strong>'.$k->coast.'</strong>грн</div>
                     <div class="package-price__price">
-                        <strong>
-                            ЭКОНОМИЯ </strong>
+                        <strong>'.$econ.'
+                        </strong>
                         <span class="package-price__price_alert">
                         <strong>'.($totalcoast-$k->coast).'</strong>грн
                     </span>

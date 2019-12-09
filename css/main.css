@@ -546,6 +546,30 @@
 .course__item:nth-child(12) {
     background-color: #411151;
 }
+.course__item:nth-child(13) {
+    background-color: #C25283;
+}
+.course__item:nth-child(14) {
+    background-color: #C04000;
+}
+.course__item:nth-child(15) {
+    background-color: #B5A642;
+}
+.course__item:nth-child(16) {
+    background-color: #C9BE62;
+}
+.course__item:nth-child(17) {
+    background-color: #FBB917;
+}
+.course__item:nth-child(18) {
+    background-color: #CCFB5D;
+}
+.course__item:nth-child(19) {
+    background-color: #6AFB92;
+}
+.course__item:nth-child(20) {
+    background-color: #E8ADAA;
+}
 
 .sem {
     cursor: auto !important;

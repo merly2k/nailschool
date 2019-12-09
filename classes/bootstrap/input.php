@@ -118,7 +118,7 @@ class input {
 			    if ($v->label != ''):
 				if ($k == 'image')
 				{
-				    $out .= $this->input("f$c", $v->label, 'file', $k);
+				    $out .= $this->input("f$c", $v->label, 'file', $k,'',$data[$k]);
 				}
 				else
 				{
@@ -166,7 +166,9 @@ class input {
 	$ap	 = '';
 	if ($type == 'file')
 	{
-	    $ap = '<div id="image-holder"></div>';
+	    $ap = '<div id="image-holder">'
+		    . '<img src="'.WWW_IMAGE_PATH.$val.'" class="thumb-image">'
+		    . '</div>';
 	}
 	return '<div class="form-group row">
       <label class="control-label col-4" for="' . $id . '">' . $label . ' </label>
@@ -250,15 +252,6 @@ class input {
     }
 
 }
-
-
-
-
-
-
-
-
-
 
 
 

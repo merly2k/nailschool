@@ -7,7 +7,15 @@ use SVG\Nodes\Structures\SVGDefs;
 use SVG\Nodes\Structures\SVGStyle;
 function getPackImg($ids=1,$days=1,$lang) {
 
-    if($lang=='ua'){$text5='днів';}else{$text5='дней';}
+    //if($lang=='ua'){$text5='днів';}else{$text5='дней';}
+    if ($lang=='ua')
+		{
+		$text5=numberof($days, ' д', array('ень', 'ні', 'нів'))    ;
+		}
+		else
+		{
+		$text5=numberof($days, ' д', array('ень', 'ня', 'ней'))    ;
+		}
 // image with 100x100 viewport
 $image = new SVG('300', '300');
 $style=new SVGDefs();

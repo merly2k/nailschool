@@ -1,4 +1,16 @@
 <?php
+function numberof($numberof, $value, $suffix)
+{
+    $keys = array(2, 0, 1, 1, 1, 2);
+    $mod = $numberof % 100;
+    $suffix_key = $mod > 4 && $mod < 20 ? 2 : $keys[min($mod%10, 5)];
+     
+    return $value . $suffix[$suffix_key];
+    /* образование окончаний для слов после числа
+     *  numberof($numberof, ' д', array('ень', 'ні', 'нів'));выводит 1 день, 2 дні и так далее
+     */
+}
+
 
 function get_client_ip() {
 $ipaddress	 = '';

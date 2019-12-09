@@ -26,7 +26,7 @@ foreach ($km->getall()as $k => $r)
 
     $tfut		 .= '<div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-2">
 	<b>' . $r->$mlang . '</b>
-		<p class="tel">+38 067 867 65 33</p>
+		<p class="tel">'.$r->phones.'</p>
 		<span class="social-icon">
 	        <a href=""><img class="link-shop" src="' . WWW_IMG_PATH . 'tw.png" alt=""></a>
 	        <a href=""><img class="link-shop" src="' . WWW_IMG_PATH . 'fb.png" alt=""></a>
@@ -56,10 +56,12 @@ foreach ($km->getall()as $k => $r)
 		    <div class="text  align-middle">
 			<span class="gradient-text">' . $r->$mlang . '</span>
 			<p>' . $r->$addr . '</p>
+			<a href="' . WWW_BASE_PATH . 'curses/' . $r->link . '/">
 			<div class="link-cities gradient-text">
 			    <span><b>' . $butons[$lang]['b1'] . '</b></span>
-			    <a class="site_btn" href="' . WWW_BASE_PATH . 'curses/' . $r->link . '/">' . $butons[$lang]['b2'] . '</a>
+			    <span class="site_btn">' . $butons[$lang]['b2'] . '</span>
 			</div>
+			</a>
 		    </div>
 		</div>
 	</div>
@@ -72,10 +74,12 @@ foreach ($km->getall()as $k => $r)
 		    <div class="text  align-middle">
 			<span class="gradient-text">' . $r->$mlang . '</span>
 			<p>' . $r->$addr . '</p>
+			<a href="' . WWW_BASE_PATH . 'curses/' . $r->link . '/">
 			<div class="link-cities gradient-text">
 			    <span><b>' . $butons[$lang]['b1'] . '</b></span>
-			    <a class="site_btn" href="' . WWW_BASE_PATH . 'curses/' . $r->link . '/">' . $butons[$lang]['b2'] . '</a>
+			    <span class="site_btn">' . $butons[$lang]['b2'] . '</span>
 			</div>
+			</a>
 		    </div>
 		</div>
 		<div class="col-md-6">
@@ -215,3 +219,8 @@ foreach ($film->getList() as $vi)
 $tpl = 'indexn';
 include TEMPLATE_DIR . $tpl . ".html";
 ?>
+
+
+
+
+

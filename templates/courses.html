@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="<?=WWW_CSS_PATH?>main.css">
 	<script src="https://kit.fontawesome.com/e66f078689.js" integrity="sha384-oDvhHAiExTfmcX9h/DT0+Eibx0CQAhqTj+JLYfNHLjfJ2c6IQfDAbX4LuZswwcUA" crossorigin="anonymous"></script>
 	<title><?=$cc?> — Nails School</title>
-	 <?php $meta= metatags();echo $meta;?>
+	<?php $meta= metatags();echo $meta;?>
 	<meta name="robots" content="noindex,follow">
 	<link rel="dns-prefetch" href="http://s.w.org/">
 	<link rel="alternate" type="application/rss+xml" title="Nails School » Лента" href="<?=WWW_BASE_PATH?>feed/">
@@ -19,6 +19,7 @@
 	<!--[if lt IE 9]>
 	<link rel='stylesheet' id='fancybox-ie-css'  href='<?=WWW_BASE_PATH?>wp-content/plugins/fancybox-for-wordpress/assets/css/fancybox.ie.css?ver=1.3.4' type='text/css' media='all' />
 	<![endif]-->
+	<link href="<?=WWW_CSS_PATH?>flag-icon.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" id="bodhi-svgs-attachment-css" href="<?=WWW_CSS_PATH?>svgs-attachment.css" type="text/css" media="all">
 	<link rel="stylesheet" id="popup-maker-site-css" href="<?=WWW_CSS_PATH?>site.css" type="text/css" media="all">
 	<style id="popup-maker-site-inline-css" type="text/css">
@@ -90,8 +91,8 @@
 	    div.fancybox-caption {color:#333333}div.fancybox-caption p.caption-title {background:#fff; width:auto;padding:10px 30px;}
 	</style>
 
-	
-<style type="text/css">
+
+	<style type="text/css">
 	    @media(min-width: 1360){
 
 		body {
@@ -222,7 +223,7 @@
 						    </ul>
 						</div>
 					    </div>
-					  
+
 					    <div class="right">	
 						<nav class="d-none d-md-block" aria-label="breadcrumb">
 						    <ol class="breadcrumb breadcrumb-list">
@@ -231,15 +232,29 @@
 							<li class="breadcrumb-item breadcrumb-list__item active"><?=$cc?></li>
 						    </ol>
 						</nav>
-						<div class="tel-sity"><span>тел:  +38 (099) 567 54 56</span></div>
+						<div class="tel-sity"><span><?=$currentMisto->phones?></span></div>
 
-						<nav aria-label="breadcrumb" class="lang-hide">
-						    <ol class="breadcrumb lang-list">
-							<li class="breadcrumb-item lang-list__item">
-							    <a class="lang-list__link" href="<?=WWW_BASE_PATH?>uk/dnipro/">Укр</a></li>
-							<li class="breadcrumb-item lang-list__item active" aria-current="page">Рус</li>
-						    </ol>
-						</nav>
+
+						<div class="right">
+						<a id="lanSel" class="dropdown-toggle" data-toggle="dropdown" role="button" lang="RU">
+						    <span class="lanNavSel">
+							<i id="imgNavSel" class="flag-icon flag-icon-squared flag-icon-ru"></i> RU</span>
+						    <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+						    <li>
+							<a id="ua" class="language ls" lang="UA">
+							    <span><i id="imgNavIta" class="flag-icon flag-icon-squared flag-icon-ua"></i> UA</span>
+							</a>
+						    </li>
+						    <li>
+							<a id="Ru" class="language ls" lang="RU">
+							    <span>
+								<i id="imgNavRu" class="flag-icon flag-icon-squared flag-icon-ru"></i> RU</span>
+							</a>
+						    </li>
+						</ul>
+						</div>
+
 					    </div>
 					</div>
 				    </div>
@@ -521,7 +536,7 @@
 	<script type="text/javascript" src="<?=WWW_JS_PATH?>position.js"></script>
 	<script type="text/javascript" src="<?=WWW_JS_PATH?>site.js"></script>
 	<script id="dsq-count-scr" src="<?=WWW_JS_PATH?>count.js" async=""></script>
-<script type="text/javascript">
+	<script type="text/javascript">
             jQuery(function () {
 
                 jQuery.fn.getTitle = function () { // Copy the title of every IMG tag and add it to its parent A so that fancybox can show titles
@@ -596,35 +611,87 @@
 
             })
 	</script>
-	  <script>
-                                                var _open = false;
-                                                $(document).ready(function () {
-                                                    $('.chose-city__current, .show-mob').on('click', function () {
-                                                        if (_open == false) {
-                                                            $(this).siblings(".dropdown-menu").css('display', 'block');
-                                                            $(this).addClass('active');
-                                                            _open = true;
-                                                        } else {
-                                                            $(".dropdown-menu").css('display', 'none');
-                                                            $('.chose-city__current, .show-mob').removeClass('active');
-                                                            _open = false;
-                                                        }
+	<script>
+            var _open = false;
+            $(document).ready(function () {
+                $('.chose-city__current, .show-mob').on('click', function () {
+                    if (_open == false) {
+                        $(this).siblings(".dropdown-menu").css('display', 'block');
+                        $(this).addClass('active');
+                        _open = true;
+                    } else {
+                        $(".dropdown-menu").css('display', 'none');
+                        $('.chose-city__current, .show-mob').removeClass('active');
+                        _open = false;
+                    }
 
-                                                        return false;
-                                                    });
+                    return false;
+                });
 
-                                                });
+            });
 
-                                                $(document).click(function (event) {
-                                                    if ($(event.target).closest(".dropdown-menu").length) {
-                                                        return;
-                                                    }
-                                                    $(".dropdown-menu").css('display', 'none');
-                                                    $('.chose-city__current, .show-mob').removeClass('active');
+            $(document).click(function (event) {
+                if ($(event.target).closest(".dropdown-menu").length) {
+                    return;
+                }
+                $(".dropdown-menu").css('display', 'none');
+                $('.chose-city__current, .show-mob').removeClass('active');
 
-                                                    _open = false;
-                                                });
+                _open = false;
+            });
 
-                                                /////
-					    </script>
+            /////
+	</script>
+	<script>
+            $(document).ready(function () {
+                var currentId;
+                var curlang = '<?=$_SESSION["lang"];?>';
+                console.log(curlang);
+                $('.lanNavSel').html('<i id="imgNavSel" class="flag-icon flag-icon-squared flag-icon-' + curlang.toLowerCase() + '"></i> ' + curlang.toUpperCase());
+                var language = (curlang || navigator.language || navigator.browserLanguage).split('-')[0];
+                if (!currentId) {
+                    $('#lanSel').attr('lang', language);
+                }
+                ;
+
+                $('.ls').on('click',
+                        function (e)
+                        {
+                            console.log(this);
+                            var langage = ($(this).attr('lang')); // do stuff
+                            $('#lanSel').attr('lang', langage);
+                            $.ajax({
+                                url: "<?php echo WWW_BASE_PATH;?>lang",
+                                cache: false,
+                                type: "POST",
+                                data: 'curlang=' + langage,
+
+                            }).done(function (data) {
+                                console.log(data);
+
+                                window.location.reload();
+
+                            });
+                        });
+            });
+
+	</script>
+
     </body></html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
