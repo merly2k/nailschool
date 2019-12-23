@@ -32,7 +32,7 @@ class misto extends \db{
 	return $temp[0];
     }
     function update($param,$id){
-	unset($param['files']);
+	
 	//print_r($param) ;
 	$q = "UPDATE `misto` SET ";
 	foreach ($param as $k => $v) {
@@ -45,6 +45,8 @@ class misto extends \db{
     }
 }
 	
+
+
 
 
 

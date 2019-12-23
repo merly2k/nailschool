@@ -13,8 +13,8 @@
 	<?php $meta= metatags();echo $meta;?>
 	<meta name="robots" content="noindex,follow">
 	<link rel="dns-prefetch" href="http://s.w.org/">
-<!-- 	<link rel="stylesheet" id="wp-block-library-css" href="<?=WWW_CSS_PATH?>style.css" type="text/css" media="all">
-	<link rel="stylesheet" id="contact-form-7-css" href="<?=WWW_CSS_PATH?>styles.css" type="text/css" media="all"> -->
+	<!-- 	<link rel="stylesheet" id="wp-block-library-css" href="<?=WWW_CSS_PATH?>style.css" type="text/css" media="all">
+		<link rel="stylesheet" id="contact-form-7-css" href="<?=WWW_CSS_PATH?>styles.css" type="text/css" media="all"> -->
 	<link rel="stylesheet" id="fancybox-css" href="<?=WWW_CSS_PATH?>fancybox.css" type="text/css" media="all">
 	<!--[if lt IE 9]>
 	<link rel='stylesheet' id='fancybox-ie-css'  href='<?=WWW_BASE_PATH?>wp-content/plugins/fancybox-for-wordpress/assets/css/fancybox.ie.css?ver=1.3.4' type='text/css' media='all' />
@@ -24,7 +24,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900&display=swap&subset=cyrillic" rel="stylesheet"> 
 	<style id="popup-maker-site-inline-css" type="text/css">
 	    /* Popup Google Fonts */
-/*	    @import url('//fonts.googleapis.com/css?family=Montserrat|Acme');*/
+	    /*	    @import url('//fonts.googleapis.com/css?family=Montserrat|Acme');*/
 
 	    /* Popup Theme 83: Тема по умолчанию */
 	    .pum-theme-83, .pum-theme-tema-po-umolchaniyu {  } 
@@ -102,404 +102,494 @@
     </head>
 
     <body class="page-template-default page page-id-134 page-child parent-pageid-255 singular image-filters-enabled ns">
-		<header>
-	    	<nav class="navbar navbar-expand-lg navbar-light">
-	    		<div class="container">
-					<a class="navbar-brand" href="<?=WWW_BASE_PATH?>"><?=l('hh1')?></a>
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarmenu" aria-controls="navbarmenu" aria-expanded="false" aria-label="Toggle navigation">
-						<span class="navbar-toggler-icon"></span>
-					</button>
+	<header>
+	    <nav class="navbar navbar-expand-lg navbar-light">
+		<div class="container">
+		    <a class="navbar-brand" href="<?=WWW_BASE_PATH?>"><?=l('hh1')?></a>
+		    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarmenu" aria-controls="navbarmenu" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		    </button>
 
-					<div class="collapse navbar-collapse" id="navbarmenu">
-						<ul class="navbar-nav m-auto d-none d-lg-block cities-menu">
-							<li class="nav-item dropdown">
-								<a class="nav-link dropdown-toggle" href="#" id="navbardropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-map-marker-alt"></i>&nbsp;<?=$misto;?></a>
-								<div class="dropdown-menu" aria-labelledby="navbardropdown">
-									<a class="dropdown-item" href="<?=WWW_BASE_PATH?>kiev/">Киев</a>
-									<a class="dropdown-item" href="<?=WWW_BASE_PATH?>zaporozhe/">Запорожье</a>
-									<a class="dropdown-item" href="<?=WWW_BASE_PATH?>nikolaev/">Николаев</a>
-								</div>
-							</li>
-						</ul>
-						<ul class="navbar-nav mr-auto main-menu">
-							<li class="nav-item">
-					        	<a class="nav-link" href="#">Головна</a>
-					      	</li>
-					      	<li class="nav-item d-none d-lg-block">
-					        	<a class="nav-link separator">/</a>
-					      	</li>
-					      	<li class="nav-item">
-					        	<a class="nav-link" href="#">Курси у Дніпрі</a>
-					      	</li>
-					      	<li class="nav-item d-none d-lg-block">
-					        	<a class="nav-link separator">/</a>
-					      	</li>
-					      	<li class="nav-item">
-					        	<a class="nav-link" href="#">Практичний курс манікюру</a>
-					      	</li>
-						</ul>
-						<ul class="navbar-nav lang-menu d-none d-lg-flex">
-							<li class="nav-item active">
-					        	<a class="nav-link" href="#" lang="UA">Укр</a>
-					      	</li>
-					      	<li class="nav-item d-none d-lg-block">
-					        	<a class="nav-link separator">/</a>
-					      	</li>
-					      	<li class="nav-item">
-					        	<a class="nav-link" href="#" lang="RU">Рус</a>
-					      	</li>
-						</ul>
-					</div>
-					<div id="navbarmenu" class="xs-menu d-block d-lg-none">
-						<ul class="navbar-nav mr-auto row no-gutters">
-							<li class="nav-item dropdown col-9">
-								<a class="nav-link dropdown-toggle" href="#" id="navbardropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-map-marker-alt"></i>&nbsp;<?=$misto;?></a>
-								<div class="dropdown-menu" aria-labelledby="navbardropdown">
-									<a class="dropdown-item" href="<?=WWW_BASE_PATH?>kiev/">Киев</a>
-									<a class="dropdown-item" href="<?=WWW_BASE_PATH?>zaporozhe/">Запорожье</a>
-									<a class="dropdown-item" href="<?=WWW_BASE_PATH?>nikolaev/">Николаев</a>
-								</div>
-							</li>
-							<li class="nav-item col-1 active">
-					        	<a class="nav-link text-right" href="#" lang="UA">Укр</a>
-					      	</li>
-					      	<li class="nav-item col-1">
-					        	<a class="nav-link text-center separator">/</a>
-					      	</li>
-					      	<li class="nav-item col-1">
-					        	<a class="nav-link text-left" href="#" lang="RU">Рус</a>
-					      	</li>
-						</ul>
-					</div>
+		    <div class="collapse navbar-collapse" id="navbarmenu">
+			<ul class="navbar-nav m-auto d-none d-lg-block cities-menu">
+			    <li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbardropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-map-marker-alt"></i>&nbsp;<?=$misto;?></a>
+				<div class="dropdown-menu" aria-labelledby="navbardropdown">
+				    <a class="dropdown-item" href="<?=WWW_BASE_PATH?>curses/kiev/">Киев</a>
+				    <a class="dropdown-item" href="<?=WWW_BASE_PATH?>curses/zaporozhe/">Запорожье</a>
+				    <a class="dropdown-item" href="<?=WWW_BASE_PATH?>curses/nikolaev/">Николаев</a>
 				</div>
-	    	</nav>
-		
-			<div class="container">
-				<div class="row row-eq-height">
-					<div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-6 themed-grid-col">
-						<a href="<?=WWW_BASE_PATH?>"><img src="<?=WWW_IMG_PATH?>logo.svg" alt="" class="logo m-auto d-block"></a>
-						<h1 class="gradient-text text-center text-xl-left"><?=$k->$mlang?></h1>
-						<p class="description-text text-center text-xl-left"><?=l('u1');?></b></p>
-						<div class="row checklist-course">
-							<div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 themed-grid-col pl-4 pr-0">
-								<table>
-									<tbody>
-										<tr>
-											<td><img src="<?=WWW_IMG_PATH?>kalendar.svg" alt="" /></td>
-											<td class="align-middle"><p><?=l('m9')?></p></td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-							<div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 themed-grid-col pl-4 pr-0">
-								<table>
-									<tbody>
-										<tr>
-											<td><img src="<?=WWW_IMG_PATH?>people.svg" alt="" /></td>
-											<td class="align-middle"><p><?=l('r2')?></p></td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</div>
-						<div class="row checklist-course">
-							<div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 themed-grid-col pl-4 pr-0">
-								<table>
-									<tbody>
-										<tr>
-											<td><img src="<?=WWW_IMG_PATH?>krema.svg" alt="" /></td>
-											<td class="align-middle"><p><?=l('r3');?></p></td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-							<div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 themed-grid-col pl-4 pr-0">
-								<table>
-									<tbody>
-										<tr>
-											<td><img src="<?=WWW_IMG_PATH?>certificate.svg" alt="" /></td>
-											<td class="align-middle"><p><!-- <?=l('r4');?> -->Дипломи <b>міжнародного</b>&nbsp;зразка</p></td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</div>
-					</div>
-					<div class="col-12 col-sm-12 col-md-12 col-lg-7 col-xl-6 themed-grid-col">
-						<div class="row d-none d-lg-flex d-xl-none girl" style="background-image: url(<?=WWW_IMG_PATH?>girl.png);"></div>
-					</div>
+			    </li>
+			</ul>
+			<ul class="navbar-nav mr-auto main-menu">
+			    <li class="nav-item">
+				<a class="nav-link" href="#"><?=l('m1')?></a>
+			    </li>
+			    <li class="nav-item d-none d-lg-block">
+				<a class="nav-link separator">/</a>
+			    </li>
+			    <li class="nav-item">
+				<a class="nav-link" href="<?=WWW_BASE_PATH?>curses/<?=$this->param[0]?>/"><?=$cc?></a>
+			    </li>
+			    <li class="nav-item d-none d-lg-block">
+				<a class="nav-link separator">/</a>
+			    </li>
+			    <li class="breadcrumb-item breadcrumb-list__item active" aria-current="page">
+				<a class="nav-link"><?=$k->$mlang?></a>
+			    </li>
+			</ul>
+			<ul class="navbar-nav lang-menu d-none d-lg-flex">
+			    <li class="nav-item">
+			       	<a class="nav-link text-right ls" href="" lang="UA">Укр</a>
+			    </li>
+			    <li class="nav-item col-1">
+				<a class="nav-link text-center separator">/</a>
+			    </li>
+			    <li class="nav-item col-1">
+				<a class="nav-link text-left ls" href="" lang="RU">Рус</a>
+			    </li>
+			</ul>
+			
+		    </div>
+		    <div id="navbarmenu" class="xs-menu d-block d-lg-none">
+			<ul class="navbar-nav mr-auto row no-gutters">
+			    <li class="nav-item dropdown col-9">
+				<a class="nav-link dropdown-toggle" href="#" id="navbardropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-map-marker-alt"></i>&nbsp;<?=$misto;?></a>
+				<div class="dropdown-menu" aria-labelledby="navbardropdown">
+				    <a class="dropdown-item" href="<?=WWW_BASE_PATH?>kiev/">Киев</a>
+				    <a class="dropdown-item" href="<?=WWW_BASE_PATH?>zaporozhe/">Запорожье</a>
+				    <a class="dropdown-item" href="<?=WWW_BASE_PATH?>nikolaev/">Николаев</a>
 				</div>
-			</div>
-		</header>
-		<main>
-			<section class="nearest-course" id="sale">
-				<div class="container">
-					<div class="row row-eq-height">
-						<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 themed-grid-col">
-							<p><b>Найближчий курс:</b></p>
-							<div class="row">
-								<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 themed-grid-col text-center location">
-									<div class="align-middle">
-										<img src="<?=WWW_IMG_PATH?>location-pink.svg" alt="">
-									</div>
-									<p class="text-center"><?=$mista[$town]?></p>
-								</div>
-								<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 themed-grid-col text-center date">
-									<div class="align-middle">
-										<span class="align-middle"><?=$start?></span>
-									</div>
-									<p class="text-center"><?=$monts?></p>
-								</div>
-								<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 themed-grid-col text-center duration">
-									<div class="align-middle">
-										<span class="align-middle"><?=$k->finish?></span>
-									</div>
-									<p class="text-center">днів</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-8 themed-grid-col">
-							<div class="sale text-center">
-								<p>Акція! <del>2 200</del> <br class="d-flex d-sm-none" /><b>2&nbsp;000</b>&nbsp;<span>грн</span></p>
-								<a href="kurs-manikyura" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#akcia">Записатися на курс!</a>
-							</div>
-						</div>
-						<div class="col-12 col-sm-0 col-md-0 col-lg-0 col-xl-0 themed-grid-col girl d-none d-xl-flex">
-							<img src="<?=WWW_IMG_PATH?>girl.png" alt="">
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="about">
-				<div class="row row-eq-height">
-					<div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 themed-grid-col nails">
-						<img src="/images/nails.png" alt="">
-					</div>
-					<div class="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7 themed-grid-col pt-4 pb-2 px-4 px-lg-4 px-xl-5 five-steps">
-						<div class="px-lg-0 px-xl-5 pt-3">
-							<h3 class="text-center text-uppercase font-weight-bold gradient-text pt-1 mb-1">5 простых шагов</h3>
-							<h3 class="text-center text-uppercase font-weight-bold gradient-block py-1 mb-1">Стать мастером маникюра</h3>
-							<h3 class="text-center text-uppercase font-weight-bold gradient-text mb-0">за 5 дней!</h3>
-							<ol class="about-list">
-								<li>Позвони и получи консультацию</li>
-								<li>Пройди наш практический курс маникюра</li>
-								<li>Получи скидку 5% на покупку стартового набора</li>
-								<li>Через 5 дней начни обслуживать клиентов</li>
-								<li>За месяц окупи обучение и зарабатывай больше</li>
-							</ol>
-							<a href="#" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#">Передзвоніть мені!</a>
-							<p class="text-center"><small>Закажите обратный звонок и наш менеджер перезвонит тебе в ближайшее время</small></p>
-						</div>
-					</div>
-			</section>
-			<section class="course-program">
-				<div class="row row-eq-height">
-					<div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 themed-grid-col py-5 px-4 px-lg-4 px-xl-5">
-						<div class="px-lg-0 px-xl-5 py-5">
-							<h3 class="text-center text-uppercase font-weight-bold gradient-text pt-1 mb-1">Базовий манікюр</h3>
-							<h3 class="text-center text-uppercase font-weight-bold gradient-block py-1 mb-1">Програма курсу</h3>
-							<h3 class="text-center text-uppercase font-weight-bold gradient-text mb-0"><small>обрезной + комбинированный</small></h3>
-							<ol class="about-list">
-								<li>Теоретическая часть (анатомия, заболевания, стерилизация, выбор инструментов)</li>
-								<li>Постановка руки для работы с проф. инструментом</li>
-								<li>Техника обрезного маникюра</li>
-								<li>Комбинированный маникюр</li>
-								<li>Выравнивание ногтевой пластины прозрачной и камуфлирующей базами</li>
-								<li>Покрытие гель-лаком встык и под кутикулу</li>
-								<li>Ремонт ногтя полигелем</li>
-								<li>Отработка навыков на 8 моделях (обе руки)</li>
-							</ol>
-							<a href="#" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#">Детальніше</a>
-							<p class="text-center"><small>мы предоставляем базу моделей и расходные материалы высокого качества</small></p>
-						</div>
-					</div>
-					<div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 themed-grid-col m-auto px-5">
-						<iframe width="560" height="380" class="px-xl-5" src="https://www.youtube.com/embed/TAgL-NM4Yh8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-					</div>
-			</section>
-			<section class="advantages py-5">
-				<h2 class="text-center text-uppercase font-weight-bold mb-5 gradient-text"><span class="font-weight-light">Чому</span> обирають нас&nbsp;?</h2>
-				<div class="container">
-					<div class="row">
-						<div class="col-12 col-sm-6 col-lg-4 col-xl-4 text-center pb-5 why">
-							<img src="<?=WWW_IMG_PATH?>sova.svg" alt="">
-							<h4 class="text-uppercase pt-3">Знання</h4>
-							<hr />
-							<p>Управляя сетью салонов красоты, мы точно знаем, чему тебя научить!</p>
-						</div>
-						<div class="col-12 col-sm-6 col-lg-4 col-xl-4 text-center pb-5 why">
-							<img src="<?=WWW_IMG_PATH?>nagrada.svg" alt="">
-							<h4 class="text-uppercase pt-3">Майстерність</h4>
-							<hr />
-							<p>Наши инструкторы - ведущие мастера салонов, победители международных конкурсов, профессиональные преподаватели.</p>
-						</div>
-						<div class="col-12 col-sm-6 col-lg-4 col-xl-4 text-center pb-5 why">
-							<img src="<?=WWW_IMG_PATH?>people-icon.svg" alt="">
-							<h4 class="text-uppercase pt-3">Пактика</h4>
-							<hr />
-							<p>Курс с ежедневной полноценной практикой с 2-3 моделями для закрепления навыков.</p>
-						</div>
-						<div class="col-12 col-sm-6 col-lg-4 col-xl-4 text-center pb-5 why">
-							<img class="why-block__img" src="<?=WWW_IMG_PATH?>all.svg" alt="">
-							<h4 class="text-uppercase pt-3">All inclusive</h4>
-							<hr />
-							<p>В стоимость обучения включена вся необходимая косметика и расходные материалы, предоставляется обширная база моделей.</p>
-						</div>
-						<div class="col-12 col-sm-6 col-lg-4 col-xl-4 text-center pb-5 why">
-							<img class="why-block__img" src="<?=WWW_IMG_PATH?>gramota.svg" alt="">
-							<h4 class="text-uppercase pt-3">Авторитет</h4>
-							<hr />
-							<p>Мы выдаем дипломы международного образца, наши выпускники работают по всему миру.</p>
-						</div>
-						<div class="col-12 col-sm-6 col-lg-4 col-xl-4 text-center pb-5 why">
-							<img class="why-block__img" src="<?=WWW_IMG_PATH?>krema.svg" alt="">
-							<h4 class="text-uppercase pt-3">Працевлаштування</h4>
-							<hr />
-							<p>База вакансий от салонов красоты.</p>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="about-school py-5">
-				<h2 class="text-center text-uppercase font-weight-bold my-lg-4 my-sm-2 gradient-text"><span class="font-weight-light">Про нашу</span> школу?</h2>
-				<div class="container">
-					<div class="row no-gutters pt-5">
-						<div class="d-none d-sm-block col-sm-6 col-lg-7 col-xl-7 text-center">
-							<img src="<?=WWW_IMAGE_PATH?>towns/oborudovanie-dlya-salonov.png" alt="">
-						</div>
-						<div class="col-12 col-sm-6 col-lg-5 col-xl-5 py-5 px-5 description">
-							<h4 class="text-uppercase">Оснащення</h4>
-							<p class="font-weight-light">Уникальный уровень оснащения учебных мест! Каждому предоставляется рабочее место, оборудованное по стандарту салонов «Ногтевой Сервис».</p>
-						</div>
-					</div>
-					<div class="row no-gutters">
-						<div class="col-12 col-sm-6 col-lg-5 col-xl-5 py-5 px-5 gradient-block description">
-							<h4 class="text-uppercase">Ергономіка</h4>
-							<p class="font-weight-light">Специально спроектированные классы, с мощной вытяжкой. Есть кухня, Wi-Fi, мультимедиа.</p>
-						</div>
-						<div class="d-none d-sm-block col-sm-6 col-lg-7 col-xl-7 text-center">
-							<img src="<?=WWW_IMAGE_PATH?>towns/salon-equipment.png" alt="">
-						</div>
-					</div>
-					<div class="row no-gutters">
-						<div class="d-none d-sm-block col-sm-6 col-lg-7 col-xl-7 text-center">
-							<img src="<?=WWW_IMAGE_PATH?>towns/location.png" alt="">
-						</div>
-						<div class="col-12 col-sm-6 col-lg-5 col-xl-5 py-5 px-5 description">
-							<h4 class="text-uppercase">Розташування</h4>
-							<p class="font-weight-light">Школа в центре Днепра, рядом с транспортной развязкой.</p>
-						</div>
-					</div>
-					<div class="row no-gutters">
-						<div class="col-12 col-sm-6 col-lg-5 col-xl-5 py-5 px-5 gradient-block description">
-							<h4 class="text-uppercase">Магазин</h4>
-							<p class="font-weight-light">На месте находится и магазин «Ногтевой сервис», где для учащихся действует система скидок и специальных предложений.</p>
-						</div>
-						<div class="d-none d-sm-block col-sm-6 col-lg-7 col-xl-7 text-center">
-							<img src="<?=WWW_IMAGE_PATH?>towns/tovars-dlya-salonov.png" alt="">
-						</div>
-					</div>
-					<div class="row no-gutters">
-						<div class="d-none d-sm-block col-sm-6 col-lg-7 col-xl-7 text-center">
-							<img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/photo5.png" alt="">
-						</div>
-						<div class="col-12 col-sm-6 col-lg-5 col-xl-5 py-5 px-5 description">
-							<h4 class="text-uppercase">Консультації</h4>
-							<p class="font-weight-light">Профессиональные консультации наших специалистов после обучения в Вайбере и ФБ.</p>
-						</div>
-					</div>
-					<div class="row no-gutters">
-						<div class="col-12 col-sm-6 col-lg-5 col-xl-5 py-5 px-5 gradient-block description">
-							<h4 class="text-uppercase">Віртуальний тур</h4>
-							<p class="font-weight-light">Віртуальний тур по Навчальному центру "Нігтьовий центр", Днiпро.</p>
-							<a href="#" class="btn btn-warning btn-lg text-uppercase font-weight-bold" data-toggle="modal" data-target="#">Подивитися</a>
-						</div>
-						<div class="d-none d-sm-block col-sm-6 col-lg-7 col-xl-7 text-center">
-							<img src="http://test5.blaze.co.ua/wp-content/themes/nail/img/360.svg" alt="">
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="py-5 slideshow">
-				<h2 class="text-center text-uppercase font-weight-bold my-lg-4 my-sm-2 gradient-text">Галерея</h2>
-				<div class="gallery">
-					<div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
-					<div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
-					<div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
-					<div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
-					<div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
-					<div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
-					<div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
-					<div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
-				</div>
-			</section>
-			<section class="py-5 px-3 faq">
-			    <h2 class="text-center text-uppercase font-weight-bold my-lg-4 my-sm-2 gradient-text"><?=L('m11');?></h2>
-			    <div class="container">
-					<div class="row">
-					    <div id="accordion">
-						<?=SBl(8,$lang);?>
-					    </div>
-					</div>
+			    </li>
+			    <li class="nav-item col-1 active">
+				<a class="nav-link text-right ls" href="" lang="UA">Укр</a>
+			    </li>
+			    <li class="nav-item col-1">
+				<a class="nav-link text-center separator">/</a>
+			    </li>
+			    <li class="nav-item col-1">
+				<a class="nav-link text-left ls" href="" lang="RU">Рус</a>
+			    </li>
+			</ul>
+		    </div>
+		</div>
+	    </nav>
+
+	    <div class="container">
+		<div class="row row-eq-height">
+		    <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-6 themed-grid-col">
+			<a href="<?=WWW_BASE_PATH?>"><img src="<?=WWW_IMG_PATH?>logo.svg" alt="" class="logo m-auto d-block"></a>
+			<h1 class="gradient-text text-center text-xl-left"><?=$k->$mlang?></h1>
+			<p class="description-text text-center text-xl-left"><?=l('u1');?></b></p>
+			<div class="row checklist-course">
+			    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 themed-grid-col pl-4 pr-0">
+				<table>
+				    <tbody>
+					<tr>
+					    <td><img src="<?=WWW_IMG_PATH?>kalendar.svg" alt="" /></td>
+					    <td class="align-middle"><p><?=l('m9')?></p></td>
+					</tr>
+				    </tbody>
+				</table>
 			    </div>
-			</section>
-			<section class="py-5 earnings">
-				<h2 class="text-center text-uppercase font-weight-bold my-lg-4 my-sm-2 my-xl-1 gradient-text"><?=l('m12')?></h2>
-				<h3 class="text-center">Стань майстром ‒ універсалом!</h3>
-				<div class="text-center my-4">
-					<a href="#" class="btn btn-warning btn-lg text-uppercase font-weight-bold" data-toggle="modal" data-target="#"><?=l('m14')?></a>
-				</div>
-			</section>
-			<section class="py-5 slideshow">
-				<h2 class="text-center text-uppercase font-weight-bold my-lg-4 my-sm-2 gradient-text"><?=l('r8');?></h2>
-				<div class="graduates">
-					<div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
-					<div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
-					<div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
-					<div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
-					<div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
-					<div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
-					<div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
-					<div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
-				</div>
-			</section>
-			<section class="py-5 disqus">
-				<div class="container disqus-container">
-				<div id="disqus_thread"><iframe id="dsq-app9779" name="dsq-app9779" allowtransparency="true" scrolling="no" tabindex="0" title="Disqus" style="width: 1px !important; min-width: 100% !important; border: medium none !important; overflow: hidden !important; height: 394px !important;" src="https://disqus.com/embed/comments/?base=default&amp;f=test5-advanc-com-ua&amp;t_i=test5-advanc-com-ua-150&amp;t_u=http%3A%2F%2Ftest5.blaze.co.ua%2Fuk%2F&amp;t_e=%D0%94%D0%BDi%D0%BF%D1%80%D0%BE&amp;t_d=%D0%94%D0%BDi%D0%BF%D1%80%D0%BE&amp;t_t=%D0%94%D0%BDi%D0%BF%D1%80%D0%BE&amp;s_o=default#version=a7c11c2c4a19752acf5a7bdea26a55d8" horizontalscrolling="no" verticalscrolling="no" width="100%" frameborder="0"></iframe></div>
-			    <script type="text/javascript">
-			        var disqus_shortname = "test5-advanc-com-ua";
-			        var disqus_title = "Днiпро";
-			        var disqus_url = "http://test5.blaze.co.ua/uk/";
-			        var disqus_identifier = "test5-advanc-com-ua-150";
-			    </script>
-				</div>
-			</section>
-			<section class="contacts">
-				<div class="container-fluid">
-					<div class="row row-eq-height">
-						<div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-6 themed-grid-col py-4 d-flex align-items-center address">
-							<img src="<?=WWW_IMG_PATH?>/location-pink.svg" alt="">
-							<p>ул.&nbsp;Павла Ниринберга,&nbsp;10 (бывш. ул.&nbsp;Баумана), г.&nbsp;Днепр</p>
-						</div>
-						<div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-6 themed-grid-col py-4 d-flex align-items-center viber">
-							<img src="<?=WWW_IMG_PATH?>/viber.svg" alt="">
-							<p><a href="tel:+380972625758">(097) 262-57-58</a> / <a href="tel:+380934031613">(093) 403-16-13</a> / <a href="tel:+380567940991">(056) 794-09-91</a></p>
-						</div>
-					</div>
-				</div>
-			</section>
-		</main>
-
-		<footer class="footer-page">
-		    
-		    <div id="map">
-			<iframe width="100%" height="350" src="https://maps.google.com/maps?width=700&amp;height=350&amp;hl=en&amp;q=%D0%A3%D0%BA%D1%80%D0%B0%D0%B8%D0%BD%D0%B0%2C%20%D0%B3.%D0%94%D0%BD%D0%B5%D0%BF%D1%80%2C%D1%83%D0%BB.%20%D0%9F%D0%B0%D0%B2%D0%BB%D0%B0%20%D0%9D%D0%B8%D1%80%D0%B8%D0%BD%D0%B1%D0%B5%D1%80%D0%B3%D0%B0%2C%2010+(%D0%9D%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5)&amp;ie=UTF8&amp;t=&amp;z=16&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-			<style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
-			<div class="text-center return-to-sale">
-				<a href="#sale" class="btn btn-warning btn-lg text-uppercase font-weight-bold">Повернутися до акції!</a>
+			    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 themed-grid-col pl-4 pr-0">
+				<table>
+				    <tbody>
+					<tr>
+					    <td><img src="<?=WWW_IMG_PATH?>people.svg" alt="" /></td>
+					    <td class="align-middle"><p><?=l('r2')?></p></td>
+					</tr>
+				    </tbody>
+				</table>
+			    </div>
 			</div>
-		</footer>
+			<div class="row checklist-course">
+			    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 themed-grid-col pl-4 pr-0">
+				<table>
+				    <tbody>
+					<tr>
+					    <td><img src="<?=WWW_IMG_PATH?>krema.svg" alt="" /></td>
+					    <td class="align-middle"><p><?=l('r3');?></p></td>
+					</tr>
+				    </tbody>
+				</table>
+			    </div>
+			    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 themed-grid-col pl-4 pr-0">
+				<table>
+				    <tbody>
+					<tr>
+					    <td><img src="<?=WWW_IMG_PATH?>certificate.svg" alt="" /></td>
+					    <td class="align-middle"><p><?=l('r4');?></p></td>
+					</tr>
+				    </tbody>
+				</table>
+			    </div>
+			</div>
+		    </div>
+		    <div class="col-12 col-sm-12 col-md-12 col-lg-7 col-xl-6 themed-grid-col">
+			<div class="row d-none d-lg-flex d-xl-none girl" style="background-image: url(<?=WWW_IMG_PATH?>girl.png);"></div>
+		    </div>
+		</div>
+	    </div>
+	</header>
+	<main>
+	    <section class="nearest-course" id="sale">
+		<div class="container">
+		    <div class="row row-eq-height">
+			<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 themed-grid-col">
+			    <p><b>Найближчий курс:</b></p>
+			    <div class="row">
+				<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 themed-grid-col text-center location">
+				    <div class="align-middle">
+					<img src="<?=WWW_IMG_PATH?>location-pink.svg" alt="">
+				    </div>
+				    <p class="text-center"><?=$mista[$town]?></p>
+				</div>
+				<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 themed-grid-col text-center date">
+				    <div class="align-middle">
+					<span class="align-middle"><?=$start?></span>
+				    </div>
+				    <p class="text-center"><?=$monts?></p>
+				</div>
+				<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 themed-grid-col text-center duration">
+				    <div class="align-middle">
+					<span class="align-middle"><?=$k->finish?></span>
+				    </div>
+				    <p class="text-center"><?=numberof($k->finish, ' д', $lar);?></p>
+				</div>
+			    </div>
+			</div>
+			<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-8 themed-grid-col">
+			    <div class="sale text-center">
+				<p>Акція! <del>2 200</del> <br class="d-flex d-sm-none" /><b>2&nbsp;000</b>&nbsp;<span>грн</span></p>
+				<a href="kurs-manikyura" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#akcia">Записатися на курс!</a>
+			    </div>
+			</div>
+			<div class="col-12 col-sm-0 col-md-0 col-lg-0 col-xl-0 themed-grid-col girl d-none d-xl-flex">
+			    <img src="<?=WWW_IMG_PATH?>girl.png" alt="">
+			</div>
+		    </div>
+		</div>
+	    </section>
+	    <section class="about">
+		<div class="row row-eq-height">
+		    <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 themed-grid-col nails">
+			<img src="/images/nails.png" alt="">
+		    </div>
+		    <div class="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7 themed-grid-col pt-4 pb-2 px-4 px-lg-4 px-xl-5 five-steps">
+			<div class="px-lg-0 px-xl-5 pt-3">
+			    <!--h3 class="text-center text-uppercase font-weight-bold gradient-text pt-1 mb-1">5 простых шагов</h3>
+			    <h3 class="text-center text-uppercase font-weight-bold gradient-block py-1 mb-1">Стать мастером маникюра</h3>
+			    <h3 class="text-center text-uppercase font-weight-bold gradient-text mb-0">за 5 дней!</h3>
+			    <ol class="about-list">
+				<li>Позвони и получи консультацию</li>
+				<li>Пройди наш практический курс маникюра</li>
+				<li>Получи скидку 5% на покупку стартового набора</li>
+				<li>Через 5 дней начни обслуживать клиентов</li>
+				<li>За месяц окупи обучение и зарабатывай больше</li>
+			    </ol--><?=$decription;?>
+			    <a href="#" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#"><?=l('calback_btn')?></a>
+			    <p class="text-center"><small><?=l('curse_calback')?></small></p>
+			</div>
+			
+		    </div>
+	    </section>
+	    <section class="course-program">
+		<div class="row row-eq-height">
+			<div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 themed-grid-col py-5 px-4 px-lg-4 px-xl-5">
+				<div class="px-lg-0 px-xl-5 py-5">
+					<!--h3 class="text-center text-uppercase font-weight-bold gradient-text pt-1 mb-1">Базовий манікюр</h3>
+					<h3 class="text-center text-uppercase font-weight-bold gradient-block py-1 mb-1">Програма курсу</h3>
+					<h3 class="text-center text-uppercase font-weight-bold gradient-text mb-0"><small>обрезной + комбинированный</small></h3>
+					<ol class="about-list">
+						<li>Теоретическая часть (анатомия, заболевания, стерилизация, выбор инструментов)</li>
+						<li>Постановка руки для работы с проф. инструментом</li>
+						<li>Техника обрезного маникюра</li>
+						<li>Комбинированный маникюр</li>
+						<li>Выравнивание ногтевой пластины прозрачной и камуфлирующей базами</li>
+						<li>Покрытие гель-лаком встык и под кутикулу</li>
+						<li>Ремонт ногтя полигелем</li>
+						<li>Отработка навыков на 8 моделях (обе руки)</li>
+					</ol-->
+		<?=$fulltext?>
+					<a href="#" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#"><?=l('detail_btn')?></a>
+					<p class="text-center"><small><?=l('detail')?></small></p>
+				</div>
+			</div>
+			<div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 themed-grid-col m-auto px-5">
+				<iframe width="560" height="380" class="px-xl-5" src="https://www.youtube.com/embed/TAgL-NM4Yh8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+	    </section>
+	    <section class="advantages py-5">
+		<h2 class="text-center text-uppercase font-weight-bold mb-5 gradient-text"><span class="font-weight-light">Чому</span> обирають нас&nbsp;?</h2>
+		<div class="container">
+		    <div class="row">
+			<div class="col-12 col-sm-6 col-lg-4 col-xl-4 text-center pb-5 why">
+			    <img src="<?=WWW_IMG_PATH?>sova.svg" alt="">
+			    <?=SBl(2,$lang);?>
+			</div>
+			<div class="col-12 col-sm-6 col-lg-4 col-xl-4 text-center pb-5 why">
+			    <img src="<?=WWW_IMG_PATH?>nagrada.svg" alt="">
+			    <?=SBl(3,$lang);?>
+			</div>
+			<div class="col-12 col-sm-6 col-lg-4 col-xl-4 text-center pb-5 why">
+			    <img src="<?=WWW_IMG_PATH?>people-icon.svg" alt="">
+			    <?=SBl(4,$lang);?>
+			</div>
+			<div class="col-12 col-sm-6 col-lg-4 col-xl-4 text-center pb-5 why">
+			    <img class="why-block__img" src="<?=WWW_IMG_PATH?>all.svg" alt="">
+			    <?=SBl(5,$lang);?>
+			</div>
+			<div class="col-12 col-sm-6 col-lg-4 col-xl-4 text-center pb-5 why">
+			    <img class="why-block__img" src="<?=WWW_IMG_PATH?>gramota.svg" alt="">
+			    <?=SBl(6,$lang);?>
+			</div>
+			<div class="col-12 col-sm-6 col-lg-4 col-xl-4 text-center pb-5 why">
+			    <img class="why-block__img" src="<?=WWW_IMG_PATH?>krema.svg" alt="">
+			    <?=SBl(7,$lang);?>
+			</div>
+		    </div>
+		</div>
+	    </section>
+	    <section class="about-school py-5">
+		<h2 class="text-center text-uppercase font-weight-bold my-lg-4 my-sm-2 gradient-text"><span class="font-weight-light">Про нашу</span> школу?</h2>
+		<div class="container">
+		    <div class="row no-gutters pt-5">
+			<div class="d-none d-sm-block col-sm-6 col-lg-7 col-xl-7 text-center">
+			    <img src="<?=WWW_IMAGE_PATH?>towns/oborudovanie-dlya-salonov.png" alt="">
+			</div>
+			<div class="col-12 col-sm-6 col-lg-5 col-xl-5 py-5 px-5 description">
+			    <h4 class="text-uppercase">Оснащення</h4>
+			    <p class="font-weight-light">Уникальный уровень оснащения учебных мест! Каждому предоставляется рабочее место, оборудованное по стандарту салонов «Ногтевой Сервис».</p>
+			</div>
+		    </div>
+		    <div class="row no-gutters">
+			<div class="col-12 col-sm-6 col-lg-5 col-xl-5 py-5 px-5 gradient-block description">
+			    <h4 class="text-uppercase">Ергономіка</h4>
+			    <p class="font-weight-light">Специально спроектированные классы, с мощной вытяжкой. Есть кухня, Wi-Fi, мультимедиа.</p>
+			</div>
+			<div class="d-none d-sm-block col-sm-6 col-lg-7 col-xl-7 text-center">
+			    <img src="<?=WWW_IMAGE_PATH?>towns/salon-equipment.png" alt="">
+			</div>
+		    </div>
+		    <div class="row no-gutters">
+			<div class="d-none d-sm-block col-sm-6 col-lg-7 col-xl-7 text-center">
+			    <img src="<?=WWW_IMAGE_PATH?>towns/location.png" alt="">
+			</div>
+			<div class="col-12 col-sm-6 col-lg-5 col-xl-5 py-5 px-5 description">
+			    <h4 class="text-uppercase">Розташування</h4>
+			    <p class="font-weight-light">Школа в центре Днепра, рядом с транспортной развязкой.</p>
+			</div>
+		    </div>
+		    <div class="row no-gutters">
+			<div class="col-12 col-sm-6 col-lg-5 col-xl-5 py-5 px-5 gradient-block description">
+			    <h4 class="text-uppercase">Магазин</h4>
+			    <p class="font-weight-light">На месте находится и магазин «Ногтевой сервис», где для учащихся действует система скидок и специальных предложений.</p>
+			</div>
+			<div class="d-none d-sm-block col-sm-6 col-lg-7 col-xl-7 text-center">
+			    <img src="<?=WWW_IMAGE_PATH?>towns/tovars-dlya-salonov.png" alt="">
+			</div>
+		    </div>
+		    <div class="row no-gutters">
+			<div class="d-none d-sm-block col-sm-6 col-lg-7 col-xl-7 text-center">
+			    <img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/photo5.png" alt="">
+			</div>
+			<div class="col-12 col-sm-6 col-lg-5 col-xl-5 py-5 px-5 description">
+			    <h4 class="text-uppercase">Консультації</h4>
+			    <p class="font-weight-light">Профессиональные консультации наших специалистов после обучения в Вайбере и ФБ.</p>
+			</div>
+		    </div>
+		    <div class="row no-gutters">
+			<div class="col-12 col-sm-6 col-lg-5 col-xl-5 py-5 px-5 gradient-block description">
+			    <h4 class="text-uppercase">Віртуальний тур</h4>
+			    <p class="font-weight-light">Віртуальний тур по Навчальному центру "Нігтьовий центр", Днiпро.</p>
+			    <a href="#" class="btn btn-warning btn-lg text-uppercase font-weight-bold" data-toggle="modal" data-target="#">Подивитися</a>
+			</div>
+			<div class="d-none d-sm-block col-sm-6 col-lg-7 col-xl-7 text-center">
+			    <img src="http://test5.blaze.co.ua/wp-content/themes/nail/img/360.svg" alt="">
+			</div>
+		    </div>
+		</div>
+	    </section>
+	    <section class="py-5 slideshow">
+		<h2 class="text-center text-uppercase font-weight-bold my-lg-4 my-sm-2 gradient-text">Галерея</h2>
+		<div class="gallery">
+		    <div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
+		    <div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
+		    <div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
+		    <div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
+		    <div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
+		    <div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
+		    <div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
+		    <div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
+		</div>
+	    </section>
+	    <section class="py-5 px-3 faq">
+		<h2 class="text-center text-uppercase font-weight-bold my-lg-4 my-sm-2 gradient-text"><?=L('m11');?></h2>
+		<div class="container">
+		    <div class="row">
+			<div id="accordion">
+			    <?=SBl(8,$lang);?>
+			</div>
+		    </div>
+		</div>
+	    </section>
+	    <section class="py-5 earnings">
+		<h2 class="text-center text-uppercase font-weight-bold my-lg-4 my-sm-2 my-xl-1 gradient-text"><?=l('m12')?></h2>
+		<h3 class="text-center"><?=l('m13')?></h3>
+		<div class="text-center my-4">
+		    <a href="#" class="btn btn-warning btn-lg text-uppercase font-weight-bold" data-toggle="modal" data-target="#"><?=l('m14')?></a>
+		</div>
+	    </section>
+	    <section class="py-5 slideshow">
+		<h2 class="text-center text-uppercase font-weight-bold my-lg-4 my-sm-2 gradient-text"><?=l('r8');?></h2>
+		<div class="graduates">
+		    <div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
+		    <div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
+		    <div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
+		    <div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
+		    <div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
+		    <div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
+		    <div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
+		    <div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
+		</div>
+	    </section>
+	    <section class="py-5 disqus">
+		<style>
+		    .bootstrap-iso .form-group button,
+		    .bootstrap-iso form input.form-control,
+		    .bootstrap-iso form textarea.form-control,
+		    .bootstrap-iso form select.form-control,
+		    .bootstrap-iso form .form-group-lg input.form-control,
+		    .bootstrap-iso form .form-group-lg textarea.form-control,
+		    .bootstrap-iso form .form-group-lg select.form-control,
+		    .bootstrap-iso form .form-group-sm input.form-control,
+		    .bootstrap-iso form .form-group-sm textarea.form-control,
+		    .bootstrap-iso form .form-group-sm select.form-control{
+			-webkit-border-radius: 20px;
+			-moz-border-radius: 20px;
+			border-radius: 20px;
+		    }
+		    .bootstrap-iso .formden_header h2,
+		    .bootstrap-iso .formden_header p,
+		    .bootstrap-iso form{
+			font-family: Arial, Helvetica, sans-serif;
+			color: #8d8c94}
+		    .bootstrap-iso form button,
+		    .bootstrap-iso form button:hover{
+			color: #337ab7 !important;
+		    }
+		    .bootstrap-iso .outline, .bootstrap-iso .outline:focus{
+			background-color: transparent; border: 2px solid #337ab7
+		    }
+		    .bootstrap-iso .outline:hover{
+			background-color: transparent;
+			border: 2px solid#5ba2df;
+			color: #5ba2df !important} 
+		    .asteriskField{color: red;}
+		    .bootstrap-iso form .input-group-addon {
+			color:#555555; background-color: #eeeeee;
+			border-radius: 20px; padding-left:15px
+		    }</style>
+		<div class="container col-12-24">
+		    <!--div class="container disqus-container">
+		    <div id="disqus_thread"><iframe id="dsq-app9779" name="dsq-app9779" allowtransparency="true" scrolling="no" tabindex="0" title="Disqus" style="width: 1px !important; min-width: 100% !important; border: medium none !important; overflow: hidden !important; height: 394px !important;" src="https://disqus.com/embed/comments/?base=default&amp;f=test5-advanc-com-ua&amp;t_i=test5-advanc-com-ua-150&amp;t_u=http%3A%2F%2Ftest5.blaze.co.ua%2Fuk%2F&amp;t_e=%D0%94%D0%BDi%D0%BF%D1%80%D0%BE&amp;t_d=%D0%94%D0%BDi%D0%BF%D1%80%D0%BE&amp;t_t=%D0%94%D0%BDi%D0%BF%D1%80%D0%BE&amp;s_o=default#version=a7c11c2c4a19752acf5a7bdea26a55d8" horizontalscrolling="no" verticalscrolling="no" width="100%" frameborder="0"></iframe></div>
+		<script type="text/javascript">
+		    var disqus_shortname = "test5-advanc-com-ua";
+		    var disqus_title = "Днiпро";
+		    var disqus_url = "http://test5.blaze.co.ua/uk/";
+		    var disqus_identifier = "test5-advanc-com-ua-150";
+		</script>
+		    </div-->
+		    <?=$page_coment;?>
+		    <div id="addComment" >
+			<div class="bootstrap-iso">
+			    <div class="container-fluid">
+				<div class="row">
+				    <div class="col-md-12 col-sm-12 col-xs-12">
+					<form id="addCommentForm" class="form-horizontal" method="post">
+					    <div class="form-group ">
+						<label class="control-label col-sm-2 requiredField" for="name">
+						    Имя
+						    <span class="asteriskField">
+							*
+						    </span>
+						</label>
+						<div class="col-sm-4">
+						    <input class="form-control" id="name" name="name" type="text"/>
+						</div>
+					    </div>
+					    <div class="form-group ">
+						<label class="control-label col-sm-2 requiredField" for="email">
+						    Email
+						    <span class="asteriskField">
+							*
+						    </span>
+						</label>
+						<div class="col-sm-4">
+							<input class="form-control" id="email" name="email" type="text"/>
+						    <span class="help-block" id="hint_email">
+							не отображается в коментариях
+						    </span>
+						</div>
+					    </div>
+					    <div class="form-group ">
+						<label class="control-label col-sm-2 requiredField" for="body">
+						    Коментарий
+						    <span class="asteriskField">
+							*
+						    </span>
+						</label>
+						<div class="col-sm-10">
+						    <textarea class="form-control" cols="40" id="body" name="body" rows="10"></textarea>
+						</div>
+						<input type="hidden" name="page" value="<?=$link?>">
+					    </div>
+					    <div class="form-group">
+						<div class="col-sm-10 col-sm-offset-2">
+						    <button class="btn btn-primary btn-sm outline" name="submit" type="submit">
+							Коментировать
+						    </button>
+						</div>
+					    </div>
+					</form>
+				    </div>
+				</div>
+			    </div>
+			</div>
+		    </div>
+	    </section>
+	    <section class="contacts">
+		<div class="container-fluid">
+		    <div class="row row-eq-height">
+			<div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-6 themed-grid-col py-4 d-flex align-items-center address">
+			    <img src="<?=WWW_IMG_PATH?>/location-pink.svg" alt="">
 			    
+			    <p><?php echo $faddr->$addr.', '.$faddr->$mlang; ?></p>
+			</div>
+			<div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 themed-grid-col py-4 d-flex align-items-center viber">
+			    <img src="<?=WWW_IMG_PATH?>/viber.svg" alt="">
+			    <p><a href="viber://chat?number=+<?=$faddr->viber?>">+<?=$faddr->viber?></a></p>
+			</div>
+			<div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 themed-grid-col py-4 d-flex text-center social">
+			    <div class="m-auto">
+				<?=$tfut;?>
+			</div>
+		    </div>
+		</div>
+	    </section>
+	</main>
+
+	<footer class="footer-page">
+
+	    <div id="map">
+		<iframe width="100%" height="350" src="https://maps.google.com/maps?width=700&amp;height=350&amp;hl=en&amp;q=%D0%A3%D0%BA%D1%80%D0%B0%D0%B8%D0%BD%D0%B0%2C%20%D0%B3.%D0%94%D0%BD%D0%B5%D0%BF%D1%80%2C%D1%83%D0%BB.%20%D0%9F%D0%B0%D0%B2%D0%BB%D0%B0%20%D0%9D%D0%B8%D1%80%D0%B8%D0%BD%D0%B1%D0%B5%D1%80%D0%B3%D0%B0%2C%2010+(%D0%9D%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5)&amp;ie=UTF8&amp;t=&amp;z=16&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+		<style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
+		<div class="text-center return-to-sale">
+		    <a href="#sale" class="btn btn-warning btn-lg text-uppercase font-weight-bold">Повернутися до акції!</a>
+		</div>
+	</footer>
+
 
 	<!-- #page -->
 
@@ -623,15 +713,16 @@
 	</div>
 
 	<script type='text/javascript'>
-	/* <![CDATA[ */
-	var countVars = {"disqusShortname":"test5-advanc-com-ua"};
-	/* ]]> */
+            /* <![CDATA[ */
+            var countVars = {"disqusShortname": "test5-advanc-com-ua"};
+            /* ]]> */
 	</script>
 
 	<script type='text/javascript' src='http://test5-advanc-com-ua.disqus.com/embed.js?ver=4.9.12'></script>
 
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
+	<script type="text/javascript" src="<?=WWW_JS_PATH?>comment.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 	<script src="<?=WWW_JS_PATH?>bootstrap.js"></script>
 	<script type="text/javascript" src="<?=WWW_JS_PATH?>jquery.fancybox.js"></script>
@@ -645,63 +736,35 @@
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
 	<script>
-		$(document).ready(function(){
-		    $('.gallery, .graduates').slick({
-		        slidesToShow: 3,
-		        slidesToScroll: 1,
-		        autoplay: true,
-		        autoplaySpeed: 1500,
-		        arrows: true,
-		        dots: false,
-		        pauseOnHover: false,
-		        responsive: [{
-		            breakpoint: 1920,
-		            settings: {
-		                slidesToShow: 3
-		            }
-		        }, {
-		            breakpoint: 1400,
-		            settings: {
-		                slidesToShow: 2
-		            }
-		        }, {
-		            breakpoint: 520,
-		            settings: {
-		                slidesToShow: 1
-		            }
-		        }]
-		    });
-		});
+            $(document).ready(function () {
+                $('.gallery, .graduates').slick({
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 1500,
+                    arrows: true,
+                    dots: false,
+                    pauseOnHover: false,
+                    responsive: [{
+                            breakpoint: 1920,
+                            settings: {
+                                slidesToShow: 3
+                            }
+                        }, {
+                            breakpoint: 1400,
+                            settings: {
+                                slidesToShow: 2
+                            }
+                        }, {
+                            breakpoint: 520,
+                            settings: {
+                                slidesToShow: 1
+                            }
+                        }]
+                });
+            });
 	</script>
 
-	<script>
-                                        $(document).ready(function () {
-                                            var curlang = '<?=$_SESSION["lang"];?>';
-                                            var tutu = '[lang=' + curlang + ']'
-                                            $(tutu).addClass('active');
-                                            console.log(tutu);
-                                            $('.ls').on('click',
-                                                    function (e)
-                                                    {
-                                                        // console.log(this);
-                                                        var langage = ($(this).attr('lang')); // do stuff
-                                                        //$('#lanSel').attr('lang', langage);
-                                                        $.ajax({
-                                                            url: "<?php echo WWW_BASE_PATH;?>lang",
-                                                            cache: false,
-                                                            type: "POST",
-                                                            data: 'curlang=' + langage,
-                                                            success: function (data) {
-                                                                console.log(data);
-
-                                                                window.location.reload();
-
-                                                            }
-                                                        });
-                                                    });
-                                        });
-
-        </script>
 	<script type="text/javascript">
             jQuery(function () {
 
@@ -777,6 +840,86 @@
 
             })
 	</script>
+	<?php $email=isset($_SESSIOB['email'])?$_SESSIOB['email']:''?>
+	<?php $name=isset($_SESSIOB['name'])?$_SESSIOB['name']:''?>
+	<script>
+            $(document).ready(function () {
+                var currentId;
+                var curlang = '<?=$_SESSION["lang"];?>';
+                console.log(curlang);
+                $('.ls').removeClass('active') ;
+		$('[lang="'+curlang.toLowerCase()+'"]').addClass('active');
+                var language = (curlang || navigator.language || navigator.browserLanguage).split('-')[0];
+                if (!currentId) {
+                    $('#lanSel').attr('lang', language);
+                }
+                ;
+
+                $('.ls').on('click',
+                        function (e)
+                        {
+			    e.preventDefault();
+                            console.log(this);
+                            var langage = ($(this).attr('lang')); // do stuff
+                            //$('#lanSel').attr('lang', langage);
+                            $.ajax({
+                                url: "<?php echo WWW_BASE_PATH;?>lang",
+                                cache: false,
+                                type: "POST",
+                                data: 'curlang=' + langage,
+
+                            }).done(function (data) {
+                                console.log(data);
+
+                                window.location.reload();
+
+                            });
+                        });
+            });
+
+
+ $(".replay").on('click', function (e) {
+			//console.log(this.id)
+                $("#replayForm").remove();
+                var parent = this.id;
+                var mail = '<?=$email?>';
+                if (mail.length == 0) {
+                    mt = 'text';
+                } else {
+                    mt = 'hidden';
+                }
+                var name = '<?=$name?>';
+                if (name.length == 0) {
+                    nt = 'text';
+                } else {
+                    nt = 'hidden';
+                }
+		
+                var forma = '<form id="replayForm" method="post" class="replayForm form-horizontal"><div>'
+                        + '<div class="form-group ">'
+                        + '<label class="control-label col-sm-2 requiredField" for="name">Имя<span class="asteriskField">*</span>'
+                        + '</label>'
+                        + '<div class="col-sm-10">'
+                        + name + '<input class="form-control" id="name" name="name" type="' + nt + '" value="' + name + '" />'
+                        + '</div></div>'
+                        + '<div class="form-group "><label class="control-label col-sm-2 requiredField" for="email">Email<span class="asteriskField">*</span>'
+                        + '</label>'
+                        + '<div class="col-sm-10">' + mail + '<input class="form-control" id="email" name="email" type="' + mt + '" value="' + mail + '" /></div>'
+                        + '<span class="help-block" id="hint_email">не отображается в коментариях</span>'
+                        + '</div>'
+                        + '<div class="form-group "><label class="control-label col-sm-2 requiredField" for="body">Коментарий<span class="asteriskField">*</span>'
+                        + '</label>'
+                        + '<div class="col-sm-10"><textarea class="form-control" cols="40" id="body" name="body" rows="10"></textarea></div>'
+                        + ' <input type="hidden" name="page" value="<?=$link?>">'
+                        + "<input type='hidden' name='parent_id' value='" + parent + "'>"
+                        + '</div> <div class="form-group"><div class="col-sm-10 col-sm-offset-2"><button class="btn btn-primary btn-sm outline" name="submit" type="submit">Коментировать</button></div></div>'
+                        + '</form>';
+                $(forma).insertAfter('#' + parent).slideDown();
+            });
+	</script>
+
+
+	
 	<!-- The Modal -->
 	<div class="modal" id="akcia">
 	    <div class="modal-dialog modal-dialog-centered modal-xl">
@@ -841,3 +984,68 @@
 
     </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

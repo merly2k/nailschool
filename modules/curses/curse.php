@@ -22,18 +22,8 @@ $currentMisto	 = ($km->getByName($link));
 $misto		 = $currentMisto->$mlang;
 foreach ($km->getall()as $k => $r)
 {
-    $tfut		 .= '<div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-2">
-	<b>' . $r->$mlang . '</b>
-		<p class="tel">+38 067 867 65 33</p>
-		<span class="social-icon">
-	        <a href=""><img class="link-shop" src="' . WWW_IMG_PATH . 'tw.png" alt=""></a>
-	        <a href=""><img class="link-shop" src="' . WWW_IMG_PATH . 'fb.png" alt=""></a>
-		</span>
-
-	</div>';
-    //print_r($r);
     $mista[$r->link] = $r->$mlang;
-    $otherTown	 .= '<li><a class="" href="' . WWW_BASE_PATH . 'curses/' . $r->link . '/">' . $r->$mlang . '</a></li>';
+    $otherTown	 .= '<a class="dropdown-item" href="' . WWW_BASE_PATH . 'curses/' . $r->link . '/">' . $r->$mlang . '</a>';
 
     $butons = array(
 	'ua'	 => array(
@@ -49,22 +39,28 @@ foreach ($km->getall()as $k => $r)
 
 
 
-
 //print_r($this->param);
 $town	 = $this->param[0];
 $link	 = $this->param[1];
 $tpl	 = 'curse';
-
+$faddr=$km->getByName($town);
+$tfut= '
+        <a href="'.$faddr->fb.'"><i class="fab fa-facebook-square"></i></a>
+	<a href="'.$faddr->inst.'"><i class="fab fa-instagram"></i></a>
+';
+    
 $curses	 = new model\curses();
 $cc	 = $curses->getCurse($town, $link);
 $k	 = $cc[0];
 if ($lang == 'ua')
 {
+    $lar=array('ень', 'ні', 'нів');
     $act_lan = 'Акція!';
     $aza	 = 'Записатись на курс!';
 }
 else
 {
+    $lar=array('ень', 'ня', 'ней');
     $act_lan = 'Акция!';
     $aza	 = 'Записаться на курс!';
 }
@@ -116,7 +112,7 @@ if (count($cc) > 0)
 
 }
 
-.course-manikyura .gradient-text {
+.gradient-text {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-image: -moz-linear-gradient(0deg, $color->start  0%, $color->middle 30%, $color->end 100%);
@@ -125,7 +121,8 @@ if (count($cc) > 0)
 
 }
 
-.course-manikyura .close-course {
+
+main .nearest-course {
     background-image: -moz-linear-gradient(0deg, $color->start  0%, $color->middle 30%, $color->end 100%);
     background-image: -webkit-linear-gradient(0deg, $color->start  0%, $color->middle 30%, $color->end 100%);
     background-image: -ms-linear-gradient(0deg, $color->start  0%, $color->middle 30%, $color->end 100%);
@@ -145,28 +142,25 @@ ol.about-list li::before {
 }
 ";
 
-	$context .= '    <div class="row">
-					<div class="col-12 col-xl"><img class="about__img" src="' . WWW_IMG_PATH . 'nails.png" alt=""></div>
-					<div class="col-12 col-xl d-flex flex-column justify-content-center">
-					    <div class="about-block">
-						' . $decription . '
-					    </div>
+	$context .= '  <div class="row row-eq-height">
+					<div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 themed-grid-col py-5 px-4 px-lg-4 px-xl-5">
+						<div class="px-lg-0 px-xl-5 py-5">
+							<h3 class="text-center text-uppercase font-weight-bold gradient-text pt-1 mb-1">Базовий манікюр</h3>
+							<h3 class="text-center text-uppercase font-weight-bold gradient-block py-1 mb-1">Програма курсу</h3>
+							<h3 class="text-center text-uppercase font-weight-bold gradient-text mb-0"><small>обрезной + комбинированный</small></h3>
+							<ol class="about-list">
+							' . $decription . '
+							</ol>
+							<a href="#" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#">  ' . l('z3') . ' </a>
+							<p class="text-center"><small>мы предоставляем базу моделей и расходные материалы высокого качества</small></p>
+						</div>
 					</div>
-				    </div>
-				    <div class="row">
-					<div class="col-12 col-xl d-flex flex-column justify-content-center">
-					    <div class="about-block">
-					    ' . $fulltext . '
-						<button class="sale__btn about-block__btn popmake-zapisatsya-na-konsultatsiyu pum-trigger" style="cursor: pointer;">
-						    ' . l('z3') . ' </button>
-						<p class="about-block__text">мы предоставляем базу моделей и расходные материалы высокого качества</p>
+					<div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 themed-grid-col m-auto px-5">
+						<iframe width="560" height="380" class="px-xl-5" src="https://www.youtube.com/embed/TAgL-NM4Yh8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+		' . $fulltext . '
 
-					    </div>
-					</div>
-					<div class="col-12 col-xl bg_iframe">
-					<iframe src="https://www.youtube.com/embed/tYz4IGoDhow" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="560" height="315" frameborder="0"></iframe>
-					</div>
-				    </div>';
+';
     }
 }
 else
@@ -206,5 +200,19 @@ $vidminnik	 = array('ua'	 => array(
     )
 );
 $cc		 = $bc[$lang] . $vidminnik[$lang][$this->param[0]];
+
+$data=new db();
+$comments = array();
+$q="SELECT * FROM comments WHERE `page`='$link' ORDER BY id ASC";
+$result=$data->get_result($q);
+//echo $data->lastState;
+foreach ($result as $row)
+{
+	$comments[] = new comment((array)$row);
+}
+$page_coment='';
+foreach($comments as $c){
+	$page_coment.= $c->markup();
+}
 //echo $context;
 include TEMPLATE_DIR . DS . $tpl . ".html";

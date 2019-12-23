@@ -25,7 +25,7 @@ foreach ($tt->getAll() as $t){
     $nav.="</ul>";
     if(isset($town)):
     foreach($packets->getPackets($town)as $cl){
-	print_r($cl);
+	//print_r($cl);
 	$out.="<tr>"
 		. "<td>$cl->name_ua</td>"
 		. "<td>$cl->coast</td>"
@@ -43,6 +43,7 @@ foreach ($tt->getAll() as $t){
 $context.=$nav.$out;
 
 include TEMPLATE_DIR . DS . $tpl . ".html";
+
 
 
 

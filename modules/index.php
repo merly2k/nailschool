@@ -28,8 +28,8 @@ foreach ($km->getall()as $k => $r)
 	<b>' . $r->$mlang . '</b>
 		<p class="tel">'.$r->phones.'</p>
 		<span class="social-icon">
-	        <a href=""><img class="link-shop" src="' . WWW_IMG_PATH . 'tw.png" alt=""></a>
-	        <a href=""><img class="link-shop" src="' . WWW_IMG_PATH . 'fb.png" alt=""></a>
+	        <a style="color: white;" href="'.$r->fb.'"><i class="fab fa-facebook-square fa-2x"></i></a>
+	        <a style="color: white;" href="'.$r->inst.'"><i class="fab fa-instagram fa-2x"></i></a>
 		</span>
 
 	</div>';
@@ -55,7 +55,7 @@ foreach ($km->getall()as $k => $r)
 		<div class="col-md-6">
 		    <div class="text  align-middle">
 			<span class="gradient-text">' . $r->$mlang . '</span>
-			<p>' . $r->$addr . '</p>
+			<p>' . $r->$addr . '<br><b>'.$r->phones.'</b></p>
 			<a href="' . WWW_BASE_PATH . 'curses/' . $r->link . '/">
 			<div class="link-cities gradient-text">
 			    <span><b>' . $butons[$lang]['b1'] . '</b></span>
@@ -219,6 +219,24 @@ foreach ($film->getList() as $vi)
 $tpl = 'indexn';
 include TEMPLATE_DIR . $tpl . ".html";
 ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

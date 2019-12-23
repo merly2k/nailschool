@@ -18,6 +18,7 @@ class curses extends \db {
 
     public
 	    function getCurseById($id) {
+	
 	$q = "SELECT * FROM `cursses` WHERE `id`='$id'";
 	$r= $this->get_result($q);
 	return $r[0];
@@ -25,7 +26,7 @@ class curses extends \db {
 
     public
 	    function getALL($town) {
-	$q = "SELECT * FROM `cursses` WHERE `miso`='$town'";
+	$q = "SELECT * FROM `cursses` WHERE `miso`='$town' order by `porjadok` ASC";
 	return $this->get_result($q);
     }
     public
@@ -82,6 +83,10 @@ class curses extends \db {
 
 
 }
+
+
+
+
 
 
 

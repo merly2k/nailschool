@@ -75,10 +75,11 @@ foreach ($packs->getPackets($link) as $k){
     $kurses=new model\curses();
     $cursesblosk='';
     $totalcoast=0;
-    for ($index = 1; $index < 7; $index++)
+    //print_r($k);
+    for ($index = 1; $index <= 7; $index++)
     {
-    $kurs='kurs'.$index.'_id';
-	if($k->$kurs!=0){
+	$kurs='kurs'.$index.'_id';
+	if($k->$kurs!=0 and $k->$kurs!=''){
 	    $r=$kurses->getCurseById($k->$kurs);
 	    //print_r($r[0]);
 	    //echo"<br>";

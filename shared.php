@@ -1,4 +1,14 @@
 <?php
+function imgUpload(){
+ //   print_r($_FILES);
+$uploaddir = APP_PATH.DS.'images'.DS;
+$uploadfile = $uploaddir . basename($_FILES['image']['name']);
+if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadfile)) {
+     return basename($_FILES['image']['name']);
+} else {
+    echo "Возможная атака с помощью файловой загрузки!\n";
+}    
+}
 function numberof($numberof, $value, $suffix)
 {
     $keys = array(2, 0, 1, 1, 1, 2);
@@ -104,7 +114,12 @@ return $output;
 }
 
 function l($frase) {
-$lang = mb_strtolower($_SESSION['lang']);
+    if(isset($_SESSION['lang'])){
+    $lang = mb_strtolower($_SESSION['lang']);}
+else
+{
+    $lang='ua';
+}
 
 	$ls	 = new model\translation();
 	$frases	 = $ls->getStrByLang($lang);

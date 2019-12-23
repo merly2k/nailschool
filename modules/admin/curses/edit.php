@@ -23,10 +23,11 @@ $_POST['id']=$id;
 unset($_POST['files']); 
     $c->editCurse($_POST);
     //echo $c->lastState;
-    $context.="<script>setTimeout(function() { location.replace('" . WWW_ADMIN_PATH . "'); }, 900)</script>";
+    $context.="<script>setTimeout(function() { location.replace('" . WWW_ADMIN_PATH . "curses'); }, 900)</script>";
 endif;
 
 include TEMPLATE_DIR . DS . $tpl . ".html";
+
 
 
 

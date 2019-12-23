@@ -294,7 +294,12 @@
     background-image: -ms-linear-gradient(0deg, rgb(255, 173, 102) 0%, rgb(255, 228, 102) 100%);
 
 }
-
+.contacts .address img {
+    height: 60px;
+}
+.contacts .viber img {
+    height: 53px;
+}
 .narashhivanie-resnits .gradient-text {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

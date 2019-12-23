@@ -18,16 +18,21 @@ $row =$vid->getById($id) ;
 	'name_ru'=>"$row->name_ru",
 	'name_ua'=>"$row->name_ua");
     //print_r($data);
-$context='<form method="post">'.$f->renderFormByData('misto',(array)$row)
+$context='<form enctype="multipart/form-data" method="post">'.$f->renderFormByData('misto',(array)$row)
 	.'<button class="btn btn-info" type="submit">save</button>'
 	. '</form>';
 
 
 else:
-    extract($_POST);
-    $data=$_POST;
+//    print_r($_FILES);
+    if(!empty($_FILES['image']['name'])){
+    $image=array('image'=>imgUpload());
+    $data=array_merge($_POST, $image);
+    }else{$data=$_POST;}
+    //print_r($data);
+
    echo $vid->update($data,$id);
-//$context.="<script>setTimeout(function() { location.replace('" . WWW_ADMIN_PATH . "misto/'); }, 900)</script>";
+$context.="<script>setTimeout(function() { location.replace('" . WWW_ADMIN_PATH . "settings/misto/'); }, 900)</script>";
 endif;
 	break;
 case 'del':
@@ -93,6 +98,37 @@ $context.='</tbody></table>';
 }
 include TEMPLATE_DIR . DS . $tpl . ".html";
 ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

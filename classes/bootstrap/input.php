@@ -110,7 +110,12 @@ class input {
 			    }
 			    else
 			    {
+				   // print_r($data[$k]['selected']);
+				if (isset($data[$k]['selected'])):
+				$out .= $this->select("f$c", $v->label, $k, $data[$k],$data[$k]['selected']);
+				else:
 				$out .= $this->select("f$c", $v->label, $k, $data[$k]);
+			    endif;
 			    }
 			}
 			else
@@ -202,10 +207,10 @@ class input {
 
     public
 	    function imagefile($label, $name, $value, $deg = 50) {
-	$img = ($value == '') ? 'https://via.placeholder.com/300?text=no+image' : $value;
+	
 	return "<label for='img-btn'>$label</label><div class='form-control'>
-    <input id='$name' class='form-control' type='hidden' name='$name' value='$img'/>
-    <img id='preview-$name' src='$img' style='width:$deg%'><br>
+    <input id='$name' class='form-control' type='hidden' name='$name'/>
+    <img id='preview-$name' src='".WWW_IMG_PATH."$value' style='width:$deg%'><br>
     <button class='btn imgselect' data-target='$name'>Выбрать/Загрузить</button><br>
 </div>";
     }
@@ -221,14 +226,17 @@ class input {
     }
 
     public
-	    function select($id, $label, $name, $value, $selected = '') {
+	    function select($id, $label, $name, $val, $selected = '') {
 	$options = '<option value="">выберите из списка</option>';
-	foreach ($value as $v)
+	unset($val['selected']);
+	foreach ($val as $v)
 	{
-	    if ($v['value'] = $v['name']):
-		$options .= '<option value="' . $v['value'] . '">' . $v['name'] . '</option>';
+	   
+	    if($selected==$v['value']){$ss=" selected='selected' ";}else{$ss='';}
+	    if ($v['value']!= $v['name']):
+		$options .= '<option '.$ss.' value="' . $v['value'] . '">' . $v['name'] . '</option>';
 	    else:
-		$options .= '<option>' . $v['name'] . '</option>';
+		$options .= '<option '.$ss.'>' . $v['name'] . '</option>';
 	    endif;
 	}
 	return '<label class="btn btn-default" for="' . $id . '">' . $label . '</label> '
@@ -252,6 +260,32 @@ class input {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
