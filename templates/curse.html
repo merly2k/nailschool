@@ -288,7 +288,7 @@
 				<li>Через 5 дней начни обслуживать клиентов</li>
 				<li>За месяц окупи обучение и зарабатывай больше</li>
 			    </ol--><?=$decription;?>
-			    <a href="#" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#"><?=l('calback_btn')?></a>
+			    <a href="#" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#calme"><?=l('calback_btn')?></a>
 			    <p class="text-center"><small><?=l('curse_calback')?></small></p>
 			</div>
 			
@@ -414,14 +414,7 @@
 	    <section class="py-5 slideshow">
 		<h2 class="text-center text-uppercase font-weight-bold my-lg-4 my-sm-2 gradient-text">Галерея</h2>
 		<div class="gallery">
-		    <div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
-		    <div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
-		    <div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
-		    <div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
-		    <div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
-		    <div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
-		    <div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
-		    <div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
+		   		    <?=$galery?>
 		</div>
 	    </section>
 	    <section class="py-5 px-3 faq">
@@ -444,14 +437,7 @@
 	    <section class="py-5 slideshow">
 		<h2 class="text-center text-uppercase font-weight-bold my-lg-4 my-sm-2 gradient-text"><?=l('r8');?></h2>
 		<div class="graduates">
-		    <div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
-		    <div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
-		    <div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
-		    <div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
-		    <div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
-		    <div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
-		    <div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
-		    <div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
+		    <?=$galery?>
 		</div>
 	    </section>
 	    <section class="py-5 disqus">
@@ -492,15 +478,7 @@
 			border-radius: 20px; padding-left:15px
 		    }</style>
 		<div class="container col-12-24">
-		    <!--div class="container disqus-container">
-		    <div id="disqus_thread"><iframe id="dsq-app9779" name="dsq-app9779" allowtransparency="true" scrolling="no" tabindex="0" title="Disqus" style="width: 1px !important; min-width: 100% !important; border: medium none !important; overflow: hidden !important; height: 394px !important;" src="https://disqus.com/embed/comments/?base=default&amp;f=test5-advanc-com-ua&amp;t_i=test5-advanc-com-ua-150&amp;t_u=http%3A%2F%2Ftest5.blaze.co.ua%2Fuk%2F&amp;t_e=%D0%94%D0%BDi%D0%BF%D1%80%D0%BE&amp;t_d=%D0%94%D0%BDi%D0%BF%D1%80%D0%BE&amp;t_t=%D0%94%D0%BDi%D0%BF%D1%80%D0%BE&amp;s_o=default#version=a7c11c2c4a19752acf5a7bdea26a55d8" horizontalscrolling="no" verticalscrolling="no" width="100%" frameborder="0"></iframe></div>
-		<script type="text/javascript">
-		    var disqus_shortname = "test5-advanc-com-ua";
-		    var disqus_title = "Днiпро";
-		    var disqus_url = "http://test5.blaze.co.ua/uk/";
-		    var disqus_identifier = "test5-advanc-com-ua-150";
-		</script>
-		    </div-->
+
 		    <?=$page_coment;?>
 		    <div id="addComment" >
 			<div class="bootstrap-iso">
@@ -548,7 +526,7 @@
 					    <div class="form-group">
 						<div class="col-sm-10 col-sm-offset-2">
 						    <button class="btn btn-primary btn-sm outline" name="submit" type="submit">
-							Коментировать
+							<?=l('add_comment');?>
 						    </button>
 						</div>
 					    </div>
@@ -586,154 +564,23 @@
 		<iframe width="100%" height="350" src="https://maps.google.com/maps?width=700&amp;height=350&amp;hl=en&amp;q=%D0%A3%D0%BA%D1%80%D0%B0%D0%B8%D0%BD%D0%B0%2C%20%D0%B3.%D0%94%D0%BD%D0%B5%D0%BF%D1%80%2C%D1%83%D0%BB.%20%D0%9F%D0%B0%D0%B2%D0%BB%D0%B0%20%D0%9D%D0%B8%D1%80%D0%B8%D0%BD%D0%B1%D0%B5%D1%80%D0%B3%D0%B0%2C%2010+(%D0%9D%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5)&amp;ie=UTF8&amp;t=&amp;z=16&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
 		<style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
 		<div class="text-center return-to-sale">
-		    <a href="#sale" class="btn btn-warning btn-lg text-uppercase font-weight-bold">Повернутися до акції!</a>
+		    <a href="#sale" class="btn btn-warning btn-lg text-uppercase font-weight-bold"><?=l('r9')?>!</a>
 		</div>
 	</footer>
 
 
-	<!-- #page -->
-
-	<div id="pum-813" class="pum pum-overlay pum-theme-83 pum-theme-tema-po-umolchaniyu popmake-overlay pum-click-to-close click_open" data-popmake="{&quot;id&quot;:813,&quot;slug&quot;:&quot;zapisatsya-na-seminar-apparatnyj&quot;,&quot;theme_id&quot;:83,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;extra_selectors&quot;:&quot;&quot;,&quot;cookie_name&quot;:null}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:false,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;medium&quot;,&quot;responsive_min_width&quot;:&quot;0%&quot;,&quot;responsive_min_width_unit&quot;:false,&quot;responsive_max_width&quot;:&quot;100%&quot;,&quot;responsive_max_width_unit&quot;:false,&quot;custom_width&quot;:&quot;640px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center top&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_left&quot;:&quot;0&quot;,&quot;position_bottom&quot;:&quot;0&quot;,&quot;position_right&quot;:&quot;0&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:false,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:&quot;1&quot;,&quot;esc_press&quot;:&quot;1&quot;,&quot;f4_press&quot;:&quot;1&quot;},&quot;click_open&quot;:[]}}" role="dialog" aria-hidden="true">
-	    <div id="popmake-813" class="pum-container popmake theme-83 pum-responsive pum-responsive-medium responsive size-medium">
-		<div class="pum-content popmake-content">
-		    <div role="form" class="wpcf7" id="wpcf7-f511-o7" dir="ltr" lang="ru-RU">
-			<div class="screen-reader-response"></div>
-			<form action="/dnepr/kurs-manikyura/#wpcf7-f511-o7" method="post" class="wpcf7-form" novalidate="novalidate"><input type="hidden" name="pum_form_popup_id" value="813">
-			    <div style="display: none;">
-				<input type="hidden" name="_wpcf7" value="511">
-				<input type="hidden" name="_wpcf7_version" value="5.1.1">
-				<input type="hidden" name="_wpcf7_locale" value="ru_RU">
-				<input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f511-o7">
-				<input type="hidden" name="_wpcf7_container_post" value="0">
-				<input type="hidden" name="g-recaptcha-response" value="">
-			    </div>
-			    <div class="form-price">
-				<p class="title">ЗАПИСАТЬСЯ НА СЕМИНАР</p>
-				<p class="ps"> СЕМИНАР <span style="font-weight: bold;">"АППАРАТНЫЙ МАНИКЮР"</span> длительность 1 день</p>
-				<div class="form-content fd-rever">
-				    <div class="left">
-					<label>Имя*</label><span class="wpcf7-form-control-wrap text-923"><input type="text" name="text-923" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false"></span><br>
-					<label>Фамилия*</label><span class="wpcf7-form-control-wrap text-923"><input type="text" name="text-923" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false"></span><br>
-					<label>Е-mail*</label><span class="wpcf7-form-control-wrap email-362"><input type="email" name="email-362" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-email" aria-invalid="false"></span><br>
-					<label>Телефон*</label><span class="wpcf7-form-control-wrap tel-744"><input type="tel" name="tel-744" size="40" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel" aria-required="true" aria-invalid="false" placeholder="+38 ( _ _ _ ) _ _ _ _ _ _ _"></span><br>
-					<span class="checkbox-style"><label class="lad-chec" for="checkbox-id"><span class="style-chec"><input type="checkbox" id="checkbox-id"></span><b>Получать уведомления об акциях и скидках школы</b></label></span><p></p>
-				    </div>
-				    <div class="right-block">
-					<div class="block-right-form">
-					    <div class="left_"><span>Дата старта</span><b>15 ноября</b></div>
-					    <div class="right"><span>Стоимость со<br> скидкой:</span><b>480грн</b></div>
-					    <p></p></div>
-					<p><span class="block-right-span">*О точной дате начала курса мы оповестим лично</span>
-					</p></div>
-				</div>
-				<p><input type="submit" value="ПОДТВЕРДИТЬ ЗАПИСЬ" class="wpcf7-form-control wpcf7-submit"><span class="ajax-loader"></span>
-				</p></div>
-			    <input type="hidden" class="wpcf7-pum" value="{&quot;closepopup&quot;:false,&quot;closedelay&quot;:0,&quot;openpopup&quot;:false,&quot;openpopup_id&quot;:0}"><div class="wpcf7-response-output wpcf7-display-none"></div></form></div>
-		</div>
-		<button type="button" class="pum-close popmake-close" aria-label="Закрыть">
-		    x            </button>
-
-	    </div>
-	</div>
-	<div id="pum-808" class="pum pum-overlay pum-theme-83 pum-theme-tema-po-umolchaniyu popmake-overlay pum-click-to-close click_open" data-popmake="{&quot;id&quot;:808,&quot;slug&quot;:&quot;zapisatsya-na-kurs-s-tsenoj&quot;,&quot;theme_id&quot;:83,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;extra_selectors&quot;:&quot;&quot;,&quot;cookie_name&quot;:null}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:false,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;medium&quot;,&quot;responsive_min_width&quot;:&quot;0%&quot;,&quot;responsive_min_width_unit&quot;:false,&quot;responsive_max_width&quot;:&quot;100%&quot;,&quot;responsive_max_width_unit&quot;:false,&quot;custom_width&quot;:&quot;640px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center top&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_left&quot;:&quot;0&quot;,&quot;position_bottom&quot;:&quot;0&quot;,&quot;position_right&quot;:&quot;0&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:false,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:&quot;1&quot;,&quot;esc_press&quot;:&quot;1&quot;,&quot;f4_press&quot;:&quot;1&quot;},&quot;click_open&quot;:[]}}" role="dialog" aria-hidden="true">
-
-	    <div id="popmake-808" class="pum-container popmake theme-83 pum-responsive pum-responsive-medium responsive size-medium">
-		<div class="pum-content popmake-content">
-		    <div role="form" class="wpcf7" id="wpcf7-f371-o8" dir="ltr" lang="ru-RU">
-			<div class="screen-reader-response"></div>
-			<form action="/dnepr/kurs-manikyura/#wpcf7-f371-o8" method="post" class="wpcf7-form" novalidate="novalidate"><input type="hidden" name="pum_form_popup_id" value="808">
-			    <div style="display: none;">
-				<input type="hidden" name="_wpcf7" value="371">
-				<input type="hidden" name="_wpcf7_version" value="5.1.1">
-				<input type="hidden" name="_wpcf7_locale" value="ru_RU">
-				<input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f371-o8">
-				<input type="hidden" name="_wpcf7_container_post" value="0">
-				<input type="hidden" name="g-recaptcha-response" value="">
-			    </div>
-			    <div class="form-price">
-				<p class="title">ЗАПИСАТЬСЯ НА КУРС</p>
-				<p class="ps"> КУРС <span style="font-weight: bold;">"МАНИКЮРА"</span> длительность 5 дней</p>
-				<div class="form-content fd-rever">
-				    <div class="left">
-					<label>Имя*</label><span class="wpcf7-form-control-wrap text-923"><input type="text" name="text-923" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false"></span><br>
-					<label>Фамилия*</label><span class="wpcf7-form-control-wrap text-923"><input type="text" name="text-923" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false"></span><br>
-					<label>Е-mail*</label><span class="wpcf7-form-control-wrap email-362"><input type="email" name="email-362" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-email" aria-invalid="false"></span><br>
-					<label>Телефон*</label><span class="wpcf7-form-control-wrap tel-744"><input type="tel" name="tel-744" size="40" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel" aria-required="true" aria-invalid="false" placeholder="+38 ( _ _ _ ) _ _ _ _ _ _ _"></span><br>
-					<span class="checkbox-style"><label class="lad-chec" for="checkbox-id"><span class="style-chec"><input type="checkbox" id="checkbox-id"></span><b>Получать уведомления об акциях и скидках школы</b></label></span><p></p>
-				    </div>
-				    <div class="right-block">
-					<div class="block-right-form">
-					    <div class="left_"><span>Дата старта</span><b>с января</b></div>
-					    <div class="right"><span>Стоимость со<br> скидкой:</span><b>2000грн</b></div>
-					    <p></p></div>
-					<p><span class="block-right-span">*О точной дате начала курса мы оповестим лично</span>
-					</p></div>
-				</div>
-				<p><input type="submit" value="ПОДТВЕРДИТЬ ЗАПИСЬ" class="wpcf7-form-control wpcf7-submit"><span class="ajax-loader"></span>
-				</p></div>
-			    <input type="hidden" class="wpcf7-pum" value="{&quot;closepopup&quot;:false,&quot;closedelay&quot;:0,&quot;openpopup&quot;:true,&quot;openpopup_id&quot;:0}"><div class="wpcf7-response-output wpcf7-display-none"></div></form></div>
-		</div>
-		<button type="button" class="pum-close popmake-close" aria-label="Закрыть">
-		    x            </button>
-
-	    </div>
-
-	</div>
-	<div id="pum-802" class="pum pum-overlay pum-theme-83 pum-theme-tema-po-umolchaniyu popmake-overlay pum-click-to-close click_open" data-popmake="{&quot;id&quot;:802,&quot;slug&quot;:&quot;zapisatsya-na-konsultatsiyu&quot;,&quot;theme_id&quot;:83,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;extra_selectors&quot;:&quot;&quot;,&quot;cookie_name&quot;:null}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:false,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;medium&quot;,&quot;responsive_min_width&quot;:&quot;0%&quot;,&quot;responsive_min_width_unit&quot;:false,&quot;responsive_max_width&quot;:&quot;100%&quot;,&quot;responsive_max_width_unit&quot;:false,&quot;custom_width&quot;:&quot;640px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center top&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_left&quot;:&quot;0&quot;,&quot;position_bottom&quot;:&quot;0&quot;,&quot;position_right&quot;:&quot;0&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:false,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:&quot;1&quot;,&quot;esc_press&quot;:&quot;1&quot;,&quot;f4_press&quot;:&quot;1&quot;},&quot;click_open&quot;:[]}}" role="dialog" aria-hidden="true">
-
-	    <div id="popmake-802" class="pum-container popmake theme-83 pum-responsive pum-responsive-medium responsive size-medium">
-
-		<div class="pum-content popmake-content">
-		    <div role="form" class="wpcf7" id="wpcf7-f362-o9" dir="ltr" lang="ru-RU">
-			<div class="screen-reader-response"></div>
-			<form action="/dnepr/kurs-manikyura/#wpcf7-f362-o9" method="post" class="wpcf7-form" novalidate="novalidate"><input type="hidden" name="pum_form_popup_id" value="802">
-			    <div style="display: none;">
-				<input type="hidden" name="_wpcf7" value="362">
-				<input type="hidden" name="_wpcf7_version" value="5.1.1">
-				<input type="hidden" name="_wpcf7_locale" value="ru_RU">
-				<input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f362-o9">
-				<input type="hidden" name="_wpcf7_container_post" value="0">
-				<input type="hidden" name="g-recaptcha-response" value="">
-			    </div>
-			    <div class="consul">
-				<p class="title">ЗАПИСАТЬСЯ НА KОНСУЛЬТАЦИЮ</p>
-				<p><label>Имя*</label><span class="wpcf7-form-control-wrap text-436"><input type="text" name="text-436" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false"></span><br>
-				    <label>Фамилия*</label><span class="wpcf7-form-control-wrap text-436"><input type="text" name="text-436" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false"></span><br>
-				    <label>Телефон*</label><span class="wpcf7-form-control-wrap tel-744"><input type="tel" name="tel-744" size="40" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel" aria-required="true" aria-invalid="false" placeholder="+38 ( _ _ _ ) _ _ _ _ _ _ _"></span><br>
-				    <input type="submit" value="ПОДТВЕРДИТЬ ЗАПИСЬ" class="wpcf7-form-control wpcf7-submit"><span class="ajax-loader"></span>
-				</p></div>
-			    <input type="hidden" class="wpcf7-pum" value="{&quot;closepopup&quot;:false,&quot;closedelay&quot;:0,&quot;openpopup&quot;:true,&quot;openpopup_id&quot;:0}"><div class="wpcf7-response-output wpcf7-display-none"></div></form></div>
-		</div>
-
-		<button type="button" class="pum-close popmake-close" aria-label="Закрыть">
-		    x            </button>
-
-	    </div>
-
-	</div>
-
-	<script type='text/javascript'>
-            /* <![CDATA[ */
-            var countVars = {"disqusShortname": "test5-advanc-com-ua"};
-            /* ]]> */
-	</script>
-
-	<script type='text/javascript' src='http://test5-advanc-com-ua.disqus.com/embed.js?ver=4.9.12'></script>
-
+	
+	
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
 	<script type="text/javascript" src="<?=WWW_JS_PATH?>comment.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 	<script src="<?=WWW_JS_PATH?>bootstrap.js"></script>
 	<script type="text/javascript" src="<?=WWW_JS_PATH?>jquery.fancybox.js"></script>
 	<script type="text/javascript" src="<?=WWW_JS_PATH?>scripts.js"></script>
-
 	<script type="text/javascript" src="<?=WWW_JS_PATH?>navigation.js"></script>
 	<script type="text/javascript" src="<?=WWW_JS_PATH?>skip-link-focus-fix.js"></script>
 	<script type="text/javascript" src="<?=WWW_JS_PATH?>position.js"></script>
 	<script type="text/javascript" src="<?=WWW_JS_PATH?>site.js"></script>
-	<script id="dsq-count-scr" src="<?=WWW_JS_PATH?>count.js" async=""></script>
-
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
 	<script>
             $(document).ready(function () {
@@ -764,7 +611,6 @@
                 });
             });
 	</script>
-
 	<script type="text/javascript">
             jQuery(function () {
 
@@ -920,7 +766,7 @@
 
 
 	
-	<!-- The Modal -->
+	<!-- The Modal actia -->
 	<div class="modal" id="akcia">
 	    <div class="modal-dialog modal-dialog-centered modal-xl">
 		<div class="modal-content">
@@ -981,9 +827,91 @@
 		</div>
 	    </div>
 	</div>
+	<!-- modal call me-->
+	<div class="modal" id="callme">
+	    <div class="modal-dialog modal-dialog-centered modal-xl">
+		<div class="modal-content">
 
+		    <!-- Modal Header -->
+		    <div class="modal-header">
+			<h4 class="title modal-title"><?=$aza?></h4>
+			<button type="button" class="pum-close popmake-close close" data-dismiss="modal">&times;</button>
+		    </div>
+
+		    <!-- Modal body -->
+		    <div class="modal-body">
+			<form action="<?=WWW_BASE_PATH?>callme" method="post">
+			    <input type="hidden" name="id" value="<?=$acsia->id?>">
+			    <div class="form-price">
+				<p class="ps"><?=$acsia->$mlang?></p>
+				<div class="form-content fd-rever">
+				    <div class="left">
+					<label>Имя*</label>
+					<span class="wpcf7-form-control-wrap text-923">
+					    <input type="text" name="name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" required="required" >
+					</span><br>
+					<label>Фамилия*</label>
+					<span class="wpcf7-form-control-wrap text-923">
+					    <input type="text" name="lname" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" required="required">
+					</span><br>
+					<label>Е-mail*</label>
+					<span class="wpcf7-form-control-wrap email-362"><input type="email" name="email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email" required='required'>
+					</span><br>
+					<label>Телефон*</label>
+					<span class="wpcf7-form-control-wrap tel-744">
+					    <input type="tel" name="phone" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required" required="required" placeholder="+38 ( _ _ _ ) _ _ _ _ _ _ _">
+					</span><br>
+					<span class="checkbox-style">
+					    <label class="lad-chec" for="checkbox-id">
+						<span class="style-chec">
+						    <input type="checkbox" id="checkbox-id">
+						</span>
+						<b>Получать уведомления об акциях и скидках школы</b></label>
+					</span>
+					<p></p>
+				    </div>
+				    <div class="right-block">
+					<div class="block-right-form">
+					    <div class="left_"><span>Дата старта</span><b>с <?=$acsia->start?></b></div>
+					    <div class="right"><span>Стоимость со<br> скидкой:</span><b><?=$acsia->ac_coast?> грн</b></div>
+					    <p></p></div>
+					<p><span class="block-right-span">*О точной дате начала курса мы оповестим лично</span>
+					</p></div>
+				</div>
+				<p><input type="submit" value="ПОДТВЕРДИТЬ ЗАПИСЬ" class="wpcf7-form-control wpcf7-submit">
+				    <span class="ajax-loader"></span>
+				</p></div>
+			</form>
+		    </div>
+
+
+		</div>
+	    </div>
+	</div>
+		</div>
+	    </div>
+	</div>
     </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
