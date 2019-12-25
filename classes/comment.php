@@ -39,7 +39,7 @@ class comment extends db
 		
 		// Нужно для установки изображения по умолчанию:
 		$url = WWW_IMG_PATH.'default_avatar.gif';
-		
+		if($_SESSION['lang']=='UA'){$ansver='Відповісти';}else{$ansver='Ответить';}
 		return '
 		
 			<div class="comment">
@@ -53,7 +53,7 @@ class comment extends db
 				    <div class="date" title="Added at '.date('H:i \o\n d M Y',$d['dt']).'">'.date('d M Y',$d['dt']).'</div>
 				</div>
 				<p class="cbody">'.$d['body'].'</p>
-				<div class="cfoot"><a href="#'. $d['id'].'" id="'. $d['id'].'" class="replay">відповісти</a></div>
+				<div class="cfoot"><a href="#'. $d['id'].'" id="'. $d['id'].'" class="replay">'.$ansver.'</a></div>
 			</div>
 		';
 	}
@@ -142,6 +142,10 @@ class comment extends db
 }
 
 ?>
+
+
+
+
 
 
 

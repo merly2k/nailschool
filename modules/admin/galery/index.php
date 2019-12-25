@@ -7,7 +7,7 @@ if (isset($_POST['action']) && $_POST['action'] == "upload") {
 	include_once "resize_image.php";
 
 	$uploader = new Uploader($_FILES['files']);
-	$uploader->set_upload_to(APP_PATH."/img/galery/");
+	$uploader->set_upload_to(APP_PATH."/images/galery/");
 	$uploader->set_valid_extensions(array('jpg', 'png', 'png'));
 	$uploader->set_resize_image_library(new ResizeImage());
 	
@@ -36,7 +36,7 @@ if (isset($_POST['action']) && $_POST['action'] == "upload") {
 };
 $context='<div class="card-columns">';
 //function filebrouser{){
-  $workingdir  =APP_PATH."/img/galery/";
+  $workingdir  =APP_PATH."/images/galery/";
   $files = glob($workingdir.'*.{gif,jpg,png}' ,GLOB_BRACE);
 // найти все php и txt файлы
 //$files = glob('*.{php,txt}', GLOB_BRACE);

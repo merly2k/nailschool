@@ -6,7 +6,7 @@ $mod_name = 'Удаление изображения';
 $context='';
 
 if(!$_POST){
-    $context.="<h3>Удаление статьи</h3>"
+    $context.="<h3>Удаление изображения</h3>"
 	    . "Вы собираетесь удалить изображение"
 	    . "<div class='col-6'><img class='img' src='".WWW_IMG_PATH."galery/".$cont_id."'></div>"
 	    . "<form method='post'>"
@@ -21,7 +21,7 @@ else
 {
     
     if($_POST['confirm']=='yes'){
-	$file=APP_PATH."/img/galery/".$cont_id;
+	$file=APP_PATH."/images/galery/".$cont_id;
 	if(unlink($file)){
 	    $context.="изображение удалено";
 	    $context.="<script>location.replace('" . WWW_ADMIN_PATH . "galery/');</script>";

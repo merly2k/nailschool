@@ -5,7 +5,7 @@ class Uploader {
 	private $extensions = array();
 	private $errors = array();
 	
-	private $store_directory = APP_PATH."/img/galery/";
+	private $store_directory = APP_PATH."/images/galery/";
 	private $resize_image_library_instance = null;
 	
 	public function __construct($files) {

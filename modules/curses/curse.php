@@ -69,7 +69,7 @@ else
 $randAction = '
 <div class="sale">
 <p class="sale__text">Акция! <del></del> <strong>' . $k->ac_coast . '</strong> грн</p>
-<a href="' . $k->link . '" class="sale__btn" style="cursor: pointer;" data-toggle="modal" data-target="#akcia">Записаться на курс! </a>
+<a href="' . $k->link . '" class="sale__btn" style="cursor: pointer;" data-toggle="modal" data-target="#akcia">'.$aza.'! </a>
 
 </div>
 <img class="close-course__img" src="' . WWW_IMAGE_PATH . '/girl.png" alt="">
@@ -214,5 +214,20 @@ $page_coment='';
 foreach($comments as $c){
 	$page_coment.= $c->markup();
 }
-//echo $context;
+//echo $_SESSION['lang'];
+
+$workingdir  =APP_PATH."/images/galery/";
+$files = glob($workingdir.'*.{gif,jpg,png}' ,GLOB_BRACE);
+$files = array_map('basename',$files);
+$id=0;
+$o=new templator();
+$galery='';
+foreach ($files as $f)
+{
+    $pl='<div class="slide"><img src="{img}" alt="{id}"></div>';
+    $id++;
+    $ara= array('id'=>$id,'img'=>WWW_IMG_PATH.'galery/'.$f);
+    $o->loadFromString($pl);
+ $galery.=$o->Render($ara);
+};
 include TEMPLATE_DIR . DS . $tpl . ".html";

@@ -288,7 +288,7 @@
 				<li>Через 5 дней начни обслуживать клиентов</li>
 				<li>За месяц окупи обучение и зарабатывай больше</li>
 			    </ol--><?=$decription;?>
-			    <a href="#" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#calme"><?=l('calback_btn')?></a>
+			    <a  class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#calme"><?=l('calback_btn')?></a>
 			    <p class="text-center"><small><?=l('curse_calback')?></small></p>
 			</div>
 			
@@ -312,7 +312,7 @@
 						<li>Отработка навыков на 8 моделях (обе руки)</li>
 					</ol-->
 		<?=$fulltext?>
-					<a href="#" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#"><?=l('detail_btn')?></a>
+					<a href="#" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#calme"><?=l('detail_btn')?></a>
 					<p class="text-center"><small><?=l('detail')?></small></p>
 				</div>
 			</div>
@@ -392,7 +392,7 @@
 		    </div>
 		    <div class="row no-gutters">
 			<div class="d-none d-sm-block col-sm-6 col-lg-7 col-xl-7 text-center">
-			    <img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/photo5.png" alt="">
+			    <img src="<?=WWW_IMG_PATH?>photo5.png" alt="">
 			</div>
 			<div class="col-12 col-sm-6 col-lg-5 col-xl-5 py-5 px-5 description">
 			    <h4 class="text-uppercase">Консультації</h4>
@@ -406,7 +406,7 @@
 			    <a href="#" class="btn btn-warning btn-lg text-uppercase font-weight-bold" data-toggle="modal" data-target="#">Подивитися</a>
 			</div>
 			<div class="d-none d-sm-block col-sm-6 col-lg-7 col-xl-7 text-center">
-			    <img src="http://test5.blaze.co.ua/wp-content/themes/nail/img/360.svg" alt="">
+			    <img src="<?=WWW_IMG_PATH?>360.svg" alt="">
 			</div>
 		    </div>
 		</div>
@@ -779,7 +779,7 @@
 
 		    <!-- Modal body -->
 		    <div class="modal-body">
-			<form action="<?=WWW_BASE_PATH?>parcipate" method="post">
+			<form id='akciaForm' action="<?=WWW_BASE_PATH?>parcipate" method="post">
 			    <input type="hidden" name="id" value="<?=$acsia->id?>">
 			    <div class="form-price">
 				<p class="ps"><?=$acsia->$mlang?></p>
@@ -828,7 +828,7 @@
 	    </div>
 	</div>
 	<!-- modal call me-->
-	<div class="modal" id="callme">
+	<div class="modal" id="calme">
 	    <div class="modal-dialog modal-dialog-centered modal-xl">
 		<div class="modal-content">
 
@@ -888,92 +888,6 @@
 		</div>
 	    </div>
 	</div>
-		</div>
-	    </div>
-	</div>
+		
     </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
