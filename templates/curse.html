@@ -115,9 +115,7 @@
 			    <li class="nav-item dropdown">
 				<a class="nav-link dropdown-toggle" href="#" id="navbardropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-map-marker-alt"></i>&nbsp;<?=$misto;?></a>
 				<div class="dropdown-menu" aria-labelledby="navbardropdown">
-				    <a class="dropdown-item" href="<?=WWW_BASE_PATH?>curses/kiev/">Киев</a>
-				    <a class="dropdown-item" href="<?=WWW_BASE_PATH?>curses/zaporozhe/">Запорожье</a>
-				    <a class="dropdown-item" href="<?=WWW_BASE_PATH?>curses/nikolaev/">Николаев</a>
+				    <?=$otherTown?>
 				</div>
 			    </li>
 			</ul>
@@ -134,8 +132,15 @@
 			    <li class="nav-item d-none d-lg-block">
 				<a class="nav-link separator">/</a>
 			    </li>
+			    
 			    <li class="breadcrumb-item breadcrumb-list__item active" aria-current="page">
 				<a class="nav-link"><?=$k->$mlang?></a>
+			    </li>
+			    <li class="nav-item d-none d-lg-block">
+				<a class="nav-link separator"> </a>
+			    </li>
+			    <li class="nav-item d-none d-lg-block">
+				<a class="nav-link" href="tel:<?=$faddr->phones?>"><b><?=$faddr->phones?></b></a>
 			    </li>
 			</ul>
 			<ul class="navbar-nav lang-menu d-none d-lg-flex">
@@ -237,7 +242,7 @@
 		<div class="container">
 		    <div class="row row-eq-height">
 			<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 themed-grid-col">
-			    <p><b>Найближчий курс:</b></p>
+			    <p><b><?=l('firstcurs')?>:</b></p>
 			    <div class="row">
 				<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 themed-grid-col text-center location">
 				    <div class="align-middle">
@@ -261,8 +266,8 @@
 			</div>
 			<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-8 themed-grid-col">
 			    <div class="sale text-center">
-				<p>Акція! <del>2 200</del> <br class="d-flex d-sm-none" /><b>2&nbsp;000</b>&nbsp;<span>грн</span></p>
-				<a href="kurs-manikyura" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#akcia">Записатися на курс!</a>
+				<p><?=l('akcia')?><del>2 200</del> <br class="d-flex d-sm-none" /><b>2&nbsp;000</b>&nbsp;<span>грн</span></p>
+				<a href="kurs-manikyura" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#akcia"><?=l('akcia_btn')?></a>
 			    </div>
 			</div>
 			<div class="col-12 col-sm-0 col-md-0 col-lg-0 col-xl-0 themed-grid-col girl d-none d-xl-flex">
@@ -278,16 +283,7 @@
 		    </div>
 		    <div class="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7 themed-grid-col pt-4 pb-2 px-4 px-lg-4 px-xl-5 five-steps">
 			<div class="px-lg-0 px-xl-5 pt-3">
-			    <!--h3 class="text-center text-uppercase font-weight-bold gradient-text pt-1 mb-1">5 простых шагов</h3>
-			    <h3 class="text-center text-uppercase font-weight-bold gradient-block py-1 mb-1">Стать мастером маникюра</h3>
-			    <h3 class="text-center text-uppercase font-weight-bold gradient-text mb-0">за 5 дней!</h3>
-			    <ol class="about-list">
-				<li>Позвони и получи консультацию</li>
-				<li>Пройди наш практический курс маникюра</li>
-				<li>Получи скидку 5% на покупку стартового набора</li>
-				<li>Через 5 дней начни обслуживать клиентов</li>
-				<li>За месяц окупи обучение и зарабатывай больше</li>
-			    </ol--><?=$decription;?>
+			   <?=$decription;?>
 			    <a  class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#calme"><?=l('calback_btn')?></a>
 			    <p class="text-center"><small><?=l('curse_calback')?></small></p>
 			</div>
@@ -298,21 +294,8 @@
 		<div class="row row-eq-height">
 			<div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 themed-grid-col py-5 px-4 px-lg-4 px-xl-5">
 				<div class="px-lg-0 px-xl-5 py-5">
-					<!--h3 class="text-center text-uppercase font-weight-bold gradient-text pt-1 mb-1">Базовий манікюр</h3>
-					<h3 class="text-center text-uppercase font-weight-bold gradient-block py-1 mb-1">Програма курсу</h3>
-					<h3 class="text-center text-uppercase font-weight-bold gradient-text mb-0"><small>обрезной + комбинированный</small></h3>
-					<ol class="about-list">
-						<li>Теоретическая часть (анатомия, заболевания, стерилизация, выбор инструментов)</li>
-						<li>Постановка руки для работы с проф. инструментом</li>
-						<li>Техника обрезного маникюра</li>
-						<li>Комбинированный маникюр</li>
-						<li>Выравнивание ногтевой пластины прозрачной и камуфлирующей базами</li>
-						<li>Покрытие гель-лаком встык и под кутикулу</li>
-						<li>Ремонт ногтя полигелем</li>
-						<li>Отработка навыков на 8 моделях (обе руки)</li>
-					</ol-->
 		<?=$fulltext?>
-					<a href="#" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#calme"><?=l('detail_btn')?></a>
+					<a href="#" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#detail"><?=l('detail_btn')?></a>
 					<p class="text-center"><small><?=l('detail')?></small></p>
 				</div>
 			</div>
@@ -780,9 +763,8 @@
 		    <!-- Modal body -->
 		    <div class="modal-body">
 			<form id='akciaForm' action="<?=WWW_BASE_PATH?>parcipate" method="post">
-			    <input type="hidden" name="id" value="<?=$acsia->id?>">
 			    <div class="form-price">
-				<p class="ps"><?=$acsia->$mlang?></p>
+				<p class="ps"><?=$k->$mlang?></p>
 				<div class="form-content fd-rever">
 				    <div class="left">
 					<label>Имя*</label>
@@ -801,6 +783,9 @@
 					    <input type="tel" name="phone" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required" required="required" placeholder="+38 ( _ _ _ ) _ _ _ _ _ _ _">
 					</span><br>
 					<span class="checkbox-style">
+					<input type="hidden" name="id" value="<?=$k->id?>" />
+					<input type="hidden" name="leadtype" value="curs" />
+					<input type="hidden" name="returnto" value="<?=$this->param[0]?>/<?=$this->param[1]?>" />
 					    <label class="lad-chec" for="checkbox-id">
 						<span class="style-chec">
 						    <input type="checkbox" id="checkbox-id">
@@ -811,8 +796,8 @@
 				    </div>
 				    <div class="right-block">
 					<div class="block-right-form">
-					    <div class="left_"><span>Дата старта</span><b>с <?=$acsia->start?></b></div>
-					    <div class="right"><span>Стоимость со<br> скидкой:</span><b><?=$acsia->ac_coast?> грн</b></div>
+					    <div class="left_"><span>Дата старта</span> <b>с <?=$k->start?></b></div>
+					    <div class="right"><span>Стоимость со<br> скидкой:</span><b><?=$k->ac_coast?> грн</b></div>
 					    <p></p></div>
 					<p><span class="block-right-span">*О точной дате начала курса мы оповестим лично</span>
 					</p></div>
@@ -834,16 +819,16 @@
 
 		    <!-- Modal Header -->
 		    <div class="modal-header">
-			<h4 class="title modal-title"><?=$aza?></h4>
+			<h4 class="title modal-title"><?=l('calback_btn')?></h4>
 			<button type="button" class="pum-close popmake-close close" data-dismiss="modal">&times;</button>
 		    </div>
 
 		    <!-- Modal body -->
 		    <div class="modal-body">
 			<form action="<?=WWW_BASE_PATH?>callme" method="post">
-			    <input type="hidden" name="id" value="<?=$acsia->id?>">
+			    <input type="hidden" name="id" value="<?=$k->id?>">
 			    <div class="form-price">
-				<p class="ps"><?=$acsia->$mlang?></p>
+				<p class="ps"><?=$k->$mlang?></p>
 				<div class="form-content fd-rever">
 				    <div class="left">
 					<label>Имя*</label>
@@ -854,31 +839,14 @@
 					<span class="wpcf7-form-control-wrap text-923">
 					    <input type="text" name="lname" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" required="required">
 					</span><br>
-					<label>Е-mail*</label>
-					<span class="wpcf7-form-control-wrap email-362"><input type="email" name="email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email" required='required'>
-					</span><br>
 					<label>Телефон*</label>
 					<span class="wpcf7-form-control-wrap tel-744">
 					    <input type="tel" name="phone" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required" required="required" placeholder="+38 ( _ _ _ ) _ _ _ _ _ _ _">
 					</span><br>
-					<span class="checkbox-style">
-					    <label class="lad-chec" for="checkbox-id">
-						<span class="style-chec">
-						    <input type="checkbox" id="checkbox-id">
-						</span>
-						<b>Получать уведомления об акциях и скидках школы</b></label>
-					</span>
-					<p></p>
 				    </div>
-				    <div class="right-block">
-					<div class="block-right-form">
-					    <div class="left_"><span>Дата старта</span><b>с <?=$acsia->start?></b></div>
-					    <div class="right"><span>Стоимость со<br> скидкой:</span><b><?=$acsia->ac_coast?> грн</b></div>
-					    <p></p></div>
-					<p><span class="block-right-span">*О точной дате начала курса мы оповестим лично</span>
-					</p></div>
+				    
 				</div>
-				<p><input type="submit" value="ПОДТВЕРДИТЬ ЗАПИСЬ" class="wpcf7-form-control wpcf7-submit">
+				<p><input type="submit" value="<?=l('calback_btn')?>" class="wpcf7-form-control wpcf7-submit">
 				    <span class="ajax-loader"></span>
 				</p></div>
 			</form>
@@ -891,3 +859,37 @@
 		
     </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

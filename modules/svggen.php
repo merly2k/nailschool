@@ -159,15 +159,24 @@ $xt2->setStyle('font-face','Montserrat');
 $xt2->setStyle('font-weight','750');
 
 $text4=$days;
-$xt3=new Texts\SVGText($text4,$st+5,$st+125);
-$xt3->setSize('30pt');
+if($days<=9){$tk=12;}
+else
+{
+    $tk=1;
+}
+$xt3=new Texts\SVGText($text4,$st+$tk,$st+125);
+$xt3->setSize('28pt');
 $xt3->setStyle('fill','#584550');
 $xt3->setAttribute('font-family','Montserrat');
 $xt3->setStyle('font-face','Montserrat');
 $xt3->setStyle('font-weight','700');
 
-
-$xt4=new Texts\SVGText($text5,$st+38,$st+123);
+if($days<=9){$ts=38;}
+else
+{
+    $ts=48;
+}
+$xt4=new Texts\SVGText($text5,$st+$ts,$st+125);
 $xt4->setSize('18pt');
 $xt4->setStyle('fill','#584550');
 $xt4->setAttribute('font-family','Montserrat');

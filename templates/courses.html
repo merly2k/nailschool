@@ -92,98 +92,7 @@
 	</style>
 
 
-	<style type="text/css">
-	    @media(min-width: 1360){
 
-		body {
-		    position: absolute;
-		    top: -10rem;
-		    -webkit-transform:scale(0.80);
-		    -moz-transform:scale(0.80);
-		    -ms-transform:scale(0.80);
-		    -o-transform:scale(0.80);
-		    transform:scale(0.80);
-
-
-		}
-
-	    }
-	    /* 
-	      ##Device = Desktops
-	      ##Screen = 1281px to higher resolution desktops
-	    */
-
-	    @media (min-width: 1281px) {
-
-		body {
-		    position: absolute;
-		    top: -10rem;
-		    -webkit-transform:scale(0.70);
-		    -moz-transform:scale(0.70);
-		    -ms-transform:scale(0.70);
-		    -o-transform:scale(0.70);
-		    transform:scale(0.70);
-
-
-		}
-
-	    }
-
-	    /* 
-	      ##Device = Laptops, Desktops
-	      ##Screen = B/w 1025px to 1280px
-	    */
-
-	    @media (min-width: 1025px) and (max-width: 1280px) {
-
-		//CSS
-
-	    }
-
-	    /* 
-	      ##Device = Tablets, Ipads (portrait)
-	      ##Screen = B/w 768px to 1024px
-	    */
-
-	    @media (min-width: 768px) and (max-width: 1024px) {
-
-		//CSS
-
-	    }
-
-	    /* 
-	      ##Device = Tablets, Ipads (landscape)
-	      ##Screen = B/w 768px to 1024px
-	    */
-
-	    @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-
-		//CSS
-
-	    }
-
-	    /* 
-	      ##Device = Low Resolution Tablets, Mobiles (Landscape)
-	      ##Screen = B/w 481px to 767px
-	    */
-
-	    @media (min-width: 481px) and (max-width: 767px) {
-
-		//CSS
-
-	    }
-
-	    /* 
-	      ##Device = Most of the Smartphones Mobiles (Portrait)
-	      ##Screen = B/w 320px to 479px
-	    */
-
-	    @media (min-width: 320px) and (max-width: 480px) {
-
-		//CSS
-
-	    }	    
-	</style>
     </head>
     <body class="page-template-default page page-id-255 page-parent singular image-filters-enabled">
 
@@ -236,21 +145,15 @@
 
 
 						<div class="right">
-						    <a id="lanSel" class="dropdown-toggle" data-toggle="dropdown" role="button" lang="RU">
-							<span class="lanNavSel">
-							    <i id="imgNavSel" class="flag-icon flag-icon-squared flag-icon-ru"></i> RU</span>
-							<span class="caret"></span></a>
-						    <ul class="dropdown-menu" role="menu">
-							<li>
-							    <a id="ua" class="language ls" lang="UA">
-								<span><i id="imgNavIta" class="flag-icon flag-icon-squared flag-icon-ua"></i> UA</span>
-							    </a>
+						    <ul class="navbar-nav lang-menu d-none d-lg-flex">
+							<li class="nav-item">
+							    <a class="nav-link text-right ls" href="" lang="UA">Укр</a>
 							</li>
-							<li>
-							    <a id="Ru" class="language ls" lang="RU">
-								<span>
-								    <i id="imgNavRu" class="flag-icon flag-icon-squared flag-icon-ru"></i> RU</span>
-							    </a>
+							<li class="nav-item col-1">
+							    <a class="nav-link text-center separator">/</a>
+							</li>
+							<li class="nav-item col-1">
+							    <a class="nav-link text-left ls" href="" lang="RU">Рус</a>
 							</li>
 						    </ul>
 						</div>
@@ -294,18 +197,18 @@
 				    </div>
 				</section>
 				<?=$packets?>
-				    <div class="container-fluid contacts">
-					<div class="row row-eq-height">
-					    <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-6 themed-grid-col py-4 d-flex align-items-center address">
-						<img src="<?=WWW_IMG_PATH?>/location-pink.svg" alt="">
-						<p>ул.&nbsp;Павла Ниринберга,&nbsp;10 (бывш. ул.&nbsp;Баумана), г.&nbsp;Днепр</p>
-					    </div>
-					    <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-6 themed-grid-col py-4 d-flex align-items-center viber">
-						<img src="<?=WWW_IMG_PATH?>/viber.svg" alt="">
-						<p><a href="tel:+380972625758">(097) 262-57-58</a> / <a href="tel:+380934031613">(093) 403-16-13</a> / <a href="tel:+380567940991">(056) 794-09-91</a></p>
-					    </div>
+				<div class="container-fluid contacts">
+				    <div class="row row-eq-height">
+					<div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-6 themed-grid-col py-4 d-flex align-items-center address">
+					    <img src="<?=WWW_IMG_PATH?>/location-pink.svg" alt="">
+					    <p>ул.&nbsp;Павла Ниринберга,&nbsp;10 (бывш. ул.&nbsp;Баумана), г.&nbsp;Днепр</p>
+					</div>
+					<div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-6 themed-grid-col py-4 d-flex align-items-center viber">
+					    <img src="<?=WWW_IMG_PATH?>/viber.svg" alt="">
+					    <p><a href="tel:+380972625758">(097) 262-57-58</a> / <a href="tel:+380934031613">(093) 403-16-13</a> / <a href="tel:+380567940991">(056) 794-09-91</a></p>
 					</div>
 				    </div>
+				</div>
 				</section>
 
 				<footer class="footer-page">
@@ -444,15 +347,7 @@
 
 	</div>
 	<div id="pum-802" class="pum pum-overlay pum-theme-83 pum-theme-tema-po-umolchaniyu popmake-overlay pum-click-to-close click_open" data-popmake="{&quot;id&quot;:802,&quot;slug&quot;:&quot;zapisatsya-na-konsultatsiyu&quot;,&quot;theme_id&quot;:83,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;extra_selectors&quot;:&quot;&quot;,&quot;cookie_name&quot;:null}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:false,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;medium&quot;,&quot;responsive_min_width&quot;:&quot;0%&quot;,&quot;responsive_min_width_unit&quot;:false,&quot;responsive_max_width&quot;:&quot;100%&quot;,&quot;responsive_max_width_unit&quot;:false,&quot;custom_width&quot;:&quot;640px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center top&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_left&quot;:&quot;0&quot;,&quot;position_bottom&quot;:&quot;0&quot;,&quot;position_right&quot;:&quot;0&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:false,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:&quot;1&quot;,&quot;esc_press&quot;:&quot;1&quot;,&quot;f4_press&quot;:&quot;1&quot;},&quot;click_open&quot;:[]}}" role="dialog" aria-hidden="true">
-
 	    <div id="popmake-802" class="pum-container popmake theme-83 pum-responsive pum-responsive-medium responsive size-medium">
-
-
-
-
-
-
-
 		<div class="pum-content popmake-content">
 		    <div role="form" class="wpcf7" id="wpcf7-f362-o9" dir="ltr" lang="ru-RU">
 			<div class="screen-reader-response"></div>
@@ -476,13 +371,9 @@
 		</div>
 
 
-
-
 		<button type="button" class="pum-close popmake-close" aria-label="Закрыть">
 		    x            </button>
-
 	    </div>
-
 	</div>
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
@@ -637,6 +528,10 @@
 	</script>
 
     </body></html>
+
+
+
+
 
 
 

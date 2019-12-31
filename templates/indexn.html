@@ -557,27 +557,19 @@ hr {
 			    </div>
 			</li>
 		    </ul>
-		    <ul class="navbar-nav ml-auto nav-flex-icons">
-			<li class="nav-item dropdown">
-			    <a id="lanSel" class="dropdown-toggle" data-toggle="dropdown" role="button" >
-				<span class="lanNavSel"><i id="imgNavSel" class="flag-icon flag-icon-squared flag-icon-ua"></i> UA</span>
-				<span class="caret"></span></a>
-			    <ul class="dropdown-menu" role="menu">
-				<li>
-				    <a id="ua"  class="language ls" lang="UA">
-					<span><i id="imgNavIta" class="flag-icon flag-icon-squared flag-icon-ua"></i> UA</span>
-				    </a>
-				</li>
-				<li>
-				    <a id="Ru"  class="language ls" lang="RU">
-					<span><i id="imgNavRu" class="flag-icon flag-icon-squared flag-icon-ru"></i> RU</span>
-				    </a>
-				</li>
-
-			    </ul>
-
-			</li>
-		    </ul>
+		    <div class="right">
+						    <ul class="navbar-nav lang-menu d-none d-lg-flex">
+							<li class="nav-item">
+							    <a class="nav-link text-right ls" href="" lang="UA">Укр</a>
+							</li>
+							<li class="nav-item col-1">
+							    <a class="nav-link text-center separator">/</a>
+							</li>
+							<li class="nav-item col-1">
+							    <a class="nav-link text-left ls" href="" lang="RU">Рус</a>
+							</li>
+						    </ul>
+						</div>
 		</div>
 	    </nav>
 	</div>
@@ -757,7 +749,7 @@ hr {
 			    <a href="http://nails.ua/">«NAILS.UA»</a></div>
 		    </div>
 		</div>
-		<p class="copyright">&COPY; <?=date('Y')?> Nails School</p>
+		<p class="copyright">&COPY; copyright 1999  - <?=date('Y')?></p>
 
 	    </div>
 	</footer>
@@ -839,37 +831,39 @@ hr {
         })
     </script>
     <script>
-        $(document).ready(function () {
-            var currentId;
-            var curlang = '<?=$_SESSION["lang"];?>';
-            console.log(curlang);
-            $('.lanNavSel').html('<i id="imgNavSel" class="flag-icon flag-icon-squared flag-icon-' + curlang.toLowerCase() + '"></i> ' + curlang.toUpperCase());
-            var language = (curlang || navigator.language || navigator.browserLanguage).split('-')[0];
-            if (!currentId) {
-                $('#lanSel').attr('lang', language);
-            }
-            ;
+      $(document).ready(function () {
+                var currentId;
+                var curlang = '<?=$_SESSION["lang"];?>';
+                console.log(curlang);
+                $('.ls').removeClass('active') ;
+		$('[lang="'+curlang.toLowerCase()+'"]').addClass('active');
+                var language = (curlang || navigator.language || navigator.browserLanguage).split('-')[0];
+                if (!currentId) {
+                    $('#lanSel').attr('lang', language);
+                }
+                ;
 
-            $('.ls').on('click',
-                    function (e)
-                    {
-                        console.log(this);
-                        var langage = ($(this).attr('lang')); // do stuff
-                        $('#lanSel').attr('lang', langage);
-                        $.ajax({
-                            url: "<?php echo WWW_BASE_PATH;?>lang",
-                            cache: false,
-                            type: "POST",
-                            data: 'curlang=' + langage,
+                $('.ls').on('click',
+                        function (e)
+                        {
+			    e.preventDefault();
+                            console.log(this);
+                            var langage = ($(this).attr('lang')); // do stuff
+                            //$('#lanSel').attr('lang', langage);
+                            $.ajax({
+                                url: "<?php echo WWW_BASE_PATH;?>lang",
+                                cache: false,
+                                type: "POST",
+                                data: 'curlang=' + langage,
 
-                        }).done(function (data) {
-                            console.log(data);
+                            }).done(function (data) {
+                                console.log(data);
 
-                            window.location.reload();
+                                window.location.reload();
 
+                            });
                         });
-                    });
-        });
+            });
 
     </script>
 
