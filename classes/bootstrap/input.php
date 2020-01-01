@@ -121,7 +121,7 @@ class input {
 			else
 			{
 			    if ($v->label != ''):
-				if ($k == 'image')
+				if ($k == 'image' or preg_match('/_img/', $k))
 				{
 				    $out .= $this->input("f$c", $v->label, 'file', $k,'',$data[$k]);
 				}
@@ -260,6 +260,8 @@ class input {
     }
 
 }
+
+
 
 
 
