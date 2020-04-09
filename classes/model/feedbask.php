@@ -13,15 +13,18 @@ namespace model;
  *
  * @author merly
  */
-class feedbask extends \db{
+class feedbask extends \db {
+
     public
 	    function getAll() {
-	$q='SELECT * FROM `feedback`';
+	$q = 'SELECT * FROM `feedback`';
 	return $this->get_result($q);
     }
+
     public
 	    function newFeedback($param) {
-	$q="INSERT INTO `feedback` ("
+	extract($param);
+	$q = "INSERT INTO `feedback` ("
 		. " `name_ua`,"
 		. " `name_ru`,"
 		. " `age`,"
@@ -41,22 +44,31 @@ class feedbask extends \db{
 		. " '$feed_ru');";
 	return $this->query($q);
     }
-    public	    function UpdateFeedback($param) {
+
+    public
+	    function UpdateFeedback($param) {
 	extract($param);
-	$q="UPDATE `feedback` SET "
-		. "`name_ua` = '$name_ua',"
-		. " `name_ru` = '$name_ru',"
-		. " `age` = '$age',"
-		. " `image` = '$image',"
-		. " `misto_ua` = '$misto_ua',"
-		. " `misto_ru` = '$misto_ru',"
-		. " `feed_ua` = '«$feed_ua»',"
-		. " `feed_ru` = '«$feed_ru»'"
-		. " WHERE `id` = $id;";
-	return $this->query($q);
+
+	$q = "UPDATE `feedback` SET ";
+	foreach ($param as $k => $v)
+	{
+	    $p[] = "`$k`='$v'";
+	}
+	$q .= implode(", ", $p) . " WHERE  `id`=$id;";
+	//echo $q;
+	$this->query($q);
+
+	return $this->lastState;
     }
+
     public
 	    function delFeedback($id) {
-	$q="delete from `feedback` where id='$id'";
+	$q = "delete from `feedback` where id='$id'";
     }
+
+    function getFeedback($id) {
+	$q = "SELECT * FROM `feedback` where `id`='$id'";
+	return $this->get_result($q);
+    }
+
 }

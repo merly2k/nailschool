@@ -4,11 +4,27 @@
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Google Tag Manager -->
+	<script>(function (w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({'gtm.start':
+                            new Date().getTime(), event: 'gtm.js'});
+                var f = d.getElementsByTagName(s)[0],
+                        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+                j.async = true;
+                j.src =
+                        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-PHCP2RH');</script>
+	<!-- End Google Tag Manager -->
+
 	<title>Nails School — школа маникюра ногтевой сервис</title>
 	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="<?=WWW_CSS_PATH?>bootstrap.css">
 	<script src="https://kit.fontawesome.com/e66f078689.js"></script>
 	<link href="<?=WWW_CSS_PATH?>flag-icon.css" rel="stylesheet" type="text/css">
+	<link href="<?=WWW_CSS_PATH?>styles-ing-home.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="<?=WWW_CSS_PATH?>all.min.css">
 	<style>
 	    @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&subset=cyrillic');
 	    @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800&subset=cyrillic');
@@ -16,7 +32,6 @@
 	    .h2, h2 {
 		font-size: 2rem;
 		text-align: center;
-		padding: 1.5rem;
 	    }
 	    .www{text-align: justify;}
 	    .banner {
@@ -27,51 +42,19 @@
 	    }
 	    .close-course{
 		background: linear-gradient(to right,#f80759 0,#bc4e9c 100%);
-		min-height: 10rem; 
+		min-height: 10rem;
 	    }
 	    .deva{
 		background: url(../images/girl.png)no-repeat right bottom/contain;
-		min-height: 27.8rem; 
+		min-height: 27.8rem;
 	    }
-	    .about-course__img {    
-		width: 4rem;    
+	    .about-course__img {
+		width: 4rem;
 		margin-right: 1rem;
 	    }
 	    .logo{display: block;max-width: 28rem; width: 100%;}
 	    .main_header{
 		margin-top: 1.4rem;
-	    }
-	    .sale__text {
-		font-size: 1.8rem;
-		text-transform: uppercase;
-		color: #fff;
-		padding: 0px;
-		border: 3px solid #fff;
-		-webkit-border-radius: 10px;
-		border-radius: 10px;
-		padding: 0.8rem 0 0 0;
-		margin-top: 1.6rem;
-	    }
-	    .sale__btn {
-		width: 100%;
-		height: 66px;
-		font-size: 1.62rem;
-		font-weight: 700;
-		color: #8f2f85;
-		text-transform: uppercase;
-		text-align: center;
-		border: 0;
-		background-color: #ffd800;
-		-webkit-border-radius: 7px;
-		border-radius: 7px;
-		cursor: pointer;
-		display: block;
-		padding-top: 0.7rem;
-	    }
-	    .sale {
-
-
-		margin-left: 45px;
 	    }
 	    .close-course-list__img {
 		display: block;
@@ -118,34 +101,6 @@
 		vertical-align: middle;
 		text-align: center;
 	    }
-	    .link-cities {
-		max-width: 340px;
-		margin: auto;
-		border: 3px solid #DF5396;
-		border-radius: 5px;
-		margin-top: 25px;
-	    }
-	    .link-cities span {
-
-		display: block;
-		padding: 10px;
-	    }
-	    .site_btn {
-		width: 100%;
-		height: 46px;
-		text-transform: uppercase;
-		text-align: center;
-		border: 0;
-		background: -webkit-linear-gradient(45deg,#ed5799,#8c3a84);
-		background: -o-linear-gradient(45deg,#ed5799,#8c3a84);
-		background: linear-gradient(45deg,#ed5799,#8c3a84);
-		-webkit-text-fill-color: white;
-		-webkit-border-radius: 3px;
-		border-radius: 3px;
-		cursor: pointer;
-		display: block;
-		padding-top: 0.7rem;
-	    }
 	    .headline__title {
 		font-size: 2rem;
 		font-weight: 300;
@@ -172,12 +127,7 @@
 		font-weight: 500;
 		text-transform: uppercase;
 		margin-top: 20px;
-
 	    }
-	    .why-block__text {
-		font-size: 15px;
-		text-align: left;
-		line-height: 19px;}
 
 	    .footer-index {
 		background: #be75ab;
@@ -186,23 +136,13 @@
 		margin-top: 20px;
 		padding-bottom: 20px;
 	    }
-	    .carousel-control-prev,
-	    .carousel-control-next{
-		height: 50px;
-		width: 50px;
-		outline: white;
-		background-size: 100%, 100%;
-		border-radius: 50%;
-		border: 1px solid white;
-		background-color: white;
-	    }
 
-	    .carousel-control-prev-icon { 
-		background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23f0f' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E")!important; 
+	    .carousel-control-prev-icon {
+		background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23f0f' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E")!important;
 		width: 30px;
 		height: 48px;
 	    }
-	    .carousel-control-next-icon { 
+	    .carousel-control-next-icon {
 		background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fof' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
 		width: 30px;
 		height: 48px;
@@ -219,541 +159,513 @@
 		margin: auto;
 	    }
 	    .slider-videos {
-    margin-top: 70px;
-    text-align: center;
-}
-.col-centered {
-    float: none;
-    margin: 0 auto;
-}
-.carousel-item .www ,.videocarousel{width: 80%;text-align: center;}
-.footer-index .col-lg-12 a {
-    text-decoration: underline;
-    color: #fff;
-    font-weight: bold;
-    font-size: 19px;
-    margin-left: 7px;
-}
-/*-------------form---------------*/
-form .form-price {
+		margin-top: 70px;
+		text-align: center;
+	    }
+	    .col-centered {
+		float: none;
+		margin: 0 auto;
+	    }
+	    .carousel-item .www ,.videocarousel{width: 80%;text-align: center;}
+	    .footer-index .col-lg-12 a {
+		text-decoration: underline;
+		color: #fff;
+		font-weight: bold;
+		font-size: 19px;
+		margin-left: 7px;
+	    }
+	    /*-------------form---------------*/
+	    form .form-price {
 
-}
+	    }
 
-form .form-content {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: normal;
-    justify-content: center;
-}
+	    form .form-content {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: normal;
+		justify-content: center;
+	    }
 
-form .form-content .left {
-    min-width: 390px;
-    margin-right: 35px;
+	    form .form-content .left {
+		min-width: 390px;
+		margin-right: 35px;
 
-}
+	    }
 
-form .form-content .right-block {
-    min-width: 320px;
-    padding-top: 25px;
-}
+	    form .form-content .right-block {
+		min-width: 320px;
+		padding-top: 25px;
+	    }
 
-form .form-content .right-block .block-right-span {
-    display: block;
-    font-size: 13px;
-    padding-top: 5px
-}
+	    form .form-content .right-block .block-right-span {
+		display: block;
+		font-size: 13px;
+		padding-top: 5px
+	    }
 
-form .title {
-    font-family: Open Sans, Bold;
-    font-size: 25px;
-    color: #651F65;
-    font-weight: bold;
-    margin-bottom: 8px;
-}
+	    form .title {
+		font-family: Open Sans, Bold;
+		font-size: 25px;
+		color: #651F65;
+		font-weight: bold;
+		margin-bottom: 8px;
+	    }
 
-.form-price .ps {
-    color: #707070;
-    font-size: 18px;
-    font-family: Open Sans, Bold;
-    margin-bottom: 15px;
-}
+	    .form-price .ps {
+		color: #707070;
+		font-size: 18px;
+		font-family: Open Sans, Bold;
+		margin-bottom: 15px;
+	    }
 
-.pum-container.pum-responsive {
-    width: auto !important;
-}
+	    .pum-container.pum-responsive {
+		width: auto !important;
+	    }
 
-.pum-container {
-    max-width: 800px !important;
-    margin-left: 25px;
-}
+	    .pum-container {
+		max-width: 800px !important;
+		margin-left: 25px;
+	    }
 
-.pum-close {
-    font-size: 25px !important;
-    font-weight: bold !important;
-}
+	    .pum-close {
+		font-size: 25px !important;
+		font-weight: bold !important;
+	    }
 
-.popmake {
-    -webkit-box-shadow: -1px 0px 29px 6px rgba(0, 0, 0, 0.34) !important;
-    -moz-box-shadow: -1px 0px 29px 6px rgba(0, 0, 0, 0.34) !important;
-    box-shadow: -1px 0px 29px 6px rgba(0, 0, 0, 0.34) !important;
-}
+	    .popmake {
+		-webkit-box-shadow: -1px 0px 29px 6px rgba(0, 0, 0, 0.34) !important;
+		-moz-box-shadow: -1px 0px 29px 6px rgba(0, 0, 0, 0.34) !important;
+		box-shadow: -1px 0px 29px 6px rgba(0, 0, 0, 0.34) !important;
+	    }
 
-.wpcf7 {
-    max-width: 780px;
-}
+	    .wpcf7 {
+		max-width: 780px;
+	    }
 
-form label {
-    display: block;
-    margin-bottom: 7px;
-    font-size: 15px;
-    color: #525252;
-}
+	    form label {
+		display: block;
+		margin-bottom: 7px;
+		font-size: 15px;
+		color: #525252;
+	    }
 
-form .consul {
-    max-width: 405px;
-    min-width: 405px;
-}
+	    form .consul {
+		max-width: 405px;
+		min-width: 405px;
+	    }
 
-form .consul .title {
-    margin-top: 15px;
-    font-size: 22px;
-}
+	    form .consul .title {
+		margin-top: 15px;
+		font-size: 22px;
+	    }
 
-form input {
-    display: block;
-    width: 100%;
-    height: 44px;
-    border: 1px solid #e7437c;
-    padding-left: 15px;
-    border-radius: 5px;
-}
+	    form input {
+		display: block;
+		width: 100%;
+		height: 44px;
+		border: 1px solid #e7437c;
+		padding-left: 15px;
+		border-radius: 5px;
+	    }
 
-.lad-chec {
-    display: flex;
-    align-items: center;
-    position: relative;
-}
+	    .lad-chec {
+		display: flex;
+		align-items: center;
+		position: relative;
+	    }
 
-.lad-chec b {
-    position: absolute;
-    left: 42px;
-    width: 100%;
+	    .lad-chec b {
+		position: absolute;
+		left: 42px;
+		width: 100%;
 
-}
+	    }
 
-.style-chec {
-    max-width: 30px;
-    min-width: 30px;
-    border: 1px solid #e7437c;
-    background: transparent;
-    padding-left: 0;
-    margin-bottom: 0;
-    display: inline-flex;
-    margin-right: 3px;
-    height: 30px;
-    position: relative;
-    border-radius: 5px;
-}
+	    .style-chec {
+		max-width: 30px;
+		min-width: 30px;
+		border: 1px solid #e7437c;
+		background: transparent;
+		padding-left: 0;
+		margin-bottom: 0;
+		display: inline-flex;
+		margin-right: 3px;
+		height: 30px;
+		position: relative;
+		border-radius: 5px;
+	    }
 
-input[type="checkbox"] {
-    position: absolute;
+	    input[type="checkbox"] {
+		position: absolute;
 
-}
+	    }
 
-input[type="checkbox"] + label {
+	    input[type="checkbox"] + label {
 
-}
+	    }
 
-input[type="checkbox"]:checked + label {
+	    input[type="checkbox"]:checked + label {
 
-}
+	    }
 
-form input[type="checkbox"] {
-    top: -7px;
-    left: 1px;
-    max-width: 28px;
-    min-width: 28px;
-    position: absolute;
+	    form input[type="checkbox"] {
+		top: -7px;
+		left: 1px;
+		max-width: 28px;
+		min-width: 28px;
+		position: absolute;
 
-}
+	    }
 
-form input[type="submit"] {
-    background: #FAE55B;
-    color: #651F65;
-    border: none;
-    padding: 17px 60px 35px;
-    font-size: 15px;
-    font-weight: bold;
-    margin: 15px auto 0;
-    cursor: pointer;
-    border-radius: 50px;
-    max-width: 300px;
-}
+	    form input[type="submit"] {
+		background: #FAE55B;
+		color: #651F65;
+		border: none;
+		padding: 17px 60px 35px;
+		font-size: 15px;
+		font-weight: bold;
+		margin: 15px auto 0;
+		cursor: pointer;
+		border-radius: 50px;
+		max-width: 300px;
+	    }
 
-form .block-right-form {
-    border: 1px solid #e7437c;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 100%;
-}
+	    form .block-right-form {
+		border: 1px solid #e7437c;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		width: 100%;
+	    }
 
-form .block-right-form .right b {
-    font-weight: bold;
-    margin: 15px 0;
-    display: block;
-}
+	    form .block-right-form .right b {
+		font-weight: bold;
+		margin: 15px 0;
+		display: block;
+	    }
 
-form .block-right-form .left_ b {
-    font-weight: bold;
-    margin: 15px 0;
-    display: block;
-}
+	    form .block-right-form .left_ b {
+		font-weight: bold;
+		margin: 15px 0;
+		display: block;
+	    }
 
-form .block-right-form .left_ span {
-    display: block;
-    margin-top: 15px;
-    color: #868686;
-    text-align: center;
-}
+	    form .block-right-form .left_ span {
+		display: block;
+		margin-top: 15px;
+		color: #868686;
+		text-align: center;
+	    }
 
-form .block-right-form .right span {
-    display: block;
-    margin-top: 15px;
-}
+	    form .block-right-form .right span {
+		display: block;
+		margin-top: 15px;
+	    }
 
-form .block-right-form .right {
-    width: 50%;
-    background: #fb4a87;
-    color: #fff;
-    text-align: center;
-    display: grid;
-}
+	    form .block-right-form .right {
+		width: 50%;
+		background: #fb4a87;
+		color: #fff;
+		text-align: center;
+		display: grid;
+	    }
 
-form .block-right-form .left_ {
-    width: 50%;
-    color: #fb4a87;
-    background: #fff;
-    text-align: center;
-    display: grid;
-}
+	    form .block-right-form .left_ {
+		width: 50%;
+		color: #fb4a87;
+		background: #fff;
+		text-align: center;
+		display: grid;
+	    }
 
-form .first {
-    display: inline-flex !important;
-    flex-direction: row-reverse;
-    align-items: center;
-    margin: 0 0 0 0 !important;
-    color: #868686;
-    font-size: 14px;
-}
+	    form .first {
+		display: inline-flex !important;
+		flex-direction: row-reverse;
+		align-items: center;
+		margin: 0 0 0 0 !important;
+		color: #868686;
+		font-size: 14px;
+	    }
 
-form input:focus {
-    outline: 0
-}
+	    form input:focus {
+		outline: 0
+	    }
 
-form textarea {
-    display: block;
-    width: 100%;
-    height: 150px;
-    border: 1px solid #e7437c;
-    padding-left: 20px;
-    margin-bottom: 20px
-}
+	    form textarea {
+		display: block;
+		width: 100%;
+		height: 150px;
+		border: 1px solid #e7437c;
+		padding-left: 20px;
+		margin-bottom: 20px
+	    }
 
-form button {
-    height: 50px
-}
+	    form button {
+		height: 50px
+	    }
 
-.page .entry-header {
-    display: none;
-}
-
-/* new-css*/
-.slick-prev {
-    position: absolute;
-    left: -2%;
-    top: 27%;
-    z-index: 999;
-    width: 100px;
-    height: 150px;
-    border: none;
-    background: transparent;
-    color: transparent;
-    outline: none;
-    background-image: url(../images/left.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.slick-prev:focus {
-    outline: none;
-}
-
-.slick-next {
-    position: absolute;
-    right: -2%;
-    top: 27%;
-    z-index: 999;
-    width: 100px;
-    height: 150px;
-    border: none;
-    background: transparent;
-    color: transparent;
-    outline: none;
-    background-image: url(../images/right.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-
-}
-
-.slick-next:focus {
-    outline: none;
-}
-hr {
-	width: 80px;
-	height: 4px;
-	border-width: 0px;
-	background-color: #83d0f5;
-	border-radius: 4px;
-}
-	    @media (min-width: 576px) {  }
-
-
-	    @media (min-width: 768px) {  }
-
-
-	    @media (min-width: 992px) {  }
-
-
-	    @media (min-width: 1200px) {  }
+	    .page .entry-header {
+		display: none;
+	    }
 	</style>
     </head>
     <body>
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PHCP2RH"
+			  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
 
-	<div class="container-fluid bg-light">
-
+	<header id="header">
 	    <!--Navbar -->
-	    <nav class="navbar navbar-expand-sm fixed-top navbar-light bg-light">
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
-			aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
-		    <span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse" id="navbarSupportedContent-555">
-		    <ul class="navbar-nav mr-auto">
-			<li class="nav-item"><a class="nav-link" href="<?=WWW_BASE_PATH?>"><?=l('m1');?></a></li>
-			<li class="nav-item"><a class="nav-link" href="#about"><?=l('m2');?></a></li>
-			<li class="nav-item"><a class="nav-link" href="#towns"><?=l('m3');?></a></li>
-			<li class="nav-item"><a class="nav-link" href="#whuour"><?=l('m4');?></a></li>
-			<li class="nav-item"><a class="nav-link" href="#video"><?=l('m5');?></a></li>
-			<li class="nav-item"><a class="nav-link" href="#fidback"><?=l('m6');?></a></li>
-		    </ul>
-		    <ul class="navbar-nav ml-auto">
-			<li class="nav-item dropdown">
-			    <a class="nav-link dropdown-toggle" id="MenuLink-555" data-toggle="dropdown"
-			       aria-haspopup="true" aria-expanded="false"><?=l('m7');?>
-			    </a>
-			    <div class="dropdown-menu dropdown-secondary" aria-labelledby="MenuLink-555">
-				<?=$otherTown?>
-			    </div>
-			</li>
-		    </ul>
-		    <div class="right">
-						    <ul class="navbar-nav lang-menu d-none d-lg-flex">
-							<li class="nav-item">
-							    <a class="nav-link text-right ls" href="" lang="UA">Укр</a>
-							</li>
-							<li class="nav-item col-1">
-							    <a class="nav-link text-center separator">/</a>
-							</li>
-							<li class="nav-item col-1">
-							    <a class="nav-link text-left ls" href="" lang="RU">Рус</a>
-							</li>
-						    </ul>
-						</div>
+	    <nav class="navbar navbar-expand-lg navbar-home fixed-top navbar-light bg-light">
+		<div class="container align-items-start">
+		    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarmenu"
+			    aria-controls="navbarmenu" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		    </button>
+		    <div class="xs-menu d-block d-lg-none">
+			<ul class="navbar-nav mr-auto row no-gutters">
+			    <li class="nav-item dropdown col-7">
+				<a class="nav-link dropdown-toggle" href="#" id="navbardropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-map-marker-alt d-none d-sm-inline"></i>&nbsp;<?=l('m7');?></a>
+				<div class="dropdown-menu" aria-labelledby="navbardropdown">
+				    <?=$otherTown?>
+				</div>
+			    </li>
+			    <li class="nav-item text-center dropdown col-2 phone"><a class="nav-link" href="tel:+380934031613"><i class="fas fa-phone align-top flip-horizontal"></i></a></li>
+			    <li class="nav-item col-1 active">
+				<a class="nav-link text-right ls" href="" lang="UA">Укр</a>
+			    </li>
+			    <li class="nav-item col-1">
+				<a class="nav-link text-center separator">/</a>
+			    </li>
+			    <li class="nav-item col-1">
+				<a class="nav-link text-left ls" href="" lang="RU">Рус</a>
+			    </li>
+			</ul>
+		    </div>
+		    <div class="collapse navbar-collapse" id="navbarmenu">
+			<ul class="navbar-nav m-auto d-none d-lg-block cities-menu">
+			    <li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbardropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-map-marker-alt"></i>&nbsp;<?=l('m7');?></a>
+				<div class="dropdown-menu" aria-labelledby="navbardropdown"><?=$otherTown?></div>
+			    </li>
+			</ul>
+			<ul class="navbar-nav mr-auto main-menu">
+			    <li class="nav-item d-none d-lg-block">
+				<a class="nav-link" href="tel:+380934031613"><b><i class="fas fa-phone align-middle flip-horizontal"></i>&nbsp;(093) 403 16 13</b></a>
+			    </li>
+			</ul>
+			<ul class="navbar-nav mr-auto main-menu">
+			    <li class="nav-item"><a class="nav-link" href="#about"><?=l('m2');?></a></li>
+			    <li class="nav-item d-none d-lg-block"><a class="nav-link separator"><span>/</span></a></li>
+			    <li class="nav-item"><a class="nav-link" href="#towns"><?=l('m3');?></a></li>
+			    <li class="nav-item d-none d-lg-block"><a class="nav-link separator"><span>/</span></a></li>
+			    <li class="nav-item"><a class="nav-link" href="#whuour"><?=l('m4');?></a></li>
+			    <li class="nav-item d-none d-lg-block"><a class="nav-link separator"><span>/</span></a></li>
+			    <li class="nav-item"><a class="nav-link" href="#video"><?=l('m5');?></a></li>
+			    <li class="nav-item d-none d-lg-block"><a class="nav-link separator"><span>/</span></a></li>
+			    <li class="nav-item"><a class="nav-link" href="#fidback"><?=l('m6');?></a></li>
+			</ul>
+			<ul class="navbar-nav lang-menu d-none d-lg-flex">
+			    <li class="nav-item">
+				<a class="nav-link text-right ls" href="" lang="UA"><span>Укр</span></a>
+			    </li>
+			    <li class="nav-item d-none d-lg-block">
+				<a class="nav-link text-center separator"><span>/</span></a>
+			    </li>
+			    <li class="nav-item">
+				<a class="nav-link text-left ls" href="" lang="RU"><span>Рус</span></a>
+			    </li>
+			</ul>
+		    </div>
 		</div>
 	    </nav>
-	</div>
-	<!--/.Navbar -->
-	<!--main header-->
-	<section class="main_header">
-	    <div class=" container banner">
-		<div class="row">
-		    <div class="col-12 col-md-8">
-			<img class="logo m-auto" src="<?=WWW_IMG_PATH?>logo.svg" alt="">
-			<div class="standart">
-			    <h1 class="gradient-text headline text-center"><?=l('hh1')?></h1>
-			    <p class="headline__title text-center"><?=l('u1');?></b></p>
-
-			    <div class="row align-items-center">
-				<div class="col-12 col-sm-6 d-flex align-items-center about-course">
-
-				    <img class="about-course__img" src="<?=WWW_IMG_PATH?>kalendar.svg" alt="">
-				    <p class="about-course__text"><?=l('m9')?></p>
-
-				</div>
-				<div class="col-12 col-sm-6 d-flex align-items-center about-course">
-
-				    <img class="about-course__img" src="<?=WWW_IMG_PATH?>people.svg" alt="">
-				    <p class="about-course__text"><?=l('r2')?></p>
-
-				</div>
-				<div class="col-12 col-sm-6 d-flex align-items-center about-course">
-
-				    <img class="about-course__img" src="<?=WWW_IMG_PATH?>krema.svg" alt="">
-				    <p class="about-course__text"><?=l('r3');?></strong></p>
-
-				</div>
-				<div class="col-12 col-sm-6 d-flex align-items-center about-course">
-
-				    <img class="about-course__img" src="<?=WWW_IMG_PATH?>certificate.svg" alt="">
-				    <p class="about-course__text"><?=l('r4');?></p>
-				</div>
+	    <!--/.Navbar -->
+	    <!--main header-->
+	    <div class="container pt-5">
+		<div class="row row-eq-height" style="padding-top: 26px">
+		    <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-6 themed-grid-col">
+			<a href="<?=WWW_BASE_PATH?>"><img src="<?=WWW_IMG_PATH?>logo.svg" alt="" class="logo m-auto d-block"></a>
+			<h1 class="gradient-text text-center"><?=l('hh1')?></h1>
+			<p class="description-text text-center"><?=l('u1');?></b></p>
+			<div class="row checklist-course">
+			    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 themed-grid-col pl-4 pr-0">
+				<table>
+				    <tbody>
+					<tr>
+					    <td><img src="<?=WWW_IMG_PATH?>kalendar.svg" alt="" /></td>
+					    <td class="align-middle"><p><?=l('m9')?></p></td>
+					</tr>
+				    </tbody>
+				</table>
+			    </div>
+			    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 themed-grid-col pl-4 pr-0">
+				<table>
+				    <tbody>
+					<tr>
+					    <td><img src="<?=WWW_IMG_PATH?>people.svg" alt="" /></td>
+					    <td class="align-middle"><p><?=l('r2')?></p></td>
+					</tr>
+				    </tbody>
+				</table>
+			    </div>
+			</div>
+			<div class="row checklist-course">
+			    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 themed-grid-col pl-4 pr-0">
+				<table>
+				    <tbody>
+					<tr>
+					    <td><img src="<?=WWW_IMG_PATH?>krema.svg" alt="" /></td>
+					    <td class="align-middle"><p><?=l('r3');?></p></td>
+					</tr>
+				    </tbody>
+				</table>
+			    </div>
+			    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 themed-grid-col pl-4 pr-0">
+				<table>
+				    <tbody>
+					<tr>
+					    <td><img src="<?=WWW_IMG_PATH?>certificate.svg" alt="" /></td>
+					    <td class="align-middle"><p><?=l('r4');?></p></td>
+					</tr>
+				    </tbody>
+				</table>
 			    </div>
 			</div>
 		    </div>
-		    <div class="col-md-4 deva">
+		    <div class="col-12 col-sm-12 col-md-12 col-lg-7 col-xl-6 themed-grid-col">
+			<div class="row d-none d-lg-flex d-xl-none girl" style="background-image: url(<?=WWW_IMG_PATH;?>grl/girl.png);"></div>
 		    </div>
 		</div>
 	    </div>
-	    <div class="close-course container-fluid p-2">
-		<?=$randAction?>
-	    </div>
-	</section>
-	<!--/.main header-->
-	<section id="ab" class="be-first mt-3">
-	    <div class="container">
-		<div class="row justify-content-center align-items-center">
-		    <div class="col-12">
-			<div class="d-flex justify-content-center"><a id='about'></a>
-			    <img class="" src="<?=WWW_IMG_PATH?>number-one.jpg" alt=""></div>
-			<div class="justify-content-center">
-			    <?=SBl(1,$lang);?></div>
-		    </div>
-		</div>
-	    </div>
-	</section>
-	<section>
-	    <div class="container">
-		<div class="row justify-content-center align-items-center">
-		    <div class="col-12">
-			<a id='towns'></a>
-			<h2 class="section-title"><?=l('r5');?></h2>
-		    </div>
-		</div>
-		<?=$townItem;?>
-	    </div>
-	</section>
-	<section id="po"><a id='whuour'></a>
-	    <h2 class="section-title"><?=l('r6');?></h2>
-	    <div class="container">
-		<div class="row">
-		    <div class="col-12 col-sm-6 col-lg-4 why-block">
-
-			<img class="why-block__img" src="<?=WWW_IMG_PATH?>sova.svg" alt="">
-			<?=SBl(2,$lang);?>
-		    </div>
-		    <div class="col-12 col-sm-6 col-lg-4 why-block">
-
-			<img class="why-block__img" src="<?=WWW_IMG_PATH?>nagrada.svg" alt="">
-			<?=SBl(3,$lang);?>
-
-		    </div>
-		    <div class="col-12 col-sm-6 col-lg-4 why-block">
-			<img class="why-block__img" src="<?=WWW_IMG_PATH?>people-icon.svg" alt="">
-			<?=SBl(4,$lang);?>
-		    </div>
-		    <div class="col-12 col-sm-6 col-lg-4 why-block">
-			<img class="why-block__img" src="<?=WWW_IMG_PATH?>all.svg" alt="">
-			<?=SBl(5,$lang);?>
-
-		    </div>
-		    <div class="col-12 col-sm-6 col-lg-4 why-block">
-			<img class="why-block__img" src="<?=WWW_IMG_PATH?>gramota.svg" alt="">
-			<?=SBl(6,$lang);?>
-		    </div>
-		    <div class="col-12 col-sm-6 col-lg-4 why-block">
-			<img class="why-block__img" src="<?=WWW_IMG_PATH?>krema.svg" alt="">
-			<?=SBl(7,$lang);?>
-		    </div>
-		</div>
-	    </div>
-	</section>
-	<section id="uch" class="training-videos"><a id='video'></a>
-	    <h2 class="section-title"><?=l('r7');?></h2>
-	    <div class="container">
-		<p class="training-desc-top"><?=l('videos');?></p>
-
-	    </div>
-	    <div class="slider slider-videos container">
-
-		<div class="row">
-		    <div id="carouselExampleControls" class="carousel videocarousel slide col-centered" data-ride="carousel" data-interval="false">
-			<div class="carousel-inner">
-			    <?=$video?>
-
+	    <!--/.main header-->
+	</header>
+	<main>
+	    <section class="nearest-course" id="sale">
+		<div class="container">
+		    <div class="row row-eq-height">
+			<?=$randAction?>
+			<!--div class="col-12 col-sm-7 col-md-4 col-lg-3 col-xl-3 px-md-0 px-lg-0 d-grid align-items-center themed-grid-col">
+			    <div class="row">
+				<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 online-course-name text-center text-sm-left">
+				    <p>Онлайн-курс</p>
+				    <p><b>Всі секрети<br/>про бази і топи</b></p>
+				</div>
+			    </div>
 			</div>
-			<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-			    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-			    <span class="sr-only">Previous</span>
-			</a>
-			<a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-			    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-			    <span class="sr-only">Next</span>
-			</a>
+			<div class="col-12 col-sm-5 col-md-3 col-lg-5 col-xl-5 px-md-0 px-lg-0 themed-grid-col deadline">
+			    <p class="text-center"><span class="text-uppercase akcia">Акція!</span><br />до 28.04&nbsp;</p>
+			</div>
+			<div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-4 px-md-0 px-lg-0 themed-grid-col">
+			    <div class="sale text-center m-auto">
+				<p style="margin:0 auto;"><del>1000</del>&nbsp;<span>грн</span> <b>500</b>&nbsp;<span>грн</span></p>
+				<a href="#" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#akcia">Записатися на курс!</a>
+			    </div>
+			</div-->
+			<div class="col-12 col-sm-0 col-md-0 col-lg-0 col-xl-0 themed-grid-col girl d-none d-xl-flex">
+			    <img src="<?=WWW_IMG_PATH;?>girl.png" alt="">
+			</div>
 		    </div>
-
 		</div>
-
-
-	    </div>
-
-
-	</section>
-	<section id="ot" class="graduates">
-	    <a id="fidback"></a>
-	    <h2 class="section-title"><?=l('r8');?></h2>
-	    <div id="recipeCarousel" class="carousel slide col-12" data-ride="carousel" data-interval="6000">
-		<div class="carousel-inner container" role="listbox">
-		    <?=$fidOut;?>
+	    </section>
+	    <section id="ab" class="be-first py-5 mt-5">
+		<div class="container">
+		    <div class="row justify-content-center align-items-center">
+			<div class="col-12">
+			    <div class="d-flex justify-content-center"><a id='about'></a>
+				<img class="" src="<?=WWW_IMG_PATH?>number-one.jpg" alt=""></div>
+			    <div class="justify-content-center">
+				<?=SBl(1,$lang);?></div>
+			</div>
+		    </div>
 		</div>
-		<a class="carousel-control-prev" href="#recipeCarousel" role="button" data-slide="prev">
-		    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-		    <span class="sr-only">Previous</span>
-		</a>
-		<a class="carousel-control-next" href="#recipeCarousel" role="button" data-slide="next">
-		    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-		    <span class="sr-only">Next</span>
-		</a>
-	    </div>
-
-
-
-	    <!-- Left and right controls -->
-
-
-
-
-	</section>
+	    </section>
+	    <section class="towns py-5">
+		<div class="container">
+		    <div class="row justify-content-center align-items-center">
+			<div class="col-12">
+			    <a id='towns'></a>
+			    <h2 class="section-title text-uppercase font-weight-bold mb-5"><span class="gradient-text"><?=l('r5');?></span></h2>
+			</div>
+		    </div>
+		    <?=$townItem;?>
+		</div>
+	    </section>
+	    <section id="po" class="advantages py-5"><a id='whuour'></a>
+		<h2 class="text-center text-uppercase font-weight-bold mb-5"><span class="gradient-text"><?=l('r6');?></span></h2>
+		<div class="container">
+		    <div class="row">
+			<div class="col-12 col-sm-6 col-lg-4 col-xl-4 text-center pb-5 why">
+			    <img src="<?=WWW_IMG_PATH?>sova.svg" alt="">
+			    <?=SBl(2,$lang);?>
+			</div>
+			<div class="col-12 col-sm-6 col-lg-4 col-xl-4 text-center pb-5 why">
+			    <img src="<?=WWW_IMG_PATH?>nagrada.svg" alt="">
+			    <?=SBl(3,$lang);?>
+			</div>
+			<div class="col-12 col-sm-6 col-lg-4 col-xl-4 text-center pb-5 why">
+			    <img src="<?=WWW_IMG_PATH?>people-icon.svg" alt="">
+			    <?=SBl(4,$lang);?>
+			</div>
+			<div class="col-12 col-sm-6 col-lg-4 col-xl-4 text-center pb-4 why">
+			    <img class="why-block__img" src="<?=WWW_IMG_PATH?>all.svg" alt="">
+			    <?=SBl(5,$lang);?>
+			</div>
+			<div class="col-12 col-sm-6 col-lg-4 col-xl-4 text-center pb-4 why">
+			    <img class="why-block__img" src="<?=WWW_IMG_PATH?>gramota.svg" alt="">
+			    <?=SBl(6,$lang);?>
+			</div>
+			<div class="col-12 col-sm-6 col-lg-4 col-xl-4 text-center pb-4 why">
+			    <img class="why-block__img" src="<?=WWW_IMG_PATH?>krema.svg" alt="">
+			    <?=SBl(7,$lang);?>
+			</div>
+		    </div>
+		</div>
+	    </section>
+	    <section id="uch" class="training-videos py-5"><a id='video'></a>
+		<h2 class="section-title text-uppercase font-weight-bold mb-2"><span class="gradient-text"><?=l('r7');?></span></h2>
+		<div class="container mb-5">
+		    <p class="training-desc-top"><?=l('videos');?></p>
+		</div>
+		<div class="trainingvideos">
+		    <?=$video?>
+		</div>
+	    </section>
+	    <!-- new carousel by ing -->
+	    <section id="ot" class="py-5 slideshow">
+		<a id="fidback"></a>
+		<h2 class="section-title text-uppercase font-weight-bold mb-5"><span class="gradient-text"><?=l('r8');?></span></h2>
+		<div class="graduates">
+		    <div class="slide"><img src="http://valet.merlinsoft.pp.ua/images/vipusknik/IMG-ed5d5c3c2bac82b71e93d38edd7355d2-V.jpg"></div>
+		    <div class="slide"><img src="http://valet.merlinsoft.pp.ua/images/vipusknik/IMG-faf02c8834fc1d2fc8625f4ec18ef69f-V.jpg"></div>
+		    <div class="slide"><img src="http://valet.merlinsoft.pp.ua/images/vipusknik/0-02-05-eba8819fb6bba01b70850a6cd1cbc3bb8ef337f53c4879666c8d902dbd5d69ed_68f710f1.jpg"></div>
+		    <div class="slide"><img src="http://valet.merlinsoft.pp.ua/images/vipusknik/IMG-d0d2298a6fd9b2d4e768637e2b8b16ce-V.jpg"></div>
+		    <div class="slide"><img src="http://valet.merlinsoft.pp.ua/images/vipusknik/IMG-c0bb208c0dfb6f1fb64ff27a94ba24c5-V.jpg"></div>
+		</div>
+	    </section>
+	    <!-- / -->
+	</main>
 	<br>
-	<div class="container" style="text-align: center; margin: 25px auto;">
-	    <a class="link-top link-cities gradient-text" style="padding : 15px;" href="#"><?=l('r9')?></a>
+	<div class="container text-center">
+	    <a class="link-top gradient-text text-uppercase" href="#header"><b><?=l('r9')?></b></a>
 	</div>
 	<footer class="footer-index">
 	    <div class="container">
-		<div class="row">
-		    <?=$tfut;?>
-		    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4">
+		<div class="row"><?=$tfut;?>
 
-			<p class=""><?=l('r10')?>:</p>
-			<div><img class="link-shop" src="<?=WWW_IMG_PATH?>corz.png" alt="">
-			    <a href="http://nails.ua/">«NAILS.UA»</a></div>
+		    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4">
+			<p class="pb-3"><?=l('r10')?>:</p>
+			<div>
+			    <img class="link-shop" src="<?=WWW_IMG_PATH?>corz.png" alt="">
+			    <a style='font-variant-caps: all-small-caps; font-variant: small-caps;font-size: 1rem;' href="http://<?=l('www_addr')?>/"><?=l('www_addr')?></a>
+			</div>
 		    </div>
 		</div>
-		<p class="copyright">&COPY; copyright 1999  - <?=date('Y')?></p>
+		<p class="copyright">Copyright &COPY; 1999  - <?=date('Y')?></p>
 
 	    </div>
 	</footer>
-	
+
 	<!-- The Modal -->
 	<div class="modal" id="akcia">
 	    <div class="modal-dialog modal-dialog-centered modal-xl">
@@ -799,13 +711,14 @@ hr {
 				    </div>
 				    <div class="right-block">
 					<div class="block-right-form">
-					    <div class="left_"><span>Дата старта</span><b>с <?=$acsia->start?></b></div>
+					    <div class="left_"><span>Дата старта</span><b>с <?=date('d-m-Y',strtotime($acsia->start));?></b></div>
 					    <div class="right"><span>Стоимость со<br> скидкой:</span><b><?=$acsia->ac_coast?> грн</b></div>
 					    <p></p></div>
 					<p><span class="block-right-span">*О точной дате начала курса мы оповестим лично</span>
 					</p></div>
 				</div>
-				<p><input type="submit" value="ПОДТВЕРДИТЬ ЗАПИСЬ" class="wpcf7-form-control wpcf7-submit">
+				<p><button type="submit" value="<?=l('btnzapis')?>" class="wpcf7-form-control wpcf7-submit"><?=l('btnzapis')?>*</button>
+				    * <?=l("pdrd")?>
 				    <span class="ajax-loader"></span>
 				</p></div>
 			</form>
@@ -821,6 +734,109 @@ hr {
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+    <!-- new carousel by ing -->
+    <script>
+            $(document).ready(function () {
+                $('.graduates').slick({
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 1500,
+                    arrows: true,
+                    dots: false,
+                    pauseOnHover: false,
+                    responsive: [{
+                            breakpoint: 1920,
+                            settings: {
+                                slidesToShow: 3
+                            }
+                        }, {
+                            breakpoint: 1400,
+                            settings: {
+                                slidesToShow: 2
+                            }
+                        }, {
+                            breakpoint: 813,
+                            settings: {
+                                slidesToShow: 2,
+                                arrows: false
+                            }
+                        }, {
+                            breakpoint: 520,
+                            settings: {
+                                slidesToShow: 1,
+                                arrows: false
+                            }
+                        }]
+                });
+            });
+    </script>
+    <script>
+        $('.trainingvideos').slick({
+            centerMode: true,
+            centerPadding: '24%',
+            slidesToShow: 1,
+            arrows: true,
+            responsive: [
+                {
+                    breakpoint: 1690,
+                    settings: {
+                        arrows: true,
+                        centerMode: true,
+                        centerPadding: '22%',
+                        slidesToShow: 1
+                    }
+                },
+                {
+                    breakpoint: 1400,
+                    settings: {
+                        arrows: true,
+                        centerMode: true,
+                        centerPadding: '20%',
+                        slidesToShow: 1
+                    }
+                },
+                {
+                    breakpoint: 1080,
+                    settings: {
+                        arrows: true,
+                        centerMode: true,
+                        centerPadding: '15%',
+                        slidesToShow: 1
+                    }
+                },
+                {
+                    breakpoint: 900,
+                    settings: {
+                        arrows: true,
+                        centerMode: true,
+                        centerPadding: '80px',
+                        slidesToShow: 1
+                    }
+                },
+                {
+                    breakpoint: 736,
+                    settings: {
+                        arrows: true,
+                        centerMode: true,
+                        centerPadding: '20px',
+                        slidesToShow: 1
+                    }
+                },
+                {
+                    breakpoint: 640,
+                    settings: {
+                        arrows: true,
+                        centerMode: true,
+                        centerPadding: '0px',
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
+    </script>
+    <!-- / -->
     <script>
         $(function () {
             var nua = navigator.userAgent
@@ -831,39 +847,39 @@ hr {
         })
     </script>
     <script>
-      $(document).ready(function () {
-                var currentId;
-                var curlang = '<?=$_SESSION["lang"];?>';
-                console.log(curlang);
-                $('.ls').removeClass('active') ;
-		$('[lang="'+curlang.toLowerCase()+'"]').addClass('active');
-                var language = (curlang || navigator.language || navigator.browserLanguage).split('-')[0];
-                if (!currentId) {
-                    $('#lanSel').attr('lang', language);
-                }
-                ;
+        $(document).ready(function () {
+            var currentId;
+            var curlang = '<?=$_SESSION["lang"];?>';
+            console.log(curlang);
+            $('.ls').removeClass('active');
+            $('[lang="' + curlang.toLowerCase() + '"]').addClass('active');
+            var language = (curlang || navigator.language || navigator.browserLanguage).split('-')[0];
+            if (!currentId) {
+                $('#lanSel').attr('lang', language);
+            }
+            ;
 
-                $('.ls').on('click',
-                        function (e)
-                        {
-			    e.preventDefault();
-                            console.log(this);
-                            var langage = ($(this).attr('lang')); // do stuff
-                            //$('#lanSel').attr('lang', langage);
-                            $.ajax({
-                                url: "<?php echo WWW_BASE_PATH;?>lang",
-                                cache: false,
-                                type: "POST",
-                                data: 'curlang=' + langage,
+            $('.ls').on('click',
+                    function (e)
+                    {
+                        e.preventDefault();
+                        console.log(this);
+                        var langage = ($(this).attr('lang')); // do stuff
+                        //$('#lanSel').attr('lang', langage);
+                        $.ajax({
+                            url: "<?php echo WWW_BASE_PATH;?>lang",
+                            cache: false,
+                            type: "POST",
+                            data: 'curlang=' + langage,
 
-                            }).done(function (data) {
-                                console.log(data);
+                        }).done(function (data) {
+                            console.log(data);
 
-                                window.location.reload();
+                            window.location.reload();
 
-                            });
                         });
-            });
+                    });
+        });
 
     </script>
 

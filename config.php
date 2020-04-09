@@ -1,4 +1,5 @@
 <?php
+
 ini_set('display_errors', 1);
 $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
 //echo $protocol;
@@ -17,16 +18,25 @@ define("WWW_JS_PATH", WWW_BASE_PATH . "js/"); //пути к файлам ява�
 define("WWW_IMAGE_PATH", WWW_BASE_PATH . "images/"); //пути к файлам изображений
 define("WWW_IMG_PATH", WWW_BASE_PATH . "images/"); //пути к файлам изображений
 define("WWW_MEDIA_PATH", WWW_BASE_PATH . "media/"); //пути к файлам
-define("APP_LOG", APP_PATH . DS . "logs". DS); //пути к файлам логов
-define("GOOGLE_MAPS_KEY", 'AIzaSyAHjXM1t01TyFkwyWatQeAoIR82KeEbP8g');
-if (PRODUCT == "dev") {
+define("APP_LOG", APP_PATH . DS . "logs" . DS); //пути к файлам логов
+define("GOOGLE_MAPS_KEY", 'AIzaSyDNvCX4sJ_J2FRJhyNxKFVfyS0L4WJRNdQ'); //key for generate gmap on pages
+define("ONLINE_ONLY", 'Y'); //Y or N used fot action bar
+if (PRODUCT == "dev")
+{
     error_reporting(99999);
     define("DB_HOST", "localhost");   //Database host.
     define('DB_USER', 'merlinso_stas');
     define('DB_PASSWORD', 'azazsxsxdcdc');
     define('DB_NAME', 'merlinso_stas');
-
-} else {
+}
+else
+{
 
 }
+
+
+
+
+
+
 

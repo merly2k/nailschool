@@ -1,58 +1,79 @@
 <?php
-error_reporting(0);
-$tpl="admin";
-$mod_name="Управление галереей";
-if (isset($_POST['action']) && $_POST['action'] == "upload") {
-	include_once "uploader.php";
-	include_once "resize_image.php";
 
-	$uploader = new Uploader($_FILES['files']);
-	$uploader->set_upload_to(APP_PATH."/images/galery/");
-	$uploader->set_valid_extensions(array('jpg', 'png', 'png'));
-	$uploader->set_resize_image_library(new ResizeImage());
-	
-	if ($uploader->is_valid_extension() === false) {
+error_reporting(0);
+$tpl		 = "admin";
+$brouse		 = '';
+$lsize		 = ' 640×397px';
+$mod_name	 = "Управление галереей";
+if (isset($_POST['action']) && $_POST['action'] == "upload")
+{
+    include_once "uploader.php";
+    include_once "resize_image.php";
+
+    $uploader = new Uploader($_FILES['files']);
+    $uploader->set_upload_to(APP_PATH . "/images/galery/");
+    $uploader->set_valid_extensions(array('jpg', 'png', 'png'));
+    $uploader->set_resize_image_library(new ResizeImage());
+
+    if ($uploader->is_valid_extension() === false)
+    {
+	echo "<p>Error</p>";
+	print_r($uploader->get_errors());
+    }
+    else
+    {
+
+	if ($uploader->run() === false)
+	{
+	    echo "<p>Error</p>";
+	    print_r($uploader->get_errors());
+	}
+	else
+	{
+	    echo "...Uploaded";
+
+	    if ($uploader->resize(70) === false)
+	    {
 		echo "<p>Error</p>";
 		print_r($uploader->get_errors());
-	}else{
-		
-		if ($uploader->run() === false) {
-			echo "<p>Error</p>";
-			print_r($uploader->get_errors());
-		}else{
-			echo "...Uploaded";
-			
-			if ($uploader->resize(70) === false) {
-				echo "<p>Error</p>";
-				print_r($uploader->get_errors());
-			}else{
-				echo "...Resized";
-			}
-		}
-		
+	    }
+	    else
+	    {
+		echo "...Resized";
+	    }
 	}
-	
-	
+    }
 };
-$context='<div class="card-columns">';
+$context	 .= '<div class="card-columns row">';
 //function filebrouser{){
-  $workingdir  =APP_PATH."/images/galery/";
-  $files = glob($workingdir.'*.{gif,jpg,png}' ,GLOB_BRACE);
+$workingdir	 = APP_PATH . "/images/galery/";
+$files		 = glob($workingdir . '*.{gif,jpg,png}', GLOB_BRACE);
 // найти все php и txt файлы
 //$files = glob('*.{php,txt}', GLOB_BRACE);
-$files = array_map('realpath',$files);
+$files		 = array_map('basename', $files);
+
+$llet = '';
 
 foreach ($files as $f)
 {
-    $context.='<div class="card">'
-	    . '<img class="card-img-top" src="'.WWW_IMG_PATH.'galery/'. basename($f).'">'
+    $firstletter = mb_substr($f, 0, 1);
+    if ($firstletter != $llet)
+    {
+	$llet	 = $firstletter;
+	$lnav	 .= "<a class='btn btn-info' href='" . chr(35) . $llet . "'>" . $llet . "</a> ";
+	$context .= "<a name='$firstletter'></a>";
+    }
+    $context .= '<div class="card col-2">'
+	    . '<img class="card-img-top" src="' . WWW_IMG_PATH . 'galery/' . $f . '">'
 	    . '<div class="card-footer">'
-	    . '<a href="'.WWW_ADMIN_PATH.'galery/del/'.basename($f).'" class="btn btn-info"><i class="fa fa-trash-o"></i></a>'
+	    . '<b>' . $f . '</b><br>'
+	    . '<a href="' . WWW_ADMIN_PATH . 'galery/del/' . $f . '" class="btn btn-info"><i class="fa fa-trash-o"></i></a>'
 	    . '</div>'
-	    . '</div>' ;
+	    . '</div>';
 };
-//}   ; 
- $context.='</div>
+$mod_name	 .= "<hr>" . $lnav;
+//}   ;
+$context	 .= '</div>
 <!-- Button to Open the Modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
   загрузить
@@ -72,17 +93,18 @@ foreach ($files as $f)
       <!-- Modal body -->
       <div class="modal-body">
 <form  method="post" enctype="multipart/form-data">
+<p class="alert alert-info">размер изображений ' . $lsize . '</p>
 <input type="hidden" name="action" value="upload" />
-1: <input type="file" name="files[]" /><br />
+1: <input type="file" multiple name="files[]" /><br />
 2: <input type="file" name="files[]" /><br />
 3: <input type="file" name="files[]" />
-<input type="submit" value="Upload" />
+<button type="submit"  class="btn btn-info" value="Upload"><i class="fa fa-upload"></i></button>
 </form>
       </div>
 
       <!-- Modal footer -->
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">закрыть окно</button>
       </div>
 
     </div>

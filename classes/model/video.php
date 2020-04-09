@@ -13,54 +13,59 @@ namespace model;
  *
  * @author merly
  */
-class video extends \db{
-   
+class video extends \db {
+
     public
 	    function getList() {
-	$zapros="select * from `videogalery`";
+	$zapros = "select * from `videogalery`";
 	return $this->get_result($zapros);
-	
     }
-    
+
     public
 	    function getFirst() {
-	$zapros="select * from `videogalery`";
-	$r= $this->get_result($zapros);
+	$zapros	 = "select * from `videogalery`";
+	$r	 = $this->get_result($zapros);
 	return $r[0];
     }
-    
+
     public
 	    function getById($id) {
-	$zapros="select * from `videogalery` WHERE `id`=$id";
-	$r=$this->get_result($zapros);
+	$zapros	 = "select * from `videogalery` WHERE `id`=$id";
+	$r	 = $this->get_result($zapros);
 	return $r[0];
-	
     }
+
     public
 	    function insert($param) {
+	//print_r($param);
 	extract($param);
-	$zapros="INSERT INTO `videogalery` (`link`, `decr_ru`, `dekr_ua`)
-	VALUES 
-	('$link', '$deckr_ru', '$deckr_ua');";
+	$zapros = "INSERT INTO `videogalery` (`link`,`name_ua`,`name_ru`, `decr_ru`, `dekr_ua`,`kurse`)
+	VALUES
+	('$link','$name_ua','$name_ru', '$deckr_ru', '$deckr_ua','$kurse');";
 	//echo $zapros;
 	$this->query($zapros);
 	return $this->lastState;
     }
+
     public
-	    function update($param,$id) {
+	    function update($param, $id) {
 	$q = "UPDATE `videogalery` SET ";
-	foreach ($param as $k => $v) {
+	foreach ($param as $k => $v)
+	{
 	    $p[] = "`$k`='$v'";
 	}
-	$q.=implode(", ", $p) . " WHERE  `id`=$id;";
+	$q .= implode(", ", $p) . " WHERE  `id`=$id;";
 	//echo $q;
 	$this->query($q);
 
 	return $this->lastState;
     }
-    public function delete($id){
-	$zapros="delete from `videogalery` where `id`='$id' ";
+
+    public
+	    function delete($id) {
+	$zapros = "delete from `videogalery` where `id`='$id' ";
 	$this->query($zapros);
 	return $this->lastState;
     }
+
 }

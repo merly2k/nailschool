@@ -1,4 +1,5 @@
 <?php
+
 namespace model;
 
 /**
@@ -6,61 +7,52 @@ namespace model;
  *
  * @author merly
  */
-class misto extends \db{
-    function getByName($link){
-	$q="select * from misto where link='$link'";
-	$temp=$this->get_result($q);
+class misto extends \db {
+
+    function getByName($link) {
+	$q	 = "select * from misto where link='$link'";
+	$temp	 = $this->get_result($q);
 	return $temp[0];
     }
+
     function insert($param) {
 	extract($param);
+	$q = "insert into `misto`(`link`,`name_ua`,`name_ru`,`image`,`addr_ua`,`addr_ru`,`phones`,`viber`,`fb`,`inst`,`gmap`)"
+		. "VALUES('$link','$name_ua','$name_ru','$image','$addr_ua','$addr_ru','$phones','$viber','$fb','$inst','$gmap');";
+	$this->query($q);
     }
-    
-    function getAll($link=''){
-	$q="select * from misto where link!='$link'";
-	$temp=$this->get_result($q);
+
+    function getAll($link = '') {
+	$q	 = "select * from misto where link!='$link'";
+	$temp	 = $this->get_result($q);
 	return $temp;
     }
-    function getList(){
-	$q="select * from misto";
-	$temp=$this->get_result($q);
+
+    function getList() {
+	$q	 = "select * from misto";
+	$temp	 = $this->get_result($q);
 	return $temp;
     }
+
     function getById($id) {
-	$q="select * from misto where `id`='$id'";
-	$temp=$this->get_result($q);
+	$q	 = "select * from misto where `id`='$id'";
+	$temp	 = $this->get_result($q);
 	return $temp[0];
     }
-    function update($param,$id){
-	
+
+    function update($param, $id) {
+
 	//print_r($param) ;
 	$q = "UPDATE `misto` SET ";
-	foreach ($param as $k => $v) {
+	foreach ($param as $k => $v)
+	{
 	    $p[] = "`$k`='$v'";
 	}
-	$q.=implode(", ", $p) . " WHERE  `id`=$id;";
-	
+	$q .= implode(", ", $p) . " WHERE  `id`=$id;";
+
 	$this->query($q);
 	return $this->lastState;
     }
+
 }
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

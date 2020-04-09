@@ -1,11 +1,5 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 namespace model;
 
 class curses extends \db {
@@ -13,15 +7,23 @@ class curses extends \db {
     public
 	    function getCurse($town, $link) {
 	$q = "SELECT * FROM `cursses` WHERE `miso`='$town' and `link`='$link' LIMIT 1;";
+
 	return $this->get_result($q);
     }
 
     public
 	    function getCurseById($id) {
-	
-	$q = "SELECT * FROM `cursses` WHERE `id`='$id'";
-	$r= $this->get_result($q);
-	return $r[0];
+
+	$q	 = "SELECT * FROM `cursses` WHERE `id`='$id'";
+	$r	 = $this->get_result($q);
+	if (count($r) > 0)
+	{
+	    return $r[0];
+	}
+	else
+	{
+	    return $r;
+	}
     }
 
     public
@@ -29,6 +31,7 @@ class curses extends \db {
 	$q = "SELECT * FROM `cursses` WHERE `miso`='$town' order by `porjadok` ASC";
 	return $this->get_result($q);
     }
+
     public
 	    function getALLasArray($town) {
 	$q = "SELECT * FROM `cursses` WHERE `miso`='$town'";
@@ -37,7 +40,7 @@ class curses extends \db {
 
     public
 	    function GetRandAction() {
-	$q	 = "SELECT * FROM `cursses`  order by rand()";
+	$q	 = "SELECT * FROM `cursses` WHERE `action`='Y' order by rand()";
 	$out	 = $this->get_result($q);
 	if (count($out >= 1)):
 	    return $out[0];
@@ -45,69 +48,72 @@ class curses extends \db {
 	    return "";
 	endif;
     }
+
+    public
+	    function GetRandOnline() {
+	$q	 = "SELECT * FROM `cursses` WHERE `miso`='virtual' order by rand() LIMIT 1";
+	$out	 = $this->get_result($q);
+	if (count($out >= 1)):
+	    return $out[0];
+	else:
+	    return "";
+	endif;
+    }
+
     public
 	    function delCurse($id) {
 	$q = "DELETE FROM `cursses` WHERE `id` = '$id'";
 	return $this->query($q);
     }
+
     public
 	    function add($param) {
 	extract($param);
-	$this->query("INSERT INTO `cursses` ("
-		. "`link`, `name_ua`, `name_ru`, "
-		. " `image`, `anonce_ru`, `anonce_ua`, `decription_ru`,"
-		. " `fulltext_ru`, `decription_ua`, `fulltext_ua`, `display`,"
-		. " `miso`, `start`, `finish`, `coast`, `action`, `ac_coast`,`basecolor` "
-		. ")"
+	//Газ горит оранжевым
+	$q = "INSERT INTO `cursses` ("
+		. "`link`, `name_ua`, `name_ru`,"
+		. " `image`, `anonce_ru`, `anonce_ua`,"
+		. " `decription_ru`, `fulltext_ru`, `decription_ua`, `fulltext_ua`,"
+		. " `display`,"
+		. " `miso`,"
+		. " `start`, `finish`, `coast`, `action`,`deadline`, `ac_coast`, `mashas`, `basecolor`, `porjadok`,"
+		. " `video_ua`, `video_ru`,"
+		. " `googldock_ua`, `googldock_ru`,"
+		. " `tur`,"
+		. " `zrazki`,"
+		. " `vipusk`)"
 		. " VALUES ("
 		. "'$link', '$name_ua', '$name_ru', "
-		. " '$image', '$anonce_ru', '$anonce_ua', '$decription_ru',"
-		. " '$fulltext_ru', '$decription_ua', '$fulltext_ua', '$display',"
-		. " '$miso', '$start', '$finish', '$coast', '$action', '$ac_coast','$basecolor'"
-		. ");");
-	return $this->lastState;
-    }
-     function editCurse($params) {
-	extract($params);
-	$q = "UPDATE `cursses` SET ";
-	foreach ($params as $k => $v) {
-	    $p[] = "`$k`='$v'";
-	}
-	$q.=implode(", ", $p) . " WHERE  `id`=$id;";
+		. " '$image', '$anonce_ru', '$anonce_ua',"
+		. " '$decription_ru', '$fulltext_ru', '$decription_ua', '$fulltext_ua',"
+		. " '$display',"
+		. " '$miso', "
+		. " '$start', '$finish', '$coast', '$action','$deadline' ,'$ac_coast','$mashas','$basecolor','$porjadok',"
+		. " '$video_ua', '$video_ru',"
+		. " '$googldock_ua', '$googldock_ru',"
+		. " '$tur',"
+		. " '$zrazki',"
+		. " '$vipusk'"
+		. ");";
 	//echo $q;
 	$this->query($q);
 
 	return $this->lastState;
-	
     }
 
+    function editCurse($params) {
+	extract($params);
+	$q = "UPDATE `cursses` SET ";
+	foreach ($params as $k => $v)
+	{
+	    $p[] = "`$k`='$v'";
+	}
+	$q .= implode(", ", $p) . " WHERE  `id`=$id;";
+	//echo $q;
+	$this->query($q);
+
+	return $this->lastState;
+    }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

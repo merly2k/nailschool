@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type='text/xsl' href='sitemap.xsl'?><!-- Created with MerlinSoft Sitemap Generator v1.0 -->
-<!-- Date: 2019-10-08 09:19:59 -->
+<!-- Date: 2020-03-09 22:05:04 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
@@ -13,132 +13,228 @@
     <loc>http://valet.merlinsoft.pp.ua/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2019-10-08</lastmod>
+    <lastmod>2020-03-09</lastmod>
   </url>
   <url>
     <loc>http://valet.merlinsoft.pp.ua/curses/kyiv/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2019-10-08</lastmod>
+    <lastmod>2020-03-09</lastmod>
   </url>
   <url>
     <loc>http://valet.merlinsoft.pp.ua/curses/dnipro/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2019-10-08</lastmod>
+    <lastmod>2020-03-09</lastmod>
   </url>
   <url>
     <loc>http://valet.merlinsoft.pp.ua/curses/zaporizhzhya/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2019-10-08</lastmod>
+    <lastmod>2020-03-09</lastmod>
   </url>
   <url>
     <loc>http://valet.merlinsoft.pp.ua/curses/nicolaev/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2019-10-08</lastmod>
+    <lastmod>2020-03-09</lastmod>
   </url>
   <url>
-    <loc>http://valet.merlinsoft.pp.ua/kurs_narashivaniia_nogtey</loc>
+    <loc>http://valet.merlinsoft.pp.ua/curses/curse/kyiv/uytuy</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2019-10-08</lastmod>
-  </url>
-  <url>
-    <loc>http://valet.merlinsoft.pp.ua/uk/dnipro/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <lastmod>2019-10-08</lastmod>
+    <lastmod>2020-03-09</lastmod>
   </url>
   <url>
     <loc>http://valet.merlinsoft.pp.ua/seminary/kyiv/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2019-10-08</lastmod>
+    <lastmod>2020-03-09</lastmod>
   </url>
   <url>
     <loc>http://valet.merlinsoft.pp.ua/kiev/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2019-10-08</lastmod>
+    <lastmod>2020-03-09</lastmod>
   </url>
   <url>
     <loc>http://valet.merlinsoft.pp.ua/zaporozhe/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2019-10-08</lastmod>
+    <lastmod>2020-03-09</lastmod>
   </url>
   <url>
     <loc>http://valet.merlinsoft.pp.ua/nikolaev/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2019-10-08</lastmod>
+    <lastmod>2020-03-09</lastmod>
   </url>
   <url>
     <loc>http://valet.merlinsoft.pp.ua/dnepr/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2019-10-08</lastmod>
+    <lastmod>2020-03-09</lastmod>
+  </url>
+  <url>
+    <loc>http://valet.merlinsoft.pp.ua/uk/dnipro/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2020-03-09</lastmod>
   </url>
   <url>
     <loc>http://valet.merlinsoft.pp.ua/curses/curse/dnipro/kurs-manikyura</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2019-10-08</lastmod>
-  </url>
-  <url>
-    <loc>http://valet.merlinsoft.pp.ua/curses/curse/dnipro/kurs_narashivaniia_nogtey</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <lastmod>2019-10-08</lastmod>
+    <lastmod>2020-03-09</lastmod>
   </url>
   <url>
     <loc>http://valet.merlinsoft.pp.ua/curses/curse/dnipro/kurs_pedikiura</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2019-10-08</lastmod>
+    <lastmod>2020-03-09</lastmod>
+  </url>
+  <url>
+    <loc>http://valet.merlinsoft.pp.ua/curses/curse/dnipro/kurs_narashivaniia_nogtey</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2020-03-09</lastmod>
   </url>
   <url>
     <loc>http://valet.merlinsoft.pp.ua/curses/curse/dnipro/kurs_narashivaniia_pro</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2019-10-08</lastmod>
+    <lastmod>2020-03-09</lastmod>
   </url>
   <url>
-    <loc>http://valet.merlinsoft.pp.ua/curses/curse/dnipro/kurs_narashivaniia_express</loc>
+    <loc>http://valet.merlinsoft.pp.ua/curses/curse/dnipro/express-kurs-narashivania</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2019-10-08</lastmod>
+    <lastmod>2020-03-09</lastmod>
+  </url>
+  <url>
+    <loc>http://valet.merlinsoft.pp.ua/curses/curse/dnipro/apparatnij-manikur</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2020-03-09</lastmod>
+  </url>
+  <url>
+    <loc>http://valet.merlinsoft.pp.ua/curses/curse/dnipro/apparatnij-pedikur</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2020-03-09</lastmod>
+  </url>
+  <url>
+    <loc>http://valet.merlinsoft.pp.ua/curses/curse/dnipro/kombi-pedikur</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2020-03-09</lastmod>
+  </url>
+  <url>
+    <loc>http://valet.merlinsoft.pp.ua/curses/curse/dnipro/kombi-pedikur-profi</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2020-03-09</lastmod>
+  </url>
+  <url>
+    <loc>http://valet.merlinsoft.pp.ua/curses/curse/dnipro/povushenie-kvalifikacii-narashivanie</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2020-03-09</lastmod>
+  </url>
+  <url>
+    <loc>http://valet.merlinsoft.pp.ua/curses/curse/dnipro/nail-designer</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2020-03-09</lastmod>
+  </url>
+  <url>
+    <loc>http://valet.merlinsoft.pp.ua/curses/curse/dnipro/remont-i-uplotnenie-gelem</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2020-03-09</lastmod>
+  </url>
+  <url>
+    <loc>http://valet.merlinsoft.pp.ua/curses/curse/dnipro/remont-i-uplotnenie-polygel</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2020-03-09</lastmod>
+  </url>
+  <url>
+    <loc>http://valet.merlinsoft.pp.ua/curses/curse/dnipro/narashivanie-resnich</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2020-03-09</lastmod>
+  </url>
+  <url>
+    <loc>http://valet.merlinsoft.pp.ua/curses/curse/dnipro/mater-brovist</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2020-03-09</lastmod>
   </url>
   <url>
     <loc>http://valet.merlinsoft.pp.ua/seminary/dnipro/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2019-10-08</lastmod>
+    <lastmod>2020-03-09</lastmod>
   </url>
   <url>
-    <loc>http://valet.merlinsoft.pp.ua/pakets/dnipro/10</loc>
+    <loc>http://valet.merlinsoft.pp.ua/pakets/dnipro/11</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2019-10-08</lastmod>
+    <lastmod>2020-03-09</lastmod>
+  </url>
+  <url>
+    <loc>http://valet.merlinsoft.pp.ua/pakets/dnipro/14</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2020-03-09</lastmod>
+  </url>
+  <url>
+    <loc>http://valet.merlinsoft.pp.ua/pakets/dnipro/18</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2020-03-09</lastmod>
   </url>
   <url>
     <loc>http://valet.merlinsoft.pp.ua/curses/curse/zaporizhzhya/kurs-manikyura</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2019-10-08</lastmod>
+    <lastmod>2020-03-09</lastmod>
   </url>
   <url>
     <loc>http://valet.merlinsoft.pp.ua/seminary/zaporizhzhya/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2019-10-08</lastmod>
+    <lastmod>2020-03-09</lastmod>
+  </url>
+  <url>
+    <loc>http://valet.merlinsoft.pp.ua/curses/curse/nicolaev/test3</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2020-03-09</lastmod>
+  </url>
+  <url>
+    <loc>http://valet.merlinsoft.pp.ua/curses/curse/nicolaev/sdfasd</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2020-03-09</lastmod>
   </url>
   <url>
     <loc>http://valet.merlinsoft.pp.ua/seminary/nicolaev/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2019-10-08</lastmod>
+    <lastmod>2020-03-09</lastmod>
+  </url>
+  <url>
+    <loc>http://valet.merlinsoft.pp.ua/pakets/nicolaev/12</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2020-03-09</lastmod>
+  </url>
+  <url>
+    <loc>http://valet.merlinsoft.pp.ua/pakets/nicolaev/13</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2020-03-09</lastmod>
   </url>
 </urlset>

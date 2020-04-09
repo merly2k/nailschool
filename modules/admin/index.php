@@ -1,14 +1,17 @@
 <?php
 
 ini_set("max_execution_time", 0);
+$brouse		 = '';
+$lsize		 = '';
 $tpl		 = 'admin';
 $context	 = '';
 $mod_name	 = "Лиды";
 $vi		 = new model\leads();
-$context	 .= "<table class='table table-striped table-bordered table-hover' >
+$context	 .= "<table class='table table-striped table-bordered table-hover DataTable' >
                                     <thead>
                                         <tr>
                                             <th>#</th>
+                                            <th>Тип лида</th>
                                             <th>Лид</th>
                                             <th>Контакт</th>
                                             <th>Статус</th>
@@ -17,27 +20,31 @@ $context	 .= "<table class='table table-striped table-bordered table-hover' >
                                     </thead>
                                     <tbody>";
 
-foreach ($vi->getNew() as $row)
+foreach ($vi->GetAll() as $row)
 {
-    //$context.=print_r($v,true);
+
+    $stt	 = $vi->getStatusById($row->status);
+    $mststus = $stt[0]->status;
     $context .= "<tr>"
 	    . "<td>" . $row->id
+	    . "</td>"
+	    . "<td>" . $row->leadtype
 	    . "</td>"
 	    . "<td>" . getCurseInfo($row->curse)
 	    . "</td>"
 	    . "<td>" . $row->name . ' ' . $row->lname
 	    . "</td>"
-	    . "<td>" . $row->status
+	    . "<td>" . $mststus
 	    . "</td>"
 	    . "<td class='panel'>"
 	    . "<a href='" . WWW_ADMIN_PATH . "edit/" . $row->id . "'>
 		    <i class='fa fa-pencil'></i></a>"
 	    . "</td>"
-	    . "<tr>";
+	    . "</tr>";
 }
 
 
-$context .= '</tbody></table>';
+$context .= '</tbody>';
 $context .= "</table></div>";
 $f	 = new bootstrap\input();
 //$form=$f->render_form('setting');

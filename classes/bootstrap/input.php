@@ -103,19 +103,20 @@ class input {
 			    if (isset($data[$k]['type'])and ( $data[$k]['type'] == 'imglist'))
 			    {
 				if (isset($data[$k]['selected'])):
-				    $out .= $this->imgselect("f$c", $v->label, $k, $data[$k], $data[$k]['selected']);
+				    $out .= $this->imgselect("f$c", $v->label, $k, $data[$k], $data[$k]['path'], $data[$k]['selected']);
 				else:
-				    $out .= $this->imgselect("f$c", $v->label, $k, $data[$k]);
+				    //print_r($data[$k]);
+				    $out .= $this->imgselect("f$c", $v->label, $k, $data[$k], $data[$k]['path']);
 				endif;
 			    }
 			    else
 			    {
-				   // print_r($data[$k]['selected']);
+				// print_r($data[$k]['selected']);
 				if (isset($data[$k]['selected'])):
-				$out .= $this->select("f$c", $v->label, $k, $data[$k],$data[$k]['selected']);
+				    $out .= $this->select("f$c", $v->label, $k, $data[$k], $data[$k]['selected']);
 				else:
-				$out .= $this->select("f$c", $v->label, $k, $data[$k]);
-			    endif;
+				    $out .= $this->select("f$c", $v->label, $k, $data[$k]);
+				endif;
 			    }
 			}
 			else
@@ -123,7 +124,7 @@ class input {
 			    if ($v->label != ''):
 				if ($k == 'image' or preg_match('/_img/', $k))
 				{
-				    $out .= $this->input("f$c", $v->label, 'file', $k,'',$data[$k]);
+				    $out .= $this->imagefile("f$c", $v->label, $k, $data[$k]);
 				}
 				else
 				{
@@ -169,23 +170,27 @@ class input {
 	$value	 = ($val == '') ? '' : 'value="' . $val . '"';
 	$ps	 = ($placeholder == '') ? '' : $placeholder;
 	$ap	 = '';
-	if ($type == 'file')
+	if ($type != 'file')
 	{
-	    $ap = '<div id="image-holder">'
-		    . '<img src="'.WWW_IMAGE_PATH.$val.'" class="thumb-image">'
-		    . '</div>';
-	}
-	return '<div class="form-group row">
+	    return '<div class="form-group row">
       <label class="control-label col-4" for="' . $id . '">' . $label . ' </label>
       <div class="col-12">
-      <input type="' . $type . '" class="form-control" id="' . $id . '" placeholder="' . $placeholder . '"  name="' . $name . '" ' . $value . '>
+      <input type="' . $type . '" class="form-control" id="' . $id . '" placeholder="' . $placeholder . '"  name="' . $name . '" ' . $value . '  required="required">
     </div>
-    </div>' . $ap;
+	</div>' . $ap;
+	}
+	else
+	{
+	    return $this->imagefile($id, $label, $name, $val = '');
+	}
     }
 
     public
 	    function checkbox($id, $label, $name, $status = '') {
-	//$status='checked'
+	if ($status == "Y")
+	{
+	    $status = 'checked';
+	}
 	return '<div class="form-group">
                  <div class="checkbox-inline">
                   <label><input  id="' . $id . '" type="checkbox" name="' . $name . '" ' . $status . '> ' . $label . '</label>
@@ -202,93 +207,88 @@ class input {
     public
 	    function Textarea($label, $name, $tekst, $rows = 10) {
 	return "<label>$label</label>
-    <textarea rows='$rows' style='width:100%' name='$name'>$tekst</textarea>";
+    <textarea  required='required' rows='$rows' style='width:100%' name='$name'>$tekst</textarea>";
     }
 
     public
-	    function imagefile($label, $name, $value, $deg = 50) {
-	
-	return "<label for='img-btn'>$label</label><div class='form-control'>
-    <input id='$name' class='form-control' type='hidden' name='$name'/>
-    <img id='preview-$name' src='".WWW_IMG_PATH."$value' style='width:$deg%'><br>
-    <button class='btn imgselect' data-target='$name'>Выбрать/Загрузить</button><br>
-</div>";
+	    function imagefile($id, $label, $name, $value, $deg = 50) {
+
+	return "<div><label>$label</label>
+        <div><input class='fileb' type='hidden' id='$id' name='$name' value='$value'/>
+        <img id='img-preview-$id' src='$value' style='width: 180px; cursor:hand;'/>
+	<a class='btn btn-info moka' data-toggle='modal' imt='$id' data-target='#imomodal'><i class='fa fa-download'></i></a>
+        </div>
+    </div>";
     }
 
     public
 	    function radio($id, $label, $name, $value, $status = '') {
 	return '
-                <label class="btn btn-default" for="' . $id . '">' . $label . '</label> 
-                    <input type="radio" class="custom-control custom-radio custom-control-inline" ' . $status . ' id="' . $id . '" name="' . $name . '" value="' . $value . '" > 
-                
-  
+                <label class="btn btn-default" for="' . $id . '">' . $label . '</label>
+                    <input type="radio" class="custom-control custom-radio custom-control-inline" ' . $status . ' id="' . $id . '" name="' . $name . '" value="' . $value . '" >
+
+
 ';
     }
 
     public
 	    function select($id, $label, $name, $val, $selected = '') {
+	//print_r($selected);
 	$options = '<option value="">выберите из списка</option>';
+
 	unset($val['selected']);
 	foreach ($val as $v)
 	{
-	   
-	    if($selected==$v['value']){$ss=" selected='selected' ";}else{$ss='';}
-	    if ($v['value']!= $v['name']):
-		$options .= '<option '.$ss.' value="' . $v['value'] . '">' . $v['name'] . '</option>';
+
+	    if ($selected == $v['value'])
+	    {
+		$ss = " selected='selected' ";
+	    }
+	    elseif ($selected == $v['name'])
+	    {
+		$ss = " selected='selected' ";
+	    }
+	    else
+	    {
+		$ss = '';
+	    }
+	    if ($v['value'] != $v['name']):
+		$options .= '<option ' . $ss . ' value="' . $v['value'] . '">' . $v['name'] . '</option>';
 	    else:
-		$options .= '<option '.$ss.'>' . $v['name'] . '</option>';
+		$options .= '<option ' . $ss . '>' . $v['name'] . '</option>';
 	    endif;
 	}
 	return '<label class="btn btn-default" for="' . $id . '">' . $label . '</label> '
-		. '<select class="custom-select" id="' . $id . '" name="' . $name . '">' . $options . '</select>';
+		. '<select class="custom-select" id="' . $id . '" name="' . $name . '"  required="required">' . $options . '</select>';
     }
 
     public
-	    function imgselect($id, $label, $name, $value, $selected = '') {
+	    function imgselect($id, $label, $name, $value, $path, $selected = '') {
+	//echo $path;
 	$options = '<option value="">выберите из списка</option>';
 	unset($value['type']);
 	unset($value['selected']);
+	if (isset($value['path'])):unset($value['path']);
+	endif;
 	foreach ($value as $v)
 	{
-	    if($v['name']==$selected){$ss=" selected='selected' ";}else{$ss='';}
-	    $options .= '<option '.$ss.' title="'. $v['name'] 
-		    . '" data-content="<img style=\'width:23px\' src=' . WWW_IMAGE_PATH . 'gradients/' . $v['image'] . '>' . $v['name'] . '"'
+
+	    //echo "<br>";
+	    if ($v['name'] == $selected)
+	    {
+		$ss = " selected='selected' ";
+	    }
+	    else
+	    {
+		$ss = '';
+	    }
+	    $options .= '<option ' . $ss . ' title="' . $v['name']
+		    . '" data-content="<img style=\'width:23px\' src=' . WWW_IMAGE_PATH . $path . '/' . $v['image'] . '> ' . $v['name'] . '"'
 		    . ' value="' . $v['name'] . '">' . $v['name'] . '</option>';
 	}
 	return '<label class="btn btn-default" for="' . $id . '">' . $label . '</label> '
-		. '<select data-width="auto" class="selectpicker" id="' . $id . '" name="' . $name . '">' . $options . '</select></br>';
+		. '<select data-width="auto" class="selectpicker" id="' . $id . '" name="' . $name . '"  required="required">' . $options . '</select></br>';
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

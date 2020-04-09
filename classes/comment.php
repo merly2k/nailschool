@@ -42,18 +42,16 @@ class comment extends db
 		if($_SESSION['lang']=='UA'){$ansver='Відповісти';}else{$ansver='Ответить';}
 		return '
 		
-			<div class="comment">
-				<div class="chead">
-				    <div class="avatar">
-					'.$link_open.'
-					<img src="http://www.gravatar.com/avatar/'.md5($d['email']).'?size=50&amp;default='.urlencode($url).'" />
-					'.$link_close.'
-				    </div>
-				    <div class="name">'.$link_open.$d['name'].$link_close.'</div>
-				    <div class="date" title="Added at '.date('H:i \o\n d M Y',$d['dt']).'">'.date('d M Y',$d['dt']).'</div>
+			<div class="comment media mt-5">
+				'.$link_open.'
+				<img class="mr-3 rounded-circle" src="http://www.gravatar.com/avatar/'.md5($d['email']).'?size=50&amp;default='.urlencode($url).'" />
+				'.$link_close.'
+			    <div class="media-body">
+				    <h5 class="mt-0"><b>'.$link_open.$d['name'].$link_close.'</b> • <span class="date" title="Added at '.date('H:i \o\n d M Y',$d['dt']).'"><small>'.date('d M Y',$d['dt']).'</small></span></h5>
+				    
+					<p class="cbody">'.$d['body'].'</p>
+					<div class="cfoot"><a href="#'. $d['id'].'" id="'. $d['id'].'" class="replay btn btn-warning btn-sm px-3">'.$ansver.'</a></div>
 				</div>
-				<p class="cbody">'.$d['body'].'</p>
-				<div class="cfoot"><a href="#'. $d['id'].'" id="'. $d['id'].'" class="replay">'.$ansver.'</a></div>
 			</div>
 		';
 	}

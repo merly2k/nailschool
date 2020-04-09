@@ -21,15 +21,16 @@ class packets extends \db {
     }
 
     function getPackets($town) {
-	$q = "SELECT * FROM `packets` WHERE `town`='$town';";
+	$q = "SELECT * FROM `packets` WHERE `town`='$town' order by `porjadok` ASC;";
 	//echo $q;
 	return $this->get_result($q);
     }
 
     function addPackets($param) {
 	extract($param);
-	$q="INSERT INTO `packets` ( `name_ua`,
+	$q = "INSERT INTO `packets` ( `name_ua`,
 		 `name_ru`,
+		 `porjadok`,
 		 `coast`,
 		 `dayz`,
 		 `kurs1_id`,
@@ -39,10 +40,11 @@ class packets extends \db {
 		 `kurs5_id`,
 		 `kurs6_id`,
 		 `kurs7_id`,
+		 `seminar`,
 		 `link`,
 		 `town`
 		 ) VALUES (
-		 '$name_ua', '$name_ru', '$coast', '$dayz', '$kurs1_id', '$kurs2_id', '$kurs3_id', '$kurs4_id','$kurs5_id','$kurs6_id', '$kurs7_id','$link','$town');";
+		 '$name_ua', '$name_ru','$porjadok', '$coast', '$dayz', '$kurs1_id', '$kurs2_id', '$kurs3_id', '$kurs4_id','$kurs5_id','$kurs6_id', '$kurs7_id','$seminar','$link','$town');";
 	//echo $q;
 	return $this->query($q);
     }
@@ -50,47 +52,21 @@ class packets extends \db {
     function editPackets($params) {
 	extract($params);
 	$q = "UPDATE `packets` SET ";
-	foreach ($params as $k => $v) {
+	foreach ($params as $k => $v)
+	{
 	    $p[] = "`$k`='$v'";
 	}
-	$q.=implode(", ", $p) . " WHERE  `id`=$id;";
+	$q .= implode(", ", $p) . " WHERE  `id`=$id;";
 	//echo $q;
 	$this->query($q);
 
 	return $this->lastState;
-	
     }
 
     function delPackets($id) {
-	$q="delete from `packets`where `id`='$id'";
+	$q = "delete from `packets` WHERE `id`='$id'";
 	return $this->query($q);
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

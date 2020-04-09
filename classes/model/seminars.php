@@ -17,17 +17,18 @@ class seminars extends \db {
     }
 
     public
-	    function getCurseById($id) {
-	$q = "SELECT * FROM `seminars` WHERE `id`='$id'";
-	$r= $this->get_result($q);
+	    function getById($id) {
+	$q	 = "SELECT * FROM `seminars` WHERE `id`='$id'";
+	$r	 = $this->get_result($q);
 	return $r[0];
     }
 
     public
 	    function getALL($town) {
-	$q = "SELECT * FROM `seminars` WHERE `miso`='$town'";
+	$q = "SELECT * FROM `seminars` WHERE `miso`='$town' order by `porjadok` ASC";
 	return $this->get_result($q);
     }
+
     public
 	    function getALLasArray($town) {
 	$q = "SELECT * FROM `seminars` WHERE `miso`='$town'";
@@ -44,28 +45,30 @@ class seminars extends \db {
 	    return "";
 	endif;
     }
+
     public
 	    function delSeminars($id) {
 	$q = "DELETE FROM `seminars` WHERE `id` = '$id'";
 	return $this->query($q);
     }
+
     public
 	    function add($param) {
 	extract($param);
-	 /*id int(11)
-    link varchar(50)
-    name_ru Название семинара 
-    decription_ru Описание семинара
-    fulltext_ru longtextДетальная информация 
-    name_ua 	varchar(50)	Назва семінару
-    decription_ua text опис семінару
-    fulltext_ua text детально про семінар
-    show set('yes', 'no')показувати
-    miso varchar(50)
-    start date початок 
-    finish int(4)длительность 
-    coast decimal(10,2)	ціна
-    basecolor */
+	/* id int(11)
+	  link varchar(50)
+	  name_ru Название семинара
+	  decription_ru Описание семинара
+	  fulltext_ru longtextДетальная информация
+	  name_ua 	varchar(50)	Назва семінару
+	  decription_ua text опис семінару
+	  fulltext_ua text детально про семінар
+	  show set('yes', 'no')показувати
+	  miso varchar(50)
+	  start date початок
+	  finish int(4)длительность
+	  coast decimal(10,2)	ціна
+	  basecolor */
 	$this->query("INSERT INTO `seminars` ("
 		. "`link`,"
 		. "`name_ru`,"
@@ -74,7 +77,7 @@ class seminars extends \db {
 		. "`name_ua`"
 		. " `decription_ua`,"
 		. " `fulltext_ua`,"
-		."`show`,"
+		. "`show`,"
 		. " `miso`,"
 		. " `start`, "
 		. "`finish`,"
@@ -91,46 +94,20 @@ class seminars extends \db {
 		. ");");
 	return $this->lastState;
     }
-     function editSeminars($params) {
+
+    function editSeminars($params) {
 	extract($params);
 	$q = "UPDATE `seminars` SET ";
-	foreach ($params as $k => $v) {
+	foreach ($params as $k => $v)
+	{
 	    $p[] = "`$k`='$v'";
 	}
-	$q.=implode(", ", $p) . " WHERE  `id`=$id;";
+	$q .= implode(", ", $p) . " WHERE  `id`=$id;";
 	//echo $q;
 	$this->query($q);
 
 	return $this->lastState;
-	
     }
 
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

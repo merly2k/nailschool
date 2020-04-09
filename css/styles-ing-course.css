@@ -1,0 +1,955 @@
+
+body {
+	/*font-family: Montserrat,sans-serif;*/
+	font-family: sans-serif;
+	overflow-x: hidden;
+	color: #6e6168;
+}
+
+p {
+	font-weight: 400 !important;
+}
+
+b,
+strong {
+    font-weight: 700;
+}
+
+h3 {
+	font-size: 38px;
+}
+
+.d-grid {
+	display: grid;
+}
+
+@media only screen and (max-width:768px) {
+	h3 {
+		font-size: 28px;
+	}
+}
+
+h1.gradient-text,
+h2.gradient-text,
+h3.gradient-text {
+    background: -webkit-linear-gradient(45deg,#ed5799,#8c3a84);
+    background: -o-linear-gradient(45deg,#ed5799,#8c3a84);
+    background: linear-gradient(45deg, #ed5799, #8c3a84);
+    background-clip: border-box;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	color: #8c3a84;
+}
+
+.gradient-block {
+    width: 100%;
+    background: -webkit-linear-gradient(45deg,#8c3a84,#ed5799);
+    background: -o-linear-gradient(45deg,#8c3a84,#ed5799);
+    background: linear-gradient(45deg,#8c3a84,#ed5799);
+	color: #fff;
+}
+
+.text-primary {
+	color: #8f2f85 !important;
+}
+
+@media only screen and (min-width:1441px) {
+	.pb-xl-5 {
+	    padding-bottom: 3rem !important;
+	}
+	.pb-xl-4,
+	main .nearest-course.pb-xl-4,
+	header h1.gradient-text.pb-xl-4 {
+	    padding-bottom: 1.5rem !important;
+	}
+	.pt-xl-4,
+	main .nearest-course.pt-xl-4 {
+	    padding-top: 1.5rem !important;
+	}
+}
+
+@media only screen and (max-width:1440px) {
+	.pb-lg-0 {
+	    padding-bottom: 0 !important;
+	}
+}
+
+/* MENU */
+
+.ns nav.navbar {
+	margin-top: 12px;
+}
+
+.ns nav .navbar-brand {
+	padding-left: 45px;
+	font-size: 23px;
+	font-weight: 700;
+	color: #45113c;
+}
+
+.ns nav .navbar-nav li a.nav-link {
+	color: #000;
+}
+
+.ns nav .navbar-nav li a.nav-link:after {
+	color: #e7437c;
+}
+
+
+.ns nav .navbar-nav li a.nav-link i.fas {
+	color: #e7437c;
+}
+
+.ns nav .navbar-nav.cities-menu li a.nav-link {
+	font-size: 20px;
+	font-weight: 500;
+}
+
+.ns .navbar-nav.main-menu li a.separator,
+.ns .navbar-nav.lang-menu li a.separator {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.ns .navbar-nav.main-menu li a.nav-link,
+.ns .navbar-nav.lang-menu li a.nav-link {
+	font-weight: 400;
+	color: #45113c;
+	font-size: 16px;
+	opacity: .7;
+}
+
+.ns .navbar-nav.lang-menu li a.nav-link {
+	font-weight: 500;
+}
+
+.ns .navbar-nav.lang-menu li a.nav-link.active,
+.ns .xs-menu li a.nav-link.active {
+	font-weight: 700;
+}
+
+.ns .navbar-nav.lang-menu {
+	display: flex;
+}
+
+.ns .navbar-nav.lang-menu li.active a.nav-link {
+	color: #6c757d;
+}
+
+.ns .navbar-nav .flip-horizontal {
+	transform: scale(-1, 1);
+}
+
+.ns .xs-menu {
+	width: 75%;
+}
+
+.ns .xs-menu .navbar-nav li a.nav-link {
+	color: #45113c;
+}
+
+.ns .xs-menu .navbar-nav {
+	flex-direction: row;
+}
+
+.ns .xs-menu .navbar-nav .phone {
+	font-size: 24px;
+}
+
+@media (min-width:992px) and (max-width:1199px) {
+	.ns .navbar-nav.main-menu li a.nav-link,
+	.ns .navbar-nav.lang-menu li a.nav-link {
+		padding-left: 0.15rem;
+		padding-right: 0.15rem;
+		font-size: 15px;
+	}
+}
+
+@media only screen and (max-width:768px) {
+	.ns nav.navbar .container {
+		max-width: 560px
+	}
+	.ns nav .navbar-brand {
+		padding-left: 0;
+	}
+}
+
+/* HEADER */
+
+@media (min-width:768px) {
+	header {
+		background: url(../images/banner-bg.png) no-repeat bottom/contain;
+	}
+}
+
+header .logo {
+	width: 100%;
+	max-width: 545px;
+	padding-top: 29px;
+}
+
+header h1.gradient-text {
+    padding-top: 19px;
+    padding-bottom: 9px;
+    font-size: 67px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 1.074;
+}
+
+header .description-text {
+	margin-bottom: 26px;
+	font-size: 36px;
+	font-weight: 300;
+	color: #6e6168;
+}
+
+header .checklist-course {
+	margin-bottom: 18px;
+}
+
+header .checklist-course > div {
+	padding-left: 13px;
+}
+
+header .checklist-course p {
+	margin-bottom: 0;
+	font-size: 23px;
+	line-height: 1.1;
+	color: #6e6168;
+}
+
+header .checklist-course img {
+	width: 90px;
+}
+
+header .girl {
+	height: 100%;
+	background-size: 550px;
+	background-repeat: no-repeat;
+	background-position: 25px 100%;
+}
+
+@media (min-width:1200px) and (max-width:1690px) {
+	header .girl {
+		display: flex !important;
+	}
+}
+
+@media only screen and (max-width:1024px) {
+	header h1.gradient-text {
+		font-size: 48px;
+	}
+	header .description-text {
+		font-size: 24px;
+	}
+	header .checklist-course p {
+    	font-size: 20px;
+	}
+	header .no-gutters > .col,
+	header .no-gutters > [class*="col-"] {
+	    padding-right: 0;
+	    padding-left: 0;
+	}
+	header .girl {
+	    background-size: 455px;
+	}
+}
+
+@media only screen and (max-width:768px) {
+	header h1.gradient-text {
+		font-size: 40px;
+	}
+	header .description-text {
+		font-size: 20px;
+	}
+	header .checklist-course p {
+		font-size: 20px;
+	}
+}
+
+/* MAIN */
+
+main h2 {
+	font-size: 53px;
+}
+
+main h4 {
+	font-size: 32px;
+}
+
+main p {
+	font-size: 20px;
+	line-height: 1.2;
+}
+
+main a.btn,
+main .earnings a.btn,
+footer a.btn {
+	padding: 14px 20px;
+	font-size: 25px;
+	color: #8f2f85 !important;
+	border: 0;
+	background-color: #ffd800;
+}
+
+main a.btn:hover {
+	color: #6e6168;
+	background-color: #ffd800;
+}
+
+/* Nearest course */
+
+
+main .nearest-course p {
+	font-size: 20px;
+}
+
+main .nearest-course span {
+	width: 100%;
+	font-size: 52px;
+	font-weight: 500;
+	line-height: 70px;
+	color: #e7437c;
+}
+
+main section.nearest-course {
+	padding-top: 16px !important;
+	padding-bottom: 16px !important;
+	color: #fff;
+	background: #f80759;
+	background: -webkit-linear-gradient(left,#f80759 0,#bc4e9c 100%);
+	background: -webkit-gradient(linear,left top,right top,from(#f80759),to(#bc4e9c));
+	background: -o-linear-gradient(left,#f80759 0,#bc4e9c 100%);
+	background: linear-gradient(to right,
+	#f80759 0,#bc4e9c 100%);
+}
+
+main .nearest-course .nearest-course-col {
+	max-width: 295px;
+}
+
+main .nearest-course .middle-row {
+	display: none;
+}
+
+main .nearest-course .location,
+main .nearest-course .date,
+main .nearest-course .duration {
+	max-width: 100px;
+}
+
+main .nearest-course .date {
+	margin-left: 5px;
+}
+
+main .nearest-course .duration {
+	margin-left: 10px;
+}
+
+main .nearest-course .location div,
+main .nearest-course .date div,
+main .nearest-course .duration div {
+	width: 70px;
+	height: 70px;
+	margin-bottom: 10px;
+	display: inline-flex;
+	border-radius: 5px;
+	background-color: #fff;
+}
+
+main .nearest-course .location img {
+	width: 100%;
+}
+
+main .nearest-course .deadline {
+	display: grid;
+}
+
+main .nearest-course .deadline p {
+	padding-top: 20px;
+	font-size: 30px;
+	line-height: 14px;
+}
+
+main .nearest-course .deadline .akcia {
+	font-size: 40px;
+	font-weight: 600;
+	color: #ffd800;
+}
+
+main .nearest-course .deadline .akcia span {
+	font-weight: 600;
+}
+
+main .nearest-course .sale {
+	height: 100%;
+	max-width: 400px;
+	border: 3px solid #fff;
+	border-radius: 10px;
+}
+
+main .nearest-course .sale p {
+	height: 56%;
+	line-height: 2.4;
+	margin-bottom: 0px;
+	font-size: 40px;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+main .nearest-course .sale del {
+	text-decoration-color: #ffd800;
+}
+
+main .nearest-course .sale span {
+	font-size: 20px;
+	font-weight: 300;
+	color: #fff;
+}
+
+main .nearest-course .sale a.btn {
+	height: 44%;
+}
+
+main .nearest-course .girl img {
+	max-width: 705px;
+	bottom: -16px;
+	right: -155px;
+	position: absolute;
+}
+
+/* About */
+
+main .nails {
+	max-width: 44%;
+	flex: 44%;
+	min-height: 246px;
+}
+
+main .nails img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+
+main .five-steps {
+	max-width: 56%;
+	flex: 56%;
+}
+
+main .about-list {
+	padding-left: 20px;
+}
+
+main .about-list li {
+	font-size: 23px;
+	line-height: 1.7;
+}
+
+main .about-list li::before {
+	font-size: 30px;
+	font-weight: 700;
+	color: #e7437c;
+}
+
+/* Course program */
+
+main .course-program .wrapper-content {
+	padding-left: 3rem;
+	padding-right: 3rem;
+}
+
+
+/* Advantages */
+
+main .advantages .why img {
+	width: 120px;
+	height: 120px;
+}
+
+main .advantages .why hr {
+	width: 80px;
+	height: 4px;
+	border-width: 0px;
+	background-color: #83d0f5;
+	border-radius: 4px;
+}
+
+/* About school */
+
+.about-school {
+	background-color: #f7f5f8;
+}
+
+.about-school .container {
+	max-width: 1370px;
+	padding: 0;
+}
+
+.about-school img {
+	width: 100%;
+	height: 100%;
+}
+
+.about-school .description {
+	color: #fff;
+	background-color: #e7437c;
+}
+
+main .about-school .description p {
+	line-height: 1.3;
+}
+
+/* slideshow */
+
+.slideshow .slick-slide {
+    margin: 0px;
+}
+
+.slideshow .slick-slide img {
+    width: 100%;
+}
+
+.slideshow .slick-slider {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+            user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+        touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.slideshow .slick-list {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+.slideshow .slick-list:focus {
+    outline: none;
+}
+.slideshow .slick-list.dragging {
+    cursor: pointer;
+    cursor: hand;
+}
+
+.slideshow .slick-slider .slick-track,
+.slideshow .slick-slider .slick-list {
+    -webkit-transform: translate3d(0, 0, 0);
+       -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+         -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+}
+
+.slideshow .slick-track {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+}
+.slideshow .slick-track:before,
+.slideshow .slick-track:after {
+    display: table;
+    content: '';
+}
+.slideshow .slick-track:after {
+    clear: both;
+}
+.slideshow .slick-loading .slick-track {
+    visibility: hidden;
+}
+
+.slideshow .slick-slide {
+    /*display: none;*/
+    float: left;
+    height: 100%;
+    min-height: 1px;
+}
+.slideshow [dir='rtl'] .slick-slide {
+    float: right;
+}
+.slideshow .slick-slide img {
+    display: block;
+    border: 1px solid rgba(255,255,255,0.35);
+    box-shadow: 0 0 20px rgba(0,0,0,0.35);
+}
+.slideshow .slick-slide.slick-loading img {
+    display: none;
+}
+.slideshow .slick-slide.dragging img {
+    pointer-events: none;
+}
+.slideshow .slick-initialized .slick-slide {
+    padding: 30px;
+    display: block;
+}
+.slideshow .slick-loading .slick-slide {
+    visibility: hidden;
+}
+.slideshow .slick-vertical .slick-slide {
+    display: block;
+    height: auto;
+    border: 1px solid transparent;
+}
+
+.slideshow .slick-arrow {
+	visibility: hidden;
+}
+
+.slideshow .slick-arrow::before {
+    position: absolute;
+    top: calc(50% - 112px);
+    visibility: visible;
+    cursor: pointer;
+    color: #83d0f5;
+    font-size: 150px;
+    text-shadow: 0 0 15px rgba(0,0,0,0.35);
+    font-weight: 900;
+    font-family: "Font Awesome 5 Free";
+    z-index: 9;
+}
+
+.slideshow .slick-prev.slick-arrow::before {
+    content: "\f053";
+    left: 40px;
+}
+
+.slideshow .slick-next.slick-arrow::before {
+    content: "\f054";
+    right: 40px;
+}
+
+.slideshow .slick-arrow.slick-hidden {
+    display: none;
+}
+
+@media only screen and (max-width:812px) {
+	.slideshow .slick-arrow::before {
+		display: none;
+	}
+}
+
+/* faq */
+
+.faq .container {
+	max-width: 750px;
+}
+
+.faq #accordion .card {
+	border: none;
+}
+
+.faq #accordion .card-header {
+    padding: 0;
+    margin-bottom: 0;
+    background-color: transparent;
+	border-bottom: none;
+}
+
+.faq #accordion h5 button {
+	padding-left: 0;
+	padding-right: 0;
+	color: #e7437c;
+	font-size: 24px;
+	font-weight: 300;
+	text-decoration: none;
+	white-space: normal;
+	text-align: left;
+}
+
+.faq #accordion .card-body {
+	margin-left: 50px;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	border-left: 3px solid #e7437c;
+}
+
+.faq #accordion .card-body p {
+	font-size: 16px;
+}
+
+/* earnings */
+
+.earnings {
+	background: #f6f2f8 url(../images/earning.png) no-repeat bottom/contain;
+}
+
+.earnings h3 {
+	font-size: 40px;
+	line-height: 1.67;
+}
+
+.earnings a {
+	color: #6e6168;
+	text-decoration: underline;
+}
+.earnings a.btn {
+	text-decoration: none;
+}
+
+/* disqus */
+
+.comments {
+	background-color: #f7f5f8;
+}
+
+.comments span.date {
+	font-size: 1rem;
+}
+
+.comments button.btn {
+	color: #8f2f85;
+}
+
+.comments .comment a.btn {
+	padding: inherit;
+	font-size: inherit;
+	border-radius: 12px;
+}
+
+
+/* contacts */
+
+.contacts .address img {
+	height: 60px;
+}
+
+.contacts .viber img {
+	height: 53px;
+}
+
+.contacts p {
+	font-size: 20px;
+	margin-bottom: 0;
+}
+
+.contacts a {
+	color: #e7437c;
+}
+
+.contacts .social i {
+	margin: 0 10px;
+	font-size: 34px;
+}
+
+
+.contacts .social .fa-youtube-square {
+    margin-left: 5px;
+}
+.contacts .social .fa-facebook-square {
+	color: #3b5998;
+        margin-left: 5px;
+}
+
+.contacts .social .fa-instagram {
+	color: #e1306c;
+        margin-left: 5px;
+}
+
+@media (min-width:1690px) {
+	main .nearest-course .sale {
+		max-width: 340px;
+	}
+}
+
+@media (min-width:1200px) and (max-width:1690px) {
+	main .nails {
+		max-width: 42%;
+		flex: 42%;
+	}
+	main .five-steps {
+		max-width: 58%;
+		flex: 58%;
+	}
+	main .nearest-course .container {
+		max-width: 960px;
+	}
+	main .nearest-course .middle-row {
+		display: flex !important;
+	}
+	main .nearest-course .big-row {
+		display: none !important;
+	}
+	main .nearest-course .sale {
+		margin-left: 6px;
+	}
+	main .course-program .video {
+		padding-left: 1.5rem !important;
+		padding-right: 1.5rem !important;
+	}
+}
+
+@media only screen and (max-width:1690px) {
+	main .nearest-course .girl,
+	main .nearest-course .girl img {
+		display: none;
+	}
+	main .course-program .wrapper-content {
+		padding-left: 0rem;
+		padding-right: 0rem;
+	}
+	main .course-program small {
+		font-size: 70%;
+	}
+}
+
+@media only screen and (max-width:1280px) {
+	main .advantages .why h4 {
+		font-size: 24px;
+	}
+}
+
+@media only screen and (min-width:768px) {
+	main .nearest-course .location p,
+	main .nearest-course .date p,
+	main .nearest-course .duration p {
+		margin-bottom: 11px;
+	}
+	main .nearest-course .sale p {
+	    font-size: 40px;
+	    line-height: 2;
+	}
+}
+
+@media screen and (max-width:900px) {
+	main .nearest-course .date,
+	main .nearest-course .duration {
+	    margin-left: 0;
+	}
+	main .nearest-course .sale a.btn {
+		height: auto;
+		font-size: 22px;
+	}
+	main .nearest-course .sale p {
+		height: auto;
+		font-size: 30px;
+		line-height: 3.2;
+	}
+}
+
+@media only screen and (max-width:812px) {
+	.about-school {
+		background-color: transparent;
+	}
+	main .nearest-course .nearest-course-col {
+	    max-width: none;
+	}
+	main .nearest-course .sale p {
+		height: auto;
+		font-size: 28px;
+		line-height: 3.2;
+	}
+	main .nearest-course .sale a.btn {
+	    height: auto;
+	}
+	main .nails {
+		max-width: inherit;
+		flex: auto;
+		background-position: center center;
+		background-size: cover;
+	}
+	main .five-steps {
+		max-width: inherit;
+		flex: auto;
+	}
+	main .course-program h3 {
+		font-size: 26px;
+	}
+	main .course-program .about-list li {
+		font-size: 19px;
+	}
+	main .about-list li {
+		font-size: 20px;
+	}
+
+	main .about-list li::before {
+		font-size: 23px;
+	}
+	.faq #accordion h5 button {
+		font-size: 20px;
+	}
+	main .earnings a.btn {
+		font-size: 20px;
+	}
+	main h2 {
+		font-size: 33px;
+	}
+	main .earnings h3 {
+		font-size: 28px;
+	}
+	main h4 {
+		font-size: 22px;
+	}
+	main p {
+		font-size: 18px;
+	}
+}
+
+@media only screen and (max-width:575px) {
+	main .nearest-course .deadline p {
+		padding-top: inherit;
+		line-height: inherit;
+	}
+	main .nearest-course .location,
+	main .nearest-course .date,
+	main .nearest-course .duration,
+	main .nearest-course .nearest-course-col,
+	main .nearest-course .sale {
+	    max-width: none;
+	}
+}
+
+/* MODAL WINDOWS */
+
+.modal-title h4 {
+	color: #8f2f85;
+}
+
+.modal-title p {
+	margin-bottom: 0;
+}
+
+.modal-title button {
+	color: #e7437c;
+	opacity: 1;
+}
+
+.modal-body .btn {
+	border-radius: 24px;
+	color: #8f2f85 !important;
+}
+
+.modal-body .form-control {
+	border-color: #e7437c;
+}
+
+/* FOOTER */
+
+footer #map {
+	line-height: 0;
+}
+
+footer #map iframe {
+	width: 100%;
+	max-width: 100%;
+	height: 500px;
+}
+
+footer .return-to-sale {
+	margin-top: -80px;
+}
+
+@media only screen and (max-width:812px) {
+	footer {
+		margin-bottom: 49px;
+	}
+}

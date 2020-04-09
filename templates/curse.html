@@ -3,15 +3,28 @@
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
-	<!--<link rel="profile" href="https://gmpg.org/xfn/11"/>-->
+	<!-- Google Tag Manager -->
+	<script>(function (w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({'gtm.start':
+                            new Date().getTime(), event: 'gtm.js'});
+                var f = d.getElementsByTagName(s)[0],
+                        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+                j.async = true;
+                j.src =
+                        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-PHCP2RH');</script>
+	<!-- End Google Tag Manager -->
+
 	<link rel="stylesheet" href="<?=WWW_CSS_PATH?>bootstrap.css">
 	<link rel="stylesheet" href="<?=WWW_CSS_PATH?>all.min.css">
-	<link rel="stylesheet" href="<?=WWW_CSS_PATH?>styles-ing.css">
+	<link rel="stylesheet" href="<?=WWW_CSS_PATH?>styles-ing-course.css">
 	<!-- <link rel="stylesheet" href="<?=WWW_CSS_PATH?>main.css"> -->
 
 	<title><?=$k->$mlang?> — Nails School</title>
 	<?php $meta= metatags();echo $meta;?>
-	<meta name="robots" content="noindex,follow">
+
 	<link rel="dns-prefetch" href="http://s.w.org/">
 	<!-- 	<link rel="stylesheet" id="wp-block-library-css" href="<?=WWW_CSS_PATH?>style.css" type="text/css" media="all">
 		<link rel="stylesheet" id="contact-form-7-css" href="<?=WWW_CSS_PATH?>styles.css" type="text/css" media="all"> -->
@@ -23,6 +36,9 @@
 	<link rel="stylesheet" id="popup-maker-site-css" href="<?=WWW_CSS_PATH?>site.css" type="text/css" media="all">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900&display=swap&subset=cyrillic" rel="stylesheet">
 	<style id="popup-maker-site-inline-css" type="text/css">
+	    #map {
+		width: 100%;
+	    }
 	    /* Popup Google Fonts */
 	    /*	    @import url('//fonts.googleapis.com/css?family=Montserrat|Acme');*/
 
@@ -75,6 +91,20 @@
 		width: 40%;
 		margin: auto;
 	    }
+	</style><style>
+	    .nth-word-2{
+		font-weight: 700 !important;
+	    }
+	    .nth-word-3{
+		font-weight: 600 !important;
+	    }
+	    .nth-word-4 {
+		font-weight: 500 !important;
+	    }
+
+	    .nth-word-5 {
+		font-weight: 450 !important;
+	    }
 	</style>
 
 	<link rel="canonical" href="<?=WWW_BASE_PATH?>">
@@ -99,18 +129,39 @@
 	<style type="text/css">
 	    <?=$cursCSS;?>
 	</style>
-	<style type="text/css">
-
-	</style>
     </head>
 
     <body class="page-template-default page page-id-134 page-child parent-pageid-255 singular image-filters-enabled ns">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PHCP2RH"
+			  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
 	<header>
 	    <nav class="navbar navbar-expand-lg navbar-light">
-		<div class="container">
-		    <button class="navbar-toggler m-auto" type="button" data-toggle="collapse" data-target="#navbarmenu" aria-controls="navbarmenu" aria-expanded="false" aria-label="Toggle navigation">
+		<div class="container align-items-start">
+		    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarmenu" aria-controls="navbarmenu" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span></button>
-
+		    <div class="xs-menu d-block d-lg-none">
+			<ul class="navbar-nav mr-auto row no-gutters">
+			    <li class="nav-item dropdown col-4">
+				<a class="nav-link dropdown-toggle" href="#" id="navbardropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-map-marker-alt"></i>&nbsp;<?=$misto;?></a>
+				<div class="dropdown-menu" aria-labelledby="navbardropdown">
+				    <?=$otherTown?>
+				</div>
+			    </li>
+			    <li class="nav-item text-center dropdown col-5 phone"><a class="nav-link" href="tel:<?=$faddr->phones?>"><i class="fas fa-phone align-top flip-horizontal"></i></a></li>
+			    <li class="nav-item col-1">
+				<a class="nav-link text-right ls" href="" lang="UA">Укр</a>
+			    </li>
+			    <li class="nav-item col-1">
+				<a class="nav-link text-center separator">/</a>
+			    </li>
+			    <li class="nav-item col-1">
+				<a class="nav-link text-left ls" href="" lang="RU">Рус</a>
+			    </li>
+			</ul>
+		    </div>
 		    <div class="collapse navbar-collapse" id="navbarmenu">
 			<ul class="navbar-nav m-auto d-none d-lg-block cities-menu">
 			    <li class="nav-item dropdown">
@@ -122,21 +173,21 @@
 			</ul>
 			<ul class="navbar-nav mr-auto main-menu">
 			    <li class="nav-item d-none d-lg-block">
-				<a class="nav-link" href="tel:<?=$faddr->phones?>"><b><?=$faddr->phones?></b></a>
+				<a class="nav-link" href="tel:<?=$faddr->phones?>"><b><i class="fas fa-phone align-middle flip-horizontal"></i>&nbsp;<?=$faddr->phones?></b></a>
 			    </li>
 			</ul>
 			<ul class="navbar-nav mr-auto main-menu">
 			    <li class="nav-item">
-				<a class="nav-link" href="<?=WWW_BASE_PATH?>"><?=l('m1')?></a>
+				<a class="nav-link" href="<?=WWW_BASE_PATH?>"><span><?=l('m1')?></span></a>
 			    </li>
 			    <li class="nav-item d-none d-lg-block">
-				<a class="nav-link separator">/</a>
+				<a class="nav-link separator"><span>/</span></a>
 			    </li>
 			    <li class="nav-item">
-				<a class="nav-link" href="<?=WWW_BASE_PATH?>curses/<?=$this->param[0]?>/"><?=$cc?></a>
+				<a class="nav-link" href="<?=WWW_BASE_PATH?>curses/<?=$this->param[0]?>/"><span><?=$cc?></span></a>
 			    </li>
 			    <li class="nav-item d-none d-lg-block">
-				<a class="nav-link separator">/</a>
+				<a class="nav-link separator"><span>/</span></a>
 			    </li>
 			    <li class="breadcrumb-item breadcrumb-list__item active" aria-current="page">
 				<a class="nav-link"><b><?=$k->$mlang?></b></a>
@@ -144,35 +195,13 @@
 			</ul>
 			<ul class="navbar-nav lang-menu d-none d-lg-flex">
 			    <li class="nav-item">
-				<a class="nav-link text-right ls" href="" lang="UA">Укр</a>
+				<a class="nav-link text-right ls" href="" lang="UA"><span>Укр</span></a>
 			    </li>
 			    <li class="nav-item d-none d-lg-block">
-				<a class="nav-link text-center separator">/</a>
+				<a class="nav-link text-center separator"><span>/</span></a>
 			    </li>
 			    <li class="nav-item">
-				<a class="nav-link text-left ls" href="" lang="RU">Рус</a>
-			    </li>
-			</ul>
-
-		    </div>
-		    <div id="navbarmenu" class="xs-menu d-block d-lg-none">
-			<ul class="navbar-nav mr-auto row no-gutters">
-			    <li class="nav-item dropdown col-9">
-				<a class="nav-link dropdown-toggle" href="#" id="navbardropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-map-marker-alt"></i>&nbsp;<?=$misto;?></a>
-				<div class="dropdown-menu" aria-labelledby="navbardropdown">
-				    <a class="dropdown-item" href="<?=WWW_BASE_PATH?>kiev/">Киев</a>
-				    <a class="dropdown-item" href="<?=WWW_BASE_PATH?>zaporozhe/">Запорожье</a>
-				    <a class="dropdown-item" href="<?=WWW_BASE_PATH?>nikolaev/">Николаев</a>
-				</div>
-			    </li>
-			    <li class="nav-item col-1 active">
-				<a class="nav-link text-right ls" href="" lang="UA">Укр</a>
-			    </li>
-			    <li class="nav-item col-1">
-				<a class="nav-link text-center separator">/</a>
-			    </li>
-			    <li class="nav-item col-1">
-				<a class="nav-link text-left ls" href="" lang="RU">Рус</a>
+				<a class="nav-link text-left ls" href="" lang="RU"><span>Рус</span></a>
 			    </li>
 			</ul>
 		    </div>
@@ -182,8 +211,8 @@
 	    <div class="container">
 		<div class="row row-eq-height">
 		    <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-6 themed-grid-col">
-			<a href="<?=WWW_BASE_PATH?>"><img src="<?=WWW_IMG_PATH?>logo.svg" alt="" class="logo m-auto d-block"></a>
-			<h1 class="gradient-text text-center text-xl-left"><?=$k->$mlang?></h1>
+			<a href="<?=WWW_BASE_PATH?>"><img src="<?=WWW_IMG_PATH?>logo.svg" alt="" class="logo m-auto mx-sm-0 d-block"></a>
+			<h1 class="gradient-text text-center text-xl-left <?=$nth;?>"><?=$k->$mlang?></h1>
 			<p class="description-text text-center text-xl-left"><?=l('u1');?></b></p>
 			<div class="row checklist-course">
 			    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 themed-grid-col pl-4 pr-0">
@@ -240,26 +269,26 @@
 	    <section class="nearest-course" id="sale">
 		<div class="container">
 		    <div class="row row-eq-height">
-			<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-5 themed-grid-col nearest-course-col">
+			<div class="col-12 col-sm-7 col-md-4 col-lg-4 col-xl-4 px-md-0 px-lg-0 themed-grid-col nearest-course-col">
 			    <div class="row">
-				<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 themed-grid-col">
+				<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 px-md-2 pl-lg-3 themed-grid-col">
 				    <p><b><?=l('firstcurs')?>:</b></p>
 				</div>
 			    </div>
 			    <div class="row">
-				<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 themed-grid-col text-center location">
+				<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 px-1 px-md-0 themed-grid-col text-center location">
 				    <div class="align-middle">
 					<img src="<?=WWW_IMG_PATH?>location-pink.svg" alt="">
 				    </div>
-				    <p class="text-center"><?=$mista[$town]?></p>
+				    <p class="text-center">&nbsp;<?=$mista[$town]?></p>
 				</div>
-				<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 themed-grid-col text-center date">
+				<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 px-1 px-md-0 themed-grid-col text-center date">
 				    <div class="align-middle">
 					<span class="align-middle"><?=$start?></span>
 				    </div>
 				    <p class="text-center"><?=$monts?></p>
 				</div>
-				<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 themed-grid-col text-center duration">
+				<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 px-1 px-md-0 themed-grid-col text-center duration">
 				    <div class="align-middle">
 					<span class="align-middle"><?=$k->finish?></span>
 				    </div>
@@ -267,14 +296,21 @@
 				</div>
 			    </div>
 			</div>
-			<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-7 pl-xl-4 themed-grid-col">
+			<div class="col-12 col-sm-5 col-md-3 col-lg-3 col-xl-2 px-md-0 px-lg-0 themed-grid-col deadline">
+			    <?php if($k->action=="Y"){?><p class="text-center"><span class="text-uppercase akcia"><?=l('akcia')?></span><br />до <?=$k->deadline;?>&nbsp;</p><?php }?>
+			</div>
+			<div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-6 px-md-0 px-lg-0 themed-grid-col">
 			    <div class="sale text-center">
-				<p><?=l('akcia')?><del><?=$k->coast?></del> <b><?=$k->ac_coast?></b>&nbsp;<span>грн</span></p>
-				<a href="kurs-manikyura" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#akcia"><?=l('akcia_btn')?></a>
+				<?php if($k->action=="Y"){?>
+				<p style="margin:0 auto;"><del><?=$k->coast?></del>&nbsp;<span>грн</span> <b><?=$k->ac_coast?></b>&nbsp;<span>грн</span></p>
+				<?php } else{ ?>
+				<p style="margin:0 auto;"><?=l('ccoact')?> <b><?=$k->coast?></b>&nbsp;<span>грн</span></p>
+				<?php }?>
+				<a href="#" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#akcia"><?=l('akcia_btn')?></a>
 			    </div>
 			</div>
 			<div class="col-12 col-sm-0 col-md-0 col-lg-0 col-xl-0 themed-grid-col girl d-none d-xl-flex">
-			    <img src="<?=WWW_IMG_PATH?>girl.png" alt="">
+			    <img src="<?=$mashas?>" alt="">
 			</div>
 		    </div>
 		</div>
@@ -297,21 +333,70 @@
 		<div class="row row-eq-height no-gutters">
 		    <!-- Mobile video -->
 		    <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-3 themed-grid-col m-auto px-2 px-lg-3 px-xl-5 d-block d-sm-none video">
-			<iframe width="315" height="630" style="margin-top: 20px;" src="<?=$k->video?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<iframe width="315" height="630" style="margin-top: 20px;" src="<?=$video?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 		    </div>
 		    <!-- // -->
 		    <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-9 themed-grid-col py-5 px-4 px-lg-4 px-xl-5">
-			<div class="py-5">
+			<div class="pt-4 pb-0">
 			    <?=$fulltext?>
-			    <a href="#" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#detail"><?=l('detail_btn')?></a>
+			    <!--a href="#" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#detail"><?=l('detail_btn')?></a-->
+			    <a href="<?=$gdoc?>" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" target="_blanc" ><?=l('detail_btn')?></a>
 			    <p class="text-center text-primary"><small><?=l('detail')?></small></p>
 			</div>
-		    </div> 
+		    </div>
 		    <!-- Desktop & tablet video -->
 		    <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-3 themed-grid-col m-auto px-2 px-lg-3 px-xl-5 d-none d-sm-block video">
-			<iframe width="315" height="630" style="margin-top: 20px;" src="<?=$k->video?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<iframe width="315" height="630" style="margin-top: 20px;" src="<?=$video?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 		    </div>
 		    <!-- // -->
+	    </section>
+	    <section class="nearest-course" id="sale">
+		<div class="container">
+		    <div class="row row-eq-height">
+			<div class="col-12 col-sm-7 col-md-4 col-lg-4 col-xl-4 px-md-0 px-lg-0 themed-grid-col nearest-course-col">
+			    <div class="row">
+				<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 px-md-2 pl-lg-3 themed-grid-col">
+				    <p><b><?=l('firstcurs')?>:</b></p>
+				</div>
+			    </div>
+			    <div class="row">
+				<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 px-1 px-md-0 themed-grid-col text-center location">
+				    <div class="align-middle">
+					<img src="<?=WWW_IMG_PATH?>location-pink.svg" alt="">
+				    </div>
+				    <p class="text-center">&nbsp;<?=$mista[$town]?></p>
+				</div>
+				<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 px-1 px-md-0 themed-grid-col text-center date">
+				    <div class="align-middle">
+					<span class="align-middle"><?=$start?></span>
+				    </div>
+				    <p class="text-center"><?=$monts?></p>
+				</div>
+				<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 px-1 px-md-0 themed-grid-col text-center duration">
+				    <div class="align-middle">
+					<span class="align-middle"><?=$k->finish?></span>
+				    </div>
+				    <p class="text-center"><?=numberof($k->finish, ' д', $lar);?></p>
+				</div>
+			    </div>
+			</div>
+			<div class="col-12 col-sm-5 col-md-3 col-lg-4 col-xl-4 px-md-0 px-lg-0 themed-grid-col deadline">
+			    <?php if($k->action=="Y"){?><p class="text-center"><span class="text-uppercase akcia"><?=l('akcia')?></span><br />до <?=$k->deadline;?>&nbsp;</p><?php }?>
+			</div>
+			<div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-4 px-md-0 px-lg-0 themed-grid-col text-center text-md-center">
+			    <div class="sale text-center d-inline-block">
+				<?php if($k->action=="Y"){?>
+				<p style="margin:0 auto;"><del><?=$k->coast?></del>&nbsp;<span>грн</span> <b><?=$k->ac_coast?></b>&nbsp;<span>грн</span></p>
+				<?php } else{ ?>
+				<p style="margin:0 auto;"><?=l('ccoact')?> <b><?=$k->coast?></b>&nbsp;<span>грн</span></p>
+				<?php }?>
+				<a href="#" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#akcia"><?=l('akcia_btn')?></a>
+			    </div>
+			</div>
+			<div class="col-12 col-sm-0 col-md-0 col-lg-0 col-xl-0 themed-grid-col girl d-none d-xl-flex">
+			</div>
+		    </div>
+		</div>
 	    </section>
 	    <section class="advantages py-5">
 		<h2 class="text-center text-uppercase font-weight-bold mb-5"><span class="gradient-text"><?=l('m4');?></span></h2>
@@ -329,29 +414,29 @@
 			    <img src="<?=WWW_IMG_PATH?>people-icon.svg" alt="">
 			    <?=SBl(4,$lang);?>
 			</div>
-			<div class="col-12 col-sm-6 col-lg-4 col-xl-4 text-center pb-5 why">
+			<div class="col-12 col-sm-6 col-lg-4 col-xl-4 text-center pb-4 why">
 			    <img class="why-block__img" src="<?=WWW_IMG_PATH?>all.svg" alt="">
 			    <?=SBl(5,$lang);?>
 			</div>
-			<div class="col-12 col-sm-6 col-lg-4 col-xl-4 text-center pb-5 why">
+			<div class="col-12 col-sm-6 col-lg-4 col-xl-4 text-center pb-4 why">
 			    <img class="why-block__img" src="<?=WWW_IMG_PATH?>gramota.svg" alt="">
 			    <?=SBl(6,$lang);?>
 			</div>
-			<div class="col-12 col-sm-6 col-lg-4 col-xl-4 text-center pb-5 why">
+			<div class="col-12 col-sm-6 col-lg-4 col-xl-4 text-center pb-4 why">
 			    <img class="why-block__img" src="<?=WWW_IMG_PATH?>krema.svg" alt="">
 			    <?=SBl(7,$lang);?>
 			</div>
 		    </div>
 		</div>
 	    </section>
-	    <section class="about-school py-5">
-		<h2 class="text-center text-uppercase font-weight-bold my-lg-4 my-sm-2"><span class="gradient-text"><span class="font-weight-light">Про </span>нашу школу?</span></h2>
-		<div class="container">
+	    <section class="about-school py-0 py-sm-5">
+		<h2 class="text-center text-uppercase font-weight-bold mt-lg-3 mb-lg-4 my-sm-2"><?=l('aboutschool_head');?></h2>
+		<div class="container pb-4">
 		    <div class="row no-gutters pt-5">
 			<div class="d-none d-sm-block col-sm-6 col-lg-7 col-xl-7 text-center">
 			    <img src="<?=WWW_IMAGE_PATH?>school/<?=$school->osn_img?>" alt="">
 			</div>
-			<div class="col-12 col-sm-6 col-lg-5 col-xl-5 py-5 px-5 description">
+			<div class="col-12 col-sm-6 col-lg-5 col-xl-5 py-5 px-5 nongradient description">
 			    <?=$sch_osnashennia;?>
 			</div>
 		    </div>
@@ -367,7 +452,7 @@
 			<div class="d-none d-sm-block col-sm-6 col-lg-7 col-xl-7 text-center">
 			    <img src="<?=WWW_IMAGE_PATH?>school/<?=$school->location_img?>" alt="">
 			</div>
-			<div class="col-12 col-sm-6 col-lg-5 col-xl-5 py-5 px-5 description">
+			<div class="col-12 col-sm-6 col-lg-5 col-xl-5 py-5 px-5 nongradient description">
 			    <?=$sch_location?>
 
 			</div>
@@ -384,12 +469,13 @@
 			<div class="d-none d-sm-block col-sm-6 col-lg-7 col-xl-7 text-center">
 			    <img src="<?=WWW_IMAGE_PATH?>school/<?=$school->konsult_img?>" alt="Консультації">
 			</div>
-			<div class="col-12 col-sm-6 col-lg-5 col-xl-5 py-5 px-5 description">
+			<div class="col-12 col-sm-6 col-lg-5 col-xl-5 py-5 px-5 nongradient description">
 			    <?=$sch_konsult?>
 
 			</div>
 		    </div>
-		    <?php if($k->tur==='Y'){?>
+
+		    <?php if(empty($k->tur) or $k->tur=='Y'){?>
 		    <div class="row no-gutters">
 			<div class="col-12 col-sm-6 col-lg-5 col-xl-5 py-5 px-5 gradient-block description">
 			    <?=$sch_tur?>
@@ -403,27 +489,22 @@
 
 		</div>
 	    </section>
-	    <section class="py-5 slideshow">
-		<h2 class="text-center text-uppercase font-weight-bold my-lg-4 my-sm-2"><span class="gradient-text"><?=l('galery1')?></span></h2>
-			<!-- new slideshow by ing -->
-			<div class="gallery">
-			    <div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
-			    <div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
-			    <div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
-			    <div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
-			    <div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
-			    <div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
-			    <div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
-			    <div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
-			</div>
-			<!-- / -->
+	    <?php if(empty($k->zrazki) or $k->zrazki=='Y'){?>
+	    <section class="py-4 slideshow">
+		<h2 class="text-center text-uppercase font-weight-bold my-0 my-lg-4 my-sm-2"><span class="gradient-text"><?=l('galery1')?></span></h2>
+		<!-- new slideshow by ing -->
+		<div class="gallery">
+		    <?=$galery;?>
+		</div>
+		<!-- / -->
 	    </section>
-	    <section class="py-5 px-3 faq">
-		<h2 class="text-center text-uppercase font-weight-bold my-lg-4 my-sm-2"><span class="gradient-text"><?=L('m11');?></span></h2>
+	    <?php }?>
+	    <section class="pb-5 px-3 faq">
+		<h2 class="text-center text-uppercase font-weight-bold my-lg-4 mb-lg-5 my-sm-2"><span class="gradient-text"><?=L('m11');?></span></h2>
 		<div class="container">
 		    <div class="row">
 			<div id="accordion">
-			    <?=SBl(8,$lang);?>
+			    <?=$qa;?>
 			</div>
 		    </div>
 		</div>
@@ -435,152 +516,90 @@
 		    <a href="#" class="btn btn-warning btn-lg text-uppercase font-weight-bold" data-toggle="modal" data-target="#consult"><?=l('m14')?></a>
 		</div>
 	    </section>
+
+	    <?php if(empty($k->vipusk) or $k->vipusk=='Y'){?>
 	    <section class="py-5 slideshow">
 		<h2 class="text-center text-uppercase font-weight-bold my-lg-4 my-sm-2"><span class="gradient-text"><?=l('r8');?></span></h2>
-			<!-- new slideshow by ing -->
-			<div class="graduates">
-			    <div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
-			    <div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
-			    <div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
-			    <div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
-			    <div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
-			    <div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
-			    <div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
-			    <div class="slide"><img src="http://test5.blaze.co.ua/wp-content/uploads/2018/05/slider-photo.png"></div>
-			</div>
-			<!-- / -->
+		<!-- new slideshow by ing -->
+		<div class="graduates">
+		    <?=$vipusk?>
+		</div>
+		<!-- / -->
 	    </section>
-	    <section class="py-5 disqus">
-		<style>
-		    .bootstrap-iso .form-group button,
-		    .bootstrap-iso form input.form-control,
-		    .bootstrap-iso form textarea.form-control,
-		    .bootstrap-iso form select.form-control,
-		    .bootstrap-iso form .form-group-lg input.form-control,
-		    .bootstrap-iso form .form-group-lg textarea.form-control,
-		    .bootstrap-iso form .form-group-lg select.form-control,
-		    .bootstrap-iso form .form-group-sm input.form-control,
-		    .bootstrap-iso form .form-group-sm textarea.form-control,
-		    .bootstrap-iso form .form-group-sm select.form-control{
-			-webkit-border-radius: 20px;
-			-moz-border-radius: 20px;
-			border-radius: 20px;
-		    }
-		    .bootstrap-iso .formden_header h2,
-		    .bootstrap-iso .formden_header p,
-		    .bootstrap-iso form{
-			font-family: Arial, Helvetica, sans-serif;
-			color: #8d8c94}
-		    .bootstrap-iso form button,
-		    .bootstrap-iso form button:hover{
-			color: #337ab7 !important;
-		    }
-		    .bootstrap-iso .outline, .bootstrap-iso .outline:focus{
-			background-color: transparent; border: 2px solid #337ab7
-		    }
-		    .bootstrap-iso .outline:hover{
-			background-color: transparent;
-			border: 2px solid#5ba2df;
-			color: #5ba2df !important}
-		    .asteriskField{color: red;}
-		    .bootstrap-iso form .input-group-addon {
-			color:#555555; background-color: #eeeeee;
-			border-radius: 20px; padding-left:15px
-		    }</style>
-		<div class="container col-12-24">
+	    <?php }?>
+	    <!--section class="py-5 comments">
 
-		    <?=$page_coment;?>
-		    <div id="addComment" >
-			<div class="bootstrap-iso">
-			    <div class="container-fluid">
-				<div class="row">
-				    <div class="col-md-12 col-sm-12 col-xs-12">
-					<form id="addCommentForm" class="form-horizontal" method="post">
-					    <div class="form-group ">
-						<label class="control-label col-sm-2 requiredField" for="name">
-						    Имя
-						    <span class="asteriskField">
-							*
-						    </span>
-						</label>
-						<div class="col-sm-4">
-						    <input class="form-control" id="name" name="name" type="text"/>
-						</div>
-					    </div>
-					    <div class="form-group ">
-						<label class="control-label col-sm-2 requiredField" for="email">
-						    Email
-						    <span class="asteriskField">
-							*
-						    </span>
-						</label>
-						<div class="col-sm-4">
-						    <input class="form-control" id="email" name="email" type="text"/>
-						    <span class="help-block" id="hint_email">
-							не отображается в коментариях
-						    </span>
-						</div>
-					    </div>
-					    <div class="form-group ">
-						<label class="control-label col-sm-2 requiredField" for="body">
-						    Коментарий
-						    <span class="asteriskField">
-							*
-						    </span>
-						</label>
-						<div class="col-sm-10">
-						    <textarea class="form-control" cols="40" id="body" name="body" rows="10"></textarea>
-						</div>
-						<input type="hidden" name="page" value="<?=$link?>">
-					    </div>
-					    <div class="form-group">
-						<div class="col-sm-10 col-sm-offset-2">
-						    <button class="btn btn-primary btn-sm outline" name="submit" type="submit">
-							<?=l('add_comment');?>
-						    </button>
-						</div>
-					    </div>
-					</form>
+	    <div class="container">
+		<div id="addComment">
+		    <div class="row">
+			<div class="col-12 col-sm-12 col-lg-12 col-xl-12">
+			    <?=$page_coment;?>
+			    <form id="addCommentForm" method="post">
+				<div class="form-row">
+				    <div class="form-group col-md-4">
+					<label class="control-label requiredField" for="name">Имя<span>*</span></label>
+					<input class="form-control" id="name" name="name" type="text"/>
+				    </div>
+				    <div class="form-group col-md-4">
+					<label class="control-label requiredField" for="email">Email<span>*</span></label>
+					<input class="form-control" id="email" name="email" type="text" aria-describedby="emailHelpBlock"/>
+					<small id="emailHelpBlock" class="form-text text-muted">не отображается в коментариях</small>
 				    </div>
 				</div>
-			    </div>
+				<div class="form-group">
+				    <textarea class="form-control" id="body" name="body" rows="6"></textarea>
+				</div>
+				<input type="hidden" name="page" value="<?=$link?>">
+				<div class="d-block text-right">
+				    <button class="btn btn-warning btn-md px-3 btn-lg outline" name="submit" type="submit"><?=l('add_comment');?></button>
+				</div>
+			    </form>
 			</div>
 		    </div>
-	    </section>
+		</div>
+	    </div>
+	</section-->
 	    <section class="contacts">
 		<div class="container-fluid">
 		    <div class="row row-eq-height">
-			<div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-6 themed-grid-col py-4 d-flex align-items-center address">
-			    <img src="<?=WWW_IMG_PATH?>/location-pink.svg" alt="">
-
-			    <p><?php echo $faddr->$addr.', '.$faddr->$mlang; ?></p>
-			</div>
-			<div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 themed-grid-col py-4 d-flex align-items-center viber">
-			    <img src="<?=WWW_IMG_PATH?>/viber.svg" alt="">
-			    <p><a href="viber://chat?number=+<?=$faddr->viber?>">+<?=$faddr->viber?></a></p>
-			</div>
-			<div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 themed-grid-col py-4 d-flex text-center social">
-			    <div class="m-auto">
-				<?=$tfut;?>
-
+			<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 themed-grid-col py-4 d-flex align-items-center address">
+			    <div class="m-auto row no-gutters">
+				<div class="col-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">
+				    <img src="<?=WWW_IMG_PATH?>/location-pink.svg" alt="">
+				</div>
+				<div class="col-7 col-sm-7 col-md-7 col-lg-7 col-xl-7 d-grid align-items-center">
+				    <p><b><?=$currentMisto->$mlang?></b></p>
+				</div>
 			    </div>
 			</div>
+			<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 themed-grid-col py-4 d-flex align-items-center viber">
+			    <div class="m-auto row no-gutters">
+				<div class="col-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">
+				    <img src="<?=WWW_IMG_PATH?>/viber.svg" alt="">
+				</div>
+				<div class="col-7 col-sm-7 col-md-7 col-lg-7 col-xl-7 d-flex align-items-center">
+				    <p><a href="viber://chat?number=+38<?=$currentMisto->viber?>"><?=$faddr->viber?></a></p>
+				</div>
+			    </div>
+			</div>
+			<div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 themed-grid-col py-4 d-flex align-items-centertext-center social">
+			    <div class="m-auto"><?=$tfut;?></div>
+			</div>
 		    </div>
+		</div>
 	    </section>
 	</main>
 
 	<footer class="footer-page">
 
 	    <div id="map">
-		<iframe width="100%" height="350" src="https://maps.google.com/maps?width=700&amp;height=350&amp;hl=en&amp;q=%D0%A3%D0%BA%D1%80%D0%B0%D0%B8%D0%BD%D0%B0%2C%20%D0%B3.%D0%94%D0%BD%D0%B5%D0%BF%D1%80%2C%D1%83%D0%BB.%20%D0%9F%D0%B0%D0%B2%D0%BB%D0%B0%20%D0%9D%D0%B8%D1%80%D0%B8%D0%BD%D0%B1%D0%B5%D1%80%D0%B3%D0%B0%2C%2010+(%D0%9D%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5)&amp;ie=UTF8&amp;t=&amp;z=16&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+		<?=$gmap;?>
+
 		<style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
 		<div class="text-center position-relative return-to-sale">
-		    <a href="#sale" class="btn btn-warning btn-lg text-uppercase font-weight-bold"><?=l('r9')?>!</a>
+		    <a href="#sale" class="btn btn-warning btn-lg text-uppercase font-weight-bold"><?php if($k->action=="Y"){ echo l('r9');} else{echo l('r9a');}?>!</a>
 		</div>
 	</footer>
-
-
-
 
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="<?=WWW_JS_PATH?>comment.js"></script>
@@ -593,6 +612,7 @@
 	<script type="text/javascript" src="<?=WWW_JS_PATH?>position.js"></script>
 	<script type="text/javascript" src="<?=WWW_JS_PATH?>site.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+
 	<script>
             $(document).ready(function () {
                 $('.gallery, .graduates').slick({
@@ -795,20 +815,20 @@
 			    <div class="form-price">
 				<div class="form-content fd-rever">
 				    <div class="form-group left">
-					<label>Имя*</label>
+					<label><?=l('name')?>*</label>
 					<span class="wpcf7-form-control-wrap text-923">
 					    <input type="text" name="name" value="" size="40" class="form-control wpcf7-form-control wpcf7-text wpcf7-validates-as-required" required="required" >
 					</span>
 				    </div>
 				    <div class="form-group">
-					<label>Фамилия*</label>
+					<label><?=l('lastname');?>*</label>
 					<span class="wpcf7-form-control-wrap text-923">
 					    <input type="text" name="lname" value="" size="40" class="form-control wpcf7-form-control wpcf7-text wpcf7-validates-as-required" required="required">
 					</span>
 				    </div>
 				    <div class="form-group">
-					<label>Е-mail*</label>
-					<span class="wpcf7-form-control-wrap email-362"><input type="email" name="email" value="" size="40" class="form-control wpcf7-form-control wpcf7-text wpcf7-email" required='required'>
+					<label>Е-mail</label>
+					<span class="wpcf7-form-control-wrap email-362"><input type="email" name="email" value="" size="40" class="form-control wpcf7-form-control wpcf7-text wpcf7-email">
 					</span>
 				    </div>
 				    <div class="form-group">
@@ -825,20 +845,25 @@
 					    <span class="style-chec">
 						<input type="checkbox" id="checkbox-id" class="form-check-input">
 					    </span>
-					    <label class="form-check-label lad-chec" for="checkbox-id"><b>Получать уведомления об акциях и скидках школы</b></label>
+					    <label class="form-check-label lad-chec" for="checkbox-id"><b><?=l('uvedomit')?></b></label>
 					</span>
 				    </div>
 				    <div class="right-block">
 					<div class="block-right-form">
 					    <p>
-					    <div class="left_"><span>Дата старта</span> <b>с <?=$k->start?></b></div>
-					    <div class="right"><span>Стоимость со<br> скидкой:</span><b><?=$k->ac_coast?> грн</b></div>
+					    <div class="left_"><span><?=l('sdtext')?></span> <b> <?=date('d.m.Y',strtotime($k->start))?></b></div>
+					    <?php if($k->action=="Y"){?>
+					    <div class="right"><span><?=l('vartist')?></span> <b><?=$k->ac_coast?> грн</b></div>
+					    <?php }else{?>
+					    <div class="right"><?=l('ccoact')?> <b><?=$k->coast?> грн</b></div>
+					    <?php }?>
 					    </p>
 					</div>
-					<p><span class="block-right-span">*О точной дате начала курса мы оповестим лично</span></p>
+					<p><span class="block-right-span">*<?=l('uvag1')?></span></p>
 				    </div>
 				</div>
-				<input type="submit" value="ПОДТВЕРДИТЬ ЗАПИСЬ" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold m-auto w-auto px-4 wpcf7-form-control wpcf7-submit">
+				<button type="submit" value="<?=l('btnzapis')?>" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold m-auto w-auto px-4 wpcf7-form-control wpcf7-submit"><?=l('btnzapis')?>*</button>
+				* <?=l("pdrd")?>
 				<span class="ajax-loader"></span>
 			    </div>
 			</form>
@@ -861,23 +886,25 @@
 		    </div>
 		    <!-- Modal body -->
 		    <div class="modal-body">
-			<form action="<?=WWW_BASE_PATH?>callme" method="post">
-			    <input type="hidden" name="id" value="<?=$k->id?>">
+			<form id='akciaForm' action="<?=WWW_BASE_PATH?>parcipate" method="post">
+			    <input type="hidden" name="id" value="<?=$k->id?>" />
+			    <input type="hidden" name="leadtype" value="calback" />
+			    <input type="hidden" name="returnto" value="<?=$this->param[0]?>/<?=$this->param[1]?>" />
 			    <div class="form-price">
 				<div class="form-content fd-rever">
 				    <div class="left">
 					<div class="form-group">
-					    <label>Имя*</label>
+					    <label><?=l('name')?>*</label>
 					    <span class="wpcf7-form-control-wrap text-923">
 						<input type="text" name="name" value="" size="40" class="form-control wpcf7-form-control wpcf7-text wpcf7-validates-as-required" required="required" >
 					    </span>
 					</div>
-					<div class="form-group">
-					    <label>Фамилия*</label>
+					<!--div class="form-group">
+					    <label><?=l('lastname');?>*</label>
 					    <span class="wpcf7-form-control-wrap text-923">
 						<input type="text" name="lname" value="" size="40" class="form-control wpcf7-form-control wpcf7-text wpcf7-validates-as-required" required="required">
 					    </span>
-					</div>
+					</div-->
 					<div class="form-group">
 					    <label>Телефон*</label>
 					    <span class="wpcf7-form-control-wrap tel-744">
@@ -887,7 +914,8 @@
 				    </div>
 
 				</div>
-				<input type="submit" value="<?=l('calback_btn')?>" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold m-auto w-auto px-4 wpcf7-form-control wpcf7-submit">
+				<button type="submit" value="<?=l('calback_btn')?>" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold m-auto w-auto px-4 wpcf7-form-control wpcf7-submit"><?=l('calback_btn')?>*</button>
+				* <?=l("pdrd")?>
 				<span class="ajax-loader"></span>
 			    </div>
 			</form>
@@ -910,7 +938,7 @@
 		    </div>
 		    <!-- Modal body -->
 		    <div class="modal-body" style=' width:100%; height:80vh ;'>
-			<iframe style=' width:100%; height:100%;' src="https://docs.google.com/document/d/e/2PACX-1vSudJ4AFDyi08bjb1YyeJ2VKFpisDkkKT1ZDEj8uGBP53hHE3pdwXT6e1umztinqW9W1fR4AC_Utqt2/pub?embedded=true">
+			<iframe style=' width:100%; height:100%;' src="<?=$gdoc?>?embedded=true">
 			</iframe>
 		    </div>
 		</div>
@@ -924,65 +952,50 @@
 		    <!-- Modal Header -->
 		    <div class="modal-header">
 			<div class="title modal-title">
-			    <h4 class="text-uppercase font-weight-bold"><?=l('m13')?></h4>
-			    <p class="ps text-uppercase font-weight-bold">ЗАПИСАТЬСЯ НА KОНСУЛЬТАЦИЮ</p>
+			    <h4 class="text-uppercase font-weight-bold"><?=strip_tags(l('m13'))?></h4>
+			    <p class="ps text-uppercase font-weight-bold"><?=l("konsult_sub")?></p>
 			</div>
 			<button type="button" class="close" data-dismiss="modal">&times;</button>
 		    </div>
 		    <!-- Modal body -->
 		    <div class="modal-body" style=' width:100%;'>
-			<form>
+			<form id='akciaForm' action="<?=WWW_BASE_PATH?>parcipate" method="post">
 			    <fieldset>
 				<!-- Text input-->
 				<div class="form-group">
-				    <label for="textinput">Имя*</label>
-				    <input id="name" name="textinput" type="text" required="required" class="form-control input-md">
+				    <label for="textinput"><?=l('name')?>*</label>
+				    <input id="name" name="name" type="text" required="required" class="form-control input-md">
 				</div>
 
 				<!-- Text input-->
-				<div class="form-group">
-				    <label for="textinput">Фамилия*</label>
-				    <input id="textinput" name="textinput" type="text" class="form-control">
-				</div>
+				<!--div class="form-group">
+				    <label for="textinput"><?=l('lastname');?>*</label>
+				    <input id="textinput" name="lname" type="text" class="form-control">
+				</div-->
 
 				<!-- Text input-->
 				<div class="form-group">
 				    <label for="textinput">Телефон*</label>
-				    <input id="textinput" name="textinput" type="text" class="form-control">
+				    <input id="textinput" name="phone" type="text" class="form-control" placeholder="+38 ( _ _ _ ) _ _ _ _ _ _ _">
 				</div>
-
+				<input type="hidden" name="id" value="<?=$k->id?>" />
+				<input type="hidden" name="leadtype" value="consult" />
+				<input type="hidden" name="returnto" value="<?=$this->param[0]?>/<?=$this->param[1]?>" />
 				<!-- Button (Double) -->
-				<button id="button1id" name="button1id" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold m-auto w-auto px-4">ПОДТВЕРДИТЬ ЗАПИСЬ</button>
+				<button id="button1id" name="button1id" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold m-auto w-auto px-4"><?=l('modal_consult')?>*</button>
+				* <?=l("pdrd")?>
 				</div>
 
-			    </fieldset></form>
-
-
+			    </fieldset>
+			</form>
 		    </div>
 		</div>
 	    </div>
 	</div>
+	<!-- Go to www.addthis.com/dashboard to customize your tools -->
+	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e402414887521ee"></script>
     </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

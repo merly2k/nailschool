@@ -19,3 +19,8 @@ header{float: left; width:100%}
 .top-nav li a:hover, .top-nav li a:focus, .top-nav li.active a{color: #141517; border-bottom: 2px solid #FD3A13 }
 .top-nav .form-control{border-color: #fff}
 .thumb-image{width: 300px;}
+.scrollable{
+    max-height: calc(100% - 6rem);width: auto;display: flex;
+    overflow-x: hidden;
+    overflow-y: auto;
+}

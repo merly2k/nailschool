@@ -1,11 +1,5 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 namespace model;
 
 /**
@@ -13,72 +7,75 @@ namespace model;
  *
  * @author merly
  */
-class school extends \db{
+class school extends \db {
+
     function getByLink($link) {
-	$q="SELECT * FROM `school` WHERE `misto`='$link'";
+	$q	 = "SELECT * FROM `school` WHERE `misto`='$link'";
 	//echo $q;
-	$out=$this->get_result($q);
-	if(count ($out)>0):
-	return $out[0];
+	$out	 = $this->get_result($q);
+	if (count($out) > 0):
+	    return $out[0];
 	else:
-	  $p=array('id'=>'',
-	      'misto'=>$link,
-	      'osnashennia'=>'',
-	      'osn_img'=>'',
-	      'ergonomik'=>'',
-	      'ergonomik_img'=>'',
-	      'location'=>'',
-	      'location_img'=>'',
-	      'shop'=>'',
-	      'shop_img'=>'',
-	      'konsult'=>'',
-	      'konsult_img'=>'',
-	      'tur'=>'',
-	      'tur_link'=>'');
-      $this->insert($p);
-      return $this->getByLink($link);
+	    $p = array('id'		 => '',
+		'misto'		 => $link,
+		'osnashennia_ua' => '',
+		'osnashennia_ru' => '',
+		'osn_img'	 => '',
+		'ergonomik_ua'	 => '',
+		'ergonomik_ru'	 => '',
+		'ergonomik_img'	 => '',
+		'location_ua'	 => '',
+		'location_ru'	 => '',
+		'location_img'	 => '',
+		'shop_ua'	 => '',
+		'shop_ru'	 => '',
+		'shop_img'	 => '',
+		'konsult_ua'	 => '',
+		'konsult_ru'	 => '',
+		'konsult_img'	 => '',
+		'tur_ua'	 => '',
+		'tur_ru'	 => '',
+		'tur_link'	 => '');
+	    $this->insert($p);
+	    return $this->getByLink($link);
 	endif;
     }
-    
-    function insert($param){
+
+    function insert($param) {
 	extract($param);
-	$q="INSERT INTO `school` (`id`, `misto`, `osnashennia`, `osn_img`, `ergonomik`, `ergonomik_img`, `location`, `location_img`, `shop`, `shop_img`, `konsult`, `konsult_img`, `tur`, `tur_link`)"
-	. " VALUES ('$id', '$misto', '$osnashennia', '$osn_img', '$ergonomik', '$ergonomik_img', '$location', '$location_img', '$shop', '$shop_img', '$konsult', '$konsult_img', '$tur', '$tur_link');";
+	$q = "INSERT INTO `school` ("
+		. " `misto`,"
+		. " `osnashennia_ua`, `osnashennia_ru`, `osn_img`,"
+		. " `ergonomik_ua`, `ergonomik_ru`,`ergonomik_img`,"
+		. " `location_ua`, `location_ru`,`location_img`,"
+		. " `shop_ua`, `shop_ru`, `shop_img`,"
+		. " `konsult_ua`, `konsult_ru`,`konsult_img`,"
+		. " `tur_ua`, `tur_ru`, `tur_link`)"
+		. " VALUES ("
+		. " '$misto', "
+		. "'$osnashennia_ua','$osnashennia_ru', '$osn_img',"
+		. " '$ergonomik_ua','$ergonomik_ru', '$ergonomik_img',"
+		. " '$location_ua','$location_ru', '$location_img',"
+		. " '$shop_ua','$shop_ru', '$shop_img',"
+		. " '$konsult_ua','$konsult_ru', '$konsult_img', "
+		. "'$tur_ua','$tur_ru', '$tur_link');";
 	$this->query($q);
 	return $this->lastState;
     }
-    
+
     function update($param) {
-	extract($params);
+	extract($param);
 	$q = "UPDATE `school` SET ";
-	foreach ($params as $k => $v) {
-	    $p[] = "`$k`='$v'";
+	foreach ($param as $k => $v)
+	{
+	    $p[] = "`$k`='" . htmlspecialchars($v, ENT_QUOTES) . "'";
 	}
-	$q.=implode(", ", $p) . " WHERE  `id`=$id;";
+	$q .= implode(", ", $p) . " WHERE  `misto`='$misto';";
 	//echo $q;
 	$this->query($q);
 
 	return $this->lastState;
     }
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

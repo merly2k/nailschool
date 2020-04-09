@@ -30,7 +30,9 @@ iframe {
 	}
 }
 
-.gradient-text {
+h1.gradient-text,
+h2.gradient-text,
+h3.gradient-text {
     background: -webkit-linear-gradient(45deg,#ed5799,#8c3a84);
     background: -o-linear-gradient(45deg,#ed5799,#8c3a84);
     background: linear-gradient(45deg, #ed5799, #8c3a84);
@@ -46,6 +48,10 @@ iframe {
     background: -o-linear-gradient(45deg,#8c3a84,#ed5799);
     background: linear-gradient(45deg,#8c3a84,#ed5799);
 	color: #fff;
+}
+
+.text-primary {
+	color: #8f2f85 !important;
 }
 
 @media only screen and (min-width:1441px) {
@@ -108,9 +114,9 @@ iframe {
 
 .ns .navbar-nav.main-menu li a.nav-link,
 .ns .navbar-nav.lang-menu li a.nav-link {
+	font-weight: 400;
 	color: #45113c;
 	font-size: 16px;
-	font-weight: 400;
 	opacity: .7;
 }
 
@@ -118,9 +124,9 @@ iframe {
 	font-weight: 500;
 }
 
-.ns .navbar-nav.lang-menu li a.nav-link.separator,
-.ns .navbar-nav.lang-menu li a.nav-link.active {
-	font-weight: 400;
+.ns .navbar-nav.lang-menu li a.nav-link.active,
+.ns .xs-menu li a.nav-link.active {
+	font-weight: 700;
 }
 
 .ns .navbar-nav.lang-menu {
@@ -131,12 +137,24 @@ iframe {
 	color: #6c757d;
 }
 
+.ns .navbar-nav .flip-horizontal {
+	transform: scale(-1, 1);
+}
+
 .ns .xs-menu {
-	width: 100%;
+	width: 75%;
+}
+
+.ns .xs-menu .navbar-nav li a.nav-link {
+	color: #45113c;
 }
 
 .ns .xs-menu .navbar-nav {
 	flex-direction: row;
+}
+
+.ns .xs-menu .navbar-nav .phone {
+	font-size: 24px;
 }
 
 @media (min-width:992px) and (max-width:1199px) {
@@ -159,8 +177,10 @@ iframe {
 
 /* HEADER */
 
-header {
-	background: url(../images/banner-bg.png) no-repeat bottom/contain;
+@media (min-width:768px) {
+	header {
+		background: url(../images/banner-bg.png) no-repeat bottom/contain;
+	}
 }
 
 header .logo {
@@ -188,10 +208,6 @@ header .description-text {
 header .checklist-course {
 	margin-bottom: 18px;
 }
-/*
-header .checklist-course:last-child {
-	margin-bottom: 19px;
-}*/
 
 header .checklist-course > div {
 	padding-left: 13px;
@@ -200,6 +216,7 @@ header .checklist-course > div {
 header .checklist-course p {
 	margin-bottom: 0;
 	font-size: 23px;
+	line-height: 1.1;
 	color: #6e6168;
 }
 
@@ -272,7 +289,7 @@ main .earnings a.btn,
 footer a.btn {
 	padding: 14px 20px;
 	font-size: 25px;
-	color: #8f2f85;
+	color: #8f2f85 !important;
 	border: 0;
 	background-color: #ffd800;
 }
@@ -284,7 +301,20 @@ main a.btn:hover {
 
 /* Nearest course */
 
-main .nearest-course {
+
+main .nearest-course p {
+	font-size: 20px;
+}
+
+main .nearest-course span {
+	width: 100%;
+	font-size: 52px;
+	font-weight: 500;
+	line-height: 70px;
+	color: #e7437c;
+}
+
+main section.nearest-course {
 	padding-top: 16px !important;
 	padding-bottom: 16px !important;
 	color: #fff;
@@ -296,8 +326,26 @@ main .nearest-course {
 	#f80759 0,#bc4e9c 100%);
 }
 
+main .nearest-course .nearest-course-col {
+	max-width: 295px;
+}
+
 main .nearest-course .middle-row {
 	display: none;
+}
+
+main .nearest-course .location,
+main .nearest-course .date,
+main .nearest-course .duration {
+	max-width: 100px;
+}
+
+main .nearest-course .date {
+	margin-left: 5px;
+}
+
+main .nearest-course .duration {
+	margin-left: 10px;
 }
 
 main .nearest-course .location div,
@@ -315,21 +363,29 @@ main .nearest-course .location img {
 	width: 100%;
 }
 
-main .nearest-course span {
-	width: 100%;
-	font-size: 52px;
-	font-weight: 500;
-	line-height: 70px;
-	color: #e7437c;
+main .nearest-course .deadline {
+	display: grid;
 }
 
-main .nearest-course p {
-	font-size: 20px;
+main .nearest-course .deadline p {
+	padding-top: 20px;
+	font-size: 30px;
+	line-height: 14px;
+}
+
+main .nearest-course .deadline .akcia {
+	font-size: 40px;
+	font-weight: 600;
+	color: #ffd800;
+}
+
+main .nearest-course .deadline .akcia span {
+	font-weight: 600;
 }
 
 main .nearest-course .sale {
 	height: 100%;
-	max-width: 500px;
+	max-width: 400px;
 	border: 3px solid #fff;
 	border-radius: 10px;
 }
@@ -367,8 +423,8 @@ main .nearest-course .girl img {
 /* About */
 
 main .nails {
-	max-width: 45%;
-	flex: 45%;
+	max-width: 44%;
+	flex: 44%;
 	min-height: 246px;
 }
 
@@ -379,8 +435,8 @@ main .nails img {
 }
 
 main .five-steps {
-	max-width: 55%;
-	flex: 55%;
+	max-width: 56%;
+	flex: 56%;
 }
 
 main .about-list {
@@ -403,15 +459,6 @@ main .about-list li::before {
 main .course-program .wrapper-content {
 	padding-left: 3rem;
 	padding-right: 3rem;
-}
-
-main .course-program .about-list li {
-	line-height: 1.5;
-}
-
-main .course-program .about-list li::before {
-	font-size: 23px;
-	line-height: 1.5;
 }
 
 
@@ -533,6 +580,8 @@ main .about-school .description p {
 }
 .slideshow .slick-slide img {
     display: block;
+    border: 1px solid rgba(255,255,255,0.35);
+    box-shadow: 0 0 20px rgba(0,0,0,0.35);
 }
 .slideshow .slick-slide.slick-loading img {
     display: none;
@@ -541,6 +590,7 @@ main .about-school .description p {
     pointer-events: none;
 }
 .slideshow .slick-initialized .slick-slide {
+    padding: 30px;
     display: block;
 }
 .slideshow .slick-loading .slick-slide {
@@ -624,6 +674,10 @@ main .about-school .description p {
 	border-left: 3px solid #e7437c;
 }
 
+.faq #accordion .card-body p {
+	font-size: 16px;
+}
+
 /* earnings */
 
 .earnings {
@@ -635,15 +689,34 @@ main .about-school .description p {
 	line-height: 1.67;
 }
 
+.earnings a {
+	color: #6e6168;
+	text-decoration: underline;
+}
+.earnings a.btn {
+	text-decoration: none;
+}
+
 /* disqus */
 
-.disqus {
+.comments {
 	background-color: #f7f5f8;
 }
 
-.disqus .disqus-container {
-	max-width: 1200px;
+.comments span.date {
+	font-size: 1rem;
 }
+
+.comments button.btn {
+	color: #8f2f85;
+}
+
+.comments .comment a.btn {
+	padding: inherit;
+	font-size: inherit;
+	border-radius: 12px;
+}
+
 
 /* contacts */
 
@@ -668,13 +741,24 @@ main .about-school .description p {
 	font-size: 34px;
 }
 
+
+.contacts .social .fa-youtube-square {
+    margin-left: 5px;
+}
 .contacts .social .fa-facebook-square {
 	color: #3b5998;
+        margin-left: 5px;
 }
 
 .contacts .social .fa-instagram {
 	color: #e1306c;
-	margin-left: 50px;
+        margin-left: 5px;
+}
+
+@media (min-width:1690px) {
+	main .nearest-course .sale {
+		max-width: 340px;
+	}
 }
 
 @media (min-width:1200px) and (max-width:1690px) {
@@ -694,6 +778,13 @@ main .about-school .description p {
 	}
 	main .nearest-course .big-row {
 		display: none !important;
+	}
+	main .nearest-course .sale {
+		margin-left: 6px;
+	}
+	main .course-program .video {
+		padding-left: 1.5rem !important;
+		padding-right: 1.5rem !important;
 	}
 }
 
@@ -729,18 +820,33 @@ main .about-school .description p {
 	}
 }
 
-@media (min-width:768px) and (max-width:8120px) {
-
-}
-
-@media only screen and (max-width:812px) {
+@media screen and (max-width:900px) {
+	main .nearest-course .date,
+	main .nearest-course .duration {
+	    margin-left: 0;
+	}
 	main .nearest-course .sale a.btn {
-		font-size: 23px;
+		height: auto;
+		font-size: 22px;
 	}
 	main .nearest-course .sale p {
 		height: auto;
 		font-size: 30px;
-		line-height: 2.9;
+		line-height: 3.2;
+	}
+}
+
+@media only screen and (max-width:812px) {
+	.about-school {
+		background-color: transparent;
+	}
+	main .nearest-course .nearest-course-col {
+	    max-width: none;
+	}
+	main .nearest-course .sale p {
+		height: auto;
+		font-size: 28px;
+		line-height: 3.2;
 	}
 	main .nearest-course .sale a.btn {
 	    height: auto;
@@ -754,6 +860,12 @@ main .about-school .description p {
 	main .five-steps {
 		max-width: inherit;
 		flex: auto;
+	}
+	main .course-program h3 {
+		font-size: 26px;
+	}
+	main .course-program .about-list li {
+		font-size: 19px;
 	}
 	main .about-list li {
 		font-size: 20px;
@@ -782,6 +894,44 @@ main .about-school .description p {
 	}
 }
 
+@media only screen and (max-width:575px) {
+	main .nearest-course .deadline p {
+		padding-top: inherit;
+		line-height: inherit;
+	}
+	main .nearest-course .location,
+	main .nearest-course .date,
+	main .nearest-course .duration,
+	main .nearest-course .nearest-course-col,
+	main .nearest-course .sale {
+	    max-width: none;
+	}
+}
+
+/* MODAL WINDOWS */
+
+.modal-title h4 {
+	color: #8f2f85;
+}
+
+.modal-title p {
+	margin-bottom: 0;
+}
+
+.modal-title button {
+	color: #e7437c;
+	opacity: 1;
+}
+
+.modal-body .btn {
+	border-radius: 24px;
+	color: #8f2f85 !important;
+}
+
+.modal-body .form-control {
+	border-color: #e7437c;
+}
+
 /* FOOTER */
 
 footer #map {
@@ -791,8 +941,9 @@ footer #map {
 footer .return-to-sale {
 	margin-top: -80px;
 }
-.lang-menu li a.nav-link.active{
-    font-weight: 510 !important;
+
+@media only screen and (max-width:812px) {
+	footer {
+		margin-bottom: 64px;
+	}
 }
-
-

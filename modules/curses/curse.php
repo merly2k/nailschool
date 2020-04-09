@@ -1,6 +1,5 @@
 <?php
 
-//print_r($this->param);
 if (isset($_SESSION['lang']))
 {
     $lang = mb_strtolower(@$_SESSION['lang']);
@@ -19,7 +18,12 @@ $lfulltext	 = 'fulltext_' . $lang;
 $km		 = new model\misto();
 $link		 = $this->param[0];
 $currentMisto	 = ($km->getByName($link));
+//print_r($currentMisto);
+$addr		 = 'addr_' . $lang;
+$ttown		 = 'name_' . $lang;
+$fulladress	 = $currentMisto->$ttown . ',' . strip_tags($currentMisto->$addr);
 $misto		 = $currentMisto->$mlang;
+$gmap		 = $currentMisto->gmap;
 foreach ($km->getall()as $k => $r)
 {
     $mista[$r->link] = $r->$mlang;
@@ -42,43 +46,76 @@ foreach ($km->getall()as $k => $r)
 //print_r($this->param);
 $town	 = $this->param[0];
 $link	 = $this->param[1];
-$tpl	 = 'curse';
-$faddr=$km->getByName($town);
-$tfut= '
-        <a href="'.$faddr->fb.'"><i class="fab fa-facebook-square"></i></a>
-	<a href="'.$faddr->inst.'"><i class="fab fa-instagram"></i></a>
+switch ($town)
+{
+    case 'virtual':
+
+	$tpl = "online";
+
+	break;
+
+    default:
+	$tpl = 'curse';
+
+	break;
+}
+
+$faddr		 = $km->getByName($town);
+$sch		 = new model\school();
+$school		 = $sch->getByLink($town);
+//print_r($school);
+$sch_osnashennia = htmlspecialchars_decode($school->{'osnashennia_' . $lang}, ENT_NOQUOTES);
+$sch_ergonomik	 = htmlspecialchars_decode($school->{'ergonomik_' . $lang}, ENT_NOQUOTES);
+$sch_location	 = htmlspecialchars_decode($school->{'location_' . $lang}, ENT_NOQUOTES);
+$sch_shop	 = htmlspecialchars_decode($school->{'shop_' . $lang}, ENT_NOQUOTES);
+$sch_konsult	 = htmlspecialchars_decode($school->{'konsult_' . $lang}, ENT_NOQUOTES);
+$sch_tur	 = htmlspecialchars_decode($school->{'tur_' . $lang}, ENT_NOQUOTES);
+if (firstChar($faddr->fb) != '#')
+{
+    $tfut = '
+        <a href="' . $faddr->fb . '"><i class="fab fa-facebook-square"></i></a>';
+}
+if (firstChar($faddr->inst) != '#')
+{
+    $tfut .= '        	<a href="' . $faddr->inst . '"><i class="fab fa-instagram"></i></a>';
+}
+$tfut .= '<a href = "https://www.youtube.com/channel/UCZcCF_9g8Cp2mE1WG66IEjg"><i class = "fab fa-youtube-square"></i></a>
 ';
-    
+
 $curses	 = new model\curses();
 $cc	 = $curses->getCurse($town, $link);
+//esas
 $k	 = $cc[0];
+//print_r($k);
+$zia	 = array();
+$zia	 = explode(' ', $k->$mlang);
+//echo count($zia);
+$nth	 = 'nth-word-' . count($zia);
+if (isset($k->{'googldock_' . $lang}))
+{
+    $gdoc = $k->{'googldock_' . $lang};
+}
+else
+{
+    $gdoc = '';
+}
+$ved	 = 'video_' . $lang;
+//print_r($k);
+$video	 = $k->$ved;
 if ($lang == 'ua')
 {
-    $lar=array('ень', 'ні', 'нів');
+    $lar	 = array('ень', 'ні', 'нів');
     $act_lan = 'Акція!';
     $aza	 = 'Записатись на курс!';
 }
 else
 {
-    $lar=array('ень', 'ня', 'ней');
+    $lar	 = array('ень', 'ня', 'ней');
     $act_lan = 'Акция!';
     $aza	 = 'Записаться на курс!';
 }
-
-//print_r($k);
-$randAction = '
-<div class="sale">
-<p class="sale__text">Акция! <del></del> <strong>' . $k->ac_coast . '</strong> грн</p>
-<a href="' . $k->link . '" class="sale__btn" style="cursor: pointer;" data-toggle="modal" data-target="#akcia">'.$aza.'! </a>
-
-</div>
-<img class="close-course__img" src="' . WWW_IMAGE_PATH . '/girl.png" alt="">
-
-';
-
-//print_r($mista);
-
-
+$mashas	 = '';
+$mashas	 = WWW_IMG_PATH . 'grl/' . $k->mashas;
 
 if (count($cc) > 0)
 {
@@ -92,6 +129,7 @@ if (count($cc) > 0)
 	$start		 = date('d', $dateX);
 	$monts		 = localeMomts($lang, date('m', $dateX));
 	$coast		 = $row->coast;
+	$tur		 = $row->tur;
 
 	$colors	 = new \model\gradients();
 	$color	 = $colors->getGradient($row->basecolor);
@@ -105,27 +143,28 @@ if (count($cc) > 0)
     color: $color->start !important;
 }
 
-.course-manikyura .gradient-block {
-    background-image: -moz-linear-gradient(0deg, $color->start 0%, $color->middle 30%, $color->end 100%);
-    background-image: -webkit-linear-gradient(0deg, $color->start 0%, $color->middle 30%, $color->end 100%);
-    background-image: -ms-linear-gradient(0deg, $color->start  0%, $color->middle 30%, $color->end 100%);
+ .gradient-block {
+    background-image: -moz-linear-gradient(0deg, $color->start 0%, $color->middle 30%, $color->end 100%) !important;;
+    background-image: -webkit-linear-gradient(0deg, $color->start 0%, $color->middle 30%, $color->end 100%) !important;;
+    background-image: -ms-linear-gradient(0deg, $color->start  0%, $color->middle 30%, $color->end 100%) !important;;
 
 }
+.nongradient{background-color: $color->end !important;}
 
 .gradient-text {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-image: -moz-linear-gradient(0deg, $color->start  0%, $color->middle 30%, $color->end 100%);
-    background-image: -webkit-linear-gradient(0deg, $color->start  0%, $color->middle 30%, $color->end 100%);
-    background-image: -ms-linear-gradient(0deg, $color->start  0%, $color->middle 30%, $color->end 100%);
+    background-image: -moz-linear-gradient(0deg, $color->start  0%, $color->middle 30%, $color->end 100%)!important;;
+    background-image: -webkit-linear-gradient(0deg, $color->start  0%, $color->middle 30%, $color->end 100%)!important;;
+    background-image: -ms-linear-gradient(0deg, $color->start  0%, $color->middle 30%, $color->end 100%)!important;;
 
 }
 
 
 main .nearest-course {
-    background-image: -moz-linear-gradient(0deg, $color->start  0%, $color->middle 30%, $color->end 100%);
-    background-image: -webkit-linear-gradient(0deg, $color->start  0%, $color->middle 30%, $color->end 100%);
-    background-image: -ms-linear-gradient(0deg, $color->start  0%, $color->middle 30%, $color->end 100%);
+    background-image: -moz-linear-gradient(0deg, $color->start  0%, $color->middle 30%, $color->end 100%) !important;
+    background-image: -webkit-linear-gradient(0deg, $color->start  0%, $color->middle 30%, $color->end 100%)!important;
+    background-image: -ms-linear-gradient(0deg, $color->start  0%, $color->middle 30%, $color->end 100%)!important;
     padding: 16px 0;
 }
 ol.about-list {
@@ -141,26 +180,6 @@ ol.about-list li::before {
   font-weight: bold;
 }
 ";
-
-	$context .= '  <div class="row row-eq-height">
-					<div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 themed-grid-col py-5 px-4 px-lg-4 px-xl-5">
-						<div class="px-lg-0 px-xl-5 py-5">
-							<h3 class="text-center text-uppercase font-weight-bold gradient-text pt-1 mb-1">Базовий манікюр</h3>
-							<h3 class="text-center text-uppercase font-weight-bold gradient-block py-1 mb-1">Програма курсу</h3>
-							<h3 class="text-center text-uppercase font-weight-bold gradient-text mb-0"><small>обрезной + комбинированный</small></h3>
-							<ol class="about-list">
-							' . $decription . '
-							</ol>
-							<a href="#" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#">  ' . l('z3') . ' </a>
-							<p class="text-center"><small>мы предоставляем базу моделей и расходные материалы высокого качества</small></p>
-						</div>
-					</div>
-					<div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 themed-grid-col m-auto px-5">
-						<iframe width="560" height="380" class="px-xl-5" src="https://www.youtube.com/embed/TAgL-NM4Yh8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-					</div>
-		' . $fulltext . '
-
-';
     }
 }
 else
@@ -179,55 +198,92 @@ $context	 .= "<script>
         }
         function showPosition(position)
         {
-        x.innerHTML='Latitude: ' + position.coords.latitude + 
-        '<br>Longitude: ' + position.coords.longitude;  
+        x.innerHTML='Latitude: ' + position.coords.latitude +
+        '<br>Longitude: ' + position.coords.longitude;
         }
         getLocation()
         </script>";
-$bc['ua']	 = 'Курси у ';
-$bc['ru']	 = 'Курсы в ';
+$bc['ua']	 = 'Курси ';
+$bc['ru']	 = 'Курсы ';
 $vidminnik	 = array('ua'	 => array(
-	'dnipro'	 => 'Дніпрі',
-	'kyiv'		 => 'Київі',
-	'zaporizhzhya'	 => 'Запоріжжї',
-	'nicolaev'	 => 'Миколаєві',
+	'dnipro'	 => 'у Дніпрі',
+	'kyiv'		 => 'у Київі',
+	'zaporizhzhya'	 => 'у Запоріжжї',
+	'nicolaev'	 => 'у Миколаєві',
+	'virtual'	 => 'on-line',
     ),
     'ru'	 => array(
-	'dnipro'	 => 'Днепре',
-	'kyiv'		 => 'Киеве',
-	'zaporizhzhya'	 => 'Запорожье',
-	'nicolaev'	 => 'Николаеве',
+	'dnipro'	 => 'в Днепре',
+	'kyiv'		 => 'в Киеве',
+	'zaporizhzhya'	 => 'в Запорожье',
+	'nicolaev'	 => 'в Николаеве',
+	'virtual'	 => 'on-line',
     )
 );
-$cc		 = $bc[$lang] . $vidminnik[$lang][$this->param[0]];
 
-$data=new db();
-$comments = array();
-$q="SELECT * FROM comments WHERE `page`='$link' ORDER BY id ASC";
-$result=$data->get_result($q);
+$cc = $bc[$lang] . $vidminnik[$lang][$this->param[0]];
+
+$data		 = new db();
+$comments	 = array();
+$q		 = "SELECT * FROM comments WHERE `page`='$link' ORDER BY id ASC";
+$result		 = $data->get_result($q);
 //echo $data->lastState;
 foreach ($result as $row)
 {
-	$comments[] = new comment((array)$row);
+    $comments[] = new comment((array) $row);
 }
-$page_coment='';
-foreach($comments as $c){
-	$page_coment.= $c->markup();
-}
-//echo $_SESSION['lang'];
-
-$workingdir  =APP_PATH."/images/galery/";
-$files = glob($workingdir.'*.{gif,jpg,png}' ,GLOB_BRACE);
-$files = array_map('basename',$files);
-$id=0;
-$o=new templator();
-$galery='';
-foreach ($files as $f)
+$page_coment = '';
+foreach ($comments as $c)
 {
-    $pl='<div class="slide"><img src="{img}" alt="{id}"></div>';
-    $id++;
-    $ara= array('id'=>$id,'img'=>WWW_IMG_PATH.'galery/'.$f);
-    $o->loadFromString($pl);
- $galery.=$o->Render($ara);
+    $page_coment .= $c->markup();
+}
+//галерея работ
+$g	 = new model\photogalery();
+$files	 = $g->GetPhotos($town, $link);
+
+$o		 = new templator();
+$galery		 = '';
+$id		 = 0;
+$workingdir	 = APP_PATH . "/images/galery/";
+$wdir		 = WWW_IMG_PATH . "galery/";
+$fl		 = glob($workingdir . '*.{gif, jpg, png}', GLOB_BRACE);
+$fl		 = array_map('basename', $files);
+
+foreach ($fl as $f)
+{
+    if (in_array($f, $files))
+    {
+	$id++;
+	$pl1	 = '<div class = "slide"><img src = "' . $wdir . $f . '" alt = "' . $id . '"></div>';
+	$galery	 .= $pl1;
+    }
+    else
+    {
+	echo "$f not in " . print_r($fl, true) . '<br>';
+    }
 };
+
+
+//галерея выпускников
+$g1		 = new model\vipusknik;
+$files1		 = $g1->GetPhotos($town, $link);
+$oz		 = new templator();
+$vipusk		 = '';
+$id1		 = 0;
+$workingdir1	 = APP_PATH . "/images/vipusknik/";
+$wdir1		 = WWW_IMG_PATH . "vipusknik/";
+$fl1		 = glob($workingdir1 . '*.{gif, jpg, png}', GLOB_BRACE);
+$fl1		 = array_map('basename', $fl1);
+
+foreach ($files1 as $f)
+{ //<div class="slide"><img src="slider-photo.png"></div>
+    if (in_array($f, $fl1))
+    {
+	$id1++;
+	$pll	 = '<div class = "slide"><img src = "' . $wdir1 . $f . '" alt = "' . $id1 . '"></div>';
+	$vipusk	 .= $pll;
+    }
+};
+$fago	 = new bildfaqo();
+$qa	 = $fago->getFAQO($town, $lang);
 include TEMPLATE_DIR . DS . $tpl . ".html";
