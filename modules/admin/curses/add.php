@@ -40,6 +40,7 @@ if (!$_POST):
 	'fulltext_ru'	 => '',
 	'fulltext_ua'	 => '',
 	'display'	 => 'Y',
+	'display_r'	 => 'N',
 	'miso'		 => "$town",
 	'start'		 => date('Y-m-d'),
 	'finish'	 => '0',
@@ -85,6 +86,14 @@ else:
     {
 	$_POST['display'] = 'N';
     }
+    if (@$_POST['display_r'] == 'on')
+    {
+	$_POST['display_r'] = 'Y';
+    }
+    else
+    {
+	$_POST['display_r'] = 'N';
+    }
     if (@$_POST['vipusk'] == 'on')
     {
 	$_POST['vipusk'] = 'Y';
@@ -118,32 +127,4 @@ else:
 endif;
 
 include TEMPLATE_DIR . DS . $tpl . ".html";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

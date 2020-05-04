@@ -22,7 +22,7 @@
 	<link rel="stylesheet" href="<?=WWW_CSS_PATH?>styles-ing-online.css">
 	<!-- <link rel="stylesheet" href="<?=WWW_CSS_PATH?>main.css"> -->
 
-	<title><?=$k->$mlang?> — Nails School</title>
+	<title><?=strip_tags($k->$mlang)?> — Nails School</title>
 	<?php $meta= metatags();echo $meta;?>
 
 	<link rel="dns-prefetch" href="http://s.w.org/">
@@ -177,7 +177,7 @@
 				<a class="nav-link separator"><span>/</span></a>
 			    </li>
 			    <li class="breadcrumb-item breadcrumb-list__item active" aria-current="page">
-				<a class="nav-link"><b><?=$k->$mlang?></b></a>
+				<a class="nav-link"><b><?=strip_tags($k->$mlang)?></b></a>
 			    </li>
 			</ul>
 			<ul class="navbar-nav lang-menu d-none d-lg-flex">
@@ -202,7 +202,7 @@
 			<h1 class="gradient-text text-center text-xl-left"><?=$k->$mlang?></h1>
 			<p class="description-text text-center text-xl-left"><?=l('u1');?></b></p>
 			<div class="row checklist-course">
-			    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 themed-grid-col pl-4 pr-0">
+			    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 themed-grid-col pl-3 pr-0">
 				<table>
 				    <tbody>
 					<tr>
@@ -212,7 +212,7 @@
 				    </tbody>
 				</table>
 			    </div>
-			    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 themed-grid-col pl-4 pr-0">
+			    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 themed-grid-col pl-3 pr-0">
 				<table>
 				    <tbody>
 					<tr>
@@ -224,7 +224,7 @@
 			    </div>
 			</div>
 			<div class="row checklist-course">
-			    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 themed-grid-col pl-4 pr-0">
+			    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 themed-grid-col pl-3 pr-0">
 				<table>
 				    <tbody>
 					<tr>
@@ -234,7 +234,7 @@
 				    </tbody>
 				</table>
 			    </div>
-			    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 themed-grid-col pl-4 pr-0">
+			    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 themed-grid-col pl-3 pr-0">
 				<table>
 				    <tbody>
 					<tr>
@@ -253,51 +253,33 @@
 	    </div>
 	</header>
 	<main>
-	    <section class="nearest-course" id="sale">
+	    <section class="line-sale-v1 first-line" id="sale">
 		<div class="container">
-		    <div class="row row-eq-height">
-			<div class="col-12 col-sm-7 col-md-4 col-lg-4 col-xl-4 px-md-0 px-lg-0 themed-grid-col nearest-course-col">
+		    <div class="row row-eq-height px-0 px-lg-3">
+			<div class="col-12 col-sm-7 col-md-4 col-lg-3 col-xl-3 px-md-0 px-lg-0 themed-grid-col">
 			    <div class="row">
-				<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 px-md-2 pl-lg-3 themed-grid-col">
-				    <p><b><?=l('firstcurs')?>:</b></p>
-				</div>
-			    </div>
-			    <div class="row">
-				<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 px-1 px-md-0 themed-grid-col text-center location">
-				    <div class="align-middle">
-					<img src="<?=WWW_IMG_PATH?>location-pink.svg" alt="">
-				    </div>
-				    <p class="text-center">&nbsp;<?=$mista[$town]?></p>
-				</div>
-				<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 px-1 px-md-0 themed-grid-col text-center date">
-				    <div class="align-middle">
-					<span class="align-middle"><?=$start?></span>
-				    </div>
-				    <p class="text-center"><?=$monts?></p>
-				</div>
-				<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 px-1 px-md-0 themed-grid-col text-center duration">
-				    <div class="align-middle">
-					<span class="align-middle"><?=$k->finish?></span>
-				    </div>
-				    <p class="text-center"><?=numberof($k->finish, ' д', $lar);?></p>
+				<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 online-course-name text-center text-sm-left">
+				    <p>Онлайн-курс</p>
+				    <p><b><?=$k->$mlang;?></b></p>
 				</div>
 			    </div>
 			</div>
-			<div class="col-12 col-sm-5 col-md-3 col-lg-3 col-xl-2 px-md-0 px-lg-0 themed-grid-col deadline">
-			    <?php if($k->action=="Y"){?><p class="text-center"><span class="text-uppercase akcia"><?=l('akcia')?></span><br />до <?=$k->deadline;?>&nbsp;</p><?php }?>
+			<div class="col-12 col-sm-5 col-md-3 col-lg-5 col-xl-5 px-md-0 px-lg-0 themed-grid-col deadline">
+			    <?php if($k->action=="Y"){?>
+			    <p class="text-center"><span class="text-uppercase akcia"><?=l('akcia')?></span><br />до <?=$k->deadline;?>&nbsp;</p>
+			    <?php } else{?>
+			    <p class="text-center"><span class="text-uppercase akcia"><?=l('start')?></span><br /><?=$start?>&nbsp;</p>
+			    <?php }?>
 			</div>
-			<div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-6 px-md-0 px-lg-0 themed-grid-col">
-			    <div class="sale text-center">
+			<div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-4 px-md-0 px-lg-0 themed-grid-col">
+			    <div class="sale text-center m-auto">
 				<?php if($k->action=="Y"){?>
 				<p style="margin:0 auto;"><del><?=$k->coast?></del>&nbsp;<span>грн</span> <b><?=$k->ac_coast?></b>&nbsp;<span>грн</span></p>
 				<?php } else{ ?>
-				<p style="margin:0 auto;"><?=l('ccoact')?> <b><?=$k->coast?></b>&nbsp;<span>грн</span></p>
-				<?php }?>
-				<a href="#" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#akcia"><?=l('akcia_btn')?></a>
+				<p style="margin:0 auto;"><spanp style='font-size:49%'><?=l('ccoact')?></span><b><?=$k->coast?></b>&nbsp;<span>грн</span></p>
+				    <?php }?>
+				    <a href="#" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#akcia"><?=l('akcia_btn')?></a>
 			    </div>
-			</div>
-			<div class="col-12 col-sm-0 col-md-0 col-lg-0 col-xl-0 themed-grid-col girl d-none d-xl-flex">
-			    <img src="<?=WWW_IMG_PATH?>girl.png" alt="">
 			</div>
 		    </div>
 		</div>
@@ -337,50 +319,33 @@
 		    </div>
 		    <!-- // -->
 	    </section>
-	    <section class="nearest-course" id="sale">
+	    <section class="line-sale-v1" id="sale">
 		<div class="container">
-		    <div class="row row-eq-height">
-			<div class="col-12 col-sm-7 col-md-4 col-lg-4 col-xl-4 px-md-0 px-lg-0 themed-grid-col nearest-course-col">
+		    <div class="row row-eq-height px-0 px-lg-3">
+			<div class="col-12 col-sm-7 col-md-4 col-lg-3 col-xl-3 px-md-0 px-lg-0 d-grid align-items-center themed-grid-col">
 			    <div class="row">
-				<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 px-md-2 pl-lg-3 themed-grid-col">
-				    <p><b><?=l('firstcurs')?>:</b></p>
-				</div>
-			    </div>
-			    <div class="row">
-				<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 px-1 px-md-0 themed-grid-col text-center location">
-				    <div class="align-middle">
-					<img src="<?=WWW_IMG_PATH?>location-pink.svg" alt="">
-				    </div>
-				    <p class="text-center">&nbsp;<?=$mista[$town]?></p>
-				</div>
-				<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 px-1 px-md-0 themed-grid-col text-center date">
-				    <div class="align-middle">
-					<span class="align-middle"><?=$start?></span>
-				    </div>
-				    <p class="text-center"><?=$monts?></p>
-				</div>
-				<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 px-1 px-md-0 themed-grid-col text-center duration">
-				    <div class="align-middle">
-					<span class="align-middle"><?=$k->finish?></span>
-				    </div>
-				    <p class="text-center"><?=numberof($k->finish, ' д', $lar);?></p>
+				<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 online-course-name text-center text-sm-left">
+				    <p>Онлайн-курс</p>
+				    <p><b><?=$k->$mlang;?></b></p>
 				</div>
 			    </div>
 			</div>
-			<div class="col-12 col-sm-5 col-md-3 col-lg-4 col-xl-4 px-md-0 px-lg-0 themed-grid-col deadline">
-			    <?php if($k->action=="Y"){?><p class="text-center"><span class="text-uppercase akcia"><?=l('akcia')?></span><br />до <?=$k->deadline;?>&nbsp;</p><?php }?>
+			<div class="col-12 col-sm-5 col-md-3 col-lg-5 col-xl-5 px-md-0 px-lg-0 themed-grid-col deadline">
+			    <?php if($k->action=="Y"){?>
+			    <p class="text-center"><span class="text-uppercase akcia"><?=l('akcia')?></span><br />до <?=$k->deadline;?>&nbsp;</p>
+			    <?php } else{?>
+			    <p class="text-center"><span class="text-uppercase akcia"><?=l('start')?></span><br /><?=$start?>&nbsp;</p>
+			    <?php }?>
 			</div>
-			<div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-4 px-md-0 px-lg-0 themed-grid-col text-center text-md-center">
-			    <div class="sale text-center d-inline-block">
+			<div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-4 px-md-0 px-lg-0 themed-grid-col">
+			    <div class="sale text-center m-auto">
 				<?php if($k->action=="Y"){?>
 				<p style="margin:0 auto;"><del><?=$k->coast?></del>&nbsp;<span>грн</span> <b><?=$k->ac_coast?></b>&nbsp;<span>грн</span></p>
 				<?php } else{ ?>
-				<p style="margin:0 auto;"><?=l('ccoact')?> <b><?=$k->coast?></b>&nbsp;<span>грн</span></p>
-				<?php }?>
-				<a href="#" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#akcia"><?=l('akcia_btn')?></a>
+				<p style="margin:0 auto;"><spanp style='font-size:49%'><?=l('ccoact')?></span><b><?=$k->coast?></b>&nbsp;<span>грн</span></p>
+				    <?php }?>
+				    <a href="#" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#akcia"><?=l('akcia_btn')?></a>
 			    </div>
-			</div>
-			<div class="col-12 col-sm-0 col-md-0 col-lg-0 col-xl-0 themed-grid-col girl d-none d-xl-flex">
 			</div>
 		    </div>
 		</div>
@@ -416,7 +381,7 @@
 		    </div>
 		</div>
 	    </section>
-	    <!--section class="about-school py-0 py-sm-5">
+	    <section class="about-school py-0 py-sm-5">
 		<h2 class="text-center text-uppercase font-weight-bold mt-lg-3 mb-lg-4 my-sm-2"><?=l('aboutschool_head');?></h2>
 		<div class="container pb-4">
 		    <div class="row no-gutters pt-5">
@@ -475,7 +440,7 @@
 		    <?php }?>
 
 		</div>
-	    </section-->
+	    </section>
 	    <?php if(empty($k->zrazki) or $k->zrazki=='Y'){?>
 	    <section class="py-4 slideshow">
 		<h2 class="text-center text-uppercase font-weight-bold my-0 my-lg-4 my-sm-2"><span class="gradient-text"><?=l('galery1')?></span></h2>
@@ -498,7 +463,7 @@
 	    </section>
 	    <section class="py-5 earnings">
 		<h2 class="text-center text-uppercase font-weight-bold my-lg-4 my-sm-2 my-xl-1"><span class="gradient-text"><?=l('m12');?></span></h2>
-		<h3 class="text-center"><?=randomOnline(l('nextonline'),$lang);?></h3>
+		<h3 class="text-center"><?=randomOnline(l('nextonline'),$lang,$k->link);?></h3>
 		<div class="text-center my-4">
 		    <a href="#" class="btn btn-warning btn-lg text-uppercase font-weight-bold" data-toggle="modal" data-target="#consult"><?=l('m14')?></a>
 		</div>
@@ -792,12 +757,12 @@
 		    <div class="modal-header">
 			<div class="title modal-title">
 			    <h4 class="text-uppercase font-weight-bold"><?=$aza?></h4>
-			    <p class="ps text-uppercase font-weight-bold"><?=$k->$mlang?></p>
 			</div>
 			<button type="button" class="pum-close popmake-close close" data-dismiss="modal">&times;</button>
 		    </div>
 		    <!-- Modal body -->
 		    <div class="modal-body">
+			<p class="ps text-uppercase font-weight-bold"><?=strip_tags($k->$mlang)?></p>
 			<form id='akciaForm' action="<?=WWW_BASE_PATH?>parcipate" method="post">
 			    <div class="form-price">
 				<div class="form-content fd-rever">
@@ -838,7 +803,7 @@
 				    <div class="right-block">
 					<div class="block-right-form">
 					    <p>
-					    <div class="left_"><span><?=l('sdtext')?></span> <b> <?=date('d-m-Y',strtotime($k->start))?></b></div>
+					    <!--div class="left_"><span><?=l('sdtext')?></span> <b> <?=date('d.m.Y',strtotime($k->start))?></b></div-->
 					    <?php if($k->action=="Y"){?>
 					    <div class="right"><span><?=l('vartist')?></span> <b><?=$k->ac_coast?> грн</b></div>
 					    <?php }else{?>
@@ -849,7 +814,8 @@
 					<p><span class="block-right-span">*<?=l('uvag1')?></span></p>
 				    </div>
 				</div>
-				<input type="submit" value="<?=l('btnzapis')?>" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold m-auto w-auto px-4 wpcf7-form-control wpcf7-submit">
+				<input type="submit" value="<?=l('btnzapis')?>*" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold m-auto w-auto px-4 wpcf7-form-control wpcf7-submit">
+				* <?=l("pdrd")?>
 				<span class="ajax-loader"></span>
 			    </div>
 			</form>
@@ -866,12 +832,12 @@
 		    <div class="modal-header">
 			<div class="title modal-title">
 			    <h4 class="text-uppercase font-weight-bold"><?=l('calback_btn')?></h4>
-			    <p class="ps text-uppercase font-weight-bold"><?=$k->$mlang?></p>
 			</div>
 			<button type="button" class="pum-close popmake-close close" data-dismiss="modal">&times;</button>
 		    </div>
 		    <!-- Modal body -->
 		    <div class="modal-body">
+			<p class="ps text-uppercase font-weight-bold"><?=strip_tags($k->$mlang)?></p>
 			<form id='akciaForm' action="<?=WWW_BASE_PATH?>parcipate" method="post">
 			    <input type="hidden" name="id" value="<?=$k->id?>" />
 			    <input type="hidden" name="leadtype" value="calback" />
@@ -900,7 +866,8 @@
 				    </div>
 
 				</div>
-				<input type="submit" value="<?=l('calback_btn')?>" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold m-auto w-auto px-4 wpcf7-form-control wpcf7-submit">
+				<input type="submit" value="<?=l('calback_btn')?>*" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold m-auto w-auto px-4 wpcf7-form-control wpcf7-submit">
+				* <?=l("pdrd")?>
 				<span class="ajax-loader"></span>
 			    </div>
 			</form>
@@ -967,7 +934,8 @@
 				<input type="hidden" name="leadtype" value="consult" />
 				<input type="hidden" name="returnto" value="<?=$this->param[0]?>/<?=$this->param[1]?>" />
 				<!-- Button (Double) -->
-				<button id="button1id" name="button1id" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold m-auto w-auto px-4"><?=l('modal_consult')?></button>
+				<button id="button1id" name="button1id" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold m-auto w-auto px-4"><?=l('modal_consult')?>*</button>
+				* <?=l("pdrd")?>
 				</div>
 
 			    </fieldset>
@@ -980,6 +948,8 @@
 	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e402414887521ee"></script>
     </body>
 </html>
+
+
 
 
 

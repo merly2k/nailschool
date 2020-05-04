@@ -35,53 +35,6 @@
 	<link href="<?=WWW_CSS_PATH?>flag-icon.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" id="bodhi-svgs-attachment-css" href="<?=WWW_CSS_PATH?>svgs-attachment.css" type="text/css" media="all">
 	<link rel="stylesheet" id="popup-maker-site-css" href="<?=WWW_CSS_PATH?>site.css" type="text/css" media="all">
-	<style>
-	    .nth-word-1:nth-word(1) {
-		font-weight: 500 !important;
-	    }
-	    .nth-word-2:nth-word(1) {
-		font-weight: 500 !important;
-	    }
-	    .nth-word-2:nth-word(2) {
-		font-weight: 500 !important;
-	    }
-	    .nth-word-3:nth-word(1) {
-		font-weight: 500 !important;
-	    }
-	    .nth-word-3:nth-word(2) {
-		font-weight: 500 !important;
-	    }
-	    .nth-word-3:nth-word(3) {
-		font-weight: 500 !important;
-	    }
-	    .nth-word-4:nth-word(1) {
-		font-weight: 500 !important;
-	    }
-	    .nth-word-4:nth-word(2) {
-		font-weight: 500 !important;
-	    }
-	    .nth-word-4:nth-word(3) {
-		font-weight: 500 !important;
-	    }
-	    .nth-word-4:nth-word(4) {
-		font-weight: 500 !important;
-	    }
-	    .nth-word-5:nth-word(1) {
-		font-weight: 500 !important;
-	    }
-	    .nth-word-5:nth-word(2) {
-		font-weight: 500 !important;
-	    }
-	    .nth-word-5:nth-word(3) {
-		font-weight: 500 !important;
-	    }
-	    .nth-word-5:nth-word(4) {
-		font-weight: 500 !important;
-	    }
-	    .nth-word-5:nth-word(5) {
-		font-weight: 500 !important;
-	    }
-	</style>
 	<style id="popup-maker-site-inline-css" type="text/css">
 	    /* Popup Google Fonts */
 	    @import url('//fonts.googleapis.com/css?family=Montserrat|Acme');
@@ -281,8 +234,11 @@
 							<img src="<?=WWW_IMG_PATH?>/viber.svg" alt="">
 						    </div>
 						    <div class="col-7 col-sm-7 col-md-7 col-lg-7 col-xl-7 d-flex align-items-center">
-							<p><?if(firstChar($currentMisto->viber)!='#'){?>
-							    <a href="viber://chat?number=+<?=$currentMisto->viber?>"><?=$currentMisto->viber?></a></p><?php }?>
+							<p>
+							    <?php if(firstChar($currentMisto->viber)!='#'){?>
+							    <a href="viber://chat?number=+<?=$currentMisto->viber?>"><?=$currentMisto->viber;?></a>
+							    <?php }?>
+							</p>
 						    </div>
 						</div>
 					    </div>
@@ -366,7 +322,6 @@
 	    </div>
 	</div>
 	<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
-	<script type="text/javascript" src="<?=WWW_JS_PATH?>nth-everything.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 	<script src="<?=WWW_JS_PATH?>bootstrap.js"></script>
 	<script type="text/javascript" src="<?=WWW_JS_PATH?>jquery.fancybox.js"></script>
@@ -426,14 +381,4 @@
 
     </body>
 </html>
-
-
-
-
-
-
-
-
-
-
 

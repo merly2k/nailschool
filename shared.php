@@ -288,10 +288,17 @@ function firstChar($string) {
     return mb_substr($string, 0, 1, "UTF-8");
 }
 
-function randomOnline($prep, $lang) {
+function randomOnline($prep, $lang, $current = '') {
     $r	 = new model\curses();
+
     $name	 = 'name_' . $lang;
-    $q	 = "SELECT * FROM `cursses` WHERE `miso`='virtual' ORDER BY RAND() LIMIT 1;";
+    if ($current == ''):
+	$q = "SELECT * FROM `cursses` WHERE `miso`='virtual' ORDER BY RAND() LIMIT 1;";
+    else:
+//	echo  $current;
+	$q = "SELECT * FROM `cursses` WHERE `miso`='virtual' and `link`!='".$current."' ORDER BY RAND() LIMIT 1;";
+    endif;
+//    echo $q;
     $t	 = $r->get_result($q);
     $out	 = $t[0];
     return '<a href="' . $out->link . '">' . $prep . $out->$name . '</a>';

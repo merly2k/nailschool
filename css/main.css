@@ -500,7 +500,7 @@
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
-    margin-top: 60px;
+    margin-top: 9px;
     justify-content: center;
 }
 
@@ -872,6 +872,91 @@
     flex-wrap: wrap;
 }
 
+@media only screen and (max-width:1366px) {
+    .course-package {
+        padding: 20px;
+    }
+    .course-package .svg-container {
+        width: 225px;
+        height: 226px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .course-package .svg-container svg {
+        transform: scale(0.8);
+    }
+    .course-package .course-package_mid {
+        min-height: 262px;
+        max-width: 710px;
+    }
+    .course-package .package-price__price,
+    .course-package .sale__btn {
+        font-size: 1.8rem;
+    }
+}
+
+@media only screen and (max-width:991px) {
+    .course-package .svg-container {
+        width: 100%;
+    }
+    .course-package .course-package_mid {
+        width: 100%;
+        min-height: auto;
+        margin: 0 auto 20px;
+    }
+    .course-package .course-package__headline {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+    .course-package .package-price {
+        width: 100%;
+        text-align: center;
+        font-size: 1.1rem;
+    }
+    .course-package .course-package-list__item,
+    .course-package .alone-price {
+        font-size: 1.1rem;
+    }
+    .course-package .course-package-list__name,
+    .course-package .alone-price_delete,
+    .course-package .package-price__title,
+    .course-package .package-price__price {
+        font-size: 1.3rem;
+    }
+    .course-package .alone-price_delete::after {
+        top: 12px;
+    }
+    .course-package .package-price__price {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .course-package .sale__btn {
+        width: auto;
+        padding-left: 3rem;
+        padding-right: 3rem;
+        font-size: 1.3rem;
+    }
+}
+
+@media only screen and (max-width:767px) {
+    .course-package .course-package__headline {
+        font-size: 1.6rem;
+    }
+    .course-package .course-package-list__name,
+    .course-package .alone-price_delete,
+    .course-package .package-price__title {
+        font-size: 1rem;
+    }
+    .course-package .alone-price,
+    .course-package .package-price {
+        font-size: 0.9rem;
+    }
+    .course-package .alone-price_delete::after {
+        top: 9px;
+    }
+}
+
 .course-package__img {
     max-width: 300px;
     width: 100%;
@@ -902,14 +987,13 @@
     align-items: stretch;
     max-width: 600px;
     width: 100%;
-    min-height: 240px;
+    min-height: 292px;
     height: 100%;
     padding: 0 15px;
 }
 
 .package-price__price_alert {
     color: #ffd800;
-    font-size: 30px;
 }
 
 .course-package__headline {
@@ -943,7 +1027,7 @@
     background-color: #fafafa;
     margin-bottom: -2px;
 }
-
+.course-package-list__name a{text-decoration:none;color: #ed5799; }
 .alone-price_delete {
     position: relative;
     font-size: 3.2rem;
@@ -964,6 +1048,7 @@
 }
 
 .course-package-list__price {
+    min-width: 78px;
     color: #60555b;
     font-weight: bold;
 }
@@ -1532,10 +1617,6 @@ h2 {
     color: #E35497;
     font-size: 45px;
     font-family: 'Montserrat', sans-serif;
-}
-
-h2 span {
-    font-weight: 700;
 }
 
 h3 {
@@ -3693,10 +3774,6 @@ form button {
 
     .slider3 .item {
         padding: 5px !important;
-    }
-
-    .section-title {
-        font-size: 21px;
     }
     .number-one .section-title{
         font-size: 21px

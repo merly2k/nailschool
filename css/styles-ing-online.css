@@ -57,13 +57,17 @@ h3.gradient-text {
         padding-bottom: 3rem !important;
     }
     .pb-xl-4,
-    main .nearest-course.pb-xl-4,
     header h1.gradient-text.pb-xl-4 {
         padding-bottom: 1.5rem !important;
     }
-    .pt-xl-4,
-    main .nearest-course.pt-xl-4 {
+    .pt-xl-4 {
         padding-top: 1.5rem !important;
+    }
+}
+
+@media (min-width:1200px) and (max-width:1400px) {
+    .container-padding {
+        padding: 0 60px;
     }
 }
 
@@ -196,6 +200,30 @@ header h1.gradient-text {
     line-height: 1.074;
 }
 
+header h1 .size-65 {
+    font-size: 65px;
+}
+
+header h1 .size-62 {
+    font-size: 62px;
+}
+
+header h1 .size-59 {
+    font-size: 59px;
+}
+
+header h1 .size-57 {
+    font-size: 57px;
+}
+
+header h1 .size-54 {
+    font-size: 54px;
+}
+
+header h1 .size-51 {
+    font-size: 51px;
+}
+
 header .description-text {
     margin-bottom: 26px;
     font-size: 36px;
@@ -219,7 +247,8 @@ header .checklist-course p {
 }
 
 header .checklist-course img {
-    width: 90px;
+    width: 80px;
+    padding: 10px 10px 10px 0px;
 }
 
 header .girl {
@@ -235,15 +264,18 @@ header .girl {
     }
 }
 
+@media only screen and (max-width:1200px) {
+    header .checklist-course p {
+        font-size: 18px;
+    }
+}
+
 @media only screen and (max-width:1024px) {
     header h1.gradient-text {
         font-size: 48px;
     }
     header .description-text {
         font-size: 24px;
-    }
-    header .checklist-course p {
-        font-size: 20px;
     }
     header .no-gutters > .col,
     header .no-gutters > [class*="col-"] {
@@ -297,14 +329,23 @@ main a.btn:hover {
     background-color: #ffd800;
 }
 
-/* Nearest course */
 
+/* Line sale v1 */
 
-main .nearest-course p {
-    font-size: 20px;
+main .line-sale-v1 a {
+    color: #fff;
 }
 
-main .nearest-course span {
+main .line-sale-v1 p {
+    font-size: 20px;
+    margin-bottom: 7px;
+}
+
+main .line-sale-v1 p:last-child {
+    margin-bottom: 0;
+}
+
+main .line-sale-v1 span {
     width: 100%;
     font-size: 52px;
     font-weight: 500;
@@ -312,12 +353,7 @@ main .nearest-course span {
     color: #e7437c;
 }
 
-main .nearest-course .online-course-name p b {
-    font-size: 26px;
-    line-height: 1.5;
-}
-
-main section.nearest-course {
+main section.line-sale-v1 {
     padding-top: 16px !important;
     padding-bottom: 16px !important;
     color: #fff;
@@ -326,34 +362,34 @@ main section.nearest-course {
     background: -webkit-gradient(linear,left top,right top,from(#f80759),to(#bc4e9c));
     background: -o-linear-gradient(left,#f80759 0,#bc4e9c 100%);
     background: linear-gradient(to right,
-        #f80759 0,#bc4e9c 100%);
+    #f80759 0,#bc4e9c 100%);
 }
 
-main .nearest-course .nearest-course-col {
+main .line-sale-v1.first-line .line-sale-col {
     max-width: 295px;
 }
 
-main .nearest-course .middle-row {
+main .line-sale-v1 .middle-row {
     display: none;
 }
 
-main .nearest-course .location,
-main .nearest-course .date,
-main .nearest-course .duration {
+main .line-sale-v1 .location,
+main .line-sale-v1 .date,
+main .line-sale-v1 .duration {
     max-width: 100px;
 }
 
-main .nearest-course .date {
+main .line-sale-v1 .date {
     margin-left: 5px;
 }
 
-main .nearest-course .duration {
+main .line-sale-v1 .duration {
     margin-left: 10px;
 }
 
-main .nearest-course .location div,
-main .nearest-course .date div,
-main .nearest-course .duration div {
+main .line-sale-v1 .location div,
+main .line-sale-v1 .date div,
+main .line-sale-v1 .duration div {
     width: 70px;
     height: 70px;
     margin-bottom: 10px;
@@ -362,39 +398,44 @@ main .nearest-course .duration div {
     background-color: #fff;
 }
 
-main .nearest-course .location img {
+main .line-sale-v1 .location img {
     width: 100%;
 }
 
-main .nearest-course .deadline {
+main .line-sale-v1 .online-course-name p b {
+    font-size: 30px;
+    line-height: 1.45;
+}
+
+main .line-sale-v1 .deadline {
     display: grid;
 }
 
-main .nearest-course .deadline p {
+main .line-sale-v1 .deadline p {
     padding-top: 20px;
     font-size: 30px;
     line-height: 14px;
 }
 
-main .nearest-course .deadline .akcia {
+main .line-sale-v1 .deadline .akcia {
     font-size: 40px;
     font-weight: 600;
     color: #ffd800;
 }
 
-main .nearest-course .deadline .akcia span {
+main .line-sale-v1 .deadline .akcia span {
     font-weight: 600;
 }
 
-main .nearest-course .sale {
+main .line-sale-v1 .sale {
     height: 100%;
     max-width: 400px;
     border: 3px solid #fff;
     border-radius: 10px;
 }
 
-main .nearest-course .sale p {
-    height: 56%;
+main .line-sale-v1 .sale p {
+    height: 51%;
     line-height: 2.4;
     margin-bottom: 0px;
     font-size: 40px;
@@ -402,26 +443,157 @@ main .nearest-course .sale p {
     color: #fff;
 }
 
-main .nearest-course .sale del {
+main .line-sale-v1 .sale del {
     text-decoration-color: #ffd800;
 }
 
-main .nearest-course .sale span {
+main .line-sale-v1 .sale span {
     font-size: 20px;
     font-weight: 300;
     color: #fff;
 }
 
-main .nearest-course .sale a.btn {
-    height: 44%;
-    font-size: 23px;
+main .line-sale-v1 .sale a.btn {
+    height: 49%;
+    padding-top: 18px;
+    padding-bottom: 10px;
 }
 
-main .nearest-course .girl img {
+main .line-sale-v1 .girl img {
     max-width: 705px;
     bottom: -16px;
     right: -155px;
     position: absolute;
+}
+
+@media (min-width:1690px) {
+    main .line-sale-v1.first-line .deadline {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 16.6666666667%;
+        flex: 0 0 16.6666666667%;
+        max-width: 16.6666666667%;
+    }
+    main .line-sale-v1.first-line .wrapper-sale {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 30%;
+        flex: 0 0 30%;
+        max-width: 30%;
+    }
+    main .line-sale-v1 .sale {
+        max-width: 340px;
+    }
+}
+
+@media (min-width:1200px) and (max-width:1690px) {
+    main .line-sale-v1 .col-01 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+    main .line-sale-v1 .deadline {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 41.6666666667%;
+        flex: 0 0 41.6666666667%;
+        max-width: 41.6666666667%;
+    }
+    main .line-sale-v1 .col-03 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 33.3333333333%;
+        flex: 0 0 33.3333333333%;
+        max-width: 33.3333333333%;
+    }
+    main .line-sale-v1 .middle-row {
+        display: flex !important;
+    }
+    main .line-sale-v1 .big-row {
+        display: none !important;
+    }
+    main .line-sale-v1 .sale {
+        margin-left: 6px;
+    }
+}
+
+@media only screen and (max-width:1690px) {
+    main .line-sale-v1 .girl,
+    main .line-sale-v1 .girl img {
+        display: none;
+    }
+}
+
+@media only screen and (max-width:1200px) {
+    main .line-sale-v1 a.btn {
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width:991px) {
+    main .line-sale-v1 .sale a.btn {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width:900px) {
+    main .line-sale-v1 .date,
+    main .line-sale-v1 .duration {
+        margin-left: 0;
+    }
+    main .line-sale-v1 .sale p {
+        font-size: 30px;
+        line-height: 3.2;
+    }
+}
+
+@media only screen and (min-width:768px) {
+    main .line-sale-v1 .location p,
+    main .line-sale-v1 .date p,
+    main .line-sale-v1 .duration p {
+        margin-bottom: 11px;
+    }
+    main .line-sale-v1 .sale p {
+        font-size: 40px;
+        line-height: 2;
+    }
+}
+
+@media only screen and (max-width:812px) {
+    main .line-sale-v1 .line-sale-col {
+        max-width: none;
+    }
+    main .line-sale-v1 .sale p {
+        font-size: 28px;
+        line-height: 2.65;
+    }
+}
+
+@media only screen and (max-width:767px) {
+    main .line-sale-v1 .deadline p {
+        padding-top: 32px;
+        line-height: 42px;
+    }
+    main .line-sale-v1 .deadline .akcia {
+        font-size: 34px;
+    }
+    main .line-sale-v1 span {
+        line-height: 40px;
+    }
+}
+
+@media only screen and (max-width:575px) {
+    main .line-sale-v1 p:last-child {
+        margin-bottom: revert;
+    }
+    main .line-sale-v1 .deadline p {
+        padding-top: inherit;
+        line-height: inherit;
+    }
+    main .line-sale-v1 .location,
+    main .line-sale-v1 .date,
+    main .line-sale-v1 .duration,
+    main .line-sale-v1 .line-sale-col,
+    main .line-sale-v1 .sale {
+        max-width: none;
+    }
 }
 
 /* About */
@@ -651,6 +823,10 @@ main .about-school .description p {
 
 /* faq */
 
+.faq a {
+    color: #e7437c;
+}
+
 .faq .container {
     max-width: 750px;
 }
@@ -765,12 +941,6 @@ main .about-school .description p {
     margin-left: 5px;
 }
 
-@media (min-width:1690px) {
-    main .nearest-course .sale {
-        max-width: 340px;
-    }
-}
-
 @media (min-width:1200px) and (max-width:1690px) {
     main .nails {
         max-width: 42%;
@@ -780,18 +950,6 @@ main .about-school .description p {
         max-width: 58%;
         flex: 58%;
     }
-    main .nearest-course .container {
-        max-width: 960px;
-    }
-    main .nearest-course .middle-row {
-        display: flex !important;
-    }
-    main .nearest-course .big-row {
-        display: none !important;
-    }
-    main .nearest-course .sale {
-        margin-left: 6px;
-    }
     main .course-program .video {
         padding-left: 1.5rem !important;
         padding-right: 1.5rem !important;
@@ -799,10 +957,6 @@ main .about-school .description p {
 }
 
 @media only screen and (max-width:1690px) {
-    main .nearest-course .girl,
-    main .nearest-course .girl img {
-        display: none;
-    }
     main .course-program .wrapper-content {
         padding-left: 0rem;
         padding-right: 0rem;
@@ -818,32 +972,7 @@ main .about-school .description p {
     }
 }
 
-@media only screen and (min-width:768px) {
-    main .nearest-course .location p,
-    main .nearest-course .date p,
-    main .nearest-course .duration p {
-        margin-bottom: 11px;
-    }
-    main .nearest-course .sale p {
-        font-size: 40px;
-        line-height: 2;
-    }
-}
-
 @media screen and (max-width:900px) {
-    main .nearest-course .date,
-    main .nearest-course .duration {
-        margin-left: 0;
-    }
-    main .nearest-course .sale a.btn {
-        height: auto;
-        font-size: 22px;
-    }
-    main .nearest-course .sale p {
-        height: auto;
-        font-size: 30px;
-        line-height: 3.2;
-    }
     main .course-program ol.about-list li::before {
         font-size: 21px;
         line-height: inherit;
@@ -853,17 +982,6 @@ main .about-school .description p {
 @media only screen and (max-width:812px) {
     .about-school {
         background-color: transparent;
-    }
-    main .nearest-course .nearest-course-col {
-        max-width: none;
-    }
-    main .nearest-course .sale p {
-        height: auto;
-        font-size: 28px;
-        line-height: 3.2;
-    }
-    main .nearest-course .sale a.btn {
-        height: auto;
     }
     main .nails {
         max-width: inherit;
@@ -909,17 +1027,6 @@ main .about-school .description p {
 }
 
 @media only screen and (max-width:575px) {
-    main .nearest-course .deadline p {
-        padding-top: inherit;
-        line-height: inherit;
-    }
-    main .nearest-course .location,
-    main .nearest-course .date,
-    main .nearest-course .duration,
-    main .nearest-course .nearest-course-col,
-    main .nearest-course .sale {
-        max-width: none;
-    }
     main .course-program ol.about-list li::before {
         font-size: 19px;
     }

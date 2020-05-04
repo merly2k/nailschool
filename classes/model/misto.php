@@ -23,7 +23,8 @@ class misto extends \db {
     }
 
     function getAll($link = '') {
-	$q	 = "select * from misto where link!='$link'";
+	$q	 = "select * from misto where link!='$link' ";
+	//echo $q;
 	$temp	 = $this->get_result($q);
 	return $temp;
     }

@@ -27,9 +27,16 @@ class curses extends \db {
     }
 
     public
-	    function getALL($town) {
-	$q = "SELECT * FROM `cursses` WHERE `miso`='$town' order by `porjadok` ASC";
-	return $this->get_result($q);
+	    function getALL($town, $st = 'Y') {
+	if ($st == 'Y'):
+	    $q = "SELECT * FROM `cursses` WHERE `miso`='$town' and `display_r`='Y' order by `porjadok` ASC";
+	else:
+	    $q = "SELECT * FROM `cursses` WHERE `miso`='$town'  order by `porjadok` ASC";
+	endif;
+	//echo $q;
+	$r = $this->get_result($q);
+
+	return $r;
     }
 
     public
@@ -40,7 +47,7 @@ class curses extends \db {
 
     public
 	    function GetRandAction() {
-	$q	 = "SELECT * FROM `cursses` WHERE `action`='Y' order by rand()";
+	$q	 = "SELECT * FROM `cursses` WHERE `action`='Y' and `display`='Y' order by rand()";
 	$out	 = $this->get_result($q);
 	if (count($out >= 1)):
 	    return $out[0];
@@ -51,7 +58,7 @@ class curses extends \db {
 
     public
 	    function GetRandOnline() {
-	$q	 = "SELECT * FROM `cursses` WHERE `miso`='virtual' order by rand() LIMIT 1";
+	$q	 = "SELECT * FROM `cursses` WHERE `miso`='virtual' and `display`='Y' order by rand() LIMIT 1";
 	$out	 = $this->get_result($q);
 	if (count($out >= 1)):
 	    return $out[0];
@@ -75,6 +82,7 @@ class curses extends \db {
 		. " `image`, `anonce_ru`, `anonce_ua`,"
 		. " `decription_ru`, `fulltext_ru`, `decription_ua`, `fulltext_ua`,"
 		. " `display`,"
+		. " `display_r`,"
 		. " `miso`,"
 		. " `start`, `finish`, `coast`, `action`,`deadline`, `ac_coast`, `mashas`, `basecolor`, `porjadok`,"
 		. " `video_ua`, `video_ru`,"
@@ -87,6 +95,7 @@ class curses extends \db {
 		. " '$image', '$anonce_ru', '$anonce_ua',"
 		. " '$decription_ru', '$fulltext_ru', '$decription_ua', '$fulltext_ua',"
 		. " '$display',"
+		. " '$display_r',"
 		. " '$miso', "
 		. " '$start', '$finish', '$coast', '$action','$deadline' ,'$ac_coast','$mashas','$basecolor','$porjadok',"
 		. " '$video_ua', '$video_ru',"
@@ -106,7 +115,8 @@ class curses extends \db {
 	$q = "UPDATE `cursses` SET ";
 	foreach ($params as $k => $v)
 	{
-	    $p[] = "`$k`='$v'";
+	    $v	 = addslashes($v);
+	    $p[]	 = "`$k`='$v'";
 	}
 	$q .= implode(", ", $p) . " WHERE  `id`=$id;";
 	//echo $q;

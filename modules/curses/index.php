@@ -21,16 +21,16 @@ $bc['ru']	 = 'Курсы ';
 $vidminnik	 = array('ua'	 => array(
 	'dnipro'	 => 'у Дніпрі',
 	'kyiv'		 => 'у Київі',
-	'zaporizhzhya'	 => 'у Запоріжжї',
+	'zaporizhzhya'	 => 'у Запоріжжі',
 	'nicolaev'	 => 'у Миколаєві',
-	'virtual'	 => 'on-line',
+	'virtual'	 => 'онлайн',
     ),
     'ru'	 => array(
 	'dnipro'	 => 'в Днепре',
 	'kyiv'		 => 'в Киеве',
 	'zaporizhzhya'	 => 'в Запорожье',
 	'nicolaev'	 => 'в Николаеве',
-	'virtual'	 => 'on-line',
+	'virtual'	 => 'онлайн',
     )
 );
 if ($link != 'virtual')
@@ -91,7 +91,7 @@ foreach ($curses->getALL($curMistoLink) as $curs)
     }
     $item .= '<a class="course__item" href="' . WWW_BASE_PATH . 'curses/curse/' . $curMistoLink . '/' . $curs->link . '">
                     <div>
-			<h2 class="course__headline"><strong  class="' . $nth . '">' . $curs->$name . '</strong></h2>
+			<h2 class="course__headline">' . $curs->$name . '</h2>
                         <p class="course__title">' . $curs->$anonce . '</p>
                     </div>
                     <div class="course__price">
@@ -126,10 +126,10 @@ foreach ($packs->getPackets($link) as $k)
 
 	    $cursesblosk	 .= '<li class="course-package-list__item">
                         <span class="course-package-list__name">
-                        <a href="' . WWW_BASE_PATH . 'curses/curse/' . $curMistoLink . '/' . $r->link . '">  <strong>' . $r->$mlang . '</strong></a>
+                        <a href="' . WWW_BASE_PATH . 'curses/curse/' . $curMistoLink . '/' . $r->link . '">  ' . $r->$mlang . '</a>
 			</span>
                             <span class="course-package-list__price">
-                          <strong>' . $r->coast . '</strong> грн</span>
+                          ' . $r->coast . ' грн</span>
                         </li>';
 	    $totalcoast	 += $r->coast;
 	    $kcount++;
@@ -137,14 +137,22 @@ foreach ($packs->getPackets($link) as $k)
     }
     $econ	 = ($lang == 'ua') ? 'ЕКОНОМІЯ' : 'ЭКОНОМИЯ';
     $vcon	 = ($lang == 'ua') ? 'Вартість з урахуванням знижки' : 'Стоимость пакета с учетом скидки';
-    $dcon	 = ($lang == 'ua') ? 'Вартість всіх пакетів окремо' : 'Стоимость всех пакетов по отдельности';
+    $dcon	 = ($lang == 'ua') ? 'Вартість всіх курсів окремо' : 'Стоимость всех курсов по отдельности';
 
     $cocon = l('seminar_select');
 
-    $seminarcoast	 = '700.00';
-    $filename	 = WWW_BASE_PATH . "svggen/$kcount/$k->dayz/$lang";
-    $svgimg		 = file_get_contents($filename);
-    $packets	 .= '<div class="container">
+    $seminarcoast = '700.00';
+    if ($k->seminar == 'Y')
+    {
+	$zuza		 = $kcount + 1;
+	$filename	 = WWW_BASE_PATH . "svggen/$zuza/$k->dayz/$lang";
+    }
+    else
+    {
+	$filename = WWW_BASE_PATH . "svggen/$kcount/$k->dayz/$lang";
+    }
+    $svgimg	 = file_get_contents($filename);
+    $packets .= '<div class="container">
 		<div class="course-package">
 		    <div class="svg-container"><a class="shm" data-toggle="modal" data-target="#calme" data-id="' . $k->id . '" data-name="' . $k->$name . '">' . $svgimg . '</a></div>
 		    <div class="course-package_mid">
@@ -154,13 +162,13 @@ foreach ($packs->getPackets($link) as $k)
     if ($k->seminar == 'Y')
     {
 	$packets	 .= '<li class="course-package-list__item">'
-		. '<span class="course-package-list__name"><strong>' . $cocon . '</strong></span>
+		. '<span class="course-package-list__name">' . $cocon . '</span>
 	    <span class="course-package-list__price">
-                          <strong>' . $seminarcoast . '</strong> грн</span></li>
-                    </ul>';
+                          ' . $seminarcoast . ' грн</span></li>
+                    ';
 	$totalcoast	 = $totalcoast + $seminarcoast;
     }
-    $packets .= '  <p class="alone-price">
+    $packets .= '</ul><p class="alone-price">
                     <span>' . $dcon . ':</span>
                     <span><strong class="alone-price_delete">' . $totalcoast . '</strong>грн</span>
                     </p>
@@ -173,7 +181,9 @@ foreach ($packs->getPackets($link) as $k)
                         <strong>' . $econ . '</strong>
                         <span class="package-price__price_alert"><strong>' . ($totalcoast - $k->coast) . '</strong>грн</span>
                     </div>
-		    <a class="shm btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#calme" data-id="' . $k->id . '" data-name="' . $k->$name . '">' . l('z3') . ' </a>
+		    <p class="discount-card text-center my-4"><span><strong>+</strong></span>' . l('m17') . ' </p>
+		    <!--a class="shm btn sale__btn btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#calme" data-id="' . $k->id . '" data-name="' . $k->$name . '">' . l('z3') . ' </a-->
+		    <a class="shm btn sale__btn btn-lg btn-block text-uppercase font-weight-bold"   href="' . $k->link . '" target="_blanc">' . l('z3') . ' </a>
                 </div>
             </div>
             </div>

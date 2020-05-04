@@ -58,20 +58,23 @@ foreach ($km->getall()as $k => $r)
     if ($k % 2)
     {
 	$townItem .= '<div class="row no-gutters">
-    <div class="col-md-6 mb-5 align-items-center town-info d-none d-sm-flex">
+    <div class="col-md-6 mb-5 align-items-center town-info d-none d-md-flex">
         <img class="img-fluid d-block" src="' . WWW_IMG_PATH . 'towns/' . $r->image . '" alt="' . $r->$mlang . '" >
     </div>
     <div class="col-md-6 mb-5 align-items-center town-info">
-        <div class="text">
-      <h3><span class="gradient-text text-uppercase">' . $r->$mlang . '</span></h3>
-      ' . $r->$addr . '
-      <a href="' . WWW_BASE_PATH . 'curses/' . $r->link . '/">
-      <div class="link-cities gradient-text mx-sm-0 mx-md-2 m-lg-auto">
-          <span><b>' . l('m15') . '</b></span>
-          <span class="site_btn">' . l('m16') . '</span>
+      <div class="text">
+        <h3><span class="gradient-text text-uppercase">' . $r->$mlang . '</span></h3>
+        ' . $r->$addr . '
+        <a href="' . WWW_BASE_PATH . 'curses/' . $r->link . '/">
+          <div class="link-cities gradient-text">
+            <span><b>' . l('m15') . '</b></span>
+            <span class="site_btn">' . l('m16') . '</span>
+          </div>
+        </a>
       </div>
-      </a>
-        </div>
+    </div>
+    <div class="col-md-6 mb-5 align-items-center town-info d-flex d-md-none">
+        <img class="img-fluid d-block" src="' . WWW_IMG_PATH . 'towns/' . $r->image . '" alt="' . $r->$mlang . '" >
     </div>
   </div>
 	';
@@ -80,18 +83,18 @@ foreach ($km->getall()as $k => $r)
     {
 	$townItem .= '<div class="row no-gutters">
     <div class="col-md-6 mb-5 align-items-center town-info">
-        <div class="text">
-      <h3><span class="gradient-text text-uppercase">' . $r->$mlang . '</span></h3>
-      ' . $r->$addr . '
-      <a href="' . WWW_BASE_PATH . 'curses/' . $r->link . '/">
-      <div class="link-cities gradient-text">
-          <span><b>' . l('m15') . '</b></span>
-          <span class="site_btn">' . l('m16') . '</span>
+      <div class="text">
+        <h3><span class="gradient-text text-uppercase">' . $r->$mlang . '</span></h3>
+        ' . $r->$addr . '
+        <a href="' . WWW_BASE_PATH . 'curses/' . $r->link . '/">
+          <div class="link-cities gradient-text">
+            <span><b>' . l('m15') . '</b></span>
+            <span class="site_btn">' . l('m16') . '</span>
+          </div>
+        </a>
       </div>
-      </a>
-        </div>
     </div>
-    <div class="col-md-6 mb-5">
+    <div class="col-md-6 mb-5 align-items-center d-flex">
         <img class="img-fluid d-block" src="' . WWW_IMG_PATH . 'towns/' . $r->image . '" alt="' . $r->$mlang . '" >
     </div>
   </div>
@@ -182,22 +185,23 @@ if (ONLINE_ONLY == 'Y'):
 	$act_lan = 'Акция!';
 	$aza	 = 'Записаться на курс!';
     }
-    $randAction = '<div class="col-12 col-sm-7 col-md-4 col-lg-3 col-xl-3 px-md-0 px-lg-0 d-grid align-items-center themed-grid-col">
-			    <div class="row">
-				<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 online-course-name text-center text-sm-left">
-				    <p>Онлайн-курс</p>
-				    <p>' . $acsia->$mlang . '</p>
-				</div>
-			    </div>
+    $randAction = '
+      <div class="col-12 col-sm-7 col-md-4 col-lg-4 col-xl-3 px-sm-0 px-md-0 px-lg-0 themed-grid-col col-01">
+        <div class="row">
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 online-course-name text-center text-sm-left">
+            <p>Онлайн-курс</p>
+            <p><a href="' . WWW_BASE_PATH . 'curses/curse/' . $acsia->miso . '/' . $acsia->link . '"><b>' .strip_tags($acsia->$mlang) . '</b></a></p>
+          </div>
+        </div>
 			</div>
-			<div class="col-12 col-sm-5 col-md-3 col-lg-5 col-xl-5 px-md-0 px-lg-0 themed-grid-col deadline">
-			    <p class="text-center"><span class="text-uppercase akcia">' . l('akcia') . '</span><br />до ' . $acsia->deadline . '&nbsp;</p>
+			<div class="col-12 col-sm-5 col-md-3 col-lg-3 col-xl-2 px-sm-0 px-md-0 px-lg-0 themed-grid-col deadline">
+			    <p class="text-center text-sm-right text-md-center"><span class="text-uppercase akcia">' . l('akcia') . '</span><br />до ' . $acsia->deadline . '&nbsp;</p>
 			</div>
-			<div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-4 px-md-0 px-lg-0 themed-grid-col">
-			    <div class="sale text-center m-auto">
-				<p style="margin:0 auto;"><del>' . $acsia->coast . '</del>&nbsp;<span>грн</span> <b>' . $acsia->coast . '</b>&nbsp;<span>грн</span></p>
-				<a href="#" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#akcia">' . $aza . '</a>
-			    </div>
+			<div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-4 px-md-0 px-lg-0 themed-grid-col col-03">
+        <div class="sale text-center m-auto">
+          <p style="margin:0 auto;"><del>' . $acsia->coast . '</del>&nbsp;<span>грн</span> <b>' . $acsia->ac_coast . '</b>&nbsp;<span>грн</span></p>
+          <a href="#" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#akcia">' . $aza . '</a>
+        </div>
 			</div>';
 else:
     $acsia = $ra->GetRandAction();
@@ -224,10 +228,10 @@ else:
 	$monts		 = localeMomts($lang, date('m', $dateX));
 	$start		 = date('d', $dateX);
 	$randAction	 = '
-			<div class="col-12 col-sm-7 col-md-4 col-lg-4 col-xl-4 px-md-0 px-lg-0 themed-grid-col nearest-course-col">
+			<div class="col-12 col-sm-7 col-md-4 col-lg-4 col-xl-4 px-md-0 px-lg-0 themed-grid-col line-sale-col">
 			    <div class="row">
 				<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 px-md-2 pl-lg-3 themed-grid-col">
-				    <p><b>' . l('firstcurs') . ':</b>' . $acsia->$name . '</p>
+				    <p><b>' . l('firstcurs') . ':</b>' . strip_tags($acsia->$name) . '</p>
 				</div>
 			    </div>
 			    <div class="row">
@@ -253,7 +257,7 @@ else:
 			</div>
 			<div class="col-12 col-sm-5 col-md-3 col-lg-3 col-xl-2 px-md-0 px-lg-0 themed-grid-col deadline">
 			    '
-		. '<p class="text-center"><span class="text-uppercase akcia">' . l('akcia') . '</span><br />до ' . $acsia->deadline . '&nbsp;</p>'
+		. '<p class="text-center text-sm-right text-md-center"><span class="text-uppercase akcia">' . l('akcia') . '</span><br />до ' . $acsia->deadline . '&nbsp;</p>'
 		. '</div>
 			<div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-6 px-md-0 px-lg-0 themed-grid-col">
 			    <div class="sale text-center">
@@ -314,6 +318,11 @@ foreach ($film->getList() as $vi)
 
 $tpl = 'indexn';
 include TEMPLATE_DIR . $tpl . ".html";
+
+
+
+
+
 
 
 

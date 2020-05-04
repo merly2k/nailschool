@@ -142,7 +142,7 @@ if (count($cc) > 0)
 .course-manikyura .close-course-list__block {
     color: $color->start !important;
 }
-
+.line-sale-v2,
  .gradient-block {
     background-image: -moz-linear-gradient(0deg, $color->start 0%, $color->middle 30%, $color->end 100%) !important;;
     background-image: -webkit-linear-gradient(0deg, $color->start 0%, $color->middle 30%, $color->end 100%) !important;;
@@ -208,16 +208,16 @@ $bc['ru']	 = 'Курсы ';
 $vidminnik	 = array('ua'	 => array(
 	'dnipro'	 => 'у Дніпрі',
 	'kyiv'		 => 'у Київі',
-	'zaporizhzhya'	 => 'у Запоріжжї',
+	'zaporizhzhya'	 => 'у Запоріжжі',
 	'nicolaev'	 => 'у Миколаєві',
-	'virtual'	 => 'on-line',
+	'virtual'	 => 'онлайн',
     ),
     'ru'	 => array(
 	'dnipro'	 => 'в Днепре',
 	'kyiv'		 => 'в Киеве',
 	'zaporizhzhya'	 => 'в Запорожье',
 	'nicolaev'	 => 'в Николаеве',
-	'virtual'	 => 'on-line',
+	'virtual'	 => 'онлайн',
     )
 );
 

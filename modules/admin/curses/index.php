@@ -30,18 +30,29 @@ if (isset($town)):
 	    . '<table class="table DataTable"><thead><tr>'
 	    . '<th>порядок</th>'
 	    . '<th>Курс</th>'
+	    . '<th>линк</th>'
+	    . '<th>скрыт</th>'
 	    . '<th>Старт</th>'
 	    . '<th>Длительность</th>'
 	    . '<th>Действие</th>'
 	    . '</tr>'
 	    . '</thead>';
 
-    foreach ($cc->getALL($town)as $cl)
+    foreach ($cc->getALL($town, 1)as $cl)
     {
-	//print_r($cl);
+	if ($cl->display_r == "N")
+	{
+	    $tram = 'Y';
+	}
+	else
+	{
+	    $tram = '';
+	}
 	$out .= "<tr>"
 		. "<td>$cl->porjadok</td>"
-		. "<td>$cl->name_ua</td>"
+		. "<td>$cl->name_ua </td>"
+		. "<td><a onclick='copyToClipboard($(this))' class='btn' data-link='" . WWW_BASE_PATH . 'curses/curse/' . $town . '/' . "$cl->link'><i class='fa fa-link'> </i></a></td>"
+		. "<td>$tram</td>"
 		. "<td>$cl->start</td>"
 		. "<td>$cl->finish</td>"
 		. "<td>"
@@ -59,6 +70,33 @@ endif;
 $nav	 .= '</ul> ';
 $context .= $nav . $out;
 include TEMPLATE_DIR . DS . $tpl . ".html";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

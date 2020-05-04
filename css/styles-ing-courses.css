@@ -152,7 +152,6 @@ header h1.gradient-text {
 header .description-text {
 	padding-bottom: 26px;
 	font-size: 36px;
-	font-weight: 300;
 	color: #6e6168;
 }
 
@@ -267,15 +266,24 @@ footer .return-to-sale {
 
 footer a.btn {
 	padding: 14px 20px;
-	font-size: 25px;
+	font-size: 24px;
 	color: #8f2f85 !important;
 	border: 0;
 	background-color: #ffd800;
 }
 
+@media only screen and (max-width:1280px) {
+	footer a.btn {
+		font-size: 20px;
+	}
+}
+
 @media only screen and (max-width:812px) {
 	footer {
 		margin-bottom: 64px;
+	}
+	footer a.btn {
+		font-size: 16px;
 	}
 }
 

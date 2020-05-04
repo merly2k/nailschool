@@ -25,14 +25,15 @@ if (PRODUCT == "dev")
 {
     error_reporting(99999);
     define("DB_HOST", "localhost");   //Database host.
-    define('DB_USER', 'merlinso_stas');
-    define('DB_PASSWORD', 'azazsxsxdcdc');
-    define('DB_NAME', 'merlinso_stas');
+    define('DB_USER', 'merlin');
+    define('DB_PASSWORD', 'abetupatu');
+    define('DB_NAME', 'zadmin_valet');
 }
 else
 {
 
 }
+
 
 
 

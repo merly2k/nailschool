@@ -1,6 +1,0 @@
-ERROR   message: 2|The use statement with non-compound name 'ipinfo' has no effect|/home/merlinso/valet.merlinsoft.pp.ua/index.php|54  (2019-11-05T04:07:54+02:00 )
-ERROR   message: 2|POST Content-Length of 11537670 bytes exceeds the limit of 8388608 bytes|Unknown|0  (2020-02-04T10:54:43+02:00 )
-ERROR   message: 2|POST Content-Length of 11537670 bytes exceeds the limit of 8388608 bytes|Unknown|0  (2020-02-07T15:37:52+02:00 )
-ERROR   message: 2|POST Content-Length of 11537670 bytes exceeds the limit of 8388608 bytes|Unknown|0  (2020-02-21T08:57:47+02:00 )
-ERROR   message: 2|POST Content-Length of 11423733 bytes exceeds the limit of 8388608 bytes|Unknown|0  (2020-03-10T11:54:26+02:00 )
-ERROR   message: 2|POST Content-Length of 14684363 bytes exceeds the limit of 8388608 bytes|Unknown|0  (2020-03-10T12:41:49+02:00 )
