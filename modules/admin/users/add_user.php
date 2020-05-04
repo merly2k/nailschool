@@ -43,6 +43,15 @@ if (!$_POST):
 	    <input  name="password" placeholder="Пароль" class="form-control input-md" type="text">
 	    </div>
 	    '
+	    . '<label class="col-md-2 control-label" for="textinput">роль</label>
+	    <div class="col-md-2">
+	    <select name="role" class="form-control input-md" required="required">
+	    <option value="">выберите роль</option>
+	    <option value="333">пользователь</option>
+	    <option value="601">админ</option>
+	    </select>
+	    </div>
+	    '
 	    . '<div class="form-group">
   <div class="col-md-2 pull-right">
     <button class="btn btn-primary" type="submit">Зберегти</button>
@@ -69,7 +78,7 @@ else:
     print_r($_POST);
     extract($_POST);
 
-    $ins->Insert($login, $password, '601');
+    $ins->Insert($login, $password, $role);
     echo '<script>
            window.setTimeout(function(){location.replace("' . WWW_ADMIN_PATH . '/users")},1000);
          </script>';

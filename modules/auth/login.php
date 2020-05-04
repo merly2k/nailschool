@@ -19,7 +19,8 @@ else:
 	$_SESSION['id']		 = $loged->id;
 	$_SESSION['login']	 = $loged->login;
 	$_SESSION['role']	 = $loged->role;
-
+	//echo $loged->role;
+	//exit;
 	switch ($loged->role)
 	{
 	    case 601:
@@ -27,7 +28,7 @@ else:
 
 		break;
 	    case 333:
-		header('Location:' . WWW_ADMIN_PATH);
+		header('Location:' . WWW_USER_PATH);
 
 		break;
 	    default :
@@ -49,4 +50,7 @@ else:
     endif;
 endif;
 ?>
+
+
+
 

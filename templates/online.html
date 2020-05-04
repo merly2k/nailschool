@@ -260,7 +260,7 @@
 			    <div class="row">
 				<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 online-course-name text-center text-sm-left">
 				    <p>Онлайн-курс</p>
-				    <p><b><?=$k->$mlang;?></b></p>
+				    <p><b><?=strip_tags($k->$mlang)?></b></p>
 				</div>
 			    </div>
 			</div>
@@ -268,7 +268,7 @@
 			    <?php if($k->action=="Y"){?>
 			    <p class="text-center"><span class="text-uppercase akcia"><?=l('akcia')?></span><br />до <?=$k->deadline;?>&nbsp;</p>
 			    <?php } else{?>
-			    <p class="text-center"><span class="text-uppercase akcia"><?=l('start')?></span><br /><?=$start?>&nbsp;</p>
+			    <p class="text-center"><!--span class="text-uppercase akcia"><?=l('start')?></span><br /> до <?=$start?>&nbsp;--></p>
 			    <?php }?>
 			</div>
 			<div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-4 px-md-0 px-lg-0 themed-grid-col">
@@ -276,9 +276,9 @@
 				<?php if($k->action=="Y"){?>
 				<p style="margin:0 auto;"><del><?=$k->coast?></del>&nbsp;<span>грн</span> <b><?=$k->ac_coast?></b>&nbsp;<span>грн</span></p>
 				<?php } else{ ?>
-				<p style="margin:0 auto;"><spanp style='font-size:49%'><?=l('ccoact')?></span><b><?=$k->coast?></b>&nbsp;<span>грн</span></p>
-				    <?php }?>
-				    <a href="#" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#akcia"><?=l('akcia_btn')?></a>
+				<p style="margin:0 auto;"><b><?=$k->coast?></b>&nbsp;<span>грн</span></p>
+				<?php }?>
+				<a href="#" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#akcia"><?=l('akcia_btn')?></a>
 			    </div>
 			</div>
 		    </div>
@@ -326,7 +326,7 @@
 			    <div class="row">
 				<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 online-course-name text-center text-sm-left">
 				    <p>Онлайн-курс</p>
-				    <p><b><?=$k->$mlang;?></b></p>
+				    <p><b><?=strip_tags($k->$mlang)?></b></p>
 				</div>
 			    </div>
 			</div>
@@ -334,7 +334,7 @@
 			    <?php if($k->action=="Y"){?>
 			    <p class="text-center"><span class="text-uppercase akcia"><?=l('akcia')?></span><br />до <?=$k->deadline;?>&nbsp;</p>
 			    <?php } else{?>
-			    <p class="text-center"><span class="text-uppercase akcia"><?=l('start')?></span><br /><?=$start?>&nbsp;</p>
+			    <p class="text-center"><!--span class="text-uppercase akcia"><?=l('start')?></span><br />до <?=$start?>&nbsp;--></p>
 			    <?php }?>
 			</div>
 			<div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-4 px-md-0 px-lg-0 themed-grid-col">
@@ -342,9 +342,9 @@
 				<?php if($k->action=="Y"){?>
 				<p style="margin:0 auto;"><del><?=$k->coast?></del>&nbsp;<span>грн</span> <b><?=$k->ac_coast?></b>&nbsp;<span>грн</span></p>
 				<?php } else{ ?>
-				<p style="margin:0 auto;"><spanp style='font-size:49%'><?=l('ccoact')?></span><b><?=$k->coast?></b>&nbsp;<span>грн</span></p>
-				    <?php }?>
-				    <a href="#" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#akcia"><?=l('akcia_btn')?></a>
+				<p style="margin:0 auto;"><b><?=$k->coast?></b>&nbsp;<span>грн</span></p>
+				<?php }?>
+				<a href="#" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#akcia"><?=l('akcia_btn')?></a>
 			    </div>
 			</div>
 		    </div>
@@ -803,8 +803,8 @@
 				    <div class="right-block">
 					<div class="block-right-form">
 					    <p>
-					    <!--div class="left_"><span><?=l('sdtext')?></span> <b> <?=date('d.m.Y',strtotime($k->start))?></b></div-->
-					    <?php if($k->action=="Y"){?>
+						<!--div class="left_"><span><?=l('sdtext')?></span> <b> <?=date('d.m.Y',strtotime($k->start))?></b></div-->
+						<?php if($k->action=="Y"){?>
 					    <div class="right"><span><?=l('vartist')?></span> <b><?=$k->ac_coast?> грн</b></div>
 					    <?php }else{?>
 					    <div class="right"><?=l('ccoact')?> <b><?=$k->coast?> грн</b></div>
@@ -846,7 +846,7 @@
 				<div class="form-content fd-rever">
 				    <div class="left">
 					<div class="form-group">
-					    <label><?=l('name')?>*</label>
+					    <label><?=l('name')?></label>
 					    <span class="wpcf7-form-control-wrap text-923">
 						<input type="text" name="name" value="" size="40" class="form-control wpcf7-form-control wpcf7-text wpcf7-validates-as-required" required="required" >
 					    </span>
@@ -858,7 +858,7 @@
 					    </span>
 					</div-->
 					<div class="form-group">
-					    <label>Телефон*</label>
+					    <label>Телефон</label>
 					    <span class="wpcf7-form-control-wrap tel-744">
 						<input type="tel" name="phone" value="" size="40" class="form-control wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required" required="required" placeholder="+38 ( _ _ _ ) _ _ _ _ _ _ _">
 					    </span>
@@ -915,7 +915,7 @@
 			    <fieldset>
 				<!-- Text input-->
 				<div class="form-group">
-				    <label for="textinput"><?=l('name')?>*</label>
+				    <label for="textinput"><?=l('name')?></label>
 				    <input id="name" name="name" type="text" required="required" class="form-control input-md">
 				</div>
 
@@ -927,7 +927,7 @@
 
 				<!-- Text input-->
 				<div class="form-group">
-				    <label for="textinput">Телефон*</label>
+				    <label for="textinput">Телефон</label>
 				    <input id="textinput" name="phone" type="text" class="form-control" placeholder="+38 ( _ _ _ ) _ _ _ _ _ _ _">
 				</div>
 				<input type="hidden" name="id" value="<?=$k->id?>" />
@@ -948,6 +948,7 @@
 	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e402414887521ee"></script>
     </body>
 </html>
+
 
 
 

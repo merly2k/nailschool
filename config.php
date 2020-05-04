@@ -12,7 +12,8 @@ define("CSS_PATH", APP_PATH . DS . "css" . DS);
 define("JS_PATH", APP_PATH . DS . "js" . DS);
 define("MEDIA_PATH", APP_PATH . DS . "media" . DS);
 define("WWW_BASE_PATH", $protocol . $_SERVER["SERVER_NAME"] . str_replace("index.php", "", $_SERVER["SCRIPT_NAME"])); //определяем адрес
-define("WWW_ADMIN_PATH", WWW_BASE_PATH . "admin/"); //пути к файлам стилей
+define("WWW_ADMIN_PATH", WWW_BASE_PATH . "admin/"); //путь к админке
+define("WWW_USER_PATH", WWW_BASE_PATH . "user/"); //путь к пользовательскому уи
 define("WWW_CSS_PATH", WWW_BASE_PATH . "css/"); //пути к файлам стилей
 define("WWW_JS_PATH", WWW_BASE_PATH . "js/"); //пути к файлам яваскриптов
 define("WWW_IMAGE_PATH", WWW_BASE_PATH . "images/"); //пути к файлам изображений
@@ -33,11 +34,4 @@ else
 {
 
 }
-
-
-
-
-
-
-
 
