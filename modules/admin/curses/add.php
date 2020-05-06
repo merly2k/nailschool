@@ -41,6 +41,8 @@ if (!$_POST):
 	'fulltext_ua'	 => '',
 	'display'	 => 'Y',
 	'display_r'	 => 'N',
+	'darunok'	 => 'N',
+	'darunok_str'	 => '',
 	'miso'		 => "$town",
 	'start'		 => date('Y-m-d'),
 	'finish'	 => '0',
@@ -94,6 +96,14 @@ else:
     {
 	$_POST['display_r'] = 'N';
     }
+    if (@$_POST['darunok'] == 'on')
+    {
+	$_POST['darunok'] = 'Y';
+    }
+    else
+    {
+	$_POST['darunok'] = 'N';
+    }
     if (@$_POST['vipusk'] == 'on')
     {
 	$_POST['vipusk'] = 'Y';
@@ -127,4 +137,5 @@ else:
 endif;
 
 include TEMPLATE_DIR . DS . $tpl . ".html";
+
 

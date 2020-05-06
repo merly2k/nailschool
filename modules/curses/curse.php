@@ -87,6 +87,15 @@ $cc	 = $curses->getCurse($town, $link);
 //esas
 $k	 = $cc[0];
 //print_r($k);
+if ($k->darunok == 'N')
+{
+    $valut = '';
+}
+else
+{
+    $valut = $k->darunok_str . '<br>';
+}
+
 $zia	 = array();
 $zia	 = explode(' ', $k->$mlang);
 //echo count($zia);

@@ -66,6 +66,14 @@ else:
     {
 	$_POST['display_r'] = 'N';
     }
+    if (@$_POST['darunok'] == 'on')
+    {
+	$_POST['darunok'] = 'Y';
+    }
+    else
+    {
+	$_POST['darunok'] = 'N';
+    }
     if (@$_POST['vipusk'] == 'on')
     {
 	$_POST['vipusk'] = 'Y';
@@ -98,4 +106,5 @@ else:
 endif;
 
 include TEMPLATE_DIR . DS . $tpl . ".html";
+
 

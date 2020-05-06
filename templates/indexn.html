@@ -316,23 +316,6 @@
 		<div class="container container-padding">
 		    <div class="row row-eq-height px-3">
 			<?=$randAction?>
-			<!--div class="col-12 col-sm-7 col-md-4 col-lg-3 col-xl-3 px-md-0 px-lg-0 d-grid align-items-center themed-grid-col">
-			    <div class="row">
-				<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 online-course-name text-center text-sm-left">
-				    <p>Онлайн-курс</p>
-				    <p><b>Всі секрети<br/>про бази і топи</b></p>
-				</div>
-			    </div>
-			</div>
-			<div class="col-12 col-sm-5 col-md-3 col-lg-5 col-xl-5 px-md-0 px-lg-0 themed-grid-col deadline">
-			    <p class="text-center"><span class="text-uppercase akcia">Акція!</span><br />до 28.04&nbsp;</p>
-			</div>
-			<div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-4 px-md-0 px-lg-0 themed-grid-col">
-			    <div class="sale text-center m-auto">
-				<p style="margin:0 auto;"><del>1000</del>&nbsp;<span>грн</span> <b>500</b>&nbsp;<span>грн</span></p>
-				<a href="#" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#akcia">Записатися на курс!</a>
-			    </div>
-			</div-->
 			<div class="col-12 col-sm-0 col-md-0 col-lg-0 col-xl-0 themed-grid-col girl d-none d-xl-flex">
 			    <img src="<?=WWW_IMG_PATH;?>girl.png" alt="">
 			</div>
@@ -387,7 +370,7 @@
 			    <?=SBl(6,$lang);?>
 			</div>
 			<div class="col-12 col-sm-6 col-lg-4 col-xl-4 text-center pb-4 why">
-			    <img class="why-block__img" src="<?=WWW_IMG_PATH?>krema.svg" alt="">
+			    <img class="why-block__img" src="<?=WWW_IMG_PATH?>krema2.svg" alt="">
 			    <?=SBl(7,$lang);?>
 			</div>
 		    </div>
@@ -440,143 +423,147 @@
 	<!-- The Modal -->
 	<div class="modal" id="akcia">
 
-		    <div class="modal-dialog modal-dialog-centered modal-xl">
-			<div class="modal-content">
-			    <!-- Modal Header -->
-			    <div class="modal-header">
-				<div class="title modal-title">
-				    <h4 class="text-uppercase font-weight-bold"><?=$aza?></h4>
-				</div>
-				<button type="button" class="pum-close popmake-close close" data-dismiss="modal">&times;</button>
-			    </div>
-			    <!-- Modal body -->
-			    <div class="modal-body">
-			    	<p class="ps text-uppercase font-weight-bold">Назва курсу</p>
-				<form id='akciaForm' action="<?=WWW_BASE_PATH?>parcipate" method="post">
-				    <input type="hidden" name="id" value="id" />
-				    <input type="hidden" name="leadtype" value="calback" />
-				    <input type="hidden" name="returnto" value="/" />
-				    <div class="form-price">
-					<div class="form-content fd-rever">
-					    <div class="left">
-						<div class="form-group">
-						    <label><?=l('name')?>*</label>
-						    <span class="wpcf7-form-control-wrap text-923">
-							<input type="text" name="name" value="" size="40" class="form-control wpcf7-form-control wpcf7-text wpcf7-validates-as-required" required="required" >
-						    </span>
-						</div>
-						<div class="form-group">
-						    <label><?=l('lastname');?>*</label>
-						    <span class="wpcf7-form-control-wrap text-923">
-							<input type="text" name="lname" value="" size="40" class="form-control wpcf7-form-control wpcf7-text wpcf7-validates-as-required" required="required">
-						    </span>
-						</div>
-						<div class="form-group">
-						    <label>Е-mail</label>
-						    <span class="wpcf7-form-control-wrap text-923">
-							<input type="text" name="lname" value="" size="40" class="form-control wpcf7-form-control wpcf7-text wpcf7-validates-as-required" required="required">
-						    </span>
-						</div>
-						<div class="form-group">
-						    <label>Телефон*</label>
-						    <span class="wpcf7-form-control-wrap tel-744">
-							<input type="tel" name="phone" value="" size="40" class="form-control wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required" required="required" placeholder="+38 ( _ _ _ ) _ _ _ _ _ _ _">
-						    </span>
-						</div>
-						<div class="form-check">
-							<span class="checkbox-style">
-							    <input type="hidden" name="id" value="38">
-							    <input type="hidden" name="leadtype" value="curs">
-							    <input type="hidden" name="returnto" value="virtual/base_and_top">
-							    <span class="style-chec">
-								<input type="checkbox" id="checkbox-id" class="form-check-input">
-							    </span>
-							    <label class="form-check-label lad-chec" for="checkbox-id"><b>Отримувати сповіщення про акції та знижки</b></label>
-							</span>
-						</div>
-						<div class="right-block">
-							<div class="block-right-form">
-							    <p></p>
-							    <div class="left_"><span>Початок занять з</span> <b> 03.04.2020</b></div>
-	    					    <div class="right"> Вартість:  <b>500 грн</b></div>
-	    					    <p></p>
-							</div>
-							<p><span class="block-right-span">*поля обов'язкові для заповнення</span></p>
-					    </div>
-					    </div>
-
-					</div>
-					<button type="submit" value="<?=l('calback_btn')?>" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold m-auto w-auto px-4 wpcf7-form-control wpcf7-submit"><?=l('calback_btn')?>*</button>
-					* <?=l("pdrd")?>
-					<span class="ajax-loader"></span>
-				    </div>
-				</form>
-			    </div>
-			</div>
-		    </div>
-
-
-<!-- 	    <div class="modal-dialog modal-dialog-centered modal-xl">
-		<div class="modal-content"> -->
-
+	    <div class="modal-dialog modal-dialog-centered modal-xl">
+		<div class="modal-content">
 		    <!-- Modal Header -->
-<!-- 		    <div class="modal-header">
-			<h4 class="title modal-title"><?=$aza?></h4>
+		    <div class="modal-header">
+			<div class="title modal-title">
+			    <h4 class="text-uppercase font-weight-bold"><?=$aza?></h4>
+			</div>
 			<button type="button" class="pum-close popmake-close close" data-dismiss="modal">&times;</button>
-		    </div> -->
-
+		    </div>
 		    <!-- Modal body -->
-<!-- 		    <div class="modal-body">
-			<form action="<?=WWW_BASE_PATH?>parcipate" method="post">
-			    <input type="hidden" name="id" value="<?=$acsia->id?>">
+		    <div class="modal-body">
+			<p class="ps text-uppercase font-weight-bold"><?=$acsia->$mlang;?></p>
+			<form id='akciaForm' action="<?=WWW_BASE_PATH?>parcipate" method="post">
+			    <input type="hidden" name="id" value="<?=$acsia->id;?>" />
+			    <input type="hidden" name="leadtype" value="curs" />
+			    <input type="hidden" name="returnto" value="/" />
 			    <div class="form-price">
-				<p class="ps"><?=$acsia->$mlang?></p>
 				<div class="form-content fd-rever">
 				    <div class="left">
-					<label>Имя*</label>
-					<span class="wpcf7-form-control-wrap text-923">
-					    <input type="text" name="name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" required="required" >
-					</span><br>
-					<label>Фамилия*</label>
-					<span class="wpcf7-form-control-wrap text-923">
-					    <input type="text" name="lname" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" required="required">
-					</span><br>
-					<label>Е-mail*</label>
-					<span class="wpcf7-form-control-wrap email-362"><input type="email" name="email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email" required='required'>
-					</span><br>
-					<label>Телефон*</label>
-					<span class="wpcf7-form-control-wrap tel-744">
-					    <input type="tel" name="phone" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required" required="required" placeholder="+38 ( _ _ _ ) _ _ _ _ _ _ _">
-					</span><br>
-					
-					<span class="checkbox-style">
-					    <label class="lad-chec" for="checkbox-id">
+					<div class="form-group">
+					    <label><?=l('name')?>*</label>
+					    <span class="wpcf7-form-control-wrap text-923">
+						<input type="text" name="name" value="" size="40" class="form-control wpcf7-form-control wpcf7-text wpcf7-validates-as-required" required="required" >
+					    </span>
+					</div>
+					<div class="form-group">
+					    <label><?=l('lastname');?>*</label>
+					    <span class="wpcf7-form-control-wrap text-923">
+						<input type="text" name="lname" value="" size="40" class="form-control wpcf7-form-control wpcf7-text wpcf7-validates-as-required" required="required">
+					    </span>
+					</div>
+					<div class="form-group">
+					    <label>Е-mail</label>
+					    <span class="wpcf7-form-control-wrap text-923">
+						<input type="text" name="lname" value="" size="40" class="form-control wpcf7-form-control wpcf7-text wpcf7-validates-as-required" required="required">
+					    </span>
+					</div>
+					<div class="form-group">
+					    <label>Телефон*</label>
+					    <span class="wpcf7-form-control-wrap tel-744">
+						<input type="tel" name="phone" value="" size="40" class="form-control wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required" required="required" placeholder="+38 ( _ _ _ ) _ _ _ _ _ _ _">
+					    </span>
+					</div>
+					<div class="form-check">
+					    <span class="checkbox-style">
+						<input type="hidden" name="id" value="38">
+						<input type="hidden" name="leadtype" value="curs">
+						<input type="hidden" name="returnto" value="virtual/base_and_top">
 						<span class="style-chec">
-						    <input type="checkbox" id="checkbox-id">
+						    <input type="checkbox" id="checkbox-id" class="form-check-input">
 						</span>
-						<b>Получать уведомления об акциях и скидках школы</b></label>
-					</span>
-
-					<p></p>
+						<label class="form-check-label lad-chec" for="checkbox-id"><b><?=l('uvedomit')?></b></label>
+					    </span>
+					</div>
+					<div class="right-block">
+					    <div class="block-right-form">
+						<p></p>
+						<div class="left_"><span><?=l('sdtext')?></span> <b> <?=date('d.m.Y',strtotime($acsia->start))?></b></div>
+						<?php if($acsia->action=="Y"){?>
+						<div class="right"><span><?=l('vartist')?></span> <b><?=$acsia->ac_coast?> грн</b></div>
+						<?php }else{?>
+						<div class="right"><?=l('ccoact')?> <b><?=$acsia->coast?> грн</b></div>
+						<?php }?>
+						<p></p>
+					    </div>
+					    <p><span class="block-right-span">*<?=l('uvag1')?></span></p>
+					</div>
 				    </div>
-				    <div class="right-block">
-					<div class="block-right-form">
-					    <div class="left_"><span>Дата старта</span><b>с <?=date('d-m-Y',strtotime($acsia->start));?></b></div>
-					    <div class="right"><span>Стоимость со<br> скидкой:</span><b><?=$acsia->ac_coast?> грн</b></div>
-					    <p></p></div>
-					<p><span class="block-right-span">*О точной дате начала курса мы оповестим лично</span>
-					</p></div>
+
 				</div>
-				<p><button type="submit" value="<?=l('btnzapis')?>" class="wpcf7-form-control wpcf7-submit"><?=l('btnzapis')?>*</button>
-				    * <?=l("pdrd")?>
-				    <span class="ajax-loader"></span>
-				</p></div>
+				<button type="submit" value="<?=l('calback_btn')?>" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold m-auto w-auto px-4 wpcf7-form-control wpcf7-submit"><?=l('calback_btn')?>*</button>
+				* <?=l("pdrd")?>
+				<span class="ajax-loader"></span>
+			    </div>
 			</form>
 		    </div>
-
-
 		</div>
-	    </div> -->
+	    </div>
+
+
+	    <!-- 	    <div class="modal-dialog modal-dialog-centered modal-xl">
+			    <div class="modal-content"> -->
+
+	    <!-- Modal Header -->
+	    <!-- 		    <div class="modal-header">
+				    <h4 class="title modal-title"><?=$aza?></h4>
+				    <button type="button" class="pum-close popmake-close close" data-dismiss="modal">&times;</button>
+				</div> -->
+
+	    <!-- Modal body -->
+	    <!-- 		    <div class="modal-body">
+				    <form action="<?=WWW_BASE_PATH?>parcipate" method="post">
+					<input type="hidden" name="id" value="<?=$acsia->id?>">
+					<div class="form-price">
+					    <p class="ps"><?=$acsia->$mlang?></p>
+					    <div class="form-content fd-rever">
+						<div class="left">
+						    <label>Имя*</label>
+						    <span class="wpcf7-form-control-wrap text-923">
+							<input type="text" name="name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" required="required" >
+						    </span><br>
+						    <label>Фамилия*</label>
+						    <span class="wpcf7-form-control-wrap text-923">
+							<input type="text" name="lname" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" required="required">
+						    </span><br>
+						    <label>Е-mail*</label>
+						    <span class="wpcf7-form-control-wrap email-362"><input type="email" name="email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email" required='required'>
+						    </span><br>
+						    <label>Телефон*</label>
+						    <span class="wpcf7-form-control-wrap tel-744">
+							<input type="tel" name="phone" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required" required="required" placeholder="+38 ( _ _ _ ) _ _ _ _ _ _ _">
+						    </span><br>
+
+						    <span class="checkbox-style">
+							<label class="lad-chec" for="checkbox-id">
+							    <span class="style-chec">
+								<input type="checkbox" id="checkbox-id">
+							    </span>
+							    <b>Получать уведомления об акциях и скидках школы</b></label>
+						    </span>
+
+						    <p></p>
+						</div>
+						<div class="right-block">
+						    <div class="block-right-form">
+							<div class="left_"><span>Дата старта</span><b>с <?=date('d-m-Y',strtotime($acsia->start));?></b></div>
+							<div class="right"><span>Стоимость со<br> скидкой:</span><b><?=$acsia->ac_coast?> грн</b></div>
+							<p></p></div>
+						    <p><span class="block-right-span">*О точной дате начала курса мы оповестим лично</span>
+						    </p></div>
+					    </div>
+					    <p><button type="submit" value="<?=l('btnzapis')?>" class="wpcf7-form-control wpcf7-submit"><?=l('btnzapis')?>*</button>
+						* <?=l("pdrd")?>
+						<span class="ajax-loader"></span>
+					    </p></div>
+				    </form>
+				</div>
+
+
+			    </div>
+			</div> -->
 	</div>
     </body>
 

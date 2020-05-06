@@ -79,15 +79,24 @@ foreach ($curses->getALL($curMistoLink) as $curs)
     {
 	$price = $curs->coast;
     }
+    if ($curs->darunok == 'N')
+    {
+	$valut = 'грн';
+    }
+    else
+    {
+	$valut = '+<img src="' . WWW_IMAGE_PATH . 'gift.png" style="width: 21px;" class="align-content-center">';
+    }
+
     if ($curs->action == 'Y')
     {
 	$sb	 = "sale_button";
-	$pb	 = '<strong class="' . $sb . '"><span class="oldprice">' . $curs->coast . '</span><span class="newprice">' . $curs->ac_coast . '</span></strong> грн <div class="pod"></div>';
+	$pb	 = '<strong class="' . $sb . '"><span class="oldprice">' . $curs->coast . '</span><span class="newprice">' . $curs->ac_coast . '</span></strong> ' . $valut . ' <div class="pod"></div>';
     }
     else
     {
 	$sb	 = "";
-	$pb	 = '<strong class="' . $sb . '">' . $curs->coast . '</strong> грн <div class="pod"></div>';
+	$pb	 = '<strong class="' . $sb . '">' . $curs->coast . '</strong> ' . $valut . ' <div class="pod"></div>';
     }
     $item .= '<a class="course__item" href="' . WWW_BASE_PATH . 'curses/curse/' . $curMistoLink . '/' . $curs->link . '">
                     <div>

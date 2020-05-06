@@ -185,17 +185,26 @@ if (ONLINE_ONLY == 'Y'):
 	$act_lan = 'Акция!';
 	$aza	 = 'Записаться на курс!';
     }
+    if ($acsia->darunok == "Y")
+    {
+	$valut = $acsia->darunok_str . '<br>';
+    }
+    else
+    {
+	$valut = '';
+    }
+
     $randAction = '
       <div class="col-12 col-sm-7 col-md-4 col-lg-4 col-xl-3 px-sm-0 px-md-0 px-lg-0 themed-grid-col col-01">
         <div class="row">
           <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 online-course-name text-center text-sm-left">
             <p>Онлайн-курс</p>
-            <p><a href="' . WWW_BASE_PATH . 'curses/curse/' . $acsia->miso . '/' . $acsia->link . '"><b>' .strip_tags($acsia->$mlang) . '</b></a></p>
+            <p><a href="' . WWW_BASE_PATH . 'curses/curse/' . $acsia->miso . '/' . $acsia->link . '"><b>' . strip_tags($acsia->$mlang) . '</b></a></p>
           </div>
         </div>
 			</div>
 			<div class="col-12 col-sm-5 col-md-3 col-lg-3 col-xl-2 px-sm-0 px-md-0 px-lg-0 themed-grid-col deadline">
-			    <p class="text-center text-sm-right text-md-center"><span class="text-uppercase akcia">' . l('akcia') . '</span><br />до ' . $acsia->deadline . '&nbsp;</p>
+			    <p class="text-center text-sm-right text-md-center"><span class="text-uppercase akcia">' . l('akcia') . '</span><br />' . $valut . 'до ' . $acsia->deadline . '&nbsp;</p>
 			</div>
 			<div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-4 px-md-0 px-lg-0 themed-grid-col col-03">
         <div class="sale text-center m-auto">
@@ -227,7 +236,16 @@ else:
 	$dateX		 = strtotime($acsia->start);
 	$monts		 = localeMomts($lang, date('m', $dateX));
 	$start		 = date('d', $dateX);
-	$randAction	 = '
+	if ($acsia->darunok == "Y")
+	{
+	    $valut = $acsia->darunok_str . '<br>';
+	}
+	else
+	{
+	    $valut = '';
+	}
+
+	$randAction = '
 			<div class="col-12 col-sm-7 col-md-4 col-lg-4 col-xl-4 px-md-0 px-lg-0 themed-grid-col line-sale-col">
 			    <div class="row">
 				<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 px-md-2 pl-lg-3 themed-grid-col">
@@ -257,7 +275,7 @@ else:
 			</div>
 			<div class="col-12 col-sm-5 col-md-3 col-lg-3 col-xl-2 px-md-0 px-lg-0 themed-grid-col deadline">
 			    '
-		. '<p class="text-center text-sm-right text-md-center"><span class="text-uppercase akcia">' . l('akcia') . '</span><br />до ' . $acsia->deadline . '&nbsp;</p>'
+		. '<p class="text-center text-sm-right text-md-center"><span class="text-uppercase akcia">' . l('akcia') . '</span><br />' . $valut . 'до ' . $acsia->deadline . '&nbsp;</p>'
 		. '</div>
 			<div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-6 px-md-0 px-lg-0 themed-grid-col">
 			    <div class="sale text-center">
@@ -318,6 +336,14 @@ foreach ($film->getList() as $vi)
 
 $tpl = 'indexn';
 include TEMPLATE_DIR . $tpl . ".html";
+
+
+
+
+
+
+
+
 
 
 

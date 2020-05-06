@@ -297,7 +297,9 @@
 			    </div>
 			</div>
 			<div class="col-12 col-sm-5 col-md-3 col-lg-3 col-xl-4 px-md-0 px-lg-0 themed-grid-col deadline">
-			    <?php if($k->action=="Y"){?><p class="text-center text-sm-right text-md-center"><span class="text-uppercase akcia"><?=l('akcia')?></span><br />до <?=$k->deadline;?>&nbsp;</p><?php }?>
+			    <?php if($k->action=="Y"){?>
+			    <p class="text-center text-sm-right text-md-center"><span class="text-uppercase akcia"><?=l('akcia')?></span><br /><?=$valut?>до <?=$k->deadline;?>&nbsp;</p>
+			    <?php }else{ ?><p class="text-center text-sm-right text-md-center"><br /><?=$valut?><?php }?>
 			</div>
 			<div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-4 px-md-0 px-lg-0 themed-grid-col wrapper-sale">
 			    <div class="sale text-center m-auto mr-xl-0">
@@ -422,7 +424,7 @@
 			    <?=SBl(6,$lang);?>
 			</div>
 			<div class="col-12 col-sm-6 col-lg-4 col-xl-4 text-center pb-4 why">
-			    <img class="why-block__img" src="<?=WWW_IMG_PATH?>krema.svg" alt="">
+			    <img class="why-block__img" src="<?=WWW_IMG_PATH?>krema2.svg" alt="">
 			    <?=SBl(7,$lang);?>
 			</div>
 		    </div>
@@ -877,13 +879,13 @@
 		    <!-- Modal Header -->
 		    <div class="modal-header">
 			<div class="title modal-title">
-			    <h4 class="text-uppercase font-weight-bold"><?=l('calback_btn')?></h4>
+			    <h4 class="text-uppercase font-weight-bold"><?=l('recall')?></h4>
 			</div>
 			<button type="button" class="pum-close popmake-close close" data-dismiss="modal">&times;</button>
 		    </div>
 		    <!-- Modal body -->
 		    <div class="modal-body">
-			<p class="ps text-uppercase font-weight-bold"><?=strip_tags($k->$mlang)?></p>
+			<!--p class="ps text-uppercase font-weight-bold"><?=strip_tags($k->$mlang)?></p-->
 			<form id='akciaForm' action="<?=WWW_BASE_PATH?>parcipate" method="post">
 			    <input type="hidden" name="id" value="<?=$k->id?>" />
 			    <input type="hidden" name="leadtype" value="calback" />
@@ -948,13 +950,13 @@
 		    <!-- Modal Header -->
 		    <div class="modal-header">
 			<div class="title modal-title">
-			    <h4 class="text-uppercase font-weight-bold"><?=strip_tags(l('m13'))?></h4>
+			    <h4 class="text-uppercase font-weight-bold"><?=l('recall')?></h4>
 			</div>
 			<button type="button" class="close" data-dismiss="modal">&times;</button>
 		    </div>
 		    <!-- Modal body -->
 		    <div class="modal-body" style=' width:100%;'>
-			<p class="ps text-uppercase font-weight-bold"><?=l("konsult_sub")?></p>
+			<!--p class="ps text-uppercase font-weight-bold"><?=l("konsult_sub")?></p-->
 			<form id='akciaForm' action="<?=WWW_BASE_PATH?>parcipate" method="post">
 			    <fieldset>
 				<!-- Text input-->
@@ -992,4 +994,11 @@
 	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e402414887521ee"></script>
     </body>
 </html>
+
+
+
+
+
+
+
 
