@@ -26,7 +26,10 @@ $output = explode('/', trim($_POST['returnto'], '/'));
 
 
 $l	 = new model\leads();
-$name	 = $_POST['name'];
+$teleg	 = new telegrambot();
+$curses	 = new model\curses();
+
+$name = $_POST['name'];
 if (!isset($_POST['lname']))
 {
     $lname = '';
@@ -45,9 +48,14 @@ else
 }
 $phone	 = $_POST['phone'];
 $curse	 = $_POST['id'];
+$c	 = $curses->getCurseById($curse);
+$cursen	 = strip_tags($c->name_ru);
 
+//print_r($c);
 $returnto = $_POST['returnto'];
 $l->add($curse, $leadtype, $name, $lname, $email, $phone);
+$teleg->send($cursen, $leadtype, $name, $phone, $lname, $email);
+//print_r($_POST);
 ?>
 
 <!DOCTYPE html>

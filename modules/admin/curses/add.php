@@ -42,7 +42,8 @@ if (!$_POST):
 	'display'	 => 'Y',
 	'display_r'	 => 'N',
 	'darunok'	 => 'N',
-	'darunok_str'	 => '',
+	'darunok_ru'	 => '',
+	'darunok_ua'	 => '',
 	'miso'		 => "$town",
 	'start'		 => date('Y-m-d'),
 	'finish'	 => '0',
@@ -137,5 +138,8 @@ else:
 endif;
 
 include TEMPLATE_DIR . DS . $tpl . ".html";
+
+
+
 
 

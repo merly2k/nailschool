@@ -266,7 +266,7 @@
 	    </div>
 	</header>
 	<main>
-	    <section class="line-sale-v2 first-line" id="sale">
+	    <section class="line-sale-v3 first-line" id="sale">
 		<div class="container container-padding">
 		    <div class="row row-eq-height px-0 px-lg-3">
 			<div class="col-12 col-sm-7 col-md-4 col-lg-4 col-xl-4 pr-md-0 px-lg-0 pl-xl-3 themed-grid-col line-sale-col">
@@ -277,8 +277,8 @@
 			    </div>
 			    <div class="row">
 				<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 pl-0 themed-grid-col text-center location">
-				    <div class="align-middle">
-					<img src="<?=WWW_IMG_PATH?>location-pink.svg" alt="">
+				    <div class="align-middle align-items-center">
+					<img class="m-auto" src="<?=WWW_IMG_PATH?>location-pink.png" alt="">
 				    </div>
 				    <p class="text-center"><?=$mista[$town]?></p>
 				</div>
@@ -298,8 +298,12 @@
 			</div>
 			<div class="col-12 col-sm-5 col-md-3 col-lg-3 col-xl-4 px-md-0 px-lg-0 themed-grid-col deadline">
 			    <?php if($k->action=="Y"){?>
-			    <p class="text-center text-sm-right text-md-center"><span class="text-uppercase akcia"><?=l('akcia')?></span><br /><?=$valut?>до <?=$k->deadline;?>&nbsp;</p>
-			    <?php }else{ ?><p class="text-center text-sm-right text-md-center"><br /><?=$valut?><?php }?>
+			    <p class="text-center text-sm-right text-md-center"><span class="text-uppercase akcia"><?=l('akcia')?></span><br /><?=$valut?>до <?=$k->deadline;?></p>
+			    <?php }elseif($k->darunok=="Y"){?>
+			    <p class="text-center text-sm-right text-md-center"><br /><?=$valut?></p>
+			    <?php }else{ ?>
+			    <p class="text-center text-sm-right text-md-center"></span>
+				<?php }?>
 			</div>
 			<div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-4 px-md-0 px-lg-0 themed-grid-col wrapper-sale">
 			    <div class="sale text-center m-auto mr-xl-0">
@@ -317,6 +321,7 @@
 		    </div>
 		</div>
 	    </section>
+
 	    <section class="about">
 		<div class="row row-eq-height no-gutters">
 		    <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5 themed-grid-col nails">
@@ -353,10 +358,11 @@
 		    </div>
 		    <!-- // -->
 	    </section>
-	    <section class="line-sale-v2" id="sale">
-		<div class="container">
+
+	    <section class="line-sale-v3" id="sale">
+		<div class="container container-padding">
 		    <div class="row row-eq-height px-0 px-lg-3">
-			<div class="col-12 col-sm-7 col-md-4 col-lg-4 col-xl-3 pr-md-0 px-lg-0 pl-xl-3 themed-grid-col line-sale-col">
+			<div class="col-12 col-sm-7 col-md-4 col-lg-4 col-xl-4 pr-md-0 px-lg-0 pl-xl-3 themed-grid-col line-sale-col">
 			    <div class="row">
 				<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 px-3 px-sm-0 themed-grid-col">
 				    <p><b><?=l('firstcurs')?>:</b></p>
@@ -375,7 +381,7 @@
 				    </div>
 				    <p class="text-center"><?=$monts?></p>
 				</div>
-				<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 themed-grid-col text-center duration">
+				<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 px-0 themed-grid-col text-center duration">
 				    <div class="align-middle">
 					<span class="align-middle"><?=$k->finish?></span>
 				    </div>
@@ -383,10 +389,16 @@
 				</div>
 			    </div>
 			</div>
-			<div class="col-12 col-sm-5 col-md-3 col-lg-3 col-xl-5 px-md-0 px-lg-0 themed-grid-col deadline">
-			    <?php if($k->action=="Y"){?><p class="text-center text-sm-right text-md-center"><span class="text-uppercase akcia"><?=l('akcia')?></span><br />до <?=$k->deadline;?>&nbsp;</p><?php }?>
+			<div class="col-12 col-sm-5 col-md-3 col-lg-3 col-xl-4 px-md-0 px-lg-0 themed-grid-col deadline">
+			    <?php if($k->action=="Y"){?>
+			    <p class="text-center text-sm-right text-md-center"><span class="text-uppercase akcia"><?=l('akcia')?></span><br /><?=$valut?>до <?=$k->deadline;?></p>
+			    <?php }elseif($k->darunok=="Y"){?>
+			    <p class="text-center text-sm-right text-md-center"><br /><?=$valut?></p>
+			    <?php }else{ ?>
+			    <p class="text-center text-sm-right text-md-center"></span>
+				<?php }?>
 			</div>
-			<div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-4 px-md-0 px-lg-0 themed-grid-col">
+			<div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-4 px-md-0 px-lg-0 themed-grid-col wrapper-sale">
 			    <div class="sale text-center m-auto mr-xl-0">
 				<?php if($k->action=="Y"){?>
 				<p style="margin:0 auto;"><del><?=$k->coast?></del>&nbsp;<span>грн</span> <b><?=$k->ac_coast?></b>&nbsp;<span>грн</span></p>
@@ -991,9 +1003,21 @@
 	    </div>
 	</div>
 	<!-- Go to www.addthis.com/dashboard to customize your tools -->
-	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e402414887521ee"></script>
+	<!-- <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e402414887521ee"></script> -->
     </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&subset=cyrillic');
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800&subset=cyrillic');
+
 .modal-backdrop{margin: -100%;}
-.modal-open .modal{margin:20px -100% -300px -100%;}
+
 .active{
     font-weight: 900;
 }
@@ -2545,7 +2546,6 @@ form input[type="checkbox"] {
 }
 
 form input[type="submit"] {
-    background: #FAE55B;
     color: #651F65;
     border: none;
     padding: 17px 60px 35px;

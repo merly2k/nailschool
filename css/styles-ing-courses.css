@@ -254,6 +254,53 @@ header .description-text {
     margin-left: 5px;
 }
 
+/* MODAL WINDOWS */
+
+.modal-title h4 {
+    color: #8f2f85;
+    font-size: 24px;
+}
+
+.modal-title p {
+    margin-bottom: 0;
+}
+
+.modal-title button {
+    color: #e7437c;
+    opacity: 1;
+}
+
+.modal-body {
+	font-size: 16px;
+}
+
+.modal-body .btn {
+    padding: 8px 24px;
+    font-size: 20px;
+    border-radius: 24px;
+    color: #8f2f85 !important;
+}
+
+.modal-body label {
+	font-size: 16px;
+}
+
+.modal-body .form-control {
+    padding: 0.6rem 1.2rem;
+    font-size: 16px;
+    border-color: #e7437c;
+    border-radius: 0.4rem;
+}
+
+@media only screen and (max-width:435px) {
+    .modal-title h4 {
+        font-size: 20px;
+    }
+    .modal-body .btn {
+        font-size: 16px;
+    }
+}
+
 /* FOOTER */
 
 footer #map {

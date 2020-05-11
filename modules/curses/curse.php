@@ -93,7 +93,8 @@ if ($k->darunok == 'N')
 }
 else
 {
-    $valut = $k->darunok_str . '<br>';
+    $darlang = 'darunok_' . $lang;
+    $valut	 = $k->$darlang . '<br>';
 }
 
 $zia	 = array();
@@ -151,7 +152,7 @@ if (count($cc) > 0)
 .course-manikyura .close-course-list__block {
     color: $color->start !important;
 }
-.line-sale-v2,
+.line-sale-v2,.line-sale-v3,
  .gradient-block {
     background-image: -moz-linear-gradient(0deg, $color->start 0%, $color->middle 30%, $color->end 100%) !important;;
     background-image: -webkit-linear-gradient(0deg, $color->start 0%, $color->middle 30%, $color->end 100%) !important;;

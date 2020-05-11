@@ -253,8 +253,8 @@
 	    </div>
 	</header>
 	<main>
-	    <section class="line-sale-v1 first-line" id="sale">
-		<div class="container">
+	    <section class="line-sale-v3 first-line" id="sale">
+		<div class="container container-padding">
 		    <div class="row row-eq-height px-0 px-lg-3">
 			<div class="col-12 col-sm-7 col-md-4 col-lg-3 col-xl-3 px-md-0 px-lg-0 themed-grid-col">
 			    <div class="row">
@@ -266,10 +266,12 @@
 			</div>
 			<div class="col-12 col-sm-5 col-md-3 col-lg-5 col-xl-5 px-md-0 px-lg-0 themed-grid-col deadline">
 			    <?php if($k->action=="Y"){?>
-			    <p class="text-center"><span class="text-uppercase akcia"><?=l('akcia')?></span><br /><?=$valut?>до <?=$k->deadline;?>&nbsp;</p>
-			    <?php } else{?>
-			    <p class="text-center"><span class="text-uppercase akcia"><?=$valut?>&nbsp;</p>
-			    <?php }?>
+			    <p class="text-center text-sm-right text-md-center"><span class="text-uppercase akcia"><?=l('akcia')?></span><br /><?=$valut?>до <?=$k->deadline;?></p>
+			    <?php }elseif($k->darunok=="Y"){?>
+			    <p class="text-center text-sm-right text-md-center"><br /><?=$valut?></p>
+			    <?php }else{ ?>
+			    <p class="text-center text-sm-right text-md-center"></span>
+				<?php }?>
 			</div>
 			<div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-4 px-md-0 px-lg-0 themed-grid-col">
 			    <div class="sale text-center m-auto">
@@ -280,6 +282,9 @@
 				<?php }?>
 				<a href="#" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#akcia"><?=l('akcia_btn')?></a>
 			    </div>
+			</div>
+			<div class="col-12 col-sm-0 col-md-0 col-lg-0 col-xl-0 themed-grid-col girl d-none d-xl-flex">
+			    <img src="<?=$mashas?>" alt="">
 			</div>
 		    </div>
 		</div>
@@ -319,10 +324,11 @@
 		    </div>
 		    <!-- // -->
 	    </section>
-	    <section class="line-sale-v1" id="sale">
-		<div class="container">
+
+	    <section class="line-sale-v3" id="sale">
+		<div class="container container-padding">
 		    <div class="row row-eq-height px-0 px-lg-3">
-			<div class="col-12 col-sm-7 col-md-4 col-lg-3 col-xl-3 px-md-0 px-lg-0 d-grid align-items-center themed-grid-col">
+			<div class="col-12 col-sm-7 col-md-4 col-lg-3 col-xl-3 px-md-0 px-lg-0 themed-grid-col">
 			    <div class="row">
 				<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 online-course-name text-center text-sm-left">
 				    <p>Онлайн-курс</p>
@@ -331,11 +337,14 @@
 			    </div>
 			</div>
 			<div class="col-12 col-sm-5 col-md-3 col-lg-5 col-xl-5 px-md-0 px-lg-0 themed-grid-col deadline">
+
 			    <?php if($k->action=="Y"){?>
-			    <p class="text-center"><span class="text-uppercase akcia"><?=l('akcia')?></span><br />до <?=$k->deadline;?>&nbsp;</p>
-			    <?php } else{?>
-			    <p class="text-center"><!--span class="text-uppercase akcia"><?=l('start')?></span><br />до <?=$start?>&nbsp;--></p>
-			    <?php }?>
+			    <p class="text-center text-sm-right text-md-center"><span class="text-uppercase akcia"><?=l('akcia')?></span><br /><?=$valut?>до <?=$k->deadline;?></p>
+			    <?php }elseif($k->darunok=="Y"){?>
+			    <p class="text-center text-sm-right text-md-center"><br /><?=$valut?></p>
+			    <?php }else{ ?>
+			    <p class="text-center text-sm-right text-md-center"></span>
+				<?php }?>
 			</div>
 			<div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-4 px-md-0 px-lg-0 themed-grid-col">
 			    <div class="sale text-center m-auto">
@@ -375,7 +384,7 @@
 			    <?=SBl(13,$lang);?>
 			</div>
 			<div class="col-12 col-sm-6 col-lg-4 col-xl-4 text-center pb-4 why">
-			    <img class="why-block__img" src="<?=WWW_IMG_PATH?>krema.svg" alt="">
+			    <img class="why-block__img" src="<?=WWW_IMG_PATH?>krema2.svg" alt="">
 			    <?=SBl(14,$lang);?>
 			</div>
 		    </div>
@@ -945,9 +954,13 @@
 	    </div>
 	</div>
 	<!-- Go to www.addthis.com/dashboard to customize your tools -->
-	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e402414887521ee"></script>
+	<!-- <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e402414887521ee"></script> -->
     </body>
 </html>
+
+
+
+
 
 
 

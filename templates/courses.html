@@ -271,20 +271,20 @@
 
 	<!-- #page -->
 	<!-- modal call me-->
-	<div class="modal" id="calme">
-	    <div class="modal-dialog modal-dialog-centered modal-xl">
+	<div class="modal modal-xl fade" id="calme">
+	    <div class="modal-dialog modal-dialog-centered">
 		<div class="modal-content">
-
 		    <!-- Modal Header -->
 		    <div class="modal-header">
 			<div class="title modal-title">
 			    <h4 class="text-uppercase font-weight-bold"><?=l('calback_btn')?></h4>
-			    <p class="ps text-uppercase font-weight-bold"><?=@$k->$mlang?></p>
+
 			</div>
 			<button type="button" class="pum-close popmake-close close" data-dismiss="modal">&times;</button>
 		    </div>
 		    <!-- Modal body -->
 		    <div class="modal-body">
+			<p class="ps text-uppercase font-weight-bold"><?=@$k->$mlang?></p>
 			<form id='akciaForm' action="<?=WWW_BASE_PATH?>parcipate" method="post">
 			    <input type="hidden" name="id" value="<?=@$k->id?>" />
 			    <input type="hidden" name="leadtype" value="calback" />
@@ -293,7 +293,7 @@
 				<div class="form-content fd-rever">
 				    <div class="left">
 					<div class="form-group">
-					    <label><?=l('name')?>*</label>
+					    <label><?=l('name')?></label>
 					    <span class="wpcf7-form-control-wrap text-923">
 						<input type="text" name="name" value="" size="40" class="form-control wpcf7-form-control wpcf7-text wpcf7-validates-as-required" required="required" >
 					    </span>
@@ -305,7 +305,7 @@
 					    </span>
 					</div-->
 					<div class="form-group">
-					    <label>Телефон*</label>
+					    <label>Телефон</label>
 					    <span class="wpcf7-form-control-wrap tel-744">
 						<input type="tel" name="phone" value="" size="40" class="form-control wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required" required="required" placeholder="+38 ( _ _ _ ) _ _ _ _ _ _ _">
 					    </span>
@@ -313,7 +313,8 @@
 				    </div>
 
 				</div>
-				<input type="submit" value="<?=l('calback_btn')?>" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold m-auto w-auto px-4 wpcf7-form-control wpcf7-submit">
+				<input type="submit" value="<?=l('calback_btn')?>*" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold m-auto w-auto wpcf7-form-control wpcf7-submit">
+				* <?=l("pdrd")?>
 				<span class="ajax-loader"></span>
 			    </div>
 			</form>
@@ -381,4 +382,9 @@
 
     </body>
 </html>
+
+
+
+
+
 

@@ -263,28 +263,40 @@ main a.btn:hover {
 
 /* Line sale v1 */
 
-main .line-sale-v1 a {
+main .line-sale-v1 a,
+main .line-sale-v3 a {
 	color: #fff;
 }
 
-main .line-sale-v1 p {
+main .line-sale-v1 p,
+main .line-sale-v3 p {
 	font-size: 20px;
 	margin-bottom: 7px;
 }
 
-main .line-sale-v1 p:last-child {
+main .line-sale-v1 p:last-child,
+main .line-sale-v3 p:last-child {
 	margin-bottom: 0;
 }
 
+main .line-sale-v3 span {
+	line-height: 38px;
+}
+
 main .line-sale-v1 span {
+	line-height: 70px;
+}
+
+main .line-sale-v1 .line-sale-col span,
+main .line-sale-v3 .line-sale-col span {
 	width: 100%;
 	font-size: 52px;
 	font-weight: 500;
-	line-height: 70px;
 	color: #e7437c;
 }
 
-main section.line-sale-v1 {
+main section.line-sale-v1,
+main section.line-sale-v3 {
 	padding-top: 16px !important;
 	padding-bottom: 16px !important;
 	color: #fff;
@@ -296,31 +308,41 @@ main section.line-sale-v1 {
 	#f80759 0,#bc4e9c 100%);
 }
 
-main .line-sale-v1 .line-sale-col {
+main .line-sale-v1 .line-sale-col,
+main .line-sale-v3 .line-sale-col {
 	max-width: 295px;
 }
 
-main .line-sale-v1 .middle-row {
+main .line-sale-v1 .middle-row,
+main .line-sale-v3 .middle-row {
 	display: none;
 }
 
 main .line-sale-v1 .location,
 main .line-sale-v1 .date,
-main .line-sale-v1 .duration {
+main .line-sale-v1 .duration,
+main .line-sale-v3 .location,
+main .line-sale-v3 .date,
+main .line-sale-v3 .duration {
 	max-width: 100px;
 }
 
-main .line-sale-v1 .date {
+main .line-sale-v1 .date,
+main .line-sale-v3 .date {
 	margin-left: 5px;
 }
 
-main .line-sale-v1 .duration {
+main .line-sale-v1 .duration,
+main .line-sale-v3 .duration {
 	margin-left: 10px;
 }
 
 main .line-sale-v1 .location div,
 main .line-sale-v1 .date div,
-main .line-sale-v1 .duration div {
+main .line-sale-v1 .duration div,
+main .line-sale-v3 .location div,
+main .line-sale-v3 .date div,
+main .line-sale-v3 .duration div {
 	width: 70px;
 	height: 70px;
 	margin-bottom: 10px;
@@ -329,16 +351,19 @@ main .line-sale-v1 .duration div {
 	background-color: #fff;
 }
 
-main .line-sale-v1 .location img {
+main .line-sale-v1 .location img,
+main .line-sale-v3 .location img {
 	width: 100%;
 }
 
-main .line-sale-v1 .online-course-name p b {
+main .line-sale-v1 .online-course-name p b,
+main .line-sale-v3 .online-course-name p b {
     font-size: 30px;
     line-height: 1.45;
 }
 
-main .line-sale-v1 .deadline {
+main .line-sale-v1 .deadline,
+main .line-sale-v3 .deadline {
 	display: grid;
 }
 
@@ -348,24 +373,38 @@ main .line-sale-v1 .deadline p {
 	line-height: 14px;
 }
 
-main .line-sale-v1 .deadline .akcia {
+main .line-sale-v3 .deadline p {
+	font-size: 28px;
+}
+
+main .line-sale-v1 .deadline .akcia,
+main .line-sale-v3 .deadline .akcia {
 	font-size: 40px;
 	font-weight: 600;
 	color: #ffd800;
 }
 
-main .line-sale-v1 .deadline .akcia span {
+main .line-sale-v1 .deadline .akcia span,
+main .line-sale-v3 .deadline .akcia span {
 	font-weight: 600;
 }
 
-main .line-sale-v1 .sale {
+main .line-sale-v3 .deadline .deadline-date {
+	width: 100%;
+	display: inline-block;
+	color: #ffd800;
+}
+
+main .line-sale-v1 .sale,
+main .line-sale-v3 .sale {
 	height: 100%;
 	max-width: 400px;
 	border: 3px solid #fff;
 	border-radius: 10px;
 }
 
-main .line-sale-v1 .sale p {
+main .line-sale-v1 .sale p,
+main .line-sale-v3 .sale p {
 	height: 51%;
 	line-height: 2.4;
 	margin-bottom: 0px;
@@ -374,23 +413,27 @@ main .line-sale-v1 .sale p {
 	color: #fff;
 }
 
-main .line-sale-v1 .sale del {
+main .line-sale-v1 .sale del,
+main .line-sale-v3 .sale del {
 	text-decoration-color: #ffd800;
 }
 
-main .line-sale-v1 .sale span {
+main .line-sale-v1 .sale span,
+main .line-sale-v3 .sale span {
 	font-size: 20px;
 	font-weight: 300;
 	color: #fff;
 }
 
-main .line-sale-v1 .sale a.btn {
+main .line-sale-v1 .sale a.btn,
+main .line-sale-v3 .sale a.btn {
 	height: 49%;
 	padding-top: 18px;
 	padding-bottom: 10px;
 }
 
-main .line-sale-v1 .girl img {
+main .line-sale-v1 .girl img,
+main .line-sale-v3 .girl img {
 	max-width: 705px;
 	bottom: -16px;
 	right: -155px;
@@ -398,79 +441,103 @@ main .line-sale-v1 .girl img {
 }
 
 @media (min-width:1690px) {
-	main .line-sale-v1 .sale {
+	main .line-sale-v1 .sale,
+	main .line-sale-v3 .sale {
 		max-width: 340px;
 	}
 }
 
 @media (min-width:1200px) and (max-width:1690px) {
-	main .line-sale-v1 .col-01 {
+	main .line-sale-v1 .col-01,
+	main .line-sale-v3 .col-01 {
 		-webkit-box-flex: 0;
 		-ms-flex: 0 0 25%;
 		flex: 0 0 25%;
 		max-width: 25%;
 	}
-	main .line-sale-v1 .deadline {
+	main .line-sale-v1 .deadline,
+	main .line-sale-v3 .deadline {
 		-webkit-box-flex: 0;
 		-ms-flex: 0 0 41.6666666667%;
 		flex: 0 0 41.6666666667%;
 		max-width: 41.6666666667%;
 	}
-	main .line-sale-v1 .col-03 {
+	main .line-sale-v3 .deadline p {
+		font-size: 30px;
+	}
+	main .line-sale-v1 .col-03,
+	main .line-sale-v3 .col-03 {
 		-webkit-box-flex: 0;
 		-ms-flex: 0 0 33.3333333333%;
 		flex: 0 0 33.3333333333%;
 		max-width: 33.3333333333%;
 	}
-	main .line-sale-v1 .middle-row {
+	main .line-sale-v1 .middle-row,
+	main .line-sale-v3 .middle-row {
 		display: flex !important;
 	}
-	main .line-sale-v1 .big-row {
+	main .line-sale-v1 .big-row,
+	main .line-sale-v3 .big-row {
 		display: none !important;
 	}
-	main .line-sale-v1 .sale {
+	main .line-sale-v1 .sale,
+	main .line-sale-v3 .sale {
 		margin-left: 6px;
 	}
 }
 
 @media only screen and (max-width:1690px) {
 	main .line-sale-v1 .girl,
-	main .line-sale-v1 .girl img {
+	main .line-sale-v1 .girl img,
+	main .line-sale-v3 .girl,
+	main .line-sale-v3 .girl img {
 		display: none;
 	}
 }
 
 @media only screen and (max-width:1200px) {
-	main .line-sale-v1 a.btn {
+	main .line-sale-v1 a.btn,
+	main .line-sale-v3 a.btn {
 		font-size: 22px;
 	}
 }
 
 @media screen and (max-width:991px) {
-	main .line-sale-v1 .sale a.btn {
+	main .line-sale-v1 .sale a.btn,
+	main .line-sale-v3 .sale a.btn {
 		font-size: 20px;
 	}
 }
 
 @media (min-width:768px) and (max-width:991px) {
-	main .line-sale-v1 .online-course-name p b {
+	main .line-sale-v1 .online-course-name p b,
+	main .line-sale-v3 .online-course-name p b {
 	    font-size: 24px;
 	}
 	main .line-sale-v1 span {
 	    line-height: 64px;
 	}
+	main .line-sale-v3 span {
+	    line-height: 38px;
+	}
 	main .line-sale-v1 .deadline p {
 	    font-size: 24px;
 	    line-height: 0px;
+	}
+	main .line-sale-v3 .deadline p {
+	    font-size: 24px;
 	}
 }
 
 @media screen and (max-width:900px) {
 	main .line-sale-v1 .date,
-	main .line-sale-v1 .duration {
+	main .line-sale-v1 .duration,
+	main .line-sale-v3 .date,
+	main .line-sale-v3 .duration {
 	    margin-left: 0;
 	}
-	main .line-sale-v1 .sale p {
+	main .line-sale-v1 .sale p,
+	main .line-sale-v3 .sale p {
 		font-size: 30px;
 		line-height: 3.2;
 	}
@@ -479,20 +546,26 @@ main .line-sale-v1 .girl img {
 @media only screen and (min-width:768px) {
 	main .line-sale-v1 .location p,
 	main .line-sale-v1 .date p,
-	main .line-sale-v1 .duration p {
+	main .line-sale-v1 .duration p,
+	main .line-sale-v3 .location p,
+	main .line-sale-v3 .date p,
+	main .line-sale-v3 .duration p {
 		margin-bottom: 11px;
 	}
-	main .line-sale-v1 .sale p {
+	main .line-sale-v1 .sale p,
+	main .line-sale-v3 .sale p {
 	    font-size: 40px;
 	    line-height: 2;
 	}
 }
 
 @media only screen and (max-width:812px) {
-	main .line-sale-v1 .line-sale-col {
+	main .line-sale-v1 .line-sale-col,
+	main .line-sale-v3 .line-sale-col {
 	    max-width: none;
 	}
-	main .line-sale-v1 .sale p {
+	main .line-sale-v1 .sale p,
+	main .line-sale-v3 .sale p {
 		font-size: 28px;
 		line-height: 2.65;
 	}
@@ -503,19 +576,27 @@ main .line-sale-v1 .girl img {
         padding-top: 32px;
         line-height: 42px;
     }
-	main .line-sale-v1 .deadline .akcia {
+    main .line-sale-v3 .deadline p {
+        font-size: 24px;
+        line-height: 19px;
+    }
+	main .line-sale-v1 .deadline .akcia,
+	main .line-sale-v3 .deadline .akcia {
 	    font-size: 34px;
 	}
-	main .line-sale-v1 span {
+	main .line-sale-v1 span,
+	main .line-sale-v3 span {
 		line-height: 40px;
 	}
 }
 
 @media only screen and (max-width:575px) {
-	main .line-sale-v1 p:last-child {
+	main .line-sale-v1 p:last-child,
+	main .line-sale-v3 p:last-child {
 		margin-bottom: revert;
 	}
-	main .line-sale-v1 .deadline p {
+	main .line-sale-v1 .deadline p,
+	main .line-sale-v3 .deadline p {
 		padding-top: inherit;
 		line-height: inherit;
 	}
@@ -523,7 +604,12 @@ main .line-sale-v1 .girl img {
 	main .line-sale-v1 .date,
 	main .line-sale-v1 .duration,
 	main .line-sale-v1 .line-sale-col,
-	main .line-sale-v1 .sale {
+	main .line-sale-v1 .sale,
+	main .line-sale-v3 .location,
+	main .line-sale-v3 .date,
+	main .line-sale-v3 .duration,
+	main .line-sale-v3 .line-sale-col,
+	main .line-sale-v3 .sale {
 	    max-width: none;
 	}
 }

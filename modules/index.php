@@ -187,31 +187,46 @@ if (ONLINE_ONLY == 'Y'):
     }
     if ($acsia->darunok == "Y")
     {
-	$valut = $acsia->darunok_str . '<br>';
+	$darlang = 'darunok_' . $lang;
+	$valut	 = $acsia->$darlang . '<br>';
+
+	$ramp = '<p class="text-center text-sm-right text-md-center"><br />' . $valut . '</p>';
     }
     else
     {
 	$valut = '';
+
+	$ramp = '<p class="text-center text-sm-right text-md-center"></span>';
+    }
+    if ($acsia->action == 'Y')
+    {
+	$coastrow	 = '<del>' . $acsia->coast . '</del>&nbsp;<span>грн</span> <b>' . $acsia->ac_coast . '</b>&nbsp;<span>грн</span>';
+	$ramp		 = '<p class="text-center text-sm-right text-md-center"><span class="text-uppercase akcia">' . l('akcia') . '</span><br />' . $valut . 'до ' . $k->deadline . '</p>';
+    }
+    else
+    {
+	$coastrow = '<b>' . $acsia->coast . '</b>&nbsp;<span>грн</span>';
     }
 
     $randAction = '
-      <div class="col-12 col-sm-7 col-md-4 col-lg-4 col-xl-3 px-sm-0 px-md-0 px-lg-0 themed-grid-col col-01">
-        <div class="row">
-          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 online-course-name text-center text-sm-left">
-            <p>Онлайн-курс</p>
+	<div class="col-12 col-sm-7 col-md-4 col-lg-4 col-xl-3 px-sm-0 px-md-0 px-lg-0 themed-grid-col col-01">
+						<div class="row">
+							<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 online-course-name text-center text-sm-left">
+								<p>Онлайн-курс</p>
             <p><a href="' . WWW_BASE_PATH . 'curses/curse/' . $acsia->miso . '/' . $acsia->link . '"><b>' . strip_tags($acsia->$mlang) . '</b></a></p>
-          </div>
-        </div>
-			</div>
-			<div class="col-12 col-sm-5 col-md-3 col-lg-3 col-xl-2 px-sm-0 px-md-0 px-lg-0 themed-grid-col deadline">
-			    <p class="text-center text-sm-right text-md-center"><span class="text-uppercase akcia">' . l('akcia') . '</span><br />' . $valut . 'до ' . $acsia->deadline . '&nbsp;</p>
-			</div>
-			<div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-4 px-md-0 px-lg-0 themed-grid-col col-03">
-        <div class="sale text-center m-auto">
-          <p style="margin:0 auto;"><del>' . $acsia->coast . '</del>&nbsp;<span>грн</span> <b>' . $acsia->ac_coast . '</b>&nbsp;<span>грн</span></p>
-          <a href="#" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#akcia">' . $aza . '</a>
-        </div>
-			</div>';
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-sm-5 col-md-3 col-lg-3 col-xl-2 px-sm-0 px-md-0 px-lg-0 themed-grid-col deadline">
+						' . $ramp . '
+					</div>
+					<div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-4 px-md-0 px-lg-0 themed-grid-col col-03">
+						<div class="sale text-center m-auto">
+              <p style="margin:0 auto;">' . $coastrow . '</p>
+              <a href="#" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#akcia">' . $aza . '</a>
+						</div>
+					</div>
+';
 else:
     $acsia = $ra->GetRandAction();
 
@@ -238,13 +253,26 @@ else:
 	$start		 = date('d', $dateX);
 	if ($acsia->darunok == "Y")
 	{
-	    $valut = $acsia->darunok_str . '<br>';
+	    $darlang = 'darunok_' . $lang;
+	    $valut	 = $acsia->$darlang . '<br>';
+
+	    $ramp = '<p class="text-center text-sm-right text-md-center"><br />' . $valut . '</p>';
 	}
 	else
 	{
 	    $valut = '';
-	}
 
+	    $ramp = '<p class="text-center text-sm-right text-md-center"></span>';
+	}
+	if ($acsia->action == 'Y')
+	{
+	    $coastrow	 = '<del>' . $acsia->coast . '</del>&nbsp;<span>грн</span> <b>' . $acsia->ac_coast . '</b>&nbsp;<span>грн</span>';
+	    $ramp		 = '<p class="text-center text-sm-right text-md-center"><span class="text-uppercase akcia">' . l('akcia') . '</span><br />' . $valut . 'до ' . $k->deadline . '</p>';
+	}
+	else
+	{
+	    $coastrow = '<b>' . $acsia->coast . '</b>&nbsp;<span>грн</span>';
+	}
 	$randAction = '
 			<div class="col-12 col-sm-7 col-md-4 col-lg-4 col-xl-4 px-md-0 px-lg-0 themed-grid-col line-sale-col">
 			    <div class="row">
@@ -336,6 +364,28 @@ foreach ($film->getList() as $vi)
 
 $tpl = 'indexn';
 include TEMPLATE_DIR . $tpl . ".html";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
