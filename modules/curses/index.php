@@ -85,7 +85,7 @@ foreach ($curses->getALL($curMistoLink) as $curs)
     }
     else
     {
-	$valut = ' + <img src="' . WWW_IMAGE_PATH . 'gift.png" style="width: 15px;" class="align-content-center">';
+	$valut = ' + <img src="' . WWW_IMAGE_PATH . 'gift.png" style="width: 17px;" class="align-content-center">';
     }
 
     if ($curs->action == 'Y' or $curs->darunok == 'Y')
@@ -207,5 +207,14 @@ foreach ($packs->getPackets($link) as $k)
 }
 $packets .= '</section>';
 $cc	 = $bc[$lang] . $vidminnik[$lang][$link];
-
+$detect	 = new mobiledetect();
+if ($detect->isMobile())
+{
+    $vibellink = '<a href="viber://add?number=38' . preg_replace('/[^0-9]/', '', $currentMisto->viber) . ' ">' . $currentMisto->viber . '</a>';
+    //$vibellink .= ' <a href="viber://chat?number=38' . preg_replace('/[^0-9]/', '', $currentMisto->viber) . '">чат</a>';
+}
+else
+{
+    $vibellink = '<a href="viber://add?number=+38' . preg_replace('/[^0-9]/', '', $currentMisto->viber) . '">' . $currentMisto->viber . '</a>';
+}
 include TEMPLATE_DIR . $tpl . ".html";

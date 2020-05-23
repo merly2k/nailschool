@@ -79,7 +79,7 @@ class curses extends \db {
 	//Газ горит оранжевым
 	$q = "INSERT INTO `cursses` ("
 		. "`link`, `name_ua`, `name_ru`,"
-		. " `image`, `anonce_ru`, `anonce_ua`,"
+		. " `image`, `anonce_ru`, `anonce_ua`,`hidedeckr`"
 		. " `decription_ru`, `fulltext_ru`, `decription_ua`, `fulltext_ua`,"
 		. " `display`,"
 		. " `display_r`,"
@@ -95,7 +95,7 @@ class curses extends \db {
 		. " `vipusk`)"
 		. " VALUES ("
 		. "'$link', '$name_ua', '$name_ru', "
-		. " '$image', '$anonce_ru', '$anonce_ua',"
+		. " '$image', '$anonce_ru', '$anonce_ua','$hidedeckr'"
 		. " '$decription_ru', '$fulltext_ru', '$decription_ua', '$fulltext_ua',"
 		. " '$display',"
 		. " '$display_r',"

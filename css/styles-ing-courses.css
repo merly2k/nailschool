@@ -213,6 +213,13 @@ header .description-text {
 	display: none;
 }
 
+@media screen & (max-width:480px) {
+	.course__item .newprice,
+	.course__item .oldprice {
+		line-height: 1.08;
+	}
+}
+
 /* contacts */
 
 .contacts {
@@ -255,6 +262,10 @@ header .description-text {
 }
 
 /* MODAL WINDOWS */
+
+.modal {
+	z-index: 999999;
+}
 
 .modal-title h4 {
     color: #8f2f85;
@@ -332,30 +343,4 @@ footer a.btn {
 	footer a.btn {
 		font-size: 16px;
 	}
-}
-
-/* BG */
-
-.courses_ .course__item:first-child {
-	background-image: url(/images/wave-dark.png);
-}
-
-.courses_ .course__item:first-child:hover {
-	background-image: url(/images/wave-light.png);
-}
-
-.courses_ .course__item:nth-child(2) {
-	background-image: url(/images/wave-dark.png);
-}
-
-.courses_ .course__item:nth-child(5) {
-	background-image: url(/images/wave-dark.png);
-}
-
-.courses_ .course__item:nth-child(5):hover {
-	background-image: url(/images/wave-light.png);
-}
-
-.courses_ .course__item:nth-child(12) {
-	background-image: url(/images/wave-light.png);
 }

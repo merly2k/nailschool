@@ -296,4 +296,14 @@ foreach ($files1 as $f)
 };
 $fago	 = new bildfaqo();
 $qa	 = $fago->getFAQO($town, $lang);
+$detect	 = new mobiledetect();
+if ($detect->isMobile())
+{
+    $vibellink = '<a href="viber://add?number=38' . preg_replace('/[^0-9]/', '', $currentMisto->viber) . ' ">' . $currentMisto->viber . '</a>';
+    //$vibellink .= ' <a href="viber://chat?number=38' . preg_replace('/[^0-9]/', '', $currentMisto->viber) . '">чат</a>';
+}
+else
+{
+    $vibellink = '<a href="viber://add?number=+38' . preg_replace('/[^0-9]/', '', $currentMisto->viber) . '">' . $currentMisto->viber . '</a>';
+}
 include TEMPLATE_DIR . DS . $tpl . ".html";

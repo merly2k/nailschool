@@ -35,6 +35,7 @@ if (!$_POST):
 	'image'		 => '',
 	'anonce_ru'	 => '',
 	'anonce_ua'	 => '',
+	'hidedeckr'	 => 'N',
 	'decription_ru'	 => '',
 	'decription_ua'	 => '',
 	'fulltext_ru'	 => '',
@@ -80,6 +81,14 @@ else:
     else
     {
 	$_POST['tur'] = 'N';
+    }
+    if (@$_POST['hidedeckr'] == 'on')
+    {
+	$_POST['hidedeckr'] = 'Y';
+    }
+    else
+    {
+	$_POST['hidedeckr'] = 'N';
     }
     if (@$_POST['display'] == 'on')
     {
@@ -138,6 +147,8 @@ else:
 endif;
 
 include TEMPLATE_DIR . DS . $tpl . ".html";
+
+
 
 
 

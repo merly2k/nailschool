@@ -236,7 +236,8 @@
 						    <div class="col-7 col-sm-7 col-md-7 col-lg-7 col-xl-7 d-flex align-items-center">
 							<p>
 							    <?php if(firstChar($currentMisto->viber)!='#'){?>
-							    <a href="viber://chat?number=+<?=$currentMisto->viber?>"><?=$currentMisto->viber;?></a>
+							    <?=$vibellink;?>
+							    <!--a href="viber://chat?number=+<?=$currentMisto->viber?>"><?=$currentMisto->viber;?></a-->
 							    <?php }?>
 							</p>
 						    </div>
@@ -382,6 +383,8 @@
 
     </body>
 </html>
+
+
 
 
 

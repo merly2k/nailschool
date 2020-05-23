@@ -190,18 +190,18 @@ if (ONLINE_ONLY == 'Y'):
 	$darlang = 'darunok_' . $lang;
 	$valut	 = $acsia->$darlang . '<br>';
 
-	$ramp = '<p class="text-center text-sm-right text-md-center"><br />' . $valut . '</p>';
+	$ramp = '<p class="text-center text-sm-right text-md-center"><span class="text-uppercase akcia">' . l('akcia') . '</span><br />' . $valut . '<span class="deadline-date">до ' . $acsia->deadline . '</span></p>';
     }
     else
     {
 	$valut = '';
 
-	$ramp = '<p class="text-center text-sm-right text-md-center"></span>';
+	$ramp = '<p class="text-center text-sm-right text-md-center"></p>';
     }
     if ($acsia->action == 'Y')
     {
 	$coastrow	 = '<del>' . $acsia->coast . '</del>&nbsp;<span>грн</span> <b>' . $acsia->ac_coast . '</b>&nbsp;<span>грн</span>';
-	$ramp		 = '<p class="text-center text-sm-right text-md-center"><span class="text-uppercase akcia">' . l('akcia') . '</span><br />' . $valut . 'до ' . $k->deadline . '</p>';
+	$ramp		 = '<p class="text-center text-sm-right text-md-center"><span class="text-uppercase akcia">' . l('akcia') . '</span><br />' . $valut . 'до ' . @$k->deadline . '</p>';
     }
     else
     {
@@ -254,7 +254,8 @@ else:
 	if ($acsia->darunok == "Y")
 	{
 	    $darlang = 'darunok_' . $lang;
-	    $valut	 = $acsia->$darlang . '<br>';
+
+	    $valut = $acsia->$darlang . '<br>';
 
 	    $ramp = '<p class="text-center text-sm-right text-md-center"><br />' . $valut . '</p>';
 	}
@@ -262,7 +263,7 @@ else:
 	{
 	    $valut = '';
 
-	    $ramp = '<p class="text-center text-sm-right text-md-center"></span>';
+	    $ramp = '<p class="text-center text-sm-right text-md-center"></p>';
 	}
 	if ($acsia->action == 'Y')
 	{
@@ -303,7 +304,7 @@ else:
 			</div>
 			<div class="col-12 col-sm-5 col-md-3 col-lg-3 col-xl-2 px-md-0 px-lg-0 themed-grid-col deadline">
 			    '
-		. '<p class="text-center text-sm-right text-md-center"><span class="text-uppercase akcia">' . l('akcia') . '</span><br />' . $valut . 'до ' . $acsia->deadline . '&nbsp;</p>'
+		. '<p class="text-center text-sm-right text-md-center"><span class="text-uppercase akcia">' . l('akcia') . '</span><br />' . $valut . 'до ' . $acsia->deadline . '</p>'
 		. '</div>
 			<div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-6 px-md-0 px-lg-0 themed-grid-col">
 			    <div class="sale text-center">
@@ -364,6 +365,13 @@ foreach ($film->getList() as $vi)
 
 $tpl = 'indexn';
 include TEMPLATE_DIR . $tpl . ".html";
+
+
+
+
+
+
+
 
 
 

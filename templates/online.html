@@ -201,7 +201,7 @@
 			<a href="<?=WWW_BASE_PATH?>"><img src="<?=WWW_IMG_PATH?>logo.svg" alt="" class="logo m-auto mx-sm-0 d-block"></a>
 			<h1 class="gradient-text text-center text-xl-left"><?=$k->$mlang?></h1>
 			<p class="description-text text-center text-xl-left"><?=l('u1');?></b></p>
-			<div class="row checklist-course">
+			<div class="row checklist-course checklist-course-1">
 			    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 themed-grid-col pl-3 pr-0">
 				<table>
 				    <tbody>
@@ -223,7 +223,7 @@
 				</table>
 			    </div>
 			</div>
-			<div class="row checklist-course">
+			<div class="row checklist-course checklist-course-2">
 			    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 themed-grid-col pl-3 pr-0">
 				<table>
 				    <tbody>
@@ -253,328 +253,355 @@
 	    </div>
 	</header>
 	<main>
+	    <?php if($k->action=="Y" and $k->darunok=="Y"){?>
 	    <section class="line-sale-v3 first-line" id="sale">
-		<div class="container container-padding">
-		    <div class="row row-eq-height px-0 px-lg-3">
-			<div class="col-12 col-sm-7 col-md-4 col-lg-3 col-xl-3 px-md-0 px-lg-0 themed-grid-col">
-			    <div class="row">
-				<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 online-course-name text-center text-sm-left">
-				    <p>Онлайн-курс</p>
-				    <p><b><?=strip_tags($k->$mlang)?></b></p>
-				</div>
-			    </div>
-			</div>
-			<div class="col-12 col-sm-5 col-md-3 col-lg-5 col-xl-5 px-md-0 px-lg-0 themed-grid-col deadline">
-			    <?php if($k->action=="Y"){?>
-			    <p class="text-center text-sm-right text-md-center"><span class="text-uppercase akcia"><?=l('akcia')?></span><br /><?=$valut?>до <?=$k->deadline;?></p>
-			    <?php }elseif($k->darunok=="Y"){?>
-			    <p class="text-center text-sm-right text-md-center"><br /><?=$valut?></p>
-			    <?php }else{ ?>
-			    <p class="text-center text-sm-right text-md-center"></span>
-				<?php }?>
-			</div>
-			<div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-4 px-md-0 px-lg-0 themed-grid-col">
-			    <div class="sale text-center m-auto">
-				<?php if($k->action=="Y"){?>
-				<p style="margin:0 auto;"><del><?=$k->coast?></del>&nbsp;<span>грн</span> <b><?=$k->ac_coast?></b>&nbsp;<span>грн</span></p>
-				<?php } else{ ?>
-				<p style="margin:0 auto;"><b><?=$k->coast?></b>&nbsp;<span>грн</span></p>
-				<?php }?>
-				<a href="#" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#akcia"><?=l('akcia_btn')?></a>
-			    </div>
-			</div>
-			<div class="col-12 col-sm-0 col-md-0 col-lg-0 col-xl-0 themed-grid-col girl d-none d-xl-flex">
-			    <img src="<?=$mashas?>" alt="">
-			</div>
-		    </div>
-		</div>
-	    </section>
-	    <section class="about">
-		<div class="row row-eq-height no-gutters">
-		    <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 themed-grid-col nails">
-			<img src="<?=WWW_IMG_PATH.'curses/'.$k->image?>" alt="">
-		    </div>
-		    <div class="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7 themed-grid-col pt-4 pb-2 px-4 px-lg-4 px-xl-5 five-steps">
-			<div class="px-lg-0 px-xl-5 pt-3">
-			    <?=$decription;?>
-			    <a  class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#calme"><?=l('calback_btn')?></a>
-			    <p class="text-center text-primary"><small><?=l('curse_calback')?></small></p>
-			</div>
-
-		    </div>
-	    </section>
-	    <section class="course-program">
-		<div class="row row-eq-height no-gutters">
-		    <!-- Mobile video -->
-		    <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-3 themed-grid-col m-auto px-2 px-lg-3 px-xl-5 d-block d-sm-none video">
-			<?php if(firstChar($video)!='#'){?><iframe width="315" height="630" style="margin-top: 20px;" src="<?=$video?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><?php }?>
-		    </div>
-		    <!-- // -->
-		    <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-9 themed-grid-col py-5 px-4 px-lg-4 px-xl-5">
-			<div class="pt-4 pb-0">
-			    <?=$fulltext?>
-			    <!--a href="#" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#detail"><?=l('detail_btn')?></a-->
-			    <a href="<?=$gdoc?>" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" target="_blanc" ><?=l('detail_btn')?></a>
-			    <!--p class="text-center text-primary"><small><?=l('detail')?></small></p-->
-			</div>
-		    </div>
-		    <!-- Desktop & tablet video -->
-		    <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-3 themed-grid-col m-auto px-2 px-lg-3 px-xl-5 d-none d-sm-block video">
-			<?php if(firstChar($video)!='#'){?><iframe width="315" height="630" style="margin-top: 20px;" src="<?=$video?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><?php }?>
-		    </div>
-		    <!-- // -->
-	    </section>
-
-	    <section class="line-sale-v3" id="sale">
-		<div class="container container-padding">
-		    <div class="row row-eq-height px-0 px-lg-3">
-			<div class="col-12 col-sm-7 col-md-4 col-lg-3 col-xl-3 px-md-0 px-lg-0 themed-grid-col">
-			    <div class="row">
-				<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 online-course-name text-center text-sm-left">
-				    <p>Онлайн-курс</p>
-				    <p><b><?=strip_tags($k->$mlang)?></b></p>
-				</div>
-			    </div>
-			</div>
-			<div class="col-12 col-sm-5 col-md-3 col-lg-5 col-xl-5 px-md-0 px-lg-0 themed-grid-col deadline">
-
-			    <?php if($k->action=="Y"){?>
-			    <p class="text-center text-sm-right text-md-center"><span class="text-uppercase akcia"><?=l('akcia')?></span><br /><?=$valut?>до <?=$k->deadline;?></p>
-			    <?php }elseif($k->darunok=="Y"){?>
-			    <p class="text-center text-sm-right text-md-center"><br /><?=$valut?></p>
-			    <?php }else{ ?>
-			    <p class="text-center text-sm-right text-md-center"></span>
-				<?php }?>
-			</div>
-			<div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-4 px-md-0 px-lg-0 themed-grid-col">
-			    <div class="sale text-center m-auto">
-				<?php if($k->action=="Y"){?>
-				<p style="margin:0 auto;"><del><?=$k->coast?></del>&nbsp;<span>грн</span> <b><?=$k->ac_coast?></b>&nbsp;<span>грн</span></p>
-				<?php } else{ ?>
-				<p style="margin:0 auto;"><b><?=$k->coast?></b>&nbsp;<span>грн</span></p>
-				<?php }?>
-				<a href="#" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#akcia"><?=l('akcia_btn')?></a>
-			    </div>
-			</div>
-		    </div>
-		</div>
-	    </section>
-	    <section class="advantages py-5">
-		<h2 class="text-center text-uppercase font-weight-bold mb-5"><span class="gradient-text"><?=l('m4');?></span></h2>
-		<div class="container">
-		    <div class="row">
-			<div class="col-12 col-sm-6 col-lg-4 col-xl-4 text-center pb-5 why">
-			    <img src="<?=WWW_IMG_PATH?>sova.svg" alt="">
-			    <?=SBl(9,$lang);?>
-			</div>
-			<div class="col-12 col-sm-6 col-lg-4 col-xl-4 text-center pb-5 why">
-			    <img src="<?=WWW_IMG_PATH?>nagrada.svg" alt="">
-			    <?=SBl(10,$lang);?>
-			</div>
-			<div class="col-12 col-sm-6 col-lg-4 col-xl-4 text-center pb-5 why">
-			    <img src="<?=WWW_IMG_PATH?>people-icon.svg" alt="">
-			    <?=SBl(11,$lang);?>
-			</div>
-			<div class="col-12 col-sm-6 col-lg-4 col-xl-4 text-center pb-4 why">
-			    <img class="why-block__img" src="<?=WWW_IMG_PATH?>all.svg" alt="">
-			    <?=SBl(12,$lang);?>
-			</div>
-			<div class="col-12 col-sm-6 col-lg-4 col-xl-4 text-center pb-4 why">
-			    <img class="why-block__img" src="<?=WWW_IMG_PATH?>gramota.svg" alt="">
-			    <?=SBl(13,$lang);?>
-			</div>
-			<div class="col-12 col-sm-6 col-lg-4 col-xl-4 text-center pb-4 why">
-			    <img class="why-block__img" src="<?=WWW_IMG_PATH?>krema2.svg" alt="">
-			    <?=SBl(14,$lang);?>
-			</div>
-		    </div>
-		</div>
-	    </section>
-	    <section class="about-school py-0 py-sm-5">
-		<h2 class="text-center text-uppercase font-weight-bold mt-lg-3 mb-lg-4 my-sm-2"><?=l('aboutschool_head');?></h2>
-		<div class="container pb-4">
-		    <div class="row no-gutters pt-5">
-			<div class="d-none d-sm-block col-sm-6 col-lg-7 col-xl-7 text-center">
-			    <img src="<?=WWW_IMAGE_PATH?>school/<?=$school->osn_img?>" alt="">
-			</div>
-			<div class="col-12 col-sm-6 col-lg-5 col-xl-5 py-5 px-5 nongradient description">
-			    <?=$sch_osnashennia;?>
-			</div>
-		    </div>
-		    <div class="row no-gutters">
-			<div class="col-12 col-sm-6 col-lg-5 col-xl-5 py-5 px-5 gradient-block description">
-			    <?=$sch_ergonomik;?>
-			</div>
-			<div class="d-none d-sm-block col-sm-6 col-lg-7 col-xl-7 text-center">
-			    <img src="<?=WWW_IMAGE_PATH?>school/<?=$school->ergonomik_img?>" alt="">
-			</div>
-		    </div>
-		    <div class="row no-gutters">
-			<div class="d-none d-sm-block col-sm-6 col-lg-7 col-xl-7 text-center">
-			    <img src="<?=WWW_IMAGE_PATH?>school/<?=$school->location_img?>" alt="">
-			</div>
-			<div class="col-12 col-sm-6 col-lg-5 col-xl-5 py-5 px-5 nongradient description">
-			    <?=$sch_location?>
-
-			</div>
-		    </div>
-		    <div class="row no-gutters">
-			<div class="col-12 col-sm-6 col-lg-5 col-xl-5 py-5 px-5 gradient-block description">
-			    <?=$sch_shop?>
-			</div>
-			<div class="d-none d-sm-block col-sm-6 col-lg-7 col-xl-7 text-center">
-			    <img src="<?=WWW_IMAGE_PATH?>school/<?=$school->shop_img?>" alt="Магазин">
-			</div>
-		    </div>
-		    <div class="row no-gutters">
-			<div class="d-none d-sm-block col-sm-6 col-lg-7 col-xl-7 text-center">
-			    <img src="<?=WWW_IMAGE_PATH?>school/<?=$school->konsult_img?>" alt="Консультації">
-			</div>
-			<div class="col-12 col-sm-6 col-lg-5 col-xl-5 py-5 px-5 nongradient description">
-			    <?=$sch_konsult?>
-
-			</div>
-		    </div>
-
-		    <?php if(empty($k->tur) or $k->tur=='Y'){?>
-		    <div class="row no-gutters">
-			<div class="col-12 col-sm-6 col-lg-5 col-xl-5 py-5 px-5 gradient-block description">
-			    <?=$sch_tur?>
-			    <a href="<?=$school->tur_link?>" class="btn btn-warning btn-lg text-uppercase font-weight-bold" target="new">Подивитися</a>
-			</div>
-			<div class="d-none d-sm-block col-sm-6 col-lg-7 col-xl-7 text-center" style="background-color: #d3d3d3; justify-content: center !important;display: flex !important;align-items: center !important;-webkit-box-align: center !important;">
-			    <img  src="<?=WWW_IMG_PATH?>360.svg" style="width: 200px;height: 125px;object-fit: cover;vertical-align: baseline;" alt="">
-			</div>
-		    </div>
-		    <?php }?>
-
-		</div>
-	    </section>
-	    <?php if(empty($k->zrazki) or $k->zrazki=='Y'){?>
-	    <section class="py-4 slideshow">
-		<h2 class="text-center text-uppercase font-weight-bold my-0 my-lg-4 my-sm-2"><span class="gradient-text"><?=l('galery1')?></span></h2>
-		<!-- new slideshow by ing -->
-		<div class="gallery">
-		    <?=$galery;?>
-		</div>
-		<!-- / -->
-	    </section>
-	    <?php }?>
-	    <section class="pb-5 px-3 faq">
-		<h2 class="text-center text-uppercase font-weight-bold my-lg-4 mb-lg-5 my-sm-2"><span class="gradient-text"><?=L('m11');?></span></h2>
-		<div class="container">
-		    <div class="row">
-			<div id="accordion">
-			    <?=$qa;?>
-			</div>
-		    </div>
-		</div>
-	    </section>
-	    <section class="py-5 earnings">
-		<h2 class="text-center text-uppercase font-weight-bold my-lg-4 my-sm-2 my-xl-1"><span class="gradient-text"><?=l('m12');?></span></h2>
-		<h3 class="text-center"><?=randomOnline(l('nextonline'),$lang,$k->link);?></h3>
-		<div class="text-center my-4">
-		    <a href="#" class="btn btn-warning btn-lg text-uppercase font-weight-bold" data-toggle="modal" data-target="#consult"><?=l('m14')?></a>
-		</div>
-	    </section>
-
-	    <?php if(empty($k->vipusk) or $k->vipusk=='Y'){?>
-	    <section class="py-5 slideshow">
-		<h2 class="text-center text-uppercase font-weight-bold my-lg-4 my-sm-2"><span class="gradient-text"><?=l('r8');?></span></h2>
-		<!-- new slideshow by ing -->
-		<div class="graduates">
-		    <?=$vipusk?>
-		</div>
-		<!-- / -->
-	    </section>
-	    <?php }?>
-	    <!--section class="py-5 comments">
-
-	    <div class="container">
-		<div id="addComment">
-		    <div class="row">
-			<div class="col-12 col-sm-12 col-lg-12 col-xl-12">
-			    <?=$page_coment;?>
-			    <form id="addCommentForm" method="post">
-				<div class="form-row">
-				    <div class="form-group col-md-4">
-					<label class="control-label requiredField" for="name">Имя<span>*</span></label>
-					<input class="form-control" id="name" name="name" type="text"/>
+		<?php }elseif($k->action=="Y"){?>
+		<section class="line-sale-v1 first-line" id="sale">
+		    <?php }elseif($k->darunok=="Y"){?>
+		    <section class="line-sale-v3 first-line" id="sale">
+			<?php }else{ ?>
+			<section class="line-sale-v1 first-line" id="sale">
+			    <?php }?>
+			    <div class="container container-padding">
+				<div class="row row-eq-height px-0 px-lg-3">
+				    <div class="col-12 col-sm-7 col-md-4 col-lg-3 col-xl-3 px-md-0 px-lg-0 themed-grid-col">
+					<div class="row">
+					    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 online-course-name text-center text-sm-left">
+						<p>Онлайн-курс</p>
+						<p><b><?=strip_tags($k->$mlang)?></b></p>
+					    </div>
+					</div>
 				    </div>
-				    <div class="form-group col-md-4">
-					<label class="control-label requiredField" for="email">Email<span>*</span></label>
-					<input class="form-control" id="email" name="email" type="text" aria-describedby="emailHelpBlock"/>
-					<small id="emailHelpBlock" class="form-text text-muted">не отображается в коментариях</small>
+				    <div class="col-12 col-sm-5 col-md-3 col-lg-5 col-xl-5 px-md-0 px-lg-0 themed-grid-col deadline">
+					<?php if($k->action=="Y" and $k->darunok=="Y"){?>
+					<p class="text-center text-sm-right text-md-center"><span class="text-uppercase akcia"><?=l('akcia')?></span><br /><?=$valut?><span class="deadline-date">до <?=$k->deadline;?></span></p>
+					<?php }elseif($k->action=="Y"){?>
+					<p class="text-center text-sm-right text-md-center"><span class="text-uppercase akcia"><?=l('akcia')?></span><br /><?=$valut?>до <?=$k->deadline;?></p>
+					<?php }elseif($k->darunok=="Y"){?>
+					<p class="text-center text-sm-right text-md-center"><span class="text-uppercase akcia"><?=l('akcia')?></span><br /><?=$valut?><span class="deadline-date">до <?=$k->deadline;?></span></p>
+					<?php }else{ ?>
+					<p class="text-center text-sm-right text-md-center"></p>
+					<?php }?>
+				    </div>
+				    <div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-4 px-md-0 px-lg-0 themed-grid-col">
+					<div class="sale text-center m-auto">
+					    <?php if($k->action=="Y"){?>
+					    <p style="margin:0 auto;"><del><?=$k->coast?></del>&nbsp;<span>грн</span> <b><?=$k->ac_coast?></b>&nbsp;<span>грн</span></p>
+					    <?php } else{ ?>
+					    <p style="margin:0 auto;"><b><?=$k->coast?></b>&nbsp;<span>грн</span></p>
+					    <?php }?>
+					    <a href="#" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#akcia"><?=l('akcia_btn')?></a>
+					</div>
+				    </div>
+				    <div class="col-12 col-sm-0 col-md-0 col-lg-0 col-xl-0 themed-grid-col girl d-none d-xl-flex">
+					<img src="<?=$mashas?>" alt="">
 				    </div>
 				</div>
-				<div class="form-group">
-				    <textarea class="form-control" id="body" name="body" rows="6"></textarea>
-				</div>
-				<input type="hidden" name="page" value="<?=$link?>">
-				<div class="d-block text-right">
-				    <button class="btn btn-warning btn-md px-3 btn-lg outline" name="submit" type="submit"><?=l('add_comment');?></button>
-				</div>
-			    </form>
-			</div>
-		    </div>
-		</div>
-	    </div>
-	</section-->
-	    <section class="contacts">
-		<div class="container-fluid">
-		    <div class="row row-eq-height">
-			<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 themed-grid-col py-4 d-flex align-items-center address">
-			    <div class="m-auto row no-gutters">
-				<div class="col-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">
-				    <img src="<?=WWW_IMG_PATH?>/location-pink.svg" alt="">
-				</div>
-				<div class="col-7 col-sm-7 col-md-7 col-lg-7 col-xl-7 d-grid align-items-center">
-				    <p><b><?=$currentMisto->$mlang?></b></p>
-				</div>
 			    </div>
-			</div>
-			<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 themed-grid-col py-4 d-flex align-items-center viber">
-			    <div class="m-auto row no-gutters">
-				<div class="col-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">
-				    <img src="<?=WWW_IMG_PATH?>/viber.svg" alt="">
+			</section>
+			<?php if($k->hidedeckr!='Y'){?>
+			<section class="about">
+			    <div class="row row-eq-height no-gutters">
+				<div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 themed-grid-col nails">
+				    <img src="<?=WWW_IMG_PATH.'curses/'.$k->image?>" alt="">
 				</div>
-				<div class="col-7 col-sm-7 col-md-7 col-lg-7 col-xl-7 d-flex align-items-center">
-				    <p><a href="viber://chat?number=+38<?=$currentMisto->viber?>"><?=$faddr->viber?></a></p>
+				<div class="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7 themed-grid-col pt-4 pb-2 px-4 px-lg-4 px-xl-5 five-steps">
+				    <div class="px-lg-0 px-xl-5 pt-3">
+					<?=$decription;?>
+					<a  class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#calme"><?=l('calback_btn')?></a>
+					<p class="text-center text-primary"><small><?=l('curse_calback')?></small></p>
+				    </div>
+
 				</div>
-			    </div>
-			</div>
+			</section>
+			<?php }?>
+			<section class="course-program">
+			    <div class="row row-eq-height no-gutters">
+				<!-- Mobile video -->
+				<div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-3 themed-grid-col m-auto px-2 px-lg-3 px-xl-5 d-block d-sm-none video">
+				    <?php if(firstChar($video)!='#'){?><iframe class="d-block m-auto" width="315" height="630" src="<?=$video?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><?php }?>
+				</div>
+				<!-- // -->
+				<div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-9 themed-grid-col py-5 px-4 px-lg-4 px-xl-5">
+				    <div class="pt-4 pb-0">
+					<?=$fulltext?>
+					<!--a href="#" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#detail"><?=l('detail_btn')?></a-->
+					<a href="<?=$gdoc?>" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" target="_blanc" ><?=l('detail_btn')?></a>
+					<!--p class="text-center text-primary"><small><?=l('detail')?></small></p-->
+				    </div>
+				</div>
+				<!-- Desktop & tablet video -->
+				<div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-3 themed-grid-col text-center pt-md-0 pt-lg-5 px-2 px-lg-3 px-xl-5 d-none d-sm-block video">
+				    <div class="pt-md-0 pt-lg-3 mt-md-0 mt-lg-3">
+					<?php if(firstChar($video)!='#'){?><iframe width="315" height="630" src="<?=$video?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><?php }?>
+				    </div>
+				</div>
+				<!-- // -->
+			</section>
 
-			<div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 themed-grid-col py-4 d-flex align-items-centertext-center social">
-			    <div class="m-auto"><?=$tfut;?></div>
-			</div>
+			<?php if($k->action=="Y" and $k->darunok=="Y"){?>
+			<section class="line-sale-v3" id="sale">
+			    <?php }elseif($k->action=="Y"){?>
+			    <section class="line-sale-v1" id="sale">
+				<?php }elseif($k->darunok=="Y"){?>
+				<section class="line-sale-v3" id="sale">
+				    <?php }else{ ?>
+				    <section class="line-sale-v1" id="sale">
+					<?php }?>
+					<div class="container container-padding">
+					    <div class="row row-eq-height px-0 px-lg-3">
+						<div class="col-12 col-sm-7 col-md-4 col-lg-3 col-xl-3 px-md-0 px-lg-0 themed-grid-col">
+						    <div class="row">
+							<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 online-course-name text-center text-sm-left">
+							    <p>Онлайн-курс</p>
+							    <p><b><?=strip_tags($k->$mlang)?></b></p>
+							</div>
+						    </div>
+						</div>
+						<div class="col-12 col-sm-5 col-md-3 col-lg-5 col-xl-5 px-md-0 px-lg-0 themed-grid-col deadline">
+						    <?php if($k->action=="Y" and $k->darunok=="Y"){?>
+						    <p class="text-center text-sm-right text-md-center"><span class="text-uppercase akcia"><?=l('akcia')?></span><br /><?=$valut?><span class="deadline-date">до <?=$k->deadline;?></span></p>
+						    <?php }elseif($k->action=="Y"){?>
+						    <p class="text-center text-sm-right text-md-center"><span class="text-uppercase akcia"><?=l('akcia')?></span><br /><?=$valut?>до <?=$k->deadline;?></p>
+						    <?php }elseif($k->darunok=="Y"){?>
+						    <p class="text-center text-sm-right text-md-center"><span class="text-uppercase akcia"><?=l('akcia')?></span><br /><?=$valut?><span class="deadline-date">до <?=$k->deadline;?></span></p>
+						    <?php }else{ ?>
+						    <p class="text-center text-sm-right text-md-center"></p>
+						    <?php }?>
+						</div>
+						<div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-4 px-md-0 px-lg-0 themed-grid-col">
+						    <div class="sale text-center m-auto">
+							<?php if($k->action=="Y"){?>
+							<p style="margin:0 auto;"><del><?=$k->coast?></del>&nbsp;<span>грн</span> <b><?=$k->ac_coast?></b>&nbsp;<span>грн</span></p>
+							<?php } else{ ?>
+							<p style="margin:0 auto;"><b><?=$k->coast?></b>&nbsp;<span>грн</span></p>
+							<?php }?>
+							<a href="#" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#akcia"><?=l('akcia_btn')?></a>
+						    </div>
+						</div>
+					    </div>
+					</div>
+				    </section>
+				    <section class="advantages py-5">
+					<h2 class="text-center text-uppercase font-weight-bold mb-5"><span class="gradient-text"><?=l('m4');?></span></h2>
+					<div class="container">
+					    <div class="row">
+						<div class="col-12 col-sm-6 col-lg-4 col-xl-4 text-center pb-5 why">
+						    <img src="<?=WWW_IMG_PATH?>sova.svg" alt="">
+						    <?=SBl(9,$lang);?>
+						</div>
+						<div class="col-12 col-sm-6 col-lg-4 col-xl-4 text-center pb-5 why">
+						    <img src="<?=WWW_IMG_PATH?>nagrada.svg" alt="">
+						    <?=SBl(10,$lang);?>
+						</div>
+						<div class="col-12 col-sm-6 col-lg-4 col-xl-4 text-center pb-5 why">
+						    <img src="<?=WWW_IMG_PATH?>people-icon.svg" alt="">
+						    <?=SBl(11,$lang);?>
+						</div>
+						<div class="col-12 col-sm-6 col-lg-4 col-xl-4 text-center pb-4 why">
+						    <img class="why-block__img" src="<?=WWW_IMG_PATH?>all.svg" alt="">
+						    <?=SBl(12,$lang);?>
+						</div>
+						<div class="col-12 col-sm-6 col-lg-4 col-xl-4 text-center pb-4 why">
+						    <img class="why-block__img" src="<?=WWW_IMG_PATH?>gramota.svg" alt="">
+						    <?=SBl(13,$lang);?>
+						</div>
+						<div class="col-12 col-sm-6 col-lg-4 col-xl-4 text-center pb-4 why">
+						    <img class="why-block__img" src="<?=WWW_IMG_PATH?>krema2.svg" alt="">
+						    <?=SBl(14,$lang);?>
+						</div>
+					    </div>
+					</div>
+				    </section>
+				    <section class="about-school py-0 py-sm-5">
+					<h2 class="text-center text-uppercase font-weight-bold mt-lg-3 mb-lg-4 my-sm-2"><?=l('aboutschool_head');?></h2>
+					<div class="container pb-4">
+					    <div class="row no-gutters pt-5">
+						<div class="d-none d-sm-block col-sm-6 col-lg-7 col-xl-7 text-center">
+						    <img src="<?=WWW_IMAGE_PATH?>school/<?=$school->osn_img?>" alt="">
+						</div>
+						<div class="col-12 col-sm-6 col-lg-5 col-xl-5 py-5 px-5 nongradient description">
+						    <?=$sch_osnashennia;?>
+						</div>
+					    </div>
+					    <div class="row no-gutters">
+						<div class="col-12 col-sm-6 col-lg-5 col-xl-5 py-5 px-5 gradient-block description">
+						    <?=$sch_ergonomik;?>
+						</div>
+						<div class="d-none d-sm-block col-sm-6 col-lg-7 col-xl-7 text-center">
+						    <img src="<?=WWW_IMAGE_PATH?>school/<?=$school->ergonomik_img?>" alt="">
+						</div>
+					    </div>
+					    <div class="row no-gutters">
+						<div class="d-none d-sm-block col-sm-6 col-lg-7 col-xl-7 text-center">
+						    <img src="<?=WWW_IMAGE_PATH?>school/<?=$school->location_img?>" alt="">
+						</div>
+						<div class="col-12 col-sm-6 col-lg-5 col-xl-5 py-5 px-5 nongradient description">
+						    <?=$sch_location?>
 
-		    </div>
-		    <div class="row" style="height:60px "></div>
-		</div>
-	    </section>
-	</main>
+						</div>
+					    </div>
+					    <div class="row no-gutters">
+						<div class="col-12 col-sm-6 col-lg-5 col-xl-5 py-5 px-5 gradient-block description">
+						    <?=$sch_shop?>
+						</div>
+						<div class="d-none d-sm-block col-sm-6 col-lg-7 col-xl-7 text-center">
+						    <img src="<?=WWW_IMAGE_PATH?>school/<?=$school->shop_img?>" alt="Магазин">
+						</div>
+					    </div>
+					    <div class="row no-gutters">
+						<div class="d-none d-sm-block col-sm-6 col-lg-7 col-xl-7 text-center">
+						    <img src="<?=WWW_IMAGE_PATH?>school/<?=$school->konsult_img?>" alt="Консультації">
+						</div>
+						<div class="col-12 col-sm-6 col-lg-5 col-xl-5 py-5 px-5 nongradient description">
+						    <?=$sch_konsult?>
 
-	<footer class="footer-page">
+						</div>
+					    </div>
+
+					    <?php if(empty($k->tur) or $k->tur=='Y'){?>
+					    <div class="row no-gutters">
+						<div class="col-12 col-sm-6 col-lg-5 col-xl-5 py-5 px-5 gradient-block description">
+						    <?=$sch_tur?>
+						    <a href="<?=$school->tur_link?>" class="btn btn-warning btn-lg text-uppercase font-weight-bold" target="new">Подивитися</a>
+						</div>
+						<div class="d-none d-sm-block col-sm-6 col-lg-7 col-xl-7 text-center" style="background-color: #d3d3d3; justify-content: center !important;display: flex !important;align-items: center !important;-webkit-box-align: center !important;">
+						    <img  src="<?=WWW_IMG_PATH?>360.svg" style="width: 200px;height: 125px;object-fit: cover;vertical-align: baseline;" alt="">
+						</div>
+					    </div>
+					    <?php }?>
+
+					</div>
+				    </section>
+				    <?php if(empty($k->zrazki) or $k->zrazki=='Y'){?>
+				    <section class="py-4 slideshow">
+					<h2 class="text-center text-uppercase font-weight-bold my-0 my-lg-4 my-sm-2"><span class="gradient-text"><?=l('galery1')?></span></h2>
+					<!-- new slideshow by ing -->
+					<div class="gallery">
+					    <?=$galery;?>
+					</div>
+					<!-- / -->
+				    </section>
+				    <?php }?>
+				    <section class="pb-5 px-3 faq">
+					<h2 class="text-center text-uppercase font-weight-bold my-lg-4 mb-lg-5 my-sm-2"><span class="gradient-text"><?=L('m11');?></span></h2>
+					<div class="container">
+					    <div class="row">
+						<div id="accordion">
+						    <?=$qa;?>
+						</div>
+					    </div>
+					</div>
+				    </section>
+				    <section class="py-5 earnings">
+					<h2 class="text-center text-uppercase font-weight-bold my-lg-4 my-sm-2 my-xl-1"><span class="gradient-text"><?=l('m12');?></span></h2>
+					<h3 class="text-center"><?=randomOnline(l('nextonline'),$lang,$k->link);?></h3>
+					<div class="text-center my-4">
+					    <a href="#" class="btn btn-warning btn-lg text-uppercase font-weight-bold" data-toggle="modal" data-target="#consult"><?=l('m14')?></a>
+					</div>
+				    </section>
+
+				    <?php if(empty($k->vipusk) or $k->vipusk=='Y'){?>
+				    <section class="py-5 slideshow">
+					<h2 class="text-center text-uppercase font-weight-bold my-lg-4 my-sm-2"><span class="gradient-text"><?=l('r8');?></span></h2>
+					<!-- new slideshow by ing -->
+					<div class="graduates">
+					    <?=$vipusk?>
+					</div>
+					<!-- / -->
+				    </section>
+				    <?php }?>
+				    <!--section class="py-5 comments">
+
+				    <div class="container">
+					<div id="addComment">
+					    <div class="row">
+						<div class="col-12 col-sm-12 col-lg-12 col-xl-12">
+						    <?=$page_coment;?>
+						    <form id="addCommentForm" method="post">
+							<div class="form-row">
+							    <div class="form-group col-md-4">
+								<label class="control-label requiredField" for="name">Имя<span>*</span></label>
+								<input class="form-control" id="name" name="name" type="text"/>
+							    </div>
+							    <div class="form-group col-md-4">
+								<label class="control-label requiredField" for="email">Email<span>*</span></label>
+								<input class="form-control" id="email" name="email" type="text" aria-describedby="emailHelpBlock"/>
+								<small id="emailHelpBlock" class="form-text text-muted">не отображается в коментариях</small>
+							    </div>
+							</div>
+							<div class="form-group">
+							    <textarea class="form-control" id="body" name="body" rows="6"></textarea>
+							</div>
+							<input type="hidden" name="page" value="<?=$link?>">
+							<div class="d-block text-right">
+							    <button class="btn btn-warning btn-md px-3 btn-lg outline" name="submit" type="submit"><?=l('add_comment');?></button>
+							</div>
+						    </form>
+						</div>
+					    </div>
+					</div>
+				    </div>
+				</section-->
+				    <section class="contacts">
+					<div class="container-fluid">
+					    <div class="row row-eq-height">
+						<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 themed-grid-col py-4 d-flex align-items-center address">
+						    <div class="m-auto row no-gutters">
+							<div class="col-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">
+							    <img src="<?=WWW_IMG_PATH?>/location-pink.svg" alt="">
+							</div>
+							<div class="col-7 col-sm-7 col-md-7 col-lg-7 col-xl-7 d-grid align-items-center">
+							    <p><b><?=$currentMisto->$mlang?></b></p>
+							</div>
+						    </div>
+						</div>
+						<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 themed-grid-col py-4 d-flex align-items-center viber">
+						    <div class="m-auto row no-gutters">
+							<div class="col-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">
+							    <img src="<?=WWW_IMG_PATH?>/viber.svg" alt="">
+							</div>
+							<div class="col-7 col-sm-7 col-md-7 col-lg-7 col-xl-7 d-flex align-items-center">
+							    <p> <?php if(firstChar($currentMisto->viber)!='#'){?>
+								<?=$vibellink;?>
+								<!--a href="viber://chat?number=+<?=$currentMisto->viber?>"><?=$currentMisto->viber;?></a-->
+								<?php }?></p>
+
+							</div>
+						    </div>
+						</div>
+
+						<div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 themed-grid-col py-4 d-flex align-items-centertext-center social">
+						    <div class="m-auto"><?=$tfut;?></div>
+						</div>
+
+					    </div>
+					    <div class="row" style="height:60px "></div>
+					</div>
+				    </section>
+				    </main>
+
+				    <footer class="footer-page">
 
 
-	    <div class="text-center position-relative return-to-sale">
-		<a href="#sale" class="btn btn-warning btn-lg text-uppercase font-weight-bold"><?php if($k->action=="Y"){ echo l('r9');} else{echo l('r9a');}?>!</a>
-	    </div>
-	</footer>
+					<div class="text-center position-relative return-to-sale">
+					    <a href="#sale" class="btn btn-warning btn-lg text-uppercase font-weight-bold"><?php if($k->action=="Y"){ echo l('r9');} else{echo l('r9a');}?>!</a>
+					</div>
+				    </footer>
 
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-	<script type="text/javascript" src="<?=WWW_JS_PATH?>comment.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-	<script src="<?=WWW_JS_PATH?>bootstrap.js"></script>
-	<script type="text/javascript" src="<?=WWW_JS_PATH?>jquery.fancybox.js"></script>
-	<script type="text/javascript" src="<?=WWW_JS_PATH?>scripts.js"></script>
-	<script type="text/javascript" src="<?=WWW_JS_PATH?>navigation.js"></script>
-	<script type="text/javascript" src="<?=WWW_JS_PATH?>skip-link-focus-fix.js"></script>
-	<script type="text/javascript" src="<?=WWW_JS_PATH?>position.js"></script>
-	<script type="text/javascript" src="<?=WWW_JS_PATH?>site.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+				    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+				    <script type="text/javascript" src="<?=WWW_JS_PATH?>comment.js"></script>
+				    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+				    <script src="<?=WWW_JS_PATH?>bootstrap.js"></script>
+				    <script type="text/javascript" src="<?=WWW_JS_PATH?>jquery.fancybox.js"></script>
+				    <script type="text/javascript" src="<?=WWW_JS_PATH?>scripts.js"></script>
+				    <script type="text/javascript" src="<?=WWW_JS_PATH?>navigation.js"></script>
+				    <script type="text/javascript" src="<?=WWW_JS_PATH?>skip-link-focus-fix.js"></script>
+				    <script type="text/javascript" src="<?=WWW_JS_PATH?>position.js"></script>
+				    <script type="text/javascript" src="<?=WWW_JS_PATH?>site.js"></script>
+				    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
 
-	<script>
+				    <script>
             $(document).ready(function () {
                 $('.gallery, .graduates').slick({
                     slidesToShow: 3,
@@ -602,361 +629,363 @@
                         }]
                 });
             });
-	</script>
-	<script type="text/javascript">
-            jQuery(function () {
+				    </script>
+				    <script type="text/javascript">
+                                        jQuery(function () {
 
-                jQuery.fn.getTitle = function () { // Copy the title of every IMG tag and add it to its parent A so that fancybox can show titles
-                    var arr = jQuery("a[data-fancybox]");
-                    jQuery.each(arr, function () {
-                        var title = jQuery(this).children("img").attr("title");
-                        var caption = jQuery(this).next("figcaption").html();
-                        if (caption && title) {
-                            jQuery(this).attr("title", title + " " + caption)
-                        } else if (title) {
-                            jQuery(this).attr("title", title);
-                        } else if (caption) {
-                            jQuery(this).attr("title", caption);
-                        }
-                    });
-                }
+                                            jQuery.fn.getTitle = function () { // Copy the title of every IMG tag and add it to its parent A so that fancybox can show titles
+                                                var arr = jQuery("a[data-fancybox]");
+                                                jQuery.each(arr, function () {
+                                                    var title = jQuery(this).children("img").attr("title");
+                                                    var caption = jQuery(this).next("figcaption").html();
+                                                    if (caption && title) {
+                                                        jQuery(this).attr("title", title + " " + caption)
+                                                    } else if (title) {
+                                                        jQuery(this).attr("title", title);
+                                                    } else if (caption) {
+                                                        jQuery(this).attr("title", caption);
+                                                    }
+                                                });
+                                            }
 
-                // Supported file extensions
-                var thumbnails = jQuery("a:has(img)").not(".nolightbox").not('.envira-gallery-link').not('.ngg-simplelightbox').filter(function () {
-                    return /\.(jpe?g|png|gif|mp4|webp|bmp|pdf)(\?[^/]*)*$/i.test(jQuery(this).attr('href'))
-                });
+                                            // Supported file extensions
+                                            var thumbnails = jQuery("a:has(img)").not(".nolightbox").not('.envira-gallery-link').not('.ngg-simplelightbox').filter(function () {
+                                                return /\.(jpe?g|png|gif|mp4|webp|bmp|pdf)(\?[^/]*)*$/i.test(jQuery(this).attr('href'))
+                                            });
 
-                // Add data-type iframe for links that are not images or videos.
-                var iframeLinks = jQuery('.fancyboxforwp').filter(function () {
-                    return !/\.(jpe?g|png|gif|mp4|webp|bmp|pdf)(\?[^/]*)*$/i.test(jQuery(this).attr('href'))
-                }).filter(function () {
-                    return !/vimeo|youtube/i.test(jQuery(this).attr('href'))
-                });
-                iframeLinks.attr({"data-type": "iframe"}).getTitle();
+                                            // Add data-type iframe for links that are not images or videos.
+                                            var iframeLinks = jQuery('.fancyboxforwp').filter(function () {
+                                                return !/\.(jpe?g|png|gif|mp4|webp|bmp|pdf)(\?[^/]*)*$/i.test(jQuery(this).attr('href'))
+                                            }).filter(function () {
+                                                return !/vimeo|youtube/i.test(jQuery(this).attr('href'))
+                                            });
+                                            iframeLinks.attr({"data-type": "iframe"}).getTitle();
 
-                // Gallery All
-                thumbnails.addClass("fancyboxforwp").attr("data-fancybox", "gallery").getTitle();
-                iframeLinks.attr({"data-fancybox": "gallery"}).getTitle();
+                                            // Gallery All
+                                            thumbnails.addClass("fancyboxforwp").attr("data-fancybox", "gallery").getTitle();
+                                            iframeLinks.attr({"data-fancybox": "gallery"}).getTitle();
 
-                // Gallery type NONE
-
-
-
-                // Call fancybox and apply it on any link with a rel atribute that starts with "fancybox", with the options set on the admin panel
-                jQuery("a.fancyboxforwp").fancyboxforwp({
-                    loop: false,
-                    smallBtn: false,
-                    zoomOpacity: "auto",
-                    animationEffect: "fade",
-                    animationDuration: 500,
-                    transitionEffect: "fade",
-                    transitionDuration: "300",
-                    overlayShow: true,
-                    overlayOpacity: "0.3",
-                    titleShow: true,
-                    titlePosition: "inside",
-                    keyboard: true,
-                    showCloseButton: false,
-                    arrows: true,
-                    clickContent: false,
-                    clickSlide: "close",
-                    wheel: false,
-                    toolbar: true,
-                    preventCaptionOverlap: true,
-                    onInit: function () { }, onDeactivate: function () { }, beforeClose: function () { }, afterShow: function () { }, afterClose: function () { }, caption: function (instance, item) {
-                        var testing = jQuery(this).context.title;
-                        var caption = jQuery(this).data('caption') || '';
-                        if (item.type === 'image' && testing.length) {
-                            caption = (caption.length ? caption + '<br />' : '') + '<p class="caption-title">' + testing + '</p>';
-                        }
-                        return caption;
-                    },
-                    afterLoad: function (instance, current) {
-                        current.$content.append('<div class=\"fancybox-custom-caption\" style=\" position: absolute;left:0;right:0;color:#000;padding-top:10px;bottom:-50px;margin:0 auto;text-align:center; \">' + current.opts.caption + '</div>');
-                    },
-                });
-
-            })
-	</script>
-	<?php $email=isset($_SESSIOB['email'])?$_SESSIOB['email']:''?>
-	<?php $name=isset($_SESSIOB['name'])?$_SESSIOB['name']:''?>
-	<script>
-            $(document).ready(function () {
-                var currentId;
-                var curlang = '<?=$_SESSION["lang"];?>';
-                console.log(curlang);
-                $('.ls').removeClass('active');
-                $('[lang="' + curlang.toLowerCase() + '"]').addClass('active');
-                var language = (curlang || navigator.language || navigator.browserLanguage).split('-')[0];
-                if (!currentId) {
-                    $('#lanSel').attr('lang', language);
-                }
-                ;
-
-                $('.ls').on('click',
-                        function (e)
-                        {
-                            e.preventDefault();
-                            console.log(this);
-                            var langage = ($(this).attr('lang')); // do stuff
-                            //$('#lanSel').attr('lang', langage);
-                            $.ajax({
-                                url: "<?php echo WWW_BASE_PATH;?>lang",
-                                cache: false,
-                                type: "POST",
-                                data: 'curlang=' + langage,
-
-                            }).done(function (data) {
-                                console.log(data);
-
-                                window.location.reload();
-
-                            });
-                        });
-            });
-
-
-            $(".replay").on('click', function (e) {
-                //console.log(this.id)
-                $("#replayForm").remove();
-                var parent = this.id;
-                var mail = '<?=$email?>';
-                if (mail.length == 0) {
-                    mt = 'text';
-                } else {
-                    mt = 'hidden';
-                }
-                var name = '<?=$name?>';
-                if (name.length == 0) {
-                    nt = 'text';
-                } else {
-                    nt = 'hidden';
-                }
-
-                var forma = '<form id="replayForm" method="post" class="replayForm form-horizontal"><div>'
-                        + '<div class="form-group ">'
-                        + '<label class="control-label col-sm-2 requiredField" for="name">Имя<span class="asteriskField">*</span>'
-                        + '</label>'
-                        + '<div class="col-sm-10">'
-                        + name + '<input class="form-control" id="name" name="name" type="' + nt + '" value="' + name + '" />'
-                        + '</div></div>'
-                        + '<div class="form-group "><label class="control-label col-sm-2 requiredField" for="email">Email<span class="asteriskField">*</span>'
-                        + '</label>'
-                        + '<div class="col-sm-10">' + mail + '<input class="form-control" id="email" name="email" type="' + mt + '" value="' + mail + '" /></div>'
-                        + '<span class="help-block" id="hint_email">не отображается в коментариях</span>'
-                        + '</div>'
-                        + '<div class="form-group "><label class="control-label col-sm-2 requiredField" for="body">Коментарий<span class="asteriskField">*</span>'
-                        + '</label>'
-                        + '<div class="col-sm-10"><textarea class="form-control" cols="40" id="body" name="body" rows="10"></textarea></div>'
-                        + ' <input type="hidden" name="page" value="<?=$link?>">'
-                        + "<input type='hidden' name='parent_id' value='" + parent + "'>"
-                        + '</div> <div class="form-group"><div class="col-sm-10 col-sm-offset-2"><button class="btn btn-primary btn-sm outline" name="submit" type="submit">Коментировать</button></div></div>'
-                        + '</form>';
-                $(forma).insertAfter('#' + parent).slideDown();
-            });
-	</script>
+                                            // Gallery type NONE
 
 
 
-	<!-- The Modal actia -->
-	<div class="modal" id="akcia">
-	    <div class="modal-dialog modal-dialog-centered modal-xl">
-		<div class="modal-content">
-		    <!-- Modal Header -->
-		    <div class="modal-header">
-			<div class="title modal-title">
-			    <h4 class="text-uppercase font-weight-bold"><?=$aza?></h4>
-			</div>
-			<button type="button" class="pum-close popmake-close close" data-dismiss="modal">&times;</button>
-		    </div>
-		    <!-- Modal body -->
-		    <div class="modal-body">
-			<p class="ps text-uppercase font-weight-bold"><?=strip_tags($k->$mlang)?></p>
-			<form id='akciaForm' action="<?=WWW_BASE_PATH?>parcipate" method="post">
-			    <div class="form-price">
-				<div class="form-content fd-rever">
-				    <div class="form-group left">
-					<label><?=l('name')?>*</label>
-					<span class="wpcf7-form-control-wrap text-923">
-					    <input type="text" name="name" value="" size="40" class="form-control wpcf7-form-control wpcf7-text wpcf7-validates-as-required" required="required" >
-					</span>
-				    </div>
-				    <div class="form-group">
-					<label><?=l('lastname');?>*</label>
-					<span class="wpcf7-form-control-wrap text-923">
-					    <input type="text" name="lname" value="" size="40" class="form-control wpcf7-form-control wpcf7-text wpcf7-validates-as-required" required="required">
-					</span>
-				    </div>
-				    <div class="form-group">
-					<label>Е-mail</label>
-					<span class="wpcf7-form-control-wrap email-362"><input type="email" name="email" value="" size="40" class="form-control wpcf7-form-control wpcf7-text wpcf7-email">
-					</span>
-				    </div>
-				    <div class="form-group">
-					<label>Телефон*</label>
-					<span class="wpcf7-form-control-wrap tel-744">
-					    <input type="tel" name="phone" value="" size="40" class="form-control wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required" required="required" placeholder="+38 ( _ _ _ ) _ _ _ _ _ _ _">
-					</span>
-				    </div>
-				    <div class="form-check">
-					<span class="checkbox-style">
-					    <input type="hidden" name="id" value="<?=$k->id?>" />
-					    <input type="hidden" name="leadtype" value="curs" />
-					    <input type="hidden" name="returnto" value="<?=$this->param[0]?>/<?=$this->param[1]?>" />
-					    <span class="style-chec">
-						<input type="checkbox" id="checkbox-id" class="form-check-input">
-					    </span>
-					    <label class="form-check-label lad-chec" for="checkbox-id"><b><?=l('uvedomit')?></b></label>
-					</span>
-				    </div>
-				    <div class="right-block">
-					<div class="block-right-form">
-					    <p>
-						<!--div class="left_"><span><?=l('sdtext')?></span> <b> <?=date('d.m.Y',strtotime($k->start))?></b></div-->
-						<?php if($k->action=="Y"){?>
-					    <div class="right"><span><?=l('vartist')?></span> <b><?=$k->ac_coast?> грн</b></div>
-					    <?php }else{?>
-					    <div class="right"><?=l('ccoact')?> <b><?=$k->coast?> грн</b></div>
-					    <?php }?>
-					    </p>
-					</div>
-					<p><span class="block-right-span">*<?=l('uvag1')?></span></p>
-				    </div>
-				</div>
-				<input type="submit" value="<?=l('btnzapis')?>*" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold m-auto w-auto px-4 wpcf7-form-control wpcf7-submit">
-				* <?=l("pdrd")?>
-				<span class="ajax-loader"></span>
-			    </div>
-			</form>
-		    </div>
-		</div>
-	    </div>
-	</div>
-	<!-- modal call me-->
-	<div class="modal" id="calme">
-	    <div class="modal-dialog modal-dialog-centered modal-xl">
-		<div class="modal-content">
+                                            // Call fancybox and apply it on any link with a rel atribute that starts with "fancybox", with the options set on the admin panel
+                                            jQuery("a.fancyboxforwp").fancyboxforwp({
+                                                loop: false,
+                                                smallBtn: false,
+                                                zoomOpacity: "auto",
+                                                animationEffect: "fade",
+                                                animationDuration: 500,
+                                                transitionEffect: "fade",
+                                                transitionDuration: "300",
+                                                overlayShow: true,
+                                                overlayOpacity: "0.3",
+                                                titleShow: true,
+                                                titlePosition: "inside",
+                                                keyboard: true,
+                                                showCloseButton: false,
+                                                arrows: true,
+                                                clickContent: false,
+                                                clickSlide: "close",
+                                                wheel: false,
+                                                toolbar: true,
+                                                preventCaptionOverlap: true,
+                                                onInit: function () { }, onDeactivate: function () { }, beforeClose: function () { }, afterShow: function () { }, afterClose: function () { }, caption: function (instance, item) {
+                                                    var testing = jQuery(this).context.title;
+                                                    var caption = jQuery(this).data('caption') || '';
+                                                    if (item.type === 'image' && testing.length) {
+                                                        caption = (caption.length ? caption + '<br />' : '') + '<p class="caption-title">' + testing + '</p>';
+                                                    }
+                                                    return caption;
+                                                },
+                                                afterLoad: function (instance, current) {
+                                                    current.$content.append('<div class=\"fancybox-custom-caption\" style=\" position: absolute;left:0;right:0;color:#000;padding-top:10px;bottom:-50px;margin:0 auto;text-align:center; \">' + current.opts.caption + '</div>');
+                                                },
+                                            });
 
-		    <!-- Modal Header -->
-		    <div class="modal-header">
-			<div class="title modal-title">
-			    <h4 class="text-uppercase font-weight-bold"><?=l('recall')?></h4>
-			</div>
-			<button type="button" class="pum-close popmake-close close" data-dismiss="modal">&times;</button>
-		    </div>
-		    <!-- Modal body -->
-		    <div class="modal-body">
-			<!--p class="ps text-uppercase font-weight-bold"><?=strip_tags($k->$mlang)?></p-->
-			<form id='akciaForm' action="<?=WWW_BASE_PATH?>parcipate" method="post">
-			    <input type="hidden" name="id" value="<?=$k->id?>" />
-			    <input type="hidden" name="leadtype" value="calback" />
-			    <input type="hidden" name="returnto" value="<?=$this->param[0]?>/<?=$this->param[1]?>" />
-			    <div class="form-price">
-				<div class="form-content fd-rever">
-				    <div class="left">
-					<div class="form-group">
-					    <label><?=l('name')?></label>
-					    <span class="wpcf7-form-control-wrap text-923">
-						<input type="text" name="name" value="" size="40" class="form-control wpcf7-form-control wpcf7-text wpcf7-validates-as-required" required="required" >
-					    </span>
-					</div>
-					<!--div class="form-group">
-					    <label><?=l('lastname');?>*</label>
-					    <span class="wpcf7-form-control-wrap text-923">
-						<input type="text" name="lname" value="" size="40" class="form-control wpcf7-form-control wpcf7-text wpcf7-validates-as-required" required="required">
-					    </span>
-					</div-->
-					<div class="form-group">
-					    <label>Телефон</label>
-					    <span class="wpcf7-form-control-wrap tel-744">
-						<input type="tel" name="phone" value="" size="40" class="form-control wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required" required="required" placeholder="+38 ( _ _ _ ) _ _ _ _ _ _ _">
-					    </span>
+                                        })
+				    </script>
+				    <?php $email=isset($_SESSIOB['email'])?$_SESSIOB['email']:''?>
+				    <?php $name=isset($_SESSIOB['name'])?$_SESSIOB['name']:''?>
+				    <script>
+                                        $(document).ready(function () {
+                                            var currentId;
+                                            var curlang = '<?=$_SESSION["lang"];?>';
+                                            console.log(curlang);
+                                            $('.ls').removeClass('active');
+                                            $('[lang="' + curlang.toLowerCase() + '"]').addClass('active');
+                                            var language = (curlang || navigator.language || navigator.browserLanguage).split('-')[0];
+                                            if (!currentId) {
+                                                $('#lanSel').attr('lang', language);
+                                            }
+                                            ;
+
+                                            $('.ls').on('click',
+                                                    function (e)
+                                                    {
+                                                        e.preventDefault();
+                                                        console.log(this);
+                                                        var langage = ($(this).attr('lang')); // do stuff
+                                                        //$('#lanSel').attr('lang', langage);
+                                                        $.ajax({
+                                                            url: "<?php echo WWW_BASE_PATH;?>lang",
+                                                            cache: false,
+                                                            type: "POST",
+                                                            data: 'curlang=' + langage,
+
+                                                        }).done(function (data) {
+                                                            console.log(data);
+
+                                                            window.location.reload();
+
+                                                        });
+                                                    });
+                                        });
+
+
+                                        $(".replay").on('click', function (e) {
+                                            //console.log(this.id)
+                                            $("#replayForm").remove();
+                                            var parent = this.id;
+                                            var mail = '<?=$email?>';
+                                            if (mail.length == 0) {
+                                                mt = 'text';
+                                            } else {
+                                                mt = 'hidden';
+                                            }
+                                            var name = '<?=$name?>';
+                                            if (name.length == 0) {
+                                                nt = 'text';
+                                            } else {
+                                                nt = 'hidden';
+                                            }
+
+                                            var forma = '<form id="replayForm" method="post" class="replayForm form-horizontal"><div>'
+                                                    + '<div class="form-group ">'
+                                                    + '<label class="control-label col-sm-2 requiredField" for="name">Имя<span class="asteriskField">*</span>'
+                                                    + '</label>'
+                                                    + '<div class="col-sm-10">'
+                                                    + name + '<input class="form-control" id="name" name="name" type="' + nt + '" value="' + name + '" />'
+                                                    + '</div></div>'
+                                                    + '<div class="form-group "><label class="control-label col-sm-2 requiredField" for="email">Email<span class="asteriskField">*</span>'
+                                                    + '</label>'
+                                                    + '<div class="col-sm-10">' + mail + '<input class="form-control" id="email" name="email" type="' + mt + '" value="' + mail + '" /></div>'
+                                                    + '<span class="help-block" id="hint_email">не отображается в коментариях</span>'
+                                                    + '</div>'
+                                                    + '<div class="form-group "><label class="control-label col-sm-2 requiredField" for="body">Коментарий<span class="asteriskField">*</span>'
+                                                    + '</label>'
+                                                    + '<div class="col-sm-10"><textarea class="form-control" cols="40" id="body" name="body" rows="10"></textarea></div>'
+                                                    + ' <input type="hidden" name="page" value="<?=$link?>">'
+                                                    + "<input type='hidden' name='parent_id' value='" + parent + "'>"
+                                                    + '</div> <div class="form-group"><div class="col-sm-10 col-sm-offset-2"><button class="btn btn-primary btn-sm outline" name="submit" type="submit">Коментировать</button></div></div>'
+                                                    + '</form>';
+                                            $(forma).insertAfter('#' + parent).slideDown();
+                                        });
+				    </script>
+
+
+
+				    <!-- The Modal actia -->
+				    <div class="modal" id="akcia">
+					<div class="modal-dialog modal-dialog-centered modal-xl">
+					    <div class="modal-content">
+						<!-- Modal Header -->
+						<div class="modal-header">
+						    <div class="title modal-title">
+							<h4 class="text-uppercase font-weight-bold"><?=$aza?></h4>
+						    </div>
+						    <button type="button" class="pum-close popmake-close close" data-dismiss="modal">&times;</button>
+						</div>
+						<!-- Modal body -->
+						<div class="modal-body">
+						    <p class="ps text-uppercase font-weight-bold"><?=strip_tags($k->$mlang)?></p>
+						    <form id='akciaForm' action="<?=WWW_BASE_PATH?>parcipate" method="post">
+							<div class="form-price">
+							    <div class="form-content fd-rever">
+								<div class="form-group left">
+								    <label><?=l('name')?>*</label>
+								    <span class="wpcf7-form-control-wrap text-923">
+									<input type="text" name="name" value="" size="40" class="form-control wpcf7-form-control wpcf7-text wpcf7-validates-as-required" required="required" >
+								    </span>
+								</div>
+								<div class="form-group">
+								    <label><?=l('lastname');?>*</label>
+								    <span class="wpcf7-form-control-wrap text-923">
+									<input type="text" name="lname" value="" size="40" class="form-control wpcf7-form-control wpcf7-text wpcf7-validates-as-required" required="required">
+								    </span>
+								</div>
+								<div class="form-group">
+								    <label>Е-mail</label>
+								    <span class="wpcf7-form-control-wrap email-362"><input type="email" name="email" value="" size="40" class="form-control wpcf7-form-control wpcf7-text wpcf7-email">
+								    </span>
+								</div>
+								<div class="form-group">
+								    <label>Телефон*</label>
+								    <span class="wpcf7-form-control-wrap tel-744">
+									<input type="tel" name="phone" value="" size="40" class="form-control wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required" required="required" placeholder="+38 ( _ _ _ ) _ _ _ _ _ _ _">
+								    </span>
+								</div>
+								<div class="form-check">
+								    <span class="checkbox-style">
+									<input type="hidden" name="id" value="<?=$k->id?>" />
+									<input type="hidden" name="leadtype" value="curs" />
+									<input type="hidden" name="returnto" value="<?=$this->param[0]?>/<?=$this->param[1]?>" />
+									<span class="style-chec">
+									    <input type="checkbox" id="checkbox-id" class="form-check-input">
+									</span>
+									<label class="form-check-label lad-chec" for="checkbox-id"><b><?=l('uvedomit')?></b></label>
+								    </span>
+								</div>
+								<div class="right-block">
+								    <div class="block-right-form">
+									<p>
+									    <!--div class="left_"><span><?=l('sdtext')?></span> <b> <?=date('d.m.Y',strtotime($k->start))?></b></div-->
+									    <?php if($k->action=="Y"){?>
+									<div class="right"><span><?=l('vartist')?></span> <b><?=$k->ac_coast?> грн</b></div>
+									<?php }else{?>
+									<div class="right"><?=l('ccoact')?> <b><?=$k->coast?> грн</b></div>
+									<?php }?>
+									</p>
+								    </div>
+								    <p><span class="block-right-span">*<?=l('uvag1')?></span></p>
+								</div>
+							    </div>
+							    <input type="submit" value="<?=l('btnzapis')?>*" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold m-auto w-auto px-4 wpcf7-form-control wpcf7-submit">
+							    * <?=l("pdrd")?>
+							    <span class="ajax-loader"></span>
+							</div>
+						    </form>
+						</div>
+					    </div>
 					</div>
 				    </div>
+				    <!-- modal call me-->
+				    <div class="modal" id="calme">
+					<div class="modal-dialog modal-dialog-centered modal-xl">
+					    <div class="modal-content">
 
-				</div>
-				<input type="submit" value="<?=l('calback_btn')?>*" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold m-auto w-auto px-4 wpcf7-form-control wpcf7-submit">
-				* <?=l("pdrd")?>
-				<span class="ajax-loader"></span>
-			    </div>
-			</form>
-		    </div>
+						<!-- Modal Header -->
+						<div class="modal-header">
+						    <div class="title modal-title">
+							<h4 class="text-uppercase font-weight-bold"><?=l('recall')?></h4>
+						    </div>
+						    <button type="button" class="pum-close popmake-close close" data-dismiss="modal">&times;</button>
+						</div>
+						<!-- Modal body -->
+						<div class="modal-body">
+						    <!--p class="ps text-uppercase font-weight-bold"><?=strip_tags($k->$mlang)?></p-->
+						    <form id='akciaForm' action="<?=WWW_BASE_PATH?>parcipate" method="post">
+							<input type="hidden" name="id" value="<?=$k->id?>" />
+							<input type="hidden" name="leadtype" value="calback" />
+							<input type="hidden" name="returnto" value="<?=$this->param[0]?>/<?=$this->param[1]?>" />
+							<div class="form-price">
+							    <div class="form-content fd-rever">
+								<div class="left">
+								    <div class="form-group">
+									<label><?=l('name')?></label>
+									<span class="wpcf7-form-control-wrap text-923">
+									    <input type="text" name="name" value="" size="40" class="form-control wpcf7-form-control wpcf7-text wpcf7-validates-as-required" required="required" >
+									</span>
+								    </div>
+								    <!--div class="form-group">
+									<label><?=l('lastname');?>*</label>
+									<span class="wpcf7-form-control-wrap text-923">
+									    <input type="text" name="lname" value="" size="40" class="form-control wpcf7-form-control wpcf7-text wpcf7-validates-as-required" required="required">
+									</span>
+								    </div-->
+								    <div class="form-group">
+									<label>Телефон</label>
+									<span class="wpcf7-form-control-wrap tel-744">
+									    <input type="tel" name="phone" value="" size="40" class="form-control wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required" required="required" placeholder="+38 ( _ _ _ ) _ _ _ _ _ _ _">
+									</span>
+								    </div>
+								</div>
+
+							    </div>
+							    <input type="submit" value="<?=l('calback_btn')?>*" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold m-auto w-auto px-4 wpcf7-form-control wpcf7-submit">
+							    * <?=l("pdrd")?>
+							    <span class="ajax-loader"></span>
+							</div>
+						    </form>
+						</div>
 
 
-		</div>
-	    </div>
-	</div>
-	<!--modal detail-->
-	<div class="modal modal-xl fade" id="detail">
-	    <div class="modal-dialog modal-lg modal-dialog-scrollable" style=' width:100%; height:100%;'>
-		<div class="modal-content">
-		    <!-- Modal Header -->
-		    <div class="modal-header">
-			<div class="title modal-title">
-			    <h4 class="text-uppercase font-weight-bold"><?=l('detail_btn')?></h4>
-			</div>
-			<button type="button" class="close" data-dismiss="modal">&times;</button>
-		    </div>
-		    <!-- Modal body -->
-		    <div class="modal-body" style=' width:100%; height:80vh ;'>
-			<iframe style=' width:100%; height:100%;' src="<?=$gdoc?>?embedded=true">
-			</iframe>
-		    </div>
-		</div>
-	    </div>
-	</div>
+					    </div>
+					</div>
+				    </div>
+				    <!--modal detail-->
+				    <div class="modal modal-xl fade" id="detail">
+					<div class="modal-dialog modal-lg modal-dialog-scrollable" style=' width:100%; height:100%;'>
+					    <div class="modal-content">
+						<!-- Modal Header -->
+						<div class="modal-header">
+						    <div class="title modal-title">
+							<h4 class="text-uppercase font-weight-bold"><?=l('detail_btn')?></h4>
+						    </div>
+						    <button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div>
+						<!-- Modal body -->
+						<div class="modal-body" style=' width:100%; height:80vh ;'>
+						    <iframe style=' width:100%; height:100%;' src="<?=$gdoc?>?embedded=true">
+						    </iframe>
+						</div>
+					    </div>
+					</div>
+				    </div>
 
-	<!--consult modal-->
-	<div class="modal modal-xl fade" id="consult">
-	    <div class="modal-dialog modal-dialog-centered" style=' width:100%; height:100%;'>
-		<div class="modal-content">
-		    <!-- Modal Header -->
-		    <div class="modal-header">
-			<div class="title modal-title">
-			    <h4 class="text-uppercase font-weight-bold"><?=l('recall')?></h4>
+				    <!--consult modal-->
+				    <div class="modal modal-xl fade" id="consult">
+					<div class="modal-dialog modal-dialog-centered" style=' width:100%; height:100%;'>
+					    <div class="modal-content">
+						<!-- Modal Header -->
+						<div class="modal-header">
+						    <div class="title modal-title">
+							<h4 class="text-uppercase font-weight-bold"><?=l('recall')?></h4>
 
-			</div>
-			<button type="button" class="close" data-dismiss="modal">&times;</button>
-		    </div>
-		    <!-- Modal body -->
-		    <div class="modal-body" style=' width:100%;'>
-			<form id='akciaForm' action="<?=WWW_BASE_PATH?>parcipate" method="post">
-			    <fieldset>
-				<!-- Text input-->
-				<div class="form-group">
-				    <label for="textinput"><?=l('name')?></label>
-				    <input id="name" name="name" type="text" required="required" class="form-control input-md">
-				</div>
+						    </div>
+						    <button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div>
+						<!-- Modal body -->
+						<div class="modal-body" style=' width:100%;'>
+						    <form id='akciaForm' action="<?=WWW_BASE_PATH?>parcipate" method="post">
+							<fieldset>
+							    <!-- Text input-->
+							    <div class="form-group">
+								<label for="textinput"><?=l('name')?></label>
+								<input id="name" name="name" type="text" required="required" class="form-control input-md">
+							    </div>
 
-				<!-- Text input-->
-				<!--div class="form-group">
-				    <label for="textinput"><?=l('lastname');?>*</label>
-				    <input id="textinput" name="lname" type="text" class="form-control">
-				</div-->
+							    <!-- Text input-->
+							    <!--div class="form-group">
+								<label for="textinput"><?=l('lastname');?>*</label>
+								<input id="textinput" name="lname" type="text" class="form-control">
+							    </div-->
 
-				<!-- Text input-->
-				<div class="form-group">
-				    <label for="textinput">Телефон</label>
-				    <input id="textinput" name="phone" type="text" class="form-control" placeholder="+38 ( _ _ _ ) _ _ _ _ _ _ _">
-				</div>
-				<input type="hidden" name="id" value="<?=$k->id?>" />
-				<input type="hidden" name="leadtype" value="consult" />
-				<input type="hidden" name="returnto" value="<?=$this->param[0]?>/<?=$this->param[1]?>" />
-				<!-- Button (Double) -->
-				<button id="button1id" name="button1id" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold m-auto w-auto px-4"><?=l('modal_consult')?>*</button>
-				* <?=l("pdrd")?>
-				</div>
+							    <!-- Text input-->
+							    <div class="form-group">
+								<label for="textinput">Телефон</label>
+								<input id="textinput" name="phone" type="text" class="form-control" placeholder="+38 ( _ _ _ ) _ _ _ _ _ _ _">
+							    </div>
+							    <input type="hidden" name="id" value="<?=$k->id?>" />
+							    <input type="hidden" name="leadtype" value="consult" />
+							    <input type="hidden" name="returnto" value="<?=$this->param[0]?>/<?=$this->param[1]?>" />
+							    <!-- Button (Double) -->
+							    <button id="button1id" name="button1id" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold m-auto w-auto px-4"><?=l('modal_consult')?>*</button>
+							    * <?=l("pdrd")?>
+							    </div>
 
-			    </fieldset>
-			</form>
-		    </div>
-		</div>
-	    </div>
-	</div>
-	<!-- Go to www.addthis.com/dashboard to customize your tools -->
-	<!-- <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e402414887521ee"></script> -->
-    </body>
-</html>
+							</fieldset>
+						    </form>
+						</div>
+					    </div>
+					</div>
+				    </div>
+				    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+				    <!-- <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e402414887521ee"></script> -->
+				    </body>
+				    </html>
+
+
 
 
 

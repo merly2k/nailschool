@@ -32,6 +32,12 @@ if (PRODUCT == "dev")
 }
 else
 {
+    error_reporting(99999);
+    define("DB_HOST", "localhost");   //Database host.
+    define('DB_USER', 'nailscho_site');
+    define('DB_PASSWORD', 'rf,fzibvfhe');
+    define('DB_NAME', 'nailscho_site');
+
 
 }
 

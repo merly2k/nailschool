@@ -264,9 +264,9 @@ header .checklist-course img {
 
 header .girl {
     height: 100%;
-    background-size: 550px;
+    background-size: contain;
     background-repeat: no-repeat;
-    background-position: 25px 100%;
+    background-position: 100% 100%;
 }
 
 @media (min-width:1200px) and (max-width:1690px) {
@@ -280,7 +280,7 @@ header .girl {
         font-size: 52px;
     }
     header h1 .size-62 {
-    	font-size: 52px;
+        font-size: 52px;
     }
 }
 
@@ -294,7 +294,7 @@ header .girl {
     }
     header h1 .size-54,
     header h1 .size-51 {
-    	font-size: 46px;
+        font-size: 46px;
     }
     header .description-text {
         font-size: 28px;
@@ -326,14 +326,14 @@ header .girl {
         font-size: 40px;
     }
     header h1 .size-62 {
-    	font-size: 42px;
+        font-size: 42px;
     }
     header h1 .size-57 {
-    	font-size: 40px;
+        font-size: 40px;
     }
     header h1 .size-54,
     header h1 .size-51 {
-    	font-size: 44px;
+        font-size: 44px;
     }
     header .description-text {
         font-size: 20px;
@@ -486,11 +486,17 @@ main .line-sale-v3 .duration div {
     background-image: url(/images/long.png);
     background-size: 100%;
 }
-main .line-sale-v2 .location img,
+/**main .line-sale-v2 .location img,
 main .line-sale-v3 .location img {
-    width: 100%;
+    width: 25px;
+    height: 34px;
+    padding-top: 4px;
+}*/
+main .line-sale-v2 .location img, main .line-sale-v3 .location img {
+    width: 55%;
+    height: 80%;
+    padding-top: 4px;
 }
-
 main .line-sale-v2 .deadline,
 main .line-sale-v3 .deadline {
     display: grid;
@@ -561,6 +567,7 @@ main .line-sale-v3 .sale a.btn {
 
 main .line-sale-v2 .girl img,
 main .line-sale-v3 .girl img {
+    max-height: 858px;
     max-width: 705px;
     bottom: -16px;
     right: -155px;
@@ -665,6 +672,12 @@ main .about-list li::before {
     main .five-steps {
         max-width: 56%;
         flex: 56%;
+    }
+}
+
+@media only screen and (max-width:575px) {
+    main .nails img {
+    height: 485px;
     }
 }
 
@@ -862,7 +875,7 @@ main .about-school .description p {
 /* faq */
 
 .faq a {
-	color: #e7437c;
+    color: #e7437c;
 }
 
 .faq .container {
@@ -1187,6 +1200,7 @@ footer .return-to-sale {
         margin-bottom: 49px;
     }
 }
+
 
 
 

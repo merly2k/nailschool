@@ -642,7 +642,7 @@
     justify-content: space-between;
     max-width: 380px;
     width: 100%;
-    background-image: url(/images/wave.png);
+    background-image: url(/images/wave-dark.png);
     background-position: bottom left;
     -webkit-background-size: contain;
     background-size: contain;
@@ -656,6 +656,10 @@
     cursor: pointer;
     min-height: 270px;
 
+}
+
+.courses_ .course__item:hover {
+    background-image: url(/images/wave-light.png);
 }
 
 .course__item:hover .course__price__price {
@@ -3644,7 +3648,7 @@ form button {
     .course__price .course__price__price {
         max-width: 100px !important;
         padding: 5px !important;
-        font-size: 15px !important;
+        font-size: 18px !important;
     }
 
     .course__price .course__price__day {

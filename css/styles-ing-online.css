@@ -263,9 +263,9 @@ header .checklist-course img {
 
 header .girl {
     height: 100%;
-    background-size: 550px;
+    background-size: contain;
     background-repeat: no-repeat;
-    background-position: 25px 100%;
+    background-position: 100% 100%;
 }
 
 @media (min-width:1200px) and (max-width:1690px) {
@@ -548,6 +548,7 @@ main .line-sale-v3 .sale a.btn {
 
 main .line-sale-v1 .girl img,
 main .line-sale-v3 .girl img {
+    max-height: 858px;
     max-width: 705px;
     bottom: -16px;
     right: -155px;
@@ -760,6 +761,12 @@ main .about-list li::before {
     font-size: 30px;
     font-weight: 700;
     color: #e7437c;
+}
+
+@media only screen and (max-width:575px) {
+	main .nails img {
+    height: 485px;
+	}
 }
 
 /* Course program */
