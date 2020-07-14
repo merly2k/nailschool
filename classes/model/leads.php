@@ -16,7 +16,8 @@ namespace model;
 class leads extends \db {
 
     function GetAll() {
-	$q = "Select * from `leads` order by `sdate`,`lastedit` DESC";
+	//$q = "Select * from `leads` order by `sdate`,`lastedit` DESC";
+	$q = "Select * from `leads` ORDER BY status";
 	return $this->get_result($q);
     }
 

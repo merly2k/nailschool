@@ -21,9 +21,15 @@ class log2file {
 
     function __construct() {
 	$file = 'log.txt';
-	if (isfile(APP_LOG . $file))
+	if (file_exists(APP_LOG . $file))
 	{
 
+	}
+	else
+	{
+	    $filename	 = APP_LOG . 'log.txt';
+	    $handle		 = fopen($filename, 'w') or die('cannot open the file');
+	    fclose($handle);
 	}
     }
 
@@ -55,6 +61,7 @@ class log2file {
 
 }
 ?>
+
 
 
 

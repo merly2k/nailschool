@@ -55,9 +55,12 @@ else:
     unset($_POST['files']);
     unset($_POST['mypath']);
     //print_r($_POST);
-    echo $ss->update($_POST);
+    $ss->update($_POST);
+    setcookie("saved", 'saved', time() + 13);  /* срок действия 1 час */
     header("Location:" . WWW_ADMIN_PATH . 'school/' . $town);
 endif;
+
+
 
 
 

@@ -51,7 +51,7 @@ if (isset($town)):
 	$out .= "<tr>"
 		. "<td>$cl->porjadok</td>"
 		. "<td>$cl->name_ua </td>"
-		. "<td><a onclick='copyToClipboard($(this))' class='btn' data-link='" . WWW_BASE_PATH . 'curses/curse/' . $town . '/' . "$cl->link'><i class='fa fa-link'> </i></a></td>"
+		. "<td><a onclick='copyToClipboard($(this))' class='btn' data-link='" . WWW_BASE_PATH . 'curses/' . $town . '/' . "$cl->link'><i class='fa fa-link'> </i></a></td>"
 		. "<td>$tram</td>"
 		. "<td>$cl->start</td>"
 		. "<td>$cl->finish</td>"
@@ -70,6 +70,7 @@ endif;
 $nav	 .= '</ul> ';
 $context .= $nav . $out;
 include TEMPLATE_DIR . DS . $tpl . ".html";
+
 
 
 

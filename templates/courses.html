@@ -2,6 +2,16 @@
 <html lang="ru-RU"><head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<meta charset="UTF-8">
+
+	<link rel="apple-touch-icon" sizes="120x120" href="<?=WWW_BASE_PATH?>images/favicons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="<?=WWW_BASE_PATH?>images/favicons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="<?=WWW_BASE_PATH?>images/favicons/favicon-16x16.png">
+	<link rel="manifest" href="<?=WWW_BASE_PATH?>images/favicons/site.webmanifest">
+	<link rel="mask-icon" href="<?=WWW_BASE_PATH?>images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="shortcut icon" href="<?=WWW_BASE_PATH?>images/favicons/favicon.ico">
+	<meta name="msapplication-TileColor" content="#9f00a7">
+	<meta name="msapplication-config" content="<?=WWW_BASE_PATH?>images/favicons/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
 	<!-- Google Tag Manager -->
 	<script>(function (w, d, s, l, i) {
                 w[l] = w[l] || [];
@@ -22,7 +32,7 @@
 	<link href="<?=WWW_CSS_PATH?>styles-ing-courses.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="<?=WWW_CSS_PATH?>main.css">
 	<link rel="stylesheet" href="<?=WWW_CSS_PATH?>all.min.css">
-	<title><?=$cc?> — Nails School</title>
+	<title><?=$cc?> — Ногтевой Сервис</title>
 	<?php $meta= metatags();
 	echo $meta;?>
 	<link rel="dns-prefetch" href="http://s.w.org/">
@@ -287,7 +297,7 @@
 		    <div class="modal-body">
 			<p class="ps text-uppercase font-weight-bold"><?=@$k->$mlang?></p>
 			<form id='akciaForm' action="<?=WWW_BASE_PATH?>parcipate" method="post">
-			    <input type="hidden" name="id" value="<?=@$k->id?>" />
+			    <input id="lid" type="hidden" name="id" value="<?=@$k->id?>" />
 			    <input type="hidden" name="leadtype" value="calback" />
 			    <input type="hidden" name="returnto" value="<?=$this->param[0]?>" />
 			    <div class="form-price">
@@ -337,11 +347,11 @@
 	<script id="dsq-count-scr" src="<?=WWW_JS_PATH?>count.js" async=""></script>
 	<script>
             $('a.shm').on('click', function () {
-                var lid = $(this).attr('data-id');
+                var lid = 'p' + $(this).attr('data-id');
                 var name = $(this).attr('data-name');
                 console.log(name);
                 console.log(lid);
-                $('input#id').val(lid);
+                $('#lid').val(lid);
                 $('.ps').text(name);
 
             });
@@ -383,6 +393,11 @@
 
     </body>
 </html>
+
+
+
+
+
 
 
 

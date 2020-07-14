@@ -4,8 +4,7 @@ $tpl		 = 'admin';
 $vid		 = new model\misto();
 $f		 = new bootstrap\input();
 $context	 = '';
-$brouse		 = '';
-$lsize		 = '';
+$lsize		 = ' 630×360px';
 $web_brouse	 = WWW_IMAGE_PATH . 'towns/';
 $brouse		 = APP_PATH . '/images/towns/';
 switch (@$this->param[0])
@@ -37,7 +36,7 @@ switch (@$this->param[0])
 	    }
 	    //print_r($data);
 
-	    echo $vid->update($data, $id);
+	    echo $vid->update(array_filter($data), $id);
 	    $context .= "<script>setTimeout(function() { location.replace('" . WWW_ADMIN_PATH . "settings/misto/'); }, 900)</script>";
 	endif;
 	break;
@@ -58,7 +57,7 @@ switch (@$this->param[0])
 	}
 	else
 	{
-	    print_r($_POST);
+	  //  print_r($_POST);
 	    $data	 = array(
 		'link'		 => $_POST['link'],
 		'name_ua'	 => $_POST['name_ua'],
@@ -78,7 +77,7 @@ switch (@$this->param[0])
 	break;
 
     default:
-	$mod_name	 = "Управление видеогалереей";
+	$mod_name	 = "Управление городами";
 	$context	 .= '<a class="btn btn-info" href="' . WWW_ADMIN_PATH . 'settings/misto/new">добавить город</a><br><br>'
 		. '<table class="table table-bordered datatable">'
 		. '<thead>'
@@ -113,179 +112,3 @@ switch (@$this->param[0])
 }
 include TEMPLATE_DIR . DS . $tpl . ".html";
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

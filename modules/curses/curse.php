@@ -79,9 +79,8 @@ if (firstChar($faddr->inst) != '#')
 {
     $tfut .= '        	<a href="' . $faddr->inst . '"><i class="fab fa-instagram"></i></a>';
 }
-$tfut .= '<a href = "https://www.youtube.com/channel/UCZcCF_9g8Cp2mE1WG66IEjg"><i class = "fab fa-youtube-square"></i></a>
+$tfut	 .= '<a href = "https://www.youtube.com/channel/UCZcCF_9g8Cp2mE1WG66IEjg"><i class = "fab fa-youtube-square"></i></a>
 ';
-
 $curses	 = new model\curses();
 $cc	 = $curses->getCurse($town, $link);
 //esas
@@ -107,8 +106,14 @@ if (isset($k->{'googldock_' . $lang}))
 }
 else
 {
-    $gdoc = '';
+    $gdoc = '#';
 }
+//echo $gdoc;
+if (firstChar($gdoc) != '#'):
+    $btnDetail = '<a href="' . $gdoc . '" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" target="_blanc" >' . l('detail_btn') . '</a>';
+else:
+    $btnDetail = '<a class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#calme" >' . l('detail_btn') . '</a>';
+endif;
 $ved	 = 'video_' . $lang;
 //print_r($k);
 $video	 = $k->$ved;
@@ -217,16 +222,16 @@ $bc['ua']	 = 'Курси ';
 $bc['ru']	 = 'Курсы ';
 $vidminnik	 = array('ua'	 => array(
 	'dnipro'	 => 'у Дніпрі',
-	'kyiv'		 => 'у Київі',
+	'kyiv'		 => 'у Києві',
 	'zaporizhzhya'	 => 'у Запоріжжі',
-	'nicolaev'	 => 'у Миколаєві',
+	'mykolaiv'	 => 'у Миколаєві',
 	'virtual'	 => 'онлайн',
     ),
     'ru'	 => array(
 	'dnipro'	 => 'в Днепре',
 	'kyiv'		 => 'в Киеве',
 	'zaporizhzhya'	 => 'в Запорожье',
-	'nicolaev'	 => 'в Николаеве',
+	'mykolaiv'	 => 'в Николаеве',
 	'virtual'	 => 'онлайн',
     )
 );
@@ -280,20 +285,23 @@ $files1		 = $g1->GetPhotos($town, $link);
 $oz		 = new templator();
 $vipusk		 = '';
 $id1		 = 0;
-$workingdir1	 = APP_PATH . "/images/vipusknik/";
 $wdir1		 = WWW_IMG_PATH . "vipusknik/";
-$fl1		 = glob($workingdir1 . '*.{gif, jpg, png}', GLOB_BRACE);
+$workingdir1	 = APP_PATH . "/images/vipusknik/";
+$fl1		 = glob($workingdir . '*.{gif,jpg,png}', GLOB_BRACE);
 $fl1		 = array_map('basename', $fl1);
 
+//print_r($fl1);
 foreach ($files1 as $f)
-{ //<div class="slide"><img src="slider-photo.png"></div>
-    if (in_array($f, $fl1))
-    {
-	$id1++;
-	$pll	 = '<div class = "slide"><img src = "' . $wdir1 . $f . '" alt = "' . $id1 . '"></div>';
-	$vipusk	 .= $pll;
-    }
+//{
+//<div class="slide"><img src="slider-photo.png"></div>
+//    if (in_array($f, $fl1))
+{
+    $id1++;
+    $pll	 = '<div class = "slide"><img src = "' . $wdir1 . $f . '" alt = "' . $id1 . '"></div>';
+    $vipusk	 .= $pll;
+//    }
 };
+//$vipusk.=print_r($fl1,true);
 $fago	 = new bildfaqo();
 $qa	 = $fago->getFAQO($town, $lang);
 $detect	 = new mobiledetect();

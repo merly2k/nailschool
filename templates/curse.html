@@ -3,6 +3,16 @@
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
+
+	<link rel="apple-touch-icon" sizes="120x120" href="<?=WWW_BASE_PATH?>images/favicons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="<?=WWW_BASE_PATH?>images/favicons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="<?=WWW_BASE_PATH?>images/favicons/favicon-16x16.png">
+	<link rel="manifest" href="<?=WWW_BASE_PATH?>images/favicons/site.webmanifest">
+	<link rel="mask-icon" href="<?=WWW_BASE_PATH?>images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="shortcut icon" href="<?=WWW_BASE_PATH?>images/favicons/favicon.ico">
+	<meta name="msapplication-TileColor" content="#9f00a7">
+	<meta name="msapplication-config" content="<?=WWW_BASE_PATH?>images/favicons/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
 	<!-- Google Tag Manager -->
 	<script>(function (w, d, s, l, i) {
                 w[l] = w[l] || [];
@@ -22,7 +32,7 @@
 	<link rel="stylesheet" href="<?=WWW_CSS_PATH?>styles-ing-course.css">
 	<!-- <link rel="stylesheet" href="<?=WWW_CSS_PATH?>main.css"> -->
 
-	<title><?=strip_tags($k->$mlang);?> — Nails School</title>
+	<title><?=strip_tags($k->$mlang);?> — Ногтевой Сервис</title>
 	<?php $meta= metatags();echo $meta;?>
 
 	<link rel="dns-prefetch" href="http://s.w.org/">
@@ -358,7 +368,7 @@
 				    <div class="pt-4 pb-0">
 					<?=$fulltext?>
 					<!--a href="#" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#detail"><?=l('detail_btn')?></a-->
-					<a href="<?=$gdoc?>" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" target="_blanc" ><?=l('detail_btn')?></a>
+					<?=$btnDetail?>
 					<p class="text-center text-primary"><small><?=l('detail')?></small></p>
 				    </div>
 				</div>
@@ -474,12 +484,15 @@
 						<div class="col-12 col-sm-6 col-lg-5 col-xl-5 py-5 px-5 nongradient description">
 						    <?=$sch_osnashennia;?>
 						</div>
+						<div class="d-block d-sm-none col-sm-6 col-lg-7 col-xl-7 text-center">
+						    <img src="<?=WWW_IMAGE_PATH?>school/<?=$school->osn_img?>" alt="">
+						</div>
 					    </div>
 					    <div class="row no-gutters">
 						<div class="col-12 col-sm-6 col-lg-5 col-xl-5 py-5 px-5 gradient-block description">
 						    <?=$sch_ergonomik;?>
 						</div>
-						<div class="d-none d-sm-block col-sm-6 col-lg-7 col-xl-7 text-center">
+						<div class="col-sm-6 col-lg-7 col-xl-7 text-center">
 						    <img src="<?=WWW_IMAGE_PATH?>school/<?=$school->ergonomik_img?>" alt="">
 						</div>
 					    </div>
@@ -489,14 +502,16 @@
 						</div>
 						<div class="col-12 col-sm-6 col-lg-5 col-xl-5 py-5 px-5 nongradient description">
 						    <?=$sch_location?>
-
+						</div>
+						<div class="d-block d-sm-none col-sm-6 col-lg-7 col-xl-7 text-center">
+						    <img src="<?=WWW_IMAGE_PATH?>school/<?=$school->location_img?>" alt="">
 						</div>
 					    </div>
 					    <div class="row no-gutters">
 						<div class="col-12 col-sm-6 col-lg-5 col-xl-5 py-5 px-5 gradient-block description">
 						    <?=$sch_shop?>
 						</div>
-						<div class="d-none d-sm-block col-sm-6 col-lg-7 col-xl-7 text-center">
+						<div class="col-sm-6 col-lg-7 col-xl-7 text-center">
 						    <img src="<?=WWW_IMAGE_PATH?>school/<?=$school->shop_img?>" alt="Магазин">
 						</div>
 					    </div>
@@ -506,7 +521,9 @@
 						</div>
 						<div class="col-12 col-sm-6 col-lg-5 col-xl-5 py-5 px-5 nongradient description">
 						    <?=$sch_konsult?>
-
+						</div>
+						<div class="d-block d-sm-none col-sm-6 col-lg-7 col-xl-7 text-center">
+						    <img src="<?=WWW_IMAGE_PATH?>school/<?=$school->konsult_img?>" alt="Консультації">
 						</div>
 					    </div>
 
@@ -552,7 +569,9 @@
 					</div>
 				    </section>
 
-				    <?php if(empty($k->vipusk) or $k->vipusk=='Y'){?>
+				    <?php
+				    echo $k->vipusk;
+				    if(empty($k->vipusk) or $k->vipusk=='Y'){?>
 				    <section class="py-5 slideshow">
 					<h2 class="text-center text-uppercase font-weight-bold my-lg-4 my-sm-2"><span class="gradient-text"><?=l('r8');?></span></h2>
 					<!-- new slideshow by ing -->
@@ -1030,6 +1049,9 @@
 				    <!-- <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e402414887521ee"></script> -->
 				    </body>
 				    </html>
+
+
+
 
 
 

@@ -4,13 +4,20 @@
 $brouse		 = '';
 $lsize		 = '';
 $a		 = new model\leads();
+$b		 = new model\packets();
 $f		 = new bootstrap\input();
 $template	 = "admin";
 $context	 = '';
 $mod_name	 = "Работа с лидами";
 if (!$_POST):
-
-    $con			 = $a->getById($this->param[0]);
+    $packId = $this->param[0];
+    if (firstChar($packId) == 'p')
+    {
+	$id	 = preg_replace('/p/', '', $packId);
+	$ppp	 = $b->getPacket($id);
+	print_r($ppp);
+    }
+    $con			 = $a->getById($packId);
     $fields			 = (array) $con;
     $fields['sdate']	 = (new DateTime("$con->sdate"))->format('Y-m-d'); //
     $fields['lastedit']	 = (new DateTime())->format('Y-m-d'); //
@@ -41,6 +48,11 @@ function getCurseInfo($id) {
 
 include TEMPLATE_DIR . DS . $template . ".html";
 ?>
+
+
+
+
+
 
 
 

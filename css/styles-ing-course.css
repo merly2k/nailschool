@@ -338,6 +338,9 @@ header .girl {
     header .description-text {
         font-size: 20px;
     }
+    header .checklist-course-1 {
+        margin-bottom: inherit;
+    }
     header .checklist-course p {
         font-size: 20px;
     }
@@ -654,7 +657,8 @@ main .about-list {
 
 main .about-list li {
     font-size: 23px;
-    line-height: 1.7;
+    line-height: 1.3;
+    padding: 6px 0;
 }
 
 main .about-list li::before {
@@ -691,7 +695,7 @@ main .course-program .wrapper-content {
 main .course-program ol.about-list li::before {
     content: "• ";
     font-size: 26px;
-    line-height: 51px;
+    line-height: 1.3;
 }
 
 
@@ -724,6 +728,7 @@ main .advantages .why hr {
 .about-school img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 
 .about-school .description {

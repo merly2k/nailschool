@@ -114,6 +114,9 @@ endif;
 				<li>
 				    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>settings/seo">seo</a>
 				</li>
+				<li>
+				    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>settings/telegram">Телеграм</a>
+				</li>
 			    </ul>
 			</li>
 			<li class="nav-item">
@@ -191,7 +194,30 @@ endif;
 	</div>
 	<div id="imageBrouser" class="modal" aria-hidden="false" tabindex="-1" role="dialog" aria-label="Add Image"></div>
 
-
+	<div class="toast" id="myToast" style="position: absolute; top: 100; right: 0;background-color: #fff;z-index: 1000;" >
+	    <div class="toast-header">
+		<strong class="mr-auto"><i class="fa fa-grav"></i> link copied!</strong>
+		<small>1 сек назад</small>
+		<button type="button" class="ml-2 mb-1 close" data-dismiss="toast">
+		    <span aria-hidden="true">&times;</span>
+		</button>
+	    </div>
+	    <div class="toast-body">
+		<div>ссылка на курс скопирована в буфер обмена</div>
+	    </div>
+	</div>
+	<div class="toast" id="saved" style="position: absolute; top: 100px ; right: 0px;background-color: #fff;z-index: 1000;" data-autohide="false">
+	    <div class="toast-header">
+		<strong class="mr-auto"><i class="fa fa-grav"></i> изменения сохранены!</strong>
+		<small>1 сек назад</small>
+		<button type="button" class="ml-2 mb-1 close" data-dismiss="toast">
+		    <span aria-hidden="true">&times;</span>
+		</button>
+	    </div>
+	    <div class="toast-body">
+		<div>Изменения сохранены</div>
+	    </div>
+	</div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
@@ -319,6 +345,12 @@ endif;
             $(document).ready(function () {
                 $('select.selectpicker').selectpicker();
                 $('.DataTable').DataTable().columns.adjust();
+                if (Cookies.get('saved') == 'saved') {
+                    //console.log('saved');
+                    $("#saved").toast({delay: 3600});
+                    $("#saved").toast('show');
+                }
+
             });
             $('.moka').on('click', function () {
 
@@ -412,18 +444,8 @@ endif;
                 $("#myToast").toast({delay: 3000});
                 $("#myToast").toast('show');
             }
+
 	</script>
     </body>
-    <div class="toast" id="myToast" style="position: absolute; top: 100; right: 0;background-color: #fff;z-index: 1000;">
-        <div class="toast-header">
-            <strong class="mr-auto"><i class="fa fa-grav"></i> link copied!</strong>
-            <small>1 сек назад</small>
-            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div class="toast-body">
-            <div>ссылка на курс скопирована в буфер обмена</div>
-        </div>
-    </div>
+
 </html>

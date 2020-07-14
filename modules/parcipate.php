@@ -27,7 +27,16 @@ $output = explode('/', trim($_POST['returnto'], '/'));
 
 $l	 = new model\leads();
 $teleg	 = new telegrambot();
+
+if (file_exists('telegram.ini'))
+{
+    $ini_array = parse_ini_file("telegram.ini");
+
+    $teleg->setToken($ini_array['token']);
+    $teleg->setChat_id($ini_array['chat_id']);
+}
 $curses	 = new model\curses();
+$packet	 = new model\packets();
 
 $name = $_POST['name'];
 if (!isset($_POST['lname']))
@@ -46,14 +55,41 @@ else
 {
     $email = $_POST['email'];
 }
+//echo firstChar($_POST['id']);
 $phone	 = $_POST['phone'];
 $curse	 = $_POST['id'];
-$c	 = $curses->getCurseById($curse);
-$cursen	 = strip_tags($c->name_ru);
+if (firstChar($curse) == 'p')
+{
+    $id	 = preg_replace('/p/', '', $_POST['id']);
+    $c	 = $packet->getPacket($id);
+    //print_r($c);
+    $cursen	 = 'пакет ' . $c[0]->name_ru;
+}
+else
+{
 
+    $c	 = $curses->getCurseById($curse);
+    $cursen	 = strip_tags($c->name_ru);
+}
 //print_r($c);
+$km	 = new model\misto();
+$mist	 = $km->getAll();
+foreach ($mist as $e)
+{
+    //print_r($e->link);
+    $mista[] = $e->link;
+}
+
+if (in_array($_POST['returnto'], $mista))
+{
+    $goback = '<a class="btn btn-primary btn-sm" href="' . WWW_BASE_PATH . 'curses/' . $_POST['returnto'] . '" role="button">' . l('gobask') . '</a>';
+}
+else
+{
+    $goback = '<a class="btn btn-primary btn-sm" href="' . WWW_BASE_PATH . 'curses/' . $_POST['returnto'] . '" role="button">' . l('gobask') . '</a>';
+}
 $returnto = $_POST['returnto'];
-$l->add($curse, $leadtype, $name, $lname, $email, $phone);
+$l->add($cursen, $leadtype, $name, $lname, $email, $phone);
 $teleg->send($cursen, $leadtype, $name, $phone, $lname, $email);
 //print_r($_POST);
 ?>
@@ -78,7 +114,7 @@ $teleg->send($cursen, $leadtype, $name, $phone, $lname, $email);
 		<a href="<?= WWW_BASE_PATH ?>curses/<?= $output[0] ?>"><?= l('m7'); ?></a>
 	    </p>
 	    <p class="lead">
-		<a class="btn btn-primary btn-sm" href="<?= WWW_BASE_PATH . 'curses/curse/' . $_POST['returnto'] ?>" role="button"><?= l('gobask') ?></a>
+		<?= $goback ?>
 	    </p>
 	</div>
 	<script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>

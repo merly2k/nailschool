@@ -25,8 +25,8 @@ foreach ($km->getall()as $k => $r)
 {
     //print_r($r);
     if ($r->link != 'virtual'):
-
-	$tfut .= '
+	$button	 = 'm16';
+	$tfut	 .= '
 <div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-2 mb-3">
 			<p><b>' . $r->$mlang . '</b></p>
 			<p class="tel">' . $r->phones . '</p>
@@ -50,6 +50,8 @@ foreach ($km->getall()as $k => $r)
 	$tfut .= '    <a style = "color: white;" href = "https://www.youtube.com/channel/UCZcCF_9g8Cp2mE1WG66IEjg"><i class = "fab fa-youtube-square fa-2x" aria-hidden = "true"></i></a >
 			</span>
 		    </div>';
+    else:
+	$button = 'm16a';
     endif;
 //print_r($r);
     $mista[$r->link] = $r->$mlang;
@@ -58,7 +60,7 @@ foreach ($km->getall()as $k => $r)
     if ($k % 2)
     {
 	$townItem .= '<div class="row no-gutters">
-    <div class="col-md-6 mb-5 align-items-center town-info d-none d-md-flex">
+    <div class="col-md-6 mb-5 align-items-center town-info d-flex">
         <img class="img-fluid d-block" src="' . WWW_IMG_PATH . 'towns/' . $r->image . '" alt="' . $r->$mlang . '" >
     </div>
     <div class="col-md-6 mb-5 align-items-center town-info">
@@ -68,7 +70,7 @@ foreach ($km->getall()as $k => $r)
         <a href="' . WWW_BASE_PATH . 'curses/' . $r->link . '/">
           <div class="link-cities gradient-text">
             <span><b>' . l('m15') . '</b></span>
-            <span class="site_btn">' . l('m16') . '</span>
+            <span class="site_btn">' . l($button) . '</span>
           </div>
         </a>
       </div>
@@ -89,7 +91,7 @@ foreach ($km->getall()as $k => $r)
         <a href="' . WWW_BASE_PATH . 'curses/' . $r->link . '/">
           <div class="link-cities gradient-text">
             <span><b>' . l('m15') . '</b></span>
-            <span class="site_btn">' . l('m16') . '</span>
+            <span class="site_btn">' . l($button) . '</span>
           </div>
         </a>
       </div>
@@ -201,7 +203,7 @@ if (ONLINE_ONLY == 'Y'):
     if ($acsia->action == 'Y')
     {
 	$coastrow	 = '<del>' . $acsia->coast . '</del>&nbsp;<span>грн</span> <b>' . $acsia->ac_coast . '</b>&nbsp;<span>грн</span>';
-	$ramp		 = '<p class="text-center text-sm-right text-md-center"><span class="text-uppercase akcia">' . l('akcia') . '</span><br />' . $valut . 'до ' . @$k->deadline . '</p>';
+	$ramp		 = '<p class="text-center text-sm-right text-md-center"><br /><span class="text-uppercase akcia">' . l('akcia') . '</span><br />' . $valut . 'до ' . $acsia->deadline . '</p>';
     }
     else
     {
@@ -213,7 +215,7 @@ if (ONLINE_ONLY == 'Y'):
 						<div class="row">
 							<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 online-course-name text-center text-sm-left">
 								<p>Онлайн-курс</p>
-            <p><a href="' . WWW_BASE_PATH . 'curses/curse/' . $acsia->miso . '/' . $acsia->link . '"><b>' . strip_tags($acsia->$mlang) . '</b></a></p>
+            <p><a href="' . WWW_BASE_PATH . 'curses/' . $acsia->miso . '/' . $acsia->link . '"><b>' . strip_tags($acsia->$mlang) . '</b></a></p>
 							</div>
 						</div>
 					</div>
@@ -247,7 +249,7 @@ else:
 	}
 	$day_s		 = date('d', strtotime($acsia->start));
 	$months_s	 = date('M', strtotime($acsia->start));
-//print_r($acsia);
+//print_r( $acsia->deadline );
 	$dateX		 = strtotime($acsia->start);
 	$monts		 = localeMomts($lang, date('m', $dateX));
 	$start		 = date('d', $dateX);
@@ -365,73 +367,5 @@ foreach ($film->getList() as $vi)
 
 $tpl = 'indexn';
 include TEMPLATE_DIR . $tpl . ".html";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

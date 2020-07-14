@@ -58,6 +58,14 @@ else:
     {
 	$_POST['display'] = 'N';
     }
+    if (@$_POST['hidedeckr'] == 'on')
+    {
+	$_POST['hidedeckr'] = 'Y';
+    }
+    else
+    {
+	$_POST['hidedeckr'] = 'N';
+    }
     if (@$_POST['display_r'] == 'on')
     {
 	$_POST['display_r'] = 'Y';
@@ -106,5 +114,6 @@ else:
 endif;
 
 include TEMPLATE_DIR . DS . $tpl . ".html";
+
 
 

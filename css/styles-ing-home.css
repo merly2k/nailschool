@@ -226,6 +226,9 @@ header .girl {
 	header .description-text {
 		font-size: 20px;
 	}
+	header .checklist-course-1 {
+	    margin-bottom: inherit;
+	}
 	header .checklist-course p {
 		font-size: 20px;
 	}
