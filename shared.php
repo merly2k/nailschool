@@ -161,7 +161,7 @@ function metatags() {
 	{
 	    //echo "$turl найден";
 	    $keyli	 = $s;
-	    $m3	 = '<title>' . $keyli->title . '</title>
+	    $m3	 = '
 	<meta name="identifier-url" content="' . WWW_BASE_PATH . $keyli->url . '" />
     <meta name="title" content="' . $keyli->title . '" />
     <meta name="description" content="' . $keyli->deckription . '" />
@@ -180,6 +180,8 @@ function metatags() {
 	<meta property="og:type" content="article"/>
 	<meta property="og:title" content="' . $keyli->title . '"/>
 	<meta property="og:url" content="' . WWW_BASE_PATH . $zurl . '" />
+	<meta property="og:image" content="'.WWW_IMAGE_PATH.'wave-color.png" />
+
     <meta property="og:description" content="' . $keyli->deckription . '"/><!-- var from back -->
 	<!-- twitter -->
 	<meta name="twitter:card" content="summary_large_image">
@@ -203,6 +205,7 @@ function metatags() {
         <meta name="language" content="UA" />
         <meta name="copyright" content="© 2018 development by merlinsoft" />
     <meta name="robots" content="Index,nofollow" />
+	<meta property="og:image" content="'.WWW_IMAGE_PATH.'wave-color.png" />
     <meta property="og:title" content=""/><!-- var from back -->
 	<meta property="og:description" content="' . $deckription . '"/><!-- var from back -->
 
@@ -211,7 +214,20 @@ function metatags() {
 	}
     else:
 	// сюда нужно вставить метатеги для индекса
-	$m3 = "";
+	    $deckription	 = "ногтевой сервис";
+	$m3 = '<meta name="copyright" content="© 2018 development by merlinsoft" />
+	<!-- facebook -->
+    <meta property="og:site_name" content="' . SITE_NAME . '"/>
+    <meta property="og:locale" content="ru_RU"/>
+	<meta property="og:type" content="article"/>
+	<meta property="og:title" content="Nails School — школа маникюра ногтевой сервис"/>
+	<meta property="og:url" content="' . WWW_BASE_PATH . '" />
+	<meta property="og:image" content="'.WWW_IMAGE_PATH.'wave-color.png" />
+
+    <meta property="og:description" content="' . $deckription . '"/><!-- var from back -->
+	<!-- twitter -->
+
+	<meta property="og:image" content="'.WWW_IMAGE_PATH.'wave-color.png" />';
     endif;
     return $m3;
 }
