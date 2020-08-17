@@ -15,6 +15,7 @@
 	<meta name="msapplication-TileColor" content="#9f00a7">
 	<meta name="msapplication-config" content="<?=WWW_BASE_PATH?>images/favicons/browserconfig.xml">
 	<meta name="theme-color" content="#ffffff">
+	<?php $meta= metatags();echo $meta;?>
 
 
 	<!-- Google Tag Manager -->
@@ -191,8 +192,31 @@
 	    .page .entry-header {
 		display: none;
 	    }
+	    #to-top {
+		position: fixed;
+		bottom: 10px;
+		right: 10px;
+		padding: 5px;
+		width: 46px;
+		height: 46px;
+		color: #e7447c;
+		border-radius: 50%;
+		vertical-align: central;
+		border: 5px solid #e7447c;
+		background-color: rgba(255,255,255,0.2);
+		text-align: center;
+		cursor: pointer;
+		display: none;
+	    }
+	    #to-top i:before{
+		content: "\f077";
+		line-height: 1;
+		font-weight: 900;
+		font-size:24px;
+		font-family: "Font Awesome 5 Free";
+	    }
 	</style>
-    </head>
+
     <body>
 	<!-- Google Tag Manager (noscript) -->
 	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PHCP2RH"
@@ -402,6 +426,7 @@
 	    <!-- new carousel by ing -->
 	    <section id="ot" class="py-5 slideshow">
 		<a id="fidback"></a>
+
 		<h2 class="section-title text-uppercase font-weight-bold mb-5"><span class="gradient-text"><?=l('r8');?></span></h2>
 		<div class="graduates">
 		    <div class="slide"><img src="<?=WWW_IMG_PATH?>vipusknik/1.jpg"></div>
@@ -432,7 +457,7 @@
 			<p class="pb-3"><?=l('r10')?>:</p>
 			<div>
 			    <img class="link-shop" src="<?=WWW_IMG_PATH?>corz.png" alt="">
-			    <a style='font-variant-caps: all-small-caps; font-variant: small-caps;font-size: 1rem;' href="https://<?=l('www_addr')?>/"><?=l('www_addr')?></a>
+			    <a style='font-variant-caps: all-small-caps; font-variant: small-caps;font-size: 1rem;' target='_blank'  href="https://<?=l('www_addr')?>/"><?=l('www_addr')?></a>
 			</div>
 		    </div>
 		</div>
@@ -440,7 +465,7 @@
 
 	    </div>
 	</footer>
-
+	<div id='to-top'><i class="fal fa-caret-circle-up"></i></div>
 	<!-- The Modal -->
 	<div class="modal" id="akcia">
 
@@ -478,7 +503,7 @@
 					<div class="form-group">
 					    <label>Е-mail</label>
 					    <span class="wpcf7-form-control-wrap text-923">
-						<input type="text" name="email" value="" size="40" class="form-control wpcf7-form-control wpcf7-text wpcf7-validates-as-required" required="required">
+						<input type="text" name="email" value="" size="40" class="form-control wpcf7-form-control wpcf7-text wpcf7-validates-as-required" >
 					    </span>
 					</div>
 					<div class="form-group">
@@ -489,9 +514,6 @@
 					</div>
 					<div class="form-check">
 					    <span class="checkbox-style">
-						<input type="hidden" name="id" value="38">
-						<input type="hidden" name="leadtype" value="curs">
-						<input type="hidden" name="returnto" value="virtual/base_and_top">
 						<span class="style-chec">
 						    <input type="checkbox" id="checkbox-id" class="form-check-input">
 						</span>
@@ -595,6 +617,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
     <!-- new carousel by ing -->
     <script>
+            $(window).scroll(function () {
+                if ($(this).scrollTop() != 0) {
+                    $('#to-top').fadeIn();
+                } else {
+                    $('#to-top').fadeOut();
+                }
+            });
+
+            $('#to-top').click(function () {
+                $('body,html').animate({scrollTop: 0}, "fast");
+            });
             $(document).ready(function () {
                 $('.graduates').slick({
                     slidesToShow: 3,

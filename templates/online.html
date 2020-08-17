@@ -102,10 +102,30 @@
 		width: 40%;
 		margin: auto;
 	    }
+	    #to-top {
+		position: fixed;
+		bottom: 10px;
+		right: 10px;
+		padding: 5px;
+		width: 46px;
+		height: 46px;
+		color: #e7447c;
+		border-radius: 50%;
+		vertical-align: central;
+		border: 5px solid #e7447c;
+		background-color: rgba(255,255,255,0.2);
+		text-align: center;
+		cursor: pointer;
+		display: none;
+	    }
+	    #to-top i:before{
+		content: "\f077";
+		line-height: 1;
+		font-weight: 900;
+		font-size:24px;
+		font-family: "Font Awesome 5 Free";
+	    }
 	</style>
-
-	<link rel="canonical" href="<?=WWW_BASE_PATH?>">
-
 	<!-- Fancybox for WordPress v3.1.9 -->
 	<style type="text/css">
 	    div.fancybox-caption{display:none !important;}
@@ -293,16 +313,18 @@
 					<p class="text-center text-sm-right text-md-center"></p>
 					<?php }?>
 				    </div>
-				    <div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-4 px-md-0 px-lg-0 themed-grid-col">
-					<div class="sale text-center m-auto">
-					    <?php if($k->action=="Y"){?>
-					    <p style="margin:0 auto;"><del><?=$k->coast?></del>&nbsp;<span>грн</span> <b><?=$k->ac_coast?></b>&nbsp;<span>грн</span></p>
-					    <?php } else{ ?>
-					    <p style="margin:0 auto;"><b><?=$k->coast?></b>&nbsp;<span>грн</span></p>
-					    <?php }?>
-					    <a href="#" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#akcia"><?=l('akcia_btn')?></a>
+				    <a href="#" data-toggle="modal" data-target="#akcia">
+					<div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-4 px-md-0 px-lg-0 themed-grid-col">
+					    <div class="sale text-center m-auto">
+						<?php if($k->action=="Y"){?>
+						<p style="margin:0 auto;"><del><?=$k->coast?></del>&nbsp;<span>грн</span> <b><?=$k->ac_coast?></b>&nbsp;<span>грн</span></p>
+						<?php } else{ ?>
+						<p style="margin:0 auto;"><b><?=$k->coast?></b>&nbsp;<span>грн</span></p>
+						<?php }?>
+						<a href="#" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#akcia"><?=l('akcia_btn')?></a>
+					    </div>
 					</div>
-				    </div>
+				    </a>
 				    <div class="col-12 col-sm-0 col-md-0 col-lg-0 col-xl-0 themed-grid-col girl d-none d-xl-flex">
 					<img src="<?=$mashas?>" alt="">
 				    </div>
@@ -329,7 +351,8 @@
 			    <div class="row row-eq-height no-gutters">
 				<!-- Mobile video -->
 				<div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-3 themed-grid-col m-auto px-2 px-lg-3 px-xl-5 d-block d-sm-none video">
-				    <?php if(firstChar($video)!='#'){?><iframe class="d-block m-auto" width="315" height="630" src="<?=$video?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><?php }?>
+				    if(firstChar($video)!='#'){?>
+				    <?=$video?><?php }?>
 				</div>
 				<!-- // -->
 				<div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-9 themed-grid-col py-5 px-4 px-lg-4 px-xl-5">
@@ -343,7 +366,9 @@
 				<!-- Desktop & tablet video -->
 				<div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-3 themed-grid-col text-center pt-md-0 pt-lg-5 px-2 px-lg-3 px-xl-5 d-none d-sm-block video">
 				    <div class="pt-md-0 pt-lg-3 mt-md-0 mt-lg-3">
-					<?php if(firstChar($video)!='#'){?><iframe width="315" height="630" src="<?=$video?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><?php }?>
+					<?php if(firstChar($video)!='#'){?>
+					<?=$video?>
+					<?php }?>
 				    </div>
 				</div>
 				<!-- // -->
@@ -566,7 +591,7 @@
 						<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 themed-grid-col py-4 d-flex align-items-center address">
 						    <div class="m-auto row no-gutters">
 							<div class="col-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">
-							    <img src="<?=WWW_IMG_PATH?>/location-pink.svg" alt="">
+							    <img src="<?=WWW_IMG_PATH?>location-pink.svg" alt="">
 							</div>
 							<div class="col-7 col-sm-7 col-md-7 col-lg-7 col-xl-7 d-grid align-items-center">
 							    <p><b><?=$currentMisto->$mlang?></b></p>
@@ -576,7 +601,7 @@
 						<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 themed-grid-col py-4 d-flex align-items-center viber">
 						    <div class="m-auto row no-gutters">
 							<div class="col-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">
-							    <img src="<?=WWW_IMG_PATH?>/viber.svg" alt="">
+							    <img src="<?=WWW_IMG_PATH?>viber.svg" alt="">
 							</div>
 							<div class="col-7 col-sm-7 col-md-7 col-lg-7 col-xl-7 d-flex align-items-center">
 							    <p> <?php if(firstChar($currentMisto->viber)!='#'){?>
@@ -602,10 +627,10 @@
 
 
 					<div class="text-center position-relative return-to-sale">
-					    <a href="#sale" class="btn btn-warning btn-lg text-uppercase font-weight-bold"><?php if($k->action=="Y"){ echo l('r9');} else{echo l('r9a');}?>!</a>
+					    <a href="#sale"  class="btn btn-warning btn-lg text-uppercase font-weight-bold"><?php if($k->action=="Y"){ echo l('r9');} else{echo l('r9a');}?>!</a>
 					</div>
 				    </footer>
-
+				    <div id="to-top" style="display: block;"><i class="fal fa-caret-circle-up" aria-hidden="true"></i></div>
 				    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 				    <script type="text/javascript" src="<?=WWW_JS_PATH?>comment.js"></script>
 				    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
@@ -619,6 +644,17 @@
 				    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
 
 				    <script>
+            $(window).scroll(function () {
+                if ($(this).scrollTop() != 0) {
+                    $('#to-top').fadeIn();
+                } else {
+                    $('#to-top').fadeOut();
+                }
+            });
+
+            $('#to-top').click(function () {
+                $('body,html').animate({scrollTop: 0}, "fast");
+            });
             $(document).ready(function () {
                 $('.gallery, .graduates').slick({
                     slidesToShow: 3,
@@ -1001,6 +1037,18 @@
 				    <!-- <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e402414887521ee"></script> -->
 				    </body>
 				    </html>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -19,6 +19,7 @@ if (isset($cur_curs))
     $btText	 = $ss[0]->name_ru;
     $gal	 = new model\photogalery();
     $imgaray = $gal->GetPhotos($town, $cur_curs);
+    // print_r($imgaray);
     $fp	 = APP_PATH . "/images/galery/" . '*.{jpg,png,gif}';
     $photos	 = array_map('basename', glob($fp, GLOB_BRACE));
     $llet	 = '';
@@ -42,6 +43,7 @@ if (isset($cur_curs))
 	$imglist .= "<div class='card col-2'>"
 		. "<img class='img-thumbnail' src='" . WWW_IMAGE_PATH . "galery/" . $photo . "' >"
 		. "<small>$photo</small>"
+		. "<input id='t_$k' name='title' value='" . $gal->GetTitle($photo) . "'>"
 		. "<input id='_$k' type='checkbox' $checked onclick=\"galerist($k,'$town','$cur_curs','$photo')\"><p></p>"
 		. "</div>";
     }
@@ -88,6 +90,13 @@ else:
 
 endif;
 include TEMPLATE_DIR . DS . $tpl . ".html";
+
+
+
+
+
+
+
 
 
 

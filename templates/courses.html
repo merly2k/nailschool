@@ -98,6 +98,29 @@
 	</style>
 	<!-- Fancybox for WordPress v3.1.9 -->
 	<style type="text/css">
+	    #to-top {
+		position: fixed;
+		bottom: 10px;
+		right: 10px;
+		padding: 5px;
+		width: 46px;
+		height: 46px;
+		color: #e7447c;
+		border-radius: 50%;
+		vertical-align: central;
+		border: 5px solid #e7447c;
+		background-color: rgba(255,255,255,0.2);
+		text-align: center;
+		cursor: pointer;
+		display: none;
+	    }
+	    #to-top i:before{
+		content: "\f077";
+		line-height: 1;
+		font-weight: 900;
+		font-size:24px;
+		font-family: "Font Awesome 5 Free";
+	    }
 	    div.fancybox-caption{display:none !important;}
 
 	    img.fancybox-image{border-width:10px;border-color:#FFFFFF;border-style:solid;height:auto;}
@@ -231,7 +254,7 @@
 					    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 themed-grid-col py-4 d-grid align-items-center address">
 						<div class="m-auto row no-gutters">
 						    <div class="col-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">
-							<img src="<?=WWW_IMG_PATH?>/location-pink.svg" alt="">
+							<img src="<?=WWW_IMG_PATH?>location-pink.svg" alt="">
 						    </div>
 						    <div class="col-7 col-sm-7 col-md-7 col-lg-7 col-xl-7 d-grid align-items-center">
 							<p><b><?=$currentMisto->$mlang?></b></p>
@@ -241,7 +264,7 @@
 					    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 themed-grid-col py-4 d-flex align-items-center viber">
 						<div class="m-auto row no-gutters">
 						    <div class="col-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">
-							<img src="<?=WWW_IMG_PATH?>/viber.svg" alt="">
+							<img src="<?=WWW_IMG_PATH?>viber.svg" alt="">
 						    </div>
 						    <div class="col-7 col-sm-7 col-md-7 col-lg-7 col-xl-7 d-flex align-items-center">
 							<p>
@@ -269,8 +292,8 @@
 					<?=$gmap;?>
 				    </div>
 				    <style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
-				    <div class="text-center return-to-sale">
-					<a href="#curseslist" class="btn btn-warning btn-lg text-uppercase font-weight-bold"><?=l('m100')?></a>
+				    <div class="text-center position-relative return-to-sale">
+					<a href="#curseslist" style='z-index:5000;' class="btn btn-warning btn-lg text-uppercase font-weight-bold"><?=l('m100')?></a>
 				    </div>
 				</footer>
 			    </div><!-- .entry-content -->
@@ -278,8 +301,9 @@
 		    </article><!-- #post-255 -->
 		</main><!-- #main -->
 	    </section><!-- #primary -->
-	</div><!-- #content -->
 
+	</div><!-- #content -->
+	<div id='to-top'><i class="fal fa-caret-circle-up"></i></div>
 	<!-- #page -->
 	<!-- modal call me-->
 	<div class="modal modal-xl fade" id="calme">
@@ -358,6 +382,17 @@
 	</script>
 
 	<script>
+            $(window).scroll(function () {
+                if ($(this).scrollTop() != 0) {
+                    $('#to-top').fadeIn();
+                } else {
+                    $('#to-top').fadeOut();
+                }
+            });
+
+            $('#to-top').click(function () {
+                $('body,html').animate({scrollTop: 0}, "fast");
+            });
             $(document).ready(function () {
 
                 var curlang = '<?=$_SESSION["lang"];?>';
@@ -393,6 +428,10 @@
 
     </body>
 </html>
+
+
+
+
 
 
 

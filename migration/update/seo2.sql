@@ -1,0 +1,1 @@
+UPDATE packets SET link = REPLACE(link, 'curses/curse/', 'curses/');

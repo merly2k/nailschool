@@ -1,8 +1,8 @@
- 
+
 body {
-	font-family: sans-serif;
-	overflow-x: hidden;
-	color: #6e6168;
+    font-family: sans-serif;
+    overflow-x: hidden;
+    color: #6e6168;
 }
 
 a:hover {
@@ -16,13 +16,13 @@ h3.gradient-text {
     background: -o-linear-gradient(45deg,#ed5799,#8c3a84);
     background: linear-gradient(45deg, #ed5799, #8c3a84);
     background-clip: border-box;
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	color: #8c3a84;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #8c3a84;
 }
 
 .d-grid {
-	display: grid;
+    display: grid;
 }
 
 @media (min-width:1200px) and (max-width:1400px) {
@@ -34,32 +34,32 @@ h3.gradient-text {
 /* MENU */
 
 .navbar-home {
-	padding-top: 20px;
+    padding-top: 20px;
 }
 
 .navbar-home.navbar .navbar-brand {
-	padding-left: 45px;
-	font-size: 23px;
-	font-weight: 700;
-	color: #45113c;
+    padding-left: 45px;
+    font-size: 23px;
+    font-weight: 700;
+    color: #45113c;
 }
 
 .navbar-home.navbar .navbar-nav li a.nav-link {
-	color: #000;
+    color: #000;
 }
 
 .navbar-home.navbar .navbar-nav li a.nav-link:after {
-	color: #e7437c;
+    color: #e7437c;
 }
 
 
 .navbar-home.navbar .navbar-nav li a.nav-link i.fas {
-	color: #e7437c;
+    color: #e7437c;
 }
 
 .navbar-home.navbar .navbar-nav.cities-menu li a.nav-link {
-	font-size: 20px;
-	font-weight: 500;
+    font-size: 20px;
+    font-weight: 500;
 }
 
 .navbar-home .navbar-nav .flip-horizontal {
@@ -68,84 +68,84 @@ h3.gradient-text {
 
 .navbar-home .navbar-nav.main-menu li a.separator,
 .navbar-home .navbar-nav.lang-menu li a.separator {
-	padding-left: 0;
-	padding-right: 0;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .navbar-home .navbar-nav.main-menu li a.nav-link,
 .navbar-home .navbar-nav.lang-menu li a.nav-link {
-	font-weight: 400;
-	color: #45113c;
-	font-size: 16px;
-	opacity: .7;
+    font-weight: 400;
+    color: #45113c;
+    font-size: 16px;
+    opacity: .7;
 }
 
 .navbar-home .navbar-nav.lang-menu li a.nav-link {
-	font-weight: 500;
+    font-weight: 500;
 }
 
 .navbar-home .navbar-nav.lang-menu li a.nav-link.active,
 .navbar-home .xs-menu li a.nav-link.active {
-	font-weight: 700;
+    font-weight: 700;
 }
 
 .navbar-home .navbar-nav.lang-menu {
-	display: flex;
+    display: flex;
 }
 
 .navbar-home .navbar-nav.lang-menu li.active a.nav-link {
-	color: #6c757d;
+    color: #6c757d;
 }
 
 .navbar-home .xs-menu {
-	width: 83%;
+    width: 83%;
 }
 
 .navbar-home .xs-menu .navbar-nav li a.nav-link {
-	color: #45113c;
+    color: #45113c;
 }
 
 .navbar-home .xs-menu .navbar-nav {
-	flex-direction: row;
+    flex-direction: row;
 }
 
 .navbar-home .xs-menu .navbar-nav .phone {
-	font-size: 24px;
+    font-size: 24px;
 }
 
 @media (min-width:992px) and (max-width:1199px) {
-	.navbar-home .navbar-nav.main-menu li a.nav-link,
-	.navbar-home .navbar-nav.lang-menu li a.nav-link {
-		padding-left: 0.15rem;
-		padding-right: 0.15rem;
-		font-size: 15px;
-	}
+    .navbar-home .navbar-nav.main-menu li a.nav-link,
+    .navbar-home .navbar-nav.lang-menu li a.nav-link {
+        padding-left: 0.15rem;
+        padding-right: 0.15rem;
+        font-size: 15px;
+    }
 }
 
 @media only screen and (max-width:768px) {
-	.navbar-home {
-		padding: 15px 8px 8px 8px;
-	}
-	.navbar-home.navbar .container {
-		max-width: 560px
-	}
-	.navbar-home.navbar-brand {
-		padding-left: 0;
-	}
+    .navbar-home {
+        padding: 15px 8px 8px 8px;
+    }
+    .navbar-home.navbar .container {
+        max-width: 560px
+    }
+    .navbar-home.navbar-brand {
+        padding-left: 0;
+    }
 }
 
 /* HEADER */
 
 @media (min-width:768px) {
-	header {
-		background: url(../images/banner-bg.png) no-repeat bottom/contain;
-	}
+    header {
+        background: url(../images/banner-bg.png) no-repeat bottom/contain;
+    }
 }
 
 header .logo {
-	width: 100%;
-	max-width: 545px;
-	padding-top: 29px;
+    width: 100%;
+    max-width: 545px;
+    padding-top: 29px;
 }
 
 header h1.gradient-text {
@@ -158,42 +158,42 @@ header h1.gradient-text {
 }
 
 header .description-text {
-	margin-bottom: 26px;
-	font-size: 36px;
-	color: #6e6168;
+    margin-bottom: 26px;
+    font-size: 36px;
+    color: #6e6168;
 }
 
 header .checklist-course {
-	margin-bottom: 18px;
+    margin-bottom: 18px;
 }
 
 header .checklist-course > div {
-	padding-left: 13px;
+    padding-left: 13px;
 }
 
 header .checklist-course p {
-	margin-bottom: 0;
-	font-size: 23px;
-	line-height: 1.1;
-	color: #6e6168;
+    margin-bottom: 0;
+    font-size: 23px;
+    line-height: 1.1;
+    color: #6e6168;
 }
 
 header .checklist-course img {
-	width: 80px;
+    width: 80px;
     padding: 10px 10px 10px 0px;
 }
 
 header .girl {
-	height: 100%;
+    height: 100%;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: 100% 100%;
 }
 
 @media (min-width:1200px) and (max-width:1690px) {
-	header .girl {
-		display: flex !important;
-	}
+    header .girl {
+        display: flex !important;
+    }
 }
 
 @media only screen and (max-width:1200px) {
@@ -203,122 +203,122 @@ header .girl {
 }
 
 @media only screen and (max-width:1024px) {
-	header h1.gradient-text {
-		font-size: 48px;
-	}
-	header .description-text {
-		font-size: 24px;
-	}
-	header .no-gutters > .col,
-	header .no-gutters > [class*="col-"] {
-	    padding-right: 0;
-	    padding-left: 0;
-	}
-	header .girl {
-	    background-size: 455px;
-	}
+    header h1.gradient-text {
+        font-size: 48px;
+    }
+    header .description-text {
+        font-size: 24px;
+    }
+    header .no-gutters > .col,
+    header .no-gutters > [class*="col-"] {
+        padding-right: 0;
+        padding-left: 0;
+    }
+    header .girl {
+        background-size: 455px;
+    }
 }
 
 @media only screen and (max-width:768px) {
-	header h1.gradient-text {
-		font-size: 40px;
-	}
-	header .description-text {
-		font-size: 20px;
-	}
-	header .checklist-course-1 {
-	    margin-bottom: inherit;
-	}
-	header .checklist-course p {
-		font-size: 20px;
-	}
+    header h1.gradient-text {
+        font-size: 40px;
+    }
+    header .description-text {
+        font-size: 20px;
+    }
+    header .checklist-course-1 {
+        margin-bottom: inherit;
+    }
+    header .checklist-course p {
+        font-size: 20px;
+    }
 }
 
 /* MAIN */
 
 main h2 {
-	font-size: 53px;
+    font-size: 53px;
 }
 
 main h4 {
-	font-size: 32px;
+    font-size: 32px;
 }
 
 main p {
-	font-size: 20px;
-	line-height: 1.2;
+    font-size: 20px;
+    line-height: 1.2;
 }
 
 main a.btn,
 main .earnings a.btn,
 footer a.btn {
-	padding: 14px 20px;
-	font-size: 25px;
-	color: #8f2f85 !important;
-	border: 0;
-	background-color: #ffd800;
+    padding: 14px 20px;
+    font-size: 25px;
+    color: #8f2f85 !important;
+    border: 0;
+    background-color: #ffd800;
 }
 
 main a.btn:hover {
-	color: #6e6168;
-	background-color: #ffd800;
+    color: #6e6168;
+    background-color: #ffd800;
 }
 
 /* Line sale v1 */
 
 main .line-sale-v1 a,
 main .line-sale-v3 a {
-	color: #fff;
+    color: #fff;
 }
 
 main .line-sale-v1 p,
 main .line-sale-v3 p {
-	font-size: 20px;
-	margin-bottom: 7px;
+    font-size: 20px;
+    margin-bottom: 7px;
 }
 
 main .line-sale-v1 p:last-child,
 main .line-sale-v3 p:last-child {
-	margin-bottom: 0;
+    margin-bottom: 0;
 }
 
 main .line-sale-v3 span {
-	line-height: 38px;
+    line-height: 38px;
 }
 
 main .line-sale-v1 span {
-	line-height: 70px;
+    line-height: 70px;
 }
 
 main .line-sale-v1 .line-sale-col span,
 main .line-sale-v3 .line-sale-col span {
-	width: 100%;
-	font-size: 52px;
-	font-weight: 500;
-	color: #e7437c;
+    width: 100%;
+    font-size: 52px;
+    font-weight: 500;
+    color: #e7437c;
 }
 
 main section.line-sale-v1,
 main section.line-sale-v3 {
-	padding-top: 16px !important;
-	padding-bottom: 16px !important;
-	color: #fff;
-	background: #f80759;
-	background: -webkit-linear-gradient(left,#f80759 0,#bc4e9c 100%);
-	background: -webkit-gradient(linear,left top,right top,from(#f80759),to(#bc4e9c));
-	background: -o-linear-gradient(left,#f80759 0,#bc4e9c 100%);
-	background: linear-gradient(to right,
-	#f80759 0,#bc4e9c 100%);
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+    color: #fff;
+    background: #f80759;
+    background: -webkit-linear-gradient(left,#f80759 0,#bc4e9c 100%);
+    background: -webkit-gradient(linear,left top,right top,from(#f80759),to(#bc4e9c));
+    background: -o-linear-gradient(left,#f80759 0,#bc4e9c 100%);
+    background: linear-gradient(to right,
+        #f80759 0,#bc4e9c 100%);
 }
 
 main .line-sale-v1 .line-sale-col,
 main .line-sale-v3 .line-sale-col {
-	max-width: 295px;
+    max-width: 295px;
 }
 
 main .line-sale-v1 .middle-row,
 main .line-sale-v3 .middle-row {
-	display: none;
+    display: none;
 }
 
 main .line-sale-v1 .location,
@@ -327,17 +327,17 @@ main .line-sale-v1 .duration,
 main .line-sale-v3 .location,
 main .line-sale-v3 .date,
 main .line-sale-v3 .duration {
-	max-width: 100px;
+    max-width: 100px;
 }
 
 main .line-sale-v1 .date,
 main .line-sale-v3 .date {
-	margin-left: 5px;
+    margin-left: 5px;
 }
 
 main .line-sale-v1 .duration,
 main .line-sale-v3 .duration {
-	margin-left: 10px;
+    margin-left: 10px;
 }
 
 main .line-sale-v1 .location div,
@@ -346,17 +346,17 @@ main .line-sale-v1 .duration div,
 main .line-sale-v3 .location div,
 main .line-sale-v3 .date div,
 main .line-sale-v3 .duration div {
-	width: 70px;
-	height: 70px;
-	margin-bottom: 10px;
-	display: inline-flex;
-	border-radius: 5px;
-	background-color: #fff;
+    width: 70px;
+    height: 70px;
+    margin-bottom: 10px;
+    display: inline-flex;
+    border-radius: 5px;
+    background-color: #fff;
 }
 
 main .line-sale-v1 .location img,
 main .line-sale-v3 .location img {
-	width: 100%;
+    width: 100%;
 }
 
 main .line-sale-v1 .online-course-name p b,
@@ -367,216 +367,216 @@ main .line-sale-v3 .online-course-name p b {
 
 main .line-sale-v1 .deadline,
 main .line-sale-v3 .deadline {
-	display: grid;
+    display: grid;
 }
 
 main .line-sale-v1 .deadline p {
-	padding-top: 20px;
-	font-size: 30px;
-	line-height: 14px;
+    padding-top: 20px;
+    font-size: 30px;
+    line-height: 14px;
 }
 
 main .line-sale-v3 .deadline p {
-	font-size: 28px;
+    font-size: 28px;
 }
 
 main .line-sale-v1 .deadline .akcia,
 main .line-sale-v3 .deadline .akcia {
-	font-size: 40px;
-	font-weight: 600;
-	color: #ffd800;
+    font-size: 40px;
+    font-weight: 600;
+    color: #ffd800;
 }
 
 main .line-sale-v1 .deadline .akcia span,
 main .line-sale-v3 .deadline .akcia span {
-	font-weight: 600;
+    font-weight: 600;
 }
 
 main .line-sale-v3 .deadline .deadline-date {
-	width: 100%;
-	display: inline-block;
-	color: #ffd800;
+    width: 100%;
+    display: inline-block;
+    color: #ffd800;
 }
 
 main .line-sale-v1 .sale,
 main .line-sale-v3 .sale {
-	height: 100%;
-	max-width: 400px;
-	border: 3px solid #fff;
-	border-radius: 10px;
+    height: 100%;
+    max-width: 400px;
+    border: 3px solid #fff;
+    border-radius: 10px;
 }
 
 main .line-sale-v1 .sale p,
 main .line-sale-v3 .sale p {
-	height: 51%;
-	line-height: 2.4;
-	margin-bottom: 0px;
-	font-size: 40px;
-	text-transform: uppercase;
-	color: #fff;
+    height: 51%;
+    line-height: 2.4;
+    margin-bottom: 0px;
+    font-size: 40px;
+    text-transform: uppercase;
+    color: #fff;
 }
 
 main .line-sale-v1 .sale del,
 main .line-sale-v3 .sale del {
-	text-decoration-color: #ffd800;
+    text-decoration-color: #ffd800;
 }
 
 main .line-sale-v1 .sale span,
 main .line-sale-v3 .sale span {
-	font-size: 20px;
-	font-weight: 300;
-	color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+    color: #fff;
 }
 
 main .line-sale-v1 .sale a.btn,
 main .line-sale-v3 .sale a.btn {
-	height: 49%;
-	padding-top: 18px;
-	padding-bottom: 10px;
+    height: 49%;
+    padding-top: 18px;
+    padding-bottom: 10px;
 }
 
 main .line-sale-v1 .girl img,
 main .line-sale-v3 .girl img {
-	max-height: 858px;
-	max-width: 705px;
-	bottom: -16px;
-	right: -155px;
-	position: absolute;
+    max-height: 858px;
+    max-width: 705px;
+    bottom: -16px;
+    right: -155px;
+    position: absolute;
 }
 
 @media (min-width:1690px) {
-	main .line-sale-v1 .sale,
-	main .line-sale-v3 .sale {
-		max-width: 340px;
-	}
+    main .line-sale-v1 .sale,
+    main .line-sale-v3 .sale {
+        max-width: 340px;
+    }
 }
 
 @media (min-width:1200px) and (max-width:1690px) {
-	main .line-sale-v1 .col-01,
-	main .line-sale-v3 .col-01 {
-		-webkit-box-flex: 0;
-		-ms-flex: 0 0 25%;
-		flex: 0 0 25%;
-		max-width: 25%;
-	}
-	main .line-sale-v1 .deadline,
-	main .line-sale-v3 .deadline {
-		-webkit-box-flex: 0;
-		-ms-flex: 0 0 41.6666666667%;
-		flex: 0 0 41.6666666667%;
-		max-width: 41.6666666667%;
-	}
-	main .line-sale-v3 .deadline p {
-		font-size: 30px;
-	}
-	main .line-sale-v1 .col-03,
-	main .line-sale-v3 .col-03 {
-		-webkit-box-flex: 0;
-		-ms-flex: 0 0 33.3333333333%;
-		flex: 0 0 33.3333333333%;
-		max-width: 33.3333333333%;
-	}
-	main .line-sale-v1 .middle-row,
-	main .line-sale-v3 .middle-row {
-		display: flex !important;
-	}
-	main .line-sale-v1 .big-row,
-	main .line-sale-v3 .big-row {
-		display: none !important;
-	}
-	main .line-sale-v1 .sale,
-	main .line-sale-v3 .sale {
-		margin-left: 6px;
-	}
+    main .line-sale-v1 .col-01,
+    main .line-sale-v3 .col-01 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+    main .line-sale-v1 .deadline,
+    main .line-sale-v3 .deadline {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 41.6666666667%;
+        flex: 0 0 41.6666666667%;
+        max-width: 41.6666666667%;
+    }
+    main .line-sale-v3 .deadline p {
+        font-size: 30px;
+    }
+    main .line-sale-v1 .col-03,
+    main .line-sale-v3 .col-03 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 33.3333333333%;
+        flex: 0 0 33.3333333333%;
+        max-width: 33.3333333333%;
+    }
+    main .line-sale-v1 .middle-row,
+    main .line-sale-v3 .middle-row {
+        display: flex !important;
+    }
+    main .line-sale-v1 .big-row,
+    main .line-sale-v3 .big-row {
+        display: none !important;
+    }
+    main .line-sale-v1 .sale,
+    main .line-sale-v3 .sale {
+        margin-left: 6px;
+    }
 }
 
 @media only screen and (max-width:1690px) {
-	main .line-sale-v1 .girl,
-	main .line-sale-v1 .girl img,
-	main .line-sale-v3 .girl,
-	main .line-sale-v3 .girl img {
-		display: none;
-	}
+    main .line-sale-v1 .girl,
+    main .line-sale-v1 .girl img,
+    main .line-sale-v3 .girl,
+    main .line-sale-v3 .girl img {
+        display: none;
+    }
 }
 
 @media only screen and (max-width:1200px) {
-	main .line-sale-v1 a.btn,
-	main .line-sale-v3 a.btn {
-		font-size: 22px;
-	}
+    main .line-sale-v1 a.btn,
+    main .line-sale-v3 a.btn {
+        font-size: 22px;
+    }
 }
 
 @media screen and (max-width:991px) {
-	main .line-sale-v1 .sale a.btn,
-	main .line-sale-v3 .sale a.btn {
-		font-size: 20px;
-	}
+    main .line-sale-v1 .sale a.btn,
+    main .line-sale-v3 .sale a.btn {
+        font-size: 20px;
+    }
 }
 
 @media (min-width:768px) and (max-width:991px) {
-	main .line-sale-v1 .online-course-name p b,
-	main .line-sale-v3 .online-course-name p b {
-	    font-size: 24px;
-	}
-	main .line-sale-v1 span {
-	    line-height: 64px;
-	}
-	main .line-sale-v3 span {
-	    line-height: 38px;
-	}
-	main .line-sale-v1 .deadline p {
-	    font-size: 24px;
-	    line-height: 0px;
-	}
-	main .line-sale-v3 .deadline p {
-	    font-size: 24px;
-	}
+    main .line-sale-v1 .online-course-name p b,
+    main .line-sale-v3 .online-course-name p b {
+        font-size: 24px;
+    }
+    main .line-sale-v1 span {
+        line-height: 64px;
+    }
+    main .line-sale-v3 span {
+        line-height: 38px;
+    }
+    main .line-sale-v1 .deadline p {
+        font-size: 24px;
+        line-height: 0px;
+    }
+    main .line-sale-v3 .deadline p {
+        font-size: 24px;
+    }
 }
 
 @media screen and (max-width:900px) {
-	main .line-sale-v1 .date,
-	main .line-sale-v1 .duration,
-	main .line-sale-v3 .date,
-	main .line-sale-v3 .duration {
-	    margin-left: 0;
-	}
-	main .line-sale-v1 .sale p,
-	main .line-sale-v3 .sale p {
-		font-size: 30px;
-		line-height: 3.2;
-	}
+    main .line-sale-v1 .date,
+    main .line-sale-v1 .duration,
+    main .line-sale-v3 .date,
+    main .line-sale-v3 .duration {
+        margin-left: 0;
+    }
+    main .line-sale-v1 .sale p,
+    main .line-sale-v3 .sale p {
+        font-size: 30px;
+        line-height: 3.2;
+    }
 }
 
 @media only screen and (min-width:768px) {
-	main .line-sale-v1 .location p,
-	main .line-sale-v1 .date p,
-	main .line-sale-v1 .duration p,
-	main .line-sale-v3 .location p,
-	main .line-sale-v3 .date p,
-	main .line-sale-v3 .duration p {
-		margin-bottom: 11px;
-	}
-	main .line-sale-v1 .sale p,
-	main .line-sale-v3 .sale p {
-	    font-size: 40px;
-	    line-height: 2;
-	}
+    main .line-sale-v1 .location p,
+    main .line-sale-v1 .date p,
+    main .line-sale-v1 .duration p,
+    main .line-sale-v3 .location p,
+    main .line-sale-v3 .date p,
+    main .line-sale-v3 .duration p {
+        margin-bottom: 11px;
+    }
+    main .line-sale-v1 .sale p,
+    main .line-sale-v3 .sale p {
+        font-size: 40px;
+        line-height: 2;
+    }
 }
 
 @media only screen and (max-width:812px) {
-	main .line-sale-v1 .line-sale-col,
-	main .line-sale-v3 .line-sale-col {
-	    max-width: none;
-	}
-	main .line-sale-v1 .sale p,
-	main .line-sale-v3 .sale p {
-		font-size: 28px;
-		line-height: 2.65;
-	}
+    main .line-sale-v1 .line-sale-col,
+    main .line-sale-v3 .line-sale-col {
+        max-width: none;
+    }
+    main .line-sale-v1 .sale p,
+    main .line-sale-v3 .sale p {
+        font-size: 28px;
+        line-height: 2.65;
+    }
 }
 
 @media only screen and (max-width:767px) {
-	main .line-sale-v1 .deadline p {
+    main .line-sale-v1 .deadline p {
         padding-top: 32px;
         line-height: 42px;
     }
@@ -584,146 +584,146 @@ main .line-sale-v3 .girl img {
         font-size: 24px;
         line-height: 19px;
     }
-	main .line-sale-v1 .deadline .akcia,
-	main .line-sale-v3 .deadline .akcia {
-	    font-size: 34px;
-	}
-	main .line-sale-v1 span,
-	main .line-sale-v3 span {
-		line-height: 40px;
-	}
+    main .line-sale-v1 .deadline .akcia,
+    main .line-sale-v3 .deadline .akcia {
+        font-size: 34px;
+    }
+    main .line-sale-v1 span,
+    main .line-sale-v3 span {
+        line-height: 40px;
+    }
 }
 
 @media only screen and (max-width:575px) {
-	main .line-sale-v1 p:last-child,
-	main .line-sale-v3 p:last-child {
-		margin-bottom: revert;
-	}
-	main .line-sale-v1 .deadline p,
-	main .line-sale-v3 .deadline p {
-		padding-top: inherit;
-		line-height: inherit;
-	}
-	main .line-sale-v1 .location,
-	main .line-sale-v1 .date,
-	main .line-sale-v1 .duration,
-	main .line-sale-v1 .line-sale-col,
-	main .line-sale-v1 .sale,
-	main .line-sale-v3 .location,
-	main .line-sale-v3 .date,
-	main .line-sale-v3 .duration,
-	main .line-sale-v3 .line-sale-col,
-	main .line-sale-v3 .sale {
-	    max-width: none;
-	}
+    main .line-sale-v1 p:last-child,
+    main .line-sale-v3 p:last-child {
+        margin-bottom: revert;
+    }
+    main .line-sale-v1 .deadline p,
+    main .line-sale-v3 .deadline p {
+        padding-top: inherit;
+        line-height: inherit;
+    }
+    main .line-sale-v1 .location,
+    main .line-sale-v1 .date,
+    main .line-sale-v1 .duration,
+    main .line-sale-v1 .line-sale-col,
+    main .line-sale-v1 .sale,
+    main .line-sale-v3 .location,
+    main .line-sale-v3 .date,
+    main .line-sale-v3 .duration,
+    main .line-sale-v3 .line-sale-col,
+    main .line-sale-v3 .sale {
+        max-width: none;
+    }
 }
 
 
 /* towns */
 
 .towns img.img-fluid {
-	box-shadow: 0 20px 20px rgba(0,0,0,0.25);
+    box-shadow: 0 20px 20px rgba(0,0,0,0.25);
 }
 
 .towns .town-info {
-	display: grid;
+    display: grid;
 }
 
 .towns .town-info h3 {
-	margin-bottom: 40px;
+    margin-bottom: 40px;
 }
 
 .towns .link-cities {
-	max-width: 340px;
-	margin: auto;
-	border: 3px solid #DF5396;
-	border-radius: 12px;
-	margin-top: 45px !important;
-	font-size: 20px;
+    max-width: 340px;
+    margin: auto;
+    border: 3px solid #DF5396;
+    border-radius: 12px;
+    margin-top: 45px !important;
+    font-size: 20px;
 }
 
 .towns .link-cities span {
-	display: block;
-	padding: 8px;
+    display: block;
+    padding: 8px;
 }
 
 .towns .site_btn {
-	width: 100%;
-	height: 46px;
-	text-align: center;
-	border: 0;
-	background: -webkit-linear-gradient(45deg,#ed5799,#8c3a84);
-	background: -o-linear-gradient(45deg,#ed5799,#8c3a84);
-	background: linear-gradient(45deg,#ed5799,#8c3a84);
-	-webkit-text-fill-color: white;
-	-webkit-border-radius: 3px;
-	border-radius: 0 0 9px 9px;
-	cursor: pointer;
-	display: block;
-	padding-top: 0.7rem;
+    width: 100%;
+    height: 46px;
+    text-align: center;
+    border: 0;
+    background: -webkit-linear-gradient(45deg,#ed5799,#8c3a84);
+    background: -o-linear-gradient(45deg,#ed5799,#8c3a84);
+    background: linear-gradient(45deg,#ed5799,#8c3a84);
+    -webkit-text-fill-color: white;
+    -webkit-border-radius: 3px;
+    border-radius: 0 0 9px 9px;
+    cursor: pointer;
+    display: block;
+    padding-top: 0.7rem;
 }
 
 /* Advantages */
 
 main .advantages .why img {
-	width: 140px;
-	height: 140px;
+    width: 140px;
+    height: 140px;
 }
 
 main .advantages .why hr {
-	width: 140px;
-	height: 5px;
-	margin-top: 0.5rem;
-	margin-bottom: 1.5rem;
-	border-width: 0px;
-	background-color: #83d0f5;
-	border-radius: 4px;
+    width: 140px;
+    height: 5px;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+    border-width: 0px;
+    background-color: #83d0f5;
+    border-radius: 4px;
 }
 
 /* GRADUATES */
 
 .graduates p,
 .graduates span {
-	line-height: 1.5;
+    line-height: 1.5;
 }
 
 .graduates .card {
-	border: none;
+    border: none;
 }
 
 .graduates p.courses-graduate {
-	font-size: 16px;
-	font-style: italic;
+    font-size: 16px;
+    font-style: italic;
 }
 
 .graduates .name-graduate {
-	font-weight: 700;
+    font-weight: 700;
 }
 
 .graduates .name-graduate,
 .graduates .sity-graduate {
-	font-size: 20px;
-	color: #212121;
+    font-size: 20px;
+    color: #212121;
 }
 
 /* CAROUSEL */
 
 .carousel-control-prev,
 .carousel-control-next{
-	top: calc(50% - 25px);
-	height: 50px;
-	width: 50px;
-	outline: white;
-	background-size: 100%, 100%;
-	border-radius: 50%;
-	border: 1px solid white;
-	background-color: white;
+    top: calc(50% - 25px);
+    height: 50px;
+    width: 50px;
+    outline: white;
+    background-size: 100%, 100%;
+    border-radius: 50%;
+    border: 1px solid white;
+    background-color: white;
 }
 
 @media only screen and (max-width:812px) {
-	.slider .carousel iframe {
-		width: 100%;
-	}
+    .slider .carousel iframe {
+        width: 100%;
+    }
 }
 
 /* Slider */
@@ -735,14 +735,14 @@ main .advantages .why hr {
     box-sizing: border-box;
 
     -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 
     -webkit-touch-callout: none;
     -khtml-user-select: none;
     -ms-touch-action: pan-y;
-        touch-action: pan-y;
+    touch-action: pan-y;
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -768,10 +768,10 @@ main .advantages .why hr {
 .slick-slider .slick-list
 {
     -webkit-transform: translate3d(0, 0, 0);
-       -moz-transform: translate3d(0, 0, 0);
-        -ms-transform: translate3d(0, 0, 0);
-         -o-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
 }
 
 .slick-track {
@@ -837,11 +837,11 @@ main .advantages .why hr {
 /* slideshow */
 
 .slideshow .slick-track .slick-active {
-	padding-right: 100px;
+    padding-right: 100px;
 }
 
 .slideshow .slick-track .slick-active:last-child {
-	
+
 }
 
 .slideshow .slick-slide {
@@ -859,7 +859,7 @@ main .advantages .why hr {
     -webkit-touch-callout: none;
     -khtml-user-select: none;
     -ms-touch-action: pan-y;
-        touch-action: pan-y;
+    touch-action: pan-y;
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -881,10 +881,10 @@ main .advantages .why hr {
 .slideshow .slick-slider .slick-track,
 .slideshow .slick-slider .slick-list {
     -webkit-transform: translate3d(0, 0, 0);
-       -moz-transform: translate3d(0, 0, 0);
-        -ms-transform: translate3d(0, 0, 0);
-         -o-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
 }
 
 .slideshow .slick-track {
@@ -934,7 +934,7 @@ main .advantages .why hr {
 }
 
 .slideshow .slick-arrow {
-	visibility: hidden;
+    visibility: hidden;
 }
 
 .slideshow .slick-arrow::before {
@@ -942,31 +942,11 @@ main .advantages .why hr {
     top: calc(50% - 25px);
     visibility: visible;
     cursor: pointer;
-    color: #ff7fff;
     font-size: 50px;
     font-weight: 900;
     font-family: "Font Awesome 5 Free";
     line-height: 1;
     z-index: 9;
-}
-
-.slideshow .graduates .slick-arrow::before {
-	position: absolute;
-	width: auto;
-	height: auto;
-	padding: inherit;
-	display: inherit;
-	top: calc(50% - 75px);
-	visibility: visible;
-	cursor: pointer;
-	color: #83d0f5;
-	font-size: 150px;
-	text-shadow: 0 0 15px rgba(0,0,0,0.35);
-	font-weight: 900;
-	font-family: "Font Awesome 5 Free";
-	border: none;
-	background-color: transparent;
-	z-index: 9;
 }
 
 .slideshow .slick-prev.slick-arrow::before {
@@ -984,116 +964,112 @@ main .advantages .why hr {
     right: 20px;
 }
 
-.slideshow .graduates .slick-next.slick-arrow::before {
-    content: "\f054";
-    right: 40px;
-}
 
 .slideshow .slick-arrow.slick-hidden {
     display: none;
 }
 
 .trainingvideos .slick-slide iframe {
-	min-width: 560px;
-	min-height: 315px;
-	margin: 30px;
-	filter: blur(2px);
+    min-width: 560px;
+    min-height: 315px;
+    margin: 30px;
+    filter: blur(2px);
 }
 .trainingvideos .slick-slide.slick-active iframe {
-	min-width: 612px;
-	min-height: 335px;
-	margin: 20px;
-	filter: blur(0px);
+    min-width: 612px;
+    min-height: 335px;
+    margin: 20px;
+    filter: blur(0px);
 }
 
 .trainingvideos .slick-prev {
-	left: 20px;
-	z-index: 9;
+    left: 20px;
+    z-index: 9;
 }
 .trainingvideos .slick-next {
-	right: 20px;
-	z-index: 9;
+    right: 20px;
+    z-index: 9;
 }
 
 .trainingvideos .enroll {
-	opacity: 0;
-	position: absolute;
-	padding: 20px 15px;
-	max-width: 300px;
-	margin: 5px;
-	left: 0;
-	top: 0;
-	border-radius: 5px;
-	box-shadow: 0 0 5px rgba(0,0,0,0.5);
-	background-color: #fff;
-	transition: opacity 0.5s;
-	transition-timing-function: linear;
-	z-index: 9;
+    opacity: 0;
+    position: absolute;
+    padding: 20px 15px;
+    max-width: 300px;
+    margin: 5px;
+    left: 0;
+    top: 0;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    background-color: #fff;
+    transition: opacity 0.5s;
+    transition-timing-function: linear;
+    z-index: 9;
 }
 
 .trainingvideos .slick-slide.slick-active:hover .enroll {
-	opacity: 1;
+    opacity: 1;
 }
 
 .trainingvideos .enroll h3 {
-	font-size: 1.5rem;
-	color: #ed5799;
+    font-size: 1.5rem;
+    color: #ed5799;
 }
 
 .trainingvideos .enroll hr {
-	height: 1px;
-	width: 200px;
-	margin-top: 0.5rem;
-	border-width: 0px;
-	background-color: #e7447c;
+    height: 1px;
+    width: 200px;
+    margin-top: 0.5rem;
+    border-width: 0px;
+    background-color: #e7447c;
 }
 
 .trainingvideos .enroll .btn {
-	padding: 5px 15px;
-	font-size: 20px;
-	background-color: transparent;
-	border: 2px solid #e25497;
-	border-radius: 12px;
+    padding: 5px 15px;
+    font-size: 20px;
+    background-color: transparent;
+    border: 2px solid #e25497;
+    border-radius: 12px;
 }
 
 @media only screen and (max-width:1023px) {
-	.trainingvideos .enroll {
-		display: none;
-	}
+    .trainingvideos .enroll {
+        display: none;
+    }
 }
 
 @media only screen and (max-width:812px) {
-	.slideshow .slick-arrow::before {
-		display: none;
-	}
+    .slideshow .slick-arrow::before {
+        display: none;
+    }
 }
 
 @media (min-width:1690px) {
-	.trainingvideos .slick-slide iframe {
-		min-width: 750px;
-		min-height: 421px;
-		filter: blur(2px);
-	}
-	.trainingvideos .slick-slide.slick-active iframe {
-		min-width: 820px;
-		min-height: 461px;
-		margin: 10px;
-		filter: blur(0px);
-	}
+    .trainingvideos .slick-slide iframe {
+        min-width: 750px;
+        min-height: 421px;
+        filter: blur(2px);
+    }
+    .trainingvideos .slick-slide.slick-active iframe {
+        min-width: 820px;
+        min-height: 461px;
+        margin: 10px;
+        filter: blur(0px);
+    }
 }
 
 @media (min-width:1280px) and (max-width:1689px) {
-	.trainingvideos .slick-slide iframe {
-		min-width: 660px;
-		min-height: 371px;
-		filter: blur(2px);
-	}
-	.trainingvideos .slick-slide.slick-active iframe {
-		min-width: 700px;
-		min-height: 394px;
-		margin: 18px;
-		filter: blur(0px);
-	}
+    .trainingvideos .slick-slide iframe {
+        min-width: 660px;
+        min-height: 371px;
+        filter: blur(2px);
+    }
+    .trainingvideos .slick-slide.slick-active iframe {
+        min-width: 700px;
+        min-height: 394px;
+        margin: 18px;
+        filter: blur(0px);
+    }
 }
 
 /* Slider slick-theme.css */
@@ -1299,29 +1275,29 @@ main .advantages .why hr {
 }
 
 @media only screen and (max-width:812px) {
-	main h2 {
-		font-size: 33px;
-	}
-	main h4 {
-		font-size: 22px;
-	}
-	main p {
-		font-size: 18px;
-	}
+    main h2 {
+        font-size: 33px;
+    }
+    main h4 {
+        font-size: 22px;
+    }
+    main p {
+        font-size: 18px;
+    }
 }
 
 @media only screen and (max-width:640px) {
-	.trainingvideos .slick-slide iframe,
-	.trainingvideos .slick-slide.slick-active iframe {
-	    max-width: 94%;
-	    min-width: auto;
-	    min-height: auto;
-	    margin: 0px;
-	}
+    .trainingvideos .slick-slide iframe,
+    .trainingvideos .slick-slide.slick-active iframe {
+        max-width: 94%;
+        min-width: auto;
+        min-height: auto;
+        margin: 0px;
+    }
 }
 
 .link-top {
-	border-bottom: 1px solid #c0498f;
+    border-bottom: 1px solid #c0498f;
 }
 
 /* MODAL WINDOWS */
@@ -1351,5 +1327,7 @@ main .advantages .why hr {
 /* FOOTER */
 
 footer .social-icon .fab {
-	margin-right: 6px;
+    margin-right: 6px;
 }
+
+

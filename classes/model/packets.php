@@ -17,6 +17,7 @@ class packets extends \db {
 
     function getPacket($id) {
 	$q = "SELECT * FROM `packets` WHERE `id`='$id' LIMIT 1;";
+	//echo $q;
 	return $this->get_result($q);
     }
 

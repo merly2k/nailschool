@@ -5,11 +5,11 @@ namespace model;
 class photogalery extends \db {
 
     public
-	    function insert($town, $curs, $imgname) {
+	    function insert($town, $curs, $imgname, $title) {
 	$q = "INSERT INTO `photogalery` ("
-		. " `town`, `curs`, `imgname`"
+		. " `town`, `curs`, `imgname`,`title`"
 		. ") VALUES ("
-		. " '$town', '$curs', '$imgname');";
+		. " '$town', '$curs', '$imgname','$title');";
 	$this->query($q);
 	return $this->lastState;
     }
@@ -35,12 +35,28 @@ class photogalery extends \db {
     public
 	    function GetPhotos($town, $curs) {
 	$out	 = array();
-	$q	 = "SELECT `imgname` FROM `photogalery` WHERE `town`='$town' AND `curs`='$curs';";
+	$q	 = "SELECT * FROM `photogalery` WHERE `town`='$town' AND `curs`='$curs';";
 	foreach ($this->get_result($q) as $ut)
 	{
 	    $out[] = $ut->imgname;
 	}
+	//print_r($q);
 	return $out;
+    }
+
+    public
+	    function GetTitle($imgname) {
+	$q	 = "SELECT `title` FROM `photogalery` WHERE `imgname`='$imgname';";
+	$z	 = $this->get_result($q);
+	if (isset($z[0]))
+	{
+	    //print_r($z[0]->title);
+	    return $z[0]->title;
+	}
+	else
+	{
+	    return '';
+	}
     }
 
 }

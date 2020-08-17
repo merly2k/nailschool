@@ -33,7 +33,7 @@ foreach ($km->getall()as $k => $r)
 			<span class="social-icon">';
 	if (firstChar($r->fb) != '#')
 	{
-	    $tfut .= '<a style = "color: white;" href = "' . $r->fb . '"><i class = "fab fa-facebook-square fa-2x" aria-hidden = "true"></i></a>';
+	    $tfut .= '<a style = "color: white;" target="_blank" href = "' . $r->fb . '"><i class = "fab fa-facebook-square fa-2x" aria-hidden = "true"></i></a>';
 	}
 	else
 	{
@@ -41,13 +41,13 @@ foreach ($km->getall()as $k => $r)
 	}
 	if (firstChar($r->inst) != '#')
 	{
-	    $tfut .= '<a style = "color: white;" href = "' . $r->inst . '"><i class = "fab fa-instagram fa-2x" aria-hidden = "true"></i></a>';
+	    $tfut .= '<a style = "color: white;" target="_blank" href = "' . $r->inst . '"><i class = "fab fa-instagram fa-2x" aria-hidden = "true"></i></a>';
 	}
 	else
 	{
 	    $tfut .= '';
 	}
-	$tfut .= '    <a style = "color: white;" href = "https://www.youtube.com/channel/UCZcCF_9g8Cp2mE1WG66IEjg"><i class = "fab fa-youtube-square fa-2x" aria-hidden = "true"></i></a >
+	$tfut .= '    <a style = "color: white;" target="_blank" href = "https://www.youtube.com/channel/UCZcCF_9g8Cp2mE1WG66IEjg"><i class = "fab fa-youtube-square fa-2x" aria-hidden = "true"></i></a >
 			</span>
 		    </div>';
     else:
@@ -55,7 +55,7 @@ foreach ($km->getall()as $k => $r)
     endif;
 //print_r($r);
     $mista[$r->link] = $r->$mlang;
-    $otherTown	 .= '<a class="dropdown-item" href="' . WWW_BASE_PATH . 'curses/' . $r->link . '/">' . $r->$mlang . '</a>';
+    $otherTown	 .= '<a class="dropdown-item" href="' . WWW_BASE_PATH . 'curses/' . $r->link . '">' . $r->$mlang . '</a>';
 
     if ($k % 2)
     {
@@ -67,28 +67,28 @@ foreach ($km->getall()as $k => $r)
       <div class="text">
         <h3><span class="gradient-text text-uppercase">' . $r->$mlang . '</span></h3>
         ' . $r->$addr . '
-        <a href="' . WWW_BASE_PATH . 'curses/' . $r->link . '/">
+        <a href="' . WWW_BASE_PATH . 'curses/' . $r->link . '">
           <div class="link-cities gradient-text">
             <span><b>' . l('m15') . '</b></span>
             <span class="site_btn">' . l($button) . '</span>
           </div>
         </a>
       </div>
-    </div>
-    <div class="col-md-6 mb-5 align-items-center town-info d-flex d-md-none">
-        <img class="img-fluid d-block" src="' . WWW_IMG_PATH . 'towns/' . $r->image . '" alt="' . $r->$mlang . '" >
     </div>
   </div>
 	';
     }
     else
     {
-	$townItem .= '<div class="row no-gutters">
+	$townItem .= '<div class="col-md-6 mb-5 align-items-center d-flex d-md-none">
+      <img class="img-fluid d-block" src="' . WWW_IMG_PATH . 'towns/' . $r->image . '" alt="' . $r->$mlang . '" >
+  </div>
+  <div class="row no-gutters">
     <div class="col-md-6 mb-5 align-items-center town-info">
       <div class="text">
         <h3><span class="gradient-text text-uppercase">' . $r->$mlang . '</span></h3>
         ' . $r->$addr . '
-        <a href="' . WWW_BASE_PATH . 'curses/' . $r->link . '/">
+        <a href="' . WWW_BASE_PATH . 'curses/' . $r->link . '">
           <div class="link-cities gradient-text">
             <span><b>' . l('m15') . '</b></span>
             <span class="site_btn">' . l($button) . '</span>
@@ -96,7 +96,7 @@ foreach ($km->getall()as $k => $r)
         </a>
       </div>
     </div>
-    <div class="col-md-6 mb-5 align-items-center d-flex">
+    <div class="col-md-6 mb-5 align-items-center d-none d-md-flex">
         <img class="img-fluid d-block" src="' . WWW_IMG_PATH . 'towns/' . $r->image . '" alt="' . $r->$mlang . '" >
     </div>
   </div>
@@ -222,11 +222,12 @@ if (ONLINE_ONLY == 'Y'):
 					<div class="col-12 col-sm-5 col-md-3 col-lg-3 col-xl-2 px-sm-0 px-md-0 px-lg-0 themed-grid-col deadline">
 						' . $ramp . '
 					</div>
-					<div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-4 px-md-0 px-lg-0 themed-grid-col col-03">
+			<a href="#" data-toggle="modal" data-target="#akcia"><div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-4 px-md-0 px-lg-0 themed-grid-col col-03">
 						<div class="sale text-center m-auto">
               <p style="margin:0 auto;">' . $coastrow . '</p>
               <a href="#" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#akcia">' . $aza . '</a>
 						</div>
+			</a>
 					</div>
 ';
 else:

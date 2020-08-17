@@ -35,9 +35,9 @@ switch (@$this->param[0])
 		$data = $_POST;
 	    }
 	    //print_r($data);
-
+	    $data['image']	 = basename($_POST['image']);
 	    echo $vid->update(array_filter($data), $id);
-	    $context .= "<script>setTimeout(function() { location.replace('" . WWW_ADMIN_PATH . "settings/misto/'); }, 900)</script>";
+	    $context	 .= "<script>setTimeout(function() { location.replace('" . WWW_ADMIN_PATH . "settings/misto/'); }, 900)</script>";
 	endif;
 	break;
     case 'del':
@@ -57,7 +57,7 @@ switch (@$this->param[0])
 	}
 	else
 	{
-	  //  print_r($_POST);
+	    //  print_r($_POST);
 	    $data	 = array(
 		'link'		 => $_POST['link'],
 		'name_ua'	 => $_POST['name_ua'],
@@ -112,3 +112,4 @@ switch (@$this->param[0])
 }
 include TEMPLATE_DIR . DS . $tpl . ".html";
 ?>
+

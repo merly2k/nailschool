@@ -43,15 +43,21 @@ class misto extends \db {
 
     function update($param, $id) {
 
-	//print_r($param) ;
+	print_r($param);
 	$q = "UPDATE `misto` SET ";
+
 	foreach ($param as $k => $v)
 	{
-	    $p[] = "`$k`='$v'";
+	    if (!empty($v))
+	    {
+		$v	 = addslashes($v);
+		$p[]	 = "`$k`='$v'";
+	    }
 	}
 	$q .= implode(", ", $p) . " WHERE  `id`=$id;";
-
+	//echo $q;
 	$this->query($q);
+	//exit;
 	return $this->lastState;
     }
 

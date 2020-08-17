@@ -1,36 +1,42 @@
 <?php
 
-$otherTown = '';
-if (isset($_SESSION['lang']))
+ini_set("max_execution_time", 0);
+$tpl		 = 'admin';
+$context	 = '';
+$nt		 = '';
+$toc		 = '';
+$brouse		 = '';
+$lsize		 = '';
+$mod_name	 = "SEO/Метатеги сайта по страницам";
+$tags		 = new model\seobase();
+$list		 = new seo\sitemap();
+//$list->get_links(WWW_BASE_PATH);
+$list->set_ignore(array("javascript:", "#", "malito:", "tg:", "tel:", "viber:", "skype:", ".css", ".js", ".ico", ".jpg", ".png", ".jpeg", ".swf", ".gif", "curse/"));
+$list->get_links(WWW_BASE_PATH);
+//$list->set_ignore(array("javascript:", "malito:","(#*.)","chat", "tel:", "viber:", "skype:", ".css", ".js", ".ico", ".jpg", ".png", ".jpeg", ".swf", ".gif"));
+$real		 = $list->get_array();
+$realz		 = array();
+echo "<pre>";
+//print_r($real);
+foreach ($real as $ur)
 {
-    $lang = mb_strtolower(@$_SESSION['lang']);
+    $ra	 = preg_split("#/#", $ur);
+    $va	 = array_reverse(array_splice($ra, 2));
+    $ba	 = array_splice($va, 2);
+    echo "BA:";
+    print_r($ba);
+    $f	 = count($va);
+    echo "VA:";
+    print_r($va);
+    echo $f . '<hr>';
+    if (isset($va[0])and $va[0] != ''):
+	$jdat[] = "['" . @$va[0] . "', '" . $va[1] . "','" . $ur . "']";
+    else:
+	$jdat[] = "['" . @$ba[0] . "', '" . $va[1] . "','" . $ur . "']";
+    endif;
 }
-else
-{
-    $lang = "ua";
-}
-$tpl		 = "online";
-$link		 = $this->param[0];
-$km		 = new model\misto();
-$currentMisto	 = ($km->getByName($link));
-$mlang		 = 'name_' . $lang;
-$curses		 = new model\curses();
-$packs		 = new model\packets();
-$bc['ua']	 = 'Курси у ';
-$bc['ru']	 = 'Курсы в ';
-$vidminnik	 = array('ua'	 => array(
-	'dnipro'	 => 'Дніпрі',
-	'kyiv'		 => 'Київі',
-	'zaporizhzhya'	 => 'Запоріжжї',
-	'nicolaev'	 => 'Миколаєві',
-    ),
-    'ru'	 => array(
-	'dnipro'	 => 'Днепре',
-	'kyiv'		 => 'Киеве',
-	'zaporizhzhya'	 => 'Запорожье',
-	'nicolaev'	 => 'Николаеве',
-    )
-);
+$r	 = ",
+";
+$jdat	 = implode($r, $jdat);
 
-
-include TEMPLATE_DIR . DS . $tpl . ".html";
+echo $jdat;

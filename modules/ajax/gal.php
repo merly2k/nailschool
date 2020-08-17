@@ -5,7 +5,7 @@ $gal = new model\photogalery();
 switch ($dija)
 {
     case 'add':
-	$gal->insert($town, $curs, $photo);
+	$gal->insert($town, $curs, $photo, $title);
 	echo "record aded";
 	break;
     case 'del':
@@ -13,6 +13,7 @@ switch ($dija)
 	$gal->delete($town, $curs, $photo);
 	break;
 }
+
 
 
 

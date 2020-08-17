@@ -17,7 +17,7 @@ class leads extends \db {
 
     function GetAll() {
 	//$q = "Select * from `leads` order by `sdate`,`lastedit` DESC";
-	$q = "Select * from `leads` ORDER BY status";
+	$q = "Select * from `leads` ORDER BY `status` ASC, `sdate` DESC";
 	return $this->get_result($q);
     }
 
@@ -62,7 +62,7 @@ class leads extends \db {
     }
 
     function statusList() {
-	$q = "SELECT * FROM `lstatus`";
+	$q = "SELECT * FROM `lstatus` order by `id` ASC";
 	return $this->get_result($q);
     }
 

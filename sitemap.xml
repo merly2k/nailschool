@@ -1,240 +1,411 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type='text/xsl' href='sitemap.xsl'?><!-- Created with MerlinSoft Sitemap Generator v1.0 -->
-<!-- Date: 2020-03-09 22:05:04 -->
+<!-- Date: 2020-07-29 23:09:54 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
-    <loc>http://valet.merlinsoft.pp.ua/</loc>
-    <changefreq></changefreq>
+    <loc>https://nailschool.com.ua/</loc>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>http://valet.merlinsoft.pp.ua/</loc>
+    <loc>https://nailschool.com.ua/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2020-03-09</lastmod>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>http://valet.merlinsoft.pp.ua/curses/kyiv/</loc>
+    <loc>https://nailschool.com.ua/curses/kyiv/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2020-03-09</lastmod>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>http://valet.merlinsoft.pp.ua/curses/dnipro/</loc>
+    <loc>https://nailschool.com.ua/curses/dnipro/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2020-03-09</lastmod>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>http://valet.merlinsoft.pp.ua/curses/zaporizhzhya/</loc>
+    <loc>https://nailschool.com.ua/curses/zaporizhzhya/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2020-03-09</lastmod>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>http://valet.merlinsoft.pp.ua/curses/nicolaev/</loc>
+    <loc>https://nailschool.com.ua/curses/mykolaiv/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2020-03-09</lastmod>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>http://valet.merlinsoft.pp.ua/curses/curse/kyiv/uytuy</loc>
+    <loc>https://nailschool.com.ua/curses/virtual/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2020-03-09</lastmod>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>http://valet.merlinsoft.pp.ua/seminary/kyiv/</loc>
+    <loc>https://nailschool.com.ua/curses/virtual/remont_polygel</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2020-03-09</lastmod>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>http://valet.merlinsoft.pp.ua/kiev/</loc>
+    <loc>https://nailschool.com.ua/curses/dnipro/nail-designer</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2020-03-09</lastmod>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>http://valet.merlinsoft.pp.ua/zaporozhe/</loc>
+    <loc>https://nailschool.com.ua/curses/dnipro/kurs-manikyura</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2020-03-09</lastmod>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>http://valet.merlinsoft.pp.ua/nikolaev/</loc>
+    <loc>https://nailschool.com.ua/curses/kyiv/manikur</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2020-03-09</lastmod>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>http://valet.merlinsoft.pp.ua/dnepr/</loc>
+    <loc>https://nailschool.com.ua/curses/kyiv/apparatnij-manikur</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2020-03-09</lastmod>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>http://valet.merlinsoft.pp.ua/uk/dnipro/</loc>
+    <loc>https://nailschool.com.ua/curses/kyiv/pedicur</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2020-03-09</lastmod>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>http://valet.merlinsoft.pp.ua/curses/curse/dnipro/kurs-manikyura</loc>
+    <loc>https://nailschool.com.ua/curses/kyiv/narashivanie1</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2020-03-09</lastmod>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>http://valet.merlinsoft.pp.ua/curses/curse/dnipro/kurs_pedikiura</loc>
+    <loc>https://nailschool.com.ua/curses/kyiv/design</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2020-03-09</lastmod>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>http://valet.merlinsoft.pp.ua/curses/curse/dnipro/kurs_narashivaniia_nogtey</loc>
+    <loc>https://nailschool.com.ua/curses/kyiv/mk-base-top</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2020-03-09</lastmod>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>http://valet.merlinsoft.pp.ua/curses/curse/dnipro/kurs_narashivaniia_pro</loc>
+    <loc>https://nailschool.com.ua/curses/kyiv/manikur-i-pedikur</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2020-03-09</lastmod>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>http://valet.merlinsoft.pp.ua/curses/curse/dnipro/express-kurs-narashivania</loc>
+    <loc>https://nailschool.com.ua/curses/kyiv/mpk</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2020-03-09</lastmod>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>http://valet.merlinsoft.pp.ua/curses/curse/dnipro/apparatnij-manikur</loc>
+    <loc>https://nailschool.com.ua/curses/kyiv/profi</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2020-03-09</lastmod>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>http://valet.merlinsoft.pp.ua/curses/curse/dnipro/apparatnij-pedikur</loc>
+    <loc>https://nailschool.com.ua/curses/kyiv/universal</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2020-03-09</lastmod>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>http://valet.merlinsoft.pp.ua/curses/curse/dnipro/kombi-pedikur</loc>
+    <loc>https://nailschool.com.ua/curses/dnipro/kurs-pedikiura</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2020-03-09</lastmod>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>http://valet.merlinsoft.pp.ua/curses/curse/dnipro/kombi-pedikur-profi</loc>
+    <loc>https://nailschool.com.ua/curses/dnipro/kurs-narashivaniia-nogtey</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2020-03-09</lastmod>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>http://valet.merlinsoft.pp.ua/curses/curse/dnipro/povushenie-kvalifikacii-narashivanie</loc>
+    <loc>https://nailschool.com.ua/curses/dnipro/kurs-narashivaniia-pod-gel-lak</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2020-03-09</lastmod>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>http://valet.merlinsoft.pp.ua/curses/curse/dnipro/nail-designer</loc>
+    <loc>https://nailschool.com.ua/curses/dnipro/kurs-narashivania-expess</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2020-03-09</lastmod>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>http://valet.merlinsoft.pp.ua/curses/curse/dnipro/remont-i-uplotnenie-gelem</loc>
+    <loc>https://nailschool.com.ua/curses/dnipro/apparatnij-manicure</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2020-03-09</lastmod>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>http://valet.merlinsoft.pp.ua/curses/curse/dnipro/remont-i-uplotnenie-polygel</loc>
+    <loc>https://nailschool.com.ua/curses/dnipro/apparatnij-pedikur</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2020-03-09</lastmod>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>http://valet.merlinsoft.pp.ua/curses/curse/dnipro/narashivanie-resnich</loc>
+    <loc>https://nailschool.com.ua/curses/dnipro/kombi-pedikur</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2020-03-09</lastmod>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>http://valet.merlinsoft.pp.ua/curses/curse/dnipro/mater-brovist</loc>
+    <loc>https://nailschool.com.ua/curses/dnipro/kombi-pedikur-profi</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2020-03-09</lastmod>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>http://valet.merlinsoft.pp.ua/seminary/dnipro/</loc>
+    <loc>https://nailschool.com.ua/curses/dnipro/povushenie-kvalifikacii-narashivanie</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2020-03-09</lastmod>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>http://valet.merlinsoft.pp.ua/pakets/dnipro/11</loc>
+    <loc>https://nailschool.com.ua/curses/dnipro/remont-i-uplotnenie-polygel</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2020-03-09</lastmod>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>http://valet.merlinsoft.pp.ua/pakets/dnipro/14</loc>
+    <loc>https://nailschool.com.ua/curses/dnipro/seminar</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2020-03-09</lastmod>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>http://valet.merlinsoft.pp.ua/pakets/dnipro/18</loc>
+    <loc>https://nailschool.com.ua/curses/dnipro/manicur-i-pedicur</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2020-03-09</lastmod>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>http://valet.merlinsoft.pp.ua/curses/curse/zaporizhzhya/kurs-manikyura</loc>
+    <loc>https://nailschool.com.ua/curses/dnipro/master-universal</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2020-03-09</lastmod>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>http://valet.merlinsoft.pp.ua/seminary/zaporizhzhya/</loc>
+    <loc>https://nailschool.com.ua/curses/dnipro/nail-profi</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2020-03-09</lastmod>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>http://valet.merlinsoft.pp.ua/curses/curse/nicolaev/test3</loc>
+    <loc>https://nailschool.com.ua/curses/dnipro/master-pod-kluch</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2020-03-09</lastmod>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>http://valet.merlinsoft.pp.ua/curses/curse/nicolaev/sdfasd</loc>
+    <loc>https://nailschool.com.ua/curses/dnipro/salon-master</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2020-03-09</lastmod>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>http://valet.merlinsoft.pp.ua/seminary/nicolaev/</loc>
+    <loc>https://nailschool.com.ua/curses/zaporizhzhya/kurs-manicure</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2020-03-09</lastmod>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>http://valet.merlinsoft.pp.ua/pakets/nicolaev/12</loc>
+    <loc>https://nailschool.com.ua/curses/zaporizhzhya/kurs-pedicur</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2020-03-09</lastmod>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>http://valet.merlinsoft.pp.ua/pakets/nicolaev/13</loc>
+    <loc>https://nailschool.com.ua/curses/zaporizhzhya/narashivanie-gel</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2020-03-09</lastmod>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://nailschool.com.ua/curses/zaporizhzhya/aerografia</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://nailschool.com.ua/curses/zaporizhzhya/kurs-apparatnij-manicure</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://nailschool.com.ua/curses/mykolaiv/kurs_narashivaniia_nogtey</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://nailschool.com.ua/curses/mykolaiv/kurs-master-manikyura</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://nailschool.com.ua/curses/mykolaiv/kurs-master-pedikiura</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://nailschool.com.ua/curses/mykolaiv/kurs-narashivaniia-poligel</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://nailschool.com.ua/curses/mykolaiv/kurs-master-universal</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://nailschool.com.ua/curses/mykolaiv/manikur-pedikur</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://nailschool.com.ua/curses/mykolaiv/narashivanie-manikur</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://nailschool.com.ua/curses/mykolaiv/express-kurs-narashivania</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://nailschool.com.ua/curses/mykolaiv/pedicur-pro</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://nailschool.com.ua/curses/mykolaiv/manicur-pro</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://nailschool.com.ua/curses/mykolaiv/verhnie-formi</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://nailschool.com.ua/curses/mykolaiv/vukladnoj-french</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://nailschool.com.ua/curses/mykolaiv/stilett</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://nailschool.com.ua/curses/mykolaiv/prostie-dizajni</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://nailschool.com.ua/curses/virtual/base-and-top</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://nailschool.com.ua/remont_polygel</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://nailschool.com.ua/base-and-top</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2020-07-29</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
 </urlset>

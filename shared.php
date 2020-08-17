@@ -151,22 +151,32 @@ function l($frase) {
 
 function metatags() {
     $seo	 = new model\seobase();
-    $turl	 = "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+    $turl	 = substr(WWW_BASE_PATH, 0, -1) . $_SERVER['REQUEST_URI'];
     $turl	 = preg_replace("#\?(.*)#", "", $turl);
-    if ($turl != WWW_BASE_PATH):
-	$zurl	 = str_replace(WWW_BASE_PATH, "", $turl);
-	//print_r($zurl);
-	$s	 = @$seo->getByUrl($zurl);
-	if (count($s) >= 1)
-	{
-	    //echo "$turl найден";
-	    $keyli	 = $s;
-	    $m3	 = '
-	<meta name="identifier-url" content="' . WWW_BASE_PATH . $keyli->url . '" />
+    $turl	 = rtrim($turl, '/');
+
+    if ($turl == rtrim(WWW_BASE_PATH, '/'))
+    {
+	$ned	 = array('#http://#', '#https://#', '#/#');
+	$zurl	 = preg_replace($ned, '', $turl);
+    }
+    else
+    {
+	$zurl = str_replace(rtrim(WWW_BASE_PATH, '/'), "", $turl);
+    }
+
+    $s = @$seo->getByUrl($zurl);
+
+    if (count($s) >= 1)
+    {
+	//echo "$turl найден";
+	$keyli	 = $s;
+	$m3	 = '
+	<meta name="identifier-url" content="' . rtrim(WWW_BASE_PATH, '/') . $keyli->url . '/" />
     <meta name="title" content="' . $keyli->title . '" />
     <meta name="description" content="' . $keyli->deckription . '" />
-	<meta name="robots" content="noindex,nofollow" />
-    <link rel="canonical" href="' . WWW_BASE_PATH . $zurl . '"/>
+	<meta name="robots" content="index,nofollow" />
+    <link rel="canonical" href="' . $turl . '"/>
 	<meta name="abstract" content="Nails School" />
     <meta name="keywords" content="' . $keyli->keywords . '" />
     <meta name="author" content="merlinsoft" />
@@ -179,8 +189,8 @@ function metatags() {
     <meta property="og:locale" content="ru_RU"/>
 	<meta property="og:type" content="article"/>
 	<meta property="og:title" content="' . $keyli->title . '"/>
-	<meta property="og:url" content="' . WWW_BASE_PATH . $zurl . '" />
-	<meta property="og:image" content="'.WWW_IMAGE_PATH.'wave-color.png" />
+	<meta property="og:url" content="' . $turl . '" />
+	<meta property="og:image" content="' . WWW_IMAGE_PATH . 'ns.jpg" />
 
     <meta property="og:description" content="' . $keyli->deckription . '"/><!-- var from back -->
 	<!-- twitter -->
@@ -188,14 +198,11 @@ function metatags() {
 	<meta name="twitter:site" content="Автор">
 	<meta name="twitter:title" content="' . $keyli->title . '">
 	<meta name="twitter:description" content="' . $keyli->deckription . '">';
-	}
-	else
-	{
-	    //$current= file_get_contents($turl);
-	    //$worlds=new seo\meta();
-	    //$v=$worlds->get_keywords($current);
-	    $deckription	 = "ногтевой сервис";
-	    $m3		 = '<meta name="identifier-url" content="' . WWW_BASE_PATH . '" />
+    }
+    else
+    {
+	$deckription	 = "ногтевой сервис";
+	$m3		 = '<meta name="identifier-url" content="' . WWW_BASE_PATH . '" />
         <meta name="title" content="Nails School — школа маникюра ногтевой сервис" />
                 <meta name="description" content="' . $deckription . '" />
         <meta name="abstract" content="Nails School — школа маникюра ногтевой сервис" />
@@ -205,30 +212,14 @@ function metatags() {
         <meta name="language" content="UA" />
         <meta name="copyright" content="© 2018 development by merlinsoft" />
     <meta name="robots" content="Index,nofollow" />
-	<meta property="og:image" content="'.WWW_IMAGE_PATH.'wave-color.png" />
+	<meta property="og:image" content="' . WWW_IMAGE_PATH . 'ns.jpg" />
     <meta property="og:title" content=""/><!-- var from back -->
 	<meta property="og:description" content="' . $deckription . '"/><!-- var from back -->
 
     <link rel="canonical" href="' . $turl . '"/>';
-	    $seo->insert($zurl, 'Nails School', $deckription, '');
-	}
-    else:
-	// сюда нужно вставить метатеги для индекса
-	    $deckription	 = "ногтевой сервис";
-	$m3 = '<meta name="copyright" content="© 2018 development by merlinsoft" />
-	<!-- facebook -->
-    <meta property="og:site_name" content="' . SITE_NAME . '"/>
-    <meta property="og:locale" content="ru_RU"/>
-	<meta property="og:type" content="article"/>
-	<meta property="og:title" content="Nails School — школа маникюра ногтевой сервис"/>
-	<meta property="og:url" content="' . WWW_BASE_PATH . '" />
-	<meta property="og:image" content="'.WWW_IMAGE_PATH.'wave-color.png" />
+	$seo->insert($zurl, 'Nails School', $deckription, '');
+    }
 
-    <meta property="og:description" content="' . $deckription . '"/><!-- var from back -->
-	<!-- twitter -->
-
-	<meta property="og:image" content="'.WWW_IMAGE_PATH.'wave-color.png" />';
-    endif;
     return $m3;
 }
 
@@ -305,14 +296,14 @@ function firstChar($string) {
 }
 
 function randomOnline($prep, $lang, $current = '') {
-    $r	 = new model\curses();
+    $r = new model\curses();
 
-    $name	 = 'name_' . $lang;
+    $name = 'name_' . $lang;
     if ($current == ''):
 	$q = "SELECT * FROM `cursses` WHERE `miso`='virtual' ORDER BY RAND() LIMIT 1;";
     else:
 //	echo  $current;
-	$q = "SELECT * FROM `cursses` WHERE `miso`='virtual' and `link`!='".$current."' ORDER BY RAND() LIMIT 1;";
+	$q = "SELECT * FROM `cursses` WHERE `miso`='virtual' and `link`!='" . $current . "' ORDER BY RAND() LIMIT 1;";
     endif;
 //    echo $q;
     $t	 = $r->get_result($q);

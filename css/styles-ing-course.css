@@ -681,7 +681,7 @@ main .about-list li::before {
 
 @media only screen and (max-width:575px) {
     main .nails img {
-    height: 485px;
+        height: 485px;
     }
 }
 
@@ -843,33 +843,60 @@ main .about-school .description p {
 .slideshow .slick-arrow {
     visibility: hidden;
 }
-
-.slideshow .slick-arrow::before {
-    position: absolute;
-    top: calc(50% - 112px);
-    visibility: visible;
-    cursor: pointer;
-    color: #83d0f5;
-    font-size: 150px;
-    text-shadow: 0 0 15px rgba(0,0,0,0.35);
+.slick-prev::before, .slick-next::before{
+    padding: 5px;
+    width: 62px;
+    height: 62px;
+    padding-top: 1px;
+    display: inline-block;
+    font-size: 50px;
+    line-height: 1;
     font-weight: 900;
     font-family: "Font Awesome 5 Free";
+    color: #e7447c;
+    border-radius: 50%;
+    border: 5px solid #e7447c;
+    background-color: rgba(255,255,255,0.2);
+    cursor: pointer;
+}
+.slideshow .slick-arrow::before {
+    position: absolute;
+    top: calc(50% - 25px);
+    visibility: visible;
+    cursor: pointer;
+    font-size: 50px;
+    font-weight: 900;
+    font-family: "Font Awesome 5 Free";
+    line-height: 1;
     z-index: 9;
+    color:#e7447c;
+
 }
 
-.slideshow .slick-prev.slick-arrow::before {
+slick-next::before {
+    content: "\f105";
+    padding-left: 3px;
+}
+.slick-prev.slick-arrow::before {
+    content: "\f104";
+    left: 20px;
+}
+
+.slideshow .graduates .slick-prev.slick-arrow::before {
     content: "\f053";
     left: 40px;
 }
 
-.slideshow .slick-next.slick-arrow::before {
-    content: "\f054";
-    right: 40px;
+.slick-next.slick-arrow::before {
+    content: "\f105";
+    right: 20px;
 }
+
 
 .slideshow .slick-arrow.slick-hidden {
     display: none;
 }
+
 
 @media only screen and (max-width:812px) {
     .slideshow .slick-arrow::before {
@@ -1205,6 +1232,25 @@ footer .return-to-sale {
         margin-bottom: 49px;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

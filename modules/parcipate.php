@@ -28,13 +28,6 @@ $output = explode('/', trim($_POST['returnto'], '/'));
 $l	 = new model\leads();
 $teleg	 = new telegrambot();
 
-if (file_exists('telegram.ini'))
-{
-    $ini_array = parse_ini_file("telegram.ini");
-
-    $teleg->setToken($ini_array['token']);
-    $teleg->setChat_id($ini_array['chat_id']);
-}
 $curses	 = new model\curses();
 $packet	 = new model\packets();
 
@@ -58,6 +51,7 @@ else
 //echo firstChar($_POST['id']);
 $phone	 = $_POST['phone'];
 $curse	 = $_POST['id'];
+//echo $curse;
 if (firstChar($curse) == 'p')
 {
     $id	 = preg_replace('/p/', '', $_POST['id']);
@@ -89,9 +83,19 @@ else
     $goback = '<a class="btn btn-primary btn-sm" href="' . WWW_BASE_PATH . 'curses/' . $_POST['returnto'] . '" role="button">' . l('gobask') . '</a>';
 }
 $returnto = $_POST['returnto'];
-$l->add($cursen, $leadtype, $name, $lname, $email, $phone);
+if (file_exists('telegram.ini'))
+{
+    $ini_array = parse_ini_file("telegram.ini", true);
+
+    $teleg->setToken($ini_array['main']['token']);
+    $teleg->setChat_id($ini_array["$c->miso"]['chat_id']);
+}
+
+$l->add($curse, $leadtype, $name, $lname, $email, $phone);
 $teleg->send($cursen, $leadtype, $name, $phone, $lname, $email);
 //print_r($_POST);
+$teleg->setChat_id($ini_array['main']['mainChat']);
+$teleg->send($cursen, $leadtype, $name, $phone, $lname, $email);
 ?>
 
 <!DOCTYPE html>

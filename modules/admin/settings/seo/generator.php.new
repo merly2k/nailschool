@@ -6,7 +6,7 @@ $lsize	 = '';
 $sitemap = new seo\sitemap();
 
 //игнорировать ссылки с расширениями:
-$sitemap->set_ignore(array("javascript:", "#", "malito:", "tg:", "tel:", "viber:", "skype:", ".css", ".js", ".ico", ".jpg", ".png", ".jpeg", ".swf", ".svf", ".gif"));
+$sitemap->set_ignore(array("javascript:", "#", "malito:", "tg:", "tel:", "viber:", "skype:", ".css", ".js", ".ico", ".jpg", ".png", ".jpeg", ".swf", ".svf", ".gif", "https://nailschool.com.ua/base-and-top", "https://nailschool.com.ua/remont_polygel"));
 
 //ссылка Вашего сайта:
 $sitemap->get_links(WWW_BASE_PATH);

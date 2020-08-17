@@ -2,7 +2,7 @@
 
 $template	 = 'admin';
 $mod_name	 = 'настройки';
-$ajax		 .= "";
+$ajax		 = "";
 $brouse		 = '';
 $lsize		 = '';
 $con		 = file_get_contents('config.php');
@@ -24,7 +24,7 @@ $out	 .= '<div class="submit_link">
 </fieldset>
 </div>
 </div>';
-
+$context = $out;
 include TEMPLATE_DIR . DS . $template . ".html";
 
 function save_file($f_type = 'php', $fcontent) {
@@ -32,5 +32,6 @@ function save_file($f_type = 'php', $fcontent) {
     fwrite($w, $fcontent);
     fclose($w);
 }
-
 ?>
+
+

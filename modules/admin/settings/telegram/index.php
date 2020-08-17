@@ -9,30 +9,38 @@ $tpl		 = 'admin';
 $modal_name	 = '';
 $modal_content	 = '';
 $mod_name	 = "Телеграмм";
-$filename	 = APP_PATH . '/sitemap.xml';
+$mista		 = new model\misto();
 $context	 = "<h2>настройка уведомлений в Телеграмм</h2>";
 if (!file_exists("telegram.ini")):
-    $context .= 'file created';
-    write_php_ini(array('token' => 'test', 'chat_id' => 'chat'), "telegram.ini");
+    $context	 .= 'file created';
+    $ini['main']	 = array('token' => '1238870246:AAEs7tPNcLq5_6psuPonbE_WEFlwoMfiPxw');
+    foreach ($mista->getList() as $m)
+    {
+	$ini["$m->link"] = array('chat_id' => '263149696');
+    }
+    write_php_ini($ini, "telegram.ini");
 endif;
 
 switch ($act)
 {
     case 'updateToken':
-	$ini_array		 = parse_ini_file("telegram.ini");
-	$ini_array['token']	 = $_POST['token'];
+	$ini_array			 = parse_ini_file("telegram.ini", true);
+	$ini_array['main']['token']	 = $_POST['token'];
+	$ini_array['main']['mainChat']	 = $_POST['mainChat'];
 	write_php_ini($ini_array, "telegram.ini");
 	break;
     case 'updateChat_id':
-	$ini_array		 = parse_ini_file("telegram.ini");
-	$ini_array['chat_id']	 = $_POST['chat_id'];
-	write_php_ini($ini_array, "telegram.ini");
+	$ini_array			 = parse_ini_file("telegram.ini", true);
+	$ini_array_new			 = array_replace($ini_array, $_POST);
+	write_php_ini($ini_array_new, "telegram.ini");
 
 	break;
 
     default:
 
 	$context = '<h2>Создание Бота в Telegram</h2>
+<div class="row">
+<div class="col-12">
 <p>Начните диалог в телеграм с <code>BotFather</code>:</p>
 <pre>🔍 ПОИСК -&gt; BotFather</pre>
 <p class="note-blue"><strong>BotFather:</strong> Бот по имени <code>BotFather</code> управляет созданием новых ботов. Используйте его для создания своих ботов и для управления уже существующими.
@@ -45,33 +53,58 @@ switch ($act)
 <strong>ТОКЕН:</strong>
 Это строка необходимая для авторизации бота и отправки запросов к Telegram API.<br> Пример токена:<code>4334584910:AAEPmjlh84N62Lv3jGWEgOftlxxAfMhB1gs</code></p>
 <strong>Внимание! если у вас уже настроен токен - пропустите все действия до получения chat_id!</strong>
+</div>
+</div>
 <h2>Получение Chat ID</h2>
+<hr>
+<div class="row"><div class="col-6">
 <p class="note-blue"><strong>CHAT ID:</strong> Чтобы отправить сообщение через Telegram API, боту необходимо указать ID чата в который он будет писать. ID чата будет сгенерирован в момент отправки первого сообщения вашему боту.</p>
 <p>Начните чат с ботом:</p>
 <pre>🔍 ПОИСК -&gt; ИМЯ_ВАШЕГО_БОТА -&gt; СТАРТ</pre>
 Отправьте команду <code>/start</code>:
-теперь отправте боту любое сообщение с текстом,
-чтобы узнать ID чата, откройте следующую ссылку под формой - "Ваша ссылка для поиска chat_id" и найдите в хмл файле строку в которой есть ваша фраза отправленная боту. скопируйте айди чата как показано на рисунке и вставте его в форму chat_id ниже</p>
-	<img src="' . WWW_IMAGE_PATH . 'api.png">
+<p>теперь отправте боту любое сообщение с текстом,
+чтобы узнать ID чата, откройте следующую ссылку под формой - "Ваша ссылка для поиска chat_id" и найдите в хмл файле строку в которой есть ваша фраза отправленная боту. скопируйте айди чата как показано на рисунке и вставте его в форму chat_id ниже</p><br>
+	</div><div class="col-6"><img src="' . WWW_IMAGE_PATH . 'api.png" /></div></div>
 	';
 	break;
 }
-$ini_array	 = parse_ini_file("telegram.ini");
-extract($ini_array);
+$ini_array = parse_ini_file("telegram.ini", true);
 //$context	 .= print_r($ini_array, true);
-$context	 .= "<form class='form-inline' method='post' action='" . WWW_ADMIN_PATH . "settings/telegram/updateToken'><div class='form-group row'>"
-	. "<label>Token</label><input class='form-control' name='token' value='$token'><button type='submit' class='btn btn-primary mb-2'>save Token</button></form></div>";
-if (isset($token))
+
+extract($ini_array);
+$context .= "<div class='container'>"
+	. "<form  method='post' action='" . WWW_ADMIN_PATH . "settings/telegram/updateToken'>"
+	. "<div class='form-group row'>"
+	. "<label class='col-form-label col-3'>Token</label>"
+	. "<input class='form-control col-7' name='token' value='" . $main['token'] . "'>"
+	. "<label class='col-form-label col-3'>бот для всех городов</label>"
+	. "<input class='form-control col-7' name='mainChat' value='" . $main['mainChat'] . "'>"
+	. "<button type='submit' class='btn btn-primary mb-2 col-2'>save Token</button>"
+	. "</div>"
+	. "</form>";
+if (isset($main['token']))
 {
-    $context .= "<a target='blanc' href='https://api.telegram.org/bot" . $token . "/getUpdates'> <strong>Ваша ссылка для поиска chat_id</strong></a>";
+    $context .= "<div class='row'><a target='blanc' href='https://api.telegram.org/bot" . $main['token'] . "/getUpdates'> <strong>Ваша ссылка для поиска chat_id</strong></a><br></div>";
 }
 else
 {
 
 }
-$context .= "<form class='form-inline'method='post' action='" . WWW_ADMIN_PATH . "settings/telegram/updateChat_id'><div class='form-group row'>"
-	. "<label>Chat_ID</label><input class='form-control' name='chat_id' value='$chat_id'><button type='submit' class='btn btn-primary mb-2'>save Chat ID</button>"
-	. " </form></div>";
+
+foreach ($mista->getList() as $v)
+{
+    $town	 = $v->name_ru . '&nbsp;';
+    $ll	 = ${$v->link}['chat_id'];
+    $context .= "<form method='post' action='" . WWW_ADMIN_PATH . "settings/telegram/updateChat_id'>"
+	    . "<div class='form-group row'>"
+	    . "<label class='col-form-label col-3'>$town Chat_ID</label>"
+	    . "<input class='form-control col-7' name='" . $v->link . "[chat_id]' value='" . $ll . "'>"
+	    . "<button type='submit' class='btn btn-primary mb-2 col-2'>save Chat ID</button>"
+	    . "</div>"
+	    . " </form>";
+}
+$context .= "</div>";
+
 //telegram.ini
 //$token
 include TEMPLATE_DIR . DS . $tpl . ".html";

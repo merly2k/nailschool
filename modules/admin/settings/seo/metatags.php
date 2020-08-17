@@ -11,33 +11,32 @@ $mod_name	 = "SEO/Метатеги сайта по страницам";
 $tags		 = new model\seobase();
 $list		 = new seo\sitemap();
 //$list->get_links(WWW_BASE_PATH);
-$list->set_ignore(array("javascript:", "#", "malito:", "tg:", "tel:", "viber:", "skype:", ".css", ".js", ".ico", ".jpg", ".png", ".jpeg", ".swf", ".gif"));
+$list->set_ignore(array("javascript:", "#", "malito:", "tg:", "tel:", "viber:", "skype:", ".css", ".js", ".ico", ".jpg", ".png", ".jpeg", ".swf", ".gif", "curse/"));
 $list->get_links(WWW_BASE_PATH);
-//$list->set_ignore(array("javascript:", "malito:","(#*.)","chat", "tel:", "viber:", "skype:", ".css", ".js", ".ico", ".jpg", ".png", ".jpeg", ".swf", ".gif"));
-$real		 = $list->get_array();
-$realz		 = array();
+
+$real	 = $list->get_array();
+$real	 = array_pad($real, -1, WWW_BASE_PATH);
+$realz	 = array();
+
 foreach ($real as $ur)
 {
-
-    $ra	 = preg_split("#/#", $ur);
-    $va	 = array_reverse(array_splice($ra, 2));
-    $f	 = count($va);
-    for ($a = $f; $a >= 0; $a--)
+    $ned	 = array('#http://#', '#https://#');
+    $ned1	 = array('#http://#', '#https://#', '#/#');
+    $ra	 = array_filter(preg_split("#/#", preg_replace($ned, '', $ur)));
+    $va	 = array_reverse($ra);
+    if ($va[0] == 'curses')
     {
-	if (isset($va[$a]) and @ $va[$a] != '')
-	{
-
-	    $realz[$va[$a]] = "['" . @$va[$a] . "', '" . @$va[$a + 1] . "','" . $ur . "']";
-	    //array('cur'=>@$va[$a],'par'=>@$va[$a+1]);
-	}
+	$va[1] = preg_replace($ned, '', WWW_BASE_PATH);
     }
+    $jdat[] = "['" . $va[0] . "', '" . @$va[1] . "','" . $ur . "']";
 }
-//$realz['valet.merlinsoft.pp.ua']=["valet.merlinsoft.pp.ua", '',WWW_BASE_PATH];
-//  print_r($realz);
+$jdat[] = "['curses', '" . preg_replace($ned1, '', WWW_BASE_PATH) . "','" . WWW_BASE_PATH . "curses']";
 
-$jdat = (implode(',', $realz));
-//$jdat= $realz;
-//echo $jdat;
+
+$r	 = ",
+";
+$jdat	 = implode($r, $jdat);
+
 $context .= "<div id='chart_div' style='overflow: auto;'></div>"
 	. "<div id='form_div'></div>"
 	. "</div>"
