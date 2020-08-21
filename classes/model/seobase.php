@@ -32,7 +32,7 @@ class seobase extends \db {
 	$q	 = "SELECT * FROM `seo` WHERE `url` like '%$url';";
 	//echo $q;
 	$r	 = $this->get_result($q);
-	//print_r($r);
+//print_r($r);
 	if (isset($r[0])):
 	    return $r[0];
 	else:

@@ -383,8 +383,10 @@
 			    <div class="row row-eq-height no-gutters">
 				<!-- Mobile video -->
 				<div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-3 themed-grid-col text-center px-2 px-lg-3 px-xl-5 d-block d-sm-none video">
+
 				    <?php if(firstChar($video)!='#'){?>
-				    <?=$video?>
+				    <iframe width="315" height="630" class="d-block m-auto" src="<?=$video?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				    <?//=$video?>
 				    <?php }?>
 				</div>
 				<!-- // -->
@@ -400,7 +402,8 @@
 				<div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-3 themed-grid-col text-center pt-md-0 pt-lg-5 px-2 px-lg-3 px-xl-5 d-none d-sm-block video">
 				    <div class="pt-md-0 pt-lg-3 mt-md-0 mt-lg-3">
 					<?php if(firstChar($video)!='#'){?>
-					<?=$video?>
+					<iframe width="315" height="630" class="d-block m-auto" src="<?=$video?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					<?//=$video?>
 					<?php }?>
 				    </div>
 				</div>
@@ -905,7 +908,7 @@
 						<!-- Modal body -->
 						<div class="modal-body">
 						    <p class="ps text-uppercase font-weight-bold"><?=strip_tags($k->$mlang)?></p>
-						    <form id='akciaForm' action="<?=WWW_BASE_PATH?>parcipate" method="post">
+						    <form id='akciaForm' action="<?=WWW_BASE_PATH?>participate" method="post">
 							<div class="form-price">
 							    <div class="form-content fd-rever">
 								<div class="form-group left">
@@ -979,7 +982,7 @@
 						<!-- Modal body -->
 						<div class="modal-body">
 						    <!--p class="ps text-uppercase font-weight-bold"><?=strip_tags($k->$mlang)?></p-->
-						    <form id='akciaForm' action="<?=WWW_BASE_PATH?>parcipate" method="post">
+						    <form id='akciaForm' action="<?=WWW_BASE_PATH?>participate" method="post">
 							<input type="hidden" name="id" value="<?=$k->id?>" />
 							<input type="hidden" name="leadtype" value="calback" />
 							<input type="hidden" name="returnto" value="<?=$this->param[0]?>/<?=$this->param[1]?>" />
@@ -1050,7 +1053,7 @@
 						<!-- Modal body -->
 						<div class="modal-body" style=' width:100%;'>
 						    <!--p class="ps text-uppercase font-weight-bold"><?=l("konsult_sub")?></p-->
-						    <form id='akciaForm' action="<?=WWW_BASE_PATH?>parcipate" method="post">
+						    <form id='akciaForm' action="<?=WWW_BASE_PATH?>participate" method="post">
 							<fieldset>
 							    <!-- Text input-->
 							    <div class="form-group">
@@ -1087,6 +1090,9 @@
 				    <!-- <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e402414887521ee"></script> -->
 				    </body>
 				    </html>
+
+
+
 
 
 

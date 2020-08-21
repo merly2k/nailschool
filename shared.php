@@ -164,20 +164,20 @@ function metatags() {
     {
 	$zurl = str_replace(rtrim(WWW_BASE_PATH, '/'), "", $turl);
     }
-
-    $s = @$seo->getByUrl($zurl);
+	 $zurl=ltrim($zurl, '/');	
+    $s = @$seo->getByUrl(rtrim($zurl, '/'));
 
     if (count($s) >= 1)
     {
 	//echo "$turl найден";
 	$keyli	 = $s;
 	$m3	 = '
-	<meta name="identifier-url" content="' . rtrim(WWW_BASE_PATH, '/') . $keyli->url . '/" />
-    <meta name="title" content="' . $keyli->title . '" />
-    <meta name="description" content="' . $keyli->deckription . '" />
-	<meta name="robots" content="index,nofollow" />
+	<meta name="identifier-url" content="' . rtrim(WWW_BASE_PATH, '/') . $keyli->url . '" />
+    <meta name="title" content="' . htmlspecialchars($keyli->title) . '" />
+    <meta name="description" content="' .htmlspecialchars($keyli->deckription). '" />
+    <meta name="robots" content="Index,follow" />
     <link rel="canonical" href="' . $turl . '"/>
-	<meta name="abstract" content="Nails School" />
+    <meta name="abstract" content="Nails School" />
     <meta name="keywords" content="' . $keyli->keywords . '" />
     <meta name="author" content="merlinsoft" />
     <meta http-equiv="pragma" content="no-cache" />
@@ -188,16 +188,16 @@ function metatags() {
     <meta property="og:site_name" content="' . SITE_NAME . '"/>
     <meta property="og:locale" content="ru_RU"/>
 	<meta property="og:type" content="article"/>
-	<meta property="og:title" content="' . $keyli->title . '"/>
+	<meta property="og:title" content="' .htmlspecialchars( $keyli->title) . '"/>
 	<meta property="og:url" content="' . $turl . '" />
 	<meta property="og:image" content="' . WWW_IMAGE_PATH . 'ns.jpg" />
 
-    <meta property="og:description" content="' . $keyli->deckription . '"/><!-- var from back -->
+    <meta property="og:description" content="' . htmlspecialchars($keyli->deckription) . '"/><!-- var from back -->
 	<!-- twitter -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:site" content="Автор">
-	<meta name="twitter:title" content="' . $keyli->title . '">
-	<meta name="twitter:description" content="' . $keyli->deckription . '">';
+	<meta name="twitter:title" content="' . htmlspecialchars($keyli->title) . '">
+	<meta name="twitter:description" content="' . htmlspecialchars($keyli->deckription) . '">';
     }
     else
     {
@@ -211,7 +211,7 @@ function metatags() {
         <meta name="revisit-after" content="15" />
         <meta name="language" content="UA" />
         <meta name="copyright" content="© 2018 development by merlinsoft" />
-    <meta name="robots" content="Index,nofollow" />
+    <meta name="robots" content="Index,follow" />
 	<meta property="og:image" content="' . WWW_IMAGE_PATH . 'ns.jpg" />
     <meta property="og:title" content=""/><!-- var from back -->
 	<meta property="og:description" content="' . $deckription . '"/><!-- var from back -->

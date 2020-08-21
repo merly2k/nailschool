@@ -15,7 +15,7 @@ if ($_POST)
 else
 {
     $uri	 = implode('/', $this->param);
-    //echo $uri . "<br>";
+    echo $uri . "<br>";
     $cll	 = preg_replace("@" . $_SERVER["SERVER_NAME"] . "/@", '', $uri);
 
     $row = $tags->getByUrl($cll);
@@ -39,7 +39,7 @@ else
     }
     else
     {
-	$nt .= "     <div class='card-header'>URL: " . $protocol . $_SERVER["SERVER_NAME"] . '/' . $url . " <a href='" . $protocol . $_SERVER["SERVER_NAME"] . '/' . $url . "' target='_blank'>Перейти на страницу</a></div>" . PHP_EOL;
+	$nt .= "     <div class='card-header'>URL: " . $protocol . $_SERVER["SERVER_NAME"] . $url . " <a href='" . $protocol . $_SERVER["SERVER_NAME"] . $url . "' target='_blank'>Перейти на страницу</a></div>" . PHP_EOL;
     }
     $nt	 .= $f->input('url', '', 'hidden', 'url', '', $row->url) . PHP_EOL;
     $nt	 .= $f->input('Title', 'title', 'text', 'title', 'title', @$row->title) . PHP_EOL;
@@ -52,6 +52,9 @@ else
 
     echo $nt;
 }
+
+
+
 
 
 

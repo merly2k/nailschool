@@ -2,6 +2,7 @@
 
 extract($_POST);
 $gal = new model\photogalery();
+if(empty($title)){$title='';}
 switch ($dija)
 {
     case 'add':

@@ -86,11 +86,11 @@ class app extends application {
     }
 
     function router() {
-//определяем параметры запроса и задаём параметры по умолчанию;
+	//определяем параметры запроса и задаём параметры по умолчанию;
 	$route_str	 = trim(preg_replace("#route=#", "", $_SERVER["QUERY_STRING"]), '/');
-// '<hr>' . $route_str . '<hr>';
+	// '<hr>' . $route_str . '<hr>';
 	$route_array	 = preg_split("#/#", $route_str);
-// Удаляем утм метки
+	// Удаляем утм метки
 	$route_array	 = array_filter($route_array, function($pin) {
 	    if (firstChar($pin) != '&')
 	    {
@@ -102,7 +102,7 @@ class app extends application {
 
 	if (stripos(@$route_array[0], "=") !== false or empty($route_array[0]))
 	{
-// если корень сайта или корень с утм метками включаем индекс
+	    // если корень сайта или корень с утм метками включаем индекс
 	    require_once APP_PATH . DS . "modules" . DS . 'index.php';
 	}
 	else
@@ -120,23 +120,23 @@ class app extends application {
 		    {
 
 			case TRUE:
-//echo $fp[$i]."-file!<br>";
+			    //echo $fp[$i]."-file!<br>";
 			    require_once $fp[$i];
 			    break 3;
 
 			default:
-//echo $fp[$i]." not a file<br>";
+			    //echo $fp[$i]." not a file<br>";
 			    break;
 		    }
 		}
-//echo "<hr>";
-//print_r(parse_str($_SERVER['QUERY_STRING']),true);
-//foreach ([a-z] as $key => $value){print $key;};
+		//echo "<hr>";
+		//print_r(parse_str($_SERVER['QUERY_STRING']),true);
+		//foreach ([a-z] as $key => $value){print $key;};
 		$as		 = array_pop($route_array);
 		array_unshift($this->param, $as);
 		$filestring	 = implode(DS, $route_array);
 	    }
-//print_r($this->param);
+	    //print_r($this->param);
 
 	    return;
 	}
@@ -150,7 +150,7 @@ class app extends application {
     public
 	    function __destruct() {
 
-//$this->db->close();
+	//$this->db->close();
     }
 
 }

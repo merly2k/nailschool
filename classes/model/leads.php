@@ -16,7 +16,7 @@ namespace model;
 class leads extends \db {
 
     function GetAll() {
-	//$q = "Select * from `leads` order by `sdate`,`lastedit` DESC";
+//$q = "Select * from `leads` order by `sdate`,`lastedit` DESC";
 	$q = "Select * from `leads` ORDER BY `status` ASC, `sdate` DESC";
 	return $this->get_result($q);
     }
@@ -43,6 +43,20 @@ class leads extends \db {
 	return $this->get_result($q);
     }
 
+    function getParcipated($s) {
+	if ($s == 0)
+	{
+	    $q = "Select * from `leads` where `ppate` = '0' or ISNULL(`ppate`);";
+	}
+	else
+	{
+	    $q = "Select * from `leads` where `ppate` = '$s' ";
+	}
+
+	echo $q;
+	return $this->get_result($q);
+    }
+
     function getNotClosed($param) {
 	$q = "Select * from `leads` where `status` not '0'";
 	return $this->get_result($q);
@@ -56,7 +70,7 @@ class leads extends \db {
 	}
 	else
 	{
-	    $q = "select * from `leads` where `status`='$params'";
+	    $q = "select * from `leads` where `status` = '$params'";
 	}
 	return $this->get_result($q);
     }
@@ -78,20 +92,22 @@ class leads extends \db {
     }
 
     function AddStatus($status) {
-	$q = "INSERT INTO `lstatus` (`status`) VALUES ('$status');";
+	$q = "INSERT INTO `lstatus` (`status`) VALUES ('$status');
+";
 	$this->query($q);
 	return $this->lastState;
     }
 
     function EditStatus($param) {
 	extract($param);
-	$q = "UPDATE `lstatus` SET `status` = '$status' WHERE `id` = '$id';";
+	$q = "UPDATE `lstatus` SET `status` = '$status' WHERE `id` = '$id';
+";
 	$this->query($q);
 	return $this->lastState;
     }
 
     function getStatusById($id) {
-	$q = "SELECT * FROM `lstatus` WHERE `id`=$id";
+	$q = "SELECT * FROM `lstatus` WHERE `id` = $id";
 	return $this->get_result($q);
     }
 
@@ -107,9 +123,10 @@ class leads extends \db {
 	$q = "UPDATE `leads` SET ";
 	foreach ($param as $k => $v)
 	{
-	    $p[] = "`$k`='" . htmlspecialchars($v, ENT_QUOTES) . "'";
+	    $p[] = "`$k` = '" . htmlspecialchars($v, ENT_QUOTES) . "'";
 	}
-	$q .= implode(", ", $p) . " WHERE  `id`='$id';";
+	$q .= implode(", ", $p) . " WHERE `id` = '$id';
+";
 	//echo $q;
 	$this->query($q);
 
