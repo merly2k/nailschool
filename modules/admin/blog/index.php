@@ -1,12 +1,11 @@
 <?php
 
-$brouse		 = '';
-$lsize		 = '';
+$tpl		 = "admin";
+$lsize		 = ' 640×397px';
 $template	 = "admin";
+$brouse		 = APP_PATH . '/images/articles/';
+$web_brouse	 = WWW_IMAGE_PATH . 'articles/';
 $mod_name	 = 'Управление блогом';
-$langua		 = '';
-$langru		 = '';
-$langen		 = '';
 $context	 = '';
 
 $cont_id = @$this->param[0];
@@ -47,7 +46,7 @@ if ($_POST)
     else
     {
 	$message = "сохранено";
-	//echo "<script>setTimeout(function() { location.replace('" . WWW_ADMIN_PATH . "blog/'); }, 900)</script>";
+	echo "<script>setTimeout(function() { location.replace('" . WWW_ADMIN_PATH . "blog/'); }, 900)</script>";
     }
 }
 
@@ -61,7 +60,6 @@ if ($cont_id == 'new')
 elseif (is_numeric($cont_id))
 {
     $data	 = $ed->SelectBy($cont_id);
-    //print_r($data);
     $form	 = $f->renderFormByData('blog', (array) $data[0]);
     $context .= "<form method='post' action='update/$cont_id'>$form"
 	    . "<button type='submit' class='btn btn-info'>Опубликовать</button>"
@@ -107,6 +105,12 @@ else
 
 include TEMPLATE_DIR . DS . $template . ".html";
 ?>
+
+
+
+
+
+
 
 
 

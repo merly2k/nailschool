@@ -36,7 +36,7 @@ foreach ($arr as $i)
 {
     $next_url	 = $i;
     $map		 .= "  <url>\n" .
-	    "    <loc>" . htmlentities(@$next_url) . "</loc>\n" .
+	    "    <loc>" . htmlentities(rtrim(@$next_url, '/')) . "</loc>\n" .
 	    "    <changefreq>" . FREQUENCY . "</changefreq>\n" .
 	    "    <priority>" . PRIORITY . "</priority>\n" .
 	    "    <lastmod>" . date("Y-m-d") . "</lastmod>\n" .

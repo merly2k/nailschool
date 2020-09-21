@@ -42,6 +42,14 @@ else:
     unset($_POST['mypath']);
     $_POST['id']	 = $id;
     $image		 = basename($_POST['image']);
+    if (@$_POST['hidestart'] == 'on')
+    {
+	$_POST['hidestart'] = 'Y';
+    }
+    else
+    {
+	$_POST['hidestart'] = 'N';
+    }
     if (@$_POST['tur'] == 'on')
     {
 	$_POST['tur'] = 'Y';
@@ -114,6 +122,7 @@ else:
 endif;
 
 include TEMPLATE_DIR . DS . $tpl . ".html";
+
 
 
 

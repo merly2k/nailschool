@@ -30,8 +30,9 @@ switch (@$this->param[0])
 	break;
 }
 $context = '<ul class="nav nav-tabs nav-justified">'
-	. '<li class="nav-item"><a class="nav-link ' . $as1 . '" href="' . WWW_ADMIN_PATH . 'parcipated">Подписаны на новости</a></li>'
-	. '<li class="nav-item"><a class="nav-link ' . $as2 . '" href="' . WWW_ADMIN_PATH . 'parcipated/no">Не подписаны на новости</a></li>';
+	. '<li class="nav-item"><a class="nav-link ' . $as1 . '" href="' . WWW_ADMIN_PATH . 'participated">Подписаны на новости</a></li>'
+	. '<li class="nav-item"><a class="nav-link ' . $as2 . '" href="' . WWW_ADMIN_PATH . 'participated/no">Не подписаны на новости</a></li>'
+	. '</ul>';
 $context .= "<table class='table table-striped table-bordered table-hover DataTable'  data-order='[[ 0, \"desc\" ]]'>
                                     <thead>
                                         <tr>

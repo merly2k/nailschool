@@ -351,8 +351,9 @@
 			    <div class="row row-eq-height no-gutters">
 				<!-- Mobile video -->
 				<div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-3 themed-grid-col m-auto px-2 px-lg-3 px-xl-5 d-block d-sm-none video">
-				    if(firstChar($video)!='#'){?>
-				    <?=$video?><?php }?>
+				    <?php if(firstChar($video)!='#'){?>
+				<iframe width="315" height="630" class="d-block m-auto" src="<?=$video?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<?php }?>
 				</div>
 				<!-- // -->
 				<div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-9 themed-grid-col py-5 px-4 px-lg-4 px-xl-5">
@@ -367,7 +368,7 @@
 				<div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-3 themed-grid-col text-center pt-md-0 pt-lg-5 px-2 px-lg-3 px-xl-5 d-none d-sm-block video">
 				    <div class="pt-md-0 pt-lg-3 mt-md-0 mt-lg-3">
 					<?php if(firstChar($video)!='#'){?>
-					<?=$video?>
+<iframe width="315" height="630" class="d-block m-auto" src="<?=$video?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					<?php }?>
 				    </div>
 				</div>
@@ -626,9 +627,9 @@
 				    <footer class="footer-page">
 
 
-					<div class="text-center position-relative return-to-sale">
+					<!--div class="text-center position-relative return-to-sale">
 					    <a href="#sale"  class="btn btn-warning btn-lg text-uppercase font-weight-bold"><?php if($k->action=="Y"){ echo l('r9');} else{echo l('r9a');}?>!</a>
-					</div>
+					</div-->
 				    </footer>
 				    <div id="to-top" style="display: block;"><i class="fal fa-caret-circle-up" aria-hidden="true"></i></div>
 				    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -852,7 +853,7 @@
 						<!-- Modal body -->
 						<div class="modal-body">
 						    <p class="ps text-uppercase font-weight-bold"><?=strip_tags($k->$mlang)?></p>
-						    <form id='akciaForm' action="<?=WWW_BASE_PATH?>participate" method="post">
+						    <form id='akciaForm' action="<?=WWW_BASE_PATH?>parcipate" method="post">
 							<div class="form-price">
 							    <div class="form-content fd-rever">
 								<div class="form-group left">
@@ -927,7 +928,7 @@
 						<!-- Modal body -->
 						<div class="modal-body">
 						    <!--p class="ps text-uppercase font-weight-bold"><?=strip_tags($k->$mlang)?></p-->
-						    <form id='akciaForm' action="<?=WWW_BASE_PATH?>participate" method="post">
+						    <form id='akciaForm' action="<?=WWW_BASE_PATH?>parcipate" method="post">
 							<input type="hidden" name="id" value="<?=$k->id?>" />
 							<input type="hidden" name="leadtype" value="calback" />
 							<input type="hidden" name="returnto" value="<?=$this->param[0]?>/<?=$this->param[1]?>" />
@@ -1000,7 +1001,7 @@
 						</div>
 						<!-- Modal body -->
 						<div class="modal-body" style=' width:100%;'>
-						    <form id='akciaForm' action="<?=WWW_BASE_PATH?>participate" method="post">
+						    <form id='akciaForm' action="<?=WWW_BASE_PATH?>parcipate" method="post">
 							<fieldset>
 							    <!-- Text input-->
 							    <div class="form-group">

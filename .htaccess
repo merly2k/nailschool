@@ -1,10 +1,12 @@
 RewriteEngine on 
+RewriteCond %{HTTPS} !=on
+RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R,L]
 RewriteCond %{THE_REQUEST} ^GET.*index\.php [NC]
 RewriteRule (.*?)index\.php/*(.*) /$1$2 [R=301,NE,L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond $1 !^(support|img|js|css|robots\.txt)
-RewriteRule ^(.*)$ index.php?route=$1? [L,QSA]
+RewriteRule ^(.*)$ index.php?route=$1 [L,QSA]
 
 
 

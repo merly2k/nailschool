@@ -108,13 +108,13 @@ else:
 	if (firstChar($faddr->fb) != '#')
 	{
 	    $tfut = '
-        <a href="' . $faddr->fb . '"><i class="fab fa-facebook-square"></i></a>';
+        <a target="_blank" href="' . $faddr->fb . '"><i class="fab fa-facebook-square"></i></a>';
 	}
 	if (firstChar($faddr->inst) != '#')
 	{
-	    $tfut .= '        	<a href="' . $faddr->inst . '"><i class="fab fa-instagram"></i></a>';
+	    $tfut .= '        	<a target="_blank" href="' . $faddr->inst . '"><i class="fab fa-instagram"></i></a>';
 	}
-	$tfut	 .= '<a href = "https://www.youtube.com/channel/UCZcCF_9g8Cp2mE1WG66IEjg"><i class = "fab fa-youtube-square"></i></a>
+	$tfut	 .= '<a target="_blank" href = "https://www.youtube.com/channel/UCZcCF_9g8Cp2mE1WG66IEjg"><i class = "fab fa-youtube-square"></i></a>
 ';
 	$curses	 = new model\curses();
 	$cc	 = $curses->getCurse($town, $link);
@@ -176,6 +176,7 @@ else:
 		$decription	 = $row->$ldecription;
 		$fulltext	 = $row->$lfulltext;
 		$dateX		 = strtotime($row->start);
+		$hidestart	 = $row->hidestart;
 		$start		 = date('d', $dateX);
 		$monts		 = localeMomts($lang, date('m', $dateX));
 		$coast		 = $row->coast;

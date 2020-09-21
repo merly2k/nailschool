@@ -290,14 +290,17 @@ else:
 					<img src="' . WWW_IMG_PATH . 'location-pink.svg" alt="">
 				    </div>
 				    <p class="text-center">&nbsp;' . $mista[$acsia->miso] . '</p>
-				</div>
-				<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 px-1 px-md-0 themed-grid-col text-center date">
+				</div>';
+	if ($acsia->hidestart != 'Y')
+	{
+	    $randAction .= '<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 px-1 px-md-0 themed-grid-col text-center date">
 				    <div class="align-middle">
 					<span class="align-middle">' . $start . '</span>
 				    </div>
 				    <p class="text-center">' . $monts . '</p>
-				</div>
-				<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 px-1 px-md-0 themed-grid-col text-center duration">
+				</div>';
+	}
+	$randAction .= '<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 px-1 px-md-0 themed-grid-col text-center duration">
 				    <div class="align-middle">
 					<span class="align-middle">' . $acsia->finish . '</span>
 				    </div>
@@ -368,5 +371,10 @@ foreach ($film->getList() as $vi)
 
 $tpl = 'indexn';
 include TEMPLATE_DIR . $tpl . ".html";
+
+
+
+
+
 
 

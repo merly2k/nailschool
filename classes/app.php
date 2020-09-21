@@ -87,9 +87,15 @@ class app extends application {
 
     function router() {
 	//определяем параметры запроса и задаём параметры по умолчанию;
-	$route_str	 = trim(preg_replace("#route=#", "", $_SERVER["QUERY_STRING"]), '/');
+	$ned		 = array("#route=#");
+	$route_str	 = trim(preg_replace($ned, "", $_SERVER["QUERY_STRING"]), '/');
 	// '<hr>' . $route_str . '<hr>';
+	$route_str	 = preg_replace('#\&(.*)#', '/', $route_str);
+
+	//echo $route_str;
+
 	$route_array	 = preg_split("#/#", $route_str);
+	//print_r($route_array);
 	// Удаляем утм метки
 	$route_array	 = array_filter($route_array, function($pin) {
 	    if (firstChar($pin) != '&')

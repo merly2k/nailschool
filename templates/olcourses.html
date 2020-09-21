@@ -291,9 +291,9 @@
 				</section>
 				<footer class="footer-page">
 				    <div class="row" style="height: 62px"></div>
-				    <div class="text-center return-to-sale">
+				    <!--div class="text-center return-to-sale">
 					<a href="#curseslist" class="btn btn-warning btn-lg text-uppercase font-weight-bold"><?=l('m100')?></a>
-				    </div>
+				    </div-->
 				</footer>
 			    </div><!-- .entry-content -->
 			</div>
@@ -318,7 +318,7 @@
 		    </div>
 		    <!-- Modal body -->
 		    <div class="modal-body">
-			<form id='akciaForm' action="<?=WWW_BASE_PATH?>participate" method="post">
+			<form id='akciaForm' action="<?=WWW_BASE_PATH?>parcipate" method="post">
 			    <input type="hidden" name="id" value="<?=@$k->id?>" />
 			    <input type="hidden" name="leadtype" value="calback" />
 			    <input type="hidden" name="returnto" value="<?=$this->param[0]?>" />

@@ -93,7 +93,7 @@ class input {
 	    if ($k != 'id')
 	    {
 		$type = $this->get_field_type($v->type);
-		//$out .="$type";
+		//$out	 .= "$type";
 		switch ($type)
 		{
 		    case 'text':
@@ -144,7 +144,7 @@ class input {
 			$out	 .= $this->input("f$c", $v->label, 'date', $k, 'yyyy-mm-dd', $data[$k]);
 			break;
 		    case 'now':
-			$out	 .= $this->input("f$c", $v->label, 'date', $k, 'yyyy-mm-dd', $data[$k]);
+			$out	 .= $this->input("f$c", $v->label, 'date', $k, 'yyyy-mm-dd', date('Y-m-d'));
 			break;
 		    case 'enum':
 
@@ -172,12 +172,16 @@ class input {
 	$ap	 = '';
 	if ($type != 'file')
 	{
+	    if ($type != 'now' or $type != 'date')
+	    {
+		$rkk = '  required="required"';
+	    }
 	    return '<div class="form-group row">
       <label class="control-label col-4" for="' . $id . '">' . $label . ' </label>
       <div class="col-12">
-      <input type="' . $type . '" class="form-control" id="' . $id . '" placeholder="' . $placeholder . '"  name="' . $name . '" ' . $value . '  required="required">
-    </div>
-	</div>' . $ap;
+      <input type="' . $type . '" class="form-control" id="' . $id . '" placeholder="' . $placeholder . '"  name="' . $name . '" ' . $value . $rkk . '>
+	    </div>
+	    </div>' . $ap;
 	}
 	else
 	{
@@ -191,11 +195,11 @@ class input {
 	{
 	    $status = 'checked';
 	}
-	return '<div class="form-group">
-                 <div class="checkbox-inline">
-                  <label><input  id="' . $id . '" type="checkbox" name="' . $name . '" ' . $status . '> ' . $label . '</label>
-                 </div>
-                </div>';
+	return '<div class = "form-group">
+	    <div class = "checkbox-inline">
+	    <label><input id = "' . $id . '" type = "checkbox" name = "' . $name . '" ' . $status . '> ' . $label . '</label>
+	    </div>
+	    </div>';
     }
 
     public
@@ -215,10 +219,12 @@ class input {
 
 	return "<div><label>$label</label>
         <div><input class='fileb' type='hidden' id='$id' name='$name' value='$value'/>
-        <img id='img-preview-$id' src='$value' style='width: 180px; cursor:hand;'/>
+        <img id='img-preview-$id' src='$value' style='width: 180px;
+	    cursor:hand;
+	    '/>
 	<a class='btn btn-info moka' data-toggle='modal' imt='$id' data-target='#imomodal'><i class='fa fa-download'></i></a>
-        </div>
-    </div>";
+	    </div>
+	    </div>";
     }
 
     public
@@ -242,11 +248,11 @@ class input {
 
 	    if ($selected == $v['value'])
 	    {
-		$ss = " selected='selected' ";
+		$ss = " selected = 'selected' ";
 	    }
 	    elseif ($selected == $v['name'])
 	    {
-		$ss = " selected='selected' ";
+		$ss = " selected = 'selected' ";
 	    }
 	    else
 	    {
@@ -276,14 +282,14 @@ class input {
 	    //echo "<br>";
 	    if ($v['name'] == $selected)
 	    {
-		$ss = " selected='selected' ";
+		$ss = " selected = 'selected' ";
 	    }
 	    else
 	    {
 		$ss = '';
 	    }
 	    $options .= '<option ' . $ss . ' title="' . $v['name']
-		    . '" data-content="<img style=\'width:23px\' src=' . WWW_IMAGE_PATH . $path . '/' . $v['image'] . '> ' . $v['name'] . '"'
+		    . '" data-content="<img style = \'width:23px\' src=' . WWW_IMAGE_PATH . $path . '/' . $v['image'] . '> ' . $v['name'] . '"'
 		    . ' value="' . $v['name'] . '">' . $v['name'] . '</option>';
 	}
 	return '<label class="btn btn-default" for="' . $id . '">' . $label . '</label> '

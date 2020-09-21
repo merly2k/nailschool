@@ -47,6 +47,7 @@ if (!$_POST):
 	'darunok_ua'	 => '',
 	'miso'		 => "$town",
 	'start'		 => date('Y-m-d'),
+	'hidestart'	 => 'N',
 	'finish'	 => '0',
 	'coast'		 => '0',
 	'action'	 => 'Y',
@@ -81,6 +82,14 @@ else:
     else
     {
 	$_POST['tur'] = 'N';
+    }
+    if (@$_POST['hidestart'] == 'on')
+    {
+	$_POST['hidestart'] = 'Y';
+    }
+    else
+    {
+	$_POST['hidestart'] = 'N';
     }
     if (@$_POST['hidedeckr'] == 'on')
     {
@@ -147,6 +156,8 @@ else:
 endif;
 
 include TEMPLATE_DIR . DS . $tpl . ".html";
+
+
 
 
 

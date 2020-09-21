@@ -320,12 +320,14 @@
 						</div>
 						<p class="text-center"><?=$mista[$town]?></p>
 					    </div>
+					    <?php if($hidestart!="Y"){?>
 					    <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 themed-grid-col text-center date">
 						<div class="align-middle">
 						    <span class="align-middle"><?=$start?></span>
 						</div>
 						<p class="text-center"><?=$monts?></p>
 					    </div>
+					    <?php }?>
 					    <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 px-0 themed-grid-col text-center duration">
 						<div class="align-middle">
 						    <span class="align-middle"><?=$k->finish?></span>
@@ -610,7 +612,7 @@
 					<!-- / -->
 				    </section>
 				    <?php }?>
-				    <section class="py-5 comments">
+				    <!--section class="py-5 comments">
 
 					<div class="container">
 					    <div id="addComment">
@@ -641,7 +643,7 @@
 						</div>
 					    </div>
 					</div>
-				    </section>
+				    </section-->
 				    <section class="contacts">
 					<div class="container-fluid">
 					    <div class="row row-eq-height">
@@ -681,9 +683,9 @@
 					    <?=$gmap;?>
 
 					    <style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
-					    <div class="text-center position-relative return-to-sale">
+					    <!--div class="text-center position-relative return-to-sale">
 						<a href="#sale" class="btn btn-warning btn-lg text-uppercase font-weight-bold"><?php if($k->action=="Y"){ echo l('r9');} else{echo l('r9a');}?>!</a>
-					    </div>
+					    </div-->
 				    </footer>
 				    <div id="to-top" style="display: block;"><i class="fal fa-caret-circle-up" aria-hidden="true"></i></div>
 
@@ -940,7 +942,7 @@
 									<input type="hidden" name="leadtype" value="curs" />
 									<input type="hidden" name="returnto" value="<?=$this->param[0]?>/<?=$this->param[1]?>" />
 									<span class="style-chec">
-									    <input type="checkbox" id="checkbox-id" class="form-check-input">
+									    <input name="ppate" type="checkbox" id="checkbox-id" class="form-check-input">
 									</span>
 									<label class="form-check-label lad-chec" for="checkbox-id"><b><?=l('uvedomit')?></b></label>
 								    </span>
@@ -1060,7 +1062,6 @@
 								<label for="textinput"><?=l('name')?></label>
 								<input id="name" name="name" type="text" required="required" class="form-control input-md">
 							    </div>
-
 							    <!-- Text input-->
 							    <!--div class="form-group">
 								<label for="textinput"><?=l('lastname');?>*</label>
@@ -1090,6 +1091,9 @@
 				    <!-- <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e402414887521ee"></script> -->
 				    </body>
 				    </html>
+
+
+
 
 
 

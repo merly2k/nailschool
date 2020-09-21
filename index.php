@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 $_SESSION['start']	 = time();
 $_SESSION['lifetime']	 = ini_get("session.gc_maxlifetime");
@@ -114,7 +113,3 @@ if (PRODUCT == 'dev')
 //$mempik= memory_get_peak_usage(true)/10485764;
 //echo "максимально используемая память".round($mempik, 3)."Mb";
 }
-
-
-
-

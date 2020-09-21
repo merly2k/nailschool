@@ -21,14 +21,15 @@ class leads extends \db {
 	return $this->get_result($q);
     }
 
-    function add($curse, $leadtype, $name, $lname, $email, $phone) {
+    function add($curse, $leadtype, $name, $lname, $email, $phone, $ppate) {
 
 	$q = "INSERT INTO `leads` "
 		. "( `curse`,`leadtype`, `name`, `lname`, `email`, `phone`,"
-		. " `sdate`, `status`, `lastedit`, `coment`)"
+		. " `sdate`, `status`,`ppate` ,`lastedit`, `coment`)"
 		. " VALUES ('$curse','$leadtype' ,'$name', '$lname', '$email', '$phone', "
-		. "current_timestamp(), '1', current_timestamp(), '');";
+		. "current_timestamp(), '1','$ppate', current_timestamp(), '');";
 	$this->query($q);
+	//echo $this->lastState . ' ' . $q;
 	return $this->lastState;
     }
 
@@ -53,7 +54,7 @@ class leads extends \db {
 	    $q = "Select * from `leads` where `ppate` = '$s' ";
 	}
 
-	echo $q;
+	//echo $q;
 	return $this->get_result($q);
     }
 
