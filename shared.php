@@ -164,17 +164,17 @@ function metatags() {
     {
 	$zurl = str_replace(rtrim(WWW_BASE_PATH, '/'), "", $turl);
     }
-	 $zurl=ltrim($zurl, '/');	
-    $s = @$seo->getByUrl(rtrim($zurl, '/'));
+    $zurl	 = ltrim($zurl, '/');
+    $s	 = @$seo->getByUrl(rtrim($zurl, '/'));
 
-    if (count($s) >= 1)
+    if ($seo->found>= 1)
     {
 	//echo "$turl найден";
 	$keyli	 = $s;
 	$m3	 = '
 	<meta name="identifier-url" content="' . rtrim(WWW_BASE_PATH, '/') . $keyli->url . '" />
     <meta name="title" content="' . htmlspecialchars($keyli->title) . '" />
-    <meta name="description" content="' .htmlspecialchars($keyli->deckription). '" />
+    <meta name="description" content="' . htmlspecialchars($keyli->deckription) . '" />
     <meta name="robots" content="Index,follow" />
     <link rel="canonical" href="' . $turl . '"/>
     <meta name="abstract" content="Nails School" />
@@ -188,7 +188,7 @@ function metatags() {
     <meta property="og:site_name" content="' . SITE_NAME . '"/>
     <meta property="og:locale" content="ru_RU"/>
 	<meta property="og:type" content="article"/>
-	<meta property="og:title" content="' .htmlspecialchars( $keyli->title) . '"/>
+	<meta property="og:title" content="' . htmlspecialchars($keyli->title) . '"/>
 	<meta property="og:url" content="' . $turl . '" />
 	<meta property="og:image" content="' . WWW_IMAGE_PATH . 'ns.jpg" />
 
@@ -282,7 +282,7 @@ function localeMomts($locale, $mnum) {
     //echo $mnum;
     $loc	 = array(
 	'ua'	 => array('', 'cічня', 'лютого', 'березня', 'квітня', 'травня', 'червня', 'липня', 'серпня', 'вересня', 'жовтня', 'листопада', 'грудня'),
-	'ru'	 => array('', 'января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'Октября', 'ноября', 'декабря')
+	'ru'	 => array('', 'января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря')
     );
     return $loc[$locale][$mnum];
 }
