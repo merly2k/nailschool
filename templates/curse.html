@@ -380,7 +380,9 @@
 				    </div>
 				</div>
 			</section>
-			<?php }?>
+			<?php }
+			if($k->hideprog!='Y'){
+			?>
 			<section class="course-program">
 			    <div class="row row-eq-height no-gutters">
 				<!-- Mobile video -->
@@ -411,8 +413,8 @@
 				</div>
 				<!-- // -->
 			</section>
-
-			<?php if($k->action=="Y" and $k->darunok=="Y"){?>
+			<?php }
+			if($k->action=="Y" and $k->darunok=="Y"){?>
 			<section class="line-sale-v3" id="sale">
 			    <?php }elseif($k->action=="Y"){?>
 			    <section class="line-sale-v2" id="sale">
