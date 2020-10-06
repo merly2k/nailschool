@@ -188,11 +188,14 @@ header .girl {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: 100% 100%;
+    position: relative;
+    z-index: -1;
 }
 
 @media (min-width:1200px) and (max-width:1690px) {
     header .girl {
-        display: flex !important;
+        display: flex !important;position: relative;
+        z-index: -1;
     }
 }
 
@@ -215,7 +218,8 @@ header .girl {
         padding-left: 0;
     }
     header .girl {
-        background-size: 455px;
+        background-size: 455px;position: relative;
+        z-index: -1;
     }
 }
 
@@ -1329,5 +1333,6 @@ main .advantages .why hr {
 footer .social-icon .fab {
     margin-right: 6px;
 }
+
 
 
