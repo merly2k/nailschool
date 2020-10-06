@@ -15,6 +15,7 @@ $fidOut		 = '';
 $fe		 = new model\feedbask();
 $km		 = new model\misto();
 $ra		 = new model\curses();
+$blog		 = new model\blog();
 $mlang		 = 'name_' . $lang;
 $anoncelang	 = 'anonce_' . $lang;
 $addr		 = 'addr_' . $lang;
@@ -368,9 +369,54 @@ foreach ($film->getList() as $vi)
     </div>
     ';
 }
-
+$SlideOut = '';
+foreach ($blog->SelectAll() as $slider)
+{
+    //  print_r($slider);
+    $SlideOut .= '<div class="slide">
+		    <div class="px-2">
+			<div class="row">
+			    <div class="col-3">
+			        <img class="img-fluid" src="' . WWW_IMAGE_PATH . '/' . $slider->image . '" alt="">
+			    </div>
+			    <div class="col-9">
+			        <p class="name">' . $slider->title . ', ' . $slider->pdate . '</p>
+			        <span class="sity">' . $slider->lcontent . '
+			        <a class="readmore" href="' . $slider->link . '">' . l('readmore') . '...</a>
+				    </span>
+			    </div>
+			</div>
+		    </div>
+    		</div>';
+}
 $tpl = 'indexn';
 include TEMPLATE_DIR . $tpl . ".html";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

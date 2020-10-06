@@ -4,12 +4,13 @@ $c		 = new model\curses();
 $tpl		 = 'admin';
 $context	 = '';
 $lsize		 = ' 845×582px';
-$mod_name	 = "редактируем курс";
 $id		 = $this->param[0];
 $brouse		 = APP_PATH . '/images/curses/';
 $web_brouse	 = WWW_IMAGE_PATH . 'curses/';
+$mod_name	 = '';
 if (!$_POST):
     $data			 = $c->getCurseById($id);
+    $mod_name		 = "редактируем курс $data->miso/$data->link";
     $f			 = new bootstrap\input();
     $colors			 = new model\gradients();
     $fr			 = 'curses';
@@ -74,6 +75,14 @@ else:
     {
 	$_POST['hidedeckr'] = 'N';
     }
+    if (@$_POST['hideprog'] == 'on')
+    {
+	$_POST['hideprog'] = 'Y';
+    }
+    else
+    {
+	$_POST['hideprog'] = 'N';
+    }
     if (@$_POST['display_r'] == 'on')
     {
 	$_POST['display_r'] = 'Y';
@@ -122,11 +131,3 @@ else:
 endif;
 
 include TEMPLATE_DIR . DS . $tpl . ".html";
-
-
-
-
-
-
-
-

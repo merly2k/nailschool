@@ -5,10 +5,27 @@ $mod_name	 = 'Профиль пользователя';
 $brouse		 = '';
 $lsize		 = '';
 $userdata	 = new model\user();
+$roles		 = array(
+    "user"	 => "333",
+    "admin"	 => "601"
+);
+$optlist	 = '';
 if (!$_POST):
     $uid	 = $this->param[0];
     $pf	 = $userdata->getUserByID($uid);
     $qr	 = $pf[0];
+    foreach ($roles as $k => $v)
+    {
+	if ($v == $qr->role)
+	{
+	    $optlist .= "<option value='$v' selected='selected'>$k</option>";
+	}
+	else
+	{
+
+	    $optlist .= "<option value='$v'>$k</option>";
+	}
+    }
     $context = '<div class="well">
       	<hr>
 	<div class="row">
@@ -19,6 +36,14 @@ if (!$_POST):
 	    . '<div class="col-lg-8">'
 	    . '<input name="login" value="' . $qr->login . '"/>'
 	    . '<input type="hidden" name="pk" value="' . $uid . '"/>'
+	    . '</div>
+          </div>
+	  <div>
+            <label class="col-lg-3 control-label">роль:</label>'
+	    . '<div class="col-lg-8">'
+	    . '<select name="role">'
+	    . $optlist
+	    . '</select>'
 	    . '</div>
           </div>
 	  <div class="form-group">
@@ -44,7 +69,8 @@ else:
     $login		 = $_POST['login'];
     $password	 = $_POST['password'];
     $rid		 = $_POST['pk'];
-    echo $userdata->editUser($rid, $login, $password);
+    $role		 = $_POST['role'];
+    echo $userdata->editUser($rid, $login, $password, $role);
     echo "<script>setTimeout(function() { location.replace('" . WWW_ADMIN_PATH . "users'); }, 900)</script>";
 endif;
 ?>

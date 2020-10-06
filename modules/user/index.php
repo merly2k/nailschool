@@ -54,6 +54,12 @@ include TEMPLATE_DIR . DS . $tpl . ".html";
 function getCurseInfo($id) {
     $a	 = new model\curses();
     $o	 = $a->getCurseById($id);
-    return $o->miso . ' ' . $o->start . '<br>' . $o->name_ru;
+    if (!is_array($o))
+    {
+	return $o->miso . ' ' . $o->start . '<br>' . $o->name_ru;
+    }
+    else
+    {
+	return;
+    }
 }
-

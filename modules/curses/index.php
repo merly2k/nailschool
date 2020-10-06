@@ -1,5 +1,6 @@
 <?php
 
+error_reporting(0);
 if (isset($_SESSION['lang']))
 {
     $lang = mb_strtolower(@$_SESSION['lang']);
@@ -118,9 +119,9 @@ else:
 ';
 	$curses	 = new model\curses();
 	$cc	 = $curses->getCurse($town, $link);
-//esas
-	$k	 = $cc[0];
-//print_r($k);
+
+	$k = $cc[0];
+
 	if ($k->darunok == 'N')
 	{
 	    $valut = '';
@@ -276,7 +277,7 @@ ol.about-list li::before {
 
 	$data		 = new db();
 	$comments	 = array();
-	$q		 = "SELECT * FROM comments WHERE `page`='$link' ORDER BY id ASC";
+	$q		 = "SELECT SQL_CALC_FOUND_ROWS * FROM comments WHERE `page`='$link' ORDER BY id ASC";
 	$result		 = $data->get_result($q);
 //echo $data->lastState;
 	foreach ($result as $row)
