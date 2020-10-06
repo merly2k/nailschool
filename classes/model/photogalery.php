@@ -35,7 +35,7 @@ class photogalery extends \db {
     public
 	    function GetPhotos($town, $curs) {
 	$out	 = array();
-	$q	 = "SELECT * FROM `photogalery` WHERE `town`='$town' AND `curs`='$curs';";
+	$q	 = "SELECT SQL_CALC_FOUND_ROWS * FROM `photogalery` WHERE `town`='$town' AND `curs`='$curs';";
 	foreach ($this->get_result($q) as $ut)
 	{
 	    $out[] = $ut->imgname;

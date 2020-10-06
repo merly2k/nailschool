@@ -39,13 +39,13 @@ ROW_FORMAT=COMPACT";
 
     public
 	    function getUser($login) {
-	$q = "SELECT * FROM `user` where login='$login' LIMIT 1;";
+	$q = "SELECT SQL_CALC_FOUND_ROWS * FROM `user` where login='$login' LIMIT 1;";
 	return $this->get_result($q);
     }
 
     public
 	    function getUserByID($id) {
-	$q = "SELECT * FROM `user` where id='$id' LIMIT 1;";
+	$q = "SELECT SQL_CALC_FOUND_ROWS * FROM `user` where id='$id' LIMIT 1;";
 	return $this->get_result($q);
     }
 
@@ -65,7 +65,7 @@ ROW_FORMAT=COMPACT";
 
     public
 	    function auch($login) {
-	$q	 = "SELECT * FROM user WHERE `login`='$login' LIMIT 1;";
+	$q	 = "SELECT SQL_CALC_FOUND_ROWS * FROM user WHERE `login`='$login' LIMIT 1;";
 	//echo $q;
 	$user	 = $this->get_result($q);
 	$curuser = $user[0];
@@ -74,13 +74,13 @@ ROW_FORMAT=COMPACT";
 
     public
 	    function getUsers() {
-	$q = "SELECT * FROM user";
+	$q = "SELECT SQL_CALC_FOUND_ROWS * FROM user";
 	return $this->get_result($q);
     }
 
     public
-	    function editUser($id, $login, $password) {
-	$q = "UPDATE `user` SET `login`='$login', `password`='" . md5($password) . "', `role`='601' WHERE `id`=$id;";
+	    function editUser($id, $login, $password, $role) {
+	$q = "UPDATE `user` SET `login`='$login', `password`='" . md5($password) . "', `role`='$role' WHERE `id`=$id;";
 
 	$this->query($q);
 	return $this->lastState;

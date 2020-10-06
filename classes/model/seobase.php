@@ -29,7 +29,7 @@ class seobase extends \db {
     public
 	    function getByUrl($url) {
 	//ECHO $url;
-	$q	 = "SELECT * FROM `seo` WHERE `url` like '%$url';";
+	$q	 = "SELECT SQL_CALC_FOUND_ROWS * FROM `seo` WHERE `url` like '%$url';";
 	//echo $q;
 	$r	 = $this->get_result($q);
 //print_r($r);
@@ -43,7 +43,7 @@ class seobase extends \db {
 
     public
 	    function GetAll() {
-	return $this->get_result("SELECT * FROM `seo` WHERE `hide`=0");
+	return $this->get_result("SELECT SQL_CALC_FOUND_ROWS * FROM `seo` WHERE `hide`=0");
     }
 
 }

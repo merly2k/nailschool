@@ -17,20 +17,20 @@ class video extends \db {
 
     public
 	    function getList() {
-	$zapros = "select * from `videogalery`";
+	$zapros = "SELECT SQL_CALC_FOUND_ROWS * from `videogalery`";
 	return $this->get_result($zapros);
     }
 
     public
 	    function getFirst() {
-	$zapros	 = "select * from `videogalery`";
+	$zapros	 = "SELECT SQL_CALC_FOUND_ROWS * from `videogalery`";
 	$r	 = $this->get_result($zapros);
 	return $r[0];
     }
 
     public
 	    function getById($id) {
-	$zapros	 = "select * from `videogalery` WHERE `id`=$id";
+	$zapros	 = "SELECT SQL_CALC_FOUND_ROWS * from `videogalery` WHERE `id`=$id";
 	$r	 = $this->get_result($zapros);
 	return $r[0];
     }

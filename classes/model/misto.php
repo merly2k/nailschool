@@ -10,7 +10,7 @@ namespace model;
 class misto extends \db {
 
     function getByName($link) {
-	$q	 = "select * from misto where link='$link'";
+	$q	 = "SELECT SQL_CALC_FOUND_ROWS * from misto where link='$link'";
 	$temp	 = $this->get_result($q);
 	return $temp[0];
     }
@@ -23,20 +23,20 @@ class misto extends \db {
     }
 
     function getAll($link = '') {
-	$q	 = "select * from misto where link!='$link' ";
+	$q	 = "SELECT SQL_CALC_FOUND_ROWS * from misto where link!='$link' ";
 	//echo $q;
 	$temp	 = $this->get_result($q);
 	return $temp;
     }
 
     function getList() {
-	$q	 = "select * from misto";
+	$q	 = "SELECT SQL_CALC_FOUND_ROWS * from misto";
 	$temp	 = $this->get_result($q);
 	return $temp;
     }
 
     function getById($id) {
-	$q	 = "select * from misto where `id`='$id'";
+	$q	 = "SELECT SQL_CALC_FOUND_ROWS * from misto where `id`='$id'";
 	$temp	 = $this->get_result($q);
 	return $temp[0];
     }

@@ -17,7 +17,7 @@ class gradients extends \db {
 
     public
 	    function getGradient($name) {
-	$q	 = "SELECT * FROM gradients WHERE `name`='$name';";
+	$q	 = "SELECT SQL_CALC_FOUND_ROWS * FROM gradients WHERE `name`='$name';";
 	//echo $q;
 	$res	 = $this->get_result($q);
 	//print_r($res);
@@ -32,7 +32,7 @@ class gradients extends \db {
 
     public
 	    function getAll() {
-	$q = 'SELECT * FROM gradients';
+	$q = 'SELECT SQL_CALC_FOUND_ROWS * FROM gradients';
 	return $this->get_result($q);
     }
 

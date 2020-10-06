@@ -6,7 +6,7 @@ class curses extends \db {
 
     public
 	    function getCurse($town, $link) {
-	$q = "SELECT * FROM `cursses` WHERE `miso`='$town' and `link`='$link' LIMIT 1;";
+	$q = "SELECT SQL_CALC_FOUND_ROWS * FROM `cursses` WHERE `miso`='$town' and `link`='$link' LIMIT 1;";
 
 	return $this->get_result($q);
     }
@@ -14,7 +14,7 @@ class curses extends \db {
     public
 	    function getCurseById($id) {
 
-	$q	 = "SELECT * FROM `cursses` WHERE `id`='$id'";
+	$q	 = "SELECT SQL_CALC_FOUND_ROWS * FROM `cursses` WHERE `id`='$id'";
 	$r	 = $this->get_result($q);
 	if (count($r) > 0)
 	{
@@ -29,9 +29,9 @@ class curses extends \db {
     public
 	    function getALL($town, $st = 'Y') {
 	if ($st == 'Y'):
-	    $q = "SELECT * FROM `cursses` WHERE `miso`='$town' and `display_r`='Y' order by `porjadok` ASC";
+	    $q = "SELECT SQL_CALC_FOUND_ROWS * FROM `cursses` WHERE `miso`='$town' and `display_r`='Y' order by `porjadok` ASC";
 	else:
-	    $q = "SELECT * FROM `cursses` WHERE `miso`='$town'  order by `porjadok` ASC";
+	    $q = "SELECT SQL_CALC_FOUND_ROWS * FROM `cursses` WHERE `miso`='$town'  order by `porjadok` ASC";
 	endif;
 	//echo $q;
 	$r = $this->get_result($q);
@@ -41,13 +41,13 @@ class curses extends \db {
 
     public
 	    function getALLasArray($town) {
-	$q = "SELECT * FROM `cursses` WHERE `miso`='$town'";
+	$q = "SELECT SQL_CALC_FOUND_ROWS * FROM `cursses` WHERE `miso`='$town'";
 	return $this->get_result($q);
     }
 
     public
 	    function GetRandAction() {
-	$q	 = "SELECT * FROM `cursses` WHERE `action`='Y' and `display`='Y' order by rand()";
+	$q	 = "SELECT SQL_CALC_FOUND_ROWS * FROM `cursses` WHERE `action`='Y' and `display`='Y' order by rand()";
 	$out	 = $this->get_result($q);
 	if (count($out >= 1)):
 	    return $out[0];
@@ -58,9 +58,9 @@ class curses extends \db {
 
     public
 	    function GetRandOnline() {
-	$q	 = "SELECT * FROM `cursses` WHERE `miso`='virtual' and `display`='Y' order by rand() LIMIT 1";
+	$q	 = "SELECT SQL_CALC_FOUND_ROWS * FROM `cursses` WHERE `miso`='virtual' and `display`='Y' order by rand() LIMIT 1";
 	$out	 = $this->get_result($q);
-	if (count($out >= 1)):
+	if ($this->found >= 1):
 	    return $out[0];
 	else:
 	    return "";
@@ -79,7 +79,7 @@ class curses extends \db {
 	//Газ горит оранжевым
 	$q = "INSERT INTO `cursses` ("
 		. "`link`, `name_ua`, `name_ru`,"
-		. " `image`, `anonce_ru`, `anonce_ua`,`hidedeckr`,"
+		. " `image`, `anonce_ru`, `anonce_ua`,`hidedeckr`,'hideprog'"
 		. " `decription_ru`, `fulltext_ru`, `decription_ua`, `fulltext_ua`,"
 		. " `display`,"
 		. " `display_r`,"
@@ -95,7 +95,7 @@ class curses extends \db {
 		. " `vipusk`)"
 		. " VALUES ("
 		. "'$link', '$name_ua', '$name_ru', "
-		. " '$image', '$anonce_ru', '$anonce_ua','$hidedeckr',"
+		. " '$image', '$anonce_ru', '$anonce_ua','$hidedeckr','$hideprog'"
 		. " '$decription_ru', '$fulltext_ru', '$decription_ua', '$fulltext_ua',"
 		. " '$display',"
 		. " '$display_r',"
@@ -132,4 +132,3 @@ class curses extends \db {
     }
 
 }
-

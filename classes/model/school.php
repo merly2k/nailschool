@@ -10,7 +10,7 @@ namespace model;
 class school extends \db {
 
     function getByLink($link) {
-	$q	 = "SELECT * FROM `school` WHERE `misto`='$link'";
+	$q	 = "SELECT SQL_CALC_FOUND_ROWS * FROM `school` WHERE `misto`='$link'";
 	//echo $q;
 	$out	 = $this->get_result($q);
 	if (count($out) > 0):

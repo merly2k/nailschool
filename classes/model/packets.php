@@ -16,13 +16,13 @@ namespace model;
 class packets extends \db {
 
     function getPacket($id) {
-	$q = "SELECT * FROM `packets` WHERE `id`='$id' LIMIT 1;";
+	$q = "SELECT SQL_CALC_FOUND_ROWS * FROM `packets` WHERE `id`='$id' LIMIT 1;";
 	//echo $q;
 	return $this->get_result($q);
     }
 
     function getPackets($town) {
-	$q = "SELECT * FROM `packets` WHERE `town`='$town' order by `porjadok` ASC;";
+	$q = "SELECT SQL_CALC_FOUND_ROWS * FROM `packets` WHERE `town`='$town' order by `porjadok` ASC;";
 	//echo $q;
 	return $this->get_result($q);
     }

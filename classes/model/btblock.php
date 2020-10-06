@@ -16,25 +16,25 @@ namespace model;
 class btblock extends \db {
 
     function getByName($link) {
-	$q	 = "select * from `staticblock` where `pagename`='$link'";
+	$q	 = "SELECT SQL_CALC_FOUND_ROWS * from `staticblock` where `pagename`='$link'";
 	$temp	 = $this->get_result($q);
 	return $temp[0];
     }
 
     function getAll($pagename = '') {
-	$q	 = "select * from `staticblock` where pagename!='$link'";
+	$q	 = "SELECT SQL_CALC_FOUND_ROWS * from `staticblock` where pagename!='$link'";
 	$temp	 = $this->get_result($q);
 	return $temp;
     }
 
     function getList() {
-	$q	 = "select * from `staticblock`";
+	$q	 = "SELECT SQL_CALC_FOUND_ROWS * from `staticblock`";
 	$temp	 = $this->get_result($q);
 	return $temp;
     }
 
     function getById($id) {
-	$q	 = "select * from `staticblock` where `id`='$id'";
+	$q	 = "SELECT SQL_CALC_FOUND_ROWS * from `staticblock` where `id`='$id'";
 	$temp	 = $this->get_result($q);
 	//print_r($temp);
 	return $temp[0];

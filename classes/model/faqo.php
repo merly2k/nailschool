@@ -22,14 +22,14 @@ class faqo extends \db {
 
     public
 	    function getAll($misto) {
-	$q = "select * from `faqo` where `misto`='$misto' order by `porjadok`;";
+	$q = "SELECT SQL_CALC_FOUND_ROWS * from `faqo` where `misto`='$misto' order by `porjadok`;";
 	//echo $q;
 	return $this->get_result($q);
     }
 
     public
 	    function getById($id) {
-	$q = "select * from `faqo` where `id`='$id';";
+	$q = "SELECT SQL_CALC_FOUND_ROWS * from `faqo` where `id`='$id';";
 	//echo $q;
 	return $this->get_result($q);
     }

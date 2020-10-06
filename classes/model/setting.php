@@ -20,7 +20,7 @@ class setting extends \db{
     
     public function getSetting() {
     
-        $q="SELECT * FROM `setting` LIMIT 10;";
+        $q="SELECT SQL_CALC_FOUND_ROWS * FROM `setting` LIMIT 10;";
         
             return $this->get_result($q);
         
@@ -28,7 +28,7 @@ class setting extends \db{
     
         public function getSettingById($id) {
     
-        $q="SELECT * FROM `setting` where id='$id' LIMIT 10;";
+        $q="SELECT SQL_CALC_FOUND_ROWS * FROM `setting` where id='$id' LIMIT 10;";
         
             return $this->get_result($q);
         

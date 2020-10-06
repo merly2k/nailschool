@@ -12,32 +12,32 @@ class seminars extends \db {
 
     public
 	    function getCurse($town, $link) {
-	$q = "SELECT * FROM `seminars` WHERE `miso`='$town' and `link`='$link' LIMIT 1;";
+	$q = "SELECT SQL_CALC_FOUND_ROWS * FROM `seminars` WHERE `miso`='$town' and `link`='$link' LIMIT 1;";
 	return $this->get_result($q);
     }
 
     public
 	    function getById($id) {
-	$q	 = "SELECT * FROM `seminars` WHERE `id`='$id'";
+	$q	 = "SELECT SQL_CALC_FOUND_ROWS * FROM `seminars` WHERE `id`='$id'";
 	$r	 = $this->get_result($q);
 	return $r[0];
     }
 
     public
 	    function getALL($town) {
-	$q = "SELECT * FROM `seminars` WHERE `miso`='$town' order by `porjadok` ASC";
+	$q = "SELECT SQL_CALC_FOUND_ROWS * FROM `seminars` WHERE `miso`='$town' order by `porjadok` ASC";
 	return $this->get_result($q);
     }
 
     public
 	    function getALLasArray($town) {
-	$q = "SELECT * FROM `seminars` WHERE `miso`='$town'";
+	$q = "SELECT SQL_CALC_FOUND_ROWS * FROM `seminars` WHERE `miso`='$town'";
 	return $this->get_result($q);
     }
 
     public
 	    function GetRandAction() {
-	$q	 = "SELECT * FROM `seminars`  order by rand()";
+	$q	 = "SELECT SQL_CALC_FOUND_ROWS * FROM `seminars`  order by rand()";
 	$out	 = $this->get_result($q);
 	if (count($out >= 1)):
 	    return $out[0];

@@ -15,7 +15,7 @@ class blog extends \db {
 
     public
 	    function getLast($m = 4) {
-	$q = "SELECT *,LEFT(`content`, 256)as `lcontent` FROM `blog` ORDER BY `pdate` DESC,`id` DESC LIMIT 0,$m";
+	$q = "SELECT SQL_CALC_FOUND_ROWS *,LEFT(`content`, 256)as `lcontent` FROM `blog` ORDER BY `pdate` DESC,`id` DESC LIMIT 0,$m";
 	return $this->get_result($q);
     }
 
@@ -79,13 +79,13 @@ class blog extends \db {
      * @param type $val - значение по которому производится выборка
      */
     function SelectBy($val, $cel = 'id') {
-	$q = "SELECT * FROM `blog` WHERE  `$cel`='$val';";
+	$q = "SELECT SQL_CALC_FOUND_ROWS * FROM `blog` WHERE  `$cel`='$val';";
 
 	return $this->get_result($q);
     }
 
     function SelectByURL($usl) {
-	$q = "SELECT * FROM `blog` WHERE  `link`='$usl';";
+	$q = "SELECT SQL_CALC_FOUND_ROWS * FROM `blog` WHERE  `link`='$usl';";
 	//print_r($q);
 
 	return $this->get_result($q);

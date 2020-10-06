@@ -15,12 +15,12 @@ namespace model;
  */
 class sblock extends \db{
     function getBlock($id) {
-	$q="SELECT * FROM `stblock` where id=$id";
+	$q="SELECT SQL_CALC_FOUND_ROWS * FROM `stblock` where id=$id";
 	$t=$this->get_result($q);
 	return $t[0];
     }
     function getAll() {
-	$q="SELECT * FROM `stblock`";
+	$q="SELECT SQL_CALC_FOUND_ROWS * FROM `stblock`";
 	$t=$this->get_result($q);
 	return $t[0];
     }

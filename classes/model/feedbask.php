@@ -17,7 +17,7 @@ class feedbask extends \db {
 
     public
 	    function getAll() {
-	$q = 'SELECT * FROM `feedback`';
+	$q = 'SELECT SQL_CALC_FOUND_ROWS * FROM `feedback`';
 	return $this->get_result($q);
     }
 
@@ -67,7 +67,7 @@ class feedbask extends \db {
     }
 
     function getFeedback($id) {
-	$q = "SELECT * FROM `feedback` where `id`='$id'";
+	$q = "SELECT SQL_CALC_FOUND_ROWS * FROM `feedback` where `id`='$id'";
 	return $this->get_result($q);
     }
 

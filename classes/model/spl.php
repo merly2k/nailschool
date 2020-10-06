@@ -17,14 +17,14 @@ class spl extends \db{
     //put your code here
     public
 	    function getArticle($name,$lang) {
-	$q="SELECT * FROM `lang_ststicpages` WHERE `link`='$name' and `lang`='$lang'";
+	$q="SELECT SQL_CALC_FOUND_ROWS * FROM `lang_ststicpages` WHERE `link`='$name' and `lang`='$lang'";
 	//echo $q;
 	$t=$this->get_result($q);
 	return $t[0];
     }
     public
 	    function getAll($lang) {
-	$q="SELECT * FROM `lang_ststicpages`WHERE `lang`='$lang'";
+	$q="SELECT SQL_CALC_FOUND_ROWS * FROM `lang_ststicpages`WHERE `lang`='$lang'";
 	return $t=$this->get_result($q);
 	 	
     }

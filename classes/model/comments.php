@@ -6,7 +6,7 @@ class comments extends \db {
 
     public
 	    function getByLink($page) {
-	$q	 = "SELECT * FROM  `comments` where `page`='$page'";
+	$q	 = "SELECT SQL_CALC_FOUND_ROWS * FROM  `comments` where `page`='$page'";
 	$out	 = $this->get_result($q);
 	//print_r($this->found);
 	if ($this->found == 0)
@@ -22,7 +22,7 @@ class comments extends \db {
 
     public
 	    function getComment($id) {
-	$q = "SELECT * FROM `comments` where `id`='$id'";
+	$q = "SELECT SQL_CALC_FOUND_ROWS * FROM `comments` where `id`='$id'";
 	return $this->get_result($q);
     }
 

@@ -16,8 +16,8 @@ namespace model;
 class leads extends \db {
 
     function GetAll() {
-//$q = "Select * from `leads` order by `sdate`,`lastedit` DESC";
-	$q = "Select * from `leads` ORDER BY `status` ASC, `sdate` DESC";
+//$q = "SELECT SQL_CALC_FOUND_ROWS * from `leads` order by `sdate`,`lastedit` DESC";
+	$q = "SELECT SQL_CALC_FOUND_ROWS * from `leads` ORDER BY `status` ASC, `sdate` DESC";
 	return $this->get_result($q);
     }
 
@@ -34,24 +34,24 @@ class leads extends \db {
     }
 
     function getById($id) {
-	$q	 = "Select * from `leads` where `id`='$id'";
+	$q	 = "SELECT SQL_CALC_FOUND_ROWS * from `leads` where `id`='$id'";
 	$t	 = $this->get_result($q);
 	return $t[0];
     }
 
     function getNew() {
-	$q = "Select * from `leads` where `status`='новый'";
+	$q = "SELECT SQL_CALC_FOUND_ROWS * from `leads` where `status`='новый'";
 	return $this->get_result($q);
     }
 
     function getParcipated($s) {
 	if ($s == 0)
 	{
-	    $q = "Select * from `leads` where `ppate` = '0' or ISNULL(`ppate`);";
+	    $q = "SELECT SQL_CALC_FOUND_ROWS * from `leads` where `ppate` = '0' or ISNULL(`ppate`);";
 	}
 	else
 	{
-	    $q = "Select * from `leads` where `ppate` = '$s' ";
+	    $q = "SELECT SQL_CALC_FOUND_ROWS * from `leads` where `ppate` = '$s' ";
 	}
 
 	//echo $q;
@@ -59,7 +59,7 @@ class leads extends \db {
     }
 
     function getNotClosed($param) {
-	$q = "Select * from `leads` where `status` not '0'";
+	$q = "SELECT SQL_CALC_FOUND_ROWS * from `leads` where `status` not '0'";
 	return $this->get_result($q);
     }
 
@@ -67,23 +67,23 @@ class leads extends \db {
 	if (is_array($params))
 	{
 	    $param	 = implode("','", $galleries);
-	    $q	 = "select * from `leads` where `status` in ('$param')";
+	    $q	 = "SELECT SQL_CALC_FOUND_ROWS * from `leads` where `status` in ('$param')";
 	}
 	else
 	{
-	    $q = "select * from `leads` where `status` = '$params'";
+	    $q = "SELECT SQL_CALC_FOUND_ROWS * from `leads` where `status` = '$params'";
 	}
 	return $this->get_result($q);
     }
 
     function statusList() {
-	$q = "SELECT * FROM `lstatus` order by `id` ASC";
+	$q = "SELECT SQL_CALC_FOUND_ROWS * FROM `lstatus` order by `id` ASC";
 	return $this->get_result($q);
     }
 
     function statusListArray() {
 	$out	 = array();
-	$q	 = "SELECT * FROM `lstatus`";
+	$q	 = "SELECT SQL_CALC_FOUND_ROWS * FROM `lstatus`";
 	foreach ($this->get_result($q)as $k => $v)
 	{
 	    $out[$k]['value']	 = $v->id;
@@ -108,7 +108,7 @@ class leads extends \db {
     }
 
     function getStatusById($id) {
-	$q = "SELECT * FROM `lstatus` WHERE `id` = $id";
+	$q = "SELECT SQL_CALC_FOUND_ROWS * FROM `lstatus` WHERE `id` = $id";
 	return $this->get_result($q);
     }
 

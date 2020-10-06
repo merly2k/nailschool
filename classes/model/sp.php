@@ -17,13 +17,13 @@ class sp extends \db{
     //put your code here
     public
 	    function getArticle($name) {
-	$q="SELECT * FROM `staticpages` WHERE `link`='$name'";
+	$q="SELECT SQL_CALC_FOUND_ROWS * FROM `staticpages` WHERE `link`='$name'";
 	$t=$this->get_result($q);
 	return $t[0];
     }
     public
 	    function getAll() {
-	$q="SELECT * FROM `staticpages`";
+	$q="SELECT SQL_CALC_FOUND_ROWS * FROM `staticpages`";
 	return $t=$this->get_result($q);
 	 	
     }

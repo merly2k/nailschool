@@ -8,7 +8,7 @@ namespace model;
  */
 class clients extends \db{
     function getAll() {
-	$q="select * from clients";
+	$q="SELECT SQL_CALC_FOUND_ROWS * from clients";
         return $this->get_result($q);
     }
     
@@ -19,7 +19,7 @@ class clients extends \db{
 	
     }
     function getById($id){
-        $q="select * from clients where id='$id';";
+        $q="SELECT SQL_CALC_FOUND_ROWS * from clients where id='$id';";
         return $this->get_result($q);
     }
     function Add($param) {
