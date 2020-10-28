@@ -37,10 +37,10 @@ foreach ($Blog as $r)
 //print_r($r);
     $context .= '<div class="container">
 	<div class="row">
-	    <div class="col-md-3">
+	    <div class="col-md-2">
 	    <image src="' . WWW_IMAGE_PATH . 'articles/' . $r->image . '" />
 	    </div>
-	    <div class="col-md-9">
+	    <div class="col-md-10">
 	        <div class="row mb-2">
 	            <div class="col-md-12">
 	                <div class="card">
@@ -52,27 +52,14 @@ foreach ($Blog as $r)
 	                                </div>
 	                                <div class="news-cats">
 	                                    <ul class="list-unstyled list-inline mb-1">
-
 		                                <li class="list-inline-item"><i class="fa fa-folder-o text-danger"></i>
     		                                    <small>' . $r->pdate . '</small>
 		                                </li>
-
-
-
-
 		                                </ul>
 		                            </div>
 		                            <hr>
 		                            <div class="news-content">
 		                                ' . $r->content . '
-
-		                            </div>
-		                            <hr>
-		                            <div class="news-footer">
-		                                <div class="news-likes">
-		                                     <button type="button" class="btn btn-outline-secondary"><i class="fa fa-thumbs-o-up text-success"></i> <span class="badge ">Likes 4</span></button>
-		                                      <button type="button" class="btn btn-outline-secondary"><i class="fa fa-thumbs-o-down text-danger"></i><span class="badge">Disklikes 4</span></button>
-		                                </div>
 		                            </div>
 		                            <hr>
 

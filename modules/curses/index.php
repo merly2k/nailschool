@@ -287,7 +287,7 @@ ol.about-list li::before {
 	$page_coment = '';
 	foreach ($comments as $c)
 	{
-	    $page_coment .= $c->markup();
+	    $page_coment .= $c->markup($color->start);
 	}
 //галерея работ
 	$g	 = new model\photogalery();

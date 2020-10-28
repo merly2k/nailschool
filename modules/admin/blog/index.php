@@ -2,7 +2,7 @@
 
 $tpl		 = "admin";
 $lsize		 = ' 640×397px';
-$template	 = "admin";
+$template	 = "bladmin";
 $brouse		 = APP_PATH . '/images/articles/';
 $web_brouse	 = WWW_IMAGE_PATH . 'articles/';
 $mod_name	 = 'Управление блогом';
@@ -20,11 +20,13 @@ if ($_POST)
     extract($_POST);
     if (!isset($id))
     {
-	$id = $this->param[1];
+	$id = @$this->param[1];
     }
+    print_r($_POST);
     $params = array(
 	'id'		 => $id,
 	'title'		 => $title,
+	'link'		 => $link,
 	'content'	 => $content,
 	'pdate'		 => $pdate,
 	'image'		 => $image,
@@ -46,7 +48,7 @@ if ($_POST)
     else
     {
 	$message = "сохранено";
-	echo "<script>setTimeout(function() { location.replace('" . WWW_ADMIN_PATH . "blog/'); }, 900)</script>";
+	echo "<!--script>setTimeout(function() { location.replace('" . WWW_ADMIN_PATH . "blog/'); }, 900)</script-->";
     }
 }
 
@@ -104,95 +106,3 @@ else
 
 
 include TEMPLATE_DIR . DS . $template . ".html";
-?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

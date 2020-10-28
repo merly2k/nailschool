@@ -1,5 +1,6 @@
 <?php
 
+error_reporting(9999);
 if (isset($_SESSION['lang']))
 {
     $lang = mb_strtolower(@$_SESSION['lang']);
@@ -250,7 +251,7 @@ foreach ($result as $row)
 $page_coment = '';
 foreach ($comments as $c)
 {
-    $page_coment .= $c->markup();
+    $page_coment .= $c->markup($color->start);
 }
 //галерея работ
 $g	 = new model\photogalery();
