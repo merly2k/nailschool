@@ -168,27 +168,28 @@
 	<!-- End Google Tag Manager (noscript) -->
 
 	<header>
-	    <nav class="navbar navbar-expand-lg navbar-light">
-		<div class="container align-items-start">
+	  <nav class="navbar navbar-expand-lg navbar-light">
+			<div class="container align-items-start">
 		    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarmenu" aria-controls="navbarmenu" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span></button>
+					<span class="navbar-toggler-icon"></span>
+				</button>
 		    <div class="xs-menu d-block d-lg-none">
 			<ul class="navbar-nav mr-auto row no-gutters">
 			    <li class="nav-item dropdown col-4">
-				<a class="nav-link dropdown-toggle" href="#" id="navbardropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-map-marker-alt"></i>&nbsp;<?=$misto;?></a>
-				<div class="dropdown-menu" aria-labelledby="navbardropdown">
-				    <?=$otherTown?>
-				</div>
+						<a class="nav-link dropdown-toggle" href="#" id="navbardropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-map-marker-alt"></i>&nbsp;<?=$misto;?></a>
+						<div class="dropdown-menu" aria-labelledby="navbardropdown">
+						    <?=$otherTown?>
+						</div>
 			    </li>
 			    <li class="nav-item text-center dropdown col-5 phone"><a class="nav-link" href="tel:<?=$faddr->phones?>"><i class="fas fa-phone align-top flip-horizontal"></i></a></li>
 			    <li class="nav-item col-1">
-				<a class="nav-link text-right ls" href="" lang="UA">Укр</a>
+						<a class="nav-link text-right ls" href="" lang="UA">Укр</a>
 			    </li>
 			    <li class="nav-item col-1">
-				<a class="nav-link text-center separator">/</a>
+						<a class="nav-link text-center separator">/</a>
 			    </li>
 			    <li class="nav-item col-1">
-				<a class="nav-link text-left ls" href="" lang="RU">Рус</a>
+						<a class="nav-link text-left ls" href="" lang="RU">Рус</a>
 			    </li>
 			</ul>
 		    </div>
@@ -222,6 +223,7 @@
 			    <li class="breadcrumb-item breadcrumb-list__item active" aria-current="page">
 				<a class="nav-link"><b><?=strip_tags($k->$mlang);?></b></a>
 			    </li>
+
 			</ul>
 			<ul class="navbar-nav lang-menu d-none d-lg-flex">
 			    <li class="nav-item">
@@ -614,8 +616,8 @@
 					<!-- / -->
 				    </section>
 				    <?php }?>
-				    <!--section class="py-5 comments">
-
+				    <section class="py-5 comments">
+					<h2 class="text-center text-uppercase font-weight-bold my-lg-4 my-sm-2"><span class="gradient-text"><?=l('comments');?></span></h2>
 					<div class="container">
 					    <div id="addComment">
 						<div class="row">
@@ -624,16 +626,17 @@
 							<form id="addCommentForm" method="post">
 							    <div class="form-row">
 								<div class="form-group col-md-4">
-								    <label class="control-label requiredField" for="name">Имя<span>*</span></label>
+								    <label class="control-label requiredField" for="name"><?=l('youname')?><span>*</span></label>
 								    <input class="form-control" id="name" name="name" type="text"/>
 								</div>
 								<div class="form-group col-md-4">
 								    <label class="control-label requiredField" for="email">Email<span>*</span></label>
 								    <input class="form-control" id="email" name="email" type="text" aria-describedby="emailHelpBlock"/>
-								    <small id="emailHelpBlock" class="form-text text-muted">не отображается в коментариях</small>
+								    <small id="emailHelpBlock" class="form-text text-muted"><?=l('helpcoment')?></small>
 								</div>
 							    </div>
 							    <div class="form-group">
+								<label class="control-label" for="email"><?=l('coment_field');?></label>
 								<textarea class="form-control" id="body" name="body" rows="6"></textarea>
 							    </div>
 							    <input type="hidden" name="page" value="<?=$link?>">
@@ -645,7 +648,7 @@
 						</div>
 					    </div>
 					</div>
-				    </section-->
+				    </section>
 				    <section class="contacts">
 					<div class="container-fluid">
 					    <div class="row row-eq-height">
@@ -1093,22 +1096,3 @@
 				    <!-- <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e402414887521ee"></script> -->
 				    </body>
 				    </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
