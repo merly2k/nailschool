@@ -32,7 +32,7 @@
 	<link rel="stylesheet" href="<?=WWW_CSS_PATH?>styles-ing-course.css">
 	<!-- <link rel="stylesheet" href="<?=WWW_CSS_PATH?>main.css"> -->
 
-	<title><?=strip_tags($k->$mlang);?> — Ногтевой Сервис</title>
+	
 	<?php $meta= metatags();echo $meta;?>
 
 	<link rel="dns-prefetch" href="http://s.w.org/">
@@ -415,6 +415,41 @@
 				</div>
 				<!-- // -->
 			</section>
+
+/*
+<section class="course-program">
+				<div class="row row-eq-height no-gutters">
+			<!-- Mobile video -->
+			<div class="col-12 col-sm-12 col-md-12 themed-grid-col text-center
+			 px-2 px-lg-3 px-xl-5 d-block d-sm-none">
+				<div class="video">
+					 <iframe width="315" height="560" src="https://www.youtube.com/embed/TqmgTDDN428?autohide=1"
+						frameborder="0" allowfullscreen></iframe>
+				</div>
+				 <!--?//=$video?-->
+			</div>
+			<!-- // -->
+			<div class="col themed-grid-col py-5 px-4 px-lg-4 px-xl-5 course-program-text">
+				<div class="pt-4 pb-0">
+					<?=$fulltext?>
+					<!--a href="#" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#detail"><?=l('detail_btn')?></a-->
+					<?=$btnDetail?>
+					<p class="text-center text-primary"><small><?=l('detail')?></small></p>
+				</div>
+			</div>
+			<!-- Desktop & tablet video -->
+			<div class=" themed-grid-col m-auto pt-xl-5 px-3 px-lg-4 pb-sm-5
+			 d-none d-sm-flex align-items-center justify-content-center">
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/TqmgTDDN428?autohide=1"
+					 frameborder="0" allowfullscreen>
+					</iframe>
+				<!--?//=$video?-->
+			</div>
+			<!-- // -->
+		</div>
+	</section>
+ */
+
 			<?php }
 			if($k->action=="Y" and $k->darunok=="Y"){?>
 			<section class="line-sale-v3" id="sale">
@@ -616,6 +651,7 @@
 					<!-- / -->
 				    </section>
 				    <?php }?>
+                                    <?php if(isset($showcomment)&$showcomment=='Y'){?>
 				    <section class="py-5 comments">
 					<h2 class="text-center text-uppercase font-weight-bold my-lg-4 my-sm-2"><span class="gradient-text"><?=l('comments');?></span></h2>
 					<div class="container">
@@ -648,7 +684,7 @@
 						</div>
 					    </div>
 					</div>
-				    </section>
+				    </section><?php }?>
 				    <section class="contacts">
 					<div class="container-fluid">
 					    <div class="row row-eq-height">

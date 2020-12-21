@@ -61,6 +61,7 @@
                     "hidden-lg",
                     "hidden-print"];
                 //  console.log("Please define your summernote.options.addclass.classTags array");
+                console.log(context.options.addclass.classTags);
             }
             // ui has renders to build ui elements.
             //  - you can create a button with `ui.button`

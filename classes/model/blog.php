@@ -27,13 +27,10 @@ class blog extends \db {
 	return $this->get_result($zapros);
     }
 
-    function Insert($val = array()) {
-	foreach ($val as $k => $v)
-	{
-	    $$k = $v;
-	}
-	$q = "INSERT INTO `blog` (`link`, `title`,`content`, `postdate`) VALUES ('$link','$title', '$content', '$pdate');";
-
+    function Insert($param) {
+	extract($param);
+	$q = "INSERT INTO `blog` (`link`, `title`,`content`, `pdate`) VALUES ('$link','$title', '$content', '$pdate');";
+	//echo $q;
 	$this->query($q);
 
 	return $this->last_id;
@@ -89,6 +86,54 @@ class blog extends \db {
 	//print_r($q);
 
 	return $this->get_result($q);
+    }
+
+    function search($termin) {
+	$q = "SELECT `title`, `content`, `link`,
+(
+    MATCH(`title`) AGAINST('$termin') * 1 OR
+    MATCH(`content`) AGAINST('$termin')*1
+) AS `relev`
+FROM `blog` WHERE
+MATCH(`title`) AGAINST('$termin')
+OR
+MATCH(`content`) AGAINST('$termin')
+ORDER BY `relev` DESC";
+	//echo $q;
+	return $this->get_result($q);
+    }
+
+    function getTags() {
+	$out	 = '';
+	$needle	 = array('@\.@', '@\,@', '@\(@', '@\:@', '@\;@', '@\)@', '@\"@', '@\'@', '@\!@');
+	$q	 = 'select content as tg FROM blog';
+	foreach ($this->get_result($q) as $tg)
+	{
+
+	    $out .= strip_tags($tg->tg);
+	}
+	$out		 = preg_replace($needle, ' ', $out);
+	$tuo		 = array_count_values(explode(' ', $out));
+	$stopWords	 = array('и', 'в', 'а', 'с', 'к', 'о', '-','0','1','2','д',
+	    'из', 'их', 'вы', 'на', 'от', 'На', 'за', 'под', 'над', 'не', 'но',
+	    'что', 'как', 'все', 'она', 'так', 'его', 'только', 'мне', 'было', 'вот',
+	    'меня', 'еще', 'нет', 'ему', 'теперь', 'когда', 'даже', 'вдруг', 'если',
+	    'уже', 'или', 'быть', 'был', 'него', 'вас', 'нибудь', 'опять', 'вам', 'ведь',
+	    'там', 'потом', 'себя', 'может', 'они', 'тут', 'где', 'есть', 'надо', 'ней',
+	    'для', 'тебя', 'чем', 'была', 'сам', 'чтоб', 'без', 'будто', 'чего', 'раз',
+	    'тоже', 'себе', 'под', 'будет', 'тогда', 'кто', 'этот', 'того', 'потому',
+	    'этого', 'какой', 'ним', 'этом', 'один', 'почти', 'мой', 'тем', 'чтобы',
+	    'нее', 'были', 'куда', 'зачем', 'всех', 'можно', 'при', 'два', 'другой',
+	    'хоть', 'после', 'над', 'больше', 'тот', 'через', 'эти', 'нас', 'про', 'них',
+	    'какая', 'много', 'разве', 'три', 'эту', 'моя', 'свою', 'этой', 'перед',
+	    'чуть', 'том','он', 'такой', 'более', 'всю', '', ' ', '&nbsp', 'одно', '/', 1, 2, 3, 4, 5, 6, 7, 8, 9, 0
+	);
+	foreach ($stopWords as $stopword)
+	{
+	    unset($tuo[$stopword]);
+	}
+	natsort($tuo);
+	return array_reverse($tuo);
     }
 
 }

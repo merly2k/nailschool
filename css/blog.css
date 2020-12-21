@@ -1,0 +1,40 @@
+
+.form-search {
+    /* padding: 3px; */
+    border: 3px solid #DF5396;
+    border-radius: 12px;
+}
+
+.input-search {
+    outline: none;
+    border: none;
+    border-radius: 12px;
+}
+
+.btn-search {
+    width: 40px;
+    margin: -2px -2px -2px 0;
+    color: #ffffff;
+    outline: none!important;
+    border: none;
+    cursor: pointer;
+    border-radius: 0 12px 12px 0;
+    background-color: #DF5396;
+}
+
+
+.news-content  ul li:before {
+    content:"•";
+    font-size:25pt;
+    color: #DF5396;
+    display: inline-block;
+    text-align: center;
+    margin: 4px 10px 2px 0;
+    line-height: 30px;
+    border-radius: 50%;
+    vertical-align: bottom;
+    display: inline flow-root list-item;
+}
+.news-content ol li,.news-content ul li{
+    font-size: initial;
+}

@@ -22,8 +22,11 @@ if ($_POST)
     {
 	$id = @$this->param[1];
     }
-    print_r($_POST);
-    $params = array(
+
+    $content = preg_replace('@<span style="font-size: 1rem;">@', '<p>', $content);
+    $content = preg_replace('@<span style="white-space:pre">@', '<p>', $content);
+    $content = preg_replace('@</span>@', '</p>', $content);
+    $params	 = array(
 	'id'		 => $id,
 	'title'		 => $title,
 	'link'		 => $link,

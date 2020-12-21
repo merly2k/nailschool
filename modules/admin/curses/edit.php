@@ -22,6 +22,7 @@ if (!$_POST):
     $collist['selected']	 = $selected;
     $edits['basecolor']	 = $collist;
     $edits['image']		 = $web_brouse . $edits['image'];
+    
 
     $files	 = glob(APP_PATH . '/images/grl/' . '*.*');
     $files	 = array_map('basename', $files);
@@ -122,6 +123,14 @@ else:
     else
     {
 	$_POST['action'] = 'N';
+    }
+    if (@$_POST['showcomment'] == 'on')
+    {
+	$_POST['showcomment'] = 'Y';
+    }
+    else
+    {
+	$_POST['showcomment'] = 'N';
     }
     $_POST['image']	 = $image;
     // $context	 .= print_r($_POST);

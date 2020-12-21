@@ -33,7 +33,7 @@
 	<link rel="stylesheet" href="<?=WWW_CSS_PATH?>jqcloud.css">
 	<link rel="stylesheet" href="<?=WWW_CSS_PATH?>all.min.css">
 	<link rel="stylesheet" href="<?=WWW_CSS_PATH?>blog.css">
-	<title>Ногтевой Сервис</title>
+	
 	<?php $meta= metatags();
 	echo $meta;?>
 	<link rel="dns-prefetch" href="http://s.w.org/">
@@ -103,6 +103,8 @@
 		font-weight: bold;
 	    }
 	</style>
+	<link rel="stylesheet" href="<?=WWW_CSS_PATH?>blog.css">
+	<link rel="stylesheet" href="<?=WWW_CSS_PATH?>blog-fonts.css">
     </head>
     <body class="page-template-default page page-id-255 page-parent singular image-filters-enabled">
 	<!-- Google Tag Manager (noscript) -->
@@ -126,7 +128,7 @@
 			<ul class="navbar-nav mr-auto main-menu">
 			    <li class="nav-item"><a class="nav-link" href="<?=WWW_BASE_PATH?>"><span><?=l('m1')?></span></a></li>
 			    <li class="nav-item d-none d-lg-block"><a class="nav-link separator"><span>/</span></a></li>
-			    <li class="nav-item"><a class="nav-link" href="<?=WWW_BASE_PATH?>"><span><?=l('blog')?></span></a></li>
+			    <li class="nav-item"><a class="nav-link" href="<?=WWW_BASE_PATH?>blog"><span><?=l('blog')?></span></a></li>
 			</ul>
 			<ul class="navbar-nav lang-menu d-none d-lg-flex">
 			    <li class="nav-item">
@@ -148,10 +150,14 @@
 		    <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-6 themed-grid-col">
 			<a href="<?=WWW_BASE_PATH?>"><img src="<?=WWW_IMG_PATH?>logo.svg" alt="" class="logo m-auto d-block"></a>
 		    </div>
+                    
+			<div class="row d-none d-lg-flex d-xl-none girl" style="background-image: url(http://valet.merlinsoft.pp.ua/images/grl/girl.png); z-index:1000"></div>
+		    
 		    <div class="col-12 col-sm-12 col-md-12 col-lg-7 col-xl-6 themed-grid-col">
 			<h1 class="gradient-text text-center text-xl-left"><?=l('articles1')?></h1>
 			<p class="description-text text-center text-xl-left"><?=l('articles');?></p>
 		    </div>
+		    
 		</div>
 	    </div>
 	</header>
@@ -280,7 +286,7 @@
             });
 
 	</script>
-	<script type="text/javascript" src="<?=WWW_JS_PATH?>jqcloud-1.0.4.min.js"></script>
+	<script type="text/javascript" src="<?=WWW_JS_PATH?>jqcloud-1.0.4.js"></script>
 	<script type="text/javascript">
             var word_list = [
                 <?php echo $tags?>

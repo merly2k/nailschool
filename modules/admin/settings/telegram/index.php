@@ -25,6 +25,7 @@ switch ($act)
 {
     case 'updateToken':
 	$ini_array			 = parse_ini_file("telegram.ini", true);
+	$ini_array['main']['BotName']	 = $_POST['BotName'];
 	$ini_array['main']['token']	 = $_POST['token'];
 	$ini_array['main']['mainChat']	 = $_POST['mainChat'];
 	write_php_ini($ini_array, "telegram.ini");
@@ -77,6 +78,8 @@ $context .= "<div class='container'>"
 	. "<div class='form-group row'>"
 	. "<label class='col-form-label col-3'>Token</label>"
 	. "<input class='form-control col-7' name='token' value='" . $main['token'] . "'>"
+	. "<label class='col-form-label col-3'>Имя бота</label>"
+	. "<input class='form-control col-7' name='BotName' value='" . $main['BotName'] . "'>"
 	. "<label class='col-form-label col-3'>бот для всех городов</label>"
 	. "<input class='form-control col-7' name='mainChat' value='" . $main['mainChat'] . "'>"
 	. "<button type='submit' class='btn btn-primary mb-2 col-2'>save Token</button>"
@@ -146,4 +149,3 @@ function safefilerewrite($fileName, $dataToSave) {
 	fclose($fp);
     }
 }
-

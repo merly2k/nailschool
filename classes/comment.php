@@ -15,7 +15,18 @@ class comment extends db {
     }
 
     public
-	    function markup() {
+	    function avatar($letter, $bcolor) {
+	//$color	 = '#' . dechex(rand(7000000, 10000000));
+	$color = '#fff';
+	//$bcolor	 = '#' . dechex(rand(115, 7000000));
+	return "<div style=' display: flex; justify-content: center; border:1px solid $bcolor; line-height:0.5;
+  align-items: center;color:$color;background:$bcolor;text-align: center; width: 50px;  height: 50px; border-radius: 50%;-moz-border-radius: 50%; -webkit-border-radius: 50%;-khtml-border-radius: 50%;'>"
+		. "<strong style='font-size: 36px;font-variant-caps: all-petite-caps;font-weight: 800;'>$letter</strong>"
+		. "</div>";
+    }
+
+    public
+	    function markup($bcolor) {
 	/*
 	  /	Данный метод выводит разметку XHTML для комментария
 	 */
@@ -40,7 +51,7 @@ class comment extends db {
 	$d['dt'] = strtotime($d['dt']);
 
 	// Нужно для установки изображения по умолчанию:
-	$url = WWW_IMG_PATH . 'default_avatar.png';
+
 	if ($_SESSION['lang'] == 'UA')
 	{
 	    $ansver = 'Відповісти';
@@ -49,17 +60,24 @@ class comment extends db {
 	{
 	    $ansver = 'Ответить';
 	}
+
+	if (@$_SESSION["role"] >= 600):
+	    $button = '<div class="cfoot"><a href="#' . $d['id'] . '" id="' . $d['id'] . '" class="replay btn btn-warning btn-sm px-3">' . $ansver . '</a></div>';
+	else:
+	    $button = '';
+	endif;
 	return '
 
 			<div class="comment media mt-5">
-				' . $link_open . '
-				<img class="mr-2 rounded-circle" src="http://www.gravatar.com/avatar/' . md5($d['email']) . '?size=50&amp;default=' . urlencode($url) . '" />
-				' . $link_close . '
+				' . $link_open . '<div style="padding:4px;">'
+		. $this->avatar(firstChar($d['name']), $bcolor) . '</div>'
+		//. '<img class="mr-2 rounded-circle" src="http://www.gravatar.com/avatar/' . md5($d['email']) . '?size=50&amp;default=' . urlencode($url) . '" />'
+		. $link_close . '
 			    <div class="media-body">
 				    <h5 class="mt-0"><b>' . $link_open . $d['name'] . $link_close . '</b> • <span class="date" title="Added at ' . date('H:i \o\n d M Y', $d['dt']) . '"><small>' . date('d M Y', $d['dt']) . '</small></span></h5>
 
 					<p class="cbody">' . $d['body'] . '</p>
-					<div class="cfoot"><a href="#' . $d['id'] . '" id="' . $d['id'] . '" class="replay btn btn-warning btn-sm px-3">' . $ansver . '</a></div>
+				' . $button . '
 				</div>
 			</div>
 		';

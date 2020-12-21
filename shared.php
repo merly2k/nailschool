@@ -172,6 +172,7 @@ function metatags() {
 	//echo "$turl найден";
 	$keyli	 = $s;
 	$m3	 = '
+    <title>' . htmlspecialchars($keyli->title) . ' — Ногтевой Сервис</title>
 	<meta name="identifier-url" content="' . rtrim(WWW_BASE_PATH, '/') . $keyli->url . '" />
     <meta name="title" content="' . htmlspecialchars($keyli->title) . '" />
     <meta name="description" content="' . htmlspecialchars($keyli->deckription) . '" />
@@ -201,8 +202,10 @@ function metatags() {
     }
     else
     {
+        $tt='<title>'.htmlspecialchars($keyli->title).' Ногтевой Сервис</title>';
 	$deckription	 = "ногтевой сервис";
-	$m3		 = '<meta name="identifier-url" content="' . WWW_BASE_PATH . '" />
+	$m3		 = '<title>' . htmlspecialchars($keyli->title) . ' — Ногтевой Сервис</title>'
+                . '<meta name="identifier-url" content="' . WWW_BASE_PATH . '" />
         <meta name="title" content="Nails School — школа маникюра ногтевой сервис" />
                 <meta name="description" content="' . $deckription . '" />
         <meta name="abstract" content="Nails School — школа маникюра ногтевой сервис" />

@@ -11,271 +11,155 @@ else
 $otherTown	 = '';
 $mlang		 = 'name_' . $lang;
 $km		 = new model\misto();
-if (!isset($this->param[0]))
+$blimg		 = '';
+$c		 = new model\blog;
+$context	 = '';
+$tfut		 = '';
+$townItem	 = "";
+foreach ($km->getall()as $k => $r)
 {
-    $page = 0;
-}
-
-if (is_numeric($page))
-{
-    $template	 = "blog"; //uncomment this string if not use default template
-    $context	 = '';
-
-    $context .= '<ul class="double">';
-    if ($lang == 'ua')
-    {
-	$c	 = new model\blog();
-	$blog	 = $c->getBlog();
-	$bbl	 = $c->getBlog(0, 1000);
-    }
-    else
-    {
-	$c	 = new model\blogl();
-	$blog	 = $c->getBlog($lang);
-	$bbl	 = $c->getBlog($lang, 0, 1000);
-    }
-
-    foreach ($bbl as $row)
-    {
-	//print_r($row);
-	if ($row->image != ''):
-	    $artimg = '<img src="' . WWW_IMG_PATH . 'articles/' . $row->image . '" class="">';
-	else:
-	    $artimg = '<img src="' . WWW_IMG_PATH . 'articles/plaseholder.png" class="">';
-	endif;
-
-	$totalItems = $c->found;
-
-
-	$context .= '
-	    <li>
-	<div class = "card">
-	    <div class = "card-body">
-		<div class = "row">
-		    <div class = "col-md-4 digest">
-		    ' . $artimg . '
-		    </div>
-		    <div class = "col-md-8">
-			<div class = "news-title">
-			    <a title = "' . $row->title . '" href = "' . WWW_BASE_PATH . 'blog/page/' . $row->link . '"><h4>' . $row->pdate . '</h4></a>
-			</div>
-
-			<div class = "news-content">
-			<h2>' . $row->title . '</h2>
-			   ' . truncate(strip_tags($row->content), 250, array('ending' => '', 'exact' => true, 'html' => true)) . '
-			    <div class = "news-buttons">
-				<a href = "' . WWW_BASE_PATH . 'blog/page/' . $row->link . '" class = "btn btn-outline-default btn-sm">&#10097;&#10097;&#10097;</a>
-			    </div>
-			</div>
-		    </div>
-		</div>
-	    </div>
-	</div>
-
-
-	</li>
-	';
-    }
-    $context	 .= '</ul>';
-    $tfut		 = '';
-    $townItem	 = "";
-    foreach ($km->getall()as $k => $r)
-    {
-	// print_r($r);
-	$addr = 'addr_' . $lang;
-	if ($r->link != 'virtual'):
-	    $button	 = 'm16';
-	    $tfut	 .= '
+// print_r($r);
+    $addr = 'addr_' . $lang;
+    if ($r->link != 'virtual'):
+	$button	 = 'm16';
+	$tfut	 .= '
 <div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-2 mb-3">
 			<p><b>' . $r->$mlang . '</b></p>
 			<p class="tel">' . $r->phones . '</p>
 			<span class="social-icon">';
-	    if (firstChar($r->fb) != '#')
-	    {
-		$tfut .= '<a style = "color: white;" target="_blank" href = "' . $r->fb . '"><i class = "fab fa-facebook-square fa-2x" aria-hidden = "true"></i></a>';
-	    }
-	    else
-	    {
-		$tfut .= '';
-	    }
-	    if (firstChar($r->inst) != '#')
-	    {
-		$tfut .= '<a style = "color: white;" target="_blank" href = "' . $r->inst . '"><i class = "fab fa-instagram fa-2x" aria-hidden = "true"></i></a>';
-	    }
-	    else
-	    {
-		$tfut .= '';
-	    }
-	    $tfut .= '    <a style = "color: white;" target="_blank" href = "https://www.youtube.com/channel/UCZcCF_9g8Cp2mE1WG66IEjg"><i class = "fab fa-youtube-square fa-2x" aria-hidden = "true"></i></a >
-			</span>
-		    </div>';
-	else:
-	    $button = 'm16a';
-	endif;
-//print_r($r);
-	$mista[$r->link] = $r->$mlang;
-	$otherTown	 .= '<a class="dropdown-item" href="' . WWW_BASE_PATH . 'curses/' . $r->link . '">' . $r->$mlang . '</a>';
-
-	if ($k % 2)
+	if (firstChar($r->fb) != '#')
 	{
-	    $townItem .= '<div class="row no-gutters">
-    <div class="col-md-6 mb-5 align-items-center town-info d-flex">
-        <img class="img-fluid d-block" src="' . WWW_IMG_PATH . 'towns/' . $r->image . '" alt="' . $r->$mlang . '" >
-    </div>
-    <div class="col-md-6 mb-5 align-items-center town-info">
-      <div class="text">
-        <h3><span class="gradient-text text-uppercase">' . $r->$mlang . '</span></h3>
-        ' . $r->$addr . '
-        <a href="' . WWW_BASE_PATH . 'curses/' . $r->link . '">
-          <div class="link-cities gradient-text">
-            <span><b>' . l('m15') . '</b></span>
-            <span class="site_btn">' . l($button) . '</span>
-          </div>
-        </a>
-      </div>
-    </div>
-  </div>
-	';
+	    $tfut .= '<a style = "color: white;" target="_blank" href = "' . $r->fb . '"><i class = "fab fa-facebook-square fa-2x" aria-hidden = "true"></i></a>';
 	}
 	else
 	{
-	    $townItem .= '<div class="col-md-6 mb-5 align-items-center d-flex d-md-none">
-      <img class="img-fluid d-block" src="' . WWW_IMG_PATH . 'towns/' . $r->image . '" alt="' . $r->$mlang . '" >
-  </div>
-  <div class="row no-gutters">
-    <div class="col-md-6 mb-5 align-items-center town-info">
-      <div class="text">
-        <h3><span class="gradient-text text-uppercase">' . $r->$mlang . '</span></h3>
-        ' . $r->$addr . '
-        <a href="' . WWW_BASE_PATH . 'curses/' . $r->link . '">
-          <div class="link-cities gradient-text">
-            <span><b>' . l('m15') . '</b></span>
-            <span class="site_btn">' . l($button) . '</span>
-          </div>
-        </a>
-      </div>
-    </div>
-    <div class="col-md-6 mb-5 align-items-center d-none d-md-flex">
-        <img class="img-fluid d-block" src="' . WWW_IMG_PATH . 'towns/' . $r->image . '" alt="' . $r->$mlang . '" >
-    </div>
-  </div>
-	';
+	    $tfut .= '';
 	}
+	if (firstChar($r->inst) != '#')
+	{
+	    $tfut .= '<a style = "color: white;" target="_blank" href = "' . $r->inst . '"><i class = "fab fa-instagram fa-2x" aria-hidden = "true"></i></a>';
+	}
+	else
+	{
+	    $tfut .= '';
+	}
+	$tfut .= '    <a style = "color: white;" target="_blank" href = "https://www.youtube.com/channel/UCZcCF_9g8Cp2mE1WG66IEjg"><i class = "fab fa-youtube-square fa-2x" aria-hidden = "true"></i></a >
+			</span>
+		    </div>';
+    else:
+	$button = 'm16a';
+    endif;
+    $mista[$r->link] = $r->$mlang;
+    $otherTown	 .= '<a class="dropdown-item" href="' . WWW_BASE_PATH . 'curses/' . $r->link . '">' . $r->$mlang . '</a>';
+}
+$tags = tagcloud();
+
+
+if (!isset($this->param[0]))
+{
+    $template	 = "blog"; //uncomment this string if not use default template
+    $context	 = '';
+
+    $context .= '';
+
+    $blog	 = $c->getBlog();
+    $bbl	 = $c->getBlog(0, 1000);
+
+    foreach ($bbl as $row)
+    {
+	if ($row->image != ''):
+	    $artimg = '<img class="img-fluid" src="' . WWW_IMG_PATH . 'articles/' . $row->image . '" >';
+	else:
+	    $artimg = '<img class="img-fluid" src="' . WWW_IMG_PATH . 'articles/plaseholder.png" >';
+	endif;
+
+	$totalItems = $c->found;
+
+	$context .= '
+		<div class = "row">
+		    <div class = "col-md-4">
+		    ' . $artimg . '
+		    </div>
+		    <div class = "col-md-8">
+			<div class = "news-title">
+			    <a title = "' . $row->title . '" href = "' . WWW_BASE_PATH . 'blog/' . $row->link . '"><h4>' . $row->pdate . '</h4></a>
+			</div>
+			<div class = "news-content">
+			<h2>' . $row->title . '</h2>
+			   ' . truncate(strip_tags($row->content), 250, array('ending' => '', 'exact' => true, 'html' => true)) . '...
+			    <div class = "news-buttons">
+				<a href = "' . WWW_BASE_PATH . 'blog/' . $row->link . '" >' . l('readmore') . '&#10097;&#10097;&#10097;</a>
+			    </div>
+			</div>
+		    </div>
+		    <hr>
+		</div>
+	';
     }
+
     include TEMPLATE_DIR . DS . $template . ".html";
 }
 else
 {
-    if ($page == 'pages')
-    {
-	header("HTTP/1.1 301 Moved Permanently");
-	header("Location:" . WWW_BASE_PATH . "blog");
-	exit();
-    }
+    $bl = new model\blog();
 
-    $cur	 = $page;
-    $bl	 = new model\blog();
-    $row	 = $bl->SelectByURL($cur);
-//print_r($row);
-    $id	 = $row->id;
-    $title	 = $row->title;
-    $content = $row->content;
-    $pdate	 = $row->pdate;
-    if ($row->image == '')
+    $cc = $bl->SelectByURL($this->param[0]);
+    foreach ($cc as $r)
     {
-	$image = 'https://via.placeholder.com/680x200/?text=no+image';
-    }
-    else
-    {
-	$image = $row->image;
-    }
 
-    $ids		 = $bl->getIds();
-    $ids['title']	 = array_map("translit", $ids['title']);
 
-    $CurId	 = array_search($cur, $ids['title']);
-    $next	 = getNext($CurId, $ids['title']);
-    if ($next != 'last')
-    {
-	$low		 = $bl->SelectByURL($next);
-	$nextTitle	 = $low->title;
-	$nextLink	 = WWW_BASE_PATH . 'blog/' . $next;
-	if ($low->image == '')
-	{
-	    $nextImage = 'https://via.placeholder.com/424x200/?text=no+image';
-	}
-	else
-	{
-	    $nextImage = $low->image;
-	}
-    }
-    else
-    {
-	$nextTitle	 = 'более новых статей нет';
-	$nextImage	 = '';
-	$nextLink	 = WWW_BASE_PATH . 'blog';
-    }
+	if ($r->image != ''):
+	    $artimg = WWW_IMG_PATH . 'articles/' . $r->image;
+	else:
+	    $artimg = WWW_IMG_PATH . 'articles/plaseholder.png';
+	endif;
+	$context = '
+				<div class="row">
+				    <div class="col-md-3">
+					    <image src="' . $artimg . '"  width="100%">
+				    </div>
+				    <div class="col-md-9">
+					<div class="row mb-2">
+					    <div class="col-md-12">
+						<div class="card">
+						    <div class="card-body">
+							<div class="row">
+							    <div class="col-md-12">
+								<div class="news-title">
+								    <h2 style=""class="title-pink">' . $r->title . '</h2>
+								</div>
+								<div class="news-cats">
+								    <ul class="list-unstyled list-inline mb-1">
 
-    $prev = getPrew($CurId, $ids['title']);
-    if ($prev != 'first')
-    {
-//echo $prev;
-	$pow		 = $bl->SelectByURL($prev);
-	$prevTitle	 = $pow->title;
-	$prevLink	 = WWW_BASE_PATH . 'blog/' . $prev;
-	if ($pow->image == '')
-	{
-	    $prevImage = 'https://via.placeholder.com/424x200/?text=no+image';
-	}
-	else
-	{
-	    $prevImage = $pow->image;
-	}
-    }
-    else
-    {
-	$prevLink	 = WWW_BASE_PATH . 'blog/';
-	$prevImage	 = '';
-	$prevTitle	 = "более ранних статей нет";
+									<li class="list-inline-item">
+									    <time>' . $r->pdate . '</time>
+									</li>
+								    </ul>
+								</div>
+								<hr>
+								<div class="news-content">
+		                                ' . $r->content . '
+								</div>
+								<hr>
+
+							    </div>
+							</div>
+						    </div>
+						</div>
+					    </div>
+					</div>
+
+				    </div>
+
+
+				</div>
+';
     }
 
 
-
-    $latest	 = new model\blog();
-    $blog	 = $latest->getLast();
-
-    $template = 'blog-page';
+    $template = 'article';
 
     include TEMPLATE_DIR . DS . $template . ".html";
-}
-
-function getNext($id, $ds) {
-    reset($ds);
-
-    $nextid	 = $id + 1;
-    $lastKey = end(array_keys($ds));
-    if ($nextid >= $lastKey)
-    {
-	return 'last';
-    }
-    else
-    {
-	return $ds[$nextid];
-    }
-}
-
-function getPrew($id, $ds) {
-    reset($ds);
-    $FirstKey	 = key($ds);
-    $previd		 = $id - 1;
-    if ($previd <= $FirstKey)
-    {
-	return 'first';
-    }
-    else
-    {
-	return $ds[$previd];
-    }
 }
 
 function truncate($text, $length = 100, $options = array()) {
@@ -395,4 +279,20 @@ function truncate($text, $length = 100, $options = array()) {
     }
 
     return $truncate;
+}
+
+function tagcloud() {
+    $r	 = new model\blog();
+    $zz	 = $r->getTags();
+    $t	 = array();
+    foreach ($zz as $k => $v)
+    {
+	if ($v > 1):
+   //$l='<a onclick="document.forms[0].search.value=\''.$k.'\'; document.forms[0].submit();">'.$k.'</a>';
+	    $t[] = '{text: "' . $k . '", weight: "' . $v . '"}
+		';
+	endif;
+    }
+    $za = implode(', ', $t);
+    return($za);
 }

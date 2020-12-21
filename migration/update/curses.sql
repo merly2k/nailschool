@@ -1,2 +1,2 @@
 ALTER TABLE `cursses`
-	ADD COLUMN `hidestart` ENUM('Y','N') NOT NULL DEFAULT 'N' COMMENT 'скрыть дату' AFTER `start`;
+	ADD COLUMN `hideprog` ENUM('Y','N') NOT NULL DEFAULT 'N' COMMENT 'скрыть блок крограмма курса' AFTER `hidedeckr`;

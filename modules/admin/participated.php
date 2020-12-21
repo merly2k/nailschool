@@ -60,7 +60,7 @@ foreach ($ppt as $row)
 	    . "<td>" . $row->coment
 	    . "</td>"
 	    . "<td class='panel'>"
-	    . "<a href='" . WWW_ADMIN_PATH . "/" . $row->id . "'>
+	    . "<a href='" . WWW_ADMIN_PATH . "edit/" . $row->id . "'>
 		    <i class='fa fa-pencil' title='edit'> </i></a>"
 	    . "</td>"
 	    . "</tr>";

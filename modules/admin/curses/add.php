@@ -63,6 +63,8 @@ if (!$_POST):
 	'tur'		 => '',
 	'zrazki'	 => '',
 	'vipusk'	 => '',
+	'hideprog'	 => 'N',
+	'showcomment'	 => 'N',
     );
 
     $context .= '<form method="POST">' . $f->renderFormByData('cursses', $data)
@@ -90,6 +92,14 @@ else:
     else
     {
 	$_POST['hidestart'] = 'N';
+    }
+    if (@$_POST['hideprog'] == 'on')
+    {
+	$_POST['hideprog'] = 'Y';
+    }
+    else
+    {
+	$_POST['hideprog'] = 'N';
     }
     if (@$_POST['hidedeckr'] == 'on')
     {
@@ -147,12 +157,20 @@ else:
     {
 	$_POST['action'] = 'N';
     }
+    if (@$_POST['showcomment'] == 'on')
+    {
+	$_POST['showcomment'] = 'Y';
+    }
+    else
+    {
+	$_POST['showcomment'] = 'N';
+    }
     $_POST['image']	 = $image;
 //print_r($_POST);
     unset($_POST['files']);
     $c->add($_POST);
     $context	 .= $c->lastState;
-    $context	 .= "<script>setTimeout(function() { location.replace('" . WWW_ADMIN_PATH . "curses/$town'); }, 900)</script>";
+    //$context	 .= "<script>setTimeout(function() { location.replace('" . WWW_ADMIN_PATH . "curses/$town'); }, 900)</script>";
 endif;
 
 include TEMPLATE_DIR . DS . $tpl . ".html";

@@ -223,10 +223,10 @@ if (ONLINE_ONLY == 'Y'):
 					<div class="col-12 col-sm-5 col-md-3 col-lg-3 col-xl-2 px-sm-0 px-md-0 px-lg-0 themed-grid-col deadline">
 						' . $ramp . '
 					</div>
-			<a href="#" data-toggle="modal" data-target="#akcia"><div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-4 px-md-0 px-lg-0 themed-grid-col col-03">
+			<a data-toggle="modal" data-target="#akcia"><div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-4 px-md-0 px-lg-0 themed-grid-col col-03">
 						<div class="sale text-center m-auto">
               <p style="margin:0 auto;">' . $coastrow . '</p>
-              <a href="#" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#akcia">' . $aza . '</a>
+              <a class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold" data-toggle="modal" data-target="#akcia">' . $aza . '</a>
 						</div>
 			</a>
 					</div>
@@ -380,9 +380,9 @@ foreach ($blog->SelectAll() as $slider)
 			        <img class="img-fluid" src="' . WWW_IMAGE_PATH . '/' . $slider->image . '" alt="">
 			    </div>
 			    <div class="col-9">
-			        <p class="name">' . $slider->title . ', ' . $slider->pdate . '</p>
-			        <span class="sity">' . $slider->lcontent . '
-			        <a class="readmore" href="' . $slider->link . '">' . l('readmore') . '...</a>
+			        <p class="name">' . strip_tags($slider->title) . ', ' . $slider->pdate . '</p>
+			        <span class="sity">' . strip_tags($slider->lcontent) . '
+			        <a class="readmore" href="blog/page/' . $slider->link . '">' . l('readmore') . '...</a>
 				    </span>
 			    </div>
 			</div>

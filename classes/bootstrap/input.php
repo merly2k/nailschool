@@ -205,7 +205,7 @@ class input {
     public
 	    function EditorTextarea($label, $name, $tekst, $rows = 28) {
 	return "<label>$label</label>
-    <textarea rows='$rows' class='editor' style='display:none' name='$name'>$tekst</textarea>";
+    <textarea rows='$rows' class='editor' style='width:100%;' id='$name' name='$name'>$tekst</textarea>";
     }
 
     public
@@ -297,4 +297,3 @@ class input {
     }
 
 }
-

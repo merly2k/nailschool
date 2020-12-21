@@ -1,16 +1,25 @@
 <?php
-
 set_time_limit(0);
 $brouse	 = '';
 $lsize	 = '';
 $sitemap = new seo\sitemap();
-
+if(!$_POST){
+    echo "new sitemap generation";
+    $sitemap->set_ignore(array("javascript:", "#", "malito:", "tg:", "tel:", "viber:", "skype:", ".css", ".js", ".ico", ".jpg", ".png", ".jpeg", ".swf", ".svf", ".gif"));
+    $sitemap->get_links(WWW_BASE_PATH);
+    print_r($sitemap);
+    $arr	 = $sitemap->get_array();
+    
+    foreach ($arr as $vl) {
+        print_r($vl);
+    }
+}elseif ($_POST['action']) {
+    
+}else{
 //игнорировать ссылки с расширениями:
 $sitemap->set_ignore(array("javascript:", "#", "malito:", "tg:", "tel:", "viber:", "skype:", ".css", ".js", ".ico", ".jpg", ".png", ".jpeg", ".swf", ".svf", ".gif"));
-
 //ссылка Вашего сайта:
 $sitemap->get_links(WWW_BASE_PATH);
-
 //если нужно вернуть просто массив с данными:
 $arr	 = $sitemap->get_array();
 //echo "<pre>";
@@ -46,7 +55,8 @@ foreach ($arr as $i)
 $map	 .= '</urlset>';
 $fp	 = APP_PATH . "/sitemap.xml";
 echo 'save sitemap...';
-file_put_contents($fp, $map);
+//file_put_contents($fp, $map);
 echo "done!";
 echo "<script>document.location.replace('" . WWW_ADMIN_PATH . "settings/seo');</script>";
+}
 ?>

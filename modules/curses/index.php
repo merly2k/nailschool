@@ -172,6 +172,7 @@ else:
 	{
 	    foreach ($cc as $row)
 	    {
+                $showcomment=$row->showcomment;
 		$context	 = '';
 		$name		 = $row->$lname;
 		$decription	 = $row->$ldecription;
