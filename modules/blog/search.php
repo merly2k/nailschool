@@ -16,6 +16,8 @@ if (!isset($this->param[0]))
     $page = 0;
 }
 $termin	 = $_POST['search'];
+$termin	 = preg_replace("/[^\w\x7F-\xFF\s]/", " ", $termin);
+
 $bl	 = new model\blog();
 // Создаем строку для регулярного выражения
 $pattern = "/((?:^|>)[^<]*)(" . $termin . ")/si";

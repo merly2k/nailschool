@@ -89,17 +89,18 @@ class blog extends \db {
     }
 
     function search($termin) {
-	$q = "SELECT `title`, `content`, `link`,
+$q = "SELECT `title`, `content`, `link`,
 (
-    MATCH(`title`) AGAINST('$termin') * 1 OR
-    MATCH(`content`) AGAINST('$termin')*1
+    MATCH(`title`) AGAINST('$termin') * 10 OR
+    MATCH(`content`) AGAINST('$termin')*5
 ) AS `relev`
 FROM `blog` WHERE
-MATCH(`title`) AGAINST('$termin')
+MATCH(`title`) AGAINST('$termin' WITH QUERY EXPANSION)>0
 OR
-MATCH(`content`) AGAINST('$termin')
+MATCH(`content`) AGAINST('$termin' WITH QUERY EXPANSION)>0
 ORDER BY `relev` DESC";
-	//echo $q;
+        
+	//echo $q;SELECT * FROM `articles` WHERE MATCH (title,body) AGAINST ('database');
 	return $this->get_result($q);
     }
 

@@ -382,7 +382,7 @@ foreach ($blog->SelectAll() as $slider)
 			    <div class="col-9">
 			        <p class="name">' . strip_tags($slider->title) . ', ' . $slider->pdate . '</p>
 			        <span class="sity">' . strip_tags($slider->lcontent) . '
-			        <a class="readmore" href="blog/page/' . $slider->link . '">' . l('readmore') . '...</a>
+			        <a class="readmore" href="blog/' . $slider->link . '">' . l('readmore') . '...</a>
 				    </span>
 			    </div>
 			</div>

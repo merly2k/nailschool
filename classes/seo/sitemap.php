@@ -8,8 +8,11 @@ class sitemap
 	private $domain;
 	private $check = array();
 	private $proxy = "";
-	
-	//setting list of substring to ignore in urls
+	public $freq = "weekly";
+        public $priority='0.5';
+
+
+        //setting list of substring to ignore in urls
 	public function set_ignore($ignore_list){
 		$this->check = $ignore_list;
 	}
@@ -82,8 +85,10 @@ class sitemap
 	//function to call
 	public function get_links($domain){
 		//getting base of domain url address
+                $domain=rtrim($domain,"/");
 		$this->base = str_replace("http://", "", $domain);
 		$this->base = str_replace("https://", "", $this->base);
+                $this->base=rtrim($this->base,"/");
 		$host = explode("/", $this->base);
 		$this->base = $host[0];
 		//getting proper domain name and protocol
@@ -99,13 +104,13 @@ class sitemap
 			$this->protocol = $protocol[0]."//";
 		}
 		
-		if(!in_array($this->domain, $this->sitemap_urls))
+		if(!in_array(rtrim($this->domain,"/"), $this->sitemap_urls))
 		{
-			$this->sitemap_urls[] = $this->domain;
+			$this->sitemap_urls[] = rtrim($this->domain,"/");
 		}
 		//requesting link content using curl
 		$curl = curl_init();
-		curl_setopt($curl, CURLOPT_URL, $this->domain);
+		curl_setopt($curl, CURLOPT_URL, rtrim($this->domain,"/"));
 		if (isset($this->proxy) && !$this->proxy == '') 
 		{
 			curl_setopt($curl, CURLOPT_PROXY, $this->proxy);
@@ -146,18 +151,18 @@ class sitemap
 					$url = $this->protocol.$this->base."/".$url;
 				}
 				//if new and not empty
-				if(!in_array($url, $this->sitemap_urls) && trim($url) !== "")
+				if(!in_array(rtrim($url,"/"), $this->sitemap_urls) && trim(rtrim($url,"/")) !== "")
 				{
 					//if valid url
-					if($this->validate($url))
+					if($this->validate(rtrim($url,"/")))
 					{
 						//checking if it is url from our domain
-						if(strpos($url, "http://".$this->base) === 0 || strpos($url, "https://".$this->base) === 0)
+						if(strpos(rtrim($url,"/"), "http://".$this->base) === 0 || strpos(rtrim($url,"/"), "https://".$this->base) === 0)
 						{
 							//adding url to sitemap array
-							$this->sitemap_urls[] = $url;
+							$this->sitemap_urls[] = rtrim($url,"/");
 							//adding url to new link array
-							$new_links[] = $url;
+							$new_links[] = rtrim($url,"/");
 						}
 					}
 				}
@@ -245,11 +250,15 @@ class sitemap
 	
 	//generates sitemap
 	public function generate_sitemap(){
-		$sitemap = new SimpleXMLElement('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></urlset>');
+		$sitemap = new \SimpleXMLElement('<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="sitemap.xsl"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"></urlset>');
         foreach($this->sitemap_urls as $url) 
 		{
             $url_tag = $sitemap->addChild("url");
             $url_tag->addChild("loc", htmlspecialchars($url));
+            $url_tag->addChild("changefreq", $this->freq);
+            $url_tag->addChild("priority", $this->priority);
+            $url_tag->addChild("lastmod", date("Y-m-d"));
+             
 		}
 		return $sitemap->asXML();
 	}
