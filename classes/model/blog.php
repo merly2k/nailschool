@@ -9,27 +9,27 @@ class blog extends \db {
 
     public
 	    function SelectAll() {
-	$q = "SELECT SQL_CALC_FOUND_ROWS *, LEFT(`content`, 256) as `lcontent` FROM `blog` ORDER BY `pdate` DESC,`id` DESC";
+	$q = "SELECT SQL_CALC_FOUND_ROWS *, LEFT(`content_ru`, 256) as `lcontent_ru` ,LEFT(`content_ua`, 256) as `lcontent_ua` FROM `blog` ORDER BY `pdate` DESC,`id` DESC";
 	return $this->get_result($q);
     }
 
     public
 	    function getLast($m = 4) {
-	$q = "SELECT SQL_CALC_FOUND_ROWS *,LEFT(`content`, 256)as `lcontent` FROM `blog` ORDER BY `pdate` DESC,`id` DESC LIMIT 0,$m";
+	$q = "SELECT SQL_CALC_FOUND_ROWS *,LEFT(`content_ru`, 256) as `lcontent_ru` ,LEFT(`content_ua`, 256) as `lcontent_ua` FROM `blog` ORDER BY `pdate` DESC,`id` DESC LIMIT 0,$m";
 	return $this->get_result($q);
     }
 
     public
 	    function getBlog($offset = 0, $page_result = 10) {
 
-	$zapros = "SELECT SQL_CALC_FOUND_ROWS *, LEFT(`content`, 320) as `lcontent` FROM `blog` ORDER BY `id` ASC, `pub` ASC limit $offset, $page_result;";
+	$zapros = "SELECT SQL_CALC_FOUND_ROWS *, LEFT(`content_ru`, 400) as `lcontent_ru` ,LEFT(`content_ua`, 400) as `lcontent_ua` FROM `blog` ORDER BY `id` ASC, `pub` ASC limit $offset, $page_result;";
 	//echo $zapros;
 	return $this->get_result($zapros);
     }
 
     function Insert($param) {
 	extract($param);
-	$q = "INSERT INTO `blog` (`link`, `title`,`content`, `pdate`) VALUES ('$link','$title', '$content', '$pdate');";
+	$q = "INSERT INTO `blog` (`link`, `title_ua`,`content_ua`,`title_ru`,`content_ru`,`image`,`tags`, `pdate`) VALUES ('$link','$title_ua', '$content_ua','$title_ru','$content_ru','$image','$tags', '$pdate');";
 	//echo $q;
 	$this->query($q);
 
@@ -88,30 +88,33 @@ class blog extends \db {
 	return $this->get_result($q);
     }
 
-    function search($termin) {
-$q = "SELECT `title`, `content`, `link`,
+    function search($termin,$lang) {
+        $content="content_".$lang;
+        $title="content_".$lang;
+$q = "SELECT `title`, `$content`, `link`,
 (
-    MATCH(`title`) AGAINST('$termin') * 10 OR
-    MATCH(`content`) AGAINST('$termin')*5
+    MATCH(`$title`) AGAINST('$termin') * 10 OR
+    MATCH(`$content`) AGAINST('$termin')*5
 ) AS `relev`
 FROM `blog` WHERE
 MATCH(`title`) AGAINST('$termin' WITH QUERY EXPANSION)>0
 OR
-MATCH(`content`) AGAINST('$termin' WITH QUERY EXPANSION)>0
+MATCH(`$content`) AGAINST('$termin' WITH QUERY EXPANSION)>0
 ORDER BY `relev` DESC";
-        
+        //echo $q;
 	//echo $q;SELECT * FROM `articles` WHERE MATCH (title,body) AGAINST ('database');
 	return $this->get_result($q);
     }
 
-    function getTags() {
+   /**
+     function getTags() {
 	$out	 = '';
 	$needle	 = array('@\.@', '@\,@', '@\(@', '@\:@', '@\;@', '@\)@', '@\"@', '@\'@', '@\!@');
-	$q	 = 'select content as tg FROM blog';
+	$q	 = 'select content_ua as tg FROM blog';
 	foreach ($this->get_result($q) as $tg)
 	{
 
-	    $out .= strip_tags($tg->tg);
+	    $out .=preg_replace('/<[^>]*>/', ' ', $tg->tg);// strip_tags($tg->tg);
 	}
 	$out		 = preg_replace($needle, ' ', $out);
 	$tuo		 = array_count_values(explode(' ', $out));
@@ -136,5 +139,13 @@ ORDER BY `relev` DESC";
 	natsort($tuo);
 	return array_reverse($tuo);
     }
-
+    
+*/
+     function getTags() {
+         $q="select `tags` , `link` FROM `blog`";
+         foreach($this->get_result($q) as $k=>$tl){
+             $tag["$tl->link"]= $tl->tags;
+         }
+         return $tag;
+}
 }

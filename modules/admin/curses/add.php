@@ -1,6 +1,6 @@
 <?php
 
-$tpl		 = 'admin';
+$tpl		 = 'admin/admin';
 $c		 = new model\curses();
 $town		 = $this->param[0];
 $context	 = '';

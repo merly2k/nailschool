@@ -67,7 +67,7 @@ if (!$_POST):
 
 
 
-    $template = "admin";
+    $template = "admin/admin";
 
     include TEMPLATE_DIR . $template . ".html";
 

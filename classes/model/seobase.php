@@ -45,5 +45,22 @@ class seobase extends \db {
 	    function GetAll() {
 	return $this->get_result("SELECT SQL_CALC_FOUND_ROWS * FROM `seo` WHERE `hide`=0");
     }
+    public
+	    function GetHide() {
+	return $this->get_result("SELECT SQL_CALC_FOUND_ROWS * FROM `seo` WHERE `hide`=1");
+    }
+    public function Update($params) {
+	extract($params);
+	$q = "UPDATE `seo` SET ";
+	foreach ($params as $k => $v)
+	{
+	    $p[] = "`$k`='$v'";
+	}
+	$q .= implode(", ", $p) . " WHERE  `id`=$id;";
+	//echo $q;
+	$this->query($q);
+
+	return $this->lastState;
+    }
 
 }

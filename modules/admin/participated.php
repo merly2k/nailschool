@@ -3,7 +3,7 @@
 ini_set("max_execution_time", 0);
 $brouse		 = '';
 $lsize		 = '';
-$tpl		 = 'admin';
+$tpl		 = 'admin/admin';
 $mod_name	 = "Лиды";
 $vi		 = new model\leads();
 $packet		 = new model\packets();
@@ -29,7 +29,7 @@ switch (@$this->param[0])
 
 	break;
 }
-$context = '<ul class="nav nav-tabs nav-justified">'
+$context = '<ul class="nav nav-tabs">'
 	. '<li class="nav-item"><a class="nav-link ' . $as1 . '" href="' . WWW_ADMIN_PATH . 'participated">Подписаны на новости</a></li>'
 	. '<li class="nav-item"><a class="nav-link ' . $as2 . '" href="' . WWW_ADMIN_PATH . 'participated/no">Не подписаны на новости</a></li>'
 	. '</ul>';
@@ -37,11 +37,11 @@ $context .= "<table class='table table-striped table-bordered table-hover DataTa
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Контакт</th>
+                                            <th class='all'>Контакт</th>
                                             <th>email</th>
                                             <th>phone</th>
                                             <th>коментарий</th>
-                                            <th>действие</th>
+                                            <th class='all'>действие</th>
                                         </tr>
                                     </thead>
                                     <tbody>";
@@ -65,5 +65,5 @@ foreach ($ppt as $row)
 	    . "</td>"
 	    . "</tr>";
 }
-
+$context .="</tbody></table>";
 include TEMPLATE_DIR . DS . $tpl . ".html";

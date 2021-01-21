@@ -43,6 +43,10 @@ class leads extends \db {
 	$q = "SELECT SQL_CALC_FOUND_ROWS * from `leads` where `status`='новый'";
 	return $this->get_result($q);
     }
+    function getLatest() {
+	$q = "SELECT SQL_CALC_FOUND_ROWS * FROM `leads` ORDER BY `sdate` ASC LIMIT 10;";
+	return $this->get_result($q);
+    }
 
     function getParcipated($s) {
 	if ($s == 0)

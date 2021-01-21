@@ -1,6 +1,6 @@
 <?php
 
-$tpl		 = 'admin';
+$tpl		 = 'admin/admin';
 $mod_name	 = 'модерация коментариев';
 $context	 = '';
 $brouse		 = '';

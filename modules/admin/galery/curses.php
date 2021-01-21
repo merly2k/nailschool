@@ -1,6 +1,6 @@
 <?php
 
-$tpl		 = "admin";
+$tpl		 = "admin/admin";
 $mod_name	 = "Управление привязкой элементов галереи к курсу";
 $context	 = '';
 $nav		 = ' <ul class="nav nav-tabs">';
@@ -40,7 +40,7 @@ if (isset($cur_curs))
 	{
 	    $checked = '';
 	}
-	$imglist .= "<div class='card col-2'>"
+	$imglist .= "<div class='card col-md-2 col-sm-12'>"
 		. "<img class='img-thumbnail' src='" . WWW_IMAGE_PATH . "galery/" . $photo . "' >"
 		. "<small>$photo</small>"
 		. "<input id='t_$k' name='title' value='" . $gal->GetTitle($photo) . "'>"

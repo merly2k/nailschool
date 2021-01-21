@@ -1,6 +1,6 @@
 <?php
 error_reporting(0);
-$tpl="admin";
+$tpl="admin/admin";
 $context='<a href="'.WWW_ADMIN_PATH.'fidback/add" class="btn btn-info">новый отзыв</a>'
 	. '<table class="table table-bordered datatable"><thead>'
 	. '<tr>'

@@ -369,7 +369,13 @@
 	<script type="text/javascript" src="<?=WWW_JS_PATH?>position.js"></script>
 	<script type="text/javascript" src="<?=WWW_JS_PATH?>site.js"></script>
 	<script id="dsq-count-scr" src="<?=WWW_JS_PATH?>count.js" async=""></script>
-	<script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <!-- new carousel by ing -->
+    <script>
+    
+    $(function() {
+   $('.wpcf7-tel').mask('+38(000)000-00-00');
+        });
             $('a.shm').on('click', function () {
                 var lid = 'p' + $(this).attr('data-id');
                 var name = $(this).attr('data-name');
@@ -379,10 +385,8 @@
                 $('.ps').text(name);
 
             });
-	</script>
 
-	<script>
-            $(window).scroll(function () {
+    $(window).scroll(function () {
                 if ($(this).scrollTop() != 0) {
                     $('#to-top').fadeIn();
                 } else {
@@ -425,7 +429,28 @@
             });
 
 	</script>
+<script>
 
+    $.fn.isInViewport = function() {
+  var elementTop = $(this).offset().top;
+  var elementBottom = elementTop + $(this).outerHeight();
+
+  var viewportTop = $(window).scrollTop();
+  var viewportBottom = viewportTop + $(window).height();
+
+  return elementBottom > viewportTop && elementTop < viewportBottom;
+};
+
+$(window).on('resize scroll', function() {
+  $('.course__item').each(function() {
+    if ($(this).isInViewport()) {
+      $(this).addClass('jqhover');
+    } else {
+      $(this).removeClass('jqhover');
+    }
+  });
+});
+  </script>
     </body>
 </html>
 

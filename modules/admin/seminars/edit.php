@@ -1,7 +1,7 @@
 <?php
 
 $c		 = new model\seminars();
-$tpl		 = 'admin';
+$tpl		 = 'admin/admin';
 $context	 = '';
 $mod_name	 = "редактируем семинар";
 $id		 = $this->param[0];

@@ -3,7 +3,7 @@
 $a = new model\curses();
 if (!$_POST)
 {
-    $template	 = "admin"; //dform; //"index";
+    $template	 = "admin/admin"; //dform; //"index";
     $context	 = '';
     $id		 = $this->param[0];
     $ajax		 = "";

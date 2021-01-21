@@ -1,6 +1,6 @@
 <?php
 
-$tpl		 = 'admin';
+$tpl		 = 'admin/admin';
 $context	 = '';
 $modal_name	 = '';
 $modal_content	 = '';

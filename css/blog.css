@@ -36,5 +36,6 @@
     display: inline flow-root list-item;
 }
 .news-content ol li,.news-content ul li{
-    font-size: initial;
+    font-size: 20px;
+    line-height: 1.2;
 }

@@ -5,7 +5,7 @@ $act		 = @$this->param[0];
 $brouse		 = '';
 $lsize		 = '';
 ini_set("max_execution_time", 0);
-$tpl		 = 'admin';
+$tpl		 = 'admin/admin';
 $modal_name	 = '';
 $modal_content	 = '';
 $mod_name	 = "Телеграмм";

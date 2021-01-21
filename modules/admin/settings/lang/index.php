@@ -1,6 +1,6 @@
 <?php
 
-$template	 = "admin";
+$template	 = "admin/admin";
 $mod_name	 = 'Управление настройками сайта/языки';
 $f		 = new bootstrap\input();
 $l		 = new db();

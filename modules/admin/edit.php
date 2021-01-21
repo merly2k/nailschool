@@ -6,7 +6,7 @@ $lsize		 = '';
 $a		 = new model\leads();
 $b		 = new model\packets();
 $f		 = new bootstrap\input();
-$template	 = "admin";
+$template	 = "admin/admin";
 $context	 = '';
 $mod_name	 = "Работа с лидами";
 if (!$_POST):
@@ -24,7 +24,9 @@ if (!$_POST):
 	$info	 = getCurseInfo($con->curse);
     }
     $fields			 = (array) $con;
-    $fields['sdate']	 = (new DateTime("$con->sdate"))->format('Y-m-d'); //
+    
+    $fields['sdate'] = (new DateTime($fields['sdate']))->format('Y-m-d'); //
+
     $fields['lastedit']	 = (new DateTime())->format('Y-m-d'); //
 //$fields['status']		 = $a->statusListArray();
     $selected		 = $con->status;
@@ -33,6 +35,7 @@ if (!$_POST):
     $mashas['selected']	 = $selected;
 //print_r($a->statusListArray());
     $fields['status']	 = $mashas;
+   // print_r($fields);
     $context		 .= $info . '<div class="right">' . $con->leadtype . '</div>'
 	    . '<form method="post">' . $f->renderFormByData('leads', $fields)
 	    . "<button type='submit' class='btn btn-info'>save</button>"
@@ -46,7 +49,7 @@ else:
 endif;
 
 function getCurseInfo($id) {
-    echo $id;
+    //echo $id;
     $a	 = new model\curses();
     $o	 = $a->getCurseById($id);
 
@@ -62,75 +65,3 @@ function getPacketInfo(
 }
 
 include TEMPLATE_DIR . DS . $template . ".html";
-?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

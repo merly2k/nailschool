@@ -3,7 +3,7 @@
 $refa	 = explode('/', $_SERVER['HTTP_REFERER']);
 $town	 = array_pop($refa);
 if (!$_POST):
-    $tpl		 = 'admin';
+    $tpl		 = 'admin/admin';
     $brouse		 = '';
     $lsize		 = '';
     $context	 = '';

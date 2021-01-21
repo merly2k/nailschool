@@ -10,6 +10,9 @@ else
 }
 $otherTown	 = '';
 $mlang		 = 'name_' . $lang;
+$lcontent		 = 'lcontent_' . $lang;
+$content		 = 'content_' . $lang;
+$title   ="title_".$lang;
 $km		 = new model\misto();
 $blimg		 = '';
 $c		 = new model\blog;
@@ -82,11 +85,11 @@ if (!isset($this->param[0]))
 		    </div>
 		    <div class = "col-md-8">
 			<div class = "news-title">
-			    <a title = "' . $row->title . '" href = "' . WWW_BASE_PATH . 'blog/' . $row->link . '"><h4>' . $row->pdate . '</h4></a>
+			    <a title = "' . $row->$title . '" href = "' . WWW_BASE_PATH . 'blog/' . $row->link . '" ><b>' . $row->pdate . '</b></a>
 			</div>
 			<div class = "news-content">
-			<h2>' . $row->title . '</h2>
-			   ' . truncate(strip_tags($row->content), 250, array('ending' => '', 'exact' => true, 'html' => true)) . '...
+			<h2>' . $row->$title . '</h2>
+			   ' . truncate(strip_tags($row->$content), 250, array('ending' => '', 'exact' => true, 'html' => true)) . '...
 			    <div class = "news-buttons">
 				<a href = "' . WWW_BASE_PATH . 'blog/' . $row->link . '" >' . l('readmore') . '&#10097;&#10097;&#10097;</a>
 			    </div>
@@ -115,44 +118,27 @@ else
 	endif;
 	$context = '
 				<div class="row">
-				    <div class="col-md-3">
 					    <image src="' . $artimg . '"  width="100%">
-				    </div>
-				    <div class="col-md-9">
-					<div class="row mb-2">
-					    <div class="col-md-12">
-						<div class="card">
-						    <div class="card-body">
-							<div class="row">
-							    <div class="col-md-12">
-								<div class="news-title">
-								    <h2 style=""class="title-pink">' . $r->title . '</h2>
-								</div>
-								<div class="news-cats">
-								    <ul class="list-unstyled list-inline mb-1">
-
-									<li class="list-inline-item">
-									    <time>' . $r->pdate . '</time>
-									</li>
-								    </ul>
-								</div>
-								<hr>
-								<div class="news-content">
-		                                ' . $r->content . '
-								</div>
-								<hr>
-
-							    </div>
-							</div>
-						    </div>
-						</div>
-					    </div>
-					</div>
-
-				    </div>
-
-
 				</div>
+				<div class="row">
+				    <div class="col-md-12">
+					<div class="news-title">
+					    <h2 style=""class="title-pink">' . $r->$title . '</h2>
+					</div>
+                                        <div class="news-cats">
+					    <ul class="list-unstyled list-inline mb-1">
+						<li class="list-inline-item">
+						    <time>' . $r->pdate . '</time>
+						</li>
+					    </ul>
+					</div>
+					<hr>
+					<div class="news-content">
+		                           ' . $r->$content . '
+					</div>
+                                        <hr>
+                                    </div>
+				</div>				
 ';
     }
 
@@ -284,15 +270,21 @@ function truncate($text, $length = 100, $options = array()) {
 function tagcloud() {
     $r	 = new model\blog();
     $zz	 = $r->getTags();
+    //print_r($zz);
     $t	 = array();
     foreach ($zz as $k => $v)
     {
-	if ($v > 1):
-   //$l='<a onclick="document.forms[0].search.value=\''.$k.'\'; document.forms[0].submit();">'.$k.'</a>';
-	    $t[] = '{text: "' . $k . '", weight: "' . $v . '"}
-		';
-	endif;
-    }
+   // print_r($k);
+    
+	$taga= preg_split('@,@', $v);
+        foreach ($taga as $tag){
+		$wej = random_int(1, 10);
+    $rand = array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f');
+    $color = '#'.$rand[rand(0,15)].$rand[rand(0,15)].$rand[rand(0,15)].$rand[rand(0,15)].$rand[rand(0,15)].$rand[rand(0,15)];
+	$t[]='{text: "<a href=\"'.WWW_BASE_PATH.'blog/'.$k.'\">'.$tag.'</span></a>", weight: '.$wej.'}';
+}
+        }
+    //}
     $za = implode(', ', $t);
     return($za);
 }

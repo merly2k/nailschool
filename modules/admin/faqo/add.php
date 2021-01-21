@@ -2,7 +2,7 @@
 
 $brouse		 = '';
 $lsize		 = '';
-$tpl		 = 'admin';
+$tpl		 = 'admin/admin';
 $c		 = new model\faqo();
 $town		 = $this->param[0];
 $context	 = '';

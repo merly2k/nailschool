@@ -3,7 +3,7 @@
 $brouse		 = '';
 $lsize		 = '';
 // UI(user interfaces)
-$template	 = "cabinet"; //"index";
+$template	 = "admin/admin"; //"index";
 $mod_name	 = 'блокировка акаунта';
 $ajax		 = "";
 $postPrint	 = '';

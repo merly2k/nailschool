@@ -1,6 +1,6 @@
 <?php
 
-$tpl		 = "admin";
+$tpl		 = "admin/admin";
 $brouse		 = '';
 $lsize		 = '';
 $town		 = @$this->param[0];
@@ -28,7 +28,7 @@ if (isset($town)):
     $out = '<a href="' . WWW_ADMIN_PATH . 'faqo/add/' . $town . '" class="btn btn-primary">новый вопрос</a><hr>'
 	    . '<table class="table DataTable"><thead><tr>'
 	    . '<th>Порядок</th>'
-	    . '<th>вопрос</th>'
+	    . '<th class="all">вопрос</th>'
 	    . '<th>Действие</th>'
 	    . '</tr>'
 	    . '</thead>';
@@ -45,6 +45,7 @@ if (isset($town)):
 		. "</td>"
 		. "</tr>";
     }
+    $out.="</tbody></table>";
 else:
     $out = "выберите город";
 endif;

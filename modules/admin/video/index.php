@@ -2,7 +2,7 @@
 
 $brouse	 = '';
 $lsize	 = '';
-$tpl	 = 'admin';
+$tpl	 = 'admin/admin';
 $vid	 = new model\video();
 $f	 = new bootstrap\input();
 $context = '';
@@ -79,14 +79,14 @@ switch (@$this->param[0])
     default:
 	$mod_name	 = "Управление видеогалереей";
 	$context	 .= '<a class="btn btn-info" href="' . WWW_ADMIN_PATH . 'video/new">добавить видео</a><br><br>'
-		. '<table class="table table-bordered datatable">'
+		. '<table class="table table-bordered DataTable">'
 		. '<thead>'
 		. '<tr>'
 		. '<th> источник(URL)'
 		. '</th>'
-		. '<th> описание'
+		. '<th class="all"> описание'
 		. '</th>'
-		. '<th> действие'
+		. '<th class="all"> действие'
 		. '</th>'
 		. '</tr>'
 		. '</thead><tbody>';

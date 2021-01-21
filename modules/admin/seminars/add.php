@@ -1,6 +1,6 @@
 <?php
 
-$tpl		 = 'admin';
+$tpl		 = 'admin/admin';
 $c		 = new model\seminars();
 $town		 = $this->param[0];
 $context	 = '';

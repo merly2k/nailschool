@@ -1,7 +1,7 @@
 <?php
 
 set_time_limit(490);
-$tpl		 = 'admin';
+$tpl		 = 'admin/admin';
 $mod_name	 = 'модерация коментариев';
 $context	 = '';
 $brouse		 = '';
@@ -43,6 +43,7 @@ if (isset($town)):
 		</td>
 		</tr>";
     }
+	$context .= "</tbody>    </table>";
 else:
     $context .= "выберите город";
 endif;

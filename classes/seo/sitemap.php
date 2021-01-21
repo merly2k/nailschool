@@ -8,9 +8,20 @@ class sitemap
 	private $domain;
 	private $check = array();
 	private $proxy = "";
+	private $stopurl = array(
+            'https://nailschool.com.ua/remont_polygel',
+            'https://nailschool.com.ua/base-and-top',
+            'https://nailschool.com.ua/blog/page/as',
+            'https://nailschool.com.ua/apparatnij-manikur');
 	public $freq = "weekly";
         public $priority='0.5';
-
+        
+        public function setStopURL() {
+            $tags	 = new \model\seobase();
+            foreach ($tags->GetHide() as $ve) {
+            array_push($this->stopurl,$ve->url );
+            }
+        }
 
         //setting list of substring to ignore in urls
 	public function set_ignore($ignore_list){
@@ -85,6 +96,7 @@ class sitemap
 	//function to call
 	public function get_links($domain){
 		//getting base of domain url address
+                $this->setStopURL();
                 $domain=rtrim($domain,"/");
 		$this->base = str_replace("http://", "", $domain);
 		$this->base = str_replace("https://", "", $this->base);
@@ -106,7 +118,8 @@ class sitemap
 		
 		if(!in_array(rtrim($this->domain,"/"), $this->sitemap_urls))
 		{
-			$this->sitemap_urls[] = rtrim($this->domain,"/");
+                    
+                    $this->sitemap_urls[] = rtrim($this->domain,"/");
 		}
 		//requesting link content using curl
 		$curl = curl_init();
@@ -160,9 +173,12 @@ class sitemap
 						if(strpos(rtrim($url,"/"), "http://".$this->base) === 0 || strpos(rtrim($url,"/"), "https://".$this->base) === 0)
 						{
 							//adding url to sitemap array
+                                                    if(!in_array(rtrim($url,"/"), $this->stopurl)){
 							$this->sitemap_urls[] = rtrim($url,"/");
 							//adding url to new link array
-							$new_links[] = rtrim($url,"/");
+                                                    $new_links[] = rtrim($url,"/");
+                                                    
+                                                    }
 						}
 					}
 				}
@@ -250,6 +266,7 @@ class sitemap
 	
 	//generates sitemap
 	public function generate_sitemap(){
+            
 		$sitemap = new \SimpleXMLElement('<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="sitemap.xsl"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"></urlset>');
         foreach($this->sitemap_urls as $url) 
 		{

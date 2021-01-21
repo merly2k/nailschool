@@ -3,7 +3,7 @@
 $context	 = '';
 $brouse		 = '';
 $lsize		 = '';
-$template	 = "admin";
+$template	 = "admin/admin";
 $mod_name	 = "управление пользователями";
 $ulist		 = new model\user();
 

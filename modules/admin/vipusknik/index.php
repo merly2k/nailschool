@@ -2,7 +2,7 @@
 
 error_reporting(0);
 
-$tpl		 = "admin";
+$tpl		 = "admin/admin";
 $mod_name	 = "Управление галереей выпускников";
 $brouse		 = '';
 $lsize		 = '640×397px';
@@ -53,7 +53,7 @@ $files		 = glob($workingdir . '*.{gif,jpg,png}', GLOB_BRACE);
 //$files = glob('*.{php,txt}', GLOB_BRACE);
 $files		 = array_map('basename', $files);
 $llet		 = '';
-
+$coxt='';
 foreach ($files as $f)
 {
     $firstletter = mb_substr($f, 0, 1);
@@ -61,9 +61,9 @@ foreach ($files as $f)
     {
 	$llet	 = $firstletter;
 	$lnav	 .= "<a class='btn btn-info' href='" . chr(35) . $llet . "'>" . $llet . "</a> ";
-	$context .= "<a name='$firstletter'></a>";
+	$coxt .= "<a name='$firstletter'></a>";
     }
-    $context .= '<div class="card col-2">'
+    $coxt .= '<div class="card col-md-2 col-sm-12">'
 	    . '<img class="card-img-top" src="' . WWW_IMG_PATH . 'vipusknik/' . $f . '">'
 	    . '<div class="card-footer">'
 	    . '<small>' . $f . '</small><br>'
@@ -71,9 +71,9 @@ foreach ($files as $f)
 	    . '</div>'
 	    . '</div>';
 };
-$mod_name	 .= "<hr>" . $lnav;
+$mod_name	 .= ""  ;
 //}   ;
-$context	 .= '</div>
+$context	 .= $lnav.'</div><div class="card-columns row">'.$coxt.'</div><div class="card-columns row">'.$lnav.'<hr>
 <!-- Button to Open the Modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
   загрузить

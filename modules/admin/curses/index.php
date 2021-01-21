@@ -1,6 +1,6 @@
 <?php
 
-$tpl		 = "admin";
+$tpl		 = "admin/admin";
 $brouse		 = '';
 $lsize		 = '';
 $town		 = @$this->param[0];
@@ -28,13 +28,13 @@ $nav .= "</ul>";
 if (isset($town)):
     $out = '<a href="' . WWW_ADMIN_PATH . 'curses/add/' . $town . '" class="btn btn-primary">додати курс</a><hr>'
 	    . '<table class="table DataTable"><thead><tr>'
-	    . '<th>порядок</th>'
-	    . '<th>Курс</th>'
-	    . '<th>линк</th>'
+	    . '<th class="none">порядок</th>'
+	    . '<th class="all">Курс</th>'
+	    . '<th class="all">линк</th>'
 	    . '<th>скрыт</th>'
 	    . '<th>Старт</th>'
 	    . '<th>Длительность</th>'
-	    . '<th>Действие</th>'
+	    . '<th class="all">Действие</th>'
 	    . '</tr>'
 	    . '</thead>';
 
@@ -69,6 +69,7 @@ endif;
 
 $nav	 .= '</ul> ';
 $context .= $nav . $out;
+$context .="</tbody></table>";
 include TEMPLATE_DIR . DS . $tpl . ".html";
 
 

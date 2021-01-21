@@ -1,7 +1,7 @@
 <?php
 
 ini_set("max_execution_time", 0);
-$tpl		 = 'admin';
+$tpl		 = 'admin/admin';
 $context	 = '';
 $nt		 = '';
 $toc		 = '';
@@ -17,9 +17,16 @@ $list->get_links(WWW_BASE_PATH);
 $real	 = $list->get_array();
 $real	 = array_pad($real, -1, WWW_BASE_PATH);
 $realz	 = array();
+$shinoby=new model\seobase();
+$stopurl=array();
+$ct='';
+foreach ($shinoby->GetHide() as $ve) {
+            array_push($stopurl,WWW_BASE_PATH.$ve->url);
+            }
 
 foreach ($real as $ur)
 {
+    if(!in_array($ur, $stopurl)){
     $ned	 = array('#http://#', '#https://#');
     $ned1	 = array('#http://#', '#https://#', '#/#');
     $ra	 = array_filter(preg_split("#/#", preg_replace($ned, '', $ur)));
@@ -28,7 +35,7 @@ foreach ($real as $ur)
     {
 	$va[1] = preg_replace($ned, '', WWW_BASE_PATH);
     }
-    $jdat[] = "['" . $va[0] . "', '" . @$va[1] . "','" . $ur . "']";
+    $jdat[] = "['" . $va[0] . "', '" . @$va[1] . "','" . $ur . "']";}
 }
 $jdat[] = "['curses', '" . preg_replace($ned1, '', WWW_BASE_PATH) . "','" . WWW_BASE_PATH . "curses']";
 
@@ -36,11 +43,12 @@ $jdat[] = "['curses', '" . preg_replace($ned1, '', WWW_BASE_PATH) . "','" . WWW_
 $r	 = ",
 ";
 $jdat	 = implode($r, $jdat);
-
+$context.=$ct;
 $context .= "<div id='chart_div' style='overflow: auto;'></div>"
 	. "<div id='form_div'></div>"
-	. "</div>"
-	. "
+	. "</div>";
+	$context.="</div><div class='row'>$ct</div>";
+        $context.="
 <script type=\"text/javascript\" src=\"https://www.gstatic.com/charts/loader.js\"></script>
 
 <script>

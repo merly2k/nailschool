@@ -644,8 +644,13 @@
 				    <script type="text/javascript" src="<?=WWW_JS_PATH?>position.js"></script>
 				    <script type="text/javascript" src="<?=WWW_JS_PATH?>site.js"></script>
 				    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
-
-				    <script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <!-- new carousel by ing -->
+    <script>
+    
+    $(function() {
+   $('.wpcf7-tel').mask('+38(000)000-00-00');
+        });
             $(window).scroll(function () {
                 if ($(this).scrollTop() != 0) {
                     $('#to-top').fadeIn();
@@ -1019,7 +1024,7 @@
 							    <!-- Text input-->
 							    <div class="form-group">
 								<label for="textinput">Телефон</label>
-								<input id="textinput" name="phone" type="text" class="form-control" placeholder="+38 ( _ _ _ ) _ _ _ _ _ _ _">
+								<input id="textinput" name="phone" type="text" class="form-control wpcf7-tel" placeholder="+38 ( _ _ _ ) _ _ _ _ _ _ _">
 							    </div>
 							    <input type="hidden" name="id" value="<?=$k->id?>" />
 							    <input type="hidden" name="leadtype" value="consult" />

@@ -24,7 +24,7 @@ if (!$_POST):
 	    . '<button value="yes" class="btn btn-info">Погодитись</button>'
 	    . '</form>'
 	    . '</div>';
-    $template	 = "admin";
+    $template	 = "admin/admin";
 
     include TEMPLATE_DIR . $template . ".html";
 

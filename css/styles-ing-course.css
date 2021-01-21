@@ -686,6 +686,7 @@ main .about-list li::before {
 }
 
 /* Course program */
+main .course-program ul.about-list{list-style: none;}
 
 main .course-program .wrapper-content {
     padding-left: 3rem;
@@ -698,7 +699,13 @@ main .course-program ol.about-list li::before {
     line-height: 1.3;
 }
 
-
+main .course-program ul.about-list li::before {
+                content: "• ";
+                font-size: 26px;
+                line-height: 1.3;
+                color: #e7437c;
+                font-weight: bold;
+            }
 /* Advantages */
 
 main .advantages .why img {

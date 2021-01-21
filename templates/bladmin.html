@@ -54,7 +54,6 @@ endif;
 		line-height: 1.1!important;
 	    }
 
-	    }
 	    .modal-dialog {
 		max-width: 800px;
 		margin: 1.75rem auto;
@@ -91,115 +90,127 @@ endif;
 			aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
 		</button>
-		<div class="collapse navbar-collapse" id="navbarText">
-		    <ul class="navbar-nav side-nav">
-			<li class="nav-item">
-			    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>participated">Подписки
-			    </a>
-			</li>
-			<li class="nav-item">
-			    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>moderation">модерация коментариев
-			    </a>
-			</li>
+		   <div class="collapse navbar-collapse" id="sidebar">
+                    <ul class="navbar-nav side-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>">Лиды
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>participated">Подписки
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#ContentSubmenu" data-toggle="collapse" aria-expanded="false" class="nav-link dropdown-toggle collapsed">Контент</a>
+                            <ul class="list-unstyled collapse" id="ContentSubmenu" style="">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>moderation">модерация коментариев
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>curses">Курсы</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>packets">Пакеты курсов
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>seminars">Семинары
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>blog">Статьи
+                                    </a>
+                                </li>
 
-			<li class="nav-item">
-			    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>curses">Курсы</a>
-			</li>
-			<li class="nav-item">
-			    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>packets">Пакеты курсов
-			    </a>
-			</li>
-			<li class="nav-item">
-			    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>seminars">Семинары
-			    </a>
-			</li>
-			<li class="nav-item">
-			    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>blog">Статьи
-			    </a>
-			</li>
 
-			<li class="nav-item">
-			    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>stblocck">Статические блоки
-			    </a>
-			</li>
-			<li class="nav-item">
-			    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>video">Видео
-			    </a>
-			</li>
-			<li class="nav-item">
-			    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>fidback">Отзывы
-			    </a>
-			</li>
-			<li class="nav-item">
-			    <a href="#galery" data-toggle="collapse" aria-expanded="false" class="nav-link dropdown-toggle collapsed">Галерея</a>
-			    <ul class="list-unstyled collapse" id="galery" style="">
-				<li>
-				    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>galery">Управление файлами</a>
-				</li>
-				<li>
-				    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>galery/curses">привязка к курсу</a>
-				</li>
-			    </ul>
-			</li>
-			<li class="nav-item">
-			    <a href="#vipusknik" data-toggle="collapse" aria-expanded="false" class="nav-link dropdown-toggle collapsed">выпускники</a>
-			    <ul class="list-unstyled collapse" id="vipusknik" style="">
-				<li>
-				    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>vipusknik">Управление файлами</a>
-				</li>
-				<li>
-				    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>vipusknik/curses">привязка к курсу</a>
-				</li>
-			    </ul>
-			</li>
-			<li class="nav-item">
-			    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>school">Школы
-			    </a>
-			</li>
-			<li class="nav-item">
-			    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="nav-link dropdown-toggle collapsed">настройки</a>
-			    <ul class="list-unstyled collapse" id="homeSubmenu" style="">
-				<li>
-				    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>settings/vars">Переменные</a>
-				</li>
-				<li>
-				    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>settings/translation">перевод</a>
-				</li>
-				<li>
-				    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>users">пользователи</a>
-				</li>
-				<li>
-				    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>settings/misto">города</a>
-				</li>
-				<li>
-				    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>settings/gradients">градиенты</a>
-				</li>
-				<li>
-				    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>settings/seo">seo</a>
-				</li>
-				<li>
-				    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>settings/telegram">Телеграм</a>
-				</li>
-			    </ul>
-			</li>
-			<li class="nav-item">
-			    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>faqo/" >ЧаВо</a>
-			</li>
-			<li class="nav-item">
-			    <a class="nav-link" href="<?php echo WWW_BASE_PATH?>" target="blanc">сайт (в новом окне)</a>
-			</li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>faqo/" >ЧаВо</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>school">Школы
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>fidback">Отзывы
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>video">Видео
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#galery" data-toggle="collapse" aria-expanded="false" class="nav-link dropdown-toggle collapsed">Галерея</a>
+                            <ul class="list-unstyled collapse" id="galery" style="">
+                                <li>
+                                    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>galery">Управление файлами</a>
+                                </li>
+                                <li>
+                                    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>galery/curses">привязка к курсу</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#vipusknik" data-toggle="collapse" aria-expanded="false" class="nav-link dropdown-toggle collapsed">выпускники</a>
+                            <ul class="list-unstyled collapse" id="vipusknik" style="">
+                                <li>
+                                    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>vipusknik">Управление файлами</a>
+                                </li>
+                                <li>
+                                    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>vipusknik/curses">привязка к курсу</a>
+                                </li>
+                            </ul>
+                        </li>
 
-		    </ul>
-		    <ul class="navbar-nav ml-md-auto d-md-flex">
-			<li class="nav-item">
-			    <a class="nav-link" href="<?php echo WWW_BASE_PATH?>admin/users">Users</a>
-			</li>
-			<li class="nav-item">
-			    <a class="nav-link" href="<?php echo WWW_BASE_PATH?>auth/logout">Logout</a>
-			</li>
+                        <li class="nav-item">
+                            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="nav-link dropdown-toggle collapsed">настройки</a>
+                            <ul class="list-unstyled collapse" id="homeSubmenu" style="">
+                                <li>
+                                    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>settings/vars">Переменные</a>
+                                </li>
+                                <li>
+                                    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>settings/translation">перевод</a>
+                                </li>
+                                <li>
+                                    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>users">пользователи</a>
+                                </li>
+                                <li>
+                                    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>settings/misto">города</a>
+                                </li>
+                                <li>
+                                    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>settings/gradients">градиенты</a>
+                                </li>
+                                <li>
+                                    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>settings/seo">seo</a>
+                                </li>
+                                <li>
+                                    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>settings/telegram">Телеграм</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>stblocck">Статические блоки
+                                    </a>
+                                </li>
 
-		    </ul>
-		</div>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?php echo WWW_BASE_PATH?>" target="blanc">сайт (в новом окне)</a>
+                        </li>
+
+                    </ul>
+                    <ul class="navbar-nav ml-md-auto d-md-flex">
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?php echo WWW_BASE_PATH?>admin/users">Users</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?php echo WWW_BASE_PATH?>auth/logout">Logout</a>
+                        </li>
+
+                    </ul>
+                </div>
 	    </nav>
 	    <div class="row">
 		<div class="col">
@@ -303,7 +314,15 @@ endif;
                         buttonList: ['bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', 'left', 'center', 'right', 'justify', 'blanc', 'upload', 'image', 'link', 'unlink', 'blanc', 'block', 'block1', 'block2', 'block3', 'block4', 'block5', 'ul', 'block6', 'block7', 'block8', 'block9', 'html', 'removeformat', 'indent', 'outdent', 'xhtml'],
                         //uploadURI: '<?=WWW_ADMIN_PATH?>blog/upload'
                     }
-            ).panelInstance('content');
+            ).panelInstance('content_ru');
+            new nicEditor(
+                    {
+                        fullPanel: false,
+                        iconsPath: '<?=WWW_IMG_PATH;?>nicEditorIcons.gif',
+                        buttonList: ['bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', 'left', 'center', 'right', 'justify', 'blanc', 'upload', 'image', 'link', 'unlink', 'blanc', 'block', 'block1', 'block2', 'block3', 'block4', 'block5', 'ul', 'block6', 'block7', 'block8', 'block9', 'html', 'removeformat', 'indent', 'outdent', 'xhtml'],
+                        //uploadURI: '<?=WWW_ADMIN_PATH?>blog/upload'
+                    }
+            ).panelInstance('content_ua');
 
             $('.moka').on('click', function () {
 
@@ -385,7 +404,8 @@ endif;
                 $('#imomodal').modal('hide');
             }
             ;
-            $(document).ready(function () { });
+            
+
 	</script>
     </body>
 

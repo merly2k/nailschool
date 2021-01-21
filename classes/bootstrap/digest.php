@@ -58,7 +58,7 @@ foreach ($obj as $row) {
 		                        </div>
 		                        <div class="col-md-8">
 		                            <div class="news-title">
-		                                <a title="'.$row->name.'" href="'.WWW_BASE_PATH.$base.'/page/'.$row->link.'"><h4>'.$row->name.'</h4></a>
+		                                <a title="'.$row->name.'" href="'.WWW_BASE_PATH.$base.'/'.$row->link.'"><h4>'.$row->name.'</h4></a>
 		                            </div>
 		                            <div class="news-cats">
 		                                <ul class="list-unstyled list-inline mb-1">
@@ -76,7 +76,7 @@ foreach ($obj as $row) {
 		                                <p >'.$row->lcontent.'...</p>
 		                            </div>
 		                            <div class="news-buttons">
-		                                <a href="'.WWW_BASE_PATH.$base.'/page/'.$row->link.'" class="btn btn-outline-default btn-sm">Read More</a>
+		                                <a href="'.WWW_BASE_PATH.$base.'/'.$row->link.'" class="btn btn-outline-default btn-sm">Read More</a>
 		                            </div>
 		                        </div>
 		                    </div>

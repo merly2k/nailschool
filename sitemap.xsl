@@ -10,8 +10,10 @@
 			<head>
 				<title>XML Sitemap</title>
 				<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-				<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-				<script type="text/javascript" src="http://tablesorter.com/jquery.tablesorter.min.js"></script>
+				<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"/>
+				<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"/>
+				<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+				<script type="text/javascript" src="https://tablesorter.com/jquery.tablesorter.min.js"></script>
 				<script	type="text/javascript"><![CDATA[
 					$(document).ready(function() { 
 				        $("#sitemap").tablesorter( { widgets: ['zebra'] } ); 
@@ -22,7 +24,12 @@
 						font-family: Helvetica, Arial, sans-serif;
 						font-size: 13px;
 						color: #545353;
-                                                background:#ceffcc
+                                                background:#eeffee;
+  background-image: url("images/logof.jpg");
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: 10%;
+						width:100%;
 					}
 					table {
 						border: none;
@@ -71,9 +78,22 @@
 						border-bottom: 1px solid #000;
 						cursor: pointer;
 					}
+					footer {
+					    width:100%;
+					    background: #be75ab;
+					    color: #fff;
+					    padding: 20px;
+					    margin-top: 20px;
+					}
+					footer.expl a ,footer.expl a:visited{
+						color: #fff;
+						font-weight: bold;
+					}
+
 				</style>
 			</head>
 			<body>
+
 				<div id="content">
 					<h1>XML Sitemap</h1>
 					<p class="expl">
@@ -90,7 +110,6 @@
 							<tr>
 								<th width="75%">URL</th>
 								<th width="5%">Priority</th>
-								<th width="5%">Images</th>
 								<th width="5%">Change Freq.</th>
 								<th width="10%">Last Change</th>
 							</tr>
@@ -112,9 +131,6 @@
 										<xsl:value-of select="concat(sitemap:priority*100,'%')"/>
 									</td>
 									<td>
-										<xsl:value-of select="count(image:image)"/>
-									</td>
-									<td>
 										<xsl:value-of select="concat(translate(substring(sitemap:changefreq, 1, 1),concat($lower, $upper),concat($upper, $lower)),substring(sitemap:changefreq, 2))"/>
 									</td>
 									<td>
@@ -126,6 +142,9 @@
                                                 <tfuter></tfuter>
 					</table>
 				</div>
+		<footer class="mw8 center pv4 tc">
+                    This is an XML Sitemap created by <a href="https://merlinsoft.pp.ua" title="merlinsoft" class="expl">merlinsoft framework f3</a>
+                </footer>
 			</body>
 		</html>
 	</xsl:template>

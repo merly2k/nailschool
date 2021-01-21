@@ -1,7 +1,7 @@
 <?php
 
 $c	 = new model\faqo();
-$tpl	 = 'admin';
+$tpl	 = 'admin/admin';
 $context = '';
 $brouse	 = '';
 $lsize	 = '';

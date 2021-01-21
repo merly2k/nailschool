@@ -26,7 +26,7 @@ class comment extends db {
     }
 
     public
-	    function markup($bcolor) {
+	    function markup($bcolor='#ff6666') {
 	/*
 	  /	Данный метод выводит разметку XHTML для комментария
 	 */

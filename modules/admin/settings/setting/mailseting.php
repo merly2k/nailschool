@@ -1,6 +1,6 @@
 <?php
 
-$template = "admin";
+$template = "admin/admin";
 $mod_name = 'Настройка Подписки';
 $content = "<article class='module width_full'>
 		<div class='module_content'> ";

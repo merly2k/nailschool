@@ -1,6 +1,6 @@
 <?php
 
-$tpl	 = 'admin';
+$tpl	 = 'admin/admin';
 $vid	 = new model\btblock();
 $f	 = new bootstrap\input();
 $context = '';

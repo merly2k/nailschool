@@ -2,7 +2,7 @@
 
 $brouse		 = '';
 $lsize		 = '';
-$template	 = "admin";
+$template	 = "admin/admin";
 $mod_name	 = 'Управление товарами';
 $langua		 = '';
 $langru		 = '';

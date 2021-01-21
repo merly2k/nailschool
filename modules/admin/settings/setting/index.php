@@ -1,7 +1,7 @@
 <?php
 
 ini_set("max_execution_time", 0);
-$tpl		 = 'admin';
+$tpl		 = 'admin/admin';
 $context	 = '';
 $modal_name	 = '';
 $modal_content	 = '';

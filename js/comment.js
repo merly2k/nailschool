@@ -20,7 +20,7 @@ $(document).ready(function(){
 			working = false;
 			$('#submit').val('Отправить');
 			
-			if(msg.status){
+			if(msg.status==1){
 
 				/* 
 				/	Если вставка была успешной, добавляем комментарий 
@@ -41,8 +41,11 @@ $(document).ready(function(){
 					$('label[for='+k+']').append('<span class="error">'+v+'</span>');
 				});
 			}
-		},'json');
-
+                       
+		},'json').done(function(data) {
+                    
+ window.location.reload();
+                });
 	});
         
         

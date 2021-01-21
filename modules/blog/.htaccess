@@ -1,0 +1,45 @@
+
+Options +FollowSymlinks
+
+AddDefaultCharset Off
+
+
+
+SetEnv PHPRC /home/nailserv/public_html/php.ini
+
+<IfModule mod_php4.c>
+	php_flag magic_quotes_gpc off
+	php_flag magic_quotes_runtime off
+	php_flag register_globals off
+</IfModule>
+
+<IfModule mod_php5.c>
+	php_flag magic_quotes_gpc off
+	php_flag magic_quotes_runtime off
+	php_flag register_globals off
+	php_value memory_limit 128M
+</IfModule>
+
+<IfModule mod_dir.c>
+	DirectoryIndex index.php index.htm index.html
+</IfModule>
+
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteBase /
+	
+	RewriteCond %{HTTP_HOST} ^nailservice\.com.ua$ [NC]
+	RewriteRule ^shop/* http://nails.ua/ [R=301,L]
+	
+	RewriteCond %{HTTP_HOST} ^www.nails\.ua$ [NC]
+	RewriteRule ^(.*)$ http://nails.ua/$1 [R=301,L] 
+
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule ^(.*)$ /index.php
+
+	Redirect 301 /modelirovanie-nogtejj/gellaxy/ /gel-laki-blaze-nails/gellaxy/
+	Redirect 301 /modelirovanie-nogtejj/gel-kraski-blaze/ /gel-laki-blaze-nails/gel-kraski-blaze/
+        Redirect 301 /manikjur-i-pedikjur/bode/	 /dezinfektsija-i-sterilizatsija/bode/
+
+</IfModule>

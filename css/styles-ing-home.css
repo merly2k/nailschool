@@ -139,6 +139,7 @@ h3.gradient-text {
 @media (min-width:768px) {
     header {
         background: url(../images/banner-bg.png) no-repeat bottom/contain;
+        z-index: 1;
     }
 }
 

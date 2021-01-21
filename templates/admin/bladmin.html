@@ -1,0 +1,625 @@
+<?php
+if (@!$_SESSION["role"] or @$_SESSION["role"]<600):
+header('HTTP/1.0 403 Forbidden');
+header("Location:" . WWW_BASE_PATH . "auth/logout");
+endif;
+?>
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <!-- Favicon icon -->
+        <link rel="icon" type="image/png" sizes="16x16" href="<?=WWW_BASE_PATH.'templates/admin/'?>assets/images/favicon.png">
+        <title>MsAdmin <?=SITE_NAME?></title>
+        <!-- Custom CSS -->
+        <script src="https://kit.fontawesome.com/e66f078689.js"></script>
+        <link rel="stylesheet" type="text/css" href="<?=WWW_BASE_PATH.'templates/admin/'?>assets/extra-libs/multicheck/multicheck.css">
+        <link href="<?=WWW_BASE_PATH.'templates/admin/'?>assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+        <link rel="stylesheet" href="<?=WWW_CSS_PATH;?>summernote-bs4.css">
+        <link href="<?=WWW_BASE_PATH.'templates/admin/'?>dist/css/style.min.css" rel="stylesheet">
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <style>
+            .page-breadcrumb{border: 1px solid #002093;}
+        </style>
+        	<style>
+	    body{background:#f9f9f9;}
+	    #wrapper{padding:90px 15px;}
+	    .navbar-expand-lg .navbar-nav.side-nav{flex-direction: column;}
+	    .card{margin-bottom: 15px; border-radius:0; box-shadow: 0 3px 5px rgba(0,0,0,.1); }
+	    .header-top{box-shadow: 0 3px 5px rgba(0,0,0,.1)}
+            .modal-backdrop{z-index: -10;}
+	    .nicEdit-main ol,.nicEdit-main ul{
+		list-style: none;
+	    }
+
+	    .nicEdit-main  ul li:before {
+		content:"•";
+		font-size:25pt;
+		color: #DF5396;
+		display: inline-block;
+		text-align: center;
+		margin: 4px 10px 2px 0;
+		line-height: 30px;
+		border-radius: 50%;
+		display: inline flow-root list-item;
+		vertical-align: bottom;
+	    }
+	    .nicEdit-main li{
+		font-size: initial
+	    }
+	    .nicEdit-main  h2 {
+		padding-top: 5px!important;
+		font-size: 27px!important;
+		line-height: 1.1!important;
+	    }
+	    .nicEdit-main  h3 {
+		padding-top: 5px!important;
+		font-size: 17px!important;
+		line-height: 1.1!important;
+	    }
+
+	    .modal-dialog {
+		max-width: 800px;
+		margin: 1.75rem auto;
+	    }
+	    .scrollable-menu {
+		height: auto;
+		max-height: 200px;
+		overflow-x: hidden;
+	    }
+	    @media(min-width:992px) {
+		#wrapper{margin-left: 200px;padding: 90px 15px 15px;}
+		.navbar-nav.side-nav{background: #585f66;box-shadow: 2px 1px 2px rgba(0,0,0,.1);position:fixed;top:56px;flex-direction: column!important;left:0;width:200px;overflow-y:auto;bottom:0;overflow-x:hidden;padding-bottom:40px}
+	    }
+	    ol.about-list {
+		list-style: none;
+		counter-reset: my-awesome-counter;
+	    }
+	    ol.about-list li {
+		counter-increment: my-awesome-counter;
+	    }
+	    ol.about-list li::before {
+		content: counter(my-awesome-counter) ". ";
+		color: #e7437c;
+		font-weight: bold;
+	    }
+	    .nicEdit-main{padding: 10px;}
+	</style>
+    </head>
+
+    <body>
+        <!-- ============================================================== -->
+        <!-- Preloader - style you can find in spinners.css -->
+        <!-- ============================================================== -->
+        <div class="preloader">
+            <div class="lds-ripple">
+                <div class="lds-pos"></div>
+                <div class="lds-pos"></div>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- Main wrapper - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <div id="main-wrapper">
+            <!-- ============================================================== -->
+            <!-- Topbar header - style you can find in pages.scss -->
+            <!-- ============================================================== -->
+            <header class="topbar" data-navbarbg="skin5">
+                <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                    <div class="navbar-header" data-logobg="skin5">
+                        <!-- This is for the sidebar toggle which is visible on mobile only -->
+                        <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+                        <!-- ============================================================== -->
+                        <!-- Logo -->
+                        <!-- ============================================================== -->
+                        <a class="navbar-brand" href="index.html">
+                            <!-- Logo icon -->
+                            <b class="logo-icon p-l-10">
+                                <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                                <!-- Dark Logo icon -->
+                                <img src="<?=WWW_BASE_PATH.'templates/admin/'?>assets/images/logo-icon.png" alt="homepage" class="light-logo" />
+
+                            </b>
+                            <!--End Logo icon -->
+                            <!-- Logo text -->
+                            <span class="logo-text">
+                                <!-- dark Logo text -->
+                                <img src="<?=WWW_BASE_PATH.'templates/admin/'?>assets/images/logo-text.png" alt="homepage" class="light-logo" />
+
+                            </span>
+                            <!-- Logo icon -->
+                            <!-- <b class="logo-icon"> -->
+                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                            <!-- Dark Logo icon -->
+                            <!-- <img src="<?=WWW_BASE_PATH.'templates/admin/'?>assets/images/logo-text.png" alt="homepage" class="light-logo" /> -->
+
+                            <!-- </b> -->
+                            <!--End Logo icon -->
+                        </a>
+                        <!-- ============================================================== -->
+                        <!-- End Logo -->
+                        <!-- ============================================================== -->
+                        <!-- ============================================================== -->
+                        <!-- Toggle which is visible on mobile only -->
+                        <!-- ============================================================== -->
+                        <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="ti-more"></i></a>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- End Logo -->
+                    <!-- ============================================================== -->
+                    <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+                        <!-- ============================================================== -->
+                        <!-- toggle and nav items -->
+                        <!-- ============================================================== -->
+                        <ul class="navbar-nav float-left mr-auto">
+                            <li class="nav-item d-none d-md-block"><a class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)" data-sidebartype="mini-sidebar"><i class="mdi mdi-menu font-24"></i></a></li>
+                        </ul>
+                        <!-- ============================================================== -->
+                        <!-- Right side toggle and nav items -->
+                        <!-- ============================================================== -->
+                        <ul class="navbar-nav float-right">
+                            <!-- ============================================================== -->
+                            <!-- Comment -->
+                            <!-- ============================================================== -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-bell font-24"></i>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                            </li>
+                            <!-- ============================================================== -->
+                            <!-- End Comment -->
+                            <!-- ============================================================== -->
+                            <!-- ============================================================== -->
+                            <!-- Messages -->
+                            <!-- ============================================================== -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" id="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="font-24 mdi mdi-comment-processing"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right mailbox animated bounceInDown" aria-labelledby="2">
+                                    <ul class="list-style-none">
+                                        <li>
+                                            <div class="">
+                                                <!-- Message -->
+                                                <a href="javascript:void(0)" class="link border-top">
+                                                    <div class="d-flex no-block align-items-center p-10">
+                                                        <span class="btn btn-success btn-circle"><i class="ti-calendar"></i></span>
+                                                        <div class="m-l-10">
+                                                            <h5 class="m-b-0">Event today</h5> 
+                                                            <span class="mail-desc">Just a reminder that event</span> 
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <!-- Message -->
+                                                <a href="javascript:void(0)" class="link border-top">
+                                                    <div class="d-flex no-block align-items-center p-10">
+                                                        <span class="btn btn-info btn-circle"><i class="ti-settings"></i></span>
+                                                        <div class="m-l-10">
+                                                            <h5 class="m-b-0">Settings</h5> 
+                                                            <span class="mail-desc">You can customize this template</span> 
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <!-- Message -->
+                                                <a href="javascript:void(0)" class="link border-top">
+                                                    <div class="d-flex no-block align-items-center p-10">
+                                                        <span class="btn btn-primary btn-circle"><i class="ti-user"></i></span>
+                                                        <div class="m-l-10">
+                                                            <h5 class="m-b-0">Pavan kumar</h5> 
+                                                            <span class="mail-desc">Just see the my admin!</span> 
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <!-- Message -->
+                                                <a href="javascript:void(0)" class="link border-top">
+                                                    <div class="d-flex no-block align-items-center p-10">
+                                                        <span class="btn btn-danger btn-circle"><i class="fa fa-link"></i></span>
+                                                        <div class="m-l-10">
+                                                            <h5 class="m-b-0">Luanch Admin</h5> 
+                                                            <span class="mail-desc">Just see the my new admin!</span> 
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <!-- ============================================================== -->
+                            <!-- End Messages -->
+                            <!-- ============================================================== -->
+
+                            <!-- ============================================================== -->
+                            <!-- User profile and search -->
+                            <!-- ============================================================== -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="<?=WWW_BASE_PATH.'templates/admin/'?>assets/images/users/1.jpg" alt="user" class="rounded-circle" width="31"></a>
+                                <div class="dropdown-menu dropdown-menu-right user-dd animated">
+                                    <a class="dropdown-item" href="javascript:void(0)"><i class="ti-user m-r-5 m-l-5"></i> My Profile</a>
+                                    <a class="dropdown-item" href="javascript:void(0)"><i class="ti-wallet m-r-5 m-l-5"></i> My Balance</a>
+                                    <a class="dropdown-item" href="javascript:void(0)"><i class="ti-email m-r-5 m-l-5"></i> Inbox</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="javascript:void(0)"><i class="ti-settings m-r-5 m-l-5"></i> Account Setting</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="javascript:void(0)"><i class="fa fa-power-off m-r-5 m-l-5"></i> Logout</a>
+                                    <div class="dropdown-divider"></div>
+                                    <div class="p-l-30 p-10"><a href="javascript:void(0)" class="btn btn-sm btn-success btn-rounded">View Profile</a></div>
+                                </div>
+                            </li>
+                            <!-- ============================================================== -->
+                            <!-- User profile and search -->
+                            <!-- ============================================================== -->
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+            <!-- ============================================================== -->
+            <!-- End Topbar header -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Left Sidebar - style you can find in sidebar.scss  -->
+            <!-- ============================================================== -->
+            <aside class="left-sidebar" data-sidebarbg="skin5">
+                <!-- Sidebar scroll-->
+                <div class="scroll-sidebar">
+                    <!-- Sidebar navigation-->
+                    <nav class="sidebar-nav">
+                        <ul id="sidebarnav" class="p-t-30">
+                            <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?=WWW_ADMIN_PATH?>" aria-expanded="false"><i class="mdi mdi-bookmark-plus-outline"></i><span class="hide-menu">Лиды</span></a></li>
+                            <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?=WWW_ADMIN_PATH?>participated" aria-expanded="false"><i class="fa fa-bell "></i><span class="hide-menu">Подписки</span></a></li>
+                            <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Контент </span></a>
+                                <ul aria-expanded="false" class="collapse  first-level">
+                                    <li class="sidebar-item"><a href="<?=WWW_ADMIN_PATH?>moderation" class="sidebar-link"><i class="mdi mdi-comment"></i><span class="hide-menu"> Модерация коментариев </span></a></li>
+                                    <li class="sidebar-item"><a href="<?=WWW_ADMIN_PATH?>curses" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Курсы </span></a></li>
+                                    <li class="sidebar-item"><a href="<?php echo WWW_ADMIN_PATH?>packets" class="sidebar-link"><i class="mdi mdi-blur-linear"></i><span class="hide-menu"> Пакеты курсов </span></a></li>
+                                    <li class="sidebar-item"><a href="<?php echo WWW_ADMIN_PATH?>seminars" class="sidebar-link"><i class="mdi mdi-hexagon-multiple"></i><span class="hide-menu"> Семинары </span></a></li>
+                                    <li class="sidebar-item"><a href="<?php echo WWW_ADMIN_PATH?>blog" class="sidebar-link"><i class="mdi mdi-blogger"></i><span class="hide-menu"> Статьи </span></a></li>
+                                    <li class="sidebar-item"><a href="<?php echo WWW_ADMIN_PATH?>faqo/" class="sidebar-link"><i class="mdi mdi-comment-question-outline"></i><span class="hide-menu"> ЧаВо </span></a></li>
+                                    <li class="sidebar-item"><a href="<?php echo WWW_ADMIN_PATH?>school" class="sidebar-link"><i class="mdi mdi-school"></i><span class="hide-menu"> Школы </span></a></li>
+                                    <li class="sidebar-item"><a href="<?php echo WWW_ADMIN_PATH?>fidback" class="sidebar-link"><i class="mdi mdi-shopping"></i><span class="hide-menu"> Отзывы </span></a></li>
+                                </ul>
+                            </li>
+                            <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?php echo WWW_ADMIN_PATH?>video" aria-expanded="false"><i class="mdi mdi-video"></i><span class="hide-menu"> Видео </span></a>
+                            <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-image-album"></i><span class="hide-menu"> Галерея  </span></a>
+                                <ul aria-expanded="false" class="collapse  first-level">
+                                    <li class="sidebar-item"><a href="<?php echo WWW_ADMIN_PATH?>galery" class="sidebar-link"><i class="mdi mdi-image"></i><span class="hide-menu"> Управление файлами </span></a></li>
+                                    <li class="sidebar-item"><a href="<?php echo WWW_ADMIN_PATH?>galery/curses" class="sidebar-link"><i class="mdi mdi-image-area"></i><span class="hide-menu"> Привязка к курсу </span></a></li>
+                                </ul>
+                            </li>
+
+                            <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-image-album"></i><span class="hide-menu"> Выпускники </span></a>
+                                <ul aria-expanded="false" class="collapse  first-level">
+                                    <li class="sidebar-item"><a href="<?php echo WWW_ADMIN_PATH?>vipusknik" class="sidebar-link"><i class="mdi mdi-image"></i><span class="hide-menu"> Управление файлами </span></a></li>
+                                    <li class="sidebar-item"><a href="<?php echo WWW_ADMIN_PATH?>vipusknik/curses" class="sidebar-link"><i class="mdi mdi-image-area"></i><span class="hide-menu"> Привязка к курсу </span></a></li>
+                                </ul>
+                            </li>
+                            <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-settings-box"></i><span class="hide-menu"> Настройки </span></a>
+                                <ul aria-expanded="false" class="collapse  first-level">
+                                    <li class="sidebar-item"><a href="<?php echo WWW_ADMIN_PATH?>settings/vars" class="sidebar-link"><i class="mdi mdi-adjust"></i><span class="hide-menu"> Переменные </span></a></li>
+                                    <li class="sidebar-item"><a href="<?php echo WWW_ADMIN_PATH?>settings/translation" class="sidebar-link"><i class="mdi mdi-translate"></i><span class="hide-menu"> Перевод </span></a></li>
+                                    <li class="sidebar-item"><a href="<?php echo WWW_ADMIN_PATH?>users" class="sidebar-link"><i class="mdi mdi-account-box-outline"></i><span class="hide-menu"> Пользователи </span></a></li>
+                                    <li class="sidebar-item"><a href="<?php echo WWW_ADMIN_PATH?>settings/misto" class="sidebar-link"><i class="mdi mdi-castle"></i><span class="hide-menu"> Города </span></a></li>
+                                    <li class="sidebar-item"><a href="<?php echo WWW_ADMIN_PATH?>settings/gradients" class="sidebar-link"><i class="mdi mdi-gradient"></i><span class="hide-menu"> Градиенты </span></a></li>
+                                    <li class="sidebar-item"><a href="<?php echo WWW_ADMIN_PATH?>settings/seo" class="sidebar-link"><i class="mdi mdi-sitemap"></i><span class="hide-menu"> SEO </span></a></li>
+                                    <li class="sidebar-item"><a href="<?php echo WWW_ADMIN_PATH?>settings/telegram" class="sidebar-link"><i class="mdi mdi-telegram"></i><span class="hide-menu"> Телеграм </span></a></li>
+                                    <li class="sidebar-item"><a href="<?php echo WWW_ADMIN_PATH?>stblocck" class="sidebar-link"><i class="mdi mdi-block-helper"></i><span class="hide-menu"> Статические блоки </span></a></li>
+                                </ul>
+                            </li>
+                            <hr>
+                            <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?=WWW_ADMIN_PATH?>" aria-expanded="false"><i class="mdi mdi-link-variant"></i><span class="hide-menu"> Сайт(в новом окне)</span></a></li>
+                        </ul>
+                    </nav>
+                    <!-- End Sidebar navigation -->
+                </div>
+                <!-- End Sidebar scroll-->
+            </aside>
+            <!-- ============================================================== -->
+            <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Page wrapper  -->
+            <!-- ============================================================== -->
+            <div class="page-wrapper">
+                <!-- ============================================================== -->
+                <!-- Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+                <div class="page-breadcrumb">
+                    <div class="row">
+                        <div class="col-12 d-flex no-block align-items-center">
+                            <h4 class="page-title"><?=$mod_name?></h4>
+                            <div class="ml-auto text-right">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page"><?=$mod_name?></li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Container fluid  -->
+                <!-- ============================================================== -->
+                <div class="container-fluid">
+                    <!-- ============================================================== -->
+                    <!-- Start Page Content -->
+                    <!-- ============================================================== -->
+                    <div class="row">
+                        <div class="col-12">
+
+                            <!-- start: page -->
+                            <?php echo $context;?>
+                            <!-- end: page -->
+
+                        </div>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- End PAge Content -->
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    <!-- Right sidebar -->
+                    <!-- ============================================================== -->
+                    <!-- .right-sidebar -->
+                    <!-- ============================================================== -->
+                    <!-- End Right sidebar -->
+                    <!-- ============================================================== -->
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Container fluid  -->
+                <!-- ============================================================== -->
+                <div id="imomodal" class="modal fade" role="dialog" aria-label="Add Image" data-target="" data-dir="<?=$brouse;?>">
+                    <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h4 class="modal-title">выбор/загрузка изображений</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div id="modalselect" class="modal-body modal-dialog-scrollable">
+
+                            </div>
+
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                                <div class="alert alert-success">
+                                    <strong>Внимание</strong> файл для загрузки должен быть <?=$lsize?></a>.
+                                </div>
+                                <form id="myupload" enctype="multipart/form-data" method="post">
+                                    <input type="file" name="myfile" id="myfile">
+                                    <input type="hidden" name="mypath" value="<?=$brouse;?>" id="mypath">
+                                    <button type="button" id="btnSubmitModal" class="btn btn-info" ><i class="fa fa-upload"></i></button>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div id="imageBrouser" class="modal" aria-hidden="false" tabindex="-1" role="dialog" aria-label="Add Image"></div>
+
+                <!-- ============================================================== -->
+                <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="myToast" style="position: absolute; top: 100; right: 0;background-color: #fff;z-index: 1000;" data-autohide="true">
+                    <div class="toast-header">
+                        <strong class="mr-auto"><i class="mdi mdi-bell"></i> link copied!</strong>
+                        <small>1 сек назад</small>
+                        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="toast-body">
+                        <div>ссылка на курс скопирована в буфер обмена</div>
+                    </div>
+                </div>
+                <div class="toast" id="saved" style="position: absolute; top: 100px ; right: 0px;background-color: #fff;z-index: 1000;" data-autohide="true">
+                    <div class="toast-header">
+                        <strong class="mr-auto"><i class="mdi mdi-bell"></i> изменения сохранены!</strong>
+                        <small>1 сек назад</small>
+                        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="toast-body">
+                        <div>Изменения сохранены</div>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- footer -->
+                <!-- ============================================================== -->
+                <footer class="footer text-center">
+                    All Rights Reserved.Developed by <a href="https://merlinsoft.pp.ua">Merlinsoft</a>.
+                </footer>
+                <!-- ============================================================== -->
+                <!-- End footer -->
+                <!-- ============================================================== -->
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Page wrapper  -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Wrapper -->
+
+        <!-- All Jquery -->
+        <!-- ============================================================== -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+        
+        <!-- Bootstrap tether Core JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
+        <!-- slimscrollbar scrollbar JavaScript -->
+        <script src="<?=WWW_BASE_PATH.'templates/admin/'?>assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+        <script src="<?=WWW_BASE_PATH.'templates/admin/'?>assets/extra-libs/sparkline/sparkline.js"></script>
+        <!--Wave Effects -->
+        <script src="<?=WWW_BASE_PATH.'templates/admin/'?>dist/js/waves.js"></script>
+        <!--Menu sidebar -->
+        <script src="<?=WWW_BASE_PATH.'templates/admin/'?>dist/js/sidebarmenu.js"></script>
+        <!--Custom JavaScript -->
+        <script src="<?=WWW_BASE_PATH.'templates/admin/'?>dist/js/custom.min.js"></script>
+        <!-- this page js -->
+        
+        <script src="<?=WWW_BASE_PATH.'templates/admin/'?>assets/extra-libs/multicheck/jquery.multicheck.js"></script>
+        <script src="<?=WWW_JS_PATH?>datatables.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
+	<script src="<?=WWW_JS_PATH;?>admin/main.js"></script>
+
+	<script src="<?=WWW_JS_PATH;?>admin/datatables.js"></script>
+	<script src="<?=WWW_JS_PATH;?>admin/nicEdit.js"></script>
+	<script src="<?=WWW_JS_PATH;?>admin/nicFormatedBlock/nicFormatedBlock.js"></script>
+	<link rel="stylesheet" href="<?=WWW_CSS_PATH?>blog.css">
+	<link rel="stylesheet" href="<?=WWW_CSS_PATH?>blog-fonts.css">
+	<script>
+            Cookies.set('referer', window.location.pathname);
+            if($('#content_ru').length){
+            new nicEditor(
+                    {
+                        fullPanel: false,
+                        iconsPath: '<?=WWW_IMG_PATH;?>nicEditorIcons.gif',
+                        buttonList: ['bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', 'left', 'center', 'right', 'justify', 'blanc', 'upload', 'image', 'link', 'unlink', 'blanc', 'block', 'block1', 'block2', 'block3', 'block4', 'block5', 'ul', 'block6', 'block7', 'block8', 'block9', 'html', 'removeformat', 'indent', 'outdent', 'xhtml'],
+                        //uploadURI: '<?=WWW_ADMIN_PATH?>blog/upload'
+                    }
+            ).panelInstance('content_ru');
+            };
+            if($('#content_ua').length){
+            new nicEditor(
+                    {
+                        fullPanel: false,
+                        iconsPath: '<?=WWW_IMG_PATH;?>nicEditorIcons.gif',
+                        buttonList: ['bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', 'left', 'center', 'right', 'justify', 'blanc', 'upload', 'image', 'link', 'unlink', 'blanc', 'block', 'block1', 'block2', 'block3', 'block4', 'block5', 'ul', 'block6', 'block7', 'block8', 'block9', 'html', 'removeformat', 'indent', 'outdent', 'xhtml'],
+                        //uploadURI: '<?=WWW_ADMIN_PATH?>blog/upload'
+                    }
+            ).panelInstance('content_ua');
+    }
+            $('.moka').on('click', function () {
+
+                var target = $(this).attr('imt');
+                var browse = $('#imomodal').attr('data-dir');
+                var Data = {'target': target, 'brouse': browse};
+                var targetURL = '<?=WWW_ADMIN_PATH?>fbrowuser/';
+                $.ajax({
+                    type: "POST",
+                    url: targetURL,
+                    data: Data,
+                    async: true,
+                    success: function (data) {
+                        $('#modalselect').html(data);
+                        return true;
+                    },
+                    complete: function (data) {
+                        return true;
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+
+                        return false;
+                    }
+                });
+            });
+
+            $("#btnSubmitModal").click(function (e) {
+                //отправка формы из модального окна
+                e.preventDefault(); // блокируем отправку стандартными методами
+                var target = $('#imodal').attr('data-target'); //получаем айди поля куда будет записан результат выбора
+                //console.log($('#imodal').attr('data-target'); );
+                var path = $("#mypath").val()// получаем путь созранения файла
+                var data = new FormData(); //создаём экземпляр данных для отправки
+                data.append('path', path); //добавляем в него путь
+                data.append('target', target); //добавляем в него айди поля получателя
+                data.append("userfile", $("#myfile")[0].files[0]); //добавляем файл
+                //console.log(data);
+                $.ajax({
+                    //птправляем форму аяксом
+                    url: "<?=WWW_ADMIN_PATH?>fl/",
+                    type: "POST",
+                    data: data,
+                    processData: false, // tell jQuery not to process the data
+                    contentType: false,
+                    success: function (msg) {
+                        $('.iml:last-child').after(msg); //добавляем загруженную картинку в список файлов выбора
+                        //$("#myupload").form.reset(); //очищаем форму
+                        var $el = $('#myfile');
+                        $el.wrap('<form>').closest('form').get(0).reset();
+                        $el.unwrap();
+                        return true;
+                        $('.modal-backdrop').removeClass('show');
+                    },
+                    complete: function (data) {
+                        $('.modal-backdrop').removeClass('show');
+                        return true;
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        console.log(textStatus);
+                        return false;
+                    }
+
+                });
+            });
+
+            function delFile(bpath, file, pn) {
+                var dt = bpath + file;
+                var data = {'path': dt};
+                //console.log(data);
+                $.post("<?=WWW_ADMIN_PATH?>fd/", {'file': dt}).done(function (data) {
+                    $('#' + pn).remove();
+                    console.log("removed file: " + data);
+                });
+            }
+            ;
+            function setimg(target, files, fwpath) {
+
+                $('#' + target).val(files);
+                $('#img-preview-' + target).attr('src', fwpath);
+                $('#imomodal').modal('hide');
+                $('.modal-backdrop').removeClass('show');
+            }
+            ;
+            $('.DataTable').DataTable({
+                    //"dom": 'lfrptip',
+                    dom: "<'row'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
+                            "<'row'<'col-sm-12 col-md-12'p>>" +
+                            "<'row'<'col-sm-12'tr>>" +
+                            "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+                    "info": true,
+                    "paging": true,
+                    responsive: true,
+                    columnDefs: [
+                        {responsivePriority: 1, targets: 1},
+                        {responsivePriority: 29, targets: 2}
+                    ]
+
+                }
+                ).columns.adjust();
+
+	</script>
+    </body>
+
+</html>

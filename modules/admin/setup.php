@@ -1,6 +1,6 @@
 <?php
 
-$template	 = 'admin';
+$template	 = 'admin/admin';
 $mod_name	 = 'настройки';
 $ajax		 = "";
 $brouse		 = '';

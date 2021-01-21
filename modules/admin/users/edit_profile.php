@@ -1,6 +1,6 @@
 <?php
 
-$template	 = "admin"; //"index";
+$template	 = "admin/admin"; //"index";
 $mod_name	 = 'Профиль пользователя';
 $brouse		 = '';
 $lsize		 = '';

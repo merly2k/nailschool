@@ -25,6 +25,11 @@ class comments extends \db {
 	$q = "SELECT SQL_CALC_FOUND_ROWS * FROM `comments` where `id`='$id'";
 	return $this->get_result($q);
     }
+    public
+	    function getLatest($lim) {
+	$q = "SELECT * FROM `comments` ORDER BY dt DESC LIMIT $lim";
+	return $this->get_result($q);
+    }
 
     public
 	    function updateComment($id, $body) {

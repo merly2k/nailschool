@@ -1,7 +1,7 @@
 <?php
 
 $c		 = new model\curses();
-$tpl		 = 'admin';
+$tpl		 = 'admin/admin';
 $context	 = '';
 $lsize		 = ' 845×582px';
 $id		 = $this->param[0];
@@ -135,7 +135,7 @@ else:
     $_POST['image']	 = $image;
     // $context	 .= print_r($_POST);
     //$context	 .= print_r($image, true);
-    echo $c->editCurse($_POST);
+    $e=$c->editCurse($_POST);
     $context	 .= "<script>setTimeout(function() { location.replace('" . WWW_ADMIN_PATH . "curses'); }, 900)</script>";
 endif;
 

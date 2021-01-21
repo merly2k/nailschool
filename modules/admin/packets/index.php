@@ -1,7 +1,7 @@
 <?php
 
 set_time_limit(490);
-$tpl		 = 'admin';
+$tpl		 = 'admin/admin';
 $mod_name	 = 'Пакеты курсов';
 $context	 = '';
 $brouse		 = '';
@@ -50,6 +50,7 @@ if (isset($town)):
 		<a href='del/$cl->id'><i class='fa fa-trash'> </i></a></td>
 		</tr>";
     }
+    $context .="</tbody></table>";
 else:
     $context .= "выберите город";
 endif;

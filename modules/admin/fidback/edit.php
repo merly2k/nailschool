@@ -1,6 +1,6 @@
 <?php
 
-$tpl		 = "admin";
+$tpl		 = "admin/admin";
 $mod_name	 = "редактирование отзыва";
 $context	 = "";
 $fd		 = new model\feedbask();

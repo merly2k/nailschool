@@ -1,6 +1,6 @@
 <?php
 
-$template	 = "admin";
+$template	 = "admin/admin";
 $cont_id	 = $this->param[0];
 $ajax		 = "";
 $mod_name	 = 'Удаление изображения';

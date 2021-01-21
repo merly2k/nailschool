@@ -17,6 +17,8 @@ $km		 = new model\misto();
 $ra		 = new model\curses();
 $blog		 = new model\blog();
 $mlang		 = 'name_' . $lang;
+$lcontent   ="lcontent_".$lang;
+$title   ="title_".$lang;
 $anoncelang	 = 'anonce_' . $lang;
 $addr		 = 'addr_' . $lang;
 $declang	 = 'decription_' . $lang;
@@ -380,8 +382,8 @@ foreach ($blog->SelectAll() as $slider)
 			        <img class="img-fluid" src="' . WWW_IMAGE_PATH . '/' . $slider->image . '" alt="">
 			    </div>
 			    <div class="col-9">
-			        <p class="name">' . strip_tags($slider->title) . ', ' . $slider->pdate . '</p>
-			        <span class="sity">' . strip_tags($slider->lcontent) . '
+			        <p class="name">' . strip_tags($slider->$title) . ', ' . $slider->pdate . '</p>
+			        <span class="sity">' . strip_tags($slider->$lcontent) . '
 			        <a class="readmore" href="blog/' . $slider->link . '">' . l('readmore') . '...</a>
 				    </span>
 			    </div>

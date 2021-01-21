@@ -1,5 +1,5 @@
 <?php
-$tpl='admin';
+$tpl='admin/admin';
 $fd= new model\feedbask();
 $context='';
 $mod_name="Новий отзыв";

@@ -1,5 +1,0 @@
-User-agent: *
-Disallow: /auth, /admin,/user
-Allow: /
-
-Sitemap: https://nailschool.com.ua/sitemap.xml

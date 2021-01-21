@@ -1,7 +1,7 @@
 <?php
 
 set_time_limit(490);
-$tpl		 = 'admin';
+$tpl		 = 'admin/admin';
 $mod_name	 = 'модерация коментариев';
 $context	 = '';
 $brouse		 = '';

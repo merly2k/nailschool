@@ -8,7 +8,7 @@ $brouse		 = APP_PATH . '/images/school/';
 $web_brouse	 = WWW_IMAGE_PATH . 'school/';
 $lsize		 = '800×280px';
 if (!$_POST):
-    $tpl		 = 'admin';
+    $tpl		 = 'admin/admin';
     $mod_name	 = "управление презентациями школ";
     $context	 = '';
     $nav		 = ' <ul class="nav nav-tabs">';
@@ -56,7 +56,10 @@ else:
     unset($_POST['mypath']);
     //print_r($_POST);
     $ss->update($_POST);
-    setcookie("saved", 'saved', time() + 13);  /* срок действия 1 час */
+    setcookie("saved", 'saved', time() + 13); 
+    setcookie("SameSite", 'None', time() + 13); 
+    setcookie("Secure", 'Secure', time() + 13); 
+
     header("Location:" . WWW_ADMIN_PATH . 'school/' . $town);
 endif;
 

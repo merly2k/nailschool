@@ -10,12 +10,16 @@ else
 }
 $otherTown	 = '';
 $mlang		 = 'name_' . $lang;
+$content         = 'content_'.$lang;
 $km		 = new model\misto();
 if (!isset($this->param[0]))
 {
     $page = 0;
 }
 $termin	 = $_POST['search'];
+$encoding = mb_detect_encoding($termin);
+echo $encoding;
+echo iconv($encoding,"utf-8",$termin);
 $termin	 = preg_replace("/[^\w\x7F-\xFF\s]/", " ", $termin);
 
 $bl	 = new model\blog();
@@ -25,15 +29,18 @@ $pattern = "/((?:^|>)[^<]*)(" . $termin . ")/si";
 $replace = '$1<b style="color:#FF0000; background:#FFFF00;">$2</b>';
 // Заменяем
 $out	 = '';
-foreach ($bl->search($termin) as $html)
+foreach ($bl->search($termin,$lang) as $html)
 {
-    $out	 .= "<div class='row'><h4><a href='" . WWW_BASE_PATH . "blog/" . $html->link . "'>";
-    $out	 .= preg_replace($pattern, $replace, $html->title, -1, $count1);
-    $out	 .= "</a></h3>";
-    $z	 = preg_replace($pattern, $replace, $html->content, - 1, $count2);
-
-    $out	 .= "<p class='text-muted'>" . wph_cut_by_words(380, strip_tags($z)) . "<p>";
-    $out	 .= "" . l('found:') . ($count1 + $count2) . '</div>';
+    
+    $pt	 = "<div class='row'><h4><a href='" . WWW_BASE_PATH . "blog/" . $html->link . "'>";
+    $pt	 .= preg_replace($pattern, $replace, $html->title, -1, $count1);
+    $pt	 .= "</a></h3>";
+    $z	 = preg_replace($pattern, $replace, $html->$content, - 1, $count2);
+    $pt	 .= "<p class='text-muted'>" . wph_cut_by_words(380, strip_tags($z)) . "<p>";
+    $pt	 .= "<p><small class='font-weight-bold'>" . l('found:') . ($count1 + $count2) . '</small></p></div>';
+    if(($count1 + $count2)>0){
+        $out.=$pt;
+}
 }
     $context =l('serchterm').'<b style="color: red">'.$termin." </b>";
 if ($out == '')
@@ -56,9 +63,11 @@ function wph_cut_by_words($maxlen, $text) {
 function tagcloud() {
     $r	 = new model\blog();
     $zz	 = $r->getTags();
+    $t	 = array();
     foreach ($zz as $k => $v)
     {
-	if ($v > 1):
+	if ($v > 1 and mb_strlen($k)>3):
+   
 	    $t[] = '{text: "' . $k . '", weight: "' . $v . '"}
 		';
 	endif;
@@ -66,7 +75,6 @@ function tagcloud() {
     $za = implode(', ', $t);
     return($za);
 }
-
 $template	 = 'blog';
 $tags		 = tagcloud();
 $tfut		 = '';

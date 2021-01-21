@@ -27,8 +27,11 @@ class input {
 		$tupe	 = 'enum';
 		break;
 	    case "timestamp":
-		$tupe	 = 'now';
+		$tupe	 = 'datetime-local';
 		break;
+            case "tinytext";
+                $tupe='stextarea';
+                break;
 	    default :
 		$tupe	 = 'text';
 		break;
@@ -46,8 +49,9 @@ class input {
 	    if ($k != 'id')
 	    {
 		$type = $this->get_field_type($v->type);
-		//$out .="$type";
-		switch ($type)
+		//$out .="$type"; 
+                //echo $type;
+		switch ($type) 
 		{
 		    case 'text':
 			if ($v->label != ''):
@@ -65,6 +69,9 @@ class input {
 			break;
 		    case 'textarea':
 			$out .= $this->EditorTextarea($v->label, $k, '');
+			break;
+		    case 'stextarea':
+			$out .= $this->Textarea($v->label, $k, '');
 			break;
 
 		    case 'datetime-local':
@@ -138,12 +145,17 @@ class input {
 		    case 'textarea':
 			$out .= $this->EditorTextarea($v->label, $k, $data[$k]);
 			break;
+		    case 'stextarea':
+			$out .= $this->Textarea($v->label, $k, $data[$k],3);
+			break;
 
 		    case 'datetime-local':
 			//$out.=$data[$k];
+                        //echo $data[$k];
 			$out	 .= $this->input("f$c", $v->label, 'date', $k, 'yyyy-mm-dd', $data[$k]);
 			break;
 		    case 'now':
+                        //echo $data[$k];
 			$out	 .= $this->input("f$c", $v->label, 'date', $k, 'yyyy-mm-dd', date('Y-m-d'));
 			break;
 		    case 'enum':
@@ -216,7 +228,7 @@ class input {
 
     public
 	    function imagefile($id, $label, $name, $value, $deg = 50) {
-
+        
 	return "<div><label>$label</label>
         <div><input class='fileb' type='hidden' id='$id' name='$name' value='$value'/>
         <img id='img-preview-$id' src='$value' style='width: 180px;
