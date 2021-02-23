@@ -28,27 +28,7 @@
                 createWindow(url, color, opacity);
                 break;    
             }  
-        // вКонтакте    
-            case "vkontakte":
-            {
-                url = "http://oauth.vk.com/authorize?client_id=5036007&redirect_uri=http://socloginner.standarta.net/networks/vk/auth.php&response_type=code&state=" + params;
-                createWindow(url, color, opacity);
-                break;    
-            }   
-        // Одноклассники
-            case "odnoklassniki":
-            {
-                url = "http://www.odnoklassniki.ru/oauth/authorize?client_id=1150608640&redirect_uri=http://socloginner.standarta.net/networks/odnoklassniki/auth.php&response_type=code&state=" + params;
-                createWindow(url, color, opacity);
-                break;
-            }
-        // Яндекс
-            case "yandex":
-            {
-                url = "https://oauth.yandex.ru/authorize?response_type=code&client_id=7a143999655548a88a604aa20b31835b&display=popup&state=" + params;
-                createWindow(url, color, opacity);
-                break;
-            }            
+         
         // Google
             case "google":
             {

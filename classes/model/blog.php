@@ -70,6 +70,11 @@ class blog extends \db {
 	$q = "SELECT `id` FROM `blog`";
 	return $this->get_cols($q);
     }
+    public
+	    function getIndex() {
+	$q = "SELECT link,title_ua,title_ru,LEFT(`content_ru`, 256) as `lcontent_ru` ,LEFT(`content_ua`, 256) as `lcontent_ua`,image FROM `blog`";
+	return $this->get_cols($q) ;
+    }
 
     /**
      * @param type $cel - столбец по которому производится выборка (по умолчанию ID)

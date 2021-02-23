@@ -1,475 +1,816 @@
 <!DOCTYPE html>
-<html lang="ru-RU"><head>
-	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-	<meta charset="UTF-8">
+<html lang="ru-RU">
 
-	<link rel="apple-touch-icon" sizes="120x120" href="<?=WWW_BASE_PATH?>images/favicons/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="<?=WWW_BASE_PATH?>images/favicons/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="<?=WWW_BASE_PATH?>images/favicons/favicon-16x16.png">
-	<link rel="manifest" href="<?=WWW_BASE_PATH?>images/favicons/site.webmanifest">
-	<link rel="mask-icon" href="<?=WWW_BASE_PATH?>images/favicons/safari-pinned-tab.svg" color="#5bbad5">
-	<link rel="shortcut icon" href="<?=WWW_BASE_PATH?>images/favicons/favicon.ico">
-	<meta name="msapplication-TileColor" content="#9f00a7">
-	<meta name="msapplication-config" content="<?=WWW_BASE_PATH?>images/favicons/browserconfig.xml">
-	<meta name="theme-color" content="#ffffff">
-	<!-- Google Tag Manager -->
-	<script>(function (w, d, s, l, i) {
-                w[l] = w[l] || [];
-                w[l].push({'gtm.start':
-                            new Date().getTime(), event: 'gtm.js'});
-                var f = d.getElementsByTagName(s)[0],
-                        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
-                j.async = true;
-                j.src =
-                        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-                f.parentNode.insertBefore(j, f);
-            })(window, document, 'script', 'dataLayer', 'GTM-PHCP2RH');</script>
-	<!-- End Google Tag Manager -->
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
 
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
-	<!--<link rel="profile" href="https://gmpg.org/xfn/11"/>-->
-	<link rel="stylesheet" href="<?=WWW_CSS_PATH?>bootstrap.css">
-	<link href="<?=WWW_CSS_PATH?>styles-ing-courses.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" href="<?=WWW_CSS_PATH?>main.css">
-	<link rel="stylesheet" href="<?=WWW_CSS_PATH?>all.min.css">
-	
-	<?php $meta= metatags();
-	echo $meta;?>
-	<link rel="dns-prefetch" href="http://s.w.org/">
-	<link rel="stylesheet" id="wp-block-library-css" href="<?=WWW_CSS_PATH?>style.css" type="text/css" media="all">
-	<link rel="stylesheet" id="contact-form-7-css" href="<?=WWW_CSS_PATH?>styles.css" type="text/css" media="all">
-	<link rel="stylesheet" id="fancybox-css" href="<?=WWW_CSS_PATH?>fancybox.css" type="text/css" media="all">
-	<!--[if lt IE 9]>
-	<link rel='stylesheet' id='fancybox-ie-css'  href='<?=WWW_BASE_PATH?>wp-content/plugins/fancybox-for-wordpress/assets/css/fancybox.ie.css?ver=1.3.4' type='text/css' media='all' />
-	<![endif]-->
-	<link href="<?=WWW_CSS_PATH?>flag-icon.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" id="bodhi-svgs-attachment-css" href="<?=WWW_CSS_PATH?>svgs-attachment.css" type="text/css" media="all">
-	<link rel="stylesheet" id="popup-maker-site-css" href="<?=WWW_CSS_PATH?>site.css" type="text/css" media="all">
-	<style id="popup-maker-site-inline-css" type="text/css">
-	    /* Popup Google Fonts */
-	    @import url('//fonts.googleapis.com/css?family=Montserrat|Acme');
-
-	    /* Popup Theme 83: Тема по умолчанию */
-	    .pum-theme-83, .pum-theme-tema-po-umolchaniyu {  }
-	    .pum-theme-83 .pum-container, .pum-theme-tema-po-umolchaniyu .pum-container { padding: 25px; border-radius: 16px; border: 1px none #000000; box-shadow: 0px 1px 0px 0px rgba( 2, 2, 2, 0.23 ) inset; background-color: rgba( 255, 255, 255, 1.00 ) }
-	    .pum-theme-83 .pum-title, .pum-theme-tema-po-umolchaniyu .pum-title { color: #000000; text-align: left; text-shadow: 0px 0px 0px rgba( 2, 2, 2, 1.00 ); font-family: Sans-Serif; font-size: 32px; line-height: 36px }
-	    .pum-theme-83 .pum-content, .pum-theme-tema-po-umolchaniyu .pum-content { color: #8c8c8c; font-family: inherit }
-	    .pum-theme-83 .pum-content + .pum-close, .pum-theme-tema-po-umolchaniyu .pum-content + .pum-close { position: absolute; height: auto; width: auto; left: auto; right: 0px; bottom: auto; top: 1px; padding: 13px; color: #fb4a87; font-family: inherit; font-size: 18px; line-height: 14px; border: 1px none #ffffff; border-radius: 0px; box-shadow: 0px 0px 0px 0px rgba( 2, 2, 2, 0.23 ); text-shadow: 0px 0px 0px rgba( 0, 0, 0, 0.23 ) }
-
-	    /* Popup Theme 86: Hello Box */
-	    .pum-theme-86, .pum-theme-hello-box { background-color: rgba( 0, 0, 0, 0.75 ) }
-	    .pum-theme-86 .pum-container, .pum-theme-hello-box .pum-container { padding: 30px; border-radius: 80px; border: 14px solid #81d742; box-shadow: 0px 0px 0px 0px rgba( 2, 2, 2, 0.00 ); background-color: rgba( 255, 255, 255, 1.00 ) }
-	    .pum-theme-86 .pum-title, .pum-theme-hello-box .pum-title { color: #2d2d2d; text-align: left; text-shadow: 0px 0px 0px rgba( 2, 2, 2, 0.23 ); font-family: Montserrat; font-size: 32px; line-height: 36px }
-	    .pum-theme-86 .pum-content, .pum-theme-hello-box .pum-content { color: #2d2d2d; font-family: inherit }
-	    .pum-theme-86 .pum-content + .pum-close, .pum-theme-hello-box .pum-content + .pum-close { position: absolute; height: auto; width: auto; left: auto; right: -30px; bottom: auto; top: -30px; padding: 0px; color: #2d2d2d; font-family: inherit; font-size: 32px; line-height: 28px; border: 1px none #ffffff; border-radius: 28px; box-shadow: 0px 0px 0px 0px rgba( 2, 2, 2, 0.23 ); text-shadow: 0px 0px 0px rgba( 0, 0, 0, 0.23 ); background-color: rgba( 255, 255, 255, 1.00 ) }
-
-	    /* Popup Theme 87: Режущий край */
-	    .pum-theme-87, .pum-theme-cutting-edge { background-color: rgba( 0, 0, 0, 0.50 ) }
-	    .pum-theme-87 .pum-container, .pum-theme-cutting-edge .pum-container { padding: 18px; border-radius: 0px; border: 1px none #000000; box-shadow: 0px 10px 25px 0px rgba( 2, 2, 2, 0.50 ); background-color: rgba( 30, 115, 190, 1.00 ) }
-	    .pum-theme-87 .pum-title, .pum-theme-cutting-edge .pum-title { color: #ffffff; text-align: left; text-shadow: 0px 0px 0px rgba( 2, 2, 2, 0.23 ); font-family: Sans-Serif; font-size: 26px; line-height: 28px }
-	    .pum-theme-87 .pum-content, .pum-theme-cutting-edge .pum-content { color: #ffffff; font-family: inherit }
-	    .pum-theme-87 .pum-content + .pum-close, .pum-theme-cutting-edge .pum-content + .pum-close { position: absolute; height: 24px; width: 24px; left: auto; right: 0px; bottom: auto; top: 0px; padding: 0px; color: #1e73be; font-family: inherit; font-size: 32px; line-height: 24px; border: 1px none #ffffff; border-radius: 0px; box-shadow: -1px 1px 1px 0px rgba( 2, 2, 2, 0.10 ); text-shadow: -1px 1px 1px rgba( 0, 0, 0, 0.10 ); background-color: rgba( 238, 238, 34, 1.00 ) }
-
-	    /* Popup Theme 88: Рамка границы */
-	    .pum-theme-88, .pum-theme-framed-border { background-color: rgba( 255, 255, 255, 0.50 ) }
-	    .pum-theme-88 .pum-container, .pum-theme-framed-border .pum-container { padding: 18px; border-radius: 0px; border: 20px outset #dd3333; box-shadow: 1px 1px 3px 0px rgba( 2, 2, 2, 0.97 ) inset; background-color: rgba( 255, 251, 239, 1.00 ) }
-	    .pum-theme-88 .pum-title, .pum-theme-framed-border .pum-title { color: #000000; text-align: left; text-shadow: 0px 0px 0px rgba( 2, 2, 2, 0.23 ); font-family: inherit; font-size: 32px; line-height: 36px }
-	    .pum-theme-88 .pum-content, .pum-theme-framed-border .pum-content { color: #2d2d2d; font-family: inherit }
-	    .pum-theme-88 .pum-content + .pum-close, .pum-theme-framed-border .pum-content + .pum-close { position: absolute; height: 20px; width: 20px; left: auto; right: -20px; bottom: auto; top: -20px; padding: 0px; color: #ffffff; font-family: Acme; font-size: 20px; line-height: 20px; border: 1px none #ffffff; border-radius: 0px; box-shadow: 0px 0px 0px 0px rgba( 2, 2, 2, 0.23 ); text-shadow: 0px 0px 0px rgba( 0, 0, 0, 0.23 ); background-color: rgba( 0, 0, 0, 0.55 ) }
-
-	    /* Popup Theme 84: Light Box */
-	    .pum-theme-84, .pum-theme-lightbox { background-color: rgba( 0, 0, 0, 0.60 ) }
-	    .pum-theme-84 .pum-container, .pum-theme-lightbox .pum-container { padding: 18px; border-radius: 3px; border: 8px solid #000000; box-shadow: 0px 0px 30px 0px rgba( 2, 2, 2, 1.00 ); background-color: rgba( 255, 255, 255, 1.00 ) }
-	    .pum-theme-84 .pum-title, .pum-theme-lightbox .pum-title { color: #000000; text-align: left; text-shadow: 0px 0px 0px rgba( 2, 2, 2, 0.23 ); font-family: inherit; font-size: 32px; line-height: 36px }
-	    .pum-theme-84 .pum-content, .pum-theme-lightbox .pum-content { color: #000000; font-family: inherit }
-	    .pum-theme-84 .pum-content + .pum-close, .pum-theme-lightbox .pum-content + .pum-close { position: absolute; height: 30px; width: 30px; left: auto; right: -24px; bottom: auto; top: -24px; padding: 0px; color: #ffffff; font-family: inherit; font-size: 24px; line-height: 26px; border: 2px solid #ffffff; border-radius: 30px; box-shadow: 0px 0px 15px 1px rgba( 2, 2, 2, 0.75 ); text-shadow: 0px 0px 0px rgba( 0, 0, 0, 0.23 ); background-color: rgba( 0, 0, 0, 1.00 ) }
-
-	    /* Popup Theme 85: Enterprise Blue */
-	    .pum-theme-85, .pum-theme-enterprise-blue { background-color: rgba( 0, 0, 0, 0.70 ) }
-	    .pum-theme-85 .pum-container, .pum-theme-enterprise-blue .pum-container { padding: 28px; border-radius: 5px; border: 1px none #000000; box-shadow: 0px 10px 25px 4px rgba( 2, 2, 2, 0.50 ); background-color: rgba( 255, 255, 255, 1.00 ) }
-	    .pum-theme-85 .pum-title, .pum-theme-enterprise-blue .pum-title { color: #315b7c; text-align: left; text-shadow: 0px 0px 0px rgba( 2, 2, 2, 0.23 ); font-family: inherit; font-size: 34px; line-height: 36px }
-	    .pum-theme-85 .pum-content, .pum-theme-enterprise-blue .pum-content { color: #2d2d2d; font-family: inherit }
-	    .pum-theme-85 .pum-content + .pum-close, .pum-theme-enterprise-blue .pum-content + .pum-close { position: absolute; height: 28px; width: 28px; left: auto; right: 8px; bottom: auto; top: 8px; padding: 4px; color: #ffffff; font-family: inherit; font-size: 20px; line-height: 20px; border: 1px none #ffffff; border-radius: 42px; box-shadow: 0px 0px 0px 0px rgba( 2, 2, 2, 0.23 ); text-shadow: 0px 0px 0px rgba( 0, 0, 0, 0.23 ); background-color: rgba( 49, 91, 124, 1.00 ) }
-
-	    #pum-813 {z-index: 1999999999}
-	    #pum-808 {z-index: 1999999999}
-	    #pum-802 {z-index: 1999999999}
-
-	</style>
-	<!-- Fancybox for WordPress v3.1.9 -->
-	<style type="text/css">
-	    #to-top {
-		position: fixed;
-		bottom: 10px;
-		right: 10px;
-		padding: 5px;
-		width: 46px;
-		height: 46px;
-		color: #e7447c;
-		border-radius: 50%;
-		vertical-align: central;
-		border: 5px solid #e7447c;
-		background-color: rgba(255,255,255,0.2);
-		text-align: center;
-		cursor: pointer;
-		display: none;
-	    }
-	    #to-top i:before{
-		content: "\f077";
-		line-height: 1;
-		font-weight: 900;
-		font-size:24px;
-		font-family: "Font Awesome 5 Free";
-	    }
-	    div.fancybox-caption{display:none !important;}
-
-	    img.fancybox-image{border-width:10px;border-color:#FFFFFF;border-style:solid;height:auto;}
-	    div.fancybox-bg{background-color:rgba(102,102,102,0.3);opacity:1 !important;}div.fancybox-content{border-color:#FFFFFF}
-	    div#fancybox-title{background-color:#FFFFFF}
-	    div.fancybox-content{background-color:#FFFFFF}
-	    div#fancybox-title-inside{color:#333333}
-
-
-
-	    div.fancybox-caption p.caption-title{display:inline-block}
-	    div.fancybox-caption p.caption-title{font-size:14px}
-	    div.fancybox-caption p.caption-title{color:#333333}
-	    div.fancybox-caption {color:#333333}div.fancybox-caption p.caption-title {background:#fff; width:auto;padding:10px 30px;}
-	</style>
-    </head>
-    <body class="page-template-default page page-id-255 page-parent singular image-filters-enabled">
-	<!-- Google Tag Manager (noscript) -->
-	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PHCP2RH"
-			  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-	<!-- End Google Tag Manager (noscript) -->
-	<header>
-	    <!-- <h1 class="entry-title"><?=$currentMisto->$mlang?></h1> -->
-	    <!--Navbar -->
-	    <nav class="navbar navbar-expand-lg navbar-courses navbar-light">
-		<div class="container align-items-start">
-		    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarmenu"
-			    aria-controls="navbarmenu" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		    </button>
-		    <div class="xs-menu d-block d-lg-none">
-			<ul class="navbar-nav mr-auto row no-gutters">
-			    <li class="nav-item dropdown col-5">
-				<a class="nav-link dropdown-toggle"  id="navbardropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-map-marker-alt d-none d-sm-inline"></i>&nbsp;<?=$misto;?></a>
-				<div class="dropdown-menu" aria-labelledby="navbardropdown">
-				    <?=$otherTown?>
-				</div>
-			    </li>
-			    <li class="nav-item text-center dropdown col-2 phone"><a class="nav-link" href="tel:+380934031613"><i class="fas fa-phone align-top flip-horizontal"></i></a></li>
-			    <li class="nav-item col-2">
-				<a class="nav-link text-right ls" href="" lang="UA">Укр</a>
-			    </li>
-			    <li class="nav-item col-1">
-				<a class="nav-link text-center separator">/</a>
-			    </li>
-			    <li class="nav-item col-2">
-				<a class="nav-link text-left ls" href="" lang="RU">Рус</a>
-			    </li>
-			</ul>
-		    </div>
-		    <div class="collapse navbar-collapse" id="navbarmenu">
-			<ul class="navbar-nav m-auto d-none d-lg-block cities-menu">
-			    <li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle"  id="navbardropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-map-marker-alt"></i>&nbsp;<?=$misto;?></a>
-				<div class="dropdown-menu" aria-labelledby="navbardropdown">
-				    <?=$otherTown?>
-				</div>
-			    </li>
-			</ul>
-			<ul class="navbar-nav mr-auto main-menu">
-			    <li class="nav-item d-none d-lg-block">
-				<a class="nav-link" href="tel:<?=$currentMisto->phones?>"><b><i class="fas fa-phone align-middle flip-horizontal"></i>&nbsp;<?=$currentMisto->phones?></b></a>
-			    </li>
-			</ul>
-			<ul class="navbar-nav mr-auto main-menu">
-			    <li class="nav-item"><a class="nav-link" href="<?=WWW_BASE_PATH?>"><span><?=l('m1')?></span></a></li>
-			    <li class="nav-item d-none d-lg-block"><a class="nav-link separator"><span>/</span></a></li>
-			    <li class="nav-item"><a class="nav-link" href="<?=WWW_BASE_PATH?>curses/<?=$this->param[0]?>/"><span><b><?=$cc?></b></span></a></li>
-			</ul>
-			<ul class="navbar-nav lang-menu d-none d-lg-flex">
-			    <li class="nav-item">
-				<a class="nav-link text-right ls active" href="" lang="UA"><span>Укр</span></a>
-			    </li>
-			    <li class="nav-item d-none d-lg-block">
-				<a class="nav-link text-center separator"><span>/</span></a>
-			    </li>
-			    <li class="nav-item">
-				<a class="nav-link text-left ls" href="" lang="RU"><span>Рус</span></a>
-			    </li>
-			</ul>
-		    </div>
-		</div>
-	    </nav>
-	    <!--/.Navbar -->
-	    <div class="container">
-		<div class="row row-eq-height">
-		    <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-6 themed-grid-col">
-			<a href="<?=WWW_BASE_PATH?>"><img src="<?=WWW_IMG_PATH?>logo.svg" alt="" class="logo m-auto d-block"></a>
-		    </div>
-		    <div class="col-12 col-sm-12 col-md-12 col-lg-7 col-xl-6 themed-grid-col">
-			<h1 class="gradient-text text-center text-xl-left"><?=l('z1')?></h1>
-			<p class="description-text text-center text-xl-left"><?=l('u1');?></p>
-		    </div>
-		</div>
-	    </div>
-	</header>
-
-	<div id="content" class="site-content">
-
-
-
-	    <section id="primary" class="content-area">
-		<main id="main" class="site-main">
-
-		    <article id="post-255" class="post-255 page type-page status-publish hentry entry">
-
-			<div class="entry-content">
-			    <div class="courses_">
-
-				<section class="course-outer">
-				    <div class="container"><a name="curseslist"></a>
-					<h2 class="course-outer__headline"><?=l('g1')?></h2>
-					<div class="course">
-					    <?=$item?>
-
-					    <!--a class="course__item course__item_color" href="<?=WWW_BASE_PATH?>seminary/<?=$curMistoLink?>/">
-
-						<h2 class="course__headline"><?=l('z2')?></h2>
-						<span class="course__btn" >
-						    <?=l('z3')?> </span>
-
-					    </a-->
-
-					</div>
-				    </div>
-				</section>
-				<?=$packets?>
-				<section class="contacts">
-				    <div class="container-fluid">
-					<div class="row row-eq-height">
-					    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 themed-grid-col py-4 d-grid align-items-center address">
-						<div class="m-auto row no-gutters">
-						    <div class="col-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">
-							<img src="<?=WWW_IMG_PATH?>location-pink.svg" alt="">
-						    </div>
-						    <div class="col-7 col-sm-7 col-md-7 col-lg-7 col-xl-7 d-grid align-items-center">
-							<p><b><?=$currentMisto->$mlang?></b></p>
-						    </div>
-						</div>
-					    </div>
-					    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 themed-grid-col py-4 d-flex align-items-center viber">
-						<div class="m-auto row no-gutters">
-						    <div class="col-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">
-							<img src="<?=WWW_IMG_PATH?>viber.svg" alt="">
-						    </div>
-						    <div class="col-7 col-sm-7 col-md-7 col-lg-7 col-xl-7 d-flex align-items-center">
-							<p>
-							    <?php if(firstChar($currentMisto->viber)!='#'){?>
-							    <?=$vibellink;?>
-							    <!--a href="viber://chat?number=+<?=$currentMisto->viber?>"><?=$currentMisto->viber;?></a-->
-							    <?php }?>
-							</p>
-						    </div>
-						</div>
-					    </div>
-					    <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 themed-grid-col py-4 d-flex align-items-centertext-center social">
-						<div class="m-auto">
-						    <?php if(firstChar($currentMisto->fb)!='#'){?><a target="_blank" href="<?=$currentMisto->fb?>"><i class="fab fa-facebook-square"></i></a><?php }?>
-
-						    <?php if(firstChar($currentMisto->inst)!='#'){?><a target="_blank" href="<?=$currentMisto->inst?>"><i class="fab fa-instagram"></i></a><?php }?>
-						    <a target="_blank" href="https://www.youtube.com/channel/UCZcCF_9g8Cp2mE1WG66IEjg"><i class="fab fa-youtube-square"></i></a>
-						</div>
-					    </div>
-					</div>
-				    </div>
-				</section>
-				<footer class="footer-page">
-				    <div id="map">
-					<?=$gmap;?>
-				    </div>
-				    <style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
-				    <!--div class="text-center position-relative return-to-sale">
-					<a href="#curseslist" style='z-index:5000;' class="btn btn-warning btn-lg text-uppercase font-weight-bold"><?=l('m100')?></a>
-				    </div-->
-				</footer>
-			    </div><!-- .entry-content -->
-			</div>
-		    </article><!-- #post-255 -->
-		</main><!-- #main -->
-	    </section><!-- #primary -->
-
-	</div><!-- #content -->
-	<div id='to-top'><i class="fal fa-caret-circle-up"></i></div>
-	<!-- #page -->
-	<!-- modal call me-->
-	<div class="modal modal-xl fade" id="calme">
-	    <div class="modal-dialog modal-dialog-centered">
-		<div class="modal-content">
-		    <!-- Modal Header -->
-		    <div class="modal-header">
-			<div class="title modal-title">
-			    <h4 class="text-uppercase font-weight-bold"><?=l('calback_btn')?></h4>
-
-			</div>
-			<button type="button" class="pum-close popmake-close close" data-dismiss="modal">&times;</button>
-		    </div>
-		    <!-- Modal body -->
-		    <div class="modal-body">
-			<p class="ps text-uppercase font-weight-bold"><?=@$k->$mlang?></p>
-			<form id='akciaForm' action="<?=WWW_BASE_PATH?>participate" method="post">
-			    <input id="lid" type="hidden" name="id" value="<?=@$k->id?>" />
-			    <input type="hidden" name="leadtype" value="calback" />
-			    <input type="hidden" name="returnto" value="<?=$this->param[0]?>" />
-			    <div class="form-price">
-				<div class="form-content fd-rever">
-				    <div class="left">
-					<div class="form-group">
-					    <label><?=l('name')?></label>
-					    <span class="wpcf7-form-control-wrap text-923">
-						<input type="text" name="name" value="" size="40" class="form-control wpcf7-form-control wpcf7-text wpcf7-validates-as-required" required="required" >
-					    </span>
-					</div>
-					<!--div class="form-group">
-					    <label><?=l('lastname');?>*</label>
-					    <span class="wpcf7-form-control-wrap text-923">
-						<input type="text" name="lname" value="" size="40" class="form-control wpcf7-form-control wpcf7-text wpcf7-validates-as-required" required="required">
-					    </span> 
-					</div-->
-					<div class="form-group">
-					    <label>Телефон</label>
-					    <span class="wpcf7-form-control-wrap tel-744">
-						<input type="tel" name="phone" value="" size="40" class="form-control wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required" required="required" placeholder="+38 ( _ _ _ ) _ _ _ _ _ _ _">
-					    </span>
-					</div>
-				    </div>
-
-				</div>
-				<input type="submit" value="<?=l('calback_btn')?>*" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold m-auto w-auto wpcf7-form-control wpcf7-submit">
-				* <?=l("pdrd")?>
-				<span class="ajax-loader"></span>
-			    </div>
-			</form>
-		    </div>
-		</div>
-	    </div>
-	</div>
-	<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-	<script src="<?=WWW_JS_PATH?>bootstrap.js"></script>
-	<script type="text/javascript" src="<?=WWW_JS_PATH?>jquery.fancybox.js"></script>
-	<script type="text/javascript" src="<?=WWW_JS_PATH?>scripts.js"></script>
-
-
-	<script type="text/javascript" src="<?=WWW_JS_PATH?>navigation.js"></script>
-	<script type="text/javascript" src="<?=WWW_JS_PATH?>skip-link-focus-fix.js"></script>
-	<script type="text/javascript" src="<?=WWW_JS_PATH?>position.js"></script>
-	<script type="text/javascript" src="<?=WWW_JS_PATH?>site.js"></script>
-	<script id="dsq-count-scr" src="<?=WWW_JS_PATH?>count.js" async=""></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
-    <!-- new carousel by ing -->
+    <link rel="apple-touch-icon" sizes="120x120" href="<?=WWW_BASE_PATH?>images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?=WWW_BASE_PATH?>images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?=WWW_BASE_PATH?>images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="<?=WWW_BASE_PATH?>images/favicons/site.webmanifest">
+    <link rel="mask-icon" href="<?=WWW_BASE_PATH?>images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="<?=WWW_BASE_PATH?>images/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#9f00a7">
+    <meta name="msapplication-config" content="<?=WWW_BASE_PATH?>images/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Google Tag Manager -->
     <script>
-    
-    $(function() {
-   $('.wpcf7-tel').mask('+38(000)000-00-00');
-        });
-            $('a.shm').on('click', function () {
-                var lid = 'p' + $(this).attr('data-id');
-                var name = $(this).attr('data-name');
-                console.log(name);
-                console.log(lid);
-                $('#lid').val(lid);
-                $('.ps').text(name);
-
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
             });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PHCP2RH');
+    </script>
+    <!-- End Google Tag Manager -->
 
-    $(window).scroll(function () {
-                if ($(this).scrollTop() != 0) {
-                    $('#to-top').fadeIn();
-                } else {
-                    $('#to-top').fadeOut();
-                }
-            });
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
+    <!--<link rel="profile" href="https://gmpg.org/xfn/11"/>-->
+    <link rel="stylesheet" href="<?=WWW_CSS_PATH?>bootstrap.css">
+    <link href="<?=WWW_CSS_PATH?>styles-ing-courses.css" rel="stylesheet" type="text/css">
+    <!-- <link rel="stylesheet" href="<?=WWW_CSS_PATH?>main.css"> -->
+    <link rel="stylesheet" href="<?=WWW_CSS_PATH?>all.min.css">
+    <title>
+        <?=$cc?> — Ногтевой Сервис</title>
+    <?php $meta= metatags();
+	echo $meta;?>
+    <link rel="dns-prefetch" href="http://s.w.org/">
+    <link rel="stylesheet" id="wp-block-library-css" href="<?=WWW_CSS_PATH?>style.css" type="text/css" media="all">
+    <link rel="stylesheet" id="contact-form-7-css" href="<?=WWW_CSS_PATH?>styles.css" type="text/css" media="all">
+    <link rel="stylesheet" id="fancybox-css" href="<?=WWW_CSS_PATH?>fancybox.css" type="text/css" media="all">
+    <!--[if lt IE 9]>
+    <link rel='stylesheet' id='fancybox-ie-css'
+          href='<?=WWW_BASE_PATH?>wp-content/plugins/fancybox-for-wordpress/assets/css/fancybox.ie.css?ver=1.3.4'
+          type='text/css' media='all'/>
+    <![endif]-->
+    <link href="<?=WWW_CSS_PATH?>flag-icon.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" id="bodhi-svgs-attachment-css" href="<?=WWW_CSS_PATH?>svgs-attachment.css" type="text/css"
+          media="all">
+    <link rel="stylesheet" id="popup-maker-site-css" href="<?=WWW_CSS_PATH?>site.css" type="text/css" media="all">
 
-            $('#to-top').click(function () {
-                $('body,html').animate({scrollTop: 0}, "fast");
-            });
-            $(document).ready(function () {
+    <link href="<?=WWW_CSS_PATH?>pages/courses.css" rel="stylesheet" type="text/css">
 
-                var curlang = '<?=$_SESSION["lang"];?>';
-                $('.ls').removeClass('active');
-                $('[lang="' + curlang.toLowerCase() + '"]').addClass('active');
-                $(".onhow").on('mouseover', function () {
-                    var over = $(this).attr('data-hover');
-                    $(this).html(over);
-                });
-                $(".onhow").on('mouseout', function () {
-                    var out = $(this).attr('data-out');
-                    $(this).html(out);
-                });
-                $('.ls').on('click',
-                        function (e)
-                        {
-                            console.log(this);
-                            var langage = ($(this).attr('lang')); // do stuff
-                            $('#lanSel').attr('lang', langage);
-                            $.ajax({
-                                url: "<?php echo WWW_BASE_PATH;?>lang",
-                                cache: false,
-                                type: "POST",
-                                data: 'curlang=' + langage,
-                            }).done(function (data) {
-                                console.log(data);
-                                window.location.reload();
-                            });
-                        });
-            });
+    <style id="popup-maker-site-inline-css" type="text/css">
+        /* Popup Google Fonts */
 
-	</script>
+        @import url('//fonts.googleapis.com/css?family=Montserrat|Acme');
+        /* Popup Theme 83: Тема по умолчанию */
+
+        .pum-theme-83,
+        .pum-theme-tema-po-umolchaniyu {
+        }
+
+        .pum-theme-83 .pum-container,
+        .pum-theme-tema-po-umolchaniyu .pum-container {
+            padding: 25px;
+            border-radius: 16px;
+            border: 1px none #000000;
+            box-shadow: 0px 1px 0px 0px rgba(2, 2, 2, 0.23) inset;
+            background-color: rgba(255, 255, 255, 1.00)
+        }
+
+        .pum-theme-83 .pum-title,
+        .pum-theme-tema-po-umolchaniyu .pum-title {
+            color: #000000;
+            text-align: left;
+            text-shadow: 0px 0px 0px rgba(2, 2, 2, 1.00);
+            font-family: Sans-Serif;
+            font-size: 32px;
+            line-height: 36px
+        }
+
+        .pum-theme-83 .pum-content,
+        .pum-theme-tema-po-umolchaniyu .pum-content {
+            color: #8c8c8c;
+            font-family: inherit
+        }
+
+        .pum-theme-83 .pum-content + .pum-close,
+        .pum-theme-tema-po-umolchaniyu .pum-content + .pum-close {
+            position: absolute;
+            height: auto;
+            width: auto;
+            left: auto;
+            right: 0px;
+            bottom: auto;
+            top: 1px;
+            padding: 13px;
+            color: #fb4a87;
+            font-family: inherit;
+            font-size: 18px;
+            line-height: 14px;
+            border: 1px none #ffffff;
+            border-radius: 0px;
+            box-shadow: 0px 0px 0px 0px rgba(2, 2, 2, 0.23);
+            text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.23)
+        }
+
+        /* Popup Theme 86: Hello Box */
+
+        .pum-theme-86,
+        .pum-theme-hello-box {
+            background-color: rgba(0, 0, 0, 0.75)
+        }
+
+        .pum-theme-86 .pum-container,
+        .pum-theme-hello-box .pum-container {
+            padding: 30px;
+            border-radius: 80px;
+            border: 14px solid #81d742;
+            box-shadow: 0px 0px 0px 0px rgba(2, 2, 2, 0.00);
+            background-color: rgba(255, 255, 255, 1.00)
+        }
+
+        .pum-theme-86 .pum-title,
+        .pum-theme-hello-box .pum-title {
+            color: #2d2d2d;
+            text-align: left;
+            text-shadow: 0px 0px 0px rgba(2, 2, 2, 0.23);
+            font-family: Montserrat;
+            font-size: 32px;
+            line-height: 36px
+        }
+
+        .pum-theme-86 .pum-content,
+        .pum-theme-hello-box .pum-content {
+            color: #2d2d2d;
+            font-family: inherit
+        }
+
+        .pum-theme-86 .pum-content + .pum-close,
+        .pum-theme-hello-box .pum-content + .pum-close {
+            position: absolute;
+            height: auto;
+            width: auto;
+            left: auto;
+            right: -30px;
+            bottom: auto;
+            top: -30px;
+            padding: 0px;
+            color: #2d2d2d;
+            font-family: inherit;
+            font-size: 32px;
+            line-height: 28px;
+            border: 1px none #ffffff;
+            border-radius: 28px;
+            box-shadow: 0px 0px 0px 0px rgba(2, 2, 2, 0.23);
+            text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.23);
+            background-color: rgba(255, 255, 255, 1.00)
+        }
+
+        /* Popup Theme 87: Режущий край */
+
+        .pum-theme-87,
+        .pum-theme-cutting-edge {
+            background-color: rgba(0, 0, 0, 0.50)
+        }
+
+        .pum-theme-87 .pum-container,
+        .pum-theme-cutting-edge .pum-container {
+            padding: 18px;
+            border-radius: 0px;
+            border: 1px none #000000;
+            box-shadow: 0px 10px 25px 0px rgba(2, 2, 2, 0.50);
+            background-color: rgba(30, 115, 190, 1.00)
+        }
+
+        .pum-theme-87 .pum-title,
+        .pum-theme-cutting-edge .pum-title {
+            color: #ffffff;
+            text-align: left;
+            text-shadow: 0px 0px 0px rgba(2, 2, 2, 0.23);
+            font-family: Sans-Serif;
+            font-size: 26px;
+            line-height: 28px
+        }
+
+        .pum-theme-87 .pum-content,
+        .pum-theme-cutting-edge .pum-content {
+            color: #ffffff;
+            font-family: inherit
+        }
+
+        .pum-theme-87 .pum-content + .pum-close,
+        .pum-theme-cutting-edge .pum-content + .pum-close {
+            position: absolute;
+            height: 24px;
+            width: 24px;
+            left: auto;
+            right: 0px;
+            bottom: auto;
+            top: 0px;
+            padding: 0px;
+            color: #1e73be;
+            font-family: inherit;
+            font-size: 32px;
+            line-height: 24px;
+            border: 1px none #ffffff;
+            border-radius: 0px;
+            box-shadow: -1px 1px 1px 0px rgba(2, 2, 2, 0.10);
+            text-shadow: -1px 1px 1px rgba(0, 0, 0, 0.10);
+            background-color: rgba(238, 238, 34, 1.00)
+        }
+
+        /* Popup Theme 88: Рамка границы */
+
+        .pum-theme-88,
+        .pum-theme-framed-border {
+            background-color: rgba(255, 255, 255, 0.50)
+        }
+
+        .pum-theme-88 .pum-container,
+        .pum-theme-framed-border .pum-container {
+            padding: 18px;
+            border-radius: 0px;
+            border: 20px outset #dd3333;
+            box-shadow: 1px 1px 3px 0px rgba(2, 2, 2, 0.97) inset;
+            background-color: rgba(255, 251, 239, 1.00)
+        }
+
+        .pum-theme-88 .pum-title,
+        .pum-theme-framed-border .pum-title {
+            color: #000000;
+            text-align: left;
+            text-shadow: 0px 0px 0px rgba(2, 2, 2, 0.23);
+            font-family: inherit;
+            font-size: 32px;
+            line-height: 36px
+        }
+
+        .pum-theme-88 .pum-content,
+        .pum-theme-framed-border .pum-content {
+            color: #2d2d2d;
+            font-family: inherit
+        }
+
+        .pum-theme-88 .pum-content + .pum-close,
+        .pum-theme-framed-border .pum-content + .pum-close {
+            position: absolute;
+            height: 20px;
+            width: 20px;
+            left: auto;
+            right: -20px;
+            bottom: auto;
+            top: -20px;
+            padding: 0px;
+            color: #ffffff;
+            font-family: Acme;
+            font-size: 20px;
+            line-height: 20px;
+            border: 1px none #ffffff;
+            border-radius: 0px;
+            box-shadow: 0px 0px 0px 0px rgba(2, 2, 2, 0.23);
+            text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.23);
+            background-color: rgba(0, 0, 0, 0.55)
+        }
+
+        /* Popup Theme 84: Light Box */
+
+        .pum-theme-84,
+        .pum-theme-lightbox {
+            background-color: rgba(0, 0, 0, 0.60)
+        }
+
+        .pum-theme-84 .pum-container,
+        .pum-theme-lightbox .pum-container {
+            padding: 18px;
+            border-radius: 3px;
+            border: 8px solid #000000;
+            box-shadow: 0px 0px 30px 0px rgba(2, 2, 2, 1.00);
+            background-color: rgba(255, 255, 255, 1.00)
+        }
+
+        .pum-theme-84 .pum-title,
+        .pum-theme-lightbox .pum-title {
+            color: #000000;
+            text-align: left;
+            text-shadow: 0px 0px 0px rgba(2, 2, 2, 0.23);
+            font-family: inherit;
+            font-size: 32px;
+            line-height: 36px
+        }
+
+        .pum-theme-84 .pum-content,
+        .pum-theme-lightbox .pum-content {
+            color: #000000;
+            font-family: inherit
+        }
+
+        .pum-theme-84 .pum-content + .pum-close,
+        .pum-theme-lightbox .pum-content + .pum-close {
+            position: absolute;
+            height: 30px;
+            width: 30px;
+            left: auto;
+            right: -24px;
+            bottom: auto;
+            top: -24px;
+            padding: 0px;
+            color: #ffffff;
+            font-family: inherit;
+            font-size: 24px;
+            line-height: 26px;
+            border: 2px solid #ffffff;
+            border-radius: 30px;
+            box-shadow: 0px 0px 15px 1px rgba(2, 2, 2, 0.75);
+            text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.23);
+            background-color: rgba(0, 0, 0, 1.00)
+        }
+
+        /* Popup Theme 85: Enterprise Blue */
+
+        .pum-theme-85,
+        .pum-theme-enterprise-blue {
+            background-color: rgba(0, 0, 0, 0.70)
+        }
+
+        .pum-theme-85 .pum-container,
+        .pum-theme-enterprise-blue .pum-container {
+            padding: 28px;
+            border-radius: 5px;
+            border: 1px none #000000;
+            box-shadow: 0px 10px 25px 4px rgba(2, 2, 2, 0.50);
+            background-color: rgba(255, 255, 255, 1.00)
+        }
+
+        .pum-theme-85 .pum-title,
+        .pum-theme-enterprise-blue .pum-title {
+            color: #315b7c;
+            text-align: left;
+            text-shadow: 0px 0px 0px rgba(2, 2, 2, 0.23);
+            font-family: inherit;
+            font-size: 34px;
+            line-height: 36px
+        }
+
+        .pum-theme-85 .pum-content,
+        .pum-theme-enterprise-blue .pum-content {
+            color: #2d2d2d;
+            font-family: inherit
+        }
+
+        .pum-theme-85 .pum-content + .pum-close,
+        .pum-theme-enterprise-blue .pum-content + .pum-close {
+            position: absolute;
+            height: 28px;
+            width: 28px;
+            left: auto;
+            right: 8px;
+            bottom: auto;
+            top: 8px;
+            padding: 4px;
+            color: #ffffff;
+            font-family: inherit;
+            font-size: 20px;
+            line-height: 20px;
+            border: 1px none #ffffff;
+            border-radius: 42px;
+            box-shadow: 0px 0px 0px 0px rgba(2, 2, 2, 0.23);
+            text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.23);
+            background-color: rgba(49, 91, 124, 1.00)
+        }
+
+        #pum-813 {
+            z-index: 1999999999
+        }
+
+        #pum-808 {
+            z-index: 1999999999
+        }
+
+        #pum-802 {
+            z-index: 1999999999
+        }
+    </style>
+    <!-- Fancybox for WordPress v3.1.9 -->
+    <style type="text/css">
+        #to-top {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            padding: 5px;
+            width: 46px;
+            height: 46px;
+            color: #e7447c;
+            border-radius: 50%;
+            vertical-align: central;
+            border: 5px solid #e7447c;
+            background-color: rgba(255, 255, 255, 0.2);
+            text-align: center;
+            cursor: pointer;
+            display: none;
+        }
+
+        #to-top i:before {
+            content: "\f077";
+            line-height: 1;
+            font-weight: 900;
+            font-size: 24px;
+            font-family: "Font Awesome 5 Free";
+        }
+
+        div.fancybox-caption {
+            display: none !important;
+        }
+
+        img.fancybox-image {
+            border-width: 10px;
+            border-color: #FFFFFF;
+            border-style: solid;
+            height: auto;
+        }
+
+        div.fancybox-bg {
+            background-color: rgba(102, 102, 102, 0.3);
+            opacity: 1 !important;
+        }
+
+        div.fancybox-content {
+            border-color: #FFFFFF
+        }
+
+        div#fancybox-title {
+            background-color: #FFFFFF
+        }
+
+        div.fancybox-content {
+            background-color: #FFFFFF
+        }
+
+        div#fancybox-title-inside {
+            color: #333333
+        }
+
+        div.fancybox-caption p.caption-title {
+            display: inline-block
+        }
+
+        div.fancybox-caption p.caption-title {
+            font-size: 14px
+        }
+
+        div.fancybox-caption p.caption-title {
+            color: #333333
+        }
+
+        div.fancybox-caption {
+            color: #333333
+        }
+
+        div.fancybox-caption p.caption-title {
+            background: #fff;
+            width: auto;
+            padding: 10px 30px;
+        }
+    </style>
+</head>
+
+<body class="page-template-default page page-id-255 page-parent singular image-filters-enabled">
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PHCP2RH"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+<header>
+    <!-- <h1 class="entry-title"><?=$currentMisto->$mlang?></h1> -->
+    <!--Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-courses navbar-light">
+        <div class="container align-items-start">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarmenu"
+                    aria-controls="navbarmenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="xs-menu d-block d-lg-none">
+                <ul class="navbar-nav mr-auto row no-gutters">
+                    <li class="nav-item dropdown col-5">
+                        <a class="nav-link dropdown-toggle" id="navbardropdown" role="button" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false"><i
+                                class="fas fa-map-marker-alt d-none d-sm-inline"></i>&nbsp;<?=$misto;?></a>
+                        <div class="dropdown-menu" aria-labelledby="navbardropdown">
+                            <?=$otherTown?>
+                        </div>
+                    </li>
+                    <li class="nav-item text-center dropdown col-2 phone"><a class="nav-link"
+                                                                             href="tel:+380934031613"><i
+                            class="fas fa-phone align-top flip-horizontal"></i></a></li>
+                    <li class="nav-item col-2">
+                        <a class="nav-link text-right ls" href="" lang="UA">Укр</a>
+                    </li>
+                    <li class="nav-item col-1">
+                        <a class="nav-link text-center separator">/</a>
+                    </li>
+                    <li class="nav-item col-2">
+                        <a class="nav-link text-left ls" href="" lang="RU">Рус</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarmenu">
+                <ul class="navbar-nav m-auto d-none d-lg-block cities-menu">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbardropdown" role="button" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false"><i
+                                class="fas fa-map-marker-alt"></i>&nbsp;<?=$misto;?></a>
+                        <div class="dropdown-menu" aria-labelledby="navbardropdown">
+                            <?=$otherTown?>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="navbar-nav mr-auto main-menu">
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="nav-link" href="tel:<?=$currentMisto->phones?>"><b><i
+                                class="fas fa-phone align-middle flip-horizontal"></i>&nbsp;<?=$currentMisto->
+                            phones?></b></a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav mr-auto main-menu">
+                    <li class="nav-item"><a class="nav-link" href="<?=WWW_BASE_PATH?>"><span><?=l('m1')?></span></a>
+                    </li>
+                    <li class="nav-item d-none d-lg-block"><a class="nav-link separator"><span>/</span></a></li>
+                    <li class="nav-item"><a class="nav-link"
+                                            href="<?=WWW_BASE_PATH?>curses/<?=$this->param[0]?>/"><span><b><?=$cc?></b></span></a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav lang-menu d-none d-lg-flex">
+                    <li class="nav-item">
+                        <a class="nav-link text-right ls active" href="" lang="UA"><span>Укр</span></a>
+                    </li>
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="nav-link text-center separator"><span>/</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-left ls" href="" lang="RU"><span>Рус</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--/.Navbar -->
+    <div class="container">
+        <div class="row row-eq-height">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-6 themed-grid-col">
+                <a href="<?=WWW_BASE_PATH?>"><img src="<?=WWW_IMG_PATH?>logo.svg" alt=""
+                                                  class="logo m-auto d-block"></a>
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-7 col-xl-6 themed-grid-col">
+                <h1 class="gradient-text text-center text-xl-left">
+                    <?=l('z1')?>
+                </h1>
+                <p class="description-text text-center text-xl-left">
+                    <?=l('u1');?>
+                </p>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div id="content" class="site-content">
+
+
+    <section id="primary" class="content-area">
+        <main id="main" class="site-main">
+
+            <article id="post-255" class="post-255 page type-page status-publish hentry entry">
+
+                <div class="entry-content">
+                    <div class="courses_ courses">
+
+                        <section class="course-outer courses_outer">
+                            <div class="container">
+                                <a name="curseslist"></a>
+                                <h2 class="course-outer__headline course_outer-headline">
+                                    <?=l('g1')?>
+                                </h2>
+                                <div class="course">
+                                    <?=$item?>
+
+                                    <!--a class="course__item course__item_color course_item course_item-color" href="<?=WWW_BASE_PATH?>seminary/<?=$curMistoLink?>/">
+
+                <h2 class="course__headline course_item_color-headline"><?=l('z2')?></h2>
+                <span class="course__btn course_item_color-btn" >
+                    <?=l('z3')?> </span>
+
+                </a-->
+
+                                </div>
+                            </div>
+                        </section>
+                        <?=$packets?>
+                        <section class="contacts">
+                            <div class="container-fluid">
+                                <div class="row row-eq-height">
+                                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 themed-grid-col py-4 d-grid align-items-center address">
+                                        <div class="m-auto row no-gutters">
+                                            <div class="col-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">
+                                                <img src="<?=WWW_IMG_PATH?>location-pink.svg" alt="">
+                                            </div>
+                                            <div class="col-7 col-sm-7 col-md-7 col-lg-7 col-xl-7 d-grid align-items-center">
+                                                <p><b><?=$currentMisto->$mlang?></b></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 themed-grid-col py-4 d-flex align-items-center viber">
+                                        <div class="m-auto row no-gutters">
+                                            <div class="col-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">
+                                                <img src="<?=WWW_IMG_PATH?>viber.svg" alt="">
+                                            </div>
+                                            <div class="col-7 col-sm-7 col-md-7 col-lg-7 col-xl-7 d-flex align-items-center">
+                                                <p>
+                                                    <?php if(firstChar($currentMisto->viber)!='#'){?>
+                                                    <?=$vibellink;?>
+                                                    <!--a href="viber://chat?number=+<?=$currentMisto->viber?>"><?=$currentMisto->viber;?></a-->
+                                                    <?php }?>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 themed-grid-col py-4 d-flex align-items-centertext-center social">
+                                        <div class="m-auto">
+                                            <?php if(firstChar($currentMisto->fb)!='#'){?><a target="_blank"
+                                                                                             href="<?=$currentMisto->fb?>"><i
+                                                class="fab fa-facebook-square"></i></a>
+                                            <?php }?>
+
+                                            <?php if(firstChar($currentMisto->inst)!='#'){?><a target="_blank"
+                                                                                               href="<?=$currentMisto->inst?>"><i
+                                                class="fab fa-instagram"></i></a>
+                                            <?php }?>
+                                            <a target="_blank"
+                                               href="https://www.youtube.com/channel/UCZcCF_9g8Cp2mE1WG66IEjg"><i
+                                                    class="fab fa-youtube-square"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <footer class="footer-page">
+                            <div id="map">
+                                <?=$gmap;?>
+                            </div>
+                            <style>
+                                #gmap_canvas img {
+                                    max-width: none !important;
+                                    background: none !important
+                                }
+                            </style>
+                            <!--div class="text-center position-relative return-to-sale">
+            <a href="#curseslist" style='z-index:5000;' class="btn btn-warning btn-lg text-uppercase font-weight-bold"><?=l('m100')?></a>
+            </div-->
+                        </footer>
+                    </div>
+                    <!-- .entry-content -->
+                </div>
+            </article>
+            <!-- #post-255 -->
+        </main>
+        <!-- #main -->
+    </section>
+    <!-- #primary -->
+
+</div>
+<!-- #content -->
+<div id='to-top'><i class="fal fa-caret-circle-up"></i></div>
+<!-- #page -->
+<!-- modal call me-->
+<div class="modal modal-xl fade" id="calme">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header modal_header">
+                <div class="title modal-title modal_title">
+                    <h4 class="text-uppercase font-weight-bold">
+                        <?=l('calback_btn')?>
+                    </h4>
+
+                </div>
+                <button type="button" class="pum-close popmake-close close" data-dismiss="modal">&times;</button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body modal_body">
+                <p class="ps text-uppercase font-weight-bold">
+                    <?=@$k->$mlang?>
+                </p>
+                <form id='akciaForm' action="<?=WWW_BASE_PATH?>participate" method="post">
+                    <input id="lid" type="hidden" name="id" value="<?=@$k->id?>"/>
+                    <input type="hidden" name="leadtype" value="calback"/>
+                    <input type="hidden" name="returnto" value="<?=$this->param[0]?>"/>
+                    <div class="form-price">
+                        <div class="form-content fd-rever">
+                            <div class="left">
+                                <div class="form-group">
+                                    <label><?=l('name')?></label>
+                                    <span class="wpcf7-form-control-wrap text-923">
+						<input type="text" name="name" value="" size="40"
+                               class="form-control wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
+                               required="required">
+					    </span>
+                                </div>
+                                <!--div class="form-group">
+                    <label><?=l('lastname');?>*</label>
+                    <span class="wpcf7-form-control-wrap text-923">
+                    <input type="text" name="lname" value="" size="40" class="form-control wpcf7-form-control wpcf7-text wpcf7-validates-as-required" required="required">
+                    </span>
+                </div-->
+                                <div class="form-group">
+                                    <label>Телефон</label>
+                                    <span class="wpcf7-form-control-wrap tel-744">
+						<input type="tel" name="phone" value="" size="40"
+                               class="form-control wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required"
+                               required="required" placeholder="+38 ( _ _ _ ) _ _ _ _ _ _ _">
+					    </span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <input type="submit" value="<?=l('calback_btn')?>*"
+                               class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold m-auto w-auto wpcf7-form-control wpcf7-submit">
+                        *
+                        <?=l("pdrd")?>
+                        <span class="ajax-loader"></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="<?=WWW_JS_PATH?>bootstrap.js"></script>
+<script type="text/javascript" src="<?=WWW_JS_PATH?>jquery.fancybox.js"></script>
+<script type="text/javascript" src="<?=WWW_JS_PATH?>scripts.js"></script>
+
+
+<script type="text/javascript" src="<?=WWW_JS_PATH?>navigation.js"></script>
+<script type="text/javascript" src="<?=WWW_JS_PATH?>skip-link-focus-fix.js"></script>
+<script type="text/javascript" src="<?=WWW_JS_PATH?>position.js"></script>
+<script type="text/javascript" src="<?=WWW_JS_PATH?>site.js"></script>
+<script id="dsq-count-scr" src="<?=WWW_JS_PATH?>count.js" async=""></script>
 <script>
+    $('a.shm').on('click', function () {
+        var lid = 'p' + $(this).attr('data-id');
+        var name = $(this).attr('data-name');
+        console.log(name);
+        console.log(lid);
+        $('#lid').val(lid);
+        $('.ps').text(name);
 
-    $.fn.isInViewport = function() {
-  var elementTop = $(this).offset().top;
-  var elementBottom = elementTop + $(this).outerHeight();
+    });
+</script>
 
-  var viewportTop = $(window).scrollTop();
-  var viewportBottom = viewportTop + $(window).height();
+<script>
+    $(window).scroll(function () {
+        if ($(this).scrollTop() != 0) {
+            $('#to-top').fadeIn();
+        } else {
+            $('#to-top').fadeOut();
+        }
+    });
 
-  return elementBottom > viewportTop && elementTop < viewportBottom;
-};
+    $('#to-top').click(function () {
+        $('body,html').animate({
+            scrollTop: 0
+        }, "fast");
+    });
+    $(document).ready(function () {
 
-$(window).on('resize scroll', function() {
-  $('.course__item').each(function() {
-    if ($(this).isInViewport()) {
-      $(this).addClass('jqhover');
-    } else {
-      $(this).removeClass('jqhover');
-    }
-  });
-});
-  </script>
-    </body>
+        var curlang = '<?=$_SESSION["lang"];?>';
+        $('.ls').removeClass('active');
+        $('[lang="' + curlang.toLowerCase() + '"]').addClass('active');
+        $(".onhow").on('mouseover', function () {
+            var over = $(this).attr('data-hover');
+            $(this).html(over);
+        });
+        $(".onhow").on('mouseout', function () {
+            var out = $(this).attr('data-out');
+            $(this).html(out);
+        });
+        $('.ls').on('click',
+            function (e) {
+                console.log(this);
+                var langage = ($(this).attr('lang')); // do stuff
+                $('#lanSel').attr('lang', langage);
+                $.ajax({
+                    url: "<?php echo WWW_BASE_PATH;?>lang",
+                    cache: false,
+                    type: "POST",
+                    data: 'curlang=' + langage,
+                }).done(function (data) {
+                    console.log(data);
+                    window.location.reload();
+                });
+            });
+    });
+</script>
+
+</body>
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,792 +1,841 @@
 <!doctype html>
 <html lang="ua">
-    <head>
-	<!-- Required meta tags -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<link rel="apple-touch-icon" sizes="120x120" href="<?=WWW_BASE_PATH?>images/favicons/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="<?=WWW_BASE_PATH?>images/favicons/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="<?=WWW_BASE_PATH?>images/favicons/favicon-16x16.png">
-	<link rel="manifest" href="<?=WWW_BASE_PATH?>images/favicons/site.webmanifest">
-	<link rel="mask-icon" href="<?=WWW_BASE_PATH?>images/favicons/safari-pinned-tab.svg" color="#5bbad5">
-	<link rel="shortcut icon" href="<?=WWW_BASE_PATH?>images/favicons/favicon.ico">
 
-	<meta name="msapplication-TileColor" content="#9f00a7">
-	<meta name="msapplication-config" content="<?=WWW_BASE_PATH?>images/favicons/browserconfig.xml">
-	<meta name="theme-color" content="#ffffff">
-	<?php $meta= metatags();echo $meta;?>
+    <link rel="apple-touch-icon" sizes="120x120" href="<?=WWW_BASE_PATH?>images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?=WWW_BASE_PATH?>images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?=WWW_BASE_PATH?>images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="<?=WWW_BASE_PATH?>images/favicons/site.webmanifest">
+    <link rel="mask-icon" href="<?=WWW_BASE_PATH?>images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="<?=WWW_BASE_PATH?>images/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#9f00a7">
+    <meta name="msapplication-config" content="<?=WWW_BASE_PATH?>images/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <?php $meta= metatags();echo $meta;?>
 
-	<!-- Google Tag Manager -->
-	<script>(function (w, d, s, l, i) {
-                w[l] = w[l] || [];
-                w[l].push({'gtm.start':
-                            new Date().getTime(), event: 'gtm.js'});
-                var f = d.getElementsByTagName(s)[0],
-                        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
-                j.async = true;
-                j.src =
-                        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-                f.parentNode.insertBefore(j, f);
-            })(window, document, 'script', 'dataLayer', 'GTM-PHCP2RH');
-	</script>
-	<!-- End Google Tag Manager -->
-	<title>Ногтевой Сервис - сеть учебных центров</title>
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="<?=WWW_CSS_PATH?>bootstrap.css">
-	<script src="https://kit.fontawesome.com/e66f078689.js"></script>
-	<link href="<?=WWW_CSS_PATH?>flag-icon.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" href="<?=WWW_CSS_PATH?>all.min.css">
-	<style>
-	    @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&subset=cyrillic');
-	    @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800&subset=cyrillic');
-	    html{font-family: Montserrat;}
-	    .h2, h2 {
-		font-size: 2rem;
-		text-align: center;
-	    }
-	    .www{text-align: justify;}
-	    .banner {
-		padding-top: 35px;
-		padding-bottom: 0;
-		background: url(../images/banner-bg1.png) no-repeat bottom/contain;
-		height: 30rem;
-	    }
-	    .close-course{
-		background: linear-gradient(to right,#f80759 0,#bc4e9c 100%);
-		min-height: 10rem;
-	    }
-	    .deva{
-		background: url(../images/girl.png)no-repeat right bottom/contain;
-		min-height: 27.8rem;
-                z-index:100;
-	    }
-	    .about-course__img {
-		width: 4rem;
-		margin-right: 1rem;
-	    }
-	    .logo{display: block;max-width: 28rem; width: 100%;}
-	    .main_header{
-		margin-top: 1.4rem;
-	    }
-	    .close-course-list__img {
-		display: block;
-		margin: auto;
-		position: relative;
-		top: -7px;
-	    }
-	    .close-course-block {
-		min-width: 30%;
-		margin-top: 10px;
-	    }
-	    .close-course-block .top {
-		display: flex;
-		font-size: 25px;
-		align-items: center;
-		justify-content: center;
-		margin-bottom: 15px;
-	    }
-	    .medium-ico {
-		margin-right: 3px;
-		width: 45px;
-		height: 40px;
-	    }
-	    .bgw{color: #fff;
-		 font-weight: bold;
-		 text-align: center;
-		 font-size: 30px;}
-	    .gradient-text {
-		font-weight: 700;
-		background: -webkit-linear-gradient(45deg,#ed5799,#8c3a84);
-		background: -o-linear-gradient(45deg,#ed5799,#8c3a84);
-		background: linear-gradient(45deg,#ed5799,#8c3a84);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		color: #8c3a84;
-	    }
-	    .my-auto{margin-top: auto;
-		     margin-bottom: auto;}
-	    .py-auto{padding-top: 10%;
-		     padding-bottom: 10%;}
-	    .text{
-		padding-top: 2%;
-		display: block;
-		vertical-align: middle;
-		text-align: center;
-	    }
-	    .headline__title {
-		font-size: 2rem;
-		font-weight: 300;
-		margin-top: 26px;
-		margin-bottom: 35px;
-		letter-spacing: 1.2px;
-		font-family: 'Montserrat', sans-serif;
-	    }
-	    .why-block{
-		display: block;
-		text-align: center;
-	    }
-	    .why-block__img {
-		width: 120px;
-		height: 120px;
-		-o-object-fit: contain;
-		object-fit: contain;
 
-	    }
-	    .why-block__headline {
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+            'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-PHCP2RH');</script>
+    <!-- End Google Tag Manager -->
 
-		font-size: 1.5rem;
-		font-family: 'Montserrat', sans-serif;
-		font-weight: 500;
-		text-transform: uppercase;
-		margin-top: 20px;
-	    }
+    <title>Ногтевой Сервис - сеть учебных центров</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="<?=WWW_CSS_PATH?>bootstrap.css">
+    <script src="https://kit.fontawesome.com/e66f078689.js"></script>
+    <link href="<?=WWW_CSS_PATH?>flag-icon.css" rel="stylesheet" type="text/css">
+    <link href="<?=WWW_CSS_PATH?>styles-ing-home.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="<?=WWW_CSS_PATH?>all.min.css">
+    <link rel="stylesheet" href="<?=WWW_CSS_PATH?>pages/indexn.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&subset=cyrillic');
+        @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800&subset=cyrillic');
 
-	    .footer-index {
-		background: #be75ab;
-		color: #fff;
-		padding-top: 20px;
-		margin-top: 20px;
-		padding-bottom: 20px;
-	    }
+        html {
+            font-family: Montserrat;
+        }
 
-	    .carousel-control-prev-icon {
-		background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='https://www.w3.org/2000/svg' fill='%23f0f' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E")!important;
-		width: 30px;
-		height: 48px;
-	    }
-	    .carousel-control-next-icon {
-		background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='https://www.w3.org/2000/svg' fill='%23fof' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
-		width: 30px;
-		height: 48px;
-	    }
+        .h2, h2 {
+            font-size: 2rem;
+            text-align: center;
+        }
 
-	    .photo-graduate{width: 40%; margin: auto;}
-	    .name-graduate{margin: auto; font-weight: 700;}
-	    .sity-graduate{margin: auto; font-weight: 400;}
-	    .courses-graduate{margin: auto; font-weight: 400;text-align: center;}
-	    .training-videos .training-desc-top {
-		line-height: 20px;
-		max-width: 976px;
-		text-align: center;
-		margin: auto;
-	    }
-	    .slider-videos {
-		margin-top: 70px;
-		text-align: center;
-	    }
-	    .col-centered {
-		float: none;
-		margin: 0 auto;
-	    }
-	    .carousel-item .www ,.videocarousel{width: 80%;text-align: center;}
-	    .footer-index .col-lg-12 a {
-		text-decoration: underline;
-		color: #fff;
-		font-weight: bold;
-		font-size: 19px;
-		margin-left: 7px;
-	    }
+        .www {
+            text-align: justify;
+        }
 
-	    .page .entry-header {
-		display: none;
-	    }
-	    #to-top {
-		position: fixed;
-		bottom: 10px;
-		right: 10px;
-		padding: 5px;
-		width: 46px;
-		height: 46px;
-		color: #e7447c;
-		border-radius: 50%;
-		vertical-align: central;
-		border: 5px solid #e7447c;
-		background-color: rgba(255,255,255,0.2);
-		text-align: center;
-		cursor: pointer;
-		display: none;
-	    }
-	    #to-top i:before{
-		content: "\f077";
-		line-height: 1;
-		font-weight: 900;
-		font-size:24px;
-		font-family: "Font Awesome 5 Free";
-	    }
-	</style>
-	<link href="<?=WWW_CSS_PATH?>styles-ing-home.css" rel="stylesheet" type="text/css">
+        .banner {
+            padding-top: 35px;
+            padding-bottom: 0;
+            background: url(../images/banner-bg1.png) no-repeat bottom/contain;
+            height: 30rem;
+        }
 
-    <body>
-	<!-- Google Tag Manager (noscript) -->
-	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PHCP2RH"
-			  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-	<!-- End Google Tag Manager (noscript) -->
-	<header id="header">
-	    <!--Navbar -->
-	    <nav class="navbar navbar-expand-lg navbar-home fixed-top navbar-light bg-light">
-		<div class="container align-items-start">
-		    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarmenu"
-			    aria-controls="navbarmenu" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		    </button>
-		    <div class="xs-menu d-block d-lg-none">
-			<ul class="navbar-nav mr-auto row no-gutters">
-			    <li class="nav-item dropdown col-7">
-				<a class="nav-link dropdown-toggle" href="#" id="navbardropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-map-marker-alt d-none d-sm-inline"></i>&nbsp;<?=l('m7');?></a>
-				<div class="dropdown-menu" aria-labelledby="navbardropdown">
-				    <?=$otherTown?>
-				</div>
-			    </li>
-			    <li class="nav-item text-center dropdown col-2 phone"><a class="nav-link" href="tel:+380934031613"><i class="fas fa-phone align-top flip-horizontal"></i></a></li>
-			    <li class="nav-item col-1 active">
-				<a class="nav-link text-right ls" href="" lang="UA">Укр</a>
-			    </li>
-			    <li class="nav-item col-1">
-				<a class="nav-link text-center separator">/</a>
-			    </li>
-			    <li class="nav-item col-1">
-				<a class="nav-link text-left ls" href="" lang="RU">Рус</a>
-			    </li>
-			</ul>
-		    </div>
-		    <div class="collapse navbar-collapse" id="navbarmenu">
-			<ul class="navbar-nav m-auto d-none d-lg-block cities-menu">
-			    <li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle" href="#" id="navbardropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-map-marker-alt"></i>&nbsp;<?=l('m7');?></a>
-				<div class="dropdown-menu" aria-labelledby="navbardropdown"><?=$otherTown?></div>
-			    </li>
-			</ul>
-			<ul class="navbar-nav mr-auto main-menu">
-			    <li class="nav-item d-none d-lg-block">
-				<a class="nav-link" href="tel:+380934031613"><b><i class="fas fa-phone align-middle flip-horizontal"></i>&nbsp;(093) 403 16 13</b></a>
-			    </li>
-			</ul>
-			<ul class="navbar-nav mr-auto main-menu">
-			    <li class="nav-item"><a class="nav-link" href="#about"><?=l('m2');?></a></li>
-			    <li class="nav-item d-none d-lg-block"><a class="nav-link separator"><span>/</span></a></li>
-			    <li class="nav-item"><a class="nav-link" href="#towns"><?=l('m3');?></a></li>
-			    <li class="nav-item d-none d-lg-block"><a class="nav-link separator"><span>/</span></a></li>
-			    <li class="nav-item"><a class="nav-link" href="#whuour"><?=l('m4');?></a></li>
-			    <li class="nav-item d-none d-lg-block"><a class="nav-link separator"><span>/</span></a></li>
-			    <li class="nav-item"><a class="nav-link" href="#video"><?=l('m5');?></a></li>
-			    <li class="nav-item d-none d-lg-block"><a class="nav-link separator"><span>/</span></a></li>
-			    <li class="nav-item"><a class="nav-link" href="#fidback"><?=l('m6');?></a></li>
-			    <!-- blog link -->
-			    <li class="nav-item d-none d-lg-block"><a class="nav-link separator"><span>/</span></a></li>
-			    <li class="nav-item"><a class="nav-link" href="<?=WWW_BASE_PATH?>blog"><?=l('articles')?></a></li>
-			    <!-- /blog link -->
-			</ul>
-			<ul class="navbar-nav lang-menu d-none d-lg-flex">
-			    <li class="nav-item">
-				<a class="nav-link text-right ls" href="" lang="UA"><span>Укр</span></a>
-			    </li>
-			    <li class="nav-item d-none d-lg-block">
-				<a class="nav-link text-center separator"><span>/</span></a>
-			    </li>
-			    <li class="nav-item">
-				<a class="nav-link text-left ls" href="" lang="RU"><span>Рус</span></a>
-			    </li>
-			</ul>
-		    </div>
-		</div>
-	    </nav>
-	    <!--/.Navbar -->
-	    <!--main header-->
-	    <div class="container pt-5 container-padding">
-		<div class="row row-eq-height" style="padding-top: 26px">
-		    <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-6 themed-grid-col">
-			<a href="<?=WWW_BASE_PATH?>"><img src="<?=WWW_IMG_PATH?>logo.svg" alt="" class="logo m-auto d-block"></a>
-			<h1 class="gradient-text text-center"><?=l('hh1')?></h1>
-			<p class="description-text text-center"><?=l('u1');?></b></p>
-			<div class="row checklist-course  checklist-course-1">
-			    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 themed-grid-col pl-3 pr-0">
-				<table>
-				    <tbody>
-					<tr>
-					    <td><img src="<?=WWW_IMG_PATH?>kalendar.svg" alt="" /></td>
-					    <td class="align-middle"><p><?=l('m9')?></p></td>
-					</tr>
-				    </tbody>
-				</table>
-			    </div>
-			    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 themed-grid-col pl-3 pr-0">
-				<table>
-				    <tbody>
-					<tr>
-					    <td><img src="<?=WWW_IMG_PATH?>people.svg" alt="" /></td>
-					    <td class="align-middle"><p><?=l('r2')?></p></td>
-					</tr>
-				    </tbody>
-				</table>
-			    </div>
-			</div>
-			<div class="row checklist-course  checklist-course-2">
-			    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 themed-grid-col pl-3 pr-0">
-				<table>
-				    <tbody>
-					<tr>
-					    <td><img src="<?=WWW_IMG_PATH?>krema.svg" alt="" /></td>
-					    <td class="align-middle"><p><?=l('r3');?></p></td>
-					</tr>
-				    </tbody>
-				</table>
-			    </div>
-			    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 themed-grid-col pl-3 pr-0">
-				<table>
-				    <tbody>
-					<tr>
-					    <td><img src="<?=WWW_IMG_PATH?>certificate.svg" alt="" /></td>
-					    <td class="align-middle"><p><?=l('r4');?></p></td>
-					</tr>
-				    </tbody>
-				</table>
-			    </div>
-			</div>
-		    </div>
-		    <div class="col-12 col-sm-12 col-md-12 col-lg-7 col-xl-6 themed-grid-col">
-			<div class="row d-none d-lg-flex d-xl-none girl" style="background-image: url(<?=WWW_IMG_PATH;?>grl/girl.png);z-index:100;"></div>
-		    </div>
-		</div>
-	    </div>
-	    <!--/.main header-->
-	</header>
-	<main>
-	    <section class="line-sale-v3" id="sale">
-		<div class="container container-padding">
-		    <div class="row row-eq-height px-3">
-			<?=$randAction?>
-			<div class="col-12 col-sm-0 col-md-0 col-lg-0 col-xl-0 themed-grid-col girl d-none d-xl-flex">
-			    <img src="<?=WWW_IMG_PATH;?>girl.png" alt="">
-			</div>
-		    </div>
-		</div>
-	    </section>
+        .close-course {
+            background: linear-gradient(to right, #f80759 0, #bc4e9c 100%);
+            min-height: 10rem;
+        }
 
-	    <section id="ab" class="be-first py-5 mt-5">
-		<div class="container">
-		    <div class="row justify-content-center align-items-center">
-			<div class="col-12">
-			    <div class="d-flex justify-content-center"><a id='about'></a>
-				<img class="" src="<?=WWW_IMG_PATH?>number-one.jpg" alt=""></div>
-			    <div class="justify-content-center">
-				<?=SBl(1,$lang);?></div>
-			</div>
-		    </div>
-		</div>
-	    </section>
-	    <section class="towns py-5">
-		<div class="container">
-		    <div class="row justify-content-center align-items-center">
-			<div class="col-12">
-			    <a id='towns'></a>
-			    <h2 class="section-title text-uppercase font-weight-bold mb-5"><span class="gradient-text"><?=l('r5');?></span></h2>
-			</div>
-		    </div>
-		    <?=$townItem;?>
-		</div>
-	    </section>
-	    <section id="po" class="advantages py-5"><a id='whuour'></a>
-		<h2 class="text-center text-uppercase font-weight-bold mb-5"><span class="gradient-text"><?=l('r6');?></span></h2>
-		<div class="container">
-		    <div class="row">
-			<div class="col-12 col-sm-6 col-lg-4 col-xl-4 text-center pb-5 why">
-			    <img src="<?=WWW_IMG_PATH?>sova.svg" alt="">
-			    <?=SBl(2,$lang);?>
-			</div>
-			<div class="col-12 col-sm-6 col-lg-4 col-xl-4 text-center pb-5 why">
-			    <img src="<?=WWW_IMG_PATH?>nagrada.svg" alt="">
-			    <?=SBl(3,$lang);?>
-			</div>
-			<div class="col-12 col-sm-6 col-lg-4 col-xl-4 text-center pb-5 why">
-			    <img src="<?=WWW_IMG_PATH?>people-icon.svg" alt="">
-			    <?=SBl(4,$lang);?>
-			</div>
-			<div class="col-12 col-sm-6 col-lg-4 col-xl-4 text-center pb-4 why">
-			    <img class="why-block__img" src="<?=WWW_IMG_PATH?>all.svg" alt="">
-			    <?=SBl(5,$lang);?>
-			</div>
-			<div class="col-12 col-sm-6 col-lg-4 col-xl-4 text-center pb-4 why">
-			    <img class="why-block__img" src="<?=WWW_IMG_PATH?>gramota.svg" alt="">
-			    <?=SBl(6,$lang);?>
-			</div>
-			<div class="col-12 col-sm-6 col-lg-4 col-xl-4 text-center pb-4 why">
-			    <img class="why-block__img" src="<?=WWW_IMG_PATH?>krema2.svg" alt="">
-			    <?=SBl(7,$lang);?>
-			</div>
-		    </div>
-		</div>
-	    </section>
-	    <section id="blog" class="training-videos py-5"><a id='blog'></a>
-		<h2 class="section-title text-uppercase font-weight-bold mb-2">
-		    <span class="gradient-text"><?=l('blogHead');?></span></h2>
-		<div class="container mb-5">
-		    <p class="training-desc-top"><?=l('blogSubHead');?></p>
-		</div>
-		<div class="trainingvideos">
-		    <?=$SlideOut?>
-		</div>
-	    </section>
-	    <section id="uch" class="training-videos py-5"><a id='video'></a>
-		<h2 class="section-title text-uppercase font-weight-bold mb-2"><span class="gradient-text"><?=l('r7');?></span></h2>
-		<div class="container mb-5">
-		    <p class="training-desc-top"><?=l('videos');?></p>
-		</div>
-		<div class="trainingvideos">
-		    <?=$video?>
-		</div>
-	    </section>
-	    <!-- new carousel by ing -->
-	    <section id="ot" class="py-5 slideshow">
-		<a id="fidback"></a>
+        .deva {
+            background: url(../images/girl.png) no-repeat right bottom/contain;
+            min-height: 27.8rem;
+        }
 
-		<h2 class="section-title text-uppercase font-weight-bold mb-5"><span class="gradient-text"><?=l('r8');?></span></h2>
-		<div class="graduates">
-		    <div class="slide"><img src="<?=WWW_IMG_PATH?>vipusknik/1.jpg"></div>
-		    <div class="slide"><img src="<?=WWW_IMG_PATH?>vipusknik/2.jpg"></div>
-		    <div class="slide"><img src="<?=WWW_IMG_PATH?>vipusknik/3.jpg"></div>
-		    <div class="slide"><img src="<?=WWW_IMG_PATH?>vipusknik/4.jpg"></div>
-		    <div class="slide"><img src="<?=WWW_IMG_PATH?>vipusknik/5.jpg"></div>
-		    <div class="slide"><img src="<?=WWW_IMG_PATH?>vipusknik/6.jpg"></div>
-		    <div class="slide"><img src="<?=WWW_IMG_PATH?>vipusknik/7.jpg"></div>
-		    <div class="slide"><img src="<?=WWW_IMG_PATH?>vipusknik/8.jpg"></div>
-		    <div class="slide"><img src="<?=WWW_IMG_PATH?>vipusknik/9.jpg"></div>
-		    <div class="slide"><img src="<?=WWW_IMG_PATH?>vipusknik/10.jpg"></div>
-		    <div class="slide"><img src="<?=WWW_IMG_PATH?>vipusknik/11.jpg"></div>
-		    <div class="slide"><img src="<?=WWW_IMG_PATH?>vipusknik/12.jpg"></div>
-		</div>
-	    </section>
-	    <!-- / -->
-	</main>
-	<br>
-	<footer class="footer-index">
-	    <div class="container">
-		<div class="row">
-		    <?=$tfut;?>
-		    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4">
-			<p class="pb-3"><?=l('r10')?>:</p>
-			<div>
-			    <img class="link-shop" src="<?=WWW_IMG_PATH?>corz.png" alt="">
-			    <a style='font-variant-caps: all-small-caps; font-variant: small-caps;font-size: 1rem;' target='_blank'  href="https://<?=l('www_addr')?>/"><?=l('www_addr')?></a>
-			</div>
-		    </div>
-		</div>
-		<p class="copyright">Copyright &COPY; 1999  - <?=date('Y')?></p>
+        .about-course__img {
+            width: 4rem;
+            margin-right: 1rem;
+        }
 
-	    </div>
-	</footer>
-	<div id='to-top'><i class="fal fa-caret-circle-up"></i></div>
-	<!-- The Modal -->
-	<div class="modal" id="akcia">
+        .logo {
+            display: block;
+            max-width: 28rem;
+            width: 100%;
+        }
 
-	    <div class="modal-dialog modal-dialog-centered modal-xl">
-		<div class="modal-content">
-		    <!-- Modal Header -->
-		    <div class="modal-header">
-			<div class="title modal-title">
-			    <h4 class="text-uppercase font-weight-bold"><?=$aza?></h4>
-			</div>
-			<button type="button" class="pum-close popmake-close close" data-dismiss="modal">&times;</button>
-		    </div>
-		    <!-- Modal body -->
-		    <div class="modal-body">
-			<p class="ps text-uppercase font-weight-bold"><?=$acsia->$mlang;?></p>
-			<form id='akciaForm' action="<?=WWW_BASE_PATH?>participate" method="post">
-			    <input type="hidden" name="id" value="<?=$acsia->id;?>" />
-			    <input type="hidden" name="leadtype" value="curs" />
-			    <input type="hidden" name="returnto" value="/" />
-			    <div class="form-price">
-				<div class="form-content fd-rever">
-				    <div class="left">
-					<div class="form-group">
-					    <label><?=l('name')?>*</label>
-					    <span class="wpcf7-form-control-wrap text-923">
-						<input type="text" name="name" value="" size="40" class="form-control wpcf7-form-control wpcf7-text wpcf7-validates-as-required" required="required" >
+        .main_header {
+            margin-top: 1.4rem;
+        }
+
+        .close-course-list__img {
+            display: block;
+            margin: auto;
+            position: relative;
+            top: -7px;
+        }
+
+        .close-course-block {
+            min-width: 30%;
+            margin-top: 10px;
+        }
+
+        .close-course-block .top {
+            display: flex;
+            font-size: 25px;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .medium-ico {
+            margin-right: 3px;
+            width: 45px;
+            height: 40px;
+        }
+
+        .bgw {
+            color: #fff;
+            font-weight: bold;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        .gradient-text {
+            font-weight: 700;
+            background: -webkit-linear-gradient(45deg, #ed5799, #8c3a84);
+            background: -o-linear-gradient(45deg, #ed5799, #8c3a84);
+            background: linear-gradient(45deg, #ed5799, #8c3a84);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: #8c3a84;
+        }
+
+        .my-auto {
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+
+        .py-auto {
+            padding-top: 10%;
+            padding-bottom: 10%;
+        }
+
+        .text {
+            padding-top: 2%;
+            display: block;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        .headline__title {
+            font-size: 2rem;
+            font-weight: 300;
+            margin-top: 26px;
+            margin-bottom: 35px;
+            letter-spacing: 1.2px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .why-block {
+            display: block;
+            text-align: center;
+        }
+
+        .why-block__img {
+            width: 120px;
+            height: 120px;
+            -o-object-fit: contain;
+            object-fit: contain;
+        }
+
+        .why-block__headline {
+            font-size: 1.5rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            text-transform: uppercase;
+            margin-top: 20px;
+        }
+
+        .footer-index {
+            background: #be75ab;
+            color: #fff;
+            padding-top: 20px;
+            margin-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .carousel-control-prev-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='https://www.w3.org/2000/svg' fill='%23f0f' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+            width: 30px;
+            height: 48px;
+        }
+
+        .carousel-control-next-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='https://www.w3.org/2000/svg' fill='%23fof' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+            width: 30px;
+            height: 48px;
+        }
+
+        .photo-graduate {
+            width: 40%;
+            margin: auto;
+        }
+
+        .name-graduate {
+            margin: auto;
+            font-weight: 700;
+        }
+
+        .sity-graduate {
+            margin: auto;
+            font-weight: 400;
+        }
+
+        .courses-graduate {
+            margin: auto;
+            font-weight: 400;
+            text-align: center;
+        }
+
+        .training-videos .training-desc-top {
+            line-height: 20px;
+            max-width: 976px;
+            text-align: center;
+            margin: auto;
+        }
+
+        .slider-videos {
+            margin-top: 70px;
+            text-align: center;
+        }
+
+        .col-centered {
+            float: none;
+            margin: 0 auto;
+        }
+
+        .carousel-item .www, .videocarousel {
+            width: 80%;
+            text-align: center;
+        }
+
+        .footer-index .col-lg-12 a {
+            text-decoration: underline;
+            color: #fff;
+            font-weight: bold;
+            font-size: 19px;
+            margin-left: 7px;
+        }
+
+        .page .entry-header {
+            display: none;
+        }
+
+        #to-top {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            padding: 5px;
+            width: 46px;
+            height: 46px;
+            color: #e7447c;
+            border-radius: 50%;
+            vertical-align: central;
+            border: 5px solid #e7447c;
+            background-color: rgba(255, 255, 255, 0.2);
+            text-align: center;
+            cursor: pointer;
+            display: none;
+        }
+
+        #to-top i:before {
+            content: "\f077";
+            line-height: 1;
+            font-weight: 900;
+            font-size: 24px;
+            font-family: "Font Awesome 5 Free";
+        }
+    </style>
+
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PHCP2RH" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<header id="header" class="header">
+    <!--Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-home fixed-top navbar-light bg-light header_navbar">
+        <div class="container align-items-start">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarmenu"
+                    aria-controls="navbarmenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="xs-menu d-block d-lg-none header_navbar_menuWrap mobile">
+                <ul class="navbar-nav mr-auto row no-gutters header_navbar_menu">
+                    <li class="nav-item dropdown col-7">
+                        <a class="nav-link dropdown-toggle header_navbar_menu-link" href="#" id="navbardropdown" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-map-marker-alt d-none d-sm-inline"></i>&nbsp;<?=l('m7');?></a>
+                        <div class="dropdown-menu" aria-labelledby="navbardropdown">
+                            <?=$otherTown?>
+                        </div>
+                    </li>
+                    <li class="nav-item text-center dropdown col-2 phone"><a class="nav-link header_navbar_menu-link" href="tel:+380934031613"><i
+                            class="fas fa-phone align-top flip-horizontal"></i></a></li>
+                    <li class="nav-item col-1 active">
+                        <a class="nav-link text-right ls header_navbar_menu-link" href="" lang="UA">Укр</a>
+                    </li>
+                    <li class="nav-item col-1">
+                        <a class="nav-link text-center separator header_navbar_menu-link">/</a>
+                    </li>
+                    <li class="nav-item col-1">
+                        <a class="nav-link text-left ls header_navbar_menu-link" href="" lang="RU">Рус</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarmenu">
+                <ul class="navbar-nav m-auto d-none d-lg-block cities-menu header_navbar_menu cities">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle header_navbar_menu-link" href="#" id="navbardropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
+                                class="fas fa-map-marker-alt"></i>&nbsp;<?=l('m7');?></a>
+                        <div class="dropdown-menu" aria-labelledby="navbardropdown"><?=$otherTown?></div>
+                    </li>
+                </ul>
+                <ul class="navbar-nav mr-auto main-menu header_navbar_menu main">
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="nav-link header_navbar_menu-link" href="tel:+380934031613"><b><i class="fas fa-phone align-middle flip-horizontal"></i>&nbsp;(093) 403 16 13</b></a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav mr-auto main-menu header_navbar_menu main">
+                    <li class="nav-item"><a class="nav-link header_navbar_menu-link" href="#about"><?=l('m2');?></a></li>
+                    <li class="nav-item d-none d-lg-block"><a class="nav-link separator header_navbar_menu-link"><span>/</span></a></li>
+                    <li class="nav-item"><a class="nav-link header_navbar_menu-link" href="#towns"><?=l('m3');?></a></li>
+                    <li class="nav-item d-none d-lg-block"><a class="nav-link separator header_navbar_menu-link"><span>/</span></a></li>
+                    <li class="nav-item"><a class="nav-link header_navbar_menu-link" href="#whuour"><?=l('m4');?></a></li>
+                    <li class="nav-item d-none d-lg-block"><a class="nav-link separator header_navbar_menu-link"><span>/</span></a></li>
+                    <li class="nav-item"><a class="nav-link header_navbar_menu-link" href="#video"><?=l('m5');?></a></li>
+                    <li class="nav-item d-none d-lg-block"><a class="nav-link separator header_navbar_menu-link"><span>/</span></a></li>
+                    <li class="nav-item"><a class="nav-link header_navbar_menu-link" href="#fidback"><?=l('m6');?></a></li>
+                </ul>
+                <ul class="navbar-nav lang-menu d-none d-lg-flex header_navbar_menu">
+                    <li class="nav-item">
+                        <a class="nav-link text-right ls header_navbar_menu-link" href="" lang="UA"><span>Укр</span></a>
+                    </li>
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="nav-link text-center separator header_navbar_menu-link"><span>/</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-left ls header_navbar_menu-link" href="" lang="RU"><span>Рус</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--/.Navbar -->
+    <!--main header-->
+    <div class="container pt-5 container-padding">
+        <div class="row row-eq-height" style="padding-top: 26px">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-6 themed-grid-col">
+                <a href="<?=WWW_BASE_PATH?>"><img src="<?=WWW_IMG_PATH?>logo.svg" alt="" class="logo m-auto d-block header-logo"></a>
+                <h1 class="gradient-text text-center header-title"><?=l('hh1')?></h1>
+                <p class="description-text text-center header-description"><?=l('u1');?></b></p>
+                <div class="row checklist-course  checklist-course-1 header_infographics">
+                    <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 themed-grid-col pl-3 pr-0 header_infographics_wrap">
+                        <img class="header_infographics-img" src="<?=WWW_IMG_PATH?>kalendar.svg" alt=""/>
+                        <p class="header_infographics-desc"><?=l('m9')?></p>
+                    </div>
+                    <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 themed-grid-col pl-3 pr-0 header_infographics_wrap">
+                        <img class="header_infographics-img" src="<?=WWW_IMG_PATH?>people.svg" alt=""/>
+                        <p class="header_infographics-desc"><?=l('r2')?></p>
+                    </div>
+                </div>
+                <div class="row checklist-course  checklist-course-2 header_infographics">
+                    <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 themed-grid-col pl-3 pr-0 header_infographics_wrap">
+                        <img src="<?=WWW_IMG_PATH?>krema.svg" alt="" class="header_infographics-img"/>
+                        <p class="header_infographics-desc"><?=l('r3');?></p>
+                    </div>
+                    <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 themed-grid-col pl-3 pr-0 header_infographics_wrap">
+                        <img class="header_infographics-img" src="<?=WWW_IMG_PATH?>certificate.svg" alt=""/>
+                        <p class="header_infographics-desc"><?=l('r4');?></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-7 col-xl-6 themed-grid-col">
+                <div class="row d-none d-lg-flex d-xl-none header_banner-bigImg girl"
+                     style="background-image: url(<?=WWW_IMG_PATH;?>grl/girl.png);"></div>
+            </div>
+        </div>
+    </div>
+    <!--/.main header-->
+</header>
+<main>
+    <section class="line-sale-v3" id="sale">
+        <div class="container container-padding">
+            <div class="row row-eq-height px-3">
+                <?=$randAction?>
+                <div class="col-12 col-sm-0 col-md-0 col-lg-0 col-xl-0 themed-grid-col girl d-none d-xl-flex">
+                    <img src="<?=WWW_IMG_PATH;?>girl.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ab" class="be-first py-5 mt-5">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-12">
+                    <div class="d-flex justify-content-center"><a id='about'></a>
+                        <img class="" src="<?=WWW_IMG_PATH?>number-one.jpg" alt=""></div>
+                    <div class="justify-content-center">
+                        <?=SBl(1,$lang);?></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="towns py-5">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-12">
+                    <a id='towns'></a>
+                    <h2 class="text-uppercase font-weight-bold mb-5 section-title"><span
+                            class="gradient-text"><?=l('r5');?></span></h2>
+                </div>
+            </div>
+            <?=$townItem;?>
+        </div>
+    </section>
+    <section id="po" class="advantages py-5"><a id='whuour'></a>
+        <h2 class="text-center text-uppercase font-weight-bold mb-5 section-title"><span class="gradient-text"><?=l('r6');?></span>
+        </h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-6 col-lg-4 col-xl-4 text-center pb-5 why advantages_wrap">
+                    <img src="<?=WWW_IMG_PATH?>sova.svg" alt="" class="advantages-img">
+                    <?=SBl(2,$lang);?>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4 col-xl-4 text-center pb-5 why advantages_wrap">
+                    <img src="<?=WWW_IMG_PATH?>nagrada.svg" alt="" class="advantages-img">
+                    <?=SBl(3,$lang);?>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4 col-xl-4 text-center pb-5 why advantages_wrap">
+                    <img src="<?=WWW_IMG_PATH?>people-icon.svg" alt="" class="advantages-img">
+                    <?=SBl(4,$lang);?>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4 col-xl-4 text-center pb-4 why advantages_wrap">
+                    <img class="why-block__img" src="<?=WWW_IMG_PATH?>all.svg" alt="" class="advantages-img">
+                    <?=SBl(5,$lang);?>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4 col-xl-4 text-center pb-4 why advantages_wrap">
+                    <img class="why-block__img" src="<?=WWW_IMG_PATH?>gramota.svg" alt="" class="advantages-img">
+                    <?=SBl(6,$lang);?>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4 col-xl-4 text-center pb-4 why advantages_wrap">
+                    <img class="why-block__img" src="<?=WWW_IMG_PATH?>krema2.svg" alt="" class="advantages-img">
+                    <?=SBl(7,$lang);?>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="uch" class="training-videos py-5"><a id='video'></a>
+        <h2 class="text-uppercase font-weight-bold mb-2 section-title"><span class="gradient-text"><?=l('r7');?></span>
+        </h2>
+        <div class="container mb-5">
+            <p class="training-desc-top"><?=l('videos');?></p>
+        </div>
+        <div class="trainingvideos">
+            <?=$video?>
+        </div>
+    </section>
+    <!-- new carousel by ing -->
+    <section id="ot" class="py-5 slideshow">
+        <a id="fidback"></a>
+
+        <h2 class="section-title text-uppercase font-weight-bold mb-5"><span class="gradient-text"><?=l('r8');?></span>
+        </h2>
+        <div class="graduates">
+            <div class="slide"><img src="<?=WWW_IMG_PATH?>vipusknik/1.jpg"></div>
+            <div class="slide"><img src="<?=WWW_IMG_PATH?>vipusknik/2.jpg"></div>
+            <div class="slide"><img src="<?=WWW_IMG_PATH?>vipusknik/3.jpg"></div>
+            <div class="slide"><img src="<?=WWW_IMG_PATH?>vipusknik/4.jpg"></div>
+            <div class="slide"><img src="<?=WWW_IMG_PATH?>vipusknik/5.jpg"></div>
+            <div class="slide"><img src="<?=WWW_IMG_PATH?>vipusknik/6.jpg"></div>
+            <div class="slide"><img src="<?=WWW_IMG_PATH?>vipusknik/7.jpg"></div>
+            <div class="slide"><img src="<?=WWW_IMG_PATH?>vipusknik/8.jpg"></div>
+            <div class="slide"><img src="<?=WWW_IMG_PATH?>vipusknik/9.jpg"></div>
+            <div class="slide"><img src="<?=WWW_IMG_PATH?>vipusknik/10.jpg"></div>
+            <div class="slide"><img src="<?=WWW_IMG_PATH?>vipusknik/11.jpg"></div>
+            <div class="slide"><img src="<?=WWW_IMG_PATH?>vipusknik/12.jpg"></div>
+        </div>
+    </section>
+    <!-- / -->
+</main>
+<br>
+<!--div class="container text-center">
+    <a class="link-top gradient-text text-uppercase" href="#header"><b><?=l('r9')?></b></a>
+</div-->
+<footer class="footer-index">
+    <div class="container">
+        <div class="row"><?=$tfut;?>
+
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4">
+                <p class="pb-3"><?=l('r10')?>:</p>
+                <div>
+                    <img class="link-shop" src="<?=WWW_IMG_PATH?>corz.png" alt="">
+                    <a style='font-variant-caps: all-small-caps; font-variant: small-caps;font-size: 1rem;'
+                       target='_blank' href="https://<?=l('www_addr')?>/"><?=l('www_addr')?></a>
+                </div>
+            </div>
+        </div>
+        <p class="copyright">Copyright &COPY; 1999 - <?=date('Y')?></p>
+
+    </div>
+</footer>
+<div id='to-top'><i class="fal fa-caret-circle-up"></i></div>
+<!-- The Modal -->
+<div class="modal" id="akcia">
+
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <div class="title modal-title">
+                    <h4 class="text-uppercase font-weight-bold"><?=$aza?></h4>
+                </div>
+                <button type="button" class="pum-close popmake-close close" data-dismiss="modal">&times;</button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body">
+                <p class="ps text-uppercase font-weight-bold"><?=$acsia->$mlang;?></p>
+                <form id='akciaForm' action="<?=WWW_BASE_PATH?>participate" method="post">
+                    <input type="hidden" name="id" value="<?=$acsia->id;?>"/>
+                    <input type="hidden" name="leadtype" value="curs"/>
+                    <input type="hidden" name="returnto" value="/"/>
+                    <div class="form-price">
+                        <div class="form-content fd-rever">
+                            <div class="left">
+                                <div class="form-group">
+                                    <label><?=l('name')?>*</label>
+                                    <span class="wpcf7-form-control-wrap text-923">
+						<input type="text" name="name" value="" size="40"
+                               class="form-control wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
+                               required="required">
 					    </span>
-					</div>
-					<div class="form-group">
-					    <label><?=l('lastname');?>*</label>
-					    <span class="wpcf7-form-control-wrap text-923">
-						<input type="text" name="lname" value="" size="40" class="form-control wpcf7-form-control wpcf7-text wpcf7-validates-as-required" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <label><?=l('lastname');?>*</label>
+                                    <span class="wpcf7-form-control-wrap text-923">
+						<input type="text" name="lname" value="" size="40"
+                               class="form-control wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
+                               required="required">
 					    </span>
-					</div>
-					<div class="form-group">
-					    <label>Е-mail</label>
-					    <span class="wpcf7-form-control-wrap text-923">
-						<input type="text" name="email" value="" size="40" class="form-control wpcf7-form-control wpcf7-text wpcf7-validates-as-required" >
+                                </div>
+                                <div class="form-group">
+                                    <label>Е-mail</label>
+                                    <span class="wpcf7-form-control-wrap text-923">
+						<input type="text" name="email" value="" size="40"
+                               class="form-control wpcf7-form-control wpcf7-text wpcf7-validates-as-required">
 					    </span>
-					</div>
-					<div class="form-group">
-					    <label>Телефон*</label>
-					    <span class="wpcf7-form-control-wrap tel-744">
-						<input type="tel" name="phone" value="" size="40" class="form-control wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required" required="required" placeholder="+38 ( _ _ _ ) _ _ _ _ _ _ _">
+                                </div>
+                                <div class="form-group">
+                                    <label>Телефон*</label>
+                                    <span class="wpcf7-form-control-wrap tel-744">
+						<input type="tel" name="phone" value="" size="40"
+                               class="form-control wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required"
+                               required="required" placeholder="+38 ( _ _ _ ) _ _ _ _ _ _ _">
 					    </span>
-					</div>
-					<div class="form-check">
+                                </div>
+                                <div class="form-check">
 					    <span class="checkbox-style">
 						<span class="style-chec">
 						    <input name="ppate" type="checkbox" id="checkbox-id" class="form-check-input">
 						</span>
 						<label class="form-check-label lad-chec" for="checkbox-id"><b><?=l('uvedomit')?></b></label>
 					    </span>
-					</div>
-					<div class="right-block">
-					    <div class="block-right-form">
-						<p></p>
-						<!--div class="left_"><span><?=l('sdtext')?></span> <b> <?=date('d.m.Y',strtotime($acsia->start))?></b></div-->
-						<?php if($acsia->action=="Y"){?>
-						<div class="right"><span><?=l('vartist')?></span> <b><?=$acsia->ac_coast?> грн</b></div>
-						<?php }else{?>
-						<div class="right"><?=l('ccoact')?> <b><?=$acsia->coast?> грн</b></div>
-						<?php }?>
-						<p></p>
-					    </div>
-					    <p><span class="block-right-span">*<?=l('uvag1')?></span></p>
-					</div>
-				    </div>
+                                </div>
+                                <div class="right-block">
+                                    <div class="block-right-form">
+                                        <p></p>
+                                        <!--div class="left_"><span><?=l('sdtext')?></span> <b> <?=date('d.m.Y',strtotime($acsia->start))?></b></div-->
+                                        <?php if($acsia->action=="Y"){?>
+                                        <div class="right"><span><?=l('vartist')?></span> <b><?=$acsia->ac_coast?>
+                                            грн</b></div>
+                                        <?php }else{?>
+                                        <div class="right"><?=l('ccoact')?> <b><?=$acsia->coast?> грн</b></div>
+                                        <?php }?>
+                                        <p></p>
+                                    </div>
+                                    <p><span class="block-right-span">*<?=l('uvag1')?></span></p>
+                                </div>
+                            </div>
 
-				</div>
-				<button type="submit" value="<?=l('calback_btn')?>" class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold m-auto w-auto px-4 wpcf7-form-control wpcf7-submit"><?=l('btnzapis')?>*</button>
-				* <?=l("pdrd")?>
-				<span class="ajax-loader"></span>
-			    </div>
-			</form>
-		    </div>
-		</div>
-	    </div>
-
-
-	    <!-- 	    <div class="modal-dialog modal-dialog-centered modal-xl">
-			    <div class="modal-content"> -->
-
-	    <!-- Modal Header -->
-	    <!-- 		    <div class="modal-header">
-				    <h4 class="title modal-title"><?=$aza?></h4>
-				    <button type="button" class="pum-close popmake-close close" data-dismiss="modal">&times;</button>
-				</div> -->
-	    <!-- Modal body -->
-	    <!-- 		    <div class="modal-body">
-				    <form action="<?=WWW_BASE_PATH?>participate" method="post">
-					<input type="hidden" name="id" value="<?=$acsia->id?>">
-					<div class="form-price">
-					    <p class="ps"><?=$acsia->$mlang?></p>
-					    <div class="form-content fd-rever">
-						<div class="left">
-						    <label>Имя*</label>
-						    <span class="wpcf7-form-control-wrap text-923">
-							<input type="text" name="name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" required="required" >
-						    </span><br>
-						    <label>Фамилия*</label>
-						    <span class="wpcf7-form-control-wrap text-923">
-							<input type="text" name="lname" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" required="required">
-						    </span><br>
-						    <label>Е-mail*</label>
-						    <span class="wpcf7-form-control-wrap email-362"><input type="email" name="email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email" required='required'>
-						    </span><br>
-						    <label>Телефон*</label>
-						    <span class="wpcf7-form-control-wrap tel-744">
-							<input type="tel" name="phone" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required" required="required" placeholder="+38 ( _ _ _ ) _ _ _ _ _ _ _">
-						    </span><br>
-
-						    <span class="checkbox-style">
-							<label class="lad-chec" for="checkbox-id">
-							    <span class="style-chec">
-								<input type="checkbox" id="checkbox-id">
-							    </span>
-							    <b>Получать уведомления об акциях и скидках школы</b></label>
-						    </span>
-
-						    <p></p>
-						</div>
-						<div class="right-block">
-						    <div class="block-right-form">
-							<div class="left_"><span>Дата старта</span><b>с <?=date('d-m-Y',strtotime($acsia->start));?></b></div>
-							<div class="right"><span>Стоимость со<br> скидкой:</span><b><?=$acsia->ac_coast?> грн</b></div>
-							<p></p></div>
-						    <p><span class="block-right-span">*О точной дате начала курса мы оповестим лично</span>
-						    </p></div>
-					    </div>
-					    <p><button type="submit" value="<?=l('btnzapis')?>" class="wpcf7-form-control wpcf7-submit"><?=l('btnzapis')?>*</button>
-						* <?=l("pdrd")?>
-						<span class="ajax-loader"></span>
-					    </p></div>
-				    </form>
-				</div>
+                        </div>
+                        <button type="submit" value="<?=l('calback_btn')?>"
+                                class="btn btn-warning btn-lg btn-block text-uppercase font-weight-bold m-auto w-auto px-4 wpcf7-form-control wpcf7-submit"><?=l('btnzapis')?>
+                            *
+                        </button>
+                        * <?=l("pdrd")?>
+                        <span class="ajax-loader"></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
 
-			    </div>
-			</div> -->
-	</div>
-    </body>
+    <!-- 	    <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content"> -->
 
-    <!-- js library -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
-    <!-- new carousel by ing -->
-    <script>
-    
-    $(function() {
-   $('.wpcf7-tel').mask('+38(000)000-00-00');
-        });
+    <!-- Modal Header -->
+    <!-- 		    <div class="modal-header">
+                <h4 class="title modal-title"><?=$aza?></h4>
+                <button type="button" class="pum-close popmake-close close" data-dismiss="modal">&times;</button>
+            </div> -->
+    <!-- Modal body -->
+    <!-- 		    <div class="modal-body">
+                <form action="<?=WWW_BASE_PATH?>participate" method="post">
+                <input type="hidden" name="id" value="<?=$acsia->id?>">
+                <div class="form-price">
+                    <p class="ps"><?=$acsia->$mlang?></p>
+                    <div class="form-content fd-rever">
+                    <div class="left">
+                        <label>Имя*</label>
+                        <span class="wpcf7-form-control-wrap text-923">
+                        <input type="text" name="name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" required="required" >
+                        </span><br>
+                        <label>Фамилия*</label>
+                        <span class="wpcf7-form-control-wrap text-923">
+                        <input type="text" name="lname" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" required="required">
+                        </span><br>
+                        <label>Е-mail*</label>
+                        <span class="wpcf7-form-control-wrap email-362"><input type="email" name="email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email" required='required'>
+                        </span><br>
+                        <label>Телефон*</label>
+                        <span class="wpcf7-form-control-wrap tel-744">
+                        <input type="tel" name="phone" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required" required="required" placeholder="+38 ( _ _ _ ) _ _ _ _ _ _ _">
+                        </span><br>
 
-            $(window).scroll(function () {
-                if ($(this).scrollTop() != 0) {
-                    $('#to-top').fadeIn();
-                } else {
-                    $('#to-top').fadeOut();
+                        <span class="checkbox-style">
+                        <label class="lad-chec" for="checkbox-id">
+                            <span class="style-chec">
+                            <input type="checkbox" id="checkbox-id">
+                            </span>
+                            <b>Получать уведомления об акциях и скидках школы</b></label>
+                        </span>
+
+                        <p></p>
+                    </div>
+                    <div class="right-block">
+                        <div class="block-right-form">
+                        <div class="left_"><span>Дата старта</span><b>с <?=date('d-m-Y',strtotime($acsia->start));?></b></div>
+                        <div class="right"><span>Стоимость со<br> скидкой:</span><b><?=$acsia->ac_coast?> грн</b></div>
+                        <p></p></div>
+                        <p><span class="block-right-span">*О точной дате начала курса мы оповестим лично</span>
+                        </p></div>
+                    </div>
+                    <p><button type="submit" value="<?=l('btnzapis')?>" class="wpcf7-form-control wpcf7-submit"><?=l('btnzapis')?>*</button>
+                    * <?=l("pdrd")?>
+                    <span class="ajax-loader"></span>
+                    </p></div>
+                </form>
+            </div>
+
+
+            </div>
+        </div> -->
+</div>
+</body>
+
+<!-- js library -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+<!-- new carousel by ing -->
+<script>
+    $(window).scroll(function () {
+        if ($(this).scrollTop() != 0) {
+            $('#to-top').fadeIn();
+        } else {
+            $('#to-top').fadeOut();
+        }
+    });
+
+    $('#to-top').click(function () {
+        $('body,html').animate({scrollTop: 0}, "fast");
+    });
+    $(document).ready(function () {
+        $('.graduates').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 1500,
+            arrows: true,
+            dots: false,
+            pauseOnHover: false,
+            responsive: [{
+                breakpoint: 1920,
+                settings: {
+                    slidesToShow: 3
                 }
-            });
-
-            $('#to-top').click(function () {
-                $('body,html').animate({scrollTop: 0}, "fast");
-            });
-            $(document).ready(function () {
-                $('.graduates').slick({
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
-                    autoplay: true,
-                    autoplaySpeed: 1500,
+            }, {
+                breakpoint: 1400,
+                settings: {
+                    slidesToShow: 2
+                }
+            }, {
+                breakpoint: 813,
+                settings: {
+                    slidesToShow: 2,
+                    arrows: false
+                }
+            }, {
+                breakpoint: 520,
+                settings: {
+                    slidesToShow: 1,
+                    arrows: false
+                }
+            }]
+        });
+    });
+</script>
+<script>
+    $('.trainingvideos').slick({
+        centerMode: true,
+        centerPadding: '24%',
+        slidesToShow: 1,
+        arrows: true,
+        responsive: [
+            {
+                breakpoint: 1690,
+                settings: {
                     arrows: true,
-                    dots: false,
-                    pauseOnHover: false,
-                    responsive: [{
-                            breakpoint: 1920,
-                            settings: {
-                                slidesToShow: 3
-                            }
-                        }, {
-                            breakpoint: 1400,
-                            settings: {
-                                slidesToShow: 2
-                            }
-                        }, {
-                            breakpoint: 813,
-                            settings: {
-                                slidesToShow: 2,
-                                arrows: false
-                            }
-                        }, {
-                            breakpoint: 520,
-                            settings: {
-                                slidesToShow: 1,
-                                arrows: false
-                            }
-                        }]
+                    centerMode: true,
+                    centerPadding: '22%',
+                    slidesToShow: 1
+                }
+            },
+            {
+                breakpoint: 1400,
+                settings: {
+                    arrows: true,
+                    centerMode: true,
+                    centerPadding: '20%',
+                    slidesToShow: 1
+                }
+            },
+            {
+                breakpoint: 1080,
+                settings: {
+                    arrows: true,
+                    centerMode: true,
+                    centerPadding: '15%',
+                    slidesToShow: 1
+                }
+            },
+            {
+                breakpoint: 900,
+                settings: {
+                    arrows: true,
+                    centerMode: true,
+                    centerPadding: '80px',
+                    slidesToShow: 1
+                }
+            },
+            {
+                breakpoint: 736,
+                settings: {
+                    arrows: true,
+                    centerMode: true,
+                    centerPadding: '20px',
+                    slidesToShow: 1
+                }
+            },
+            {
+                breakpoint: 640,
+                settings: {
+                    arrows: true,
+                    centerMode: true,
+                    centerPadding: '0px',
+                    slidesToShow: 1
+                }
+            }
+        ]
+    });
+</script>
+<!-- / -->
+<script>
+    $(function () {
+        var nua = navigator.userAgent
+        var isAndroid = (nua.indexOf('Mozilla/5.0') > -1 && nua.indexOf('Android ') > -1 && nua.indexOf('AppleWebKit') > -1 && nua.indexOf('Chrome') === -1)
+        if (isAndroid) {
+            $('select.form-control').removeClass('form-control').css('width', '100%')
+        }
+    })
+</script>
+<script>
+    $(document).ready(function () {
+        var currentId;
+        var curlang = '<?=$_SESSION["lang"];?>';
+        console.log(curlang);
+        $('.ls').removeClass('active');
+        $('[lang="' + curlang.toLowerCase() + '"]').addClass('active');
+        var language = (curlang || navigator.language || navigator.browserLanguage).split('-')[0];
+        if (!currentId) {
+            $('#lanSel').attr('lang', language);
+        }
+        ;
+
+        $('.ls').on('click',
+            function (e) {
+                e.preventDefault();
+                console.log(this);
+                var langage = ($(this).attr('lang')); // do stuff
+                //$('#lanSel').attr('lang', langage);
+                $.ajax({
+                    url: "<?php echo WWW_BASE_PATH;?>lang",
+                    cache: false,
+                    type: "POST",
+                    data: 'curlang=' + langage,
+
+                }).done(function (data) {
+                    console.log(data);
+
+                    window.location.reload();
+
                 });
             });
-    </script>
-    <script>
-        $('.trainingvideos').slick({
-            centerMode: true,
-            centerPadding: '24%',
-            slidesToShow: 1,
-            arrows: true,
-            responsive: [
-                {
-                    breakpoint: 1690,
-                    settings: {
-                        arrows: true,
-                        centerMode: true,
-                        centerPadding: '22%',
-                        slidesToShow: 1
-                    }
-                },
-                {
-                    breakpoint: 1400,
-                    settings: {
-                        arrows: true,
-                        centerMode: true,
-                        centerPadding: '20%',
-                        slidesToShow: 1
-                    }
-                },
-                {
-                    breakpoint: 1080,
-                    settings: {
-                        arrows: true,
-                        centerMode: true,
-                        centerPadding: '15%',
-                        slidesToShow: 1
-                    }
-                },
-                {
-                    breakpoint: 900,
-                    settings: {
-                        arrows: true,
-                        centerMode: true,
-                        centerPadding: '80px',
-                        slidesToShow: 1
-                    }
-                },
-                {
-                    breakpoint: 736,
-                    settings: {
-                        arrows: true,
-                        centerMode: true,
-                        centerPadding: '20px',
-                        slidesToShow: 1
-                    }
-                },
-                {
-                    breakpoint: 640,
-                    settings: {
-                        arrows: true,
-                        centerMode: true,
-                        centerPadding: '0px',
-                        slidesToShow: 1
-                    }
-                }
-            ]
-        });
-    </script>
-    <!-- / -->
-    <script>
-        $(function () {
-            var nua = navigator.userAgent
-            var isAndroid = (nua.indexOf('Mozilla/5.0') > -1 && nua.indexOf('Android ') > -1 && nua.indexOf('AppleWebKit') > -1 && nua.indexOf('Chrome') === -1)
-            if (isAndroid) {
-                $('select.form-control').removeClass('form-control').css('width', '100%')
-            }
-        })
-    </script>
-    <script>
-        $(document).ready(function () {
-            var currentId;
-            var curlang = '<?=$_SESSION["lang"];?>';
-            console.log(curlang);
-            $('.ls').removeClass('active');
-            $('[lang="' + curlang.toLowerCase() + '"]').addClass('active');
-            var language = (curlang || navigator.language || navigator.browserLanguage).split('-')[0];
-            if (!currentId) {
-                $('#lanSel').attr('lang', language);
-            }
-            ;
+    });
 
-            $('.ls').on('click',
-                    function (e)
-                    {
-                        e.preventDefault();
-                        console.log(this);
-                        var langage = ($(this).attr('lang')); // do stuff
-                        //$('#lanSel').attr('lang', langage);
-                        $.ajax({
-                            url: "<?php echo WWW_BASE_PATH;?>lang",
-                            cache: false,
-                            type: "POST",
-                            data: 'curlang=' + langage,
-
-                        }).done(function (data) {
-                            console.log(data);
-
-                            window.location.reload();
-
-                        });
-                    });
-        });
-
-    </script>
+</script>
 
 </html>

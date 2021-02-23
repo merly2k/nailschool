@@ -1,799 +1,1141 @@
 <html>
-    <head>
-	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes, user-scalable=no">
-	<title>Ногтевой Сервис - сеть учебных центров</title>
-        <?php $meta= metatags();echo $meta;?>
-	<meta name="robots" content="noindex,follow">
-
-	<link rel="stylesheet" href="<?=WWW_CSS_PATH?>bootstrap.min.css">
-	<link rel="stylesheet" href="<?=WWW_CSS_PATH?>main.css">
-	<link rel="alternate" type="application/rss+xml" title="Nails School » Лента" href="<?=WWW_BASE_PATH?>feed/">
-	<link rel="alternate" type="application/rss+xml" title="Nails School » Лента комментариев" href="<?=WWW_BASE_PATH?>comments/feed/">
-	<link rel="stylesheet" id="wp-block-library-css" href="<?=WWW_CSS_PATH?>style.css" type="text/css" media="all">
-	<link rel="stylesheet" id="contact-form-7-css" href="<?=WWW_CSS_PATH?>styles.css" type="text/css" media="all">
-	<link rel="stylesheet" id="fancybox-css" href="<?=WWW_CSS_PATH?>fancybox.css" type="text/css" media="all">
-	<!--[if lt IE 9]>
-	<link rel='stylesheet' id='fancybox-ie-css'  href='<?=WWW_BASE_PATH?>wp-content/plugins/fancybox-for-wordpress/assets/css/fancybox.ie.css?ver=1.3.4' type='text/css' media='all' />
-	<![endif]-->
-	<link rel="stylesheet" id="bodhi-svgs-attachment-css" href="<?=WWW_CSS_PATH?>svgs-attachment.css" type="text/css" media="all">
-	<link rel="stylesheet" id="popup-maker-site-css" href="<?=WWW_CSS_PATH?>site.css" type="text/css" media="all">
-	<style id="popup-maker-site-inline-css" type="text/css">
-	    /* Popup Google Fonts */
-	    @import url('//fonts.googleapis.com/css?family=Montserrat|Acme');
-
-	    /* Popup Theme 83: Тема по умолчанию */
-	    .pum-theme-83, .pum-theme-tema-po-umolchaniyu {  }
-	    .pum-theme-83 .pum-container, .pum-theme-tema-po-umolchaniyu .pum-container { padding: 25px; border-radius: 16px; border: 1px none #000000; box-shadow: 0px 1px 0px 0px rgba( 2, 2, 2, 0.23 ) inset; background-color: rgba( 255, 255, 255, 1.00 ) }
-	    .pum-theme-83 .pum-title, .pum-theme-tema-po-umolchaniyu .pum-title { color: #000000; text-align: left; text-shadow: 0px 0px 0px rgba( 2, 2, 2, 1.00 ); font-family: Sans-Serif; font-size: 32px; line-height: 36px }
-	    .pum-theme-83 .pum-content, .pum-theme-tema-po-umolchaniyu .pum-content { color: #8c8c8c; font-family: inherit }
-	    .pum-theme-83 .pum-content + .pum-close, .pum-theme-tema-po-umolchaniyu .pum-content + .pum-close { position: absolute; height: auto; width: auto; left: auto; right: 0px; bottom: auto; top: 1px; padding: 13px; color: #fb4a87; font-family: inherit; font-size: 18px; line-height: 14px; border: 1px none #ffffff; border-radius: 0px; box-shadow: 0px 0px 0px 0px rgba( 2, 2, 2, 0.23 ); text-shadow: 0px 0px 0px rgba( 0, 0, 0, 0.23 ) }
-
-	    /* Popup Theme 86: Hello Box */
-	    .pum-theme-86, .pum-theme-hello-box { background-color: rgba( 0, 0, 0, 0.75 ) }
-	    .pum-theme-86 .pum-container, .pum-theme-hello-box .pum-container { padding: 30px; border-radius: 80px; border: 14px solid #81d742; box-shadow: 0px 0px 0px 0px rgba( 2, 2, 2, 0.00 ); background-color: rgba( 255, 255, 255, 1.00 ) }
-	    .pum-theme-86 .pum-title, .pum-theme-hello-box .pum-title { color: #2d2d2d; text-align: left; text-shadow: 0px 0px 0px rgba( 2, 2, 2, 0.23 ); font-family: Montserrat; font-size: 32px; line-height: 36px }
-	    .pum-theme-86 .pum-content, .pum-theme-hello-box .pum-content { color: #2d2d2d; font-family: inherit }
-	    .pum-theme-86 .pum-content + .pum-close, .pum-theme-hello-box .pum-content + .pum-close { position: absolute; height: auto; width: auto; left: auto; right: -30px; bottom: auto; top: -30px; padding: 0px; color: #2d2d2d; font-family: inherit; font-size: 32px; line-height: 28px; border: 1px none #ffffff; border-radius: 28px; box-shadow: 0px 0px 0px 0px rgba( 2, 2, 2, 0.23 ); text-shadow: 0px 0px 0px rgba( 0, 0, 0, 0.23 ); background-color: rgba( 255, 255, 255, 1.00 ) }
-
-	    /* Popup Theme 87: Режущий край */
-	    .pum-theme-87, .pum-theme-cutting-edge { background-color: rgba( 0, 0, 0, 0.50 ) }
-	    .pum-theme-87 .pum-container, .pum-theme-cutting-edge .pum-container { padding: 18px; border-radius: 0px; border: 1px none #000000; box-shadow: 0px 10px 25px 0px rgba( 2, 2, 2, 0.50 ); background-color: rgba( 30, 115, 190, 1.00 ) }
-	    .pum-theme-87 .pum-title, .pum-theme-cutting-edge .pum-title { color: #ffffff; text-align: left; text-shadow: 0px 0px 0px rgba( 2, 2, 2, 0.23 ); font-family: Sans-Serif; font-size: 26px; line-height: 28px }
-	    .pum-theme-87 .pum-content, .pum-theme-cutting-edge .pum-content { color: #ffffff; font-family: inherit }
-	    .pum-theme-87 .pum-content + .pum-close, .pum-theme-cutting-edge .pum-content + .pum-close { position: absolute; height: 24px; width: 24px; left: auto; right: 0px; bottom: auto; top: 0px; padding: 0px; color: #1e73be; font-family: inherit; font-size: 32px; line-height: 24px; border: 1px none #ffffff; border-radius: 0px; box-shadow: -1px 1px 1px 0px rgba( 2, 2, 2, 0.10 ); text-shadow: -1px 1px 1px rgba( 0, 0, 0, 0.10 ); background-color: rgba( 238, 238, 34, 1.00 ) }
-
-	    /* Popup Theme 88: Рамка границы */
-	    .pum-theme-88, .pum-theme-framed-border { background-color: rgba( 255, 255, 255, 0.50 ) }
-	    .pum-theme-88 .pum-container, .pum-theme-framed-border .pum-container { padding: 18px; border-radius: 0px; border: 20px outset #dd3333; box-shadow: 1px 1px 3px 0px rgba( 2, 2, 2, 0.97 ) inset; background-color: rgba( 255, 251, 239, 1.00 ) }
-	    .pum-theme-88 .pum-title, .pum-theme-framed-border .pum-title { color: #000000; text-align: left; text-shadow: 0px 0px 0px rgba( 2, 2, 2, 0.23 ); font-family: inherit; font-size: 32px; line-height: 36px }
-	    .pum-theme-88 .pum-content, .pum-theme-framed-border .pum-content { color: #2d2d2d; font-family: inherit }
-	    .pum-theme-88 .pum-content + .pum-close, .pum-theme-framed-border .pum-content + .pum-close { position: absolute; height: 20px; width: 20px; left: auto; right: -20px; bottom: auto; top: -20px; padding: 0px; color: #ffffff; font-family: Acme; font-size: 20px; line-height: 20px; border: 1px none #ffffff; border-radius: 0px; box-shadow: 0px 0px 0px 0px rgba( 2, 2, 2, 0.23 ); text-shadow: 0px 0px 0px rgba( 0, 0, 0, 0.23 ); background-color: rgba( 0, 0, 0, 0.55 ) }
-
-	    /* Popup Theme 84: Light Box */
-	    .pum-theme-84, .pum-theme-lightbox { background-color: rgba( 0, 0, 0, 0.60 ) }
-	    .pum-theme-84 .pum-container, .pum-theme-lightbox .pum-container { padding: 18px; border-radius: 3px; border: 8px solid #000000; box-shadow: 0px 0px 30px 0px rgba( 2, 2, 2, 1.00 ); background-color: rgba( 255, 255, 255, 1.00 ) }
-	    .pum-theme-84 .pum-title, .pum-theme-lightbox .pum-title { color: #000000; text-align: left; text-shadow: 0px 0px 0px rgba( 2, 2, 2, 0.23 ); font-family: inherit; font-size: 32px; line-height: 36px }
-	    .pum-theme-84 .pum-content, .pum-theme-lightbox .pum-content { color: #000000; font-family: inherit }
-	    .pum-theme-84 .pum-content + .pum-close, .pum-theme-lightbox .pum-content + .pum-close { position: absolute; height: 30px; width: 30px; left: auto; right: -24px; bottom: auto; top: -24px; padding: 0px; color: #ffffff; font-family: inherit; font-size: 24px; line-height: 26px; border: 2px solid #ffffff; border-radius: 30px; box-shadow: 0px 0px 15px 1px rgba( 2, 2, 2, 0.75 ); text-shadow: 0px 0px 0px rgba( 0, 0, 0, 0.23 ); background-color: rgba( 0, 0, 0, 1.00 ) }
-
-	    /* Popup Theme 85: Enterprise Blue */
-	    .pum-theme-85, .pum-theme-enterprise-blue { background-color: rgba( 0, 0, 0, 0.70 ) }
-	    .pum-theme-85 .pum-container, .pum-theme-enterprise-blue .pum-container { padding: 28px; border-radius: 5px; border: 1px none #000000; box-shadow: 0px 10px 25px 4px rgba( 2, 2, 2, 0.50 ); background-color: rgba( 255, 255, 255, 1.00 ) }
-	    .pum-theme-85 .pum-title, .pum-theme-enterprise-blue .pum-title { color: #315b7c; text-align: left; text-shadow: 0px 0px 0px rgba( 2, 2, 2, 0.23 ); font-family: inherit; font-size: 34px; line-height: 36px }
-	    .pum-theme-85 .pum-content, .pum-theme-enterprise-blue .pum-content { color: #2d2d2d; font-family: inherit }
-	    .pum-theme-85 .pum-content + .pum-close, .pum-theme-enterprise-blue .pum-content + .pum-close { position: absolute; height: 28px; width: 28px; left: auto; right: 8px; bottom: auto; top: 8px; padding: 4px; color: #ffffff; font-family: inherit; font-size: 20px; line-height: 20px; border: 1px none #ffffff; border-radius: 42px; box-shadow: 0px 0px 0px 0px rgba( 2, 2, 2, 0.23 ); text-shadow: 0px 0px 0px rgba( 0, 0, 0, 0.23 ); background-color: rgba( 49, 91, 124, 1.00 ) }
-
-	    #pum-813 {z-index: 1999999999}
-	    #pum-808 {z-index: 1999999999}
-	    #pum-802 {z-index: 1999999999}
-	    .carousel-inner > .carousel-item{
-		margin: auto;
-		width: 100%; /* use this, or not */
-	    }
-	    .col-centered{float: none;
-			  margin: 0 auto;}
-	    </style>
-	    <style type="text/css">
-	    div.fancybox-caption{display:none !important;}
-
-	    img.fancybox-image{border-width:10px;border-color:#FFFFFF;border-style:solid;height:auto;}
-	    div.fancybox-bg{background-color:rgba(102,102,102,0.3);opacity:1 !important;}div.fancybox-content{border-color:#FFFFFF}
-	    div#fancybox-title{background-color:#FFFFFF}
-	    div.fancybox-content{background-color:#FFFFFF}
-	    div#fancybox-title-inside{color:#333333}
-
-
-
-	    div.fancybox-caption p.caption-title{display:inline-block}
-	    div.fancybox-caption p.caption-title{font-size:14px}
-	    div.fancybox-caption p.caption-title{color:#333333}
-	    div.fancybox-caption {color:#333333}div.fancybox-caption p.caption-title {background:#fff; width:auto;padding:10px 30px;}
-
-
-
-
-
-
-	    @media (min-width: 768px) {
-
-		/* show 3 items */
-		.clideg .active,
-		.clideg .active + .carousel-item,
-		.clideg .active + .carousel-item + .carousel-item,
-		.clideg .active + .carousel-item + .carousel-item + .carousel-item  {
-		    display: block;
-		}
-
-		.clideg .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
-		.clideg .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item,
-		.clideg .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item,
-		.clideg .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item + .carousel-item {
-		    transition: none;
-		}
-
-		.clideg .carousel-item-next,
-		.clideg .carousel-item-prev {
-		    position: relative;
-		    transform: translate3d(0, 0, 0);
-		}
-
-		.clideg .active.carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
-		    position: absolute;
-		    top: 0;
-		    right: -25%;
-		    z-index: -1;
-		    display: block;
-		    visibility: visible;
-		}
-
-		/* left or forward direction */
-		.active.carousel-item-left + .carousel-item-next.carousel-item-left,
-		.carousel-item-next.carousel-item-left + .carousel-item,
-		.carousel-item-next.carousel-item-left + .carousel-item + .carousel-item,
-		.carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item,
-		.carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
-		    position: relative;
-		    transform: translate3d(-100%, 0, 0);
-		    visibility: visible;
-		}
-
-		/* farthest right hidden item must be abso position for animations */
-		.clideg .carousel-item-prev.carousel-item-right {
-		    position: absolute;
-		    top: 0;
-		    left: 0;
-		    z-index: -1;
-		    display: block;
-		    visibility: visible;
-		}
-
-		/* right or prev direction */
-		.active.carousel-item-right + .carousel-item-prev.carousel-item-right,
-		.carousel-item-prev.carousel-item-right + .carousel-item,
-		.carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
-		.carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item,
-		.carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
-		    position: relative;
-		    transform: translate3d(100%, 0, 0);
-		    visibility: visible;
-		    display: block;
-		    visibility: visible;
-		}
-
-	    }
-
-
-	</style>
-	<meta name="generator" content="3f framework by MerlinSoft inc">
-	<link rel="canonical" href="<?=WWW_BASE_PATH?>">
-	<link rel="shortlink" href="<?=WWW_BASE_PATH?>">
-	<style type="text/css">
-	    @media (min-width: 1681px) {
 
-		body {
-		    position: absolute;
-		    top: -10rem;
-		    -webkit-transform:scale(1);
-		    -moz-transform:scale(1);
-		    -ms-transform:scale(1);
-		    -o-transform:scale(1);
-		    transform:scale(1);
-
-
-		}
-
-	    }
-	    /*
-	      ##Device = Desktops
-	      ##Screen = 1281px to higher resolution desktops
-	    */
-
-	    @media (min-width: 1281px) {
-
-		body {
-		    position: absolute;
-		    top: -10rem;
-		    -webkit-transform:scale(0.67);
-		    -moz-transform:scale(0.67);
-		    -ms-transform:scale(0.67);
-		    -o-transform:scale(0.67);
-		    transform:scale(0.67);
-
-
-		}
-
-	    }
-
-	    /*
-	      ##Device = Laptops, Desktops
-	      ##Screen = B/w 1025px to 1280px
-	    */
-
-	    @media (min-width: 1025px) and (max-width: 1280px) {
-
-		//CSS
-
-	    }
-
-	    /*
-	      ##Device = Tablets, Ipads (portrait)
-	      ##Screen = B/w 768px to 1024px
-	    */
-
-	    @media (min-width: 768px) and (max-width: 1024px) {
-
-		//CSS
-
-	    }
-
-	    /*
-	      ##Device = Tablets, Ipads (landscape)
-	      ##Screen = B/w 768px to 1024px
-	    */
-
-	    @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-
-		//CSS
-
-	    }
-
-	    /*
-	      ##Device = Low Resolution Tablets, Mobiles (Landscape)
-	      ##Screen = B/w 481px to 767px
-	    */
-
-	    @media (min-width: 481px) and (max-width: 767px) {
-
-		//CSS
-
-	    }
-
-	    /*
-	      ##Device = Most of the Smartphones Mobiles (Portrait)
-	      ##Screen = B/w 320px to 479px
-	    */
-
-	    @media (min-width: 320px) and (max-width: 480px) {
-
-		//CSS
-
-	    }
-	</style>
-    </head>
-
-    <body class="home page-template-default page page-id-532 singular image-filters-enabled">
-
-
-	<div id="content" class="site-content">
-
-
-
-	    <section id="primary" class="content-area">
-		<main id="main" class="site-main">
-
-
-		    <article id="post-532" class="post-532 page type-page status-publish hentry entry">
-			<header class="entry-header">
-
-			    <h1 class="entry-title"><?=l('m1');?></h1>
-			</header>
-
-			<div class="entry-content">
-			    <div class="main"><header class="header-index">
-				    <div class="container">
-					<div class="row header-top">
-					    <nav class="index-menu">
-						<ul class="menu">
-						    <li><a href="<?=WWW_BASE_PATH?>"><?=l('m1');?></a></li>
-						    <li><a class="ab" href="#about"><?=l('m2');?></a></li>
-						    <li><a class="na" href="#towns"><?=l('m3');?></a></li>
-						    <li><a class="po" href="#whuour"><?=l('m4');?></a></li>
-						    <li><a class="uch" href="#video"><?=l('m5');?></a></li>
-						    <li><a class="ot" href="#fidback"><?=l('m6');?></a></li>
-						</ul>
-					    </nav>
-					    <div class="dropdown">
-						<span class="non-mob"><?=l('m7');?></span>
-						<div class="show-mob">
-						    <b class="mob-gam"><span></span><span></span><span></span></b>
-						</div>
-						<ul class="dropdown-menu">
-						    <?=$otherTown?>
-						</ul>
-					    </div>
-					    <p> </p>
-					    <ol class="breadcrumb lang-list">
-						<li class="breadcrumb-item">
-						    <a class="lang-list__item ls" lang="UA"> Укр</a>
-						</li>
-						<li class="breadcrumb-item">
-						    <a class="lang-list__item ls" lang="RU">Рус</a>
-						</li>
-					    </ol>
-					</div>
-				    </div>
-				</header><section class="banner">
-				    <div class="container">
-					<div class="row">
-					    <div class="col-12 col-xl-6">
-
-						<img class="logo m-auto m-xl-0" src="<?=WWW_IMG_PATH?>logo.svg" alt="">
-						<div class="standart">
-						    <h1 class="gradient-text headline text-center"><?=l('hh1')?></h1>
-						    <p class="headline__title text-center text-xl-left"><?=l('u1');?></p>
-
-						    <div class="row proz_ ">
-							<div class="col-12 col-sm-6 d-flex align-items-center about-course">
-
-							    <img class="about-course__img" src="<?=WWW_IMG_PATH?>kalendar.svg" alt="">
-							    <p class="about-course__text"><?=l('m9')?></p>
-
-							</div>
-							<div class="col-12 col-sm-6 d-flex align-items-center about-course">
-
-							    <img class="about-course__img" src="<?=WWW_IMG_PATH?>people.svg" alt="">
-							    <p class="about-course__text"><?=l('r2')?></p>
-
-							</div>
-							<div class="col-12 col-sm-6 d-flex align-items-center about-course">
-
-							    <img class="about-course__img" src="<?=WWW_IMG_PATH?>krema.svg" alt="">
-							    <p class="about-course__text"><?=l('r3');?></strong></p>
-
-							</div>
-							<div class="col-12 col-sm-6 d-flex align-items-center about-course">
-
-							    <img class="about-course__img" src="<?=WWW_IMG_PATH?>certificate.svg" alt="">
-							    <p class="about-course__text"><?=l('r4');?></p>
-							</div>
-						    </div>
-						</div>
-					    </div>
-					</div>
-				    </div>
-				</section>
-				<section class="close-course">
-				    <div class="container">
-					<div class="row">
-					    <?=$randAction?>
-					    <img class="close-course__img" src="<?=WWW_IMG_PATH?>girl.png" alt="">
-
-					</div>
-				    </div>
-				</section>
-				<section id="ab" class="be-first">
-				    <div class="container">
-					<div class="row">
-					    <div class="col-12 number-one">
-						<a id='about'></a>
-						<img class="" src="<?=WWW_IMG_PATH?>number-one.jpg" alt="">
-						<?=SBl(1,$lang);?>
-					    </div>
-					    <div id="na" class="col-12 cities-courses"><a id='towns'></a>
-						<h2 class="section-title"><?=l('r5');?></h2>
-						<div class="all-cities">
-						    <?=$townItem;?>
-						</div>
-					    </div>
-					</div>
-				    </div>
-				</section>
-				<section id="po"><a id='whuour'></a>
-				    <h2 class="section-title"><?=l('r6');?></h2>
-				    <div class="container">
-					<div class="row">
-					    <div class="col-12 col-sm-6 col-lg-4 why-block">
-
-						<img class="why-block__img" src="<?=WWW_IMG_PATH?>sova.svg" alt="">
-						<?=SBl(2,$lang);?>
-					    </div>
-					    <div class="col-12 col-sm-6 col-lg-4 why-block">
-
-						<img class="why-block__img" src="<?=WWW_IMG_PATH?>nagrada.svg" alt="">
-						<?=SBl(3,$lang);?>
-
-					    </div>
-					    <div class="col-12 col-sm-6 col-lg-4 why-block">
-						<img class="why-block__img" src="<?=WWW_IMG_PATH?>people-icon.svg" alt="">
-						<?=SBl(4,$lang);?>
-					    </div>
-					    <div class="col-12 col-sm-6 col-lg-4 why-block">
-						<img class="why-block__img" src="<?=WWW_IMG_PATH?>all.svg" alt="">
-						<?=SBl(5,$lang);?>
-
-					    </div>
-					    <div class="col-12 col-sm-6 col-lg-4 why-block">
-						<img class="why-block__img" src="<?=WWW_IMG_PATH?>gramota.svg" alt="">
-						<?=SBl(6,$lang);?>
-					    </div>
-					    <div class="col-12 col-sm-6 col-lg-4 why-block">
-						<img class="why-block__img" src="<?=WWW_IMG_PATH?>krema.svg" alt="">
-						<?=SBl(7,$lang);?>
-					    </div>
-					</div>
-				    </div>
-				</section>
-				<section id="uch" class="training-videos"><a id='video'></a>
-				    <h2 class="section-title"><?=l('r7');?></h2>
-				    <div class="container">
-					<p class="training-desc-top">Получить более того, есть специальные. И
-					    проектах, ориентированных на кириллице. Латыни и проектах,
-					    ориентированных на руку. Цицерону, ведь именно из его применили в длине
-					    наиболее распространенных слов именно. Вывод, что впервые его трактата о
-					    пределах добра и даже.</p>
-
-				    </div>
-				    <div class="slider slider-videos container">
-
-					<div class="row">
-					    <div id="carouselExampleControls" class="carousel videocarousel slide col-centered" data-ride="carousel" data-interval="false">
-						<div class="carousel-inner">
-						    <?=$video?>
-
-						</div>
-						<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-						    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-						    <span class="sr-only">Previous</span>
-						</a>
-						<a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-						    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-						    <span class="sr-only">Next</span>
-						</a>
-					    </div>
-
-					</div>
-
-
-				    </div>
-
-
-				</section>
-				<section id="ot" class="graduates"><a id="fidback"></a>
-				    <h2 class="section-title"><?=l('r8');?></h2>
-				    <div class="slider carousel">
-					<div class="carousel-inner">
-					    <div class="carousel-item active" >
-						<div class="all-graduates">
-
-						</div>
-					    </div>
-					</div>
-					<!-- Left and right controls -->
-					<a class="carousel-control-prev" href="#demo" data-slide="prev">
-					    <span class="carousel-control-prev-icon"></span>
-					</a>
-					<a class="carousel-control-next" href="#demo" data-slide="next">
-					    <span class="carousel-control-next-icon"></span>
-					</a>
-					<div id="carouselExample01" class="carousel slide" data-ride="carousel" data-interval="9000">
-					    <div class="carousel-inner row w-100 mx-auto" role="listbox">
-						<?=$fidOut;?>
-					    </div>
-					    <a class="carousel-control-prev" href="#carouselExample01" role="button" data-slide="prev">
-						<i class="fa fa-chevron-left fa-lg text-muted"></i>
-						<span class="sr-only">Previous</span>
-					    </a>
-					    <a class="carousel-control-next text-faded" href="#carouselExample01" role="button" data-slide="next">
-						<i class="fa fa-chevron-right fa-lg text-muted"></i>
-						<span class="sr-only">Next</span>
-					    </a>
-					</div>
-				    </div>
-			    </div>
-			    </section>
-			    <div class="container" style="text-align: center; margin-bottom: 15px;"><a class="link-top gradient-text" href="#"><?=l('r9')?></a></div>
-			    <footer class="footer-index">
-				<div class="container">
-				    <div class="row">
-					<?=$tfut;?>
-					<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4">
-
-					    <p class=""><?=l('r10')?>:</p>
-					    <div><img class="link-shop" src="<?=WWW_IMG_PATH?>corz.png" alt="">
-						<a href="http://nails.ua/">«NAILS.UA»»</a></div>
-					</div>
-				    </div>
-				    <p class="copyright">copyright 1999-2018</p>
-
-				</div>
-			    </footer></div>	</div><!-- .entry-content -->
-
-		    </article><!-- #post-532 -->
-
-		</main><!-- #main -->
-	    </section><!-- #primary -->
-
-	</div><!-- #content -->
-	<div id='to-top'><i class="fal fa-caret-circle-up">sssssssss</i></div>
-
-
-
-	<!-- #page -->
-
-
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-	<script src="<?=WWW_JS_PATH?>bootstrap.js"></script>
-	<script type="text/javascript" src="<?=WWW_JS_PATH?>jquery.fancybox.js"></script>
-	<script type="text/javascript" src="<?=WWW_JS_PATH?>scripts.js"></script>
-
-	<script type="text/javascript" src="<?=WWW_JS_PATH?>navigation.js"></script>
-	<script type="text/javascript" src="<?=WWW_JS_PATH?>skip-link-focus-fix.js"></script>
-	<script type="text/javascript" src="<?=WWW_JS_PATH?>position.js"></script>
-	<script type="text/javascript" src="<?=WWW_JS_PATH?>site.js"></script>
-	<script id="dsq-count-scr" src="<?=WWW_JS_PATH?>count.js" async=""></script>
-
-	<script>
-            $(window).scroll(function () {
-                if ($(this).scrollTop() != 0) {
-                    $('#to-top').fadeIn();
-                } else {
-                    $('#to-top').fadeOut();
-                }
-            });
-
-            $('#to-top').click(function () {
-                $('body,html').animate({scrollTop: 0}, "fast");
-            });
-            $(document).ready(function () {
-                $('.open_').click(function () {
-                    $('.open_').hide();
-                    $('.close_').show();
-                    $('.none-mob').show();
-                });
-                $('.close_').click(function () {
-                    $('.none-mob').hide();
-                    $('.open_').show();
-                    $('.close_').hide();
-                });
-
-            });
-	</script>
-	<script>
-            $(document).ready(function () {
-                var curlang = '<?=$_SESSION["lang"];?>';
-                var tutu = '[lang=' + curlang + ']'
-                $(tutu).addClass('active');
-                console.log(tutu);
-                $('.ls').on('click',
-                        function (e)
-                        {
-                            // console.log(this);
-                            var langage = ($(this).attr('lang')); // do stuff
-                            //$('#lanSel').attr('lang', langage);
-                            $.ajax({
-                                url: "<?php echo WWW_BASE_PATH;?>lang",
-                                cache: false,
-                                type: "POST",
-                                data: 'curlang=' + langage,
-                                success: function (data) {
-                                    console.log(data);
-
-                                    window.location.reload();
-
-                                }
-                            });
-                        });
-            });
-
-        </script>
-	<script>
-            var _open = false;
-            $(document).ready(function () {
-                $('.non-mob, .show-mob').on('click', function () {
-                    if (_open == false) {
-                        $(this).siblings(".dropdown-menu").css('display', 'block');
-                        $(this).addClass('active');
-                        _open = true;
-                    } else {
-                        $(".dropdown-menu").css('display', 'none');
-                        $('.non-mob, .show-mob').removeClass('active');
-                        _open = false;
-                    }
-
-                    return false;
-                });
-
-            });
-
-            $(document).click(function (event) {
-                if ($(event.target).closest(".dropdown-menu").length) {
-                    return;
-                }
-                $(".dropdown-menu").css('display', 'none');
-                $('.non-mob, .show-mob').removeClass('active');
-
-                _open = false;
-            });
-
-            /////
-
-            $(function () {
-                $(".videocarousel").on("slide.bs.carousel", function (e) {
-                    var prev = $(this)
-                            .find(".active")
-                            .index();
-                    var next = $(e.relatedTarget).index();
-                    var video = $("#video-player")[0];
-                    var videoSlide = $("#video-player")
-                            .closest(".carousel-item")
-                            .index();
-                    if (next === videoSlide) {
-                        if (video.tagName == "IFRAME") {
-                            player.playVideo();
-                        } else {
-                            createVideo(video);
-                        }
-                    } else {
-                        if (typeof player !== "undefined") {
-                            player.pauseVideo();
-                        }
-                    }
-                });
-            });
-
-            function createVideo(video) {
-                var youtubeScriptId = "youtube-api";
-                var youtubeScript = document.getElementById(youtubeScriptId);
-                var videoId = video.getAttribute("data-video-id");
-
-                if (youtubeScript === null) {
-                    var tag = document.createElement("script");
-                    var firstScript = document.getElementsByTagName("script")[0];
-
-                    tag.src = "https://www.youtube.com/iframe_api";
-                    tag.id = youtubeScriptId;
-                    firstScript.parentNode.insertBefore(tag, firstScript);
-                }
-
-                window.onYouTubeIframeAPIReady = function () {
-                    window.player = new window.YT.Player(video, {
-                        videoId: videoId,
-                        playerVars: {
-                            autoplay: 1,
-                            modestbranding: 1,
-                            rel: 0
-                        }
-                    });
-                };
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes, user-scalable=no">
+    <title>Ногтевой Сервис - сеть учебных центров</title>
+    <?php $meta= metatags();echo $meta;?>
+    <meta name="robots" content="noindex,follow">
+
+    <link rel="stylesheet" href="<?=WWW_CSS_PATH?>bootstrap.min.css">
+    <!--<link rel="stylesheet" href="<?=WWW_CSS_PATH?>main.css">-->
+    <link rel="alternate" type="application/rss+xml" title="Nails School » Лента" href="<?=WWW_BASE_PATH?>feed/">
+    <link rel="alternate" type="application/rss+xml" title="Nails School » Лента комментариев"
+        href="<?=WWW_BASE_PATH?>comments/feed/">
+    <!--<link rel="stylesheet" id="wp-block-library-css" href="<?=WWW_CSS_PATH?>style.css" type="text/css" media="all">-->
+    <!--<link rel="stylesheet" id="contact-form-7-css" href="<?=WWW_CSS_PATH?>styles.css" type="text/css" media="all">
+    <link rel="stylesheet" id="fancybox-css" href="<?=WWW_CSS_PATH?>fancybox.css" type="text/css" media="all">-->
+    <!--[if lt IE 9]>
+    <link rel='stylesheet' id='fancybox-ie-css'
+          href='<?=WWW_BASE_PATH?>wp-content/plugins/fancybox-for-wordpress/assets/css/fancybox.ie.css?ver=1.3.4'
+          type='text/css' media='all'/>
+    <![endif]-->
+    <link rel="stylesheet" id="bodhi-svgs-attachment-css" href="<?=WWW_CSS_PATH?>svgs-attachment.css" type="text/css"
+        media="all">
+    <link rel="stylesheet" id="popup-maker-site-css" href="<?=WWW_CSS_PATH?>site.css" type="text/css" media="all">
+
+    <link rel="stylesheet" id="main-index-css" href="<?=WWW_CSS_PATH?>/pages/index.css" type="text/css" media="all">
+    <style id="popup-maker-site-inline-css" type="text/css">
+        /* Popup Google Fonts */
+        @import url('//fonts.googleapis.com/css?family=Montserrat|Acme');
+
+        /* Popup Theme 83: Тема по умолчанию */
+        .pum-theme-83,
+        .pum-theme-tema-po-umolchaniyu {}
+
+        .pum-theme-83 .pum-container,
+        .pum-theme-tema-po-umolchaniyu .pum-container {
+            padding: 25px;
+            border-radius: 16px;
+            border: 1px none #000000;
+            box-shadow: 0px 1px 0px 0px rgba(2, 2, 2, 0.23) inset;
+            background-color: rgba(255, 255, 255, 1.00)
+        }
+
+        .pum-theme-83 .pum-title,
+        .pum-theme-tema-po-umolchaniyu .pum-title {
+            color: #000000;
+            text-align: left;
+            text-shadow: 0px 0px 0px rgba(2, 2, 2, 1.00);
+            font-family: Sans-Serif;
+            font-size: 32px;
+            line-height: 36px
+        }
+
+        .pum-theme-83 .pum-content,
+        .pum-theme-tema-po-umolchaniyu .pum-content {
+            color: #8c8c8c;
+            font-family: inherit
+        }
+
+        .pum-theme-83 .pum-content+.pum-close,
+        .pum-theme-tema-po-umolchaniyu .pum-content+.pum-close {
+            position: absolute;
+            height: auto;
+            width: auto;
+            left: auto;
+            right: 0px;
+            bottom: auto;
+            top: 1px;
+            padding: 13px;
+            color: #fb4a87;
+            font-family: inherit;
+            font-size: 18px;
+            line-height: 14px;
+            border: 1px none #ffffff;
+            border-radius: 0px;
+            box-shadow: 0px 0px 0px 0px rgba(2, 2, 2, 0.23);
+            text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.23)
+        }
+
+        /* Popup Theme 86: Hello Box */
+        .pum-theme-86,
+        .pum-theme-hello-box {
+            background-color: rgba(0, 0, 0, 0.75)
+        }
+
+        .pum-theme-86 .pum-container,
+        .pum-theme-hello-box .pum-container {
+            padding: 30px;
+            border-radius: 80px;
+            border: 14px solid #81d742;
+            box-shadow: 0px 0px 0px 0px rgba(2, 2, 2, 0.00);
+            background-color: rgba(255, 255, 255, 1.00)
+        }
+
+        .pum-theme-86 .pum-title,
+        .pum-theme-hello-box .pum-title {
+            color: #2d2d2d;
+            text-align: left;
+            text-shadow: 0px 0px 0px rgba(2, 2, 2, 0.23);
+            font-family: Montserrat;
+            font-size: 32px;
+            line-height: 36px
+        }
+
+        .pum-theme-86 .pum-content,
+        .pum-theme-hello-box .pum-content {
+            color: #2d2d2d;
+            font-family: inherit
+        }
+
+        .pum-theme-86 .pum-content+.pum-close,
+        .pum-theme-hello-box .pum-content+.pum-close {
+            position: absolute;
+            height: auto;
+            width: auto;
+            left: auto;
+            right: -30px;
+            bottom: auto;
+            top: -30px;
+            padding: 0px;
+            color: #2d2d2d;
+            font-family: inherit;
+            font-size: 32px;
+            line-height: 28px;
+            border: 1px none #ffffff;
+            border-radius: 28px;
+            box-shadow: 0px 0px 0px 0px rgba(2, 2, 2, 0.23);
+            text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.23);
+            background-color: rgba(255, 255, 255, 1.00)
+        }
+
+        /* Popup Theme 87: Режущий край */
+        .pum-theme-87,
+        .pum-theme-cutting-edge {
+            background-color: rgba(0, 0, 0, 0.50)
+        }
+
+        .pum-theme-87 .pum-container,
+        .pum-theme-cutting-edge .pum-container {
+            padding: 18px;
+            border-radius: 0px;
+            border: 1px none #000000;
+            box-shadow: 0px 10px 25px 0px rgba(2, 2, 2, 0.50);
+            background-color: rgba(30, 115, 190, 1.00)
+        }
+
+        .pum-theme-87 .pum-title,
+        .pum-theme-cutting-edge .pum-title {
+            color: #ffffff;
+            text-align: left;
+            text-shadow: 0px 0px 0px rgba(2, 2, 2, 0.23);
+            font-family: Sans-Serif;
+            font-size: 26px;
+            line-height: 28px
+        }
+
+        .pum-theme-87 .pum-content,
+        .pum-theme-cutting-edge .pum-content {
+            color: #ffffff;
+            font-family: inherit
+        }
+
+        .pum-theme-87 .pum-content+.pum-close,
+        .pum-theme-cutting-edge .pum-content+.pum-close {
+            position: absolute;
+            height: 24px;
+            width: 24px;
+            left: auto;
+            right: 0px;
+            bottom: auto;
+            top: 0px;
+            padding: 0px;
+            color: #1e73be;
+            font-family: inherit;
+            font-size: 32px;
+            line-height: 24px;
+            border: 1px none #ffffff;
+            border-radius: 0px;
+            box-shadow: -1px 1px 1px 0px rgba(2, 2, 2, 0.10);
+            text-shadow: -1px 1px 1px rgba(0, 0, 0, 0.10);
+            background-color: rgba(238, 238, 34, 1.00)
+        }
+
+        /* Popup Theme 88: Рамка границы */
+        .pum-theme-88,
+        .pum-theme-framed-border {
+            background-color: rgba(255, 255, 255, 0.50)
+        }
+
+        .pum-theme-88 .pum-container,
+        .pum-theme-framed-border .pum-container {
+            padding: 18px;
+            border-radius: 0px;
+            border: 20px outset #dd3333;
+            box-shadow: 1px 1px 3px 0px rgba(2, 2, 2, 0.97) inset;
+            background-color: rgba(255, 251, 239, 1.00)
+        }
+
+        .pum-theme-88 .pum-title,
+        .pum-theme-framed-border .pum-title {
+            color: #000000;
+            text-align: left;
+            text-shadow: 0px 0px 0px rgba(2, 2, 2, 0.23);
+            font-family: inherit;
+            font-size: 32px;
+            line-height: 36px
+        }
+
+        .pum-theme-88 .pum-content,
+        .pum-theme-framed-border .pum-content {
+            color: #2d2d2d;
+            font-family: inherit
+        }
+
+        .pum-theme-88 .pum-content+.pum-close,
+        .pum-theme-framed-border .pum-content+.pum-close {
+            position: absolute;
+            height: 20px;
+            width: 20px;
+            left: auto;
+            right: -20px;
+            bottom: auto;
+            top: -20px;
+            padding: 0px;
+            color: #ffffff;
+            font-family: Acme;
+            font-size: 20px;
+            line-height: 20px;
+            border: 1px none #ffffff;
+            border-radius: 0px;
+            box-shadow: 0px 0px 0px 0px rgba(2, 2, 2, 0.23);
+            text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.23);
+            background-color: rgba(0, 0, 0, 0.55)
+        }
+
+        /* Popup Theme 84: Light Box */
+        .pum-theme-84,
+        .pum-theme-lightbox {
+            background-color: rgba(0, 0, 0, 0.60)
+        }
+
+        .pum-theme-84 .pum-container,
+        .pum-theme-lightbox .pum-container {
+            padding: 18px;
+            border-radius: 3px;
+            border: 8px solid #000000;
+            box-shadow: 0px 0px 30px 0px rgba(2, 2, 2, 1.00);
+            background-color: rgba(255, 255, 255, 1.00)
+        }
+
+        .pum-theme-84 .pum-title,
+        .pum-theme-lightbox .pum-title {
+            color: #000000;
+            text-align: left;
+            text-shadow: 0px 0px 0px rgba(2, 2, 2, 0.23);
+            font-family: inherit;
+            font-size: 32px;
+            line-height: 36px
+        }
+
+        .pum-theme-84 .pum-content,
+        .pum-theme-lightbox .pum-content {
+            color: #000000;
+            font-family: inherit
+        }
+
+        .pum-theme-84 .pum-content+.pum-close,
+        .pum-theme-lightbox .pum-content+.pum-close {
+            position: absolute;
+            height: 30px;
+            width: 30px;
+            left: auto;
+            right: -24px;
+            bottom: auto;
+            top: -24px;
+            padding: 0px;
+            color: #ffffff;
+            font-family: inherit;
+            font-size: 24px;
+            line-height: 26px;
+            border: 2px solid #ffffff;
+            border-radius: 30px;
+            box-shadow: 0px 0px 15px 1px rgba(2, 2, 2, 0.75);
+            text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.23);
+            background-color: rgba(0, 0, 0, 1.00)
+        }
+
+        /* Popup Theme 85: Enterprise Blue */
+        .pum-theme-85,
+        .pum-theme-enterprise-blue {
+            background-color: rgba(0, 0, 0, 0.70)
+        }
+
+        .pum-theme-85 .pum-container,
+        .pum-theme-enterprise-blue .pum-container {
+            padding: 28px;
+            border-radius: 5px;
+            border: 1px none #000000;
+            box-shadow: 0px 10px 25px 4px rgba(2, 2, 2, 0.50);
+            background-color: rgba(255, 255, 255, 1.00)
+        }
+
+        .pum-theme-85 .pum-title,
+        .pum-theme-enterprise-blue .pum-title {
+            color: #315b7c;
+            text-align: left;
+            text-shadow: 0px 0px 0px rgba(2, 2, 2, 0.23);
+            font-family: inherit;
+            font-size: 34px;
+            line-height: 36px
+        }
+
+        .pum-theme-85 .pum-content,
+        .pum-theme-enterprise-blue .pum-content {
+            color: #2d2d2d;
+            font-family: inherit
+        }
+
+        .pum-theme-85 .pum-content+.pum-close,
+        .pum-theme-enterprise-blue .pum-content+.pum-close {
+            position: absolute;
+            height: 28px;
+            width: 28px;
+            left: auto;
+            right: 8px;
+            bottom: auto;
+            top: 8px;
+            padding: 4px;
+            color: #ffffff;
+            font-family: inherit;
+            font-size: 20px;
+            line-height: 20px;
+            border: 1px none #ffffff;
+            border-radius: 42px;
+            box-shadow: 0px 0px 0px 0px rgba(2, 2, 2, 0.23);
+            text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.23);
+            background-color: rgba(49, 91, 124, 1.00)
+        }
+
+        #pum-813 {
+            z-index: 1999999999
+        }
+
+        #pum-808 {
+            z-index: 1999999999
+        }
+
+        #pum-802 {
+            z-index: 1999999999
+        }
+
+        .carousel-inner>.carousel-item {
+            margin: auto;
+            width: 100%;
+            /* use this, or not */
+        }
+
+        .col-centered {
+            float: none;
+            margin: 0 auto;
+        }
+    </style>
+    <style type="text/css">
+        div.fancybox-caption {
+            display: none !important;
+        }
+
+        img.fancybox-image {
+            border-width: 10px;
+            border-color: #FFFFFF;
+            border-style: solid;
+            height: auto;
+        }
+
+        div.fancybox-bg {
+            background-color: rgba(102, 102, 102, 0.3);
+            opacity: 1 !important;
+        }
+
+        div.fancybox-content {
+            border-color: #FFFFFF
+        }
+
+        div#fancybox-title {
+            background-color: #FFFFFF
+        }
+
+        div.fancybox-content {
+            background-color: #FFFFFF
+        }
+
+        div#fancybox-title-inside {
+            color: #333333
+        }
+
+
+        div.fancybox-caption p.caption-title {
+            display: inline-block
+        }
+
+        div.fancybox-caption p.caption-title {
+            font-size: 14px
+        }
+
+        div.fancybox-caption p.caption-title {
+            color: #333333
+        }
+
+        div.fancybox-caption {
+            color: #333333
+        }
+
+        div.fancybox-caption p.caption-title {
+            background: #fff;
+            width: auto;
+            padding: 10px 30px;
+        }
+
+
+        @media (min-width: 768px) {
+
+            /* show 3 items */
+            .clideg .active,
+            .clideg .active+.carousel-item,
+            .clideg .active+.carousel-item+.carousel-item,
+            .clideg .active+.carousel-item+.carousel-item+.carousel-item {
+                display: block;
             }
 
+            .clideg .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
+            .clideg .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left)+.carousel-item,
+            .clideg .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left)+.carousel-item+.carousel-item,
+            .clideg .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left)+.carousel-item+.carousel-item+.carousel-item {
+                transition: none;
+            }
+
+            .clideg .carousel-item-next,
+            .clideg .carousel-item-prev {
+                position: relative;
+                transform: translate3d(0, 0, 0);
+            }
+
+            .clideg .active.carousel-item+.carousel-item+.carousel-item+.carousel-item+.carousel-item {
+                position: absolute;
+                top: 0;
+                right: -25%;
+                z-index: -1;
+                display: block;
+                visibility: visible;
+            }
+
+            /* left or forward direction */
+            .active.carousel-item-left+.carousel-item-next.carousel-item-left,
+            .carousel-item-next.carousel-item-left+.carousel-item,
+            .carousel-item-next.carousel-item-left+.carousel-item+.carousel-item,
+            .carousel-item-next.carousel-item-left+.carousel-item+.carousel-item+.carousel-item,
+            .carousel-item-next.carousel-item-left+.carousel-item+.carousel-item+.carousel-item+.carousel-item {
+                position: relative;
+                transform: translate3d(-100%, 0, 0);
+                visibility: visible;
+            }
+
+            /* farthest right hidden item must be abso position for animations */
+            .clideg .carousel-item-prev.carousel-item-right {
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                display: block;
+                visibility: visible;
+            }
+
+            /* right or prev direction */
+            .active.carousel-item-right+.carousel-item-prev.carousel-item-right,
+            .carousel-item-prev.carousel-item-right+.carousel-item,
+            .carousel-item-prev.carousel-item-right+.carousel-item+.carousel-item,
+            .carousel-item-prev.carousel-item-right+.carousel-item+.carousel-item+.carousel-item,
+            .carousel-item-prev.carousel-item-right+.carousel-item+.carousel-item+.carousel-item+.carousel-item {
+                position: relative;
+                transform: translate3d(100%, 0, 0);
+                visibility: visible;
+                display: block;
+                visibility: visible;
+            }
+
+        }
+    </style>
+    <meta name="generator" content="3f framework by MerlinSoft inc">
+    <link rel="canonical" href="<?=WWW_BASE_PATH?>">
+    <link rel="shortlink" href="<?=WWW_BASE_PATH?>">
+
+    <!--  LOCALE PATH  -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/pages/index.css">
+    <!--<style type="text/css">
+        @media (min-width: 1681px) {
+
+            body {
+                position: absolute;
+                top: -10rem;
+                -webkit-transform: scale(1);
+                -moz-transform: scale(1);
+                -ms-transform: scale(1);
+                -o-transform: scale(1);
+                transform: scale(1);
 
 
-            $('#carouselExample01').on('slide.bs.carousel', function (e) {
+            }
 
-                var $e = $(this.relatedTarget);
-                var idx = $e.index();
-                var itemsPerSlide = 4;
-                var totalItems = $('.clideg').length;
-                console.log(totalItems)
-                if (idx >= totalItems - (itemsPerSlide - 1)) {
-                    var it = itemsPerSlide - (totalItems - idx);
-                    for (var i = 0; i < it; i++) {
-                        // append slides to end
-                        if (e.direction == "left") {
-                            $('.clideg').eq(i).appendTo('.clideg');
-                        } else {
-                            $('.clideg').eq(0).appendTo('.clideg');
+        }
+
+        /*
+          ##Device = Desktops
+          ##Screen = 1281px to higher resolution desktops
+        */
+
+        @media (min-width: 1281px) {
+
+            body {
+                position: absolute;
+                top: -10rem;
+                -webkit-transform: scale(0.67);
+                -moz-transform: scale(0.67);
+                -ms-transform: scale(0.67);
+                -o-transform: scale(0.67);
+                transform: scale(0.67);
+
+
+            }
+
+        }
+
+        /*
+          ##Device = Laptops, Desktops
+          ##Screen = B/w 1025px to 1280px
+        */
+
+        @media (min-width: 1025px) and (max-width: 1280px) {
+
+            /*CSS*/
+
+        }
+
+        /*
+          ##Device = Tablets, Ipads (portrait)
+          ##Screen = B/w 768px to 1024px
+        */
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+
+            /*CSS*/
+
+        }
+
+        /*
+          ##Device = Tablets, Ipads (landscape)
+          ##Screen = B/w 768px to 1024px
+        */
+
+        @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+            /*CSS*/
+
+        }
+
+        /*
+          ##Device = Low Resolution Tablets, Mobiles (Landscape)
+          ##Screen = B/w 481px to 767px
+        */
+
+        @media (min-width: 481px) and (max-width: 767px) {
+
+            /*CSS*/
+
+        }
+
+        /*
+          ##Device = Most of the Smartphones Mobiles (Portrait)
+          ##Screen = B/w 320px to 479px
+        */
+
+        @media (min-width: 320px) and (max-width: 480px) {
+
+            /*CSS*/
+
+        }
+    </style>-->
+</head>
+
+<body class="home page-template-default page page-id-532 singular image-filters-enabled">
+
+
+    <div id="content" class="site-content wrapper">
+        <section id="primary" class="content-area wrapper_section">
+            <main id="main" class="site-main wrapper_main">
+                <article id="post-532" class="post-532 page type-page status-publish hentry entry wrapper_article">
+                    <header class="entry-header wrapper_header">
+
+                        <h1 class="entry-title wrapper_header-title">
+                            <?=l('m1');?>
+                        </h1>
+                    </header>
+                    <div class="entry-content wrapper_article_container">
+                        <div class="main">
+                            <header class="header-index main_header">
+                                <div class="container">
+                                    <div class="row header-top main_header_top">
+                                        <nav class="index-menu main_navbar">
+                                            <ul class="menu main_navbar_menu">
+                                                <li class="main_navbar_menu-item"><a class="main_navbar_menu-link" href="<?=WWW_BASE_PATH?>">
+                                                        <?=l('m1');?>
+                                                    </a></li>
+                                                <li class="main_navbar_menu-item"><a class="ab main_navbar_menu-link" href="#about">
+                                                        <?=l('m2');?>
+                                                    </a></li>
+                                                <li class="main_navbar_menu-item"><a class="na main_navbar_menu-link" href="#towns">
+                                                        <?=l('m3');?>
+                                                    </a></li>
+                                                <li class="main_navbar_menu-item"><a class="po main_navbar_menu-link" href="#whuour">
+                                                        <?=l('m4');?>
+                                                    </a></li>
+                                                <li class="main_navbar_menu-item"><a class="uch main_navbar_menu-link" href="#video">
+                                                        <?=l('m5');?>
+                                                    </a></li>
+                                                <li class="main_navbar_menu-item"><a class="ot main_navbar_menu-link" href="#fidback">
+                                                        <?=l('m6');?>
+                                                    </a></li>
+                                            </ul>
+                                        </nav>
+                                        <div class="dropdown">
+                                            <span class="non-mob">
+                                                <?=l('m7');?>
+                                            </span>
+                                            <div class="show-mob">
+                                                <b class="mob-gam"><span></span><span></span><span></span></b>
+                                            </div>
+                                            <ul class="dropdown-menu">
+                                                <?=$otherTown?>
+                                            </ul>
+                                        </div>
+                                        <p></p>
+                                        <ol class="breadcrumb lang-list main_header_langs">
+                                            <li class="breadcrumb-item main_header_langs-item">
+                                                <a class="lang-list__item ls main_header_langs-link" lang="UA"> Укр</a>
+                                            </li>
+                                            <li class="breadcrumb-item main_header_langs-item">
+                                                <a class="lang-list__item ls main_header_langs-link" lang="RU">Рус</a>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </header>
+                            <section class="banner main_banner">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-12 col-xl-6">
+
+                                            <img class="logo m-auto m-xl-0 main_banner-logo" src="<?=WWW_IMG_PATH?>logo.svg" alt="">
+                                            <div class="standart main_banner_content">
+                                                <h1 class="gradient-text headline text-center main_banner-title">
+                                                    <?=l('hh1')?>
+                                                </h1>
+                                                <p class="headline__title text-center text-xl-left maon_banner-description">
+                                                    <?=l('u1');?>
+                                                </p>
+
+                                                <div class="row proz_ ">
+                                                    <div class="col-12 col-sm-6 d-flex align-items-center about-course">
+
+                                                        <img class="about-course__img"
+                                                            src="<?=WWW_IMG_PATH?>kalendar.svg" alt="">
+                                                        <p class="about-course__text">
+                                                            <?=l('m9')?>
+                                                        </p>
+
+                                                    </div>
+                                                    <div class="col-12 col-sm-6 d-flex align-items-center about-course">
+
+                                                        <img class="about-course__img" src="<?=WWW_IMG_PATH?>people.svg"
+                                                            alt="">
+                                                        <p class="about-course__text">
+                                                            <?=l('r2')?>
+                                                        </p>
+
+                                                    </div>
+                                                    <div class="col-12 col-sm-6 d-flex align-items-center about-course">
+
+                                                        <img class="about-course__img" src="<?=WWW_IMG_PATH?>krema.svg"
+                                                            alt="">
+                                                        <p class="about-course__text">
+                                                            <?=l('r3');?></strong>
+                                                        </p>
+
+                                                    </div>
+                                                    <div class="col-12 col-sm-6 d-flex align-items-center about-course">
+
+                                                        <img class="about-course__img"
+                                                            src="<?=WWW_IMG_PATH?>certificate.svg" alt="">
+                                                        <p class="about-course__text">
+                                                            <?=l('r4');?>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section class="close-course">
+                                <div class="container">
+                                    <div class="row">
+                                        <?=$randAction?>
+                                        <img class="close-course__img" src="<?=WWW_IMG_PATH?>girl.png" alt="">
+                                    </div>
+                                </div>
+                            </section>
+                            <section id="ab" class="be-first">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-12 number-one">
+                                            <a id='about'></a>
+                                            <img class="" src="<?=WWW_IMG_PATH?>number-one.jpg" alt="">
+                                            <?=SBl(1,$lang);?>
+                                        </div>
+                                        <div id="na" class="col-12 cities-courses"><a id='towns'></a>
+                                            <h2 class="section-title">
+                                                <?=l('r5');?>
+                                            </h2>
+                                            <div class="all-cities">
+                                                <?=$townItem;?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section id="po"><a id='whuour'></a>
+                                <h2 class="section-title">
+                                    <?=l('r6');?>
+                                </h2>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-12 col-sm-6 col-lg-4 why-block">
+
+                                            <img class="why-block__img" src="<?=WWW_IMG_PATH?>sova.svg" alt="">
+                                            <?=SBl(2,$lang);?>
+                                        </div>
+                                        <div class="col-12 col-sm-6 col-lg-4 why-block">
+
+                                            <img class="why-block__img" src="<?=WWW_IMG_PATH?>nagrada.svg" alt="">
+                                            <?=SBl(3,$lang);?>
+
+                                        </div>
+                                        <div class="col-12 col-sm-6 col-lg-4 why-block">
+                                            <img class="why-block__img" src="<?=WWW_IMG_PATH?>people-icon.svg" alt="">
+                                            <?=SBl(4,$lang);?>
+                                        </div>
+                                        <div class="col-12 col-sm-6 col-lg-4 why-block">
+                                            <img class="why-block__img" src="<?=WWW_IMG_PATH?>all.svg" alt="">
+                                            <?=SBl(5,$lang);?>
+
+                                        </div>
+                                        <div class="col-12 col-sm-6 col-lg-4 why-block">
+                                            <img class="why-block__img" src="<?=WWW_IMG_PATH?>gramota.svg" alt="">
+                                            <?=SBl(6,$lang);?>
+                                        </div>
+                                        <div class="col-12 col-sm-6 col-lg-4 why-block">
+                                            <img class="why-block__img" src="<?=WWW_IMG_PATH?>krema.svg" alt="">
+                                            <?=SBl(7,$lang);?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section id="uch" class="training-videos"><a id='video'></a>
+                                <h2 class="section-title">
+                                    <?=l('r7');?>
+                                </h2>
+                                <div class="container">
+                                    <p class="training-desc-top">Получить более того, есть специальные. И
+                                        проектах, ориентированных на кириллице. Латыни и проектах,
+                                        ориентированных на руку. Цицерону, ведь именно из его применили в длине
+                                        наиболее распространенных слов именно. Вывод, что впервые его трактата о
+                                        пределах добра и даже.</p>
+
+                                </div>
+                                <div class="slider slider-videos container">
+
+                                    <div class="row">
+                                        <div id="carouselExampleControls"
+                                            class="carousel videocarousel slide col-centered" data-ride="carousel"
+                                            data-interval="false">
+                                            <div class="carousel-inner">
+                                                <?=$video?>
+
+                                            </div>
+                                            <a class="carousel-control-prev" href="#carouselExampleControls"
+                                                role="button" data-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                <span class="sr-only">Previous</span>
+                                            </a>
+                                            <a class="carousel-control-next" href="#carouselExampleControls"
+                                                role="button" data-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                <span class="sr-only">Next</span>
+                                            </a>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+
+
+                            </section>
+                            <section id="ot" class="graduates"><a id="fidback"></a>
+                                <h2 class="section-title">
+                                    <?=l('r8');?>
+                                </h2>
+                                <div class="slider carousel">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <div class="all-graduates">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Left and right controls -->
+                                    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                                        <span class="carousel-control-prev-icon"></span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#demo" data-slide="next">
+                                        <span class="carousel-control-next-icon"></span>
+                                    </a>
+                                    <div id="carouselExample01" class="carousel slide" data-ride="carousel"
+                                        data-interval="9000">
+                                        <div class="carousel-inner row w-100 mx-auto" role="listbox">
+                                            <?=$fidOut;?>
+                                        </div>
+                                        <a class="carousel-control-prev" href="#carouselExample01" role="button"
+                                            data-slide="prev">
+                                            <i class="fa fa-chevron-left fa-lg text-muted"></i>
+                                            <span class="sr-only">Previous</span>
+                                        </a>
+                                        <a class="carousel-control-next text-faded" href="#carouselExample01"
+                                            role="button" data-slide="next">
+                                            <i class="fa fa-chevron-right fa-lg text-muted"></i>
+                                            <span class="sr-only">Next</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="container" style="text-align: center; margin-bottom: 15px;"><a
+                                class="link-top gradient-text" href="#">
+                                <?=l('r9')?>
+                            </a></div>
+                        <footer class="footer-index">
+                            <div class="container">
+                                <div class="row">
+                                    <?=$tfut;?>
+                                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4">
+
+                                        <p class="">
+                                            <?=l('r10')?>:
+                                        </p>
+                                        <div><img class="link-shop" src="<?=WWW_IMG_PATH?>corz.png" alt="">
+                                            <a href="http://nails.ua/">«NAILS.UA»»</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="copyright">copyright 1999-2018</p>
+
+                            </div>
+                        </footer>
+                    </div>
+                </article>
+            </main>
+        </section>
+    </div>
+    <div id='to-top'><i class="fal fa-caret-circle-up">sssssssss</i></div>
+
+
+    <!-- #page -->
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="<?=WWW_JS_PATH?>bootstrap.js"></script>
+    <script type="text/javascript" src="<?=WWW_JS_PATH?>jquery.fancybox.js"></script>
+    <script type="text/javascript" src="<?=WWW_JS_PATH?>scripts.js"></script>
+
+    <script type="text/javascript" src="<?=WWW_JS_PATH?>navigation.js"></script>
+    <script type="text/javascript" src="<?=WWW_JS_PATH?>skip-link-focus-fix.js"></script>
+    <script type="text/javascript" src="<?=WWW_JS_PATH?>position.js"></script>
+    <script type="text/javascript" src="<?=WWW_JS_PATH?>site.js"></script>
+    <script id="dsq-count-scr" src="<?=WWW_JS_PATH?>count.js" async=""></script>
+
+    <script>
+        $(window).scroll(function () {
+            if ($(this).scrollTop() != 0) {
+                $('#to-top').fadeIn();
+            } else {
+                $('#to-top').fadeOut();
+            }
+        });
+
+        $('#to-top').click(function () {
+            $('body,html').animate({ scrollTop: 0 }, "fast");
+        });
+        $(document).ready(function () {
+            $('.open_').click(function () {
+                $('.open_').hide();
+                $('.close_').show();
+                $('.none-mob').show();
+            });
+            $('.close_').click(function () {
+                $('.none-mob').hide();
+                $('.open_').show();
+                $('.close_').hide();
+            });
+
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            var curlang = '<?=$_SESSION["lang"];?>';
+            var tutu = '[lang=' + curlang + ']'
+            $(tutu).addClass('active');
+            console.log(tutu);
+            $('.ls').on('click',
+                function (e) {
+                    // console.log(this);
+                    var langage = ($(this).attr('lang')); // do stuff
+                    //$('#lanSel').attr('lang', langage);
+                    $.ajax({
+                        url: "<?php echo WWW_BASE_PATH;?>lang",
+                        cache: false,
+                        type: "POST",
+                        data: 'curlang=' + langage,
+                        success: function (data) {
+                            console.log(data);
+
+                            window.location.reload();
+
                         }
+                    });
+                });
+        });
+
+    </script>
+    <script>
+        var _open = false;
+        $(document).ready(function () {
+            $('.non-mob, .show-mob').on('click', function () {
+                if (_open == false) {
+                    $(this).siblings(".dropdown-menu").css('display', 'block');
+                    $(this).addClass('active');
+                    _open = true;
+                } else {
+                    $(".dropdown-menu").css('display', 'none');
+                    $('.non-mob, .show-mob').removeClass('active');
+                    _open = false;
+                }
+
+                return false;
+            });
+
+        });
+
+        $(document).click(function (event) {
+            if ($(event.target).closest(".dropdown-menu").length) {
+                return;
+            }
+            $(".dropdown-menu").css('display', 'none');
+            $('.non-mob, .show-mob').removeClass('active');
+
+            _open = false;
+        });
+
+        /////
+
+        $(function () {
+            $(".videocarousel").on("slide.bs.carousel", function (e) {
+                var prev = $(this)
+                    .find(".active")
+                    .index();
+                var next = $(e.relatedTarget).index();
+                var video = $("#video-player")[0];
+                var videoSlide = $("#video-player")
+                    .closest(".carousel-item")
+                    .index();
+                if (next === videoSlide) {
+                    if (video.tagName == "IFRAME") {
+                        player.playVideo();
+                    } else {
+                        createVideo(video);
+                    }
+                } else {
+                    if (typeof player !== "undefined") {
+                        player.pauseVideo();
                     }
                 }
             });
-	</script>
+        });
 
-	<!-- The Modal -->
-	<div class="modal" id="akcia">
-	    <div class="modal-dialog modal-dialog-centered modal-xl">
-		<div class="modal-content">
+        function createVideo(video) {
+            var youtubeScriptId = "youtube-api";
+            var youtubeScript = document.getElementById(youtubeScriptId);
+            var videoId = video.getAttribute("data-video-id");
 
-		    <!-- Modal Header -->
-		    <div class="modal-header">
-			<h4 class="title modal-title"><?=$aza?></h4>
-			<button type="button" class="pum-close popmake-close close" data-dismiss="modal">&times;</button>
-		    </div>
+            if (youtubeScript === null) {
+                var tag = document.createElement("script");
+                var firstScript = document.getElementsByTagName("script")[0];
 
-		    <!-- Modal body -->
-		    <div class="modal-body">
-			<form action="<?=WWW_BASE_PATH?>parcipate" method="post">
-			    <input type="hidden" name="id" value="<?=$acsia->id?>">
-			    <div class="form-price">
-				<p class="ps"><?=$acsia->$mlang?></p>
-				<div class="form-content fd-rever">
-				    <div class="left">
-					<label>Имя*</label>
-					<span class="wpcf7-form-control-wrap text-923">
-					    <input type="text" name="name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" required="required" >
-					</span><br>
-					<label>Фамилия*</label>
-					<span class="wpcf7-form-control-wrap text-923">
-					    <input type="text" name="lname" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" required="required">
-					</span><br>
-					<label>Е-mail*</label>
-					<span class="wpcf7-form-control-wrap email-362"><input type="email" name="email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email" required='required'>
-					</span><br>
-					<label>Телефон*</label>
-					<span class="wpcf7-form-control-wrap tel-744">
-					    <input type="tel" name="phone" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required" required="required" placeholder="+38 ( _ _ _ ) _ _ _ _ _ _ _">
-					</span><br>
-					<span class="checkbox-style">
-					    <label class="lad-chec" for="checkbox-id">
-						<span class="style-chec">
-						    <input type="checkbox" id="checkbox-id">
-						</span>
-						<b>Получать уведомления об акциях и скидках школы</b></label>
-					</span>
-					<p></p>
-				    </div>
-				    <div class="right-block">
-					<div class="block-right-form">
-					    <div class="left_"><span>Дата старта</span><b>с <?=$acsia->start?></b></div>
-					    <div class="right"><span>Стоимость со<br> скидкой:</span><b><?=$acsia->ac_coast?> грн</b></div>
-					    <p></p></div>
-					<p><span class="block-right-span">*О точной дате начала курса мы оповестим лично</span>
-					</p></div>
-				</div>
-				<p><input type="submit" value="ПОДТВЕРДИТЬ ЗАПИСЬ" class="wpcf7-form-control wpcf7-submit">
-				    <span class="ajax-loader"></span>
-				</p></div>
-			</form>
-		    </div>
+                tag.src = "https://www.youtube.com/iframe_api";
+                tag.id = youtubeScriptId;
+                firstScript.parentNode.insertBefore(tag, firstScript);
+            }
+
+            window.onYouTubeIframeAPIReady = function () {
+                window.player = new window.YT.Player(video, {
+                    videoId: videoId,
+                    playerVars: {
+                        autoplay: 1,
+                        modestbranding: 1,
+                        rel: 0
+                    }
+                });
+            };
+        }
 
 
-		</div>
-	    </div>
-	</div>
+        $('#carouselExample01').on('slide.bs.carousel', function (e) {
 
-    </body></html>
+            var $e = $(this.relatedTarget);
+            var idx = $e.index();
+            var itemsPerSlide = 4;
+            var totalItems = $('.clideg').length;
+            console.log(totalItems)
+            if (idx >= totalItems - (itemsPerSlide - 1)) {
+                var it = itemsPerSlide - (totalItems - idx);
+                for (var i = 0; i < it; i++) {
+                    // append slides to end
+                    if (e.direction == "left") {
+                        $('.clideg').eq(i).appendTo('.clideg');
+                    } else {
+                        $('.clideg').eq(0).appendTo('.clideg');
+                    }
+                }
+            }
+        });
+    </script>
+
+    <!-- The Modal -->
+    <div class="modal" id="akcia">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="title modal-title">
+                        <?=$aza?>
+                    </h4>
+                    <button type="button" class="pum-close popmake-close close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form action="<?=WWW_BASE_PATH?>parcipate" method="post">
+                        <input type="hidden" name="id" value="<?=$acsia->id?>">
+                        <div class="form-price modal_price">
+                            <p class="ps">
+                                <?=$acsia->$mlang?>
+                            </p>
+                            <div class="form-content fd-rever">
+                                <div class="left modal_left">
+                                    <label class="modal_left-label">Имя*</label>
+                                    <span class="wpcf7-form-control-wrap text-923 modal_left_inputGroup">
+                                        <input type="text" name="name" value="" size="40"
+                                            class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required modal_left-input"
+                                            required="required">
+                                    </span><br>
+                                    <label class="modal_left-label">Фамилия*</label>
+                                    <span class="wpcf7-form-control-wrap text-923 modal_left_inputGroup">
+                                        <input type="text" name="lname" value="" size="40"
+                                            class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required modal_left-input"
+                                            required="required">
+                                    </span><br>
+                                    <label class="modal_left-label">Е-mail*</label>
+                                    <span class="wpcf7-form-control-wrap email-362 modal_left_inputGroup email">
+                                        <input type="email" name="email"
+                                            value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email modal_left-input email"
+                                            required='required'>
+                                    </span><br>
+                                    <label class="modal_left-label">Телефон*</label>
+                                    <span class="wpcf7-form-control-wrap tel-744 modal_left_inputGroup phone">
+                                        <input type="tel" name="phone" value="" size="40"
+                                            class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required modal_left-input phone"
+                                            required="required" placeholder="+38 ( _ _ _ ) _ _ _ _ _ _ _">
+                                    </span><br>
+                                    <span class="checkbox-style modal_left_inputGroup checkbox">
+                                        <label class="lad-chec modal_left-label checkbox" for="checkbox-id">
+                                            <span class="style-chec">
+                                                <input type="checkbox modal_left-checkbox" id="checkbox-id">
+                                            </span>
+                                            <b>Получать уведомления об акциях и скидках школы</b></label>
+                                    </span>
+                                    <p></p>
+                                </div>
+                                <div class="right-block">
+                                    <div class="block-right-form">
+                                        <div class="left_"><span>Дата старта</span><b>с
+                                                <?=$acsia->start?>
+                                            </b></div>
+                                        <div class="right"><span>Стоимость со<br> скидкой:</span><b>
+                                                <?=$acsia->ac_coast?>
+                                                грн
+                                            </b></div>
+                                        <p></p>
+                                    </div>
+                                    <p><span class="block-right-span">*О точной дате начала курса мы оповестим
+                                            лично</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <p><input type="submit" value="ПОДТВЕРДИТЬ ЗАПИСЬ" class="wpcf7-form-control wpcf7-submit">
+                                <span class="ajax-loader"></span>
+                            </p>
+                        </div>
+                    </form>
+                </div>
 
 
+            </div>
+        </div>
+    </div>
 
+</body>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</html>

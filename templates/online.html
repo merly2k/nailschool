@@ -32,7 +32,7 @@
 	<link rel="stylesheet" href="<?=WWW_CSS_PATH?>styles-ing-online.css">
 	<!-- <link rel="stylesheet" href="<?=WWW_CSS_PATH?>main.css"> -->
 
-	
+	<title><?=strip_tags($k->$mlang)?> — Ногтевой Сервис</title>
 	<?php $meta= metatags();echo $meta;?>
 
 	<link rel="dns-prefetch" href="http://s.w.org/">
@@ -142,6 +142,25 @@
 	    div.fancybox-caption p.caption-title{font-size:14px}
 	    div.fancybox-caption p.caption-title{color:#333333}
 	    div.fancybox-caption {color:#333333}div.fancybox-caption p.caption-title {background:#fff; width:auto;padding:10px 30px;}
+
+		.infographics {
+			display: flex;
+		}
+
+		.infographics_wrap {
+			display: flex;
+			align-items: center;
+		}
+
+		@media screen and (max-width: 520px) {
+			.infographics-img {
+				width: 70px !important;
+			}
+
+			.infographics-desc {
+				font-size: 14px !important;
+			}
+		}
 	</style>
 	<style type="text/css">
 	    <?=$cursCSS;?>
@@ -231,50 +250,26 @@
 			<a href="<?=WWW_BASE_PATH?>"><img src="<?=WWW_IMG_PATH?>logo.svg" alt="" class="logo m-auto mx-sm-0 d-block"></a>
 			<h1 class="gradient-text text-center text-xl-left"><?=$k->$mlang?></h1>
 			<p class="description-text text-center text-xl-left"><?=l('u1');?></b></p>
-			<div class="row checklist-course checklist-course-1">
-			    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 themed-grid-col pl-3 pr-0">
-				<table>
-				    <tbody>
-					<tr>
-					    <td><img src="<?=WWW_IMG_PATH?>kalendar.svg" alt="" /></td>
-					    <td class="align-middle"><p><?=l('m9')?></p></td>
-					</tr>
-				    </tbody>
-				</table>
-			    </div>
-			    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 themed-grid-col pl-3 pr-0">
-				<table>
-				    <tbody>
-					<tr>
-					    <td><img src="<?=WWW_IMG_PATH?>people.svg" alt="" /></td>
-					    <td class="align-middle"><p><?=l('r2')?></p></td>
-					</tr>
-				    </tbody>
-				</table>
-			    </div>
-			</div>
-			<div class="row checklist-course checklist-course-2">
-			    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 themed-grid-col pl-3 pr-0">
-				<table>
-				    <tbody>
-					<tr>
-					    <td><img src="<?=WWW_IMG_PATH?>sova-header.svg" alt="" /></td>
-					    <td class="align-middle"><p><?=l('pr3');?></p></td>
-					</tr>
-				    </tbody>
-				</table>
-			    </div>
-			    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 themed-grid-col pl-3 pr-0">
-				<table>
-				    <tbody>
-					<tr>
-					    <td><img src="<?=WWW_IMG_PATH?>certificate.svg" alt="" /></td>
-					    <td class="align-middle"><p><?=l('r4');?></p></td>
-					</tr>
-				    </tbody>
-				</table>
-			    </div>
-			</div>
+				<div class="row checklist-course  checklist-course-1 infographics">
+					<div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 themed-grid-col pl-3 pr-0 infographics_wrap">
+						<img class="infographics-img" src="<?=WWW_IMG_PATH?>kalendar.svg" alt=""/>
+						<p class="infographics-desc"><?=l('m9')?></p>
+					</div>
+					<div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 themed-grid-col pl-3 pr-0 infographics_wrap">
+						<img class="infographics-img" src="<?=WWW_IMG_PATH?>people.svg" alt="" />
+						<p class="infographics-desc"><?=l('r2')?></p>
+					</div>
+				</div>
+				<div class="row checklist-course  checklist-course-2 infographics">
+					<div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 themed-grid-col pl-3 pr-0 infographics_wrap">
+						<img src="<?=WWW_IMG_PATH?>krema.svg" alt="" class="infographics-img" />
+						<p class="infographics-desc"><?=l('r3');?></p>
+					</div>
+					<div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 themed-grid-col pl-3 pr-0 infographics_wrap">
+						<img class="infographics-img" src="<?=WWW_IMG_PATH?>certificate.svg" alt="" />
+						<p class="infographics-desc"><?=l('r4');?></p>
+					</div>
+				</div>
 		    </div>
 		    <div class="col-12 col-sm-12 col-md-12 col-lg-7 col-xl-6 themed-grid-col">
 			<div class="row d-none d-lg-flex d-xl-none girl" style="background-image: url(<?=$mashas?>);"></div>
@@ -554,8 +549,7 @@
 					<!-- / -->
 				    </section>
 				    <?php }?>
-                                     <?php if(isset($showcomment)&$showcomment=='Y'){ ?>
-				    <section class="py-5 comments">
+				    <!--section class="py-5 comments">
 
 				    <div class="container">
 					<div id="addComment">
@@ -586,7 +580,7 @@
 					    </div>
 					</div>
 				    </div>
-				</section><?php }?>
+				</section-->
 				    <section class="contacts">
 					<div class="container-fluid">
 					    <div class="row row-eq-height">
@@ -644,13 +638,8 @@
 				    <script type="text/javascript" src="<?=WWW_JS_PATH?>position.js"></script>
 				    <script type="text/javascript" src="<?=WWW_JS_PATH?>site.js"></script>
 				    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
-    <!-- new carousel by ing -->
-    <script>
-    
-    $(function() {
-   $('.wpcf7-tel').mask('+38(000)000-00-00');
-        });
+
+				    <script>
             $(window).scroll(function () {
                 if ($(this).scrollTop() != 0) {
                     $('#to-top').fadeIn();
@@ -859,7 +848,7 @@
 						<!-- Modal body -->
 						<div class="modal-body">
 						    <p class="ps text-uppercase font-weight-bold"><?=strip_tags($k->$mlang)?></p>
-						    <form id='akciaForm' action="<?=WWW_BASE_PATH?>participate" method="post">
+						    <form id='akciaForm' action="<?=WWW_BASE_PATH?>parcipate" method="post">
 							<div class="form-price">
 							    <div class="form-content fd-rever">
 								<div class="form-group left">
@@ -891,7 +880,7 @@
 									<input type="hidden" name="leadtype" value="curs" />
 									<input type="hidden" name="returnto" value="<?=$this->param[0]?>/<?=$this->param[1]?>" />
 									<span class="style-chec">
-									    <input name="ppate" type="checkbox" id="checkbox-id" class="form-check-input">
+									    <input type="checkbox" id="checkbox-id" class="form-check-input">
 									</span>
 									<label class="form-check-label lad-chec" for="checkbox-id"><b><?=l('uvedomit')?></b></label>
 								    </span>
@@ -934,7 +923,7 @@
 						<!-- Modal body -->
 						<div class="modal-body">
 						    <!--p class="ps text-uppercase font-weight-bold"><?=strip_tags($k->$mlang)?></p-->
-						    <form id='akciaForm' action="<?=WWW_BASE_PATH?>participate" method="post">
+						    <form id='akciaForm' action="<?=WWW_BASE_PATH?>parcipate" method="post">
 							<input type="hidden" name="id" value="<?=$k->id?>" />
 							<input type="hidden" name="leadtype" value="calback" />
 							<input type="hidden" name="returnto" value="<?=$this->param[0]?>/<?=$this->param[1]?>" />
@@ -1007,7 +996,7 @@
 						</div>
 						<!-- Modal body -->
 						<div class="modal-body" style=' width:100%;'>
-						    <form id='akciaForm' action="<?=WWW_BASE_PATH?>participate" method="post">
+						    <form id='akciaForm' action="<?=WWW_BASE_PATH?>parcipate" method="post">
 							<fieldset>
 							    <!-- Text input-->
 							    <div class="form-group">
@@ -1024,7 +1013,7 @@
 							    <!-- Text input-->
 							    <div class="form-group">
 								<label for="textinput">Телефон</label>
-								<input id="textinput" name="phone" type="text" class="form-control wpcf7-tel" placeholder="+38 ( _ _ _ ) _ _ _ _ _ _ _">
+								<input id="textinput" name="phone" type="text" class="form-control" placeholder="+38 ( _ _ _ ) _ _ _ _ _ _ _">
 							    </div>
 							    <input type="hidden" name="id" value="<?=$k->id?>" />
 							    <input type="hidden" name="leadtype" value="consult" />
@@ -1044,3 +1033,40 @@
 				    <!-- <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e402414887521ee"></script> -->
 				    </body>
 				    </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

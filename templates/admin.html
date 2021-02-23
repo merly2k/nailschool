@@ -9,304 +9,272 @@ endif;
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://kit.fontawesome.com/e66f078689.js"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="<?=WWW_CSS_PATH;?>trumbowyg.css">
-        <link rel="stylesheet" href="<?=WWW_CSS_PATH;?>summernote-bs4.css">
-        <link rel="stylesheet" href="<?=WWW_CSS_PATH;?>datatables/dataTables.bootstrap.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
-        <link rel="stylesheet" href="<?=WWW_CSS_PATH ?>theme.css" type="text/css">
-        <style>
-            body{background:#f9f9f9;}
-            #wrapper{padding:90px 15px;}
-            .navbar-expand-lg .navbar-nav.side-nav{flex-direction: column;}
-            .card{margin-bottom: 15px; border-radius:0; box-shadow: 0 3px 5px rgba(0,0,0,.1); }
-            .header-top{box-shadow: 0 3px 5px rgba(0,0,0,.1)}
-            .modal-dialog {
-                max-width: 800px;
-                margin: 1.75rem auto;
-            }
-            .scrollable-menu {
-                height: auto;
-                max-height: 200px;
-                overflow-x: hidden;
-            }
-
-            @media(min-width:992px) {
-                #wrapper{margin-left: 200px;padding: 90px 15px 15px;}
-                .navbar-nav.side-nav{background: #585f66;box-shadow: 2px 1px 2px rgba(0,0,0,.1);position:fixed;top:56px;flex-direction: column!important;left:0;width:200px;overflow-y:auto;bottom:0;overflow-x:hidden;padding-bottom:40px}
-            }
-        </style>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="<?=WWW_CSS_PATH ?>theme.css" type="text/css">
+	<link rel="stylesheet" href="<?=WWW_CSS_PATH;?>trumbowyg.css">
+	<link rel="stylesheet" href="<?=WWW_CSS_PATH;?>summernote-bs4.css">
+	<link rel="stylesheet" href="<?=WWW_CSS_PATH;?>datatables/dataTables.bootstrap.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+	<!------ Include the above in your HEAD tag ---------->
+	<style>
+	    body{background:#f9f9f9;}
+	    #wrapper{padding:90px 15px;}
+	    .navbar-expand-lg .navbar-nav.side-nav{flex-direction: column;}
+	    .card{margin-bottom: 15px; border-radius:0; box-shadow: 0 3px 5px rgba(0,0,0,.1); }
+	    .header-top{box-shadow: 0 3px 5px rgba(0,0,0,.1)}
+	    .modal-dialog {
+		max-width: 800px;
+		margin: 1.75rem auto;
+	    }
+	    .scrollable-menu {
+		height: auto;
+		max-height: 200px;
+		overflow-x: hidden;
+	    }
+	    @media(min-width:992px) {
+		#wrapper{margin-left: 200px;padding: 90px 15px 15px;}
+		.navbar-nav.side-nav{background: #585f66;box-shadow: 2px 1px 2px rgba(0,0,0,.1);position:fixed;top:56px;flex-direction: column!important;left:0;width:200px;overflow-y:auto;bottom:0;overflow-x:hidden;padding-bottom:40px}
+	    }
+	</style>
     </head>
     <body>
-        <div id="wrapper">
-            <nav class="navbar header-top fixed-top navbar-expand-lg  navbar-dark bg-dark">
-                <a class="navbar-brand" href="<?=WWW_ADMIN_PATH?>">control panel</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="sidebar">
-                    <ul class="navbar-nav side-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>">Лиды
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>participated">Подписки
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#ContentSubmenu" data-toggle="collapse" aria-expanded="false" class="nav-link dropdown-toggle collapsed">Контент</a>
-                            <ul class="list-unstyled collapse" id="ContentSubmenu" style="">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>moderation">модерация коментариев
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>curses">Курсы</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>packets">Пакеты курсов
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>seminars">Семинары
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>blog">Статьи
-                                    </a>
-                                </li>
+	<div id="wrapper">
+	    <nav class="navbar header-top fixed-top navbar-expand-lg  navbar-dark bg-dark">
+		<a class="navbar-brand" href="<?=WWW_ADMIN_PATH?>">control panel</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
+			aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarText">
+		    <ul class="navbar-nav side-nav">
+			<li class="nav-item">
+			    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>participated">Подписки
+			    </a>
+			</li>
+			<li class="nav-item">
+			    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>moderation">модерация коментариев
+			    </a>
+			</li>
 
+			<li class="nav-item">
+			    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>curses">Курсы</a>
+			</li>
+			<li class="nav-item">
+			    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>packets">Пакеты курсов
+			    </a>
+			</li>
+			<li class="nav-item">
+			    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>seminars">Семинары
+			    </a>
+			</li>
+			<li class="nav-item">
+			    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>stblocck">Статические блоки
+			    </a>
+			</li>
+			<li class="nav-item">
+			    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>video">Видео
+			    </a>
+			</li>
+			<li class="nav-item">
+			    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>fidback">Отзывы
+			    </a>
+			</li>
+			<li class="nav-item">
+			    <a href="#galery" data-toggle="collapse" aria-expanded="false" class="nav-link dropdown-toggle collapsed">Галерея</a>
+			    <ul class="list-unstyled collapse" id="galery" style="">
+				<li>
+				    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>galery">Управление файлами</a>
+				</li>
+				<li>
+				    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>galery/curses">привязка к курсу</a>
+				</li>
+			    </ul>
+			</li>
+			<li class="nav-item">
+			    <a href="#vipusknik" data-toggle="collapse" aria-expanded="false" class="nav-link dropdown-toggle collapsed">выпускники</a>
+			    <ul class="list-unstyled collapse" id="vipusknik" style="">
+				<li>
+				    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>vipusknik">Управление файлами</a>
+				</li>
+				<li>
+				    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>vipusknik/curses">привязка к курсу</a>
+				</li>
+			    </ul>
+			</li>
+			<li class="nav-item">
+			    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>school">Школы
+			    </a>
+			</li>
+			<li class="nav-item">
+			    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="nav-link dropdown-toggle collapsed">настройки</a>
+			    <ul class="list-unstyled collapse" id="homeSubmenu" style="">
+				<li>
+				    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>settings/vars">Переменные</a>
+				</li>
+				<li>
+				    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>settings/translation">перевод</a>
+				</li>
+				<li>
+				    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>users">пользователи</a>
+				</li>
+				<li>
+				    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>settings/misto">города</a>
+				</li>
+				<li>
+				    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>settings/gradients">градиенты</a>
+				</li>
+				<li>
+				    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>settings/seo">seo</a>
+				</li>
+				<li>
+				    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>settings/telegram">Телеграм</a>
+				</li>
+			    </ul>
+			</li>
+			<li class="nav-item">
+			    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>faqo/" >ЧаВо</a>
+			</li>
+			<li class="nav-item">
+			    <a class="nav-link" href="<?php echo WWW_BASE_PATH?>" target="blanc">сайт (в новом окне)</a>
+			</li>
 
-                                <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>faqo/" >ЧаВо</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>school">Школы
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>fidback">Отзывы
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>video">Видео
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#galery" data-toggle="collapse" aria-expanded="false" class="nav-link dropdown-toggle collapsed">Галерея</a>
-                            <ul class="list-unstyled collapse" id="galery" style="">
-                                <li>
-                                    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>galery">Управление файлами</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>galery/curses">привязка к курсу</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#vipusknik" data-toggle="collapse" aria-expanded="false" class="nav-link dropdown-toggle collapsed">выпускники</a>
-                            <ul class="list-unstyled collapse" id="vipusknik" style="">
-                                <li>
-                                    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>vipusknik">Управление файлами</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>vipusknik/curses">привязка к курсу</a>
-                                </li>
-                            </ul>
-                        </li>
+		    </ul>
+		    <ul class="navbar-nav ml-md-auto d-md-flex">
+			<li class="nav-item">
+			    <a class="nav-link" href="<?php echo WWW_BASE_PATH?>admin/users">Users</a>
+			</li>
+			<li class="nav-item">
+			    <a class="nav-link" href="<?php echo WWW_BASE_PATH?>auth/logout">Logout</a>
+			</li>
 
-                        <li class="nav-item">
-                            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="nav-link dropdown-toggle collapsed">настройки</a>
-                            <ul class="list-unstyled collapse" id="homeSubmenu" style="">
-                                <li>
-                                    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>settings/vars">Переменные</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>settings/translation">перевод</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>users">пользователи</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>settings/misto">города</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>settings/gradients">градиенты</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>settings/seo">seo</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>settings/telegram">Телеграм</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo WWW_ADMIN_PATH?>stblocck">Статические блоки
-                                    </a>
-                                </li>
+		    </ul>
+		</div>
+	    </nav>
+	    <div class="row">
+		<div class="col">
+		    <div class="card">
+			<div class="card-body">
+			    <h3><?=$mod_name;?></h3>
+			</div>
+		    </div>
+		</div>
+	    </div>
+	    <div class="row">
+		<div class="col">
+		    <?php
+		    if(isset($_COOKIE['message'])):
+		    echo $_COOKIE['message'];
+		    endif;
+		    ;?>
+		    <div class="card">
+			<div class="card-body">
+			    <?php echo $context;?>
+			</div>
+		    </div>
+		</div>
+	    </div>
+	</div>
+	<div id="imomodal" class="modal fade" role="dialog" aria-label="Add Image" data-target="" data-dir="<?=$brouse;?>">
+	    <div class="modal-dialog modal-xl">
+		<div class="modal-content">
 
-                            </ul>
-                        </li>
+		    <!-- Modal Header -->
+		    <div class="modal-header">
+			<h4 class="modal-title">выбор/загрузка изображений</h4>
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+		    </div>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?php echo WWW_BASE_PATH?>" target="blanc">сайт (в новом окне)</a>
-                        </li>
+		    <!-- Modal body -->
+		    <div id="modalselect" class="modal-body modal-dialog-scrollable">
 
-                    </ul>
-                    <ul class="navbar-nav ml-md-auto d-md-flex">
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?php echo WWW_BASE_PATH?>admin/users">Пользователи</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?php echo WWW_BASE_PATH?>auth/logout">Выход</a>
-                        </li>
+		    </div>
 
-                    </ul>
-                </div>
-            </nav>
-            <div class="row">
-                <div class="col">
-                    <div class="card">
-                        <div class="card-body">
-                            <h3><?=$mod_name;?></h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <?php
-                    if(isset($_COOKIE['message'])):
-                    echo $_COOKIE['message'];
-                    endif;
-                    ;?>
-                    <div class="card">
-                        <div class="card-body">
-                            <?php echo $context;?>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="imomodal" class="modal fade" role="dialog" aria-label="Add Image" data-target="" data-dir="<?=$brouse;?>">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
+		    <!-- Modal footer -->
+		    <div class="modal-footer">
+			<div class="alert alert-success">
+			    <strong>Внимание</strong> файл для загрузки должен быть <?=$lsize?></a>.
+			</div>
+			<form id="myupload" enctype="multipart/form-data" method="post">
+			    <input type="file" name="myfile" id="myfile">
+			    <input type="hidden" name="mypath" value="<?=$brouse;?>" id="mypath">
+			    <button type="button" id="btnSubmitModal" class="btn btn-info" ><i class="fa fa-upload"></i></button>
+			</form>
+		    </div>
 
-                    <!-- Modal Header -->
-                    <div class="modal-header">
-                        <h4 class="modal-title">выбор/загрузка изображений</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
+		</div>
+	    </div>
+	</div>
+	<div id="imageBrouser" class="modal" aria-hidden="false" tabindex="-1" role="dialog" aria-label="Add Image"></div>
 
-                    <!-- Modal body -->
-                    <div id="modalselect" class="modal-body modal-dialog-scrollable">
+	<div class="toast" id="myToast" style="position: absolute; top: 100; right: 0;background-color: #fff;z-index: 1000;" >
+	    <div class="toast-header">
+		<strong class="mr-auto"><i class="fa fa-grav"></i> link copied!</strong>
+		<small>1 сек назад</small>
+		<button type="button" class="ml-2 mb-1 close" data-dismiss="toast">
+		    <span aria-hidden="true">&times;</span>
+		</button>
+	    </div>
+	    <div class="toast-body">
+		<div>ссылка на курс скопирована в буфер обмена</div>
+	    </div>
+	</div>
+	<div class="toast" id="saved" style="position: absolute; top: 100px ; right: 0px;background-color: #fff;z-index: 1000;" data-autohide="false">
+	    <div class="toast-header">
+		<strong class="mr-auto"><i class="fa fa-grav"></i> изменения сохранены!</strong>
+		<small>1 сек назад</small>
+		<button type="button" class="ml-2 mb-1 close" data-dismiss="toast">
+		    <span aria-hidden="true">&times;</span>
+		</button>
+	    </div>
+	    <div class="toast-body">
+		<div>Изменения сохранены</div>
+	    </div>
+	</div>
 
-                    </div>
-
-                    <!-- Modal footer -->
-                    <div class="modal-footer">
-                        <div class="alert alert-success">
-                            <strong>Внимание</strong> файл для загрузки должен быть <?=$lsize?></a>.
-                        </div>
-                        <form id="myupload" enctype="multipart/form-data" method="post">
-                            <input type="file" name="myfile" id="myfile">
-                            <input type="hidden" name="mypath" value="<?=$brouse;?>" id="mypath">
-                            <button type="button" id="btnSubmitModal" class="btn btn-info" ><i class="fa fa-upload"></i></button>
-                        </form>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <div id="imageBrouser" class="modal" aria-hidden="false" tabindex="-1" role="dialog" aria-label="Add Image"></div>
-
-        <div class="toast" id="myToast" style="position: absolute; top: 100; right: 0;background-color: #fff;z-index: 1000;" >
-            <div class="toast-header">
-                <strong class="mr-auto"><i class="fa fa-grav"></i> link copied!</strong>
-                <small>1 сек назад</small>
-                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="toast-body">
-                <div>ссылка на курс скопирована в буфер обмена</div>
-            </div>
-        </div>
-        <div class="toast" id="saved" style="position: absolute; top: 100px ; right: 0px;background-color: #fff;z-index: 1000;" data-autohide="false">
-            <div class="toast-header">
-                <strong class="mr-auto"><i class="fa fa-grav"></i> изменения сохранены!</strong>
-                <small>1 сек назад</small>
-                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="toast-body">
-                <div>Изменения сохранены</div>
-            </div>
-        </div>
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <script src="<?=WWW_JS_PATH;?>admin/summernote-bs4.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="<?=WWW_JS_PATH;?>summernote-bs4.js"></script>
         <script src="<?=WWW_JS_PATH;?>summernote-ru-RU.js"></script>
-        <script src="<?=WWW_JS_PATH;?>admin/summernote-ext-addclass.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
-        <script src="<?=WWW_JS_PATH;?>admin/main.js"></script>
+	<script src="<?=WWW_JS_PATH;?>admin/main.js"></script>
         <script type="text/javascript">
 
-            $('.editor').summernote({
-                addclass: {
-                    debug: false,
-                    classTags: [{title: "Button", "value": "btn btn-success"}, "jumbotron", "lead", "img-rounded", "img-circle", "img-responsive", "btn", "btn btn-success", "btn btn-danger", "text-muted", "text-primary", "text-warning", "text-danger", "text-success", "table-bordered", "table-responsive", "alert", "alert alert-success", "alert alert-info", "alert alert-warning", "alert alert-danger", "visible-sm", "hidden-xs", "hidden-md", "hidden-lg", "hidden-print"]
-                },
-                height: 300,
-                callbacks: {
-                    onImageUpload: function (files)
-                    {
-                        var $editor = $(this);
-                        var data = new FormData();
-                        data.append('file', files[0]);
-                        $.ajax({
-                            url: "<?=WWW_ADMIN_PATH?>fs/editorupload",
-                            method: 'POST',
-                            data: data,
-                            processData: false,
-                            contentType: false,
-                            success: function (response) {
-                                $editor.summernote('insertImage', response);
-                            }
-                        });
+            $(function () {
+
+                $('.editor').summernote({
+                    height: 200,
+                    callbacks: {
+                        onImageUpload: function (files)
+                        {
+                            var $editor = $(this);
+                            var data = new FormData();
+                            data.append('file', files[0]);
+                            $.ajax({
+                                url: "<?=WWW_ADMIN_PATH?>fs/editorupload",
+                                method: 'POST',
+                                data: data,
+                                processData: false,
+                                contentType: false,
+                                success: function (response) {
+                                    $editor.summernote('insertImage', response);
+                                }
+                            });
+                        },
+                        onImageUploadError: null
                     },
-                    onImageUploadError: null
-                },
-                toolbar: [
-                    // [groupName, [list of button]]
-                    ['img', ['picture']],
-                    ['style', ['style', 'addclass', 'clear']],
-                    ['fontstyle', ['bold', 'italic', 'ul', 'ol', 'link', 'paragraph']],
-                    ['fontstyleextra', ['strikethrough', 'underline', 'hr', 'color', 'superscript', 'subscript']],
-                    ['extra', ['video', 'table', 'height']],
-                    ['misc', ['undo', 'redo', 'codeview', 'help']]
+                });
 
-
-                ]
+                $('#submitBtn').click(function () {
+                    var summernoteContent = $('.summernote').summernote('code');
+                    $('#result').val(summernoteContent);
+                });
             });
-
-            $('#submitBtn').click(function () {
-                var summernoteContent = $('.summernote').summernote('code');
-                $('#result').val(summernoteContent);
-            });
-            //}
-            // );
         </script>
-        <script src="<?=WWW_JS_PATH;?>admin/datatables.js"></script>
+	<script src="<?=WWW_JS_PATH;?>admin/datatables.js"></script>
 
-        <script>
+	<script>
             //referer
             function setgrad(targetinput) {
 
@@ -488,25 +456,8 @@ endif;
                 $("#myToast").toast({delay: 3000});
                 $("#myToast").toast('show');
             }
-            $(function () {
 
-
-                var links = $('#sidebar .side-nav a');
-                var pathname = (new URL(document.URL) || {}).pathname;
-                console.log(pathname);
-                $.each(links, function (key, va) {
-                    //va.removeClass('active');
-                    var pathnameLink = (new URL(va.href) || {}).pathname;
-                    if (pathname == pathnameLink) {
-                        $(this).addClass('active');
-                        $(this).parent().parent().collapse('show');
-
-                    }
-                });
-            });
-
-
-        </script>
+	</script>
     </body>
 
 </html>

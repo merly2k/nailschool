@@ -8,11 +8,7 @@ class sitemap
 	private $domain;
 	private $check = array();
 	private $proxy = "";
-	private $stopurl = array(
-            'https://nailschool.com.ua/remont_polygel',
-            'https://nailschool.com.ua/base-and-top',
-            'https://nailschool.com.ua/blog/page/as',
-            'https://nailschool.com.ua/apparatnij-manikur');
+	private $stopurl = array();
 	public $freq = "weekly";
         public $priority='0.5';
         

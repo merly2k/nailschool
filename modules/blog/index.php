@@ -85,7 +85,7 @@ if (!isset($this->param[0]))
 		    </div>
 		    <div class = "col-md-8">
 			<div class = "news-title">
-			    <a title = "' . $row->$title . '" href = "' . WWW_BASE_PATH . 'blog/' . $row->link . '" ><b>' . $row->pdate . '</b></a>
+			    <a title = "' . $row->$title . '" href = "' . WWW_BASE_PATH . 'blog/' . $row->link . '" ></a>
 			</div>
 			<div class = "news-content">
 			<h2>' . $row->$title . '</h2>
@@ -125,13 +125,6 @@ else
 					<div class="news-title">
 					    <h2 style=""class="title-pink">' . $r->$title . '</h2>
 					</div>
-                                        <div class="news-cats">
-					    <ul class="list-unstyled list-inline mb-1">
-						<li class="list-inline-item">
-						    <time>' . $r->pdate . '</time>
-						</li>
-					    </ul>
-					</div>
 					<hr>
 					<div class="news-content">
 		                           ' . $r->$content . '
@@ -144,7 +137,42 @@ else
 
 
     $template = 'article';
-
+    $tram=$bl->getIndex();
+    
+    $pos=array_search($this->param[0], $tram['link']);
+    $last= array_search(array_pop($tram['link']), $tram['link']);
+    if($pos==0){
+        $prev=$last;
+        $next=$pos+1;
+    }elseif ($pos>0 and $pos<$last) {
+        $prev=$pos-1;
+        $next=$pos+1;
+    }else{
+        $prev=$pos-1;
+        $next=0;
+    }
+    if ($tram['image'][$prev] != ''):
+    $artimgprev = WWW_IMG_PATH . 'articles/' . $tram['image'][$prev];
+    else:
+    $artimgprev = WWW_IMG_PATH . 'articles/plaseholder.png';
+    endif;
+    if ($tram['image'][$next] != ''):
+    $artimgnext = WWW_IMG_PATH . 'articles/' . $tram['image'][$next];
+    else:
+    $artimgnext = WWW_IMG_PATH . 'articles/plaseholder.png';
+    endif;
+    $lister="<div class='row'>"
+            . "<div class='col-md-6'><a href='".WWW_BASE_PATH."blog/".$tram['link'][$prev]."'>"
+            . "<img src='$artimgprev' class='img-thumbnail'>"
+            . "<br>".$tram[$title][$prev]."<br>".truncate(strip_tags($tram[$lcontent][$prev]), 250, array('ending' => '', 'exact' => true, 'html' => true))
+            . "</a>"
+            . "</div>"
+            . "<div class='col-md-6'><a href='".WWW_BASE_PATH."blog/".$tram['link'][$next]."'>"
+            . "<img src='$artimgnext' class='img-thumbnail'>"
+            . "<br>".$tram[$title][$next]."<br>".truncate(strip_tags($tram[$lcontent][$next]), 250, array('ending' => '', 'exact' => true, 'html' => true))
+            . "</a>"
+            . "</div>"
+            . "</div>";
     include TEMPLATE_DIR . DS . $template . ".html";
 }
 
